@@ -1,0 +1,52 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6270 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Portugal : Government revenue and spending from 2014 to 2024 (in billion euros)" ;
+    chart:xAxis ex:x-6270 ;
+    chart:yAxis ex:y-6270 .
+
+ex:x-6270 a chart:Axis ;
+    chart:label "Spending" .
+
+ex:y-6270 a chart:Axis ;
+    chart:label "" .
+
+ex:series-6270-1 a chart:Series .
+
+ex:mark-6270-1-1 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "Year" ;
+    chart:value "104.29"^^xsd:decimal .
+
+ex:mark-6270-1-2 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2024*" ;
+    chart:value "101.61"^^xsd:decimal .
+
+ex:mark-6270-1-3 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2023*" ;
+    chart:value "98.74"^^xsd:decimal .
+
+ex:mark-6270-1-4 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2022*" ;
+    chart:value "96.11"^^xsd:decimal .
+
+ex:mark-6270-1-5 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2021*" ;
+    chart:value "93.69"^^xsd:decimal .
+
+ex:mark-6270-1-6 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2020*" ;
+    chart:value "91.39"^^xsd:decimal .
+
+ex:mark-6270-1-7 a chart:DataPoint ;
+    chart:series ex:series-6270-1 ;
+    chart:category "2019*" ;
+    chart:value "88.63"^^xsd:decimal .

@@ -1,0 +1,29 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:hasNextStep she:GoToKitchen .
+
+she:GoToKitchen a skos:Concept ;
+    skos:prefLabel "go to kitchen" ;
+    she:hasNextStep she:FindFood .
+
+she:FindFood a skos:Concept ;
+    skos:prefLabel "find food" ;
+    she:hasNextStep she:MicrowaveIt .
+
+she:MicrowaveIt a skos:Concept ;
+    skos:prefLabel "microwave it" ;
+    she:hasNextStep she:SwitchOffLight .
+
+she:SwitchOffLight a skos:Concept ;
+    skos:prefLabel "switch off light" ;
+    she:hasNextStep she:GetOutOfKitchen .
+
+she:GetOutOfKitchen a skos:Concept ;
+    skos:prefLabel "get out of kitchen" ;
+    she:hasNextStep she:EnjoyDinner .
+
+she:EnjoyDinner a skos:Concept ;
+    skos:prefLabel "enjoy dinner" .

@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7187 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Distribution of Florida Power and Light 's operating revenue from FY 2007 to FY 2019 , by customer class" ;
+    chart:xAxis ex:x-7187 ;
+    chart:yAxis ex:y-7187 .
+
+ex:x-7187 a chart:Axis ;
+    chart:label "Other*" .
+
+ex:y-7187 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7187-1 a chart:Series .
+
+ex:mark-7187-1-1 a chart:DataPoint ;
+    chart:series ex:series-7187-1 ;
+    chart:category "Year" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-7187-1-2 a chart:DataPoint ;
+    chart:series ex:series-7187-1 ;
+    chart:category "2016**" ;
+    chart:value "0.065"^^xsd:decimal .

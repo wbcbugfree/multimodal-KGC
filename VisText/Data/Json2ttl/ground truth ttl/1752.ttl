@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/1752/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Share of traditional quantitative methods used in the market research industry worldwide in Q3 and Q4 2018" ;
+    :hasXAxisLabel "Share" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Share ;
+    rdfs:label "Automated measures/ People meters" ;
+    :y "0.04"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Share ;
+    rdfs:label "Biometrics/ neuromarketing" ;
+    :y "0.07"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Share ;
+    rdfs:label "CAPI***" ;
+    :y "0.07"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Share ;
+    rdfs:label "CATI**" ;
+    :y "0.23"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Share ;
+    rdfs:label "Face-to-face" ;
+    :y "0.17"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Share ;
+    rdfs:label "Mail" ;
+    :y "0.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Share ;
+    rdfs:label "Mobile surveys" ;
+    :y "0.3"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Share ;
+    rdfs:label "of respondents Response" ;
+    :y "0.79"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Share ;
+    rdfs:label "Online surveys" ;
+    :y "0.53"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Share ;
+    rdfs:label "Other quantitative techniques" ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

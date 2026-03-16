@@ -1,0 +1,27 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:SwitchOnLights .
+
+she:SwitchOnLights a skos:Concept ;
+    skos:prefLabel "switch on lights" ;
+    she:leadsTo she:TurnLedQ0Off .
+
+she:TurnLedQ0Off a skos:Concept ;
+    skos:prefLabel "turn the led connected to q0 off" ;
+    she:leadsTo she:CheckLdrA1Darkness .
+
+she:CheckLdrA1Darkness a skos:Concept ;
+    skos:prefLabel "check if the ldr connected to a1 is in darkness" ;
+    she:leadsToIfYes she:TurnLedQ0On ;
+    she:leadsToIfNo she:SwitchOffLights .
+
+she:TurnLedQ0On a skos:Concept ;
+    skos:prefLabel "turn the led connected to q0 on" ;
+    she:loopsBackTo she:CheckLdrA1Darkness .
+
+she:SwitchOffLights a skos:Concept ;
+    skos:prefLabel "switch off lights" ;
+    she:loopsBackTo she:CheckLdrA1Darkness .

@@ -1,0 +1,87 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-110 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Market cap of leading online marketplaces worldwide as of September 2020 (in million U.S. dollars)" ;
+    chart:xAxis ex:x-110 ;
+    chart:yAxis ex:y-110 .
+
+ex:x-110 a chart:Axis ;
+    chart:label "Market" .
+
+ex:y-110 a chart:Axis ;
+    chart:label "" .
+
+ex:series-110-1 a chart:Series .
+
+ex:mark-110-1-1 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "cap in million U.S. dollars business" ;
+    chart:value "63936"^^xsd:decimal .
+
+ex:mark-110-1-2 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Uber (United States)" ;
+    chart:value "53810"^^xsd:decimal .
+
+ex:mark-110-1-3 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Mercado Libre (Argentina)" ;
+    chart:value "22946"^^xsd:decimal .
+
+ex:mark-110-1-4 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Delivery Hero (Germany)" ;
+    chart:value "16725"^^xsd:decimal .
+
+ex:mark-110-1-5 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Takeaway.com (Netherlands)" ;
+    chart:value "15488"^^xsd:decimal .
+
+ex:mark-110-1-6 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Carvana (United States)" ;
+    chart:value "14514"^^xsd:decimal .
+
+ex:mark-110-1-7 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Etsy (United States)" ;
+    chart:value "8598"^^xsd:decimal .
+
+ex:mark-110-1-8 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Lyft (United States)" ;
+    chart:value "6674"^^xsd:decimal .
+
+ex:mark-110-1-9 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "GrubHub (United States)" ;
+    chart:value "5401"^^xsd:decimal .
+
+ex:mark-110-1-10 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Kakaku.com (Japan)" ;
+    chart:value "2444"^^xsd:decimal .
+
+ex:mark-110-1-11 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "CarGurus (United States)" ;
+    chart:value "1854"^^xsd:decimal .
+
+ex:mark-110-1-12 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Moneysupermarket.com (United Kingdom)" ;
+    chart:value "1047"^^xsd:decimal .
+
+ex:mark-110-1-13 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Gruppo MutuiOnline (Italy)" ;
+    chart:value "794"^^xsd:decimal .
+
+ex:mark-110-1-14 a chart:DataPoint ;
+    chart:series ex:series-110-1 ;
+    chart:category "Redbubble (Australia)" ;
+    chart:value "540"^^xsd:decimal .

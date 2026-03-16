@@ -1,0 +1,41 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Assessment a skos:Concept ;
+    skos:prefLabel "assessment" ;
+    she:leadsTo she:TeamWork .
+
+she:TeamWork a skos:Concept ;
+    skos:prefLabel "team work" ;
+    she:leadsTo she:Work .
+
+she:Work a skos:Concept ;
+    skos:prefLabel "work" ;
+    she:leadsTo she:Gather .
+
+she:Gather a skos:Concept ;
+    skos:prefLabel "gather" ;
+    she:leadsTo she:Complete .
+
+she:Complete a skos:Concept ;
+    skos:prefLabel "complete" ;
+    she:leadsTo she:Closure .
+
+she:Closure a skos:Concept ;
+    skos:prefLabel "closure" ;
+    she:leadsTo she:PrimaryClosure,
+                she:Bandaging .
+
+she:PrimaryClosure a skos:Concept ;
+    skos:prefLabel "primary closure" .
+
+she:Bandaging a skos:Concept ;
+    skos:prefLabel "bandaging" ;
+    she:leadsTo she:DelayedPrimaryClosure,
+                she:SecondaryClosure .
+
+she:DelayedPrimaryClosure a skos:Concept ;
+    skos:prefLabel "delayed primary closure" .
+
+she:SecondaryClosure a skos:Concept ;
+    skos:prefLabel "secondary closure" .

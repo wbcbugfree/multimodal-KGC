@@ -1,0 +1,29 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:RawMaterials a skos:Concept ;
+    skos:prefLabel "raw materials" ;
+    she:leadsTo she:Melting .
+
+she:Melting a skos:Concept ;
+    skos:prefLabel "melting" ;
+    she:leadsTo she:Forming .
+
+she:Forming a skos:Concept ;
+    skos:prefLabel "forming" ;
+    she:leadsTo she:Sampling .
+
+she:Sampling a skos:Concept ;
+    skos:prefLabel "sampling" ;
+    she:leadsTo she:InspectionAndTesting .
+
+she:InspectionAndTesting a skos:Concept ;
+    skos:prefLabel "inspection and testing" ;
+    she:leadsTo she:SecondaryProcessing .
+
+she:SecondaryProcessing a skos:Concept ;
+    skos:prefLabel "secondary processing" ;
+    she:leadsTo she:Warehousing .
+
+she:Warehousing a skos:Concept ;
+    skos:prefLabel "warehousing" .

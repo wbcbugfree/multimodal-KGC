@@ -1,0 +1,21 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiatesProcessWith she:SourceProcessor .
+
+she:SourceProcessor a skos:Concept ;
+    skos:prefLabel "source processor" ;
+    she:streamsDataTo she:Processor .
+
+she:Processor a skos:Concept ;
+    skos:prefLabel "processor" ;
+    she:streamsDataTo she:SinkProcessor .
+
+she:SinkProcessor a skos:Concept ;
+    skos:prefLabel "sink processor" ;
+    she:concludesProcessAt she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

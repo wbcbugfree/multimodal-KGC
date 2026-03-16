@@ -1,0 +1,92 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6415 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Why do n't you use / what is the main reason you do n't use local bus services (more often) ?" ;
+    chart:xAxis ex:x-6415 ;
+    chart:yAxis ex:y-6415 .
+
+ex:x-6415 a chart:Axis ;
+    chart:label "Main" .
+
+ex:y-6415 a chart:Axis ;
+    chart:label "" .
+
+ex:series-6415-1 a chart:Series .
+
+ex:mark-6415-1-1 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "reason Response" ;
+    chart:value "0.46"^^xsd:decimal .
+
+ex:mark-6415-1-2 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "It is easier/more convenient by car" ;
+    chart:value "0.11"^^xsd:decimal .
+
+ex:mark-6415-1-3 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "It is quicker by car" ;
+    chart:value "0.08"^^xsd:decimal .
+
+ex:mark-6415-1-4 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Other" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-6415-1-5 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "I prefer to walk/cycle" ;
+    chart:value "0.06"^^xsd:decimal .
+
+ex:mark-6415-1-6 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Buses are not frequent enough/do not run when I ne..." ;
+    chart:value "0.05"^^xsd:decimal .
+
+ex:mark-6415-1-7 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Buses do not go to/go directly to places where I w..." ;
+    chart:value "0.04"^^xsd:decimal .
+
+ex:mark-6415-1-8 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Bus fares are too high" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-6415-1-9 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Journeys take too long by bus" ;
+    chart:value "0.02"^^xsd:decimal .
+
+ex:mark-6415-1-10 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "I have difficulty getting on and off buses" ;
+    chart:value "0.02"^^xsd:decimal .
+
+ex:mark-6415-1-11 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "The nearest bus stop is too far away" ;
+    chart:value "0.02"^^xsd:decimal .
+
+ex:mark-6415-1-12 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "It is cheaper by car" ;
+    chart:value "0.01"^^xsd:decimal .
+
+ex:mark-6415-1-13 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "Not safe on the buses/stops/stations/anti-social b..." ;
+    chart:value "0.01"^^xsd:decimal .
+
+ex:mark-6415-1-14 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "I have difficulty getting to the bus stop/station" ;
+    chart:value "0.01"^^xsd:decimal .
+
+ex:mark-6415-1-15 a chart:DataPoint ;
+    chart:series ex:series-6415-1 ;
+    chart:category "I do not know what bus services are available" ;
+    chart:value "0.01"^^xsd:decimal .

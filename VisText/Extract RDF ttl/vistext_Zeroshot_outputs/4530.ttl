@@ -1,0 +1,88 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4530 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Greece : National debt from 2014 to 2024" ;
+    chart:subtitle "(in billion U.S. dollars)" ;
+    chart:xAxis ex:x-4530 ;
+    chart:yAxis ex:y-4530 .
+
+ex:x-4530 a chart:Axis ;
+    chart:label "National debt in billion U.S. dollars" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "400" .
+
+ex:y-4530 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-4530-1 a chart:Series .
+
+ex:mark-4530-1-1 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2014" ;
+    chart:value "350"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-2 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2015" ;
+    chart:value "350"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-3 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2016" ;
+    chart:value "350"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-4 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2017" ;
+    chart:value "350"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-5 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2018" ;
+    chart:value "370"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-6 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2019*" ;
+    chart:value "380"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-7 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2020*" ;
+    chart:value "390"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-8 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2021*" ;
+    chart:value "390"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-9 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2022*" ;
+    chart:value "390"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-10 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2023*" ;
+    chart:value "390"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4530-1-11 a chart:Bar ;
+    chart:series ex:series-4530-1 ;
+    chart:category "2024*" ;
+    chart:value "390"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

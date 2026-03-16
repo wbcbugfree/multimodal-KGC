@@ -1,0 +1,57 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8381 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Percentage of Americans voting for the Democratic candidate in presidential elections from 1972 to 2012 , by generation" ;
+    chart:xAxis ex:x-8381 ;
+    chart:yAxis ex:y-8381 .
+
+ex:x-8381 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "1972" ;
+    chart:scaleMax "2012" .
+
+ex:y-8381 a chart:Axis ;
+    chart:label "Generation aged 18-29" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.7" .
+
+ex:series-8381-1 a chart:Series .
+
+ex:point-8381-1-1 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "1972" ;
+    chart:yVal "0.49"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8381-1-2 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "1980" ;
+    chart:yVal "0.40"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8381-1-3 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "1990" ;
+    chart:yVal "0.47"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8381-1-4 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "2000" ;
+    chart:yVal "0.50"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8381-1-5 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "0.65"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8381-1-6 a chart:Point ;
+    chart:series ex:series-8381-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "0.63"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

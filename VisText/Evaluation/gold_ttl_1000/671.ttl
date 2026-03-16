@@ -1,0 +1,72 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-671 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Reasons for registered voters not voting in the U.S. presidential election in 2016" ;
+    chart:xAxis ex:x-671 ;
+    chart:yAxis ex:y-671 .
+
+ex:x-671 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-671 a chart:Axis ;
+    chart:label "Percentage of registered voters" .
+
+ex:series-671-1 a chart:Series .
+
+ex:mark-671-1-1 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Did not like candidates or campaign issues" ;
+    chart:value "0.248"^^xsd:decimal .
+
+ex:mark-671-1-2 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Not interested" ;
+    chart:value "0.154"^^xsd:decimal .
+
+ex:mark-671-1-3 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Too busy, conflicting schedule" ;
+    chart:value "0.143"^^xsd:decimal .
+
+ex:mark-671-1-4 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Illness or disability" ;
+    chart:value "0.117"^^xsd:decimal .
+
+ex:mark-671-1-5 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Other reason" ;
+    chart:value "0.111"^^xsd:decimal .
+
+ex:mark-671-1-6 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Out of town" ;
+    chart:value "0.079"^^xsd:decimal .
+
+ex:mark-671-1-7 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Registration problems" ;
+    chart:value "0.044"^^xsd:decimal .
+
+ex:mark-671-1-8 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Forgot to vote" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-671-1-9 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Don’t know or refused" ;
+    chart:value "0.027"^^xsd:decimal .
+
+ex:mark-671-1-10 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Transportation problems" ;
+    chart:value "0.026"^^xsd:decimal .
+
+ex:mark-671-1-11 a chart:DataPoint ;
+    chart:series ex:series-671-1 ;
+    chart:category "Inconvenient polling place" ;
+    chart:value "0.021"^^xsd:decimal .

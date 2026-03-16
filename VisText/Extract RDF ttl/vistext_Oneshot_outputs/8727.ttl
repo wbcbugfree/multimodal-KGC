@@ -1,0 +1,39 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8727 a schema:CreativeWork ;
+    schema:title "Cumulative number of coronavirus (COVID-19) cases , active cases , recoveries , and deaths in Russia as of December 26 , 2020 , by date of report" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Active cases" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "500000"^^xsd:decimal .
+
+:DataPoint8727_1 a :Datapoint ;
+    :belongsToChart :Chart8727 ;
+    rdfs:label "April" ;
+    :xValue "April" ;
+    :yValue "0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8727_2 a :Datapoint ;
+    :belongsToChart :Chart8727 ;
+    rdfs:label "July" ;
+    :xValue "July" ;
+    :yValue "170000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8727_3 a :Datapoint ;
+    :belongsToChart :Chart8727 ;
+    rdfs:label "October" ;
+    :xValue "October" ;
+    :yValue "150000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8727_4 a :Datapoint ;
+    :belongsToChart :Chart8727 ;
+    rdfs:label "December 26, 2020" ;
+    :xValue "December 26, 2020" ;
+    :yValue "530000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

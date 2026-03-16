@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-73 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Share of households with internet access in Romania from 2007 to 2018" ;
+    chart:xAxis ex:x-73 ;
+    chart:yAxis ex:y-73 .
+
+ex:x-73 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-73 a chart:Axis ;
+    chart:label "" .
+
+ex:series-73-1 a chart:Series .
+
+ex:mark-73-1-1 a chart:DataPoint ;
+    chart:series ex:series-73-1 ;
+    chart:category "Share of households" ;
+    chart:value "2018"^^xsd:decimal .
+
+ex:mark-73-1-2 a chart:DataPoint ;
+    chart:series ex:series-73-1 ;
+    chart:category "2014*" ;
+    chart:value "0.61"^^xsd:decimal .

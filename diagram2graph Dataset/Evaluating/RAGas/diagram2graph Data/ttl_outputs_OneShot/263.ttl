@@ -1,0 +1,26 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:InputVariableK .
+
+she:InputVariableK a skos:Concept ;
+    skos:prefLabel "input variable: k" ;
+    she:leadsTo she:CheckIfKEven .
+
+she:CheckIfKEven a skos:Concept ;
+    skos:prefLabel "if k%2==0" ;
+    she:ifTrueLeadsTo she:PrintKIsEven ;
+    she:ifFalseLeadsTo she:PrintKIsOdd .
+
+she:PrintKIsEven a skos:Concept ;
+    skos:prefLabel "print: k is even" ;
+    she:leadsTo she:Stop .
+
+she:PrintKIsOdd a skos:Concept ;
+    skos:prefLabel "print: k is odd" ;
+    she:leadsTo she:Stop .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

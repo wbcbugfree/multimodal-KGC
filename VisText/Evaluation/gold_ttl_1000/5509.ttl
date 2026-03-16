@@ -1,0 +1,47 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5509 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Coronavirus impact on online traffic of selected industries worldwide as of October 2020" ;
+    chart:xAxis ex:x-5509 ;
+    chart:yAxis ex:y-5509 .
+
+ex:x-5509 a chart:Axis ;
+    chart:label "industry" .
+
+ex:y-5509 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5509-1 a chart:Series .
+
+ex:mark-5509-1-1 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Change in traffic Supermarket" ;
+    chart:value "0.348"^^xsd:decimal .
+
+ex:mark-5509-1-2 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Retail tech" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-5509-1-3 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Sports equipment" ;
+    chart:value "0.236"^^xsd:decimal .
+
+ex:mark-5509-1-4 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Media −0.132 Cosmetics" ;
+    chart:value "0.037"^^xsd:decimal .
+
+ex:mark-5509-1-5 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Bank / insurance" ;
+    chart:value "0.018"^^xsd:decimal .
+
+ex:mark-5509-1-6 a chart:DataPoint ;
+    chart:series ex:series-5509-1 ;
+    chart:category "Home furnishings / DIY −0.031 Fashion −0.103 Telec..." ;
+    chart:value "0.023"^^xsd:decimal .

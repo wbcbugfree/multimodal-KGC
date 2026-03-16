@@ -1,0 +1,116 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5090 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-5090 ;
+    chart:yAxis ex:y-5090 .
+
+ex:x-5090 a chart:Axis ;
+    chart:label "name of global event" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:y-5090 a chart:Axis ;
+    chart:label "Tweets per second" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "20000" .
+
+ex:series-5090-1 a chart:Series .
+
+ex:mark-5090-1-1 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "BET Awards (Jun 27, '11)" ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-2 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Beyonce at the VMAs (Aug ..." ;
+    chart:value "8500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-3 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Brazil eliminated from the C..." ;
+    chart:value "6500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-4 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Castle in the Sky on TV (De..." ;
+    chart:value "4500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-5 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "End of FIFA Women's World..." ;
+    chart:value "12500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-6 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Euro 2012 Finale, Spain's 4..." ;
+    chart:value "24000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-7 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Execution of Troy Davis (Se..." ;
+    chart:value "2800"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-8 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Japanese earthquake and t..." ;
+    chart:value "4500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-9 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Last minutes of Superbowl ..." ;
+    chart:value "10000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-10 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Madonna's Super Bowl Half..." ;
+    chart:value "10000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-11 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "NBA Finals LeBron Tweet (Ju..." ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-12 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "New Year's Day in Japan (Ja..." ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-13 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Steve Jobs passes away (Oc..." ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-14 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Steve Jobs resigns (Aug 25,..." ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-15 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "Tim Tebow's Overtime Touc..." ;
+    chart:value "9500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-5090-1-16 a chart:Bar ;
+    chart:series ex:series-5090-1 ;
+    chart:category "UEFA Champions League (..." ;
+    chart:value "9500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

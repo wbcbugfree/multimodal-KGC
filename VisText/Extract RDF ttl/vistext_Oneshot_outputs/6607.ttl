@@ -1,0 +1,46 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart6607 a schema:LineChart ;
+    schema:title "Estimated median age of Americans at their first wedding in the United States from 1998 to 2019 , by sex" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Women" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "30"^^xsd:decimal .
+
+:DataPoint6607_1 a :DataPoint ;
+    :belongsToChart :Chart6607 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "25.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6607_2 a :DataPoint ;
+    :belongsToChart :Chart6607 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "25.3"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6607_3 a :DataPoint ;
+    :belongsToChart :Chart6607 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "25.8"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6607_4 a :DataPoint ;
+    :belongsToChart :Chart6607 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "26.2"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6607_5 a :DataPoint ;
+    :belongsToChart :Chart6607 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "26.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

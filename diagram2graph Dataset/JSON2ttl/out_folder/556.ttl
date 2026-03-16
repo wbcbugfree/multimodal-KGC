@@ -1,0 +1,41 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
+    rdfs:label "Begin" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Decision, d2g:Node ;
+    rdfs:label "Are you happy?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
+    rdfs:label "Yes a lot" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
+    rdfs:label "Want to be happy?" ;
+    d2g:shape d2g:Task .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/12> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/3> .
+
+<http://example.org/diagram/diagram/edge/24> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/4> .

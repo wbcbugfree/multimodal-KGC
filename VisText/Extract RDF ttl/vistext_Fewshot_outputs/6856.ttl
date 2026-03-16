@@ -1,0 +1,64 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6856 a chart:Chart ;
+    chart:chartType "line" ;
+    chart:title "Total population of Peru from 2008 to 2018 , by gender (in million inhabitants)" ;
+    chart:xAxis ex:x-6856 ;
+    chart:yAxis ex:y-6856 .
+
+ex:x-6856 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2008" ;
+    chart:scaleMax "2018" .
+
+ex:y-6856 a chart:Axis ;
+    chart:label "" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "15" .
+
+ex:series-6856-1 a chart:Series ;
+    chart:seriesName "Male" .
+
+ex:dp-6856-1-1 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2008" ;
+    chart:yVal "14.5"^^xsd:decimal ;
+    chart:value "14.5"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6856-1-2 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "14.7"^^xsd:decimal ;
+    chart:value "14.7"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6856-1-3 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "14.9"^^xsd:decimal ;
+    chart:value "14.9"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6856-1-4 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "15.1"^^xsd:decimal ;
+    chart:value "15.1"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6856-1-5 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "15.3"^^xsd:decimal ;
+    chart:value "15.3"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6856-1-6 a chart:DataPoint ;
+    chart:series ex:series-6856-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "15.5"^^xsd:decimal ;
+    chart:value "15.5"^^xsd:decimal ;
+    chart:valueEstimated "true" .

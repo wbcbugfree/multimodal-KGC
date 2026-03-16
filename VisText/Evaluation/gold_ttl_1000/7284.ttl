@@ -1,0 +1,92 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7284 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Gender distribution of religious groups in the United States in 2017 , by faith tradition" ;
+    chart:xAxis ex:x-7284 ;
+    chart:yAxis ex:y-7284 .
+
+ex:x-7284 a chart:Axis ;
+    chart:label "faith tradition" .
+
+ex:y-7284 a chart:Axis ;
+    chart:label "Men" .
+
+ex:series-7284-1 a chart:Series .
+
+ex:mark-7284-1-1 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Hindu" ;
+    chart:value "0.66"^^xsd:decimal .
+
+ex:mark-7284-1-2 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Muslim" ;
+    chart:value "0.59"^^xsd:decimal .
+
+ex:mark-7284-1-3 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Unaffiliated" ;
+    chart:value "0.55"^^xsd:decimal .
+
+ex:mark-7284-1-4 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Orthodox Christian" ;
+    chart:value "0.5"^^xsd:decimal .
+
+ex:mark-7284-1-5 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Buddhist" ;
+    chart:value "0.5"^^xsd:decimal .
+
+ex:mark-7284-1-6 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Mormon" ;
+    chart:value "0.48"^^xsd:decimal .
+
+ex:mark-7284-1-7 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Jewish" ;
+    chart:value "0.48"^^xsd:decimal .
+
+ex:mark-7284-1-8 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Hispanic Protestant" ;
+    chart:value "0.47"^^xsd:decimal .
+
+ex:mark-7284-1-9 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "White Catholic" ;
+    chart:value "0.47"^^xsd:decimal .
+
+ex:mark-7284-1-10 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "White mainline Protestant" ;
+    chart:value "0.46"^^xsd:decimal .
+
+ex:mark-7284-1-11 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Hispanic Catholic" ;
+    chart:value "0.45"^^xsd:decimal .
+
+ex:mark-7284-1-12 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "White evangelical Protestant" ;
+    chart:value "0.44"^^xsd:decimal .
+
+ex:mark-7284-1-13 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Black Protestant" ;
+    chart:value "0.42"^^xsd:decimal .
+
+ex:mark-7284-1-14 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Jehovah’s Witness" ;
+    chart:value "0.37"^^xsd:decimal .
+
+ex:mark-7284-1-15 a chart:DataPoint ;
+    chart:series ex:series-7284-1 ;
+    chart:category "Unitarian/Universalist" ;
+    chart:value "0.36"^^xsd:decimal .

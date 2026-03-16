@@ -1,0 +1,93 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2548 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average prices for palm oil worldwide from 2014 to 2025 (in nominal U.S. dollars per mt)" ;
+    chart:xAxis ex:x-2548 ;
+    chart:yAxis ex:y-2548 .
+
+ex:x-2548 a chart:Axis ;
+    chart:label "Price in nominal U.S. dollars per metric ton" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "800" .
+
+ex:y-2548 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-2548-1 a chart:Series .
+
+ex:dp-2548-1-1 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2014" ;
+    chart:value "760"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-2 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2015" ;
+    chart:value "700"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-3 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2016" ;
+    chart:value "680"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-4 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2017" ;
+    chart:value "660"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-5 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2018" ;
+    chart:value "620"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-6 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2019" ;
+    chart:value "600"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-7 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2020*" ;
+    chart:value "760"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-8 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2021*" ;
+    chart:value "780"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-9 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2022*" ;
+    chart:value "780"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-10 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2023*" ;
+    chart:value "760"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-11 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2024*" ;
+    chart:value "760"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2548-1-12 a chart:DataPoint ;
+    chart:series ex:series-2548-1 ;
+    chart:category "2025*" ;
+    chart:value "760"^^xsd:decimal ;
+    chart:valueEstimated "true" .

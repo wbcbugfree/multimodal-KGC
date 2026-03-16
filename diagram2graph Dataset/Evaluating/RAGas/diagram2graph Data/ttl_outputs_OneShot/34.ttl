@@ -1,0 +1,30 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:followedBy she:DetermineSeusEnergyInputsOutputs .
+
+she:DetermineSeusEnergyInputsOutputs a skos:Concept ;
+    skos:prefLabel "determine seus energy inputs/outputs" ;
+    she:followedBy she:DetermineProcess .
+
+she:DetermineProcess a skos:Concept ;
+    skos:prefLabel "determine process" ;
+    she:followedBy she:DetermineMeasurementPeriodEnbProcess .
+
+she:DetermineMeasurementPeriodEnbProcess a skos:Concept ;
+    skos:prefLabel "determine measurement period (enb process)" ;
+    she:followedBy she:Normalize .
+
+she:Normalize a skos:Concept ;
+    skos:prefLabel "normalize" ;
+    she:followedBy she:Check .
+
+she:Check a skos:Concept ;
+    skos:prefLabel "check" ;
+    she:followedBy she:Report .
+
+she:Report a skos:Concept ;
+    skos:prefLabel "report" ;
+    she:followedBy she:Start .

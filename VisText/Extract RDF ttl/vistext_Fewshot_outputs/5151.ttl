@@ -1,0 +1,79 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5151 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Which of the following people , if any , do you consider to be picky eaters ?" ;
+    chart:xAxis ex:x-5151 ;
+    chart:yAxis ex:y-5151 .
+
+ex:x-5151 a chart:Axis ;
+    chart:label "Unnamed: 1" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "25" .
+
+ex:y-5151 a chart:Axis ;
+    chart:label "type of person" .
+
+ex:series-5151-1 a chart:Series .
+
+ex:dp-5151-1-1 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "A child in my household" ;
+    chart:value "22"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-2 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another adult I know, not in my h..." ;
+    chart:value "12"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-3 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another adult in my household" ;
+    chart:value "4"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-4 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another child I know, not in my ho..." ;
+    chart:value "17"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-5 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "I don't know anyone who I conside..." ;
+    chart:value "28"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-6 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "My spouse or partner" ;
+    chart:value "15"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-7 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Myself" ;
+    chart:value "26"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-8 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "One or more of my in-laws" ;
+    chart:value "4"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-9 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "One or more of my parents" ;
+    chart:value "5"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-5151-1-10 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Someone else" ;
+    chart:value "11"^^xsd:decimal ;
+    chart:valueEstimated "true" .

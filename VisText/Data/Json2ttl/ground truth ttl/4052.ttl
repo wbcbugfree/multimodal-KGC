@@ -1,0 +1,44 @@
+@prefix : <http://example.org/chart-data/4052/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Net sales growth of the world 's leading 10 consumer products companies in 2013" ;
+    :hasXAxisLabel "Company" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Company ;
+    rdfs:label "(Country of origin) Net sales growt..." ;
+    :y "0.137"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Company ;
+    rdfs:label "Apple (United States)" ;
+    :y "0.092"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Company ;
+    rdfs:label "Nestlé (Switzerland)" ;
+    :y "0.027"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Company ;
+    rdfs:label "PepsiCo (United States)" ;
+    :y "0.014"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Company ;
+    rdfs:label "Procter & Gamble (United States) −0..." ;
+    :y "0.174"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Company ;
+    rdfs:label "The Coca-Cola Company (United State..." ;
+    :y "0.227"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Company ;
+    rdfs:label "Unilever (Netherlands and U.K.) −0...." ;
+    :y "0.141"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

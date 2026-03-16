@@ -1,0 +1,25 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:precedes she:InputSalary .
+
+she:InputSalary a skos:Concept ;
+    skos:prefLabel "input salary" ;
+    she:precedes she:FindIncreaseInSalary .
+
+she:FindIncreaseInSalary a skos:Concept ;
+    skos:prefLabel "find increase in salary" ;
+    she:precedes she:AddIncreaseToSalary .
+
+she:AddIncreaseToSalary a skos:Concept ;
+    skos:prefLabel "add increase to salary" ;
+    she:precedes she:PrintResult .
+
+she:PrintResult a skos:Concept ;
+    skos:prefLabel "print result" ;
+    she:precedes she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

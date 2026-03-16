@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5697 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Novartis AG 's net income from 2007 to 2019 (in billion U.S. dollars)" ;
+    chart:xAxis ex:x-5697 ;
+    chart:yAxis ex:y-5697 .
+
+ex:x-5697 a chart:Axis ;
+    chart:label "Net income in billion U" .
+
+ex:y-5697 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5697-1 a chart:Series .
+
+ex:mark-5697-1-1 a chart:DataPoint ;
+    chart:series ex:series-5697-1 ;
+    chart:category "income in billion U.S. dollars Year" ;
+    chart:value "11.7"^^xsd:decimal .
+
+ex:mark-5697-1-2 a chart:DataPoint ;
+    chart:series ex:series-5697-1 ;
+    chart:category "2019*" ;
+    chart:value "12.6"^^xsd:decimal .

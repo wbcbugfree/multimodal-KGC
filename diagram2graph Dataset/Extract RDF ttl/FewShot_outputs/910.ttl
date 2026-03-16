@@ -1,0 +1,111 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Decision, d2g:Node ;
+    rdfs:label "Is your apps main goal is to support the porduct?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
+    rdfs:label "Consider hit apps" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Decision, d2g:Node ;
+    rdfs:label "Is your app inherently viral?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/5> a d2g:Process, d2g:Node ;
+    rdfs:label "Consider Free with IAPs" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/6> a d2g:Decision, d2g:Node ;
+    rdfs:label "Does user have valid ID?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/7> a d2g:Decision, d2g:Node ;
+    rdfs:label "Can you easily explain the apps value in screenshots?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/8> a d2g:Process, d2g:Node ;
+    rdfs:label "Paid service" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/9> a d2g:Decision, d2g:Node ;
+    rdfs:label "Is the app itself your core revenue stream" ;
+    d2g:shape d2g:Gateway .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/12> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/3> .
+
+<http://example.org/diagram/diagram/edge/24> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/45> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/4> d2g:branches <http://example.org/diagram/diagram/node/5> .
+
+<http://example.org/diagram/diagram/edge/46> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/4> d2g:branches <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/65> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/6> d2g:branches <http://example.org/diagram/diagram/node/5> .
+
+<http://example.org/diagram/diagram/edge/67> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/7> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/6> d2g:branches <http://example.org/diagram/diagram/node/7> .
+
+<http://example.org/diagram/diagram/edge/78> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/7> d2g:branches <http://example.org/diagram/diagram/node/8> .
+
+<http://example.org/diagram/diagram/edge/79> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/9> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/7> d2g:branches <http://example.org/diagram/diagram/node/9> .
+
+<http://example.org/diagram/diagram/edge/98> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/9> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/9> d2g:branches <http://example.org/diagram/diagram/node/8> .

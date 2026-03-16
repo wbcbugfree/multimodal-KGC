@@ -1,0 +1,23 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart6928 a schema:BarChart ;
+    schema:title "Length of life and cause of death of United States Presidents from 1799 to November 20, 2020" ;
+    :hasXAxisLabel "Cancer" ;
+    :hasYAxisLabel "United States Presidents" .
+
+:DataPoint6928_1 a schema:DataPoint ;
+    rdfs:label "Herbert Hoover" ;
+    :xValue "Herbert Hoover" ;
+    :yValue "92.0"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart6928 .
+
+:DataPoint6928_2 a schema:DataPoint ;
+    rdfs:label "Ulysses S. Grant" ;
+    :xValue "Ulysses S. Grant" ;
+    :yValue "63.0"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart6928 .

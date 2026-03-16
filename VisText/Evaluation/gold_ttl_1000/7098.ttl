@@ -1,0 +1,52 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7098 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Greece : Government revenue and spending from 2014 to 2024 (in billion euros)" ;
+    chart:xAxis ex:x-7098 ;
+    chart:yAxis ex:y-7098 .
+
+ex:x-7098 a chart:Axis ;
+    chart:label "Revenue" .
+
+ex:y-7098 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7098-1 a chart:Series .
+
+ex:mark-7098-1-1 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "Year" ;
+    chart:value "96.93"^^xsd:decimal .
+
+ex:mark-7098-1-2 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2024*" ;
+    chart:value "96.14"^^xsd:decimal .
+
+ex:mark-7098-1-3 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2023*" ;
+    chart:value "94.39"^^xsd:decimal .
+
+ex:mark-7098-1-4 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2022*" ;
+    chart:value "92.87"^^xsd:decimal .
+
+ex:mark-7098-1-5 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2021*" ;
+    chart:value "91.31"^^xsd:decimal .
+
+ex:mark-7098-1-6 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2020*" ;
+    chart:value "90.66"^^xsd:decimal .
+
+ex:mark-7098-1-7 a chart:DataPoint ;
+    chart:series ex:series-7098-1 ;
+    chart:category "2019*" ;
+    chart:value "88.06"^^xsd:decimal .

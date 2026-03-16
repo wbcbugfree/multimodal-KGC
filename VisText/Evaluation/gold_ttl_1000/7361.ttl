@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7361 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Forecasted global oil demand due to the coronavirus pandemic in each month from 2020 to 2021 , by region (in 1,000 barrels per day)" ;
+    chart:xAxis ex:x-7361 ;
+    chart:yAxis ex:y-7361 .
+
+ex:x-7361 a chart:Axis ;
+    chart:label "Rest of the world while the y-axis plots East Asia" .
+
+ex:y-7361 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7361-1 a chart:Series .
+
+ex:mark-7361-1-1 a chart:DataPoint ;
+    chart:series ex:series-7361-1 ;
+    chart:category "of the world East Asia" ;
+    chart:value "40500"^^xsd:decimal .

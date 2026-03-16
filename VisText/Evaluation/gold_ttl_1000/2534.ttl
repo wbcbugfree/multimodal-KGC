@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2534 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Generation of non-hydro renewable energy in the U.S. from 2007 to 2019 (in terawatt hours)" ;
+    chart:xAxis ex:x-2534 ;
+    chart:yAxis ex:y-2534 .
+
+ex:x-2534 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-2534 a chart:Axis ;
+    chart:label "Generation in terawatt hours" .
+
+ex:series-2534-1 a chart:Series .
+
+ex:mark-2534-1-1 a chart:DataPoint ;
+    chart:series ex:series-2534-1 ;
+    chart:category "2019*" ;
+    chart:value "486"^^xsd:decimal .

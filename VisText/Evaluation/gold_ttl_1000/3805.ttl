@@ -1,0 +1,72 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3805 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Investment in travel and tourism in selected countries in the Caribbean in 2017 (in billion U.S. dollars)" ;
+    chart:xAxis ex:x-3805 ;
+    chart:yAxis ex:y-3805 .
+
+ex:x-3805 a chart:Axis ;
+    chart:label "Country" .
+
+ex:y-3805 a chart:Axis ;
+    chart:label "Investment in billion U" .
+
+ex:series-3805-1 a chart:Series .
+
+ex:mark-3805-1-1 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Investment in billion U.S. dollars Bahamas" ;
+    chart:value "0.4"^^xsd:decimal .
+
+ex:mark-3805-1-2 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Trinidad and Tobago" ;
+    chart:value "0.4"^^xsd:decimal .
+
+ex:mark-3805-1-3 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Caribbean average" ;
+    chart:value "0.3"^^xsd:decimal .
+
+ex:mark-3805-1-4 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Aruba" ;
+    chart:value "0.2"^^xsd:decimal .
+
+ex:mark-3805-1-5 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Antigua and Barbuda" ;
+    chart:value "0.2"^^xsd:decimal .
+
+ex:mark-3805-1-6 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Martinique" ;
+    chart:value "0.1"^^xsd:decimal .
+
+ex:mark-3805-1-7 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "St Lucia" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-3805-1-8 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "St Kitts and Nevis" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-3805-1-9 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Bermuda" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-3805-1-10 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Grenada" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-3805-1-11 a chart:DataPoint ;
+    chart:series ex:series-3805-1 ;
+    chart:category "Anguilla" ;
+    chart:value "0.01"^^xsd:decimal .

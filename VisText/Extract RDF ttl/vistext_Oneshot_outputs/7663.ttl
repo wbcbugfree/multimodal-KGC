@@ -1,0 +1,46 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart7663 a schema:LineChart ;
+    schema:title "Median total income of senior couple families in Canada from 2000 to 2018 , by age group (in Canadian dollars)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "55 to 64 years" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "120000"^^xsd:decimal .
+
+:DataPoint7663_1 a schema:DataPoint ;
+    :belongsToChart :Chart7663 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "60000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint7663_2 a schema:DataPoint ;
+    :belongsToChart :Chart7663 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "65000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint7663_3 a schema:DataPoint ;
+    :belongsToChart :Chart7663 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "82000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint7663_4 a schema:DataPoint ;
+    :belongsToChart :Chart7663 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "95000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint7663_5 a schema:DataPoint ;
+    :belongsToChart :Chart7663 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "103000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

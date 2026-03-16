@@ -1,0 +1,82 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1894 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Share of people using the internet to pay bills or shop something in the past year in Singapore in 2017 , by type of population" ;
+    chart:xAxis ex:x-1894 ;
+    chart:yAxis ex:y-1894 .
+
+ex:x-1894 a chart:Axis ;
+    chart:label "Share of respondents" .
+
+ex:y-1894 a chart:Axis ;
+    chart:label "Response" .
+
+ex:series-1894-1 a chart:Series .
+
+ex:mark-1894-1-1 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Richest" ;
+    chart:value "60"^^xsd:decimal .
+
+ex:mark-1894-1-2 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "(income)" ;
+    chart:value "0.71"^^xsd:decimal .
+
+ex:mark-1894-1-3 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "In labor" ;
+    chart:value "0.66"^^xsd:decimal .
+
+ex:mark-1894-1-4 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Secondary education or less" ;
+    chart:value "0.58"^^xsd:decimal .
+
+ex:mark-1894-1-5 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Adults" ;
+    chart:value "25"^^xsd:decimal .
+
+ex:mark-1894-1-6 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "years and older)" ;
+    chart:value "0.57"^^xsd:decimal .
+
+ex:mark-1894-1-7 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Women" ;
+    chart:value "0.57"^^xsd:decimal .
+
+ex:mark-1894-1-8 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Total" ;
+    chart:value "0.56"^^xsd:decimal .
+
+ex:mark-1894-1-9 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Men" ;
+    chart:value "0.49"^^xsd:decimal .
+
+ex:mark-1894-1-10 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Young adults (15-24 years)" ;
+    chart:value "0.33"^^xsd:decimal .
+
+ex:mark-1894-1-11 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Poorest" ;
+    chart:value "40"^^xsd:decimal .
+
+ex:mark-1894-1-12 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "(income)" ;
+    chart:value "0.27"^^xsd:decimal .
+
+ex:mark-1894-1-13 a chart:DataPoint ;
+    chart:series ex:series-1894-1 ;
+    chart:category "Out of labor" ;
+    chart:value "0.17"^^xsd:decimal .

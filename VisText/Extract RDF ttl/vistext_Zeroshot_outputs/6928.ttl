@@ -1,0 +1,37 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6928 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-6928 ;
+    chart:yAxis ex:y-6928 ;
+    chart:title "Length of life and cause of death of United States Presidents from 1799 to November 20, 2020" .
+
+ex:x-6928 a chart:Axis ;
+    chart:label "Cancer" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "100" .
+
+ex:y-6928 a chart:Axis ;
+    chart:label "United States Presidents" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-6928-1 a chart:Series ;
+    chart:seriesName "Herbert Hoover" .
+
+ex:series-6928-2 a chart:Series ;
+    chart:seriesName "Ulysses S. Grant" .
+
+ex:mark-6928-1-1 a chart:Bar ;
+    chart:series ex:series-6928-1 ;
+    chart:category "Herbert Hoover" ;
+    chart:value "92"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-6928-2-1 a chart:Bar ;
+    chart:series ex:series-6928-2 ;
+    chart:category "Ulysses S. Grant" ;
+    chart:value "66"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

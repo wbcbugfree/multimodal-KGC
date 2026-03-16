@@ -1,0 +1,125 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/username> a d2g:Process, d2g:Node ;
+    rdfs:label "Username" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/password> a d2g:Process, d2g:Node ;
+    rdfs:label "Password" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/credentials_check> a d2g:Decision, d2g:Node ;
+    rdfs:label "Username && Password correspond to the ones in database?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/enter_id_password> a d2g:Process, d2g:Node ;
+    rdfs:label "Enter ID and password" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/invalid_credentials> a d2g:Process, d2g:Node ;
+    rdfs:label "\"Invalid credentials\"" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/user_blocked_check> a d2g:Decision, d2g:Node ;
+    rdfs:label "Is User_ID blocked?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/forbidden> a d2g:Process, d2g:Node ;
+    rdfs:label "\"403 Forbidden\"" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/login_successfully> a d2g:Process, d2g:Node ;
+    rdfs:label "Login successfully" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/end> a d2g:Terminator, d2g:Node ;
+    rdfs:label "End" ;
+    d2g:shape d2g:EndEvent .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/username> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
+
+<http://example.org/diagram/diagram/edge/e16003> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/password> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/password> .
+
+<http://example.org/diagram/diagram/edge/e59436> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/credentials_check> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/credentials_check> .
+
+<http://example.org/diagram/diagram/edge/e45779> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/enter_id_password> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/enter_id_password> .
+
+<http://example.org/diagram/diagram/edge/e95311> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/invalid_credentials> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/invalid_credentials> .
+
+<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/username> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
+
+<http://example.org/diagram/diagram/edge/e92468> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/user_blocked_check> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/user_blocked_check> .
+
+<http://example.org/diagram/diagram/edge/e45612> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/forbidden> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/forbidden> .
+
+<http://example.org/diagram/diagram/edge/e44719> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/login_successfully> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/login_successfully> .
+
+<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/username> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
+
+<http://example.org/diagram/diagram/edge/e95726> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/end> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/end> .

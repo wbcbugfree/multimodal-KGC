@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7010 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Length of time respondents think the coronavirus (COVID-19) outbreak will last in their country , worldwide as of March 12 , 2020 , by country" ;
+    chart:xAxis ex:x-7010 ;
+    chart:yAxis ex:y-7010 .
+
+ex:x-7010 a chart:Axis ;
+    chart:label "Longer" .
+
+ex:y-7010 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7010-1 a chart:Series .
+
+ex:mark-7010-1-1 a chart:DataPoint ;
+    chart:series ex:series-7010-1 ;
+    chart:category "than a year 4-5 months" ;
+    chart:value "0.04"^^xsd:decimal .

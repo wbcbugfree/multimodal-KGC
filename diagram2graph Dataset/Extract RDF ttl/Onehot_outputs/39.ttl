@@ -1,0 +1,51 @@
+@prefix d2g:  <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Decision, d2g:Node ;
+    rdfs:label "Object Detected" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
+    rdfs:label "Drive Forwards" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
+    rdfs:label "Turn Robot" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/edge/12> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/edge/24> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/edge/32> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/42> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/3> .
+<http://example.org/diagram/diagram/node/2> d2g:branches <http://example.org/diagram/diagram/node/4> .
+<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/2> .
+<http://example.org/diagram/diagram/node/4> d2g:follows <http://example.org/diagram/diagram/node/2> .

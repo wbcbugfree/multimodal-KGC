@@ -1,0 +1,64 @@
+@prefix : <http://example.org/chart-data/3107/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Most viewed YouTube video categories of male Millennial users in the United States as of April 2016" ;
+    :hasXAxisLabel "Response is measured as a categorical scale starting at Comedy and ending at Technology" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Comedy" ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Education and reference" ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Health and fitness" ;
+    :y "0.03"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Hobbies" ;
+    :y "0.03"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Movies and TV" ;
+    :y "0.12"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Music" ;
+    :y "0.15"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Other" ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Share of views Gaming" ;
+    :y "0.51"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Shopping" ;
+    :y "0.01"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Sports" ;
+    :y "0.05"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :ResponseIsMeasuredAsACategoricalScaleStartingAtComedyAndEndingAtTechnology ;
+    rdfs:label "Technology" ;
+    :y "0.04"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

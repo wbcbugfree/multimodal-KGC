@@ -1,0 +1,69 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1509 a schema:LineChart ;
+    schema:title "Suncor Energy 's earnings per share from 2010 to 2019 (in Canadian dollars)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Earnings per share in Canadian dollars" .
+
+:DataPoint1509_1 :belongsToChart :Chart1509 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "2.4"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_2 :belongsToChart :Chart1509 ;
+    rdfs:label "2011" ;
+    :xValue "2011" ;
+    :yValue "2.6"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_3 :belongsToChart :Chart1509 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "1.8"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_4 :belongsToChart :Chart1509 ;
+    rdfs:label "2013" ;
+    :xValue "2013" ;
+    :yValue "2.5"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_5 :belongsToChart :Chart1509 ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "-0.8"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_6 :belongsToChart :Chart1509 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "0.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_7 :belongsToChart :Chart1509 ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "2.6"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_8 :belongsToChart :Chart1509 ;
+    rdfs:label "2017" ;
+    :xValue "2017" ;
+    :yValue "1.8"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_9 :belongsToChart :Chart1509 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "1.9"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint1509_10 :belongsToChart :Chart1509 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "1.7"^^xsd:decimal ;
+    :valueEstimated "true" .

@@ -1,0 +1,54 @@
+@prefix : <http://example.org/chart-data/6089/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Which , if any , of the following measures have you taken i...ally to protect yourself from the Coronavirus (COVID-19) ?" ;
+    :hasXAxisLabel "Feb" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Feb ;
+    rdfs:label "Avoid consumption of raw or uncooke..." ;
+    :y "0.01"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Feb ;
+    rdfs:label "Avoid crowded public places" ;
+    :y "0.35"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Feb ;
+    rdfs:label "Avoid going to work" ;
+    :y "0.09"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Feb ;
+    rdfs:label "Avoid physical contact with tourist..." ;
+    :y "0.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Feb ;
+    rdfs:label "Improve personal hygiene (e.g. wash..." ;
+    :y "0.14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Feb ;
+    rdfs:label "Refrain from touching objects in pu..." ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Feb ;
+    rdfs:label "Response" ;
+    :y "0.14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Feb ;
+    rdfs:label "to Mar" ;
+    :y "1"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Feb ;
+    rdfs:label "Wear a face mask in public places" ;
+    :y "0.54"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

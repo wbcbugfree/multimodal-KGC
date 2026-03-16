@@ -1,0 +1,44 @@
+@prefix : <http://example.org/chart-data/6270/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Portugal : Government revenue and spending from 2014 to 2024 (in billion euros)" ;
+    :hasXAxisLabel "Spending" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Spending ;
+    rdfs:label "2019*" ;
+    :y "88.63"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Spending ;
+    rdfs:label "2020*" ;
+    :y "91.39"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Spending ;
+    rdfs:label "2021*" ;
+    :y "93.69"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Spending ;
+    rdfs:label "2022*" ;
+    :y "96.11"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Spending ;
+    rdfs:label "2023*" ;
+    :y "98.74"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Spending ;
+    rdfs:label "2024*" ;
+    :y "101.61"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Spending ;
+    rdfs:label "Year" ;
+    :y "104.29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

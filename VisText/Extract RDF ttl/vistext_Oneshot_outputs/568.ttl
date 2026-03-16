@@ -1,0 +1,47 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart568 a schema:LineChart ;
+    schema:title "Number of motor vehicles produced by Fiat worldwide from 2006 to 2016 (in 1,000s units)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Production in thousand units" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "5000"^^xsd:decimal .
+
+:DataPoint568_1 :belongsToChart :Chart568 ;
+    rdfs:label "2006" ;
+    :xValue "2006" ;
+    :yValue "2700"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint568_2 :belongsToChart :Chart568 ;
+    rdfs:label "2008" ;
+    :xValue "2008" ;
+    :yValue "3100"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint568_3 :belongsToChart :Chart568 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "2850"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint568_4 :belongsToChart :Chart568 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "2450"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint568_5 :belongsToChart :Chart568 ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "5100"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint568_6 :belongsToChart :Chart568 ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "5250"^^xsd:decimal ;
+    :valueEstimated "true" .

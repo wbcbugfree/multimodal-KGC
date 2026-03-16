@@ -1,0 +1,46 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart3752 a schema:LineChart ;
+    schema:title "Consumer price index (CPI) of actual rentals for housing in South Africa from March 2019 to March 2020" ;
+    :hasXAxisLabel "Month" ;
+    :hasYAxisLabel "Consumer price index (Dec 2016 = 100)" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "120"^^xsd:decimal .
+
+:DataPoint3752_1 a :DataPoint ;
+    :belongsToChart :Chart3752 ;
+    rdfs:label "April 2019" ;
+    :xValue "April" ;
+    :yValue "112.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3752_2 a :DataPoint ;
+    :belongsToChart :Chart3752 ;
+    rdfs:label "July 2019" ;
+    :xValue "July" ;
+    :yValue "113.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3752_3 a :DataPoint ;
+    :belongsToChart :Chart3752 ;
+    rdfs:label "October 2019" ;
+    :xValue "October" ;
+    :yValue "113.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3752_4 a :DataPoint ;
+    :belongsToChart :Chart3752 ;
+    rdfs:label "January 2020" ;
+    :xValue "2020" ;
+    :yValue "114.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3752_5 a :DataPoint ;
+    :belongsToChart :Chart3752 ;
+    rdfs:label "March 2020" ;
+    :xValue "March 2020" ;
+    :yValue "114.2"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

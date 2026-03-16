@@ -1,0 +1,94 @@
+@prefix : <http://example.org/chart-data/1170/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Donations made to charity in the U.S. from 2011 to 2013 , by channel used" ;
+    :hasXAxisLabel "Share" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Share ;
+    rdfs:label "Checkout donations" ;
+    :y "0.4"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Share ;
+    rdfs:label "Door to door*" ;
+    :y "0.08"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Share ;
+    rdfs:label "Email*" ;
+    :y "0.11"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Share ;
+    rdfs:label "Honor/tribute gift" ;
+    :y "0.32"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Share ;
+    rdfs:label "Mailed check/credit card*" ;
+    :y "0.25"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Share ;
+    rdfs:label "Mobile text" ;
+    :y "0.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Share ;
+    rdfs:label "of respondents Channel" ;
+    :y "0.5"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Share ;
+    rdfs:label "Online ad*" ;
+    :y "0.05"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Share ;
+    rdfs:label "Online donation" ;
+    :y "0.35"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Share ;
+    rdfs:label "Phone" ;
+    :y "0.08"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Share ;
+    rdfs:label "Pledge" ;
+    :y "0.32"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Share ;
+    rdfs:label "Purchase of proceeds" ;
+    :y "0.39"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Share ;
+    rdfs:label "Radio/TV*" ;
+    :y "0.02"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :Share ;
+    rdfs:label "Social netowrking site" ;
+    :y "0.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint15 a :Share ;
+    rdfs:label "Street canvassing*" ;
+    :y "0.21"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint16 a :Share ;
+    rdfs:label "Third Party Vendor*" ;
+    :y "0.15"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint17 a :Share ;
+    rdfs:label "Will/planned gift" ;
+    :y "0.05"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

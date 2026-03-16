@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-281 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Total regular season home attendance of the NFL Miami Dolphins franchise from 2006 to 2019" ;
+    chart:xAxis ex:x-281 ;
+    chart:yAxis ex:y-281 .
+
+ex:x-281 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-281 a chart:Axis ;
+    chart:label "" .
+
+ex:series-281-1 a chart:Series .
+
+ex:mark-281-1-1 a chart:DataPoint ;
+    chart:series ex:series-281-1 ;
+    chart:category "Home attendance" ;
+    chart:value "2019"^^xsd:decimal .
+
+ex:mark-281-1-2 a chart:DataPoint ;
+    chart:series ex:series-281-1 ;
+    chart:category "2015*" ;
+    chart:value "453562"^^xsd:decimal .

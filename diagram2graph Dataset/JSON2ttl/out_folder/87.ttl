@@ -1,0 +1,125 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/begin> a d2g:Start, d2g:Node ;
+    rdfs:label "Begin" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/edit_video> a d2g:Process, d2g:Node ;
+    rdfs:label "Edit video" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/smaller_than_2gb> a d2g:Decision, d2g:Node ;
+    rdfs:label "Smaller than 2GB?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/click_to_upload> a d2g:Process, d2g:Node ;
+    rdfs:label "Click to upload" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/have_account_already> a d2g:Decision, d2g:Node ;
+    rdfs:label "Have an account already?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/register> a d2g:Process, d2g:Node ;
+    rdfs:label "Register" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/login> a d2g:Process, d2g:Node ;
+    rdfs:label "Login" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/find_on_computer> a d2g:Process, d2g:Node ;
+    rdfs:label "Find on computer" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/add_description_and_tags> a d2g:Process, d2g:Node ;
+    rdfs:label "Add description and tags" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/stop> a d2g:Terminator, d2g:Node ;
+    rdfs:label "Stop" ;
+    d2g:shape d2g:EndEvent .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/beginedit_video> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/begin> ;
+    d2g:target <http://example.org/diagram/diagram/node/edit_video> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/begin> d2g:follows <http://example.org/diagram/diagram/node/edit_video> .
+
+<http://example.org/diagram/diagram/edge/edit_videosmaller_than_2gb> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/edit_video> ;
+    d2g:target <http://example.org/diagram/diagram/node/smaller_than_2gb> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/edit_video> d2g:follows <http://example.org/diagram/diagram/node/smaller_than_2gb> .
+
+<http://example.org/diagram/diagram/edge/smaller_than_2gbclick_to_upload> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/smaller_than_2gb> ;
+    d2g:target <http://example.org/diagram/diagram/node/click_to_upload> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "YES" .
+
+<http://example.org/diagram/diagram/node/smaller_than_2gb> d2g:depends_on <http://example.org/diagram/diagram/node/click_to_upload> .
+
+<http://example.org/diagram/diagram/edge/smaller_than_2gbedit_video> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/smaller_than_2gb> ;
+    d2g:target <http://example.org/diagram/diagram/node/edit_video> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "NO" .
+
+<http://example.org/diagram/diagram/node/smaller_than_2gb> d2g:depends_on <http://example.org/diagram/diagram/node/edit_video> .
+
+<http://example.org/diagram/diagram/edge/click_to_uploadhave_account_already> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/click_to_upload> ;
+    d2g:target <http://example.org/diagram/diagram/node/have_account_already> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/click_to_upload> d2g:follows <http://example.org/diagram/diagram/node/have_account_already> .
+
+<http://example.org/diagram/diagram/edge/have_account_alreadyregister> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/have_account_already> ;
+    d2g:target <http://example.org/diagram/diagram/node/register> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "NO" .
+
+<http://example.org/diagram/diagram/node/have_account_already> d2g:depends_on <http://example.org/diagram/diagram/node/register> .
+
+<http://example.org/diagram/diagram/edge/have_account_alreadylogin> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/have_account_already> ;
+    d2g:target <http://example.org/diagram/diagram/node/login> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "YES" .
+
+<http://example.org/diagram/diagram/node/have_account_already> d2g:depends_on <http://example.org/diagram/diagram/node/login> .
+
+<http://example.org/diagram/diagram/edge/registerlogin> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/register> ;
+    d2g:target <http://example.org/diagram/diagram/node/login> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/register> d2g:follows <http://example.org/diagram/diagram/node/login> .
+
+<http://example.org/diagram/diagram/edge/loginfind_on_computer> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/login> ;
+    d2g:target <http://example.org/diagram/diagram/node/find_on_computer> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/login> d2g:follows <http://example.org/diagram/diagram/node/find_on_computer> .
+
+<http://example.org/diagram/diagram/edge/find_on_computeradd_description_and_tags> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/find_on_computer> ;
+    d2g:target <http://example.org/diagram/diagram/node/add_description_and_tags> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/find_on_computer> d2g:follows <http://example.org/diagram/diagram/node/add_description_and_tags> .
+
+<http://example.org/diagram/diagram/edge/add_description_and_tagsstop> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/add_description_and_tags> ;
+    d2g:target <http://example.org/diagram/diagram/node/stop> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/add_description_and_tags> d2g:follows <http://example.org/diagram/diagram/node/stop> .

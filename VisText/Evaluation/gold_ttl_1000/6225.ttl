@@ -1,0 +1,72 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6225 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average price of diesel fuel in France between January 2013 and December 2018 (in euros per liter)" ;
+    chart:xAxis ex:x-6225 ;
+    chart:yAxis ex:y-6225 .
+
+ex:x-6225 a chart:Axis ;
+    chart:label "2016 while the y-axis shows Month" .
+
+ex:y-6225 a chart:Axis ;
+    chart:label "Month" .
+
+ex:series-6225-1 a chart:Series .
+
+ex:mark-6225-1-1 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Dec" ;
+    chart:value "1.24"^^xsd:decimal .
+
+ex:mark-6225-1-2 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Nov" ;
+    chart:value "1.25"^^xsd:decimal .
+
+ex:mark-6225-1-3 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Oct" ;
+    chart:value "1.19"^^xsd:decimal .
+
+ex:mark-6225-1-4 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Sep" ;
+    chart:value "1.16"^^xsd:decimal .
+
+ex:mark-6225-1-5 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Aug" ;
+    chart:value "1.21"^^xsd:decimal .
+
+ex:mark-6225-1-6 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Jul" ;
+    chart:value "1.21"^^xsd:decimal .
+
+ex:mark-6225-1-7 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Jun" ;
+    chart:value "1.07"^^xsd:decimal .
+
+ex:mark-6225-1-8 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "May" ;
+    chart:value "1.28"^^xsd:decimal .
+
+ex:mark-6225-1-9 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Apr" ;
+    chart:value "1.13"^^xsd:decimal .
+
+ex:mark-6225-1-10 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Mar" ;
+    chart:value "1.08"^^xsd:decimal .
+
+ex:mark-6225-1-11 a chart:DataPoint ;
+    chart:series ex:series-6225-1 ;
+    chart:category "Feb" ;
+    chart:value "1.1"^^xsd:decimal .

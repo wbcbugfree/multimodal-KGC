@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/389/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Leading 10 U.S. companies based on medical device revenue in 2019 (in billion U.S. dollars)" ;
+    :hasXAxisLabel "Revenue" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Revenue ;
+    rdfs:label "Abbott Laboratories" ;
+    :y "11.36"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Revenue ;
+    rdfs:label "Baxter International Inc." ;
+    :y "10.65"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Revenue ;
+    rdfs:label "Becton Dickinson & Co." ;
+    :y "12.23"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Revenue ;
+    rdfs:label "Boston Scientific Corp." ;
+    :y "7.98"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Revenue ;
+    rdfs:label "Cardinal Health" ;
+    :y "14.88"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Revenue ;
+    rdfs:label "General Electric Healthcare**" ;
+    :y "15.63"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Revenue ;
+    rdfs:label "in billion U.S. dollars companies b..." ;
+    :y "30.55"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Revenue ;
+    rdfs:label "Johnson & Johnson Medical Devices &..." ;
+    :y "19.94"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Revenue ;
+    rdfs:label "Medtronic Inc.*" ;
+    :y "25.96"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Revenue ;
+    rdfs:label "Stryker Corp." ;
+    :y "12.99"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,47 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:EnterToTheWebsite .
+
+she:EnterToTheWebsite a skos:Concept ;
+    skos:prefLabel "enter to the website" ;
+    she:leadsTo she:HaveAnAccount .
+
+she:HaveAnAccount a skos:Concept ;
+    skos:prefLabel "have an account" ;
+    she:onYes she:LogIn ;
+    she:onNo she:SignUp .
+
+she:SignUp a skos:Concept ;
+    skos:prefLabel "sign up" ;
+    she:leadsTo she:FillDetails .
+
+she:FillDetails a skos:Concept ;
+    skos:prefLabel "fill details" ;
+    she:leadsTo she:Submit .
+
+she:Submit a skos:Concept ;
+    skos:prefLabel "submit" ;
+    she:leadsTo she:LogIn .
+
+she:LogIn a skos:Concept ;
+    skos:prefLabel "log in" ;
+    she:leadsTo she:EnterEmailAndPassword .
+
+she:EnterEmailAndPassword a skos:Concept ;
+    skos:prefLabel "enter e-mail and password" ;
+    she:leadsTo she:EmailAndPasswordValid .
+
+she:EmailAndPasswordValid a skos:Concept ;
+    skos:prefLabel "e-mail and password valid" ;
+    she:onYes she:Profile ;
+    she:onNo she:LogIn .
+
+she:Profile a skos:Concept ;
+    skos:prefLabel "profile" ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

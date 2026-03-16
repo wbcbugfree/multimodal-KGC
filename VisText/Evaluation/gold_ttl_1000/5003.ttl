@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5003 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Most popular car brands among U.S. physicians as of 2012" ;
+    chart:xAxis ex:x-5003 ;
+    chart:yAxis ex:y-5003 .
+
+ex:x-5003 a chart:Axis ;
+    chart:label "Percentage of respondents" .
+
+ex:y-5003 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5003-1 a chart:Series .
+
+ex:mark-5003-1-1 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "of respondents Response" ;
+    chart:value "16.8"^^xsd:decimal .
+
+ex:mark-5003-1-2 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Toyota" ;
+    chart:value "14.9"^^xsd:decimal .
+
+ex:mark-5003-1-3 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Honda" ;
+    chart:value "7.9"^^xsd:decimal .
+
+ex:mark-5003-1-4 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Lexus" ;
+    chart:value "7.1"^^xsd:decimal .
+
+ex:mark-5003-1-5 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "BMW" ;
+    chart:value "5.3"^^xsd:decimal .
+
+ex:mark-5003-1-6 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Mercedes-Benz" ;
+    chart:value "5.2"^^xsd:decimal .
+
+ex:mark-5003-1-7 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Ford" ;
+    chart:value "4.3"^^xsd:decimal .
+
+ex:mark-5003-1-8 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Nissan" ;
+    chart:value "4.1"^^xsd:decimal .
+
+ex:mark-5003-1-9 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Chevrolet" ;
+    chart:value "3.6"^^xsd:decimal .
+
+ex:mark-5003-1-10 a chart:DataPoint ;
+    chart:series ex:series-5003-1 ;
+    chart:category "Subaru" ;
+    chart:value "3.1"^^xsd:decimal .

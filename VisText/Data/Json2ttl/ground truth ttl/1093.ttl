@@ -1,0 +1,99 @@
+@prefix : <http://example.org/chart-data/1093/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Countries with the highest stillbirth rates in 2009 (per 1,000 births)" ;
+    :hasXAxisLabel "Country" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Country ;
+    rdfs:label "Afghanistan" ;
+    :y "29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Country ;
+    rdfs:label "Bangladesh" ;
+    :y "36"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Country ;
+    rdfs:label "births Pakistan" ;
+    :y "47"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Country ;
+    rdfs:label "Burundi" ;
+    :y "28"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Country ;
+    rdfs:label "Chad" ;
+    :y "29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Country ;
+    rdfs:label "Comoros" ;
+    :y "27"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Country ;
+    rdfs:label "Côte d'Ivoire" ;
+    :y "27"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Country ;
+    rdfs:label "Djibouti" ;
+    :y "34"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Country ;
+    rdfs:label "DR Congo" ;
+    :y "29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Country ;
+    rdfs:label "Guinea-Bissau" ;
+    :y "30"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Country ;
+    rdfs:label "Liberia" ;
+    :y "27"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Country ;
+    rdfs:label "Mauretania" ;
+    :y "27"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Country ;
+    rdfs:label "Mozambique" ;
+    :y "28"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :Country ;
+    rdfs:label "Nigeria" ;
+    :y "42"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint15 a :Country ;
+    rdfs:label "Rate per" ;
+    :y "1000"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint16 a :Country ;
+    rdfs:label "Senegal" ;
+    :y "34"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint17 a :Country ;
+    rdfs:label "Sierra Leone" ;
+    :y "30"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint18 a :Country ;
+    rdfs:label "Somalia" ;
+    :y "30"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

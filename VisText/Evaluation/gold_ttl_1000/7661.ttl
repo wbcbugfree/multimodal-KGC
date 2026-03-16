@@ -1,0 +1,17 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7661 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Migration figures of Spanish people leaving or returning to Spain from 2010 to 2019" ;
+    chart:xAxis ex:x-7661 ;
+    chart:yAxis ex:y-7661 .
+
+ex:x-7661 a chart:Axis ;
+    chart:label "Inflow while the y-axis shows Year" .
+
+ex:y-7661 a chart:Axis ;
+    chart:label "Year" .
+
+ex:series-7661-1 a chart:Series .

@@ -1,0 +1,51 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3295 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Producer price index of metal cutting machine tools in the U.S. from 1990 to 2010" ;
+    chart:xAxis ex:x-3295 ;
+    chart:yAxis ex:y-3295 .
+
+ex:x-3295 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "1990" ;
+    chart:scaleMax "2010" .
+
+ex:y-3295 a chart:Axis ;
+    chart:label "Producer price index" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "175" .
+
+ex:series-3295-1 a chart:Series .
+
+ex:point-3295-1-1 a chart:Point ;
+    chart:series ex:series-3295-1 ;
+    chart:xVal "1990" ;
+    chart:yVal "130"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-3295-1-2 a chart:Point ;
+    chart:series ex:series-3295-1 ;
+    chart:xVal "1995" ;
+    chart:yVal "145"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-3295-1-3 a chart:Point ;
+    chart:series ex:series-3295-1 ;
+    chart:xVal "2000" ;
+    chart:yVal "155"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-3295-1-4 a chart:Point ;
+    chart:series ex:series-3295-1 ;
+    chart:xVal "2005" ;
+    chart:yVal "150"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-3295-1-5 a chart:Point ;
+    chart:series ex:series-3295-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "170"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

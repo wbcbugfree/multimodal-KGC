@@ -1,0 +1,53 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart7209 a schema:LineChart ;
+    schema:title "Number of governors in the U.S. by political party affiliation from 1990 to 2019" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Republican" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "35"^^xsd:decimal .
+
+:DataPoint7209_1 :belongsToChart :Chart7209 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "21.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_2 :belongsToChart :Chart7209 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "29.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_3 :belongsToChart :Chart7209 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "29.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_4 :belongsToChart :Chart7209 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "26.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_5 :belongsToChart :Chart7209 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "22.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_6 :belongsToChart :Chart7209 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "30.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint7209_7 :belongsToChart :Chart7209 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "28.0"^^xsd:decimal ;
+    :valueEstimated "true" .

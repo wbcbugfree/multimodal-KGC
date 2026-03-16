@@ -1,0 +1,92 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-420 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average consumer price for natural gas in the United States from winter of 2005/06 to winter of 2020/21 (in U.S. dollars per 1,000 cubic feet)" ;
+    chart:xAxis ex:x-420 ;
+    chart:yAxis ex:y-420 .
+
+ex:x-420 a chart:Axis ;
+    chart:label "Price in U" .
+
+ex:y-420 a chart:Axis ;
+    chart:label "Year" .
+
+ex:series-420-1 a chart:Series .
+
+ex:mark-420-1-1 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2020/21**" ;
+    chart:value "9.73"^^xsd:decimal .
+
+ex:mark-420-1-2 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2019/20" ;
+    chart:value "9.72"^^xsd:decimal .
+
+ex:mark-420-1-3 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2018/19" ;
+    chart:value "9.82"^^xsd:decimal .
+
+ex:mark-420-1-4 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2017/18" ;
+    chart:value "10.06"^^xsd:decimal .
+
+ex:mark-420-1-5 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2016/17" ;
+    chart:value "9.28"^^xsd:decimal .
+
+ex:mark-420-1-6 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2015/16" ;
+    chart:value "9.89"^^xsd:decimal .
+
+ex:mark-420-1-7 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2014/15" ;
+    chart:value "9.95"^^xsd:decimal .
+
+ex:mark-420-1-8 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2013/14" ;
+    chart:value "9.71"^^xsd:decimal .
+
+ex:mark-420-1-9 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2012/13" ;
+    chart:value "10.23"^^xsd:decimal .
+
+ex:mark-420-1-10 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2011/12" ;
+    chart:value "10.45"^^xsd:decimal .
+
+ex:mark-420-1-11 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2010/11" ;
+    chart:value "10.83"^^xsd:decimal .
+
+ex:mark-420-1-12 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2009/10" ;
+    chart:value "12.87"^^xsd:decimal .
+
+ex:mark-420-1-13 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2008/09" ;
+    chart:value "12.72"^^xsd:decimal .
+
+ex:mark-420-1-14 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2007/08" ;
+    chart:value "12.35"^^xsd:decimal .
+
+ex:mark-420-1-15 a chart:DataPoint ;
+    chart:series ex:series-420-1 ;
+    chart:category "2006/07" ;
+    chart:value "14.57"^^xsd:decimal .

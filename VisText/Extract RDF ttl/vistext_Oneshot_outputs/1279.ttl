@@ -1,0 +1,53 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1279 a schema:LineChart ;
+    schema:title "Canada : Birth rate from 2008 to 2018 (per 1,000 inhabitants)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Birth rate per thousand population" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "12"^^xsd:decimal .
+
+:DataPoint1279_1 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2008" ;
+    :xValue "2008" ;
+    :yValue "11.1"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1279_2 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "10.9"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1279_3 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "10.7"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1279_4 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "10.6"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1279_5 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "10.4"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1279_6 a :DataPoint ;
+    :belongsToChart :Chart1279 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "10.2"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

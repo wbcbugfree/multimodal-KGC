@@ -1,0 +1,77 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5481 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Oldest living Academy Award winners as of July 2020" ;
+    chart:xAxis ex:x-5481 ;
+    chart:yAxis ex:y-5481 .
+
+ex:x-5481 a chart:Axis ;
+    chart:label "Academy Award winners while the y-axis shows Age" .
+
+ex:y-5481 a chart:Axis ;
+    chart:label "Age" .
+
+ex:series-5481-1 a chart:Series .
+
+ex:mark-5481-1-1 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Walter Mirisch" ;
+    chart:value "99"^^xsd:decimal .
+
+ex:mark-5481-1-2 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Eva Marie Saint" ;
+    chart:value "96"^^xsd:decimal .
+
+ex:mark-5481-1-3 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Alan Bergman" ;
+    chart:value "95"^^xsd:decimal .
+
+ex:mark-5481-1-4 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Lee Grant" ;
+    chart:value "95"^^xsd:decimal .
+
+ex:mark-5481-1-5 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Cloris Leachman" ;
+    chart:value "94"^^xsd:decimal .
+
+ex:mark-5481-1-6 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Mel Brooks" ;
+    chart:value "94"^^xsd:decimal .
+
+ex:mark-5481-1-7 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Marcel Ophüls" ;
+    chart:value "93"^^xsd:decimal .
+
+ex:mark-5481-1-8 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Sidney Poitier" ;
+    chart:value "93"^^xsd:decimal .
+
+ex:mark-5481-1-9 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Burt Bacharach" ;
+    chart:value "92"^^xsd:decimal .
+
+ex:mark-5481-1-10 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "James Ivory" ;
+    chart:value "92"^^xsd:decimal .
+
+ex:mark-5481-1-11 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Estelle Parsons" ;
+    chart:value "92"^^xsd:decimal .
+
+ex:mark-5481-1-12 a chart:DataPoint ;
+    chart:series ex:series-5481-1 ;
+    chart:category "Richard M Sherman" ;
+    chart:value "92"^^xsd:decimal .

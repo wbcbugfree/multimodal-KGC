@@ -1,0 +1,105 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4330 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "How do you typically use your mobile phone to find inspiration or ideas on where to travel ?" ;
+    chart:xAxis ex:x-4330 ;
+    chart:yAxis ex:y-4330 .
+
+ex:x-4330 a chart:Axis ;
+    chart:label "Response" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:y-4330 a chart:Axis ;
+    chart:label "Share of respondents" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.7" .
+
+ex:series-4330-1 a chart:Series .
+
+ex:mark-4330-1-1 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Airbnb.com" ;
+    chart:value    "0.25"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-2 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Ask friends on social media" ;
+    chart:value    "0.18"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-3 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Blogs, articles or stories" ;
+    chart:value    "0.08"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-4 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Digital assistant (Siri, Google No..." ;
+    chart:value    "0.10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-5 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Email travel newsletters" ;
+    chart:value    "0.10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-6 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Map websites or mapping apps" ;
+    chart:value    "0.11"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-7 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Official tourism office website" ;
+    chart:value    "0.17"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-8 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Online travel agency websites" ;
+    chart:value    "0.29"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-9 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Online video (YouTube.com, etc)" ;
+    chart:value    "0.20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-10 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Search engine for general web s..." ;
+    chart:value    "0.68"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-11 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Search engine for images or pho..." ;
+    chart:value    "0.38"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-12 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Social media websites" ;
+    chart:value    "0.35"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-13 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "Travel-related podcasts" ;
+    chart:value    "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4330-1-14 a chart:Bar ;
+    chart:series   ex:series-4330-1 ;
+    chart:category "User review websites" ;
+    chart:value    "0.09"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

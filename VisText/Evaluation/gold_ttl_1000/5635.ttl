@@ -1,0 +1,82 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5635 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Monthly number of unemployed persons in the U.S. from November 2019 to November 2020 (in millions , adjusted)" ;
+    chart:xAxis ex:x-5635 ;
+    chart:yAxis ex:y-5635 .
+
+ex:x-5635 a chart:Axis ;
+    chart:label "Month" .
+
+ex:y-5635 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5635-1 a chart:Series .
+
+ex:mark-5635-1-1 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Number in millions Nov '20" ;
+    chart:value "10.74"^^xsd:decimal .
+
+ex:mark-5635-1-2 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Oct '20" ;
+    chart:value "11.06"^^xsd:decimal .
+
+ex:mark-5635-1-3 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Sep '20" ;
+    chart:value "12.58"^^xsd:decimal .
+
+ex:mark-5635-1-4 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Aug '20" ;
+    chart:value "13.55"^^xsd:decimal .
+
+ex:mark-5635-1-5 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Jul '20" ;
+    chart:value "16.34"^^xsd:decimal .
+
+ex:mark-5635-1-6 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Jun '20" ;
+    chart:value "17.75"^^xsd:decimal .
+
+ex:mark-5635-1-7 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "May '20" ;
+    chart:value "20.99"^^xsd:decimal .
+
+ex:mark-5635-1-8 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Apr '20" ;
+    chart:value "23.08"^^xsd:decimal .
+
+ex:mark-5635-1-9 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Mar '20" ;
+    chart:value "7.14"^^xsd:decimal .
+
+ex:mark-5635-1-10 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Feb '20" ;
+    chart:value "5.79"^^xsd:decimal .
+
+ex:mark-5635-1-11 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Jan '20" ;
+    chart:value "5.89"^^xsd:decimal .
+
+ex:mark-5635-1-12 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Dec '19" ;
+    chart:value "5.75"^^xsd:decimal .
+
+ex:mark-5635-1-13 a chart:DataPoint ;
+    chart:series ex:series-5635-1 ;
+    chart:category "Nov '19" ;
+    chart:value "5.81"^^xsd:decimal .

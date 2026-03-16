@@ -1,0 +1,46 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart3946 a schema:LineChart ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Average haul length in kilometres" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "100"^^xsd:decimal .
+
+:DataPoint3946_1 :belongsToChart :Chart3946 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "70"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3946_2 :belongsToChart :Chart3946 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "85"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3946_3 :belongsToChart :Chart3946 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "95"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3946_4 :belongsToChart :Chart3946 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "90"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3946_5 :belongsToChart :Chart3946 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "98"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3946_6 :belongsToChart :Chart3946 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "102"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

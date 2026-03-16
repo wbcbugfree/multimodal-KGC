@@ -1,0 +1,109 @@
+@prefix d2g:  <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
+    rdfs:label "Begin" ;
+    d2g:shape d2g:TartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
+    rdfs:label "Pre-configuration" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
+    rdfs:label "Input" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
+    rdfs:label "Input Signal Analysis" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/node/5> a d2g:Decision, d2g:Node ;
+    rdfs:label "Input Signal Analysis Finished?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
+    rdfs:label "Update" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/node/7> a d2g:Process, d2g:Node ;
+    rdfs:label "Output Signal Analysis" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/node/8> a d2g:Decision, d2g:Node ;
+    rdfs:label "Output Signal Analysis Finished?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/9> a d2g:Process, d2g:Node ;
+    rdfs:label "Back to work" ;
+    d2g:shape d2g:TaK .
+
+<http://example.org/diagram/diagram/edge/12> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/34> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/45> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/56> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "NO" .
+
+<http://example.org/diagram/diagram/edge/57> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/7> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "YES" .
+
+<http://example.org/diagram/diagram/edge/63> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/78> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/83> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/8> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "NO" .
+
+<http://example.org/diagram/diagram/edge/89> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/8> ;
+    d2g:target <http://example.org/diagram/diagram/node/9> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "YES" .
+
+<http://example.org/diagram/diagram/edge/93> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/9> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/4> .
+<http://example.org/diagram/diagram/node/4> d2g:follows <http://example.org/diagram/diagram/node/5> .
+<http://example.org/diagram/diagram/node/5> d2g:branches <http://example.org/diagram/diagram/node/6> .
+<http://example.org/diagram/diagram/node/5> d2g:branches <http://example.org/diagram/diagram/node/7> .
+<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/3> .
+<http://example.org/diagram/diagram/node/7> d2g:follows <http://example.org/diagram/diagram/node/8> .
+<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/3> .
+<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/9> .
+<http://example.org/diagram/diagram/node/9> d2g:follows <http://example.org/diagram/diagram/node/3> .

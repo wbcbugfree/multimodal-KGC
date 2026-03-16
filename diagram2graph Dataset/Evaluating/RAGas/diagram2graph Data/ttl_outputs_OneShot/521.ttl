@@ -1,0 +1,43 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:follows she:OpenEmail .
+
+she:OpenEmail a skos:Concept ;
+    skos:prefLabel "open email" ;
+    she:follows she:ReadEmail .
+
+she:ReadEmail a skos:Concept ;
+    skos:prefLabel "read email" ;
+    she:follows she:InputStructured .
+
+she:InputStructured a skos:Concept ;
+    skos:prefLabel "input structured?" ;
+    she:hasNoPath she:ProcessManually ;
+    she:hasYesPath she:ExtractData .
+
+she:ProcessManually a skos:Concept ;
+    skos:prefLabel "process manually" ;
+    she:terminatesIn she:End .
+
+she:ExtractData a skos:Concept ;
+    skos:prefLabel "extract data" ;
+    she:follows she:LookupProductDescription .
+
+she:LookupProductDescription a skos:Concept ;
+    skos:prefLabel "lookup product description" ;
+    she:follows she:MatchFound .
+
+she:MatchFound a skos:Concept ;
+    skos:prefLabel "match found?" ;
+    she:hasNoPath she:SendEmailToUpdateFile ;
+    she:hasYesPath she:SendEmailToUpdateFile .
+
+she:SendEmailToUpdateFile a skos:Concept ;
+    skos:prefLabel "send email to update file" ;
+    she:terminatesIn she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

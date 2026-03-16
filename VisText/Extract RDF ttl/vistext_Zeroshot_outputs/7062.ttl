@@ -1,0 +1,76 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7062 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Share of small and medium enterprises (SME) with growth plans for the next12 months in the United Kingdom (UK) as of 2nd quarter 2014 to 2019 , by sector" ;
+    chart:xAxis ex:x-7062 ;
+    chart:yAxis ex:y-7062 .
+
+ex:x-7062 a chart:Axis ;
+    chart:label "Q2 2014" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.7" .
+
+ex:y-7062 a chart:Axis ;
+    chart:label "small and medium enterprises" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-7062-1 a chart:Series ;
+    chart:seriesName "Share of SME with growth plans" .
+
+ex:mark-7062-1-1 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Agriculture" ;
+    chart:value "0.4"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-2 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Construction" ;
+    chart:value "0.38"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-3 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Health" ;
+    chart:value "0.48"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-4 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Hotels and Restaurants" ;
+    chart:value "0.45"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-5 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Manufacturing" ;
+    chart:value "0.58"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-6 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Other Community" ;
+    chart:value "0.62"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-7 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Property/Business Services etc." ;
+    chart:value "0.55"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-8 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Transport" ;
+    chart:value "0.39"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-7062-1-9 a chart:Bar ;
+    chart:series ex:series-7062-1 ;
+    chart:category "Wholesale/Retail" ;
+    chart:value "0.67"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

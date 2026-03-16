@@ -1,0 +1,105 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1965 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Installed power capacity across Jammu and Kashmir in India from financial year 2005 to 2018 (in megawatts)" ;
+    chart:xAxis ex:x-1965 ;
+    chart:yAxis ex:y-1965 .
+
+ex:x-1965 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "FY 2005" ;
+    chart:scaleMax "FY 2018" .
+
+ex:y-1965 a chart:Axis ;
+    chart:label "Installed power capacity in megawatts" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "3500" .
+
+ex:series-1965-1 a chart:Series .
+
+ex:mark-1965-1-1 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2005" ;
+    chart:value "1500"^^xsd:decimal ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:mark-1965-1-2 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2006" ;
+    chart:value "1500"^^xsd:decimal ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:mark-1965-1-3 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2007" ;
+    chart:value "1600"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-4 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2008" ;
+    chart:value "1700"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-5 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2009" ;
+    chart:value "2100"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-6 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2010" ;
+    chart:value "2200"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-7 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2011" ;
+    chart:value "2300"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-8 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2012" ;
+    chart:value "2350"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-9 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2013" ;
+    chart:value "2500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-10 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2014" ;
+    chart:value "2600"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-11 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2015" ;
+    chart:value "2700"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-12 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2016" ;
+    chart:value "3100"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-13 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2017" ;
+    chart:value "3250"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1965-1-14 a chart:Bar ;
+    chart:series ex:series-1965-1 ;
+    chart:category "FY 2018" ;
+    chart:value "3400"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

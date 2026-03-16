@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/5523/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Number of people affected by the world 's major volcanic eruptions from 1900 to 2016" ;
+    :hasXAxisLabel "volcanic" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Volcanic ;
+    rdfs:label "eruption and date Number of victims..." ;
+    :y "9"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Volcanic ;
+    rdfs:label "Volcanic eruption in Comoros (Novem..." ;
+    :y "24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Volcanic ;
+    rdfs:label "Volcanic eruption in Indonesia (Oct..." ;
+    :y "24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Volcanic ;
+    rdfs:label "Volcanic eruption in Nicaragua (Apr..." ;
+    :y "9"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Volcanic ;
+    rdfs:label "Volcanic eruption in Papua New Guin..." ;
+    :y "19"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Volcanic ;
+    rdfs:label "Volcanic eruption in the Philippine..." ;
+    :y "6"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Volcanic ;
+    rdfs:label "Volcano eruption in Ecuador (August" ;
+    :y "14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Volcanic ;
+    rdfs:label "Volcano eruption in Ecuador (August" ;
+    :y "14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Volcanic ;
+    rdfs:label "Volcano eruption in Indonesia" ;
+    :y "1969"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Volcanic ;
+    rdfs:label "Volcano eruption in Indonesia (Apri..." ;
+    :y "5"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,62 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart2854 a schema:LineChart ;
+    schema:title "China 's cotton mill use from 1990 to 2017 (in 1,000 bales)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Mill use in thousand 480-pound bales" ;
+    :xMin "1990"^^xsd:string ;
+    :xMax "2017"^^xsd:string ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "50000"^^xsd:decimal .
+
+:DataPoint2854_1 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "15000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_2 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "14000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_3 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "18000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_4 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "45000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_5 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "32000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_6 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "37000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2854_7 a :Datapoint ;
+    :belongsToChart :Chart2854 ;
+    rdfs:label "2017" ;
+    :xValue "2017" ;
+    :yValue "39000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,35 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:IfCondition .
+
+she:IfCondition a skos:Concept ;
+    skos:prefLabel "if condition" ;
+    she:onTrue she:IfBody ;
+    she:onFalse she:NestedIfCondition .
+
+she:IfBody a skos:Concept ;
+    skos:prefLabel "if body" ;
+    she:leadsTo she:StatementJustBelowIf .
+
+she:NestedIfCondition a skos:Concept ;
+    skos:prefLabel "nested if condition" ;
+    she:onTrue she:NestedIfBody ;
+    she:onFalse she:Pass .
+
+she:NestedIfBody a skos:Concept ;
+    skos:prefLabel "nested if body" ;
+    she:leadsTo she:StatementJustBelowIf .
+
+she:Pass a skos:Concept ;
+    skos:prefLabel "pass" ;
+    she:leadsTo she:StatementJustBelowIf .
+
+she:StatementJustBelowIf a skos:Concept ;
+    skos:prefLabel "statement just below if" ;
+    she:leadsTo she:Exit .
+
+she:Exit a skos:Concept ;
+    skos:prefLabel "exit" .

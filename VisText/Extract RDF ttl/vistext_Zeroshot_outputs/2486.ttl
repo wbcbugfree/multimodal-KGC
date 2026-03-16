@@ -1,0 +1,46 @@
+ex:chart-2486 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:xAxis ex:x-2486 ;
+    chart:yAxis ex:y-2486 .
+
+ex:x-2486 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2018" .
+
+ex:y-2486 a chart:Axis ;
+    chart:label "Consumption in billion U.S. dollars*" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "4" .
+
+ex:series-2486-1 a chart:Series .
+
+ex:point-2486-1-1 a chart:Point ;
+    chart:series ex:series-2486-1 ;
+    chart:xVal "2010" ;
+    chart:yVal 4.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-2486-1-2 a chart:Point ;
+    chart:series ex:series-2486-1 ;
+    chart:xVal "2012" ;
+    chart:yVal 3.5 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2486-1-3 a chart:Point ;
+    chart:series ex:series-2486-1 ;
+    chart:xVal "2014" ;
+    chart:yVal 4.0 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2486-1-4 a chart:Point ;
+    chart:series ex:series-2486-1 ;
+    chart:xVal "2016" ;
+    chart:yVal 3.8 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2486-1-5 a chart:Point ;
+    chart:series ex:series-2486-1 ;
+    chart:xVal "2018" ;
+    chart:yVal 4.0 ;
+    chart:valueEstimated "true"^^xsd:boolean .

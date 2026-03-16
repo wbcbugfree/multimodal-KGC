@@ -1,0 +1,14 @@
+@prefix : <http://example.org/chart-data/7361/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Forecasted global oil demand due to the coronavirus pandemi...h from 2020 to 2021 , by region (in 1,000 barrels per day)" ;
+    :hasXAxisLabel "Rest" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Rest ;
+    rdfs:label "of the world East Asia" ;
+    :y "40500"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

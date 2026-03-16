@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8384 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Per capita consumption of wine and sparkling wine in Germany from 2008 to 2019 (in liters)" ;
+    chart:xAxis ex:x-8384 ;
+    chart:yAxis ex:y-8384 .
+
+ex:x-8384 a chart:Axis ;
+    chart:label "Sparkling wine with a linear scale from 0 to 10" .
+
+ex:y-8384 a chart:Axis ;
+    chart:label "" .
+
+ex:series-8384-1 a chart:Series .
+
+ex:mark-8384-1-1 a chart:DataPoint ;
+    chart:series ex:series-8384-1 ;
+    chart:category "wine Wine" ;
+    chart:value "3.4"^^xsd:decimal .

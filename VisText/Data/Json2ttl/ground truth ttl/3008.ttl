@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/3008/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Public sector expenditure on water supply in the United Kingdom (UK) from 2009/10 to 2019/20 (in million GBP)" ;
+    :hasXAxisLabel "Expenditure in million GBP" ;
+    :hasYAxisLabel "Year" .
+
+:DataPoint1 a :ExpenditureInMillionGBP ;
+    rdfs:label "2010/11" ;
+    :year "1044"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :ExpenditureInMillionGBP ;
+    rdfs:label "2011/12" ;
+    :year "735"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :ExpenditureInMillionGBP ;
+    rdfs:label "2012/13" ;
+    :year "788"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :ExpenditureInMillionGBP ;
+    rdfs:label "2013/14" ;
+    :year "770"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :ExpenditureInMillionGBP ;
+    rdfs:label "2014/15" ;
+    :year "628"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :ExpenditureInMillionGBP ;
+    rdfs:label "2015/16" ;
+    :year "576"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :ExpenditureInMillionGBP ;
+    rdfs:label "2016/17" ;
+    :year "584"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :ExpenditureInMillionGBP ;
+    rdfs:label "2017/18" ;
+    :year "750"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :ExpenditureInMillionGBP ;
+    rdfs:label "2018/19" ;
+    :year "790"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :ExpenditureInMillionGBP ;
+    rdfs:label "2019/20" ;
+    :year "793"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1075 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of hospital beds in Czechia from 2000 to 2018" ;
+    chart:xAxis ex:x-1075 ;
+    chart:yAxis ex:y-1075 .
+
+ex:x-1075 a chart:Axis ;
+    chart:label "Number of hospital beds while the y-axis plots Year" .
+
+ex:y-1075 a chart:Axis ;
+    chart:label "" .
+
+ex:series-1075-1 a chart:Series .
+
+ex:mark-1075-1-1 a chart:DataPoint ;
+    chart:series ex:series-1075-1 ;
+    chart:category "of hospital beds Year" ;
+    chart:value "70351"^^xsd:decimal .
+
+ex:mark-1075-1-2 a chart:DataPoint ;
+    chart:series ex:series-1075-1 ;
+    chart:category "*" ;
+    chart:value "74607"^^xsd:decimal .

@@ -1,0 +1,32 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3220 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Total number of Novartis AG 's full-time employees from 2009 to 2019" ;
+    chart:xAxis ex:x-3220 ;
+    chart:yAxis ex:y-3220 .
+
+ex:x-3220 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-3220 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3220-1 a chart:Series .
+
+ex:mark-3220-1-1 a chart:DataPoint ;
+    chart:series ex:series-3220-1 ;
+    chart:category "Number of employees (full time)" ;
+    chart:value "2009"^^xsd:decimal .
+
+ex:mark-3220-1-2 a chart:DataPoint ;
+    chart:series ex:series-3220-1 ;
+    chart:category "2015**" ;
+    chart:value "118700"^^xsd:decimal .
+
+ex:mark-3220-1-3 a chart:DataPoint ;
+    chart:series ex:series-3220-1 ;
+    chart:category "2019***" ;
+    chart:value "103914"^^xsd:decimal .

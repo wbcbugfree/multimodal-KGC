@@ -1,0 +1,53 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1801 a schema:LineChart ;
+    schema:title "Madagascar : Fertility rate from 2008 to 2018" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Number of children born per woman" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "5"^^xsd:decimal .
+
+:DataPoint1801_1 a schema:DataPoint ;
+    rdfs:label "2008" ;
+    :xValue "2008" ;
+    :yValue "4.9"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .
+
+:DataPoint1801_2 a schema:DataPoint ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "4.7"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .
+
+:DataPoint1801_3 a schema:DataPoint ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "4.5"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .
+
+:DataPoint1801_4 a schema:DataPoint ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "4.3"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .
+
+:DataPoint1801_5 a schema:DataPoint ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "4.1"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .
+
+:DataPoint1801_6 a schema:DataPoint ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "4.0"^^xsd:decimal ;
+    :valueEstimated "true" ;
+    :belongsToChart :Chart1801 .

@@ -1,0 +1,94 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-359 a chart:Chart ;
+    chart:chartType "line" ;
+    chart:title "Sales turnover of shops for do-it-yourself articles in the Netherlands from 2008 to 2019 (as value index)" ;
+    chart:xAxis ex:x-359 ;
+    chart:yAxis ex:y-359 .
+
+ex:x-359 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2008" ;
+    chart:scaleMax "2018" .
+
+ex:y-359 a chart:Axis ;
+    chart:label "Turnover value index (2015=100)" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "140" .
+
+ex:series-359-1 a chart:Series ;
+    chart:seriesName "Sales turnover" .
+
+ex:point-359-1-1 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2008" ;
+    chart:yVal 135.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-2 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2009" ;
+    chart:yVal 118.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-3 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2010" ;
+    chart:yVal 115.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-4 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2011" ;
+    chart:yVal 115.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-5 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2012" ;
+    chart:yVal 98.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-6 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2013" ;
+    chart:yVal 99.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-7 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2014" ;
+    chart:yVal 102.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-8 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2015" ;
+    chart:yVal 107.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-9 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2016" ;
+    chart:yVal 112.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-10 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2017" ;
+    chart:yVal 118.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-11 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2018" ;
+    chart:yVal 123.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-359-1-12 a chart:Point ;
+    chart:series ex:series-359-1 ;
+    chart:xVal "2019" ;
+    chart:yVal 126.0 ;
+    chart:valueEstimated "false"^^xsd:boolean .

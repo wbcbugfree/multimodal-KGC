@@ -1,0 +1,33 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8044 a schema:AreaChart ;
+    schema:title "Average daily cigarette consumption in Great Britain from 2000 to 2016 , by gender (in cigarettes per day)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Women" .
+
+:DataPoint8044_1 :belongsToChart :Chart8044 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "12.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8044_2 :belongsToChart :Chart8044 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "12.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8044_3 :belongsToChart :Chart8044 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "11.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8044_4 :belongsToChart :Chart8044 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "11.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

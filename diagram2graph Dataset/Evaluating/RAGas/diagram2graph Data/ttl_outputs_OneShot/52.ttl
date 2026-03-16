@@ -1,0 +1,26 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:BeginProcess a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:followedBy she:InitializeCountToZero .
+
+she:InitializeCountToZero a skos:Concept ;
+    skos:prefLabel "count = 0" ;
+    she:followedBy she:OutputCount .
+
+she:OutputCount a skos:Concept ;
+    skos:prefLabel "print count" ;
+    she:followedBy she:IncrementCountValue .
+
+she:IncrementCountValue a skos:Concept ;
+    skos:prefLabel "count = count + 1" ;
+    she:followedBy she:CheckCountLessThanTen .
+
+she:CheckCountLessThanTen a skos:Concept ;
+    skos:prefLabel "is count < 10" ;
+    she:ifTrue she:OutputCount ;
+    she:ifFalse she:EndProcess .
+
+she:EndProcess a skos:Concept ;
+    skos:prefLabel "end" .

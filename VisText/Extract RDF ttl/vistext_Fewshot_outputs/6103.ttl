@@ -1,0 +1,79 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6103 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Most popular Brazilian soccer clubs as of June 2020 , by number of social media followers (in 1,000s)" ;
+    chart:xAxis ex:x-6103 ;
+    chart:yAxis ex:y-6103 .
+
+ex:x-6103 a chart:Axis ;
+    chart:label "Soccer clubs" .
+
+ex:y-6103 a chart:Axis ;
+    chart:label "TikTok" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "1000" .
+
+ex:series-6103-1 a chart:Series .
+
+ex:dp-6103-1-1 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Atlético Minas Gerais" ;
+    chart:value "50"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-2 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Chapecoense" ;
+    chart:value "50"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-3 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Corinthians" ;
+    chart:value "270"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-4 a char:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Cruzeiro" ;
+    chart:value "150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-5 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Flamengo" ;
+    chart:value "1000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-6 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Grêmio" ;
+    chart:value "50"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-7 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Palmeiras" ;
+    chart:value "50"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-8 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Santos" ;
+    chart:value "100"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-9 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "São Paulo" ;
+    chart:value "170"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6103-1-10 a chart:DataPoint ;
+    chart:series ex:series-6103-1 ;
+    chart:category "Vasco" ;
+    chart:value "120"^^xsd:decimal ;
+    chart:valueEstimated "true" .

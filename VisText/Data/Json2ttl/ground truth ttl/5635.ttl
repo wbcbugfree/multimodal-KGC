@@ -1,0 +1,74 @@
+@prefix : <http://example.org/chart-data/5635/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Monthly number of unemployed persons in the U.S. from November 2019 to November 2020 (in millions , adjusted)" ;
+    :hasXAxisLabel "Month" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Month ;
+    rdfs:label "Apr '20" ;
+    :y "23.08"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Month ;
+    rdfs:label "Aug '20" ;
+    :y "13.55"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Month ;
+    rdfs:label "Dec '19" ;
+    :y "5.75"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Month ;
+    rdfs:label "Feb '20" ;
+    :y "5.79"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Month ;
+    rdfs:label "Jan '20" ;
+    :y "5.89"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Month ;
+    rdfs:label "Jul '20" ;
+    :y "16.34"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Month ;
+    rdfs:label "Jun '20" ;
+    :y "17.75"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Month ;
+    rdfs:label "Mar '20" ;
+    :y "7.14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Month ;
+    rdfs:label "May '20" ;
+    :y "20.99"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Month ;
+    rdfs:label "Nov '19" ;
+    :y "5.81"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Month ;
+    rdfs:label "Number in millions Nov '20" ;
+    :y "10.74"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Month ;
+    rdfs:label "Oct '20" ;
+    :y "11.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Month ;
+    rdfs:label "Sep '20" ;
+    :y "12.58"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

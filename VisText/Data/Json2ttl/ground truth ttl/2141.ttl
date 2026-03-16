@@ -1,0 +1,34 @@
+@prefix : <http://example.org/chart-data/2141/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "B2C e-commerce as percentage of GDP in Japan from 2009 to 2018" ;
+    :hasXAxisLabel "Percentage of gross domestic product is plotted as a linear scale from 0" ;
+    :hasYAxisLabel "Response" .
+
+:DataPoint1 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
+    rdfs:label "2014*" ;
+    :response "0.0101"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
+    rdfs:label "2015*" ;
+    :response "0.0105"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
+    rdfs:label "2016*" ;
+    :response "0.0123"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
+    rdfs:label "2017*" ;
+    :response "0.0145"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
+    rdfs:label "2018*" ;
+    :response "0.0159"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

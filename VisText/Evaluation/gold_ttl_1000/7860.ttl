@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7860 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Crime clearance rate in the United States in 2019 , by region" ;
+    chart:xAxis ex:x-7860 ;
+    chart:yAxis ex:y-7860 .
+
+ex:x-7860 a chart:Axis ;
+    chart:label "West" .
+
+ex:y-7860 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7860-1 a chart:Series .
+
+ex:mark-7860-1-1 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "crimes" ;
+    chart:value "0.461"^^xsd:decimal .
+
+ex:mark-7860-1-2 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Violent crime (total)" ;
+    chart:value "0.637"^^xsd:decimal .
+
+ex:mark-7860-1-3 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Murder and nonnegligent manslaughter" ;
+    chart:value "0.304"^^xsd:decimal .
+
+ex:mark-7860-1-4 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Rape" ;
+    chart:value "0.313"^^xsd:decimal .
+
+ex:mark-7860-1-5 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Robbery" ;
+    chart:value "0.544"^^xsd:decimal .
+
+ex:mark-7860-1-6 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Aggravated assault" ;
+    chart:value "0.136"^^xsd:decimal .
+
+ex:mark-7860-1-7 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Property crime (total)" ;
+    chart:value "0.124"^^xsd:decimal .
+
+ex:mark-7860-1-8 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Burglary" ;
+    chart:value "0.143"^^xsd:decimal .
+
+ex:mark-7860-1-9 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Larceny-theft" ;
+    chart:value "0.105"^^xsd:decimal .
+
+ex:mark-7860-1-10 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Motor vehicle theft" ;
+    chart:value "0.23"^^xsd:decimal .

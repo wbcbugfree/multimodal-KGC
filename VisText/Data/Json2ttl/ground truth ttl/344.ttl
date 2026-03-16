@@ -1,0 +1,79 @@
+@prefix : <http://example.org/chart-data/344/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Revenue of the New York Islanders from 2005/06 to 2018/19 (in million U.S. dollars)" ;
+    :hasXAxisLabel "Revenue" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Revenue ;
+    rdfs:label "2006/07" ;
+    :y "56"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Revenue ;
+    rdfs:label "2007/08" ;
+    :y "60"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Revenue ;
+    rdfs:label "2008/09" ;
+    :y "64"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Revenue ;
+    rdfs:label "2009/10" ;
+    :y "62"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Revenue ;
+    rdfs:label "2010/11" ;
+    :y "63"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Revenue ;
+    rdfs:label "2011/12" ;
+    :y "63"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Revenue ;
+    rdfs:label "2012/13*" ;
+    :y "66"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Revenue ;
+    rdfs:label "2013/14" ;
+    :y "61"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Revenue ;
+    rdfs:label "2014/15" ;
+    :y "83"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Revenue ;
+    rdfs:label "2015/16" ;
+    :y "93"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Revenue ;
+    rdfs:label "2016/17" ;
+    :y "114"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Revenue ;
+    rdfs:label "2017/18" ;
+    :y "110"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Revenue ;
+    rdfs:label "2018/19" ;
+    :y "107"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :Revenue ;
+    rdfs:label "in million U.S. dollars Year" ;
+    :y "115"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

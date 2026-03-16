@@ -1,0 +1,85 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3107 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Most viewed YouTube video categories of male Millennial users in the United States as of April 2016" ;
+    chart:xAxis ex:x-3107 ;
+    chart:yAxis ex:y-3107 .
+
+ex:x-3107 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-3107 a chart:Axis ;
+    chart:label "Share of views" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.5" .
+
+ex:series-3107-1 a chart:Series .
+
+ex:dp-3107-1-1 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Comedy" ;
+    chart:value "0.02"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-2 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Education and reference" ;
+    chart:value "0.02"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-3 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Gaming" ;
+    chart:value "0.51"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-4 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Health and fitness" ;
+    chart:value "0.02"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-5 a char:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Hobbies" ;
+    chart:value "0.02"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-6 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Movies and TV" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-7 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Music" ;
+    chart:value "0.15"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-8 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Other" ;
+    chart:value "0.02"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-9 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Shopping" ;
+    chart:value "0.03"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-10 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Sports" ;
+    chart:value "0.06"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-3107-1-11 a chart:DataPoint ;
+    chart:series ex:series-3107-1 ;
+    chart:category "Technology" ;
+    chart:value "0.05"^^xsd:decimal ;
+    chart:valueEstimated "true" .

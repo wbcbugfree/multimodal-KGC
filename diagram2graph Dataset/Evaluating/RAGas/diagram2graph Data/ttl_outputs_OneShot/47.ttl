@@ -1,0 +1,21 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:precedes she:InputLengthWidth .
+
+she:InputLengthWidth a skos:Concept ;
+    skos:prefLabel "input length, width" ;
+    she:precedes she:CalculatePerimeter .
+
+she:CalculatePerimeter a skos:Concept ;
+    skos:prefLabel "perimeter = 2 * (length + width)" ;
+    she:precedes she:PrintOutput .
+
+she:PrintOutput a skos:Concept ;
+    skos:prefLabel "print output" ;
+    she:precedes she:Stop .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

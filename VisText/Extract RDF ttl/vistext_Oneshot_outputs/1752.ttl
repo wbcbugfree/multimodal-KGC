@@ -1,0 +1,79 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1752 a schema:BarChart ;
+    schema:title "Share of traditional quantitative methods used in the market research industry worldwide in Q3 and Q4 2018" ;
+    :hasXAxisLabel "Share of respondents" ;
+    :hasYAxisLabel "Response" .
+
+:DataPoint1752_1 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Other quantitative techniques" ;
+    :xValue "Other quantitative techniques" ;
+    :yValue 0.01 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_2 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Online surveys" ;
+    :xValue "Online surveys" ;
+    :yValue 0.78 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_3 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Mobile surveys" ;
+    :xValue "Mobile surveys" ;
+    :yValue 0.5 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_4 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Mail" ;
+    :xValue "Mail" ;
+    :yValue 0.1 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_5 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "IVR****" ;
+    :xValue "IVR****" ;
+    :yValue 0.08 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_6 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Face-to-face" ;
+    :xValue "Face-to-face" ;
+    :yValue 0.2 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_7 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "CATI***" ;
+    :xValue "CATI***" ;
+    :yValue 0.25 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_8 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "CAPI***" ;
+    :xValue "CAPI***" ;
+    :yValue 0.15 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_9 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Biometrics/ neuromarketing" ;
+    :xValue "Biometrics/ neuromarketing" ;
+    :yValue 0.05 ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1752_10 a :DataPoint ;
+    :belongsToChart :Chart1752 ;
+    rdfs:label "Automated measures/ People met..." ;
+    :xValue "Automated measures/ People met..." ;
+    :yValue 0.03 ;
+    :valueEstimated "true"^^xsd:boolean .

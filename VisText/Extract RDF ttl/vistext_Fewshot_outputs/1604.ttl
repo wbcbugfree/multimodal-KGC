@@ -1,0 +1,79 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1604 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Most translated books in Finland as of 2019 , by number of languages" ;
+    chart:xAxis ex:x-1604 ;
+    chart:yAxis ex:y-1604 .
+
+ex:x-1604 a chart:Axis ;
+    chart:label "Number of languages" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "50" .
+
+ex:y-1604 a chart:Axis ;
+    chart:label "Book Name" .
+
+ex:series-1604-1 a chart:Series .
+
+ex:dp-1604-1-1 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Aleksis Kivi -Seitsemän veljestä (..." ;
+    chart:value "49"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-2 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Arto Paasilinna - Jäniksen vuosi (T..." ;
+    chart:value "27"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-3 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Arto Paasilinna - Ulvova mylläri (T..." ;
+    chart:value "26"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-4 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Elias Lönnrot - Kalevala" ;
+    chart:value "52"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-5 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Frans Emil Sillanpää - Nuorena nu..." ;
+    chart:value "25"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-6 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Mika Waltari - Sinuhe Egyptiläinen..." ;
+    chart:value "39"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-7 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Sofi Oksanen - Kun kyychkyiset kato..." ;
+    chart:value "27"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-8 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Sofi Oksanen - Puhdistus (Purge)" ;
+    chart:value "43"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-9 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Tove Jansson - Sommarboken (The..." ;
+    chart:value "26"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1604-1-10 a chart:DataPoint ;
+    chart:series ex:series-1604-1 ;
+    chart:category "Väinö Linna - Tuntematon sotilas (..." ;
+    chart:value "23"^^xsd:decimal ;
+    chart:valueEstimated "true" .

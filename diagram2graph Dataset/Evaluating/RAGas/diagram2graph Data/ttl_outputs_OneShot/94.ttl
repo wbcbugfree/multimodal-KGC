@@ -1,0 +1,33 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiatesFlow she:InitializeI .
+
+she:InitializeI a skos:Concept ;
+    skos:prefLabel "initialize i" ;
+    she:continuesFlowTo she:EnoughQuotes ;
+    she:exitsIfIndexExceedsLimit she:TerminateProcess ;
+    she:indexLimitCondition "i > n" .
+
+she:EnoughQuotes a skos:Concept ;
+    skos:prefLabel "enough quotes?" ;
+    she:onInsufficientQuotes she:InitializeI ;
+    she:actionOnInsufficientQuotes "tender++" ;
+    she:onSufficientQuotes she:Ready .
+
+she:Ready a skos:Concept ;
+    skos:prefLabel "ready" ;
+    she:continuesFlowTo she:PurchaseApproval .
+
+she:PurchaseApproval a skos:Concept ;
+    skos:prefLabel "purchase approval?" ;
+    she:onRejection she:TerminateProcess ;
+    she:onApproval she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .
+
+she:TerminateProcess a skos:Concept ;
+    skos:prefLabel "terminate process" .

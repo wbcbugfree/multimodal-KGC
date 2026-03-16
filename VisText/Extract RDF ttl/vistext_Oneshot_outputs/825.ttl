@@ -1,0 +1,69 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart825 a schema:LineChart ;
+    schema:title "Child mortality rate (under five years old) in China from 1850 to 2020" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Deaths per 1,000 live births" ;
+    :xMin "1850" ;
+    :xMax "2020" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "500"^^xsd:decimal .
+
+:DataPoint825_1 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1850" ;
+    :xValue "1850" ;
+    :yValue "450"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_2 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1875" ;
+    :xValue "1875" ;
+    :yValue "410"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_3 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1900" ;
+    :xValue "1900" ;
+    :yValue "410"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_4 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1925" ;
+    :xValue "1925" ;
+    :yValue "400"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_5 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1950" ;
+    :xValue "1950" ;
+    :yValue "220"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_6 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "1975" ;
+    :xValue "1975" ;
+    :yValue "50"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_7 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "30"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint825_8 a schema:DataPoint ;
+    :belongsToChart :Chart825 ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "10"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

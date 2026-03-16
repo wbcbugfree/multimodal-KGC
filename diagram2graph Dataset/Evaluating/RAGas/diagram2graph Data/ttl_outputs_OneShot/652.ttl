@@ -1,0 +1,42 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiates she:DocumentationWork .
+
+she:DocumentationWork a skos:Concept ;
+    skos:prefLabel "documentation work" ;
+    she:followedBy she:PrintCycleCountSheets .
+
+she:PrintCycleCountSheets a skos:Concept ;
+    skos:prefLabel "print cycle count sheets" ;
+    she:followedBy she:PerformPhysicalCountOfStock .
+
+she:PerformPhysicalCountOfStock a skos:Concept ;
+    skos:prefLabel "perform physical count of stock" ;
+    she:followedBy she:EnterPhysicalCounts .
+
+she:EnterPhysicalCounts a skos:Concept ;
+    skos:prefLabel "enter physical counts" ;
+    she:followedBy she:ReportDifferences .
+
+she:ReportDifferences a skos:Concept ;
+    skos:prefLabel "report differences" ;
+    she:leadsToDecision she:RecountInventory .
+
+she:RecountInventory a skos:Concept ;
+    skos:prefLabel "recount inventory ?" ;
+    she:ifYes she:DisplayDocuments ;
+    she:ifNo she:PostInventoryDocuments .
+
+she:DisplayDocuments a skos:Concept ;
+    skos:prefLabel "display documents" ;
+    she:followedBy she:PerformPhysicalCountOfStock .
+
+she:PostInventoryDocuments a skos:Concept ;
+    skos:prefLabel "post inventory documents" ;
+    she:concludesProcess she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

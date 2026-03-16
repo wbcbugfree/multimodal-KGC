@@ -1,0 +1,52 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7778 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Distribution of the child population in the U.S. from 2000 to 2019 , by race and Hispanic origin" ;
+    chart:xAxis ex:x-7778 ;
+    chart:yAxis ex:y-7778 .
+
+ex:x-7778 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2000" ;
+    chart:scaleMax "2019" .
+
+ex:y-7778 a chart:Axis ;
+    chart:label "White" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.6" .
+
+ex:series-7778-1 a chart:Series ;
+    chart:seriesName "White" .
+
+ex:point-7778-1-1 a chart:Point ;
+    chart:series ex:series-7778-1 ;
+    chart:xVal "2000" ;
+    chart:yVal "0.62"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7778-1-2 a chart:Point ;
+    chart:series ex:series-7778-1 ;
+    chart:xVal "2005" ;
+    chart:yVal "0.60"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7778-1-3 a chart:Point ;
+    chart:series ex:series-7778-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "0.57"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7778-1-4 a chart:Point ;
+    chart:series ex:series-7778-1 ;
+    chart:xVal "2015" ;
+    chart:yVal "0.54"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7778-1-5 a chart:Point ;
+    chart:series ex:series-7778-1 ;
+    chart:xVal "2019" ;
+    chart:yVal "0.52"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,64 @@
+@prefix : <http://example.org/chart-data/7037/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Do you use a smartphone for any of the following ?" ;
+    :hasXAxisLabel "8-12" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :812 ;
+    rdfs:label "Activities" ;
+    :y "0.81"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :812 ;
+    rdfs:label "Browsing online" ;
+    :y "0.44"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :812 ;
+    rdfs:label "Chatting with friends" ;
+    :y "0.72"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :812 ;
+    rdfs:label "Downloading apps" ;
+    :y "0.48"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :812 ;
+    rdfs:label "Playing games" ;
+    :y "0.55"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :812 ;
+    rdfs:label "Social networking (e.g. Facebook or..." ;
+    :y "0.77"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :812 ;
+    rdfs:label "Taking pictures or films" ;
+    :y "0.66"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :812 ;
+    rdfs:label "To learn things" ;
+    :y "0.29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :812 ;
+    rdfs:label "Video chat (e.g. Skype or FaceTime)" ;
+    :y "0.16"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :812 ;
+    rdfs:label "Watching TV" ;
+    :y "0.03"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :812 ;
+    rdfs:label "Watching videos" ;
+    :y "0.39"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

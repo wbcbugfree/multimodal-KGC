@@ -1,0 +1,107 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/n1> a d2g:Process, d2g:Node ;
+    rdfs:label "Assessment" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n2> a d2g:Process, d2g:Node ;
+    rdfs:label "Team work" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n3> a d2g:Process, d2g:Node ;
+    rdfs:label "Work" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n4> a d2g:Process, d2g:Node ;
+    rdfs:label "Gather" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n5> a d2g:Process, d2g:Node ;
+    rdfs:label "Complete" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n6> a d2g:Process, d2g:Node ;
+    rdfs:label "Closure" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n7> a d2g:Process, d2g:Node ;
+    rdfs:label "Primary closure" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n8> a d2g:Process, d2g:Node ;
+    rdfs:label "Bandaging" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n9> a d2g:Process, d2g:Node ;
+    rdfs:label "Delayed primary closure" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/n10> a d2g:Process, d2g:Node ;
+    rdfs:label "Secondary closure" ;
+    d2g:shape d2g:Task .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/n1n2> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n1> ;
+    d2g:target <http://example.org/diagram/diagram/node/n2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/n1> d2g:follows <http://example.org/diagram/diagram/node/n2> .
+
+<http://example.org/diagram/diagram/edge/n2n3> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n2> ;
+    d2g:target <http://example.org/diagram/diagram/node/n3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/n2> d2g:follows <http://example.org/diagram/diagram/node/n3> .
+
+<http://example.org/diagram/diagram/edge/n3n4> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n3> ;
+    d2g:target <http://example.org/diagram/diagram/node/n4> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/n3> d2g:follows <http://example.org/diagram/diagram/node/n4> .
+
+<http://example.org/diagram/diagram/edge/n4n5> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n4> ;
+    d2g:target <http://example.org/diagram/diagram/node/n5> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/n4> d2g:follows <http://example.org/diagram/diagram/node/n5> .
+
+<http://example.org/diagram/diagram/edge/n5n6> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n5> ;
+    d2g:target <http://example.org/diagram/diagram/node/n6> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/n5> d2g:follows <http://example.org/diagram/diagram/node/n6> .
+
+<http://example.org/diagram/diagram/edge/n6n7> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n6> ;
+    d2g:target <http://example.org/diagram/diagram/node/n7> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/n6> d2g:branches <http://example.org/diagram/diagram/node/n7> .
+
+<http://example.org/diagram/diagram/edge/n6n8> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n6> ;
+    d2g:target <http://example.org/diagram/diagram/node/n8> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/n6> d2g:branches <http://example.org/diagram/diagram/node/n8> .
+
+<http://example.org/diagram/diagram/edge/n8n9> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n8> ;
+    d2g:target <http://example.org/diagram/diagram/node/n9> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/n8> d2g:branches <http://example.org/diagram/diagram/node/n9> .
+
+<http://example.org/diagram/diagram/edge/n8n10> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/n8> ;
+    d2g:target <http://example.org/diagram/diagram/node/n10> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/n8> d2g:branches <http://example.org/diagram/diagram/node/n10> .

@@ -1,0 +1,47 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart2354 a schema:AreaChart ;
+    schema:title "Consumer price index (CPI) of fruit juice and vegetable juice monthly in the Netherlands from January 2018 to May 2020" ;
+    :hasXAxisLabel "Month" ;
+    :hasYAxisLabel "Consumer price index (2015 = 100)" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "120"^^xsd:decimal .
+
+:DataPoint2354_1 :belongsToChart :Chart2354 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "105.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint2354_2 :belongsToChart :Chart2354 ;
+    rdfs:label "July 2018" ;
+    :xValue "July 2018" ;
+    :yValue "106.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint2354_3 :belongsToChart :Chart2354 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "107.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint2354_4 :belongsToChart :Chart2354 ;
+    rdfs:label "July 2019" ;
+    :xValue "July 2019" ;
+    :yValue "108.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint2354_5 :belongsToChart :Chart2354 ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "109.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint2354_6 :belongsToChart :Chart2354 ;
+    rdfs:label "May 2020" ;
+    :xValue "May 2020" ;
+    :yValue "110.0"^^xsd:decimal ;
+    :valueEstimated "true" .

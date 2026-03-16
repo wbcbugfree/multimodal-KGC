@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3713 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Belgium : Employment from 2010 to 2020 (in millions)" ;
+    chart:xAxis ex:x-3713 ;
+    chart:yAxis ex:y-3713 .
+
+ex:x-3713 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-3713 a chart:Axis ;
+    chart:label "Employment in millions" .
+
+ex:series-3713-1 a chart:Series .
+
+ex:mark-3713-1-1 a chart:DataPoint ;
+    chart:series ex:series-3713-1 ;
+    chart:category "2020*" ;
+    chart:value "4.96"^^xsd:decimal .
+
+ex:mark-3713-1-2 a chart:DataPoint ;
+    chart:series ex:series-3713-1 ;
+    chart:category "2019*" ;
+    chart:value "4.93"^^xsd:decimal .

@@ -1,0 +1,19 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:ObjectDetected .
+
+she:ObjectDetected a skos:Concept ;
+    skos:prefLabel "object detected" ;
+    she:ifYes she:DriveForwards ;
+    she:ifNo she:TurnRobot .
+
+she:DriveForwards a skos:Concept ;
+    skos:prefLabel "drive forwards" ;
+    she:leadsTo she:ObjectDetected .
+
+she:TurnRobot a skos:Concept ;
+    skos:prefLabel "turn robot" ;
+    she:leadsTo she:ObjectDetected .

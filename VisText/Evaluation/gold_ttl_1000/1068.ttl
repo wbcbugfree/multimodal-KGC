@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1068 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Most annoying hotel guest behavior according to fellow travelers in the United States as of September 2014" ;
+    chart:xAxis ex:x-1068 ;
+    chart:yAxis ex:y-1068 .
+
+ex:x-1068 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-1068 a chart:Axis ;
+    chart:label "" .
+
+ex:series-1068-1 a chart:Series .
+
+ex:mark-1068-1-1 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Share of respondents Hotel guests that are loud ne..." ;
+    chart:value "0.65"^^xsd:decimal .
+
+ex:mark-1068-1-2 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "People who are rude to other travelers and hotel g..." ;
+    chart:value "0.64"^^xsd:decimal .
+
+ex:mark-1068-1-3 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Guests that are rude to hotel staff" ;
+    chart:value "0.56"^^xsd:decimal .
+
+ex:mark-1068-1-4 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Those that line jump for a taxi or \"steal\" a taxi ..." ;
+    chart:value "0.51"^^xsd:decimal .
+
+ex:mark-1068-1-5 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Hotel guests that make a mess in common areas" ;
+    chart:value "0.45"^^xsd:decimal .
+
+ex:mark-1068-1-6 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Travelers that complain about being disturbed by h..." ;
+    chart:value "0.34"^^xsd:decimal .
+
+ex:mark-1068-1-7 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Travelers that take things they are not supposed t..." ;
+    chart:value "0.33"^^xsd:decimal .
+
+ex:mark-1068-1-8 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Guests that do not tip the bellmen, porters or hou..." ;
+    chart:value "0.24"^^xsd:decimal .
+
+ex:mark-1068-1-9 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "Travelers that have more people stay in their hote..." ;
+    chart:value "0.22"^^xsd:decimal .
+
+ex:mark-1068-1-10 a chart:DataPoint ;
+    chart:series ex:series-1068-1 ;
+    chart:category "People that leave their luggage in the hall" ;
+    chart:value "0.19"^^xsd:decimal .

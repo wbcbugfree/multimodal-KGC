@@ -1,0 +1,38 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Application a skos:Concept ;
+    skos:prefLabel "application" ;
+    she:leadsTo she:Login .
+
+she:Login a skos:Concept ;
+    skos:prefLabel "login" ;
+    she:leadsTo she:Apply .
+
+she:Apply a skos:Concept ;
+    skos:prefLabel "apply" ;
+    she:leadsTo she:ShortlistResumes .
+
+she:ShortlistResumes a skos:Concept ;
+    skos:prefLabel "shortlist resumes" ;
+    she:leadsTo she:EmailResumesToDepartments .
+
+she:EmailResumesToDepartments a skos:Concept ;
+    skos:prefLabel "e-mail resumes to departments" ;
+    she:leadsTo she:ResumesApproved .
+
+she:ResumesApproved a skos:Concept ;
+    skos:prefLabel "resumes approved?" ;
+    she:onYesLeadsTo she:CallForInterview ;
+    she:onNoLeadsTo she:ScreenMoreResumes .
+
+she:ScreenMoreResumes a skos:Concept ;
+    skos:prefLabel "screen more resumes" ;
+    she:leadsBackTo she:EmailResumesToDepartments .
+
+she:CallForInterview a skos:Concept ;
+    skos:prefLabel "call for interview" ;
+    she:leadsTo she:EndHiringStage1 .
+
+she:EndHiringStage1 a skos:Concept ;
+    skos:prefLabel "end hiring stage 1" .

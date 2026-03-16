@@ -1,0 +1,92 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3902 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of committed crimes in Sweden in 2016 , by type" ;
+    chart:xAxis ex:x-3902 ;
+    chart:yAxis ex:y-3902 .
+
+ex:x-3902 a chart:Axis ;
+    chart:label "Number" .
+
+ex:y-3902 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3902-1 a chart:Series .
+
+ex:mark-3902-1-1 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "of commited crimes type" ;
+    chart:value "507752"^^xsd:decimal .
+
+ex:mark-3902-1-2 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Burglary and robbery" ;
+    chart:value "220695"^^xsd:decimal .
+
+ex:mark-3902-1-3 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Fraud and counterfeiting" ;
+    chart:value "196285"^^xsd:decimal .
+
+ex:mark-3902-1-4 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Property damage incl. arson" ;
+    chart:value "183103"^^xsd:decimal .
+
+ex:mark-3902-1-5 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Threat and freedom violation crimes" ;
+    chart:value "121890"^^xsd:decimal .
+
+ex:mark-3902-1-6 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Alcohol and drug-related crimes" ;
+    chart:value "113489"^^xsd:decimal .
+
+ex:mark-3902-1-7 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Violent crimes" ;
+    chart:value "101961"^^xsd:decimal .
+
+ex:mark-3902-1-8 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Vehicle crime" ;
+    chart:value "79460"^^xsd:decimal .
+
+ex:mark-3902-1-9 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Traffic crimes" ;
+    chart:value "32984"^^xsd:decimal .
+
+ex:mark-3902-1-10 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Economical crimes" ;
+    chart:value "21074"^^xsd:decimal .
+
+ex:mark-3902-1-11 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Sex crimes" ;
+    chart:value "15475"^^xsd:decimal .
+
+ex:mark-3902-1-12 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Gun crimes" ;
+    chart:value "9960"^^xsd:decimal .
+
+ex:mark-3902-1-13 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Environmental crimes (animals and nature)" ;
+    chart:value "7629"^^xsd:decimal .
+
+ex:mark-3902-1-14 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Criminally negligent manslaughter and negligent ho..." ;
+    chart:value "5522"^^xsd:decimal .
+
+ex:mark-3902-1-15 a chart:DataPoint ;
+    chart:series ex:series-3902-1 ;
+    chart:category "Smuggling and customs crimes" ;
+    chart:value "48391"^^xsd:decimal .

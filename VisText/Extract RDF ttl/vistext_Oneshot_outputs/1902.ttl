@@ -1,0 +1,88 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1902 a schema:BarChart ;
+    schema:title "Number of permanent resident refugees in Canada admitted in 2019 , by province or territory" ;
+    :hasXAxisLabel "province of Canada" ;
+    :hasYAxisLabel "Number of resident refugees" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "25000"^^xsd:decimal .
+
+:DataPoint1902_1 a schema:DataPoint ;
+    rdfs:label "Alberta" ;
+    :xValue "Alberta" ;
+    :yValue "5000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_2 a schema:DataPoint ;
+    rdfs:label "British Columbia" ;
+    :xValue "British Columbia" ;
+    :yValue "3000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_3 a schema:DataPoint ;
+    rdfs:label "Manitoba" ;
+    :xValue "Manitoba" ;
+    :yValue "2000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_4 a schema:DataPoint ;
+    rdfs:label "New Brunswick" ;
+    :xValue "New Brunswick" ;
+    :yValue "500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_5 a schema:DataPoint ;
+    rdfs:label "Newfoundland and Labrador" ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_6 a schema:DataPoint ;
+    rdfs:label "Nova Scotia" ;
+    :xValue "Nova Scotia" ;
+    :yValue "1000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_7 a schema:DataPoint ;
+    rdfs:label "Ontario" ;
+    :xValue "Ontario" ;
+    :yValue "23000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_8 a schema:DataPoint ;
+    rdfs:label "Prince Edward Island" ;
+    :xValue "Prince Edward Island" ;
+    :yValue "0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_9 a schema:DataPoint ;
+    rdfs:label "Quebec" ;
+    :xValue "Quebec" ;
+    :yValue "5000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_10 a schema:DataPoint ;
+    rdfs:label "Saskatchewan" ;
+    :xValue "Saskatchewan" ;
+    :yValue "2500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .
+
+:DataPoint1902_11 a schema:DataPoint ;
+    rdfs:label "Territories*" ;
+    :xValue "Territories*" ;
+    :yValue "0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart1902 .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3234 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Best-paid Indian celebrities in 2019 , by earnings (in billion Indian rupees)" ;
+    chart:xAxis ex:x-3234 ;
+    chart:yAxis ex:y-3234 .
+
+ex:x-3234 a chart:Axis ;
+    chart:label "Best-paid" .
+
+ex:y-3234 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3234-1 a chart:Series .
+
+ex:mark-3234-1-1 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Indian celebrities Earnings in billion Indian rupe..." ;
+    chart:value "2.93"^^xsd:decimal .
+
+ex:mark-3234-1-2 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Virat Kohli (cricketer)" ;
+    chart:value "2.53"^^xsd:decimal .
+
+ex:mark-3234-1-3 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Amitabh Bachchan (actor)" ;
+    chart:value "2.39"^^xsd:decimal .
+
+ex:mark-3234-1-4 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Salman Khan (actor)" ;
+    chart:value "2.29"^^xsd:decimal .
+
+ex:mark-3234-1-5 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "M.S. Dhoni (cricketer)" ;
+    chart:value "1.36"^^xsd:decimal .
+
+ex:mark-3234-1-6 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Shah Rukh Khan (actor)" ;
+    chart:value "1.24"^^xsd:decimal .
+
+ex:mark-3234-1-7 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Ranveer Singh (actor)" ;
+    chart:value "1.18"^^xsd:decimal .
+
+ex:mark-3234-1-8 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Rajinikanth (actor)" ;
+    chart:value "1"^^xsd:decimal .
+
+ex:mark-3234-1-9 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "Pritam (musician)" ;
+    chart:value "0.98"^^xsd:decimal .
+
+ex:mark-3234-1-10 a chart:DataPoint ;
+    chart:series ex:series-3234-1 ;
+    chart:category "A.R. Rahman (musician)" ;
+    chart:value "0.95"^^xsd:decimal .

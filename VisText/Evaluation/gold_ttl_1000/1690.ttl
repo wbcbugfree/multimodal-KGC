@@ -1,0 +1,47 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1690 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Botswana : National debt from 2015 to 2025 in relation to gross domestic product (GDP)" ;
+    chart:xAxis ex:x-1690 ;
+    chart:yAxis ex:y-1690 .
+
+ex:x-1690 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-1690 a chart:Axis ;
+    chart:label "" .
+
+ex:series-1690-1 a chart:Series .
+
+ex:mark-1690-1-1 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "National debt in relation to GDP 2025*" ;
+    chart:value "0.3147"^^xsd:decimal .
+
+ex:mark-1690-1-2 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "2024*" ;
+    chart:value "0.3012"^^xsd:decimal .
+
+ex:mark-1690-1-3 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "2023*" ;
+    chart:value "0.2792"^^xsd:decimal .
+
+ex:mark-1690-1-4 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "2022*" ;
+    chart:value "0.2592"^^xsd:decimal .
+
+ex:mark-1690-1-5 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "2021*" ;
+    chart:value "0.24"^^xsd:decimal .
+
+ex:mark-1690-1-6 a chart:DataPoint ;
+    chart:series ex:series-1690-1 ;
+    chart:category "2020*" ;
+    chart:value "0.2057"^^xsd:decimal .

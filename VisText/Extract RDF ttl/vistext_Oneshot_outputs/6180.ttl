@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart6180 a schema:LineChart ;
+    schema:title "Private use" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Private use" ;
+    :xMin "1990"^^xsd:string ;
+    :xMax "2017"^^xsd:string ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "15000"^^xsd:decimal .
+
+:DataPoint6180_1 :belongsToChart :Chart6180 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "12000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_2 :belongsToChart :Chart6180 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "13000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_3 :belongsToChart :Chart6180 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "14000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_4 :belongsToChart :Chart6180 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "14500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_5 :belongsToChart :Chart6180 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "14000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_6 :belongsToChart :Chart6180 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "14500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint6180_7 :belongsToChart :Chart6180 ;
+    rdfs:label "2017" ;
+    :xValue "2017" ;
+    :yValue "14800"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

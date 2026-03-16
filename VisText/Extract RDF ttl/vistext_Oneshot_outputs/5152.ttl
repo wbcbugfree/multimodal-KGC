@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart5152 a schema:LineChart ;
+    schema:title "Annual performance of CAC 40 index as of year-end value from 1995 to 2019" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Index points" ;
+    :xMin "1995" ;
+    :xMax "2019" ;
+    :yMin "0" ;
+    :yMax "6000" .
+
+:DataPoint5152_1 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "1500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint5152_2 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "5500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint5152_3 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "4500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint5152_4 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "3500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint5152_5 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "4500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint5152_6 a :DataPoint ;
+    :belongsToChart :Chart5152 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "5500"^^xsd:decimal ;
+    :valueEstimated "true" .

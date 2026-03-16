@@ -1,0 +1,91 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8136 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Migration flow in Belgium from 2010 to 2019" ;
+    chart:xAxis ex:x-8136 ;
+    chart:yAxis ex:y-8136 .
+
+ex:x-8136 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2019" .
+
+ex:y-8136 a chart:Axis ;
+    chart:label "Emigration" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "60000" .
+
+ex:series-8136-1 a chart:Series .
+
+ex:dp-8136-1-1 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "45000"^^xsd:decimal ;
+    chart:value "45000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-2 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2011" ;
+    chart:yVal "48000"^^xsd:decimal ;
+    chart:value "48000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-3 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "50000"^^xsd:decimal ;
+    chart:value "50000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-4 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2013" ;
+    chart:yVal "52000"^^xsd:decimal ;
+    chart:value "52000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-5 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "54000"^^xsd:decimal ;
+    chart:value "54000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-6 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2015" ;
+    chart:yVal "55000"^^xsd:decimal ;
+    chart:value "55000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-7 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "56000"^^xsd:decimal ;
+    chart:value "56000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-8 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2017" ;
+    chart:yVal "57000"^^xsd:decimal ;
+    chart:value "57000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-9 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "58000"^^xsd:decimal ;
+    chart:value "58000"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-8136-1-10 a chart:DataPoint ;
+    chart:series ex:series-8136-1 ;
+    chart:xVal "2019" ;
+    chart:yVal "59000"^^xsd:decimal ;
+    chart:value "59000"^^xsd:decimal ;
+    chart:valueEstimated "true" .

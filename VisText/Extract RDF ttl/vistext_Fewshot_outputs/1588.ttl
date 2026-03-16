@@ -1,0 +1,79 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1588 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Monthly export price of high-density polyethylene in the United States from January 2017 to October 2017 (in U.S. dollars per ton)" ;
+    chart:xAxis ex:x-1588 ;
+    chart:yAxis ex:y-1588 .
+
+ex:x-1588 a chart:Axis ;
+    chart:label "Price in U.S. dollars per ton" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "1200" .
+
+ex:y-1588 a chart:Axis ;
+    chart:label "Month" .
+
+ex:series-1588-1 a chart:Series .
+
+ex:dp-1588-1-1 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "April" ;
+    chart:value "1150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-2 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "August" ;
+    chart:value "1100"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-3 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "February" ;
+    chart:value "1100"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-4 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "January" ;
+    chart:value "1100"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-5 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "July" ;
+    chart:value "1150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-6 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "June" ;
+    chart:value "1150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-7 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "March" ;
+    chart:value "1150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-8 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "May" ;
+    chart:value "1150"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-9 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "October" ;
+    chart:value "1200"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-1588-1-10 a chart:DataPoint ;
+    chart:series ex:series-1588-1 ;
+    chart:category "September" ;
+    chart:value "1200"^^xsd:decimal ;
+    chart:valueEstimated "true" .

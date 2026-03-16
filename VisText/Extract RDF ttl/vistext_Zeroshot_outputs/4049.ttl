@@ -1,0 +1,81 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4049 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Leading U.S. states based on value of barley production in 2018 (in 1,000 U.S. dollars)" ;
+    chart:xAxis ex:x-4049 ;
+    chart:yAxis ex:y-4049 .
+
+ex:x-4049 a chart:Axis ;
+    chart:label "Production value in thousand U.S. dollars" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "250,000" .
+
+ex:y-4049 a chart:Axis ;
+    chart:label "State" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-4049-1 a chart:Series .
+
+ex:mark-4049-1-1 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Arizona" ;
+    chart:value "2000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-2 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "California" ;
+    chart:value "5000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-3 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Colorado" ;
+    chart:value "25000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-4 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Idaho" ;
+    chart:value "265000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-5 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Minnesota" ;
+    chart:value "15000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-6 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Montana" ;
+    chart:value "150000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-7 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "North Dakota" ;
+    chart:value "110000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-8 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Pennsylvania" ;
+    chart:value "3000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-9 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Washington" ;
+    chart:value "10000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4049-1-10 a chart:Bar ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Wyoming" ;
+    chart:value "15000"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

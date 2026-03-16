@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-849 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Miami Marlins all-time home run leaders as of October 2020" ;
+    chart:xAxis ex:x-849 ;
+    chart:yAxis ex:y-849 .
+
+ex:x-849 a chart:Axis ;
+    chart:label "Miami Marlins all-time home run leaders" .
+
+ex:y-849 a chart:Axis ;
+    chart:label "Number of home runs" .
+
+ex:series-849-1 a chart:Series .
+
+ex:mark-849-1-1 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Giancarlo Stanton" ;
+    chart:value "267"^^xsd:decimal .
+
+ex:mark-849-1-2 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Dan Uggla" ;
+    chart:value "154"^^xsd:decimal .
+
+ex:mark-849-1-3 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Hanley Ramirez" ;
+    chart:value "148"^^xsd:decimal .
+
+ex:mark-849-1-4 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Mike Lowell" ;
+    chart:value "143"^^xsd:decimal .
+
+ex:mark-849-1-5 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Miguel Cabrera" ;
+    chart:value "138"^^xsd:decimal .
+
+ex:mark-849-1-6 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Derrek Lee" ;
+    chart:value "129"^^xsd:decimal .
+
+ex:mark-849-1-7 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Gary Sheffield" ;
+    chart:value "122"^^xsd:decimal .
+
+ex:mark-849-1-8 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Jeff Conine" ;
+    chart:value "120"^^xsd:decimal .
+
+ex:mark-849-1-9 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Cliff Floyd" ;
+    chart:value "110"^^xsd:decimal .
+
+ex:mark-849-1-10 a chart:DataPoint ;
+    chart:series ex:series-849-1 ;
+    chart:category "Preston Wilson" ;
+    chart:value "104"^^xsd:decimal .

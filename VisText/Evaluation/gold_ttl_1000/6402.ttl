@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6402 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of U.S. high schools with athletics programs for girls from 2009/10 to 2018/19 , by sport" ;
+    chart:xAxis ex:x-6402 ;
+    chart:yAxis ex:y-6402 .
+
+ex:x-6402 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-6402 a chart:Axis ;
+    chart:label "Swimming and Diving" .
+
+ex:series-6402-1 a chart:Series .
+
+ex:mark-6402-1-1 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2009/10" ;
+    chart:value "7171"^^xsd:decimal .
+
+ex:mark-6402-1-2 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2010/11" ;
+    chart:value "7164"^^xsd:decimal .
+
+ex:mark-6402-1-3 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2011/12" ;
+    chart:value "7221"^^xsd:decimal .
+
+ex:mark-6402-1-4 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2012/13" ;
+    chart:value "7249"^^xsd:decimal .
+
+ex:mark-6402-1-5 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2013/14" ;
+    chart:value "7429"^^xsd:decimal .
+
+ex:mark-6402-1-6 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2014/15" ;
+    chart:value "7526"^^xsd:decimal .
+
+ex:mark-6402-1-7 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2015/16" ;
+    chart:value "7559"^^xsd:decimal .
+
+ex:mark-6402-1-8 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2016/17" ;
+    chart:value "7721"^^xsd:decimal .
+
+ex:mark-6402-1-9 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2017/18" ;
+    chart:value "7961"^^xsd:decimal .
+
+ex:mark-6402-1-10 a chart:DataPoint ;
+    chart:series ex:series-6402-1 ;
+    chart:category "2018/19" ;
+    chart:value "8007"^^xsd:decimal .

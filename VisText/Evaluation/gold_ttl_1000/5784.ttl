@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5784 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Top ten horse racing meeting attendances in Britain in 2012" ;
+    chart:xAxis ex:x-5784 ;
+    chart:yAxis ex:y-5784 .
+
+ex:x-5784 a chart:Axis ;
+    chart:label "horse" .
+
+ex:y-5784 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5784-1 a chart:Series .
+
+ex:mark-5784-1-1 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "racing venue Number of attendees Royal Ascot" ;
+    chart:value "280268"^^xsd:decimal .
+
+ex:mark-5784-1-2 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Cheltenham Festival" ;
+    chart:value "237369"^^xsd:decimal .
+
+ex:mark-5784-1-3 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Epsom Derby" ;
+    chart:value "157347"^^xsd:decimal .
+
+ex:mark-5784-1-4 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Aintree Grand National" ;
+    chart:value "150268"^^xsd:decimal .
+
+ex:mark-5784-1-5 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Glorious Goodwood" ;
+    chart:value "102475"^^xsd:decimal .
+
+ex:mark-5784-1-6 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "York - Ebor" ;
+    chart:value "91339"^^xsd:decimal .
+
+ex:mark-5784-1-7 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Cheltenham Open" ;
+    chart:value "70771"^^xsd:decimal .
+
+ex:mark-5784-1-8 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Doncaster St. Leger" ;
+    chart:value "57269"^^xsd:decimal .
+
+ex:mark-5784-1-9 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "Ascot - King George" ;
+    chart:value "54180"^^xsd:decimal .
+
+ex:mark-5784-1-10 a chart:DataPoint ;
+    chart:series ex:series-5784-1 ;
+    chart:category "York - Music Showcase" ;
+    chart:value "53370"^^xsd:decimal .

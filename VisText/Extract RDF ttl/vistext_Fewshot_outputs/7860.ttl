@@ -1,0 +1,78 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7860 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-7860 ;
+    chart:yAxis ex:y-7860 .
+
+ex:x-7860 a chart:Axis ;
+    chart:label "West" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.6" .
+
+ex:y-7860 a chart:Axis ;
+    chart:label "crimes" .
+
+ex:series-7860-1 a chart:Series .
+
+ex:dp-7860-1-1 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Aggravated assault" ;
+    chart:value "0.58"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-2 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Arson" ;
+    chart:value "0.22"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-3 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Burglary" ;
+    chart:value "0.15"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-4 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Larceny-theft" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-5 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Motor vehicle theft" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-6 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Murder and nonnegligent ..." ;
+    chart:value "0.08"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-7 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Property crime (total)" ;
+    chart:value "0.45"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-8 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Rape" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-9 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Robbery" ;
+    chart:value "0.33"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7860-1-10 a chart:DataPoint ;
+    chart:series ex:series-7860-1 ;
+    chart:category "Violent crime (total)" ;
+    chart:value "0.45"^^xsd:decimal ;
+    chart:valueEstimated "true" .

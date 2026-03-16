@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5957 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average ticket price Denver Nuggets games of the NBA from 2006/07 to 2015/16 (in U.S. dollars)" ;
+    chart:xAxis ex:x-5957 ;
+    chart:yAxis ex:y-5957 .
+
+ex:x-5957 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-5957 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5957-1 a chart:Series .
+
+ex:mark-5957-1-1 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "Average ticket price in U.S. dollars 2015/16" ;
+    chart:value "52.38"^^xsd:decimal .
+
+ex:mark-5957-1-2 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2014/15" ;
+    chart:value "54"^^xsd:decimal .
+
+ex:mark-5957-1-3 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2013/14" ;
+    chart:value "53.15"^^xsd:decimal .
+
+ex:mark-5957-1-4 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2012/13" ;
+    chart:value "54.23"^^xsd:decimal .
+
+ex:mark-5957-1-5 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2011/12" ;
+    chart:value "47.3"^^xsd:decimal .
+
+ex:mark-5957-1-6 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2010/11" ;
+    chart:value "47.3"^^xsd:decimal .
+
+ex:mark-5957-1-7 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2009/10" ;
+    chart:value "47.3"^^xsd:decimal .
+
+ex:mark-5957-1-8 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2008/09" ;
+    chart:value "47.3"^^xsd:decimal .
+
+ex:mark-5957-1-9 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2007/08" ;
+    chart:value "44.29"^^xsd:decimal .
+
+ex:mark-5957-1-10 a chart:DataPoint ;
+    chart:series ex:series-5957-1 ;
+    chart:category "2006/07" ;
+    chart:value "42.72"^^xsd:decimal .

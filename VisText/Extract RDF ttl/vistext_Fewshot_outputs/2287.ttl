@@ -1,0 +1,72 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2287 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-2287 ;
+    chart:yAxis ex:y-2287 .
+
+ex:x-2287 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-2287 a chart:Axis ;
+    chart:label "Share of respondents" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.5" .
+
+ex:series-2287-1 a chart:Series .
+
+ex:dp-2287-1-1 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live alone" ;
+    chart:value "0.28"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-2 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with a cat" ;
+    chart:value "0.24"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-3 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with a dog" ;
+    chart:value "0.30"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-4 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with a spouse, partne..." ;
+    chart:value "0.45"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-5 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with another type of p..." ;
+    chart:value "0.06"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-6 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with one or more brot..." ;
+    chart:value "0.07"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-7 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with one or more chil..." ;
+    chart:value "0.07"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-8 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with one or more pare..." ;
+    chart:value "0.15"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-2287-1-9 a chart:DataPoint ;
+    chart:series ex:series-2287-1 ;
+    chart:category "I live with one or more roo..." ;
+    chart:value "0.10"^^xsd:decimal ;
+    chart:valueEstimated "true" .

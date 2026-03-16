@@ -1,0 +1,41 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1835 a schema:LineChart ;
+    schema:title "Forecast of the number of single-parent households in the Netherlands from 2019 to 2060" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Number of households" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "600000"^^xsd:decimal .
+
+:DataPoint1835_1 :belongsToChart :Chart1835 ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "520000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1835_2 :belongsToChart :Chart1835 ;
+    rdfs:label "2030" ;
+    :xValue "2030" ;
+    :yValue "560000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1835_3 :belongsToChart :Chart1835 ;
+    rdfs:label "2040" ;
+    :xValue "2040" ;
+    :yValue "590000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1835_4 :belongsToChart :Chart1835 ;
+    rdfs:label "2050" ;
+    :xValue "2050" ;
+    :yValue "600000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1835_5 :belongsToChart :Chart1835 ;
+    rdfs:label "2060" ;
+    :xValue "2060" ;
+    :yValue "595000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

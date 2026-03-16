@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/2428/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Average spending of adults in the United States on selected...companies or services as of January 2016 (in U.S. dollars)" ;
+    :hasXAxisLabel "company" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Company ;
+    rdfs:label "DogVacay*" ;
+    :y "42"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Company ;
+    rdfs:label "Etsy" ;
+    :y "37"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Company ;
+    rdfs:label "Instacart*" ;
+    :y "65"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Company ;
+    rdfs:label "Lyft" ;
+    :y "24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Company ;
+    rdfs:label "or service Average amunt spent in U..." ;
+    :y "114"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Company ;
+    rdfs:label "Post Mates*" ;
+    :y "34"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Company ;
+    rdfs:label "Shyp*" ;
+    :y "12"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Company ;
+    rdfs:label "Task Rabbit*" ;
+    :y "83"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Company ;
+    rdfs:label "Turo*" ;
+    :y "39"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Company ;
+    rdfs:label "Uber" ;
+    :y "32"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

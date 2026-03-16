@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4776 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of heterosexual marriages in Spain from 2006 to 2019" ;
+    chart:xAxis ex:x-4776 ;
+    chart:yAxis ex:y-4776 .
+
+ex:x-4776 a chart:Axis ;
+    chart:label "Number of marriages" .
+
+ex:y-4776 a chart:Axis ;
+    chart:label "Year while the x-axis plots Number of marriages" .
+
+ex:series-4776-1 a chart:Series .
+
+ex:mark-4776-1-1 a chart:DataPoint ;
+    chart:series ex:series-4776-1 ;
+    chart:category "of marriages Year" ;
+    chart:value "160470"^^xsd:decimal .
+
+ex:mark-4776-1-2 a chart:DataPoint ;
+    chart:series ex:series-4776-1 ;
+    chart:category "2019*" ;
+    chart:value "162743"^^xsd:decimal .

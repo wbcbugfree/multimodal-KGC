@@ -1,0 +1,38 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:nextStep she:Problem .
+
+she:Problem a skos:Concept ;
+    skos:prefLabel "problem" ;
+    she:nextStep she:DevelopAnAlgorithm .
+
+she:DevelopAnAlgorithm a skos:Concept ;
+    skos:prefLabel "develop an algorithm" ;
+    she:nextStep she:ThinkCreativity .
+
+she:ThinkCreativity a skos:Concept ;
+    skos:prefLabel "think creativity" ;
+    she:nextStep she:CreateAnActionPlan .
+
+she:CreateAnActionPlan a skos:Concept ;
+    skos:prefLabel "create an action plan" ;
+    she:nextStep she:Discuss .
+
+she:Discuss a skos:Concept ;
+    skos:prefLabel "discuss" ;
+    she:nextStep she:TestTheSolution .
+
+she:TestTheSolution a skos:Concept ;
+    skos:prefLabel "test the solution" ;
+    she:nextStep she:IsTheProblemSolved .
+
+she:IsTheProblemSolved a skos:Concept ;
+    skos:prefLabel "is the problem solved?" ;
+    she:onYes she:End ;
+    she:onNo she:ThinkCreativity .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

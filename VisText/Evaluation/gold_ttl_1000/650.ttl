@@ -1,0 +1,82 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-650 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Which group do you think is the greatest boy band of all time ?" ;
+    chart:xAxis ex:x-650 ;
+    chart:yAxis ex:y-650 .
+
+ex:x-650 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-650 a chart:Axis ;
+    chart:label "" .
+
+ex:series-650-1 a chart:Series .
+
+ex:mark-650-1-1 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Share of respondents Jackson" ;
+    chart:value "5"^^xsd:decimal .
+
+ex:mark-650-1-2 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "The Four Seasons" ;
+    chart:value "0.12"^^xsd:decimal .
+
+ex:mark-650-1-3 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "The Monkees" ;
+    chart:value "0.1"^^xsd:decimal .
+
+ex:mark-650-1-4 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Boys II Men" ;
+    chart:value "0.09"^^xsd:decimal .
+
+ex:mark-650-1-5 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Backstreet Boys" ;
+    chart:value "0.07"^^xsd:decimal .
+
+ex:mark-650-1-6 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "’N Sync" ;
+    chart:value "0.06"^^xsd:decimal .
+
+ex:mark-650-1-7 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "New Edition" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-650-1-8 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "New Kids on the Block" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-650-1-9 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Dion and the Belmonts" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-650-1-10 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "One Direction" ;
+    chart:value "0.02"^^xsd:decimal .
+
+ex:mark-650-1-11 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Menudo" ;
+    chart:value "0.01"^^xsd:decimal .
+
+ex:mark-650-1-12 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Other" ;
+    chart:value "0.08"^^xsd:decimal .
+
+ex:mark-650-1-13 a chart:DataPoint ;
+    chart:series ex:series-650-1 ;
+    chart:category "Not sure" ;
+    chart:value "0.17"^^xsd:decimal .

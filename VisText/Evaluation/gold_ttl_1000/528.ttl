@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-528 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "New York Mets all-time RBI (runs batted in) leaders as of October 2020" ;
+    chart:xAxis ex:x-528 ;
+    chart:yAxis ex:y-528 .
+
+ex:x-528 a chart:Axis ;
+    chart:label "Number of home runs" .
+
+ex:y-528 a chart:Axis ;
+    chart:label "all-time RBI leaders while the x-axis shows Number of home runs" .
+
+ex:series-528-1 a chart:Series .
+
+ex:mark-528-1-1 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "of home runs all-time RBI leaders" ;
+    chart:value "970"^^xsd:decimal .
+
+ex:mark-528-1-2 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "David Wright" ;
+    chart:value "733"^^xsd:decimal .
+
+ex:mark-528-1-3 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Darryl Strawberry" ;
+    chart:value "655"^^xsd:decimal .
+
+ex:mark-528-1-4 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Mike Piazza" ;
+    chart:value "629"^^xsd:decimal .
+
+ex:mark-528-1-5 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Howard Johnson" ;
+    chart:value "614"^^xsd:decimal .
+
+ex:mark-528-1-6 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Ed Kranepool" ;
+    chart:value "559"^^xsd:decimal .
+
+ex:mark-528-1-7 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Carlos Beltran" ;
+    chart:value "538"^^xsd:decimal .
+
+ex:mark-528-1-8 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Edgardo Alfonzo" ;
+    chart:value "521"^^xsd:decimal .
+
+ex:mark-528-1-9 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Cleon Jones" ;
+    chart:value "521"^^xsd:decimal .
+
+ex:mark-528-1-10 a chart:DataPoint ;
+    chart:series ex:series-528-1 ;
+    chart:category "Jose Reyes" ;
+    chart:value "468"^^xsd:decimal .

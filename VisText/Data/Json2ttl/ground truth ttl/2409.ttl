@@ -1,0 +1,84 @@
+@prefix : <http://example.org/chart-data/2409/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Most trusted institutions to tell the truth about the coronavirus (COVID-19) in Brazil in March 2020" ;
+    :hasXAxisLabel "Share" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Share ;
+    rdfs:label "A person like yourself" ;
+    :y "0.74"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Share ;
+    rdfs:label "Countries most affected" ;
+    :y "0.64"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Share ;
+    rdfs:label "Doctors/health experts online" ;
+    :y "0.79"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Share ;
+    rdfs:label "Healthcare authorities" ;
+    :y "0.7"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Share ;
+    rdfs:label "Healthcare CEOs" ;
+    :y "0.68"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Share ;
+    rdfs:label "Journalists" ;
+    :y "0.59"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Share ;
+    rdfs:label "My co-workers" ;
+    :y "0.6"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Share ;
+    rdfs:label "My country's leader" ;
+    :y "0.53"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Share ;
+    rdfs:label "My doctor" ;
+    :y "0.82"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Share ;
+    rdfs:label "My employer CEO" ;
+    :y "0.67"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Share ;
+    rdfs:label "NGO representatives" ;
+    :y "0.68"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Share ;
+    rdfs:label "of respondents Response" ;
+    :y "0.91"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Share ;
+    rdfs:label "Scientists" ;
+    :y "0.86"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :Share ;
+    rdfs:label "The news media" ;
+    :y "0.55"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint15 a :Share ;
+    rdfs:label "WHO officials" ;
+    :y "0.81"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

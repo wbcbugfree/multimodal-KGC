@@ -1,0 +1,79 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1680 a schema:BarChart ;
+    schema:title "Number of single-woman households in Denmark in 2020 , by age group" ;
+    :hasXAxisLabel "Number of single-women households" ;
+    :hasYAxisLabel "Year" .
+
+:DataPoint1680_1 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "100 years and more" ;
+    :xValue "100 years and more" ;
+    :yValue 5000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_2 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "20-29 years" ;
+    :xValue "20-29 years" ;
+    :yValue 65000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_3 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "30-39 years" ;
+    :xValue "30-39 years" ;
+    :yValue 55000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_4 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "40-49 years" ;
+    :xValue "40-49 years" ;
+    :yValue 75000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_5 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "50-59 years" ;
+    :xValue "50-59 years" ;
+    :yValue 95000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_6 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "60-69 years" ;
+    :xValue "60-69 years" ;
+    :yValue 90000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_7 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "70-79 years" ;
+    :xValue "70-79 years" ;
+    :yValue 125000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_8 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "80-89 years" ;
+    :xValue "80-89 years" ;
+    :yValue 70000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_9 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "90-99 years" ;
+    :xValue "90-99 years" ;
+    :yValue 35000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1680_10 a schema:DataPoint ;
+    :belongsToChart :Chart1680 ;
+    rdfs:label "Under 20 years" ;
+    :xValue "Under 20 years" ;
+    :yValue 2000.0^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

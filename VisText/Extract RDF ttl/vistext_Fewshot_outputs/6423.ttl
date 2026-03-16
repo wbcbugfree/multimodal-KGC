@@ -1,0 +1,87 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6423 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average payroll of Major League Baseball teams from 2002 to 2012 (in million U.S. dollars)" ;
+    chart:xAxis ex:x-6423 ;
+    chart:yAxis ex:y-6423 .
+
+ex:x-6423 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2002" ;
+    chart:scaleMax "2012*" .
+
+ex:y-6423 a chart:Axis ;
+    chart:label "All teams" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "100" .
+
+ex:series-6423-1 a chart:Series .
+
+ex:dp-6423-1-1 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2002" ;
+    chart:value "64"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-2 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2003" ;
+    chart:value "68"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-3 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2004" ;
+    chart:value "66"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-4 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2005" ;
+    chart:value "70"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-5 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2006" ;
+    chart:value "76"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-6 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2007" ;
+    chart:value "81"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-7 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2008" ;
+    chart:value "84"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-8 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2009" ;
+    chart:value "85"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-9 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2010" ;
+    chart:value "87"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-10 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2011" ;
+    chart:value "89"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6423-1-11 a chart:DataPoint ;
+    chart:series ex:series-6423-1 ;
+    chart:category "2012*" ;
+    chart:value "95"^^xsd:decimal ;
+    chart:valueEstimated "true" .

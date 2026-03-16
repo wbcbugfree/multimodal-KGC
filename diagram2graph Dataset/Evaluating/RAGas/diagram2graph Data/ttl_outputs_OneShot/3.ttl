@@ -1,0 +1,38 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:InitializeSum .
+
+she:InitializeSum a skos:Concept ;
+    skos:prefLabel "sum=0" ;
+    she:leadsTo she:InputN .
+
+she:InputN a skos:Concept ;
+    skos:prefLabel "input n" ;
+    she:leadsTo she:CheckNNotZero .
+
+she:CheckNNotZero a skos:Concept ;
+    skos:prefLabel "n != 0 ?" ;
+    she:onTrue she:CalculateRemainder ;
+    she:onFalse she:PrintSum .
+
+she:CalculateRemainder a skos:Concept ;
+    skos:prefLabel "rem=n%10" ;
+    she:leadsTo she:AddRemainderToSum .
+
+she:AddRemainderToSum a skos:Concept ;
+    skos:prefLabel "sum=sum+rem" ;
+    she:leadsTo she:DivideNByTen .
+
+she:DivideNByTen a skos:Concept ;
+    skos:prefLabel "n=n/10" ;
+    she:loopsBackTo she:CheckNNotZero .
+
+she:PrintSum a skos:Concept ;
+    skos:prefLabel "print sum" ;
+    she:leadsTo she:Stop .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

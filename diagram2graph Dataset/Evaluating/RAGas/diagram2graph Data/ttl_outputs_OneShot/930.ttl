@@ -1,0 +1,26 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:followedBy she:InitializeC .
+
+she:InitializeC a skos:Concept ;
+    skos:prefLabel "c = 1" ;
+    she:followedBy she:CheckConditionC .
+
+she:CheckConditionC a skos:Concept ;
+    skos:prefLabel "is c < 6" ;
+    she:ifTrue she:PrintValue ;
+    she:ifFalse she:Stop .
+
+she:PrintValue a skos:Concept ;
+    skos:prefLabel "print 3*c" ;
+    she:followedBy she:IncrementC .
+
+she:IncrementC a skos:Concept ;
+    skos:prefLabel "c = c + 1" ;
+    she:loopsBackTo she:CheckConditionC .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

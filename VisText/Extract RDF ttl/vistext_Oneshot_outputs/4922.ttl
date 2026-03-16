@@ -1,0 +1,49 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart4922 a schema:LineChart ;
+    schema:title "Active Duty U.S. Air Force personnel numbers from 1995 to 2019" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Number of Air Force personnel" ;
+    :xMin "1995" ;
+    :xMax "2019" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "400000"^^xsd:decimal .
+
+:DataPoint4922_1 :belongsToChart :Chart4922 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "410000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4922_2 :belongsToChart :Chart4922 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "390000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4922_3 :belongsToChart :Chart4922 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "370000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4922_4 :belongsToChart :Chart4922 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "340000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4922_5 :belongsToChart :Chart4922 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "330000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4922_6 :belongsToChart :Chart4922 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "320000"^^xsd:decimal ;
+    :valueEstimated "true" .

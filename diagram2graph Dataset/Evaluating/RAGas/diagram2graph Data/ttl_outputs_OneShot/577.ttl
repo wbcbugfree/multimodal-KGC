@@ -1,0 +1,34 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:followedBy she:OnlineApplication .
+
+she:OnlineApplication a skos:Concept ;
+    skos:prefLabel "online application" ;
+    she:followedBy she:ApplicantMeetsWithALoanOfficerToDiscussTheirNeeds .
+
+she:ApplicantMeetsWithALoanOfficerToDiscussTheirNeeds a skos:Concept ;
+    skos:prefLabel "applicant meets with a loan officer to discuss their needs" ;
+    she:followedBy she:ProcessApplication .
+
+she:ProcessApplication a skos:Concept ;
+    skos:prefLabel "process application" ;
+    she:followedBy she:ApplicationReviewedByTheOfficeManager .
+
+she:ApplicationReviewedByTheOfficeManager a skos:Concept ;
+    skos:prefLabel "application reviewed by the office manager" ;
+    she:onNo she:ApplicationRejected ;
+    she:onYes she:ApplicationApproved .
+
+she:ApplicationRejected a skos:Concept ;
+    skos:prefLabel "application rejected" ;
+    she:followedBy she:End .
+
+she:ApplicationApproved a skos:Concept ;
+    skos:prefLabel "application approved" ;
+    she:followedBy she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

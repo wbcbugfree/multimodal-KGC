@@ -1,0 +1,39 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:IsTargetSectorLessThanMaxSector .
+
+she:IsTargetSectorLessThanMaxSector a skos:Concept ;
+    skos:prefLabel "is target sector < max sector?" ;
+    she:hasTrueBranch she:IncrementSector ;
+    she:hasFalseBranch she:TargetSectorEqualsZero .
+
+she:IncrementSector a skos:Concept ;
+    skos:prefLabel "increment sector" ;
+    she:leadsTo she:WantToUpdate .
+
+she:TargetSectorEqualsZero a skos:Concept ;
+    skos:prefLabel "target sector = 0" ;
+    she:leadsTo she:WantToUpdate .
+
+she:WantToUpdate a skos:Concept ;
+    skos:prefLabel "want to update?" ;
+    she:hasTrueBranch she:IncrementHead ;
+    she:hasFalseBranch she:TargetHeadEqualsZero .
+
+she:IncrementHead a skos:Concept ;
+    skos:prefLabel "increment head" ;
+    she:leadsTo she:End .
+
+she:TargetHeadEqualsZero a skos:Concept ;
+    skos:prefLabel "target head = 0" ;
+    she:leadsTo she:Increment .
+
+she:Increment a skos:Concept ;
+    skos:prefLabel "increment" ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

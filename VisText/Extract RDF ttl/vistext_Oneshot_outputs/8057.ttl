@@ -1,0 +1,59 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart8057 a schema:LineChart ;
+    schema:title "Monthly number of visitor arrivals in Kenya from January 2019 to August 2020 , by airport" ;
+    :hasXAxisLabel "Month" ;
+    :hasYAxisLabel "MIA" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "15000"^^xsd:decimal .
+
+:DataPoint8057_1 :belongsToChart :Chart8057 ;
+    rdfs:label "January 2019" ;
+    :xValue "2019" ;
+    :yValue "15000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_2 :belongsToChart :Chart8057 ;
+    rdfs:label "April 2019" ;
+    :xValue "April" ;
+    :yValue "2500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_3 :belongsToChart :Chart8057 ;
+    rdfs:label "July 2019" ;
+    :xValue "July" ;
+    :yValue "9500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_4 :belongsToChart :Chart8057 ;
+    rdfs:label "October 2019" ;
+    :xValue "October" ;
+    :yValue "7500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_5 :belongsToChart :Chart8057 ;
+    rdfs:label "January 2020" ;
+    :xValue "2020" ;
+    :yValue "11000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_6 :belongsToChart :Chart8057 ;
+    rdfs:label "April 2020" ;
+    :xValue "April" ;
+    :yValue "10500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_7 :belongsToChart :Chart8057 ;
+    rdfs:label "July 2020" ;
+    :xValue "July" ;
+    :yValue "1000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8057_8 :belongsToChart :Chart8057 ;
+    rdfs:label "August 2020" ;
+    :xValue "August" ;
+    :yValue "500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

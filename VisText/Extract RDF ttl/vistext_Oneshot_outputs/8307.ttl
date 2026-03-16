@@ -1,0 +1,44 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8307 a schema:LineChart ;
+    schema:title "Forecast of population growth in Iceland from 2020 to 2030 , by age group" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "" .
+
+:DataPoint8307_1 a :DataPoint ;
+    :belongsToChart :Chart8307 ;
+    rdfs:label "80 years and older" ;
+    :xValue "2022" ;
+    :yValue "11000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint8307_2 a :DataPoint ;
+    :belongsToChart :Chart8307 ;
+    rdfs:label "80 years and older" ;
+    :xValue "2024" ;
+    :yValue "12000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint8307_3 a :DataPoint ;
+    :belongsToChart :Chart8307 ;
+    rdfs:label "80 years and older" ;
+    :xValue "2026" ;
+    :yValue "13500"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint8307_4 a :DataPoint ;
+    :belongsToChart :Chart8307 ;
+    rdfs:label "80 years and older" ;
+    :xValue "2028" ;
+    :yValue "15000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint8307_5 a :DataPoint ;
+    :belongsToChart :Chart8307 ;
+    rdfs:label "80 years and older" ;
+    :xValue "2030" ;
+    :yValue "16500"^^xsd:decimal ;
+    :valueEstimated "true" .

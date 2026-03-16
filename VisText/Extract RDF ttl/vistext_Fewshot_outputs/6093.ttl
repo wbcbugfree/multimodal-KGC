@@ -1,0 +1,87 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6093 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Austria : Distribution of employment by economic sector from 2010 to 2020" ;
+    chart:xAxis ex:x-6093 ;
+    chart:yAxis ex:y-6093 .
+
+ex:x-6093 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2020" .
+
+ex:y-6093 a chart:Axis ;
+    chart:label "Agriculture" ;
+    chart:scaleMin "0.00" ;
+    chart:scaleMax "0.05" .
+
+ex:series-6093-1 a chart:Series .
+
+ex:dp-6093-1-1 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "0.051"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-2 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2011" ;
+    chart:yVal "0.048"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-3 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "0.045"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-4 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2013" ;
+    chart:yVal "0.043"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-5 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "0.042"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-6 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2015" ;
+    chart:yVal "0.041"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-7 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "0.039"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-8 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2017" ;
+    chart:yVal "0.037"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-9 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "0.036"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-10 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2019" ;
+    chart:yVal "0.035"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-6093-1-11 a chart:DataPoint ;
+    chart:series ex:series-6093-1 ;
+    chart:xVal "2020" ;
+    chart:yVal "0.034"^^xsd:decimal ;
+    chart:valueEstimated "true" .

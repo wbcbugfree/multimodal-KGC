@@ -1,0 +1,40 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:nextStep she:PowerOn .
+
+she:PowerOn a skos:Concept ;
+    skos:prefLabel "power on" ;
+    she:nextStep she:CoffeeSelected .
+
+she:CoffeeSelected a skos:Concept ;
+    skos:prefLabel "coffee selected" ;
+    she:ifLatteSelected she:AddFrothedMilk ;
+    she:ifMochaSelected she:AddChocolatePowder ;
+    she:ifEspressoSelected she:AddSugar .
+
+she:AddChocolatePowder a skos:Concept ;
+    skos:prefLabel "add chocolate powder" ;
+    she:nextStep she:AddFrothedMilk .
+
+she:AddFrothedMilk a skos:Concept ;
+    skos:prefLabel "add frothed milk" ;
+    she:nextStep she:AddSugar .
+
+she:AddSugar a skos:Concept ;
+    skos:prefLabel "add sugar" ;
+    she:nextStep she:PowerPressed .
+
+she:PowerPressed a skos:Concept ;
+    skos:prefLabel "power pressed" ;
+    she:ifTrue she:PowerOff ;
+    she:ifFalse she:CoffeeSelected .
+
+she:PowerOff a skos:Concept ;
+    skos:prefLabel "power off" ;
+    she:nextStep she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

@@ -1,0 +1,39 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:AppGoalSupportProduct .
+
+she:AppGoalSupportProduct a skos:Concept ;
+    skos:prefLabel "is your apps main goal is to support the porduct?" ;
+    she:ifYesLeadsTo she:ConsiderHitApps ;
+    she:ifFalseLeadsTo she:AppInherentlyViral .
+
+she:ConsiderHitApps a skos:Concept ;
+    skos:prefLabel "consider hit apps" .
+
+she:AppInherentlyViral a skos:Concept ;
+    skos:prefLabel "is your app inherently viral?" ;
+    she:ifTrueLeadsTo she:ConsiderFreeWithIAPs ;
+    she:ifFalseLeadsTo she:UserHasValidID .
+
+she:ConsiderFreeWithIAPs a skos:Concept ;
+    skos:prefLabel "consider free with iaps" .
+
+she:UserHasValidID a skos:Concept ;
+    skos:prefLabel "does user have valid id?" ;
+    she:ifTrueLeadsTo she:ConsiderFreeWithIAPs ;
+    she:ifFalseLeadsTo she:ExplainAppValueInScreenshots .
+
+she:ExplainAppValueInScreenshots a skos:Concept ;
+    skos:prefLabel "can you easily explain the apps value in screenshots?" ;
+    she:ifTrueLeadsTo she:PaidService ;
+    she:ifFalseLeadsTo she:AppIsCoreRevenueStream .
+
+she:PaidService a skos:Concept ;
+    skos:prefLabel "paid service" .
+
+she:AppIsCoreRevenueStream a skos:Concept ;
+    skos:prefLabel "is the app itself your core revenue stream" ;
+    she:ifFalseLeadsTo she:PaidService .

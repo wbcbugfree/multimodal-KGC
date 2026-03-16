@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3078 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Cat products purchased by consumers online in the last 12 months in the United States in 2018" ;
+    chart:xAxis ex:x-3078 ;
+    chart:yAxis ex:y-3078 .
+
+ex:x-3078 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-3078 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3078-1 a chart:Series .
+
+ex:mark-3078-1-1 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Share of respondents Dry cat food" ;
+    chart:value "0.43"^^xsd:decimal .
+
+ex:mark-3078-1-2 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Cat litter" ;
+    chart:value "0.37"^^xsd:decimal .
+
+ex:mark-3078-1-3 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Wet pet food (canned or pouch)" ;
+    chart:value "0.34"^^xsd:decimal .
+
+ex:mark-3078-1-4 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Pet treats and chews" ;
+    chart:value "0.28"^^xsd:decimal .
+
+ex:mark-3078-1-5 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Flea and tick medications" ;
+    chart:value "0.25"^^xsd:decimal .
+
+ex:mark-3078-1-6 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Pet grooming supplies" ;
+    chart:value "0.16"^^xsd:decimal .
+
+ex:mark-3078-1-7 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Flea and tick collars" ;
+    chart:value "0.1"^^xsd:decimal .
+
+ex:mark-3078-1-8 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Pet vitamins and nutritional supplements" ;
+    chart:value "0.09"^^xsd:decimal .
+
+ex:mark-3078-1-9 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Pet clean-up, odor control and training aids" ;
+    chart:value "0.06"^^xsd:decimal .
+
+ex:mark-3078-1-10 a chart:DataPoint ;
+    chart:series ex:series-3078-1 ;
+    chart:category "Pet oral care" ;
+    chart:value "0.06"^^xsd:decimal .

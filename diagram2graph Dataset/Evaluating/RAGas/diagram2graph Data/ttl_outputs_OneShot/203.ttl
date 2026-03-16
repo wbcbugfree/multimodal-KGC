@@ -1,0 +1,50 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CustomerConsultingAndQuotation a skos:Concept ;
+    skos:prefLabel "customer consulting and quotation" ;
+    she:nextStep she:Deal .
+
+she:Deal a skos:Concept ;
+    skos:prefLabel "deal?" ;
+    she:ifYes she:Invoice ;
+    she:ifNo she:GoHome .
+
+she:Invoice a skos:Concept ;
+    skos:prefLabel "invoice" ;
+    she:nextStep she:Shipping .
+
+she:Shipping a skos:Concept ;
+    skos:prefLabel "shipping" ;
+    she:nextStep she:CustomClearance .
+
+she:CustomClearance a skos:Concept ;
+    skos:prefLabel "custom clearance" ;
+    she:nextStep she:PaymentMode .
+
+she:PaymentMode a skos:Concept ;
+    skos:prefLabel "payment mode" ;
+    she:nextStep she:Delivery .
+
+she:Delivery a skos:Concept ;
+    skos:prefLabel "delivery" ;
+    she:nextStep she:ServicePayment .
+
+she:ServicePayment a skos:Concept ;
+    skos:prefLabel "service payment" ;
+    she:nextStep she:PayForeignExchange .
+
+she:PayForeignExchange a skos:Concept ;
+    skos:prefLabel "pay foreign exchange?" ;
+    she:ifYes she:Payment ;
+    she:ifNo she:Stop .
+
+she:Payment a skos:Concept ;
+    skos:prefLabel "payment" ;
+    she:nextStep she:Stop .
+
+she:GoHome a skos:Concept ;
+    skos:prefLabel "go home" .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

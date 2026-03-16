@@ -1,0 +1,95 @@
+@prefix d2g:  <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
+    rdfs:label "Declare variables a, b,\nD, x1, x2, rp and ip" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
+    rdfs:label "Calculate discriminant,\nD <- b² - 4ac" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Decision, d2g:Node ;
+    rdfs:label "Is D >= 0?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/5> a d2g:Process, d2g:Node ;
+    rdfs:label "r1 <- (-b + √D) / 2a\nr2 <- (-b - √D) / 2a" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
+    rdfs:label "ip <- -b/2a\nrp <- √-D / 2a" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/7> a d2g:Process, d2g:Node ;
+    rdfs:label "x1 <- ip + j*rp\nx2 <- ip - j*rp" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/8> a d2g:Process, d2g:Node ;
+    rdfs:label "Display r1 and r2" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/9> a d2g:Terminator, d2g:Node ;
+    rdfs:label "Stop" ;
+    d2g:shape d2g:EndEvent .
+
+<http://example.org/diagram/diagram/edge/12> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/34> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/45> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "True" .
+
+<http://example.org/diagram/diagram/edge/46> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "False" .
+
+<http://example.org/diagram/diagram/edge/58> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/67> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/7> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/78> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/edge/89> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/8> ;
+    d2g:target <http://example.org/diagram/diagram/node/9> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/4> .
+<http://example.org/diagram/diagram/node/4> d2g:branches <http://example.org/diagram/diagram/node/5> .
+<http://example.org/diagram/diagram/node/4> d2g:branches <http://example.org/diagram/diagram/node/6> .
+<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/8> .
+<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/7> .
+<http://example.org/diagram/diagram/node/7> d2g:follows <http://example.org/diagram/diagram/node/8> .
+<http://example.org/diagram/diagram/node/8> d2g:follows <http://example.org/diagram/diagram/node/9> .

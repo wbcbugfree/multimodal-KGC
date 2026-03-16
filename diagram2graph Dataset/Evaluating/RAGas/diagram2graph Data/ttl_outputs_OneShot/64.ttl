@@ -1,0 +1,34 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:follows she:GetNFromUser .
+
+she:GetNFromUser a skos:Concept ;
+    skos:prefLabel "get n from user" ;
+    she:follows she:Initialize .
+
+she:Initialize a skos:Concept ;
+    skos:prefLabel "initialize" ;
+    she:follows she:IIsGreaterThanN .
+
+she:IIsGreaterThanN a skos:Concept ;
+    skos:prefLabel "i is greater than n" ;
+    she:ifConditionTrue she:ShowSumOnOutput ;
+    she:ifConditionFalse she:AddIToSum .
+
+she:AddIToSum a skos:Concept ;
+    skos:prefLabel "add i to sum" ;
+    she:follows she:Update .
+
+she:Update a skos:Concept ;
+    skos:prefLabel "update" ;
+    she:loopsBackTo she:IIsGreaterThanN .
+
+she:ShowSumOnOutput a skos:Concept ;
+    skos:prefLabel "show sum on output" ;
+    she:follows she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

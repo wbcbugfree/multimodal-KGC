@@ -1,0 +1,35 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:GuessNumber .
+
+she:GuessNumber a skos:Concept ;
+    skos:prefLabel "guess number" ;
+    she:leadsTo she:IfLessThanOrEqualTo10 .
+
+she:IfLessThanOrEqualTo10 a skos:Concept ;
+    skos:prefLabel "if <= 10" ;
+    she:trueBranchLeadsTo she:SmallNumber ;
+    she:falseBranchLeadsTo she:IfGreaterThan10AndLessThanOrEqualTo80 .
+
+she:SmallNumber a skos:Concept ;
+    skos:prefLabel "small number" ;
+    she:leadsTo she:End .
+
+she:IfGreaterThan10AndLessThanOrEqualTo80 a skos:Concept ;
+    skos:prefLabel "if > 10 and <= 80" ;
+    she:trueBranchLeadsTo she:MediumNumber ;
+    she:falseBranchLeadsTo she:LargeNumber .
+
+she:MediumNumber a skos:Concept ;
+    skos:prefLabel "medium number" ;
+    she:leadsTo she:End .
+
+she:LargeNumber a skos:Concept ;
+    skos:prefLabel "large number" ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

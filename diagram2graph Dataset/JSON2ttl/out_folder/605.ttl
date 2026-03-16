@@ -1,0 +1,109 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/1> a d2g:Process, d2g:Node ;
+    rdfs:label "Mail Invoice to Accounts Payable" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
+    rdfs:label "Review Invoice for Compliance" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Decision, d2g:Node ;
+    rdfs:label "Invoice Meets Requirement?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
+    rdfs:label "Don't accept" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/5> a d2g:Decision, d2g:Node ;
+    rdfs:label "Approval?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
+    rdfs:label "Place in queue" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/7> a d2g:Process, d2g:Node ;
+    rdfs:label "Invoice Placed in Payment Queue" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/8> a d2g:Process, d2g:Node ;
+    rdfs:label "Payment Processed" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/9> a d2g:Decision, d2g:Node ;
+    rdfs:label "Action Taken, Issue Resolved?" ;
+    d2g:shape d2g:Gateway .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/12> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+
+<http://example.org/diagram/diagram/edge/34> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/3> d2g:branches <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/35> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/3> d2g:branches <http://example.org/diagram/diagram/node/5> .
+
+<http://example.org/diagram/diagram/edge/56> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/5> d2g:branches <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/57> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/7> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/5> d2g:branches <http://example.org/diagram/diagram/node/7> .
+
+<http://example.org/diagram/diagram/edge/78> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/7> d2g:follows <http://example.org/diagram/diagram/node/8> .
+
+<http://example.org/diagram/diagram/edge/96> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/9> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/9> d2g:branches <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/95> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/9> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/9> d2g:branches <http://example.org/diagram/diagram/node/5> .

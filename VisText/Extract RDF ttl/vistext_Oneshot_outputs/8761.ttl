@@ -1,0 +1,47 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart8761 a schema:LineChart ;
+    schema:title "Total net electricity generation in the United States from 1990 to 2019 , by fuel (in billion kilowatt hours)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Hydroelectric pumped storage" ;
+    :yMin "-7.0"^^xsd:decimal ;
+    :yMax "0.0"^^xsd:decimal .
+
+:DataPoint8761_1 :belongsToChart :Chart8761 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "-3.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8761_2 :belongsToChart :Chart8761 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "-3.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8761_3 :belongsToChart :Chart8761 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "-6.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8761_4 :belongsToChart :Chart8761 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "-7.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8761_5 :belongsToChart :Chart8761 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "-5.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8761_6 :belongsToChart :Chart8761 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "-6.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2951 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Leading ten analgesic drugs dispensed in England in 2019 , by number of items (in 1,000s)" ;
+    chart:xAxis ex:x-2951 ;
+    chart:yAxis ex:y-2951 .
+
+ex:x-2951 a chart:Axis ;
+    chart:label "Analgesic Drug" .
+
+ex:y-2951 a chart:Axis ;
+    chart:label "Items in thousands" .
+
+ex:series-2951-1 a chart:Series .
+
+ex:mark-2951-1-1 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Paracetamol" ;
+    chart:value "17378"^^xsd:decimal .
+
+ex:mark-2951-1-2 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Co-codamol (Codeine phosphate/paracetamol)" ;
+    chart:value "15063"^^xsd:decimal .
+
+ex:mark-2951-1-3 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Tramadol hydrochloride" ;
+    chart:value "6078"^^xsd:decimal .
+
+ex:mark-2951-1-4 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Morphine sulfate" ;
+    chart:value "5091"^^xsd:decimal .
+
+ex:mark-2951-1-5 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Codeine phosphate" ;
+    chart:value "4988"^^xsd:decimal .
+
+ex:mark-2951-1-6 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Buprenorphine" ;
+    chart:value "2396"^^xsd:decimal .
+
+ex:mark-2951-1-7 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Sumatriptan succinate" ;
+    chart:value "1822"^^xsd:decimal .
+
+ex:mark-2951-1-8 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Oxycodone hydrochloride" ;
+    chart:value "1791"^^xsd:decimal .
+
+ex:mark-2951-1-9 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Co-dydramol (Dihydrocodeine/paracetamol)" ;
+    chart:value "1770"^^xsd:decimal .
+
+ex:mark-2951-1-10 a chart:DataPoint ;
+    chart:series ex:series-2951-1 ;
+    chart:category "Dihydrocodeine tartrate" ;
+    chart:value "1580"^^xsd:decimal .

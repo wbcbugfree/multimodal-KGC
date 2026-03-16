@@ -1,0 +1,77 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6371 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of Burger King restaurants in the Asia Pacific region from 2012 to 2013 , by country or region" ;
+    chart:xAxis ex:x-6371 ;
+    chart:yAxis ex:y-6371 .
+
+ex:x-6371 a chart:Axis ;
+    chart:label "Country" .
+
+ex:y-6371 a chart:Axis ;
+    chart:label "" .
+
+ex:series-6371-1 a chart:Series .
+
+ex:mark-6371-1-1 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Australi" ;
+    chart:value "371"^^xsd:decimal .
+
+ex:mark-6371-1-2 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Australia Chin" ;
+    chart:value "190"^^xsd:decimal .
+
+ex:mark-6371-1-3 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: China South Kore" ;
+    chart:value "164"^^xsd:decimal .
+
+ex:mark-6371-1-4 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: South Korea New Zealan" ;
+    chart:value "86"^^xsd:decimal .
+
+ex:mark-6371-1-5 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: New Zealand Japa" ;
+    chart:value "82"^^xsd:decimal .
+
+ex:mark-6371-1-6 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Japan Malaysi" ;
+    chart:value "56"^^xsd:decimal .
+
+ex:mark-6371-1-7 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Malaysia Indonesi" ;
+    chart:value "48"^^xsd:decimal .
+
+ex:mark-6371-1-8 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Indonesia Singapor" ;
+    chart:value "43"^^xsd:decimal .
+
+ex:mark-6371-1-9 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Singapore Philippine" ;
+    chart:value "36"^^xsd:decimal .
+
+ex:mark-6371-1-10 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Philippines Taiwa" ;
+    chart:value "36"^^xsd:decimal .
+
+ex:mark-6371-1-11 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Taiwan Thailan" ;
+    chart:value "34"^^xsd:decimal .
+
+ex:mark-6371-1-12 a chart:DataPoint ;
+    chart:series ex:series-6371-1 ;
+    chart:category "Country: Thailand Othe" ;
+    chart:value "85"^^xsd:decimal .

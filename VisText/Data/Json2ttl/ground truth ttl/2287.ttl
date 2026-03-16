@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/2287/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Gay and Lesbian Americans : Who lives in your household ?" ;
+    :hasXAxisLabel "labeled Response" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :LabeledResponse ;
+    rdfs:label "I live alone" ;
+    :y "0.293"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :LabeledResponse ;
+    rdfs:label "I live with a cat" ;
+    :y "0.232"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :LabeledResponse ;
+    rdfs:label "I live with a dog" ;
+    :y "0.273"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :LabeledResponse ;
+    rdfs:label "I live with another type of pet (no..." ;
+    :y "0.063"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :LabeledResponse ;
+    rdfs:label "I live with one or more brother(s) ..." ;
+    :y "0.029"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :LabeledResponse ;
+    rdfs:label "I live with one or more child(ren) ..." ;
+    :y "18"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :LabeledResponse ;
+    rdfs:label "I live with one or more child(ren) ..." ;
+    :y "18"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :LabeledResponse ;
+    rdfs:label "I live with one or more parents" ;
+    :y "0.066"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :LabeledResponse ;
+    rdfs:label "I live with one or more roommates" ;
+    :y "0.123"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :LabeledResponse ;
+    rdfs:label "Share of respondents I live with a ..." ;
+    :y "0.463"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

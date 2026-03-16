@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-5151 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Which of the following people , if any , do you consider to be picky eaters ?" ;
+    chart:xAxis ex:x-5151 ;
+    chart:yAxis ex:y-5151 .
+
+ex:x-5151 a chart:Axis ;
+    chart:label "Unnamed:" .
+
+ex:y-5151 a chart:Axis ;
+    chart:label "" .
+
+ex:series-5151-1 a chart:Series .
+
+ex:mark-5151-1-1 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "type of person" ;
+    chart:value "26"^^xsd:decimal .
+
+ex:mark-5151-1-2 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Myself" ;
+    chart:value "23"^^xsd:decimal .
+
+ex:mark-5151-1-3 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "A child in my household" ;
+    chart:value "17"^^xsd:decimal .
+
+ex:mark-5151-1-4 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another adult I know, not in my household" ;
+    chart:value "17"^^xsd:decimal .
+
+ex:mark-5151-1-5 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another child I know, not in my household" ;
+    chart:value "14"^^xsd:decimal .
+
+ex:mark-5151-1-6 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "My spouse or partner" ;
+    chart:value "5"^^xsd:decimal .
+
+ex:mark-5151-1-7 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Another adult in my household" ;
+    chart:value "5"^^xsd:decimal .
+
+ex:mark-5151-1-8 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "One or more of my parents" ;
+    chart:value "4"^^xsd:decimal .
+
+ex:mark-5151-1-9 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "One or more of my in-laws" ;
+    chart:value "11"^^xsd:decimal .
+
+ex:mark-5151-1-10 a chart:DataPoint ;
+    chart:series ex:series-5151-1 ;
+    chart:category "Someone else" ;
+    chart:value "28"^^xsd:decimal .

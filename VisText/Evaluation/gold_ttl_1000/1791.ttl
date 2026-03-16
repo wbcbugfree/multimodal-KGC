@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1791 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "The leading law firms in China in 2019 , by gross revenue (in million U.S. dollars)" ;
+    chart:xAxis ex:x-1791 ;
+    chart:yAxis ex:y-1791 .
+
+ex:x-1791 a chart:Axis ;
+    chart:label "Gross" .
+
+ex:y-1791 a chart:Axis ;
+    chart:label "" .
+
+ex:series-1791-1 a chart:Series .
+
+ex:mark-1791-1-1 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "revenue in million U.S. dollars law firm" ;
+    chart:value "2899.6"^^xsd:decimal .
+
+ex:mark-1791-1-2 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Dentons" ;
+    chart:value "1079"^^xsd:decimal .
+
+ex:mark-1791-1-3 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "King & Wood Mallesons" ;
+    chart:value "762.87"^^xsd:decimal .
+
+ex:mark-1791-1-4 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Yingke" ;
+    chart:value "535.31"^^xsd:decimal .
+
+ex:mark-1791-1-5 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Zhong Lun Law Firm" ;
+    chart:value "506.65"^^xsd:decimal .
+
+ex:mark-1791-1-6 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Allbright" ;
+    chart:value "434.27"^^xsd:decimal .
+
+ex:mark-1791-1-7 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Grandall Law Firm" ;
+    chart:value "434.27"^^xsd:decimal .
+
+ex:mark-1791-1-8 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "DeHeng Law Offices" ;
+    chart:value "267.56"^^xsd:decimal .
+
+ex:mark-1791-1-9 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "JunHe" ;
+    chart:value "243.97"^^xsd:decimal .
+
+ex:mark-1791-1-10 a chart:DataPoint ;
+    chart:series ex:series-1791-1 ;
+    chart:category "Jingsh Law Firm" ;
+    chart:value "243.19"^^xsd:decimal .

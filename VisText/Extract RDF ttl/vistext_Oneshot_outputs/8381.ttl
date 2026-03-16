@@ -1,0 +1,53 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8381 a schema:AreaChart ;
+    schema:title "Percentage of Americans voting for the Democratic candidate in presidential elections from 1972 to 2012 , by generation" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Generation aged 18-29" ;
+    :yMin "0.0"^^xsd:decimal ;
+    :yMax "0.7"^^xsd:decimal .
+
+:DataPoint8381_1 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "1972" ;
+    :xValue "1972" ;
+    :yValue "0.49"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8381_2 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "1980" ;
+    :xValue "1980" ;
+    :yValue "0.40"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8381_3 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "1988" ;
+    :xValue "1988" ;
+    :yValue "0.47"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8381_4 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "1996" ;
+    :xValue "1996" ;
+    :yValue "0.49"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8381_5 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "2004" ;
+    :xValue "2004" ;
+    :yValue "0.57"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8381_6 a :DataPoint ;
+    :belongsToChart :Chart8381 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

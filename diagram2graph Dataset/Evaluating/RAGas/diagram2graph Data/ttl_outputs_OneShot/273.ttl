@@ -1,0 +1,31 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Movie a skos:Concept ;
+    skos:prefLabel "movie" ;
+    she:initiatesProcess she:HasSubtitles .
+
+she:HasSubtitles a skos:Concept ;
+    skos:prefLabel "has subtitles" ;
+    she:ifSubtitlesPresent she:Type ;
+    she:ifSubtitlesAbsent she:AskSomeone .
+
+she:AskSomeone a skos:Concept ;
+    skos:prefLabel "ask someone" ;
+    she:proceedsTo she:Type .
+
+she:Type a skos:Concept ;
+    skos:prefLabel "type" ;
+    she:ifTypeIsSingle she:SummarizeBasedOnSelectedAlgorithm ;
+    she:ifTypeIsCombined she:CreateNewAlgorithm .
+
+she:SummarizeBasedOnSelectedAlgorithm a skos:Concept ;
+    skos:prefLabel "summarize based on selected algorithm" ;
+    she:concludesWith she:GenerateTheSummarizedVideo .
+
+she:CreateNewAlgorithm a skos:Concept ;
+    skos:prefLabel "create new algorithm" ;
+    she:concludesWith she:GenerateTheSummarizedVideo .
+
+she:GenerateTheSummarizedVideo a skos:Concept ;
+    skos:prefLabel "generate the summarized video" .

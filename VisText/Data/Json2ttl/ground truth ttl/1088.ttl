@@ -1,0 +1,64 @@
+@prefix : <http://example.org/chart-data/1088/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Given the current state of the business what are the CEO 's...to help business preserve through the current disruption ?" ;
+    :hasXAxisLabel "Response" ;
+    :hasYAxisLabel "Share of respondents" .
+
+:DataPoint1 a :Response ;
+    rdfs:label "Collaborate with business departmen..." ;
+    :shareOfRespondents "0.22"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Response ;
+    rdfs:label "Enable new plan for customer acquis..." ;
+    :shareOfRespondents "0.23"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Response ;
+    rdfs:label "Help reach specific goal for corpor..." ;
+    :shareOfRespondents "0.25"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Response ;
+    rdfs:label "Identify new data-driven business o..." ;
+    :shareOfRespondents "0.24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Response ;
+    rdfs:label "Improve remote work experiences" ;
+    :shareOfRespondents "0.37"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Response ;
+    rdfs:label "Increases collaboration with LOB to..." ;
+    :shareOfRespondents "0.11"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Response ;
+    rdfs:label "Lead a product innovation effort" ;
+    :shareOfRespondents "0.14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Response ;
+    rdfs:label "Lead digital buisness/digital trans..." ;
+    :shareOfRespondents "0.37"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Response ;
+    rdfs:label "Lead merger integration or due dill..." ;
+    :shareOfRespondents "0.08"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Response ;
+    rdfs:label "Reduce or rationalize IT spending" ;
+    :shareOfRespondents "0.28"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Response ;
+    rdfs:label "Upgrade IT and data security to boo..." ;
+    :shareOfRespondents "0.29"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

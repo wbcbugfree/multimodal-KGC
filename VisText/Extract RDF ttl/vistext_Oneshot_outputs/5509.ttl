@@ -1,0 +1,95 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart5509 a schema:BarChart ;
+    schema:title "Coronavirus impact on online traffic of selected industries worldwide as of October 2020" ;
+    :hasXAxisLabel "industry" ;
+    :hasYAxisLabel "Change in traffic" ;
+    :yMin "-0.4"^^xsd:decimal ;
+    :yMax "0.4"^^xsd:decimal .
+
+:DataPoint5509_1 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Bank / insurance" ;
+    :xValue "Bank / insurance" ;
+    :yValue "0.01"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_2 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Cosmetics" ;
+    :xValue "Cosmetics" ;
+    :yValue "0.03"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_3 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Fashion" ;
+    :xValue "Fashion" ;
+    :yValue "-0.08"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_4 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Home furnishings / DIY" ;
+    :xValue "Home furnishings / DIY" ;
+    :yValue "-0.05"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_5 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Jewelry & watch" ;
+    :xValue "Jewelry & watch" ;
+    :yValue "-0.06"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_6 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Luxury" ;
+    :xValue "Luxury" ;
+    :yValue "-0.05"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_7 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Media" ;
+    :xValue "Media" ;
+    :yValue "-0.08"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_8 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Retail tech" ;
+    :xValue "Retail tech" ;
+    :yValue "0.07"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_9 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Sports equipment" ;
+    :xValue "Sports equipment" ;
+    :yValue "0.23"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_10 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Supermarket" ;
+    :xValue "Supermarket" ;
+    :yValue "0.36"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_11 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Telecom" ;
+    :xValue "Telecom" ;
+    :yValue "0.03"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint5509_12 a :DataPoint ;
+    :belongsToChart :Chart5509 ;
+    rdfs:label "Tourism" ;
+    :xValue "Tourism" ;
+    :yValue "-0.37"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

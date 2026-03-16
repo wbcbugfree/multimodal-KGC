@@ -1,0 +1,117 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1170 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-1170 ;
+    chart:yAxis ex:y-1170 ;
+    chart:title "Donations made to charity in the U.S. from 2011 to 2013 , by channel used" .
+
+ex:x-1170 a chart:Axis ;
+    chart:label "Share of respondents" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.5" .
+
+ex:y-1170 a chart:Axis ;
+    chart:label "Channel" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-1170-1 a chart:Series .
+
+ex:mark-1170-1-1 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Will/planned gift." ;
+    chart:value "0.05"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-2 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Third Party Vendor" ;
+    chart:value "0.07"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-3 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Stocks, bonds, property" ;
+    chart:value "0.20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-4 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Social networking site" ;
+    chart:value "0.18"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-5 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Radio/TV*" ;
+    chart:value "0.05"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-6 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Purchase of proceeds" ;
+    chart:value "0.03"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-7 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Pledge" ;
+    chart:value "0.38"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-8 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Online donation" ;
+    chart:value "0.38"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-9 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Phone" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-10 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Mobile ad" ;
+    chart:value "0.35"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-11 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Online donation" ;
+    chart:value "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-12 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Honor/tribute card*" ;
+    chart:value "0.05"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-13 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Email*" ;
+    chart:value "0.35"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-14 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Door to door*" ;
+    chart:value "0.25"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-15 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Checkout donations" ;
+    chart:value "0.08"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-1170-1-16 a chart:Bar ;
+    chart:series ex:series-1170-1 ;
+    chart:category "Mailed check/credit card*" ;
+    chart:value "0.45"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

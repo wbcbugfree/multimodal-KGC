@@ -1,0 +1,59 @@
+@prefix : <http://example.org/chart-data/7630/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Most purchased brands during COVID-19 outbreak in Singapore as of March 2020 , by type of customer" ;
+    :hasXAxisLabel "marked Response" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :MarkedResponse ;
+    rdfs:label "COVID-19 Worriers McDonald's" ;
+    :y "0.55"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :MarkedResponse ;
+    rdfs:label "Dettol" ;
+    :y "0.32"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :MarkedResponse ;
+    rdfs:label "Enfagrow" ;
+    :y "0.04"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :MarkedResponse ;
+    rdfs:label "KFC" ;
+    :y "0.36"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :MarkedResponse ;
+    rdfs:label "L'Oreal" ;
+    :y "0.13"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :MarkedResponse ;
+    rdfs:label "MeWATCH" ;
+    :y "0.06"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :MarkedResponse ;
+    rdfs:label "Ninja Van" ;
+    :y "0.17"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :MarkedResponse ;
+    rdfs:label "Nissin" ;
+    :y "0.12"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :MarkedResponse ;
+    rdfs:label "QOO10" ;
+    :y "0.31"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :MarkedResponse ;
+    rdfs:label "Shopee" ;
+    :y "0.19"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

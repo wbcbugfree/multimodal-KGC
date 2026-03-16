@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8522 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Estimated change in GDP in selected countries due to economic crisis in percent" ;
+    chart:xAxis ex:x-8522 ;
+    chart:yAxis ex:y-8522 .
+
+ex:x-8522 a chart:Axis ;
+    chart:label "2009 *" .
+
+ex:y-8522 a chart:Axis ;
+    chart:label "Country" .
+
+ex:series-8522-1 a chart:Series .
+
+ex:mark-8522-1-1 a chart:DataPoint ;
+    chart:series ex:series-8522-1 ;
+    chart:category "−8 Ireland −6.2 Japan −5.6 Germany −5.2 Finland −4..." ;
+    chart:value "0.3"^^xsd:decimal .

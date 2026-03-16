@@ -1,0 +1,34 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiatesProcess she:UserEntersLoginNameAndPassword .
+
+she:UserEntersLoginNameAndPassword a skos:Concept ;
+    skos:prefLabel "user enters login name and password" ;
+    she:proceedsTo she:CorrectLoginAndPassword .
+
+she:CorrectLoginAndPassword a skos:Concept ;
+    skos:prefLabel "correct login and password?" ;
+    she:onYes she:UserSuccessfullyLogsIn ;
+    she:onNo she:Alert .
+
+she:Alert a skos:Concept ;
+    skos:prefLabel "alert" ;
+    she:returnsTo she:UserEntersLoginNameAndPassword .
+
+she:UserSuccessfullyLogsIn a skos:Concept ;
+    skos:prefLabel "user successfully logs in" ;
+    she:proceedsTo she:Display .
+
+she:Display a skos:Concept ;
+    skos:prefLabel "display" ;
+    she:proceedsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" ;
+    she:resultsIn she:UserLogsIntoTheSystem .
+
+she:UserLogsIntoTheSystem a skos:Concept ;
+    skos:prefLabel "user logs into the system" .

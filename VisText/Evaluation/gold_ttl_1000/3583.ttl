@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3583 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "If you think of your (last) journey , how would you (most likely) have reached your destination , if you had n't used a long-distance bus service ?" ;
+    chart:xAxis ex:x-3583 ;
+    chart:yAxis ex:y-3583 .
+
+ex:x-3583 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-3583 a chart:Axis ;
+    chart:label "Share of respondents" .
+
+ex:series-3583-1 a chart:Series .
+
+ex:mark-3583-1-1 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Train (Deutsche Bahn)" ;
+    chart:value "0.361"^^xsd:decimal .
+
+ex:mark-3583-1-2 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Own car" ;
+    chart:value "0.329"^^xsd:decimal .
+
+ex:mark-3583-1-3 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Plane" ;
+    chart:value "0.114"^^xsd:decimal .
+
+ex:mark-3583-1-4 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Car pooling" ;
+    chart:value "0.089"^^xsd:decimal .
+
+ex:mark-3583-1-5 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Taxi" ;
+    chart:value "0.038"^^xsd:decimal .
+
+ex:mark-3583-1-6 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Rental car" ;
+    chart:value "0.025"^^xsd:decimal .
+
+ex:mark-3583-1-7 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Hitchhiking" ;
+    chart:value "0.019"^^xsd:decimal .
+
+ex:mark-3583-1-8 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Car sharing" ;
+    chart:value "0.013"^^xsd:decimal .
+
+ex:mark-3583-1-9 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Other" ;
+    chart:value "0.006"^^xsd:decimal .
+
+ex:mark-3583-1-10 a chart:DataPoint ;
+    chart:series ex:series-3583-1 ;
+    chart:category "Don't know" ;
+    chart:value "0.006"^^xsd:decimal .

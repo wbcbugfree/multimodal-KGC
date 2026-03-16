@@ -1,0 +1,58 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2009 a chart:Chart ;
+    chart:chartType "line" ;
+    chart:title "Forecast of the life expectancy at birth in the Netherlands from 2015 to 2060 (in years)" ;
+    chart:xAxis ex:x-2009 ;
+    chart:yAxis ex:y-2009 .
+
+ex:x-2009 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2015" ;
+    chart:scaleMax "2060" .
+
+ex:y-2009 a chart:Axis ;
+    chart:label "Life expectancy in years" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "100" .
+
+ex:series-2009-1 a chart:Series ;
+    chart:seriesName "Life expectancy" .
+
+ex:point-2009-1-1 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2015" ;
+    chart:yVal "81.0"^^xsd:decimal ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-2009-1-2 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2020" ;
+    chart:yVal "81.5"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2009-1-3 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2030" ;
+    chart:yVal "82.5"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2009-1-4 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2040" ;
+    chart:yVal "83.5"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2009-1-5 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2050" ;
+    chart:yVal "84.5"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-2009-1-6 a chart:Point ;
+    chart:series ex:series-2009-1 ;
+    chart:xVal "2060" ;
+    chart:yVal "85.5"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3056 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Criminal use of explosives in Canada in 2014 , by incident" ;
+    chart:xAxis ex:x-3056 ;
+    chart:yAxis ex:y-3056 .
+
+ex:x-3056 a chart:Axis ;
+    chart:label "Number of incidents involving explosives" .
+
+ex:y-3056 a chart:Axis ;
+    chart:label "Incident" .
+
+ex:series-3056-1 a chart:Series .
+
+ex:mark-3056-1-1 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Recovery of commercial & military explosives" ;
+    chart:value "26"^^xsd:decimal .
+
+ex:mark-3056-1-2 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Recovery of IED & HME" ;
+    chart:value "15"^^xsd:decimal .
+
+ex:mark-3056-1-3 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Hoax device" ;
+    chart:value "11"^^xsd:decimal .
+
+ex:mark-3056-1-4 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Recovery of inert military ordnance" ;
+    chart:value "7"^^xsd:decimal .
+
+ex:mark-3056-1-5 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Bombing" ;
+    chart:value "6"^^xsd:decimal .
+
+ex:mark-3056-1-6 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Attempted bombing" ;
+    chart:value "5"^^xsd:decimal .
+
+ex:mark-3056-1-7 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "CBRN incidents" ;
+    chart:value "3"^^xsd:decimal .
+
+ex:mark-3056-1-8 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Theft of explosives" ;
+    chart:value "1"^^xsd:decimal .
+
+ex:mark-3056-1-9 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Accidental explosion" ;
+    chart:value "0"^^xsd:decimal .
+
+ex:mark-3056-1-10 a chart:DataPoint ;
+    chart:series ex:series-3056-1 ;
+    chart:category "Injured" ;
+    chart:value "0"^^xsd:decimal .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4474 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "U.S. honey imports in 2018 , by country of origin (in metric tons)" ;
+    chart:xAxis ex:x-4474 ;
+    chart:yAxis ex:y-4474 .
+
+ex:x-4474 a chart:Axis ;
+    chart:label "Country" .
+
+ex:y-4474 a chart:Axis ;
+    chart:label "" .
+
+ex:series-4474-1 a chart:Series .
+
+ex:mark-4474-1-1 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Imports in metric tons India" ;
+    chart:value "44298"^^xsd:decimal .
+
+ex:mark-4474-1-2 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Vietnam" ;
+    chart:value "39193"^^xsd:decimal .
+
+ex:mark-4474-1-3 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Argentina" ;
+    chart:value "36219"^^xsd:decimal .
+
+ex:mark-4474-1-4 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Brazil" ;
+    chart:value "23604"^^xsd:decimal .
+
+ex:mark-4474-1-5 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Canada" ;
+    chart:value "15244"^^xsd:decimal .
+
+ex:mark-4474-1-6 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "China" ;
+    chart:value "13436"^^xsd:decimal .
+
+ex:mark-4474-1-7 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Ukraine" ;
+    chart:value "8324"^^xsd:decimal .
+
+ex:mark-4474-1-8 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Thailand" ;
+    chart:value "4676"^^xsd:decimal .
+
+ex:mark-4474-1-9 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Mexico" ;
+    chart:value "3315"^^xsd:decimal .
+
+ex:mark-4474-1-10 a chart:DataPoint ;
+    chart:series ex:series-4474-1 ;
+    chart:category "Turkey" ;
+    chart:value "2314"^^xsd:decimal .

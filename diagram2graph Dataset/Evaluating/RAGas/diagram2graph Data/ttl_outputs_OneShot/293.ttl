@@ -1,0 +1,30 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:LoginPage .
+
+she:LoginPage a skos:Concept ;
+    skos:prefLabel "login page" ;
+    she:leadsToIfYes she:Check ;
+    she:leadsToIfNo she:Reconfirm .
+
+she:Check a skos:Concept ;
+    skos:prefLabel "check" ;
+    she:leadsTo she:NewsFeed .
+
+she:NewsFeed a skos:Concept ;
+    skos:prefLabel "newsfeed" ;
+    she:leadsTo she:Like .
+
+she:Reconfirm a skos:Concept ;
+    skos:prefLabel "reconfirm" ;
+    she:returnsTo she:LoginPage .
+
+she:Like a skos:Concept ;
+    skos:prefLabel "like" ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

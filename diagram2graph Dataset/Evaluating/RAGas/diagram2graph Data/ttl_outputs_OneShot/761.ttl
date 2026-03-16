@@ -1,0 +1,38 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:follows she:InitialPopulation .
+
+she:InitialPopulation a skos:Concept ;
+    skos:prefLabel "initial population" ;
+    she:follows she:FitnessEvaluation .
+
+she:FitnessEvaluation a skos:Concept ;
+    skos:prefLabel "fitness evaluation" ;
+    she:follows she:TournamentSelection .
+
+she:TournamentSelection a skos:Concept ;
+    skos:prefLabel "tournament selection" ;
+    she:follows she:TeamSelection .
+
+she:TeamSelection a skos:Concept ;
+    skos:prefLabel "team selection" ;
+    she:follows she:FinalizeTeam .
+
+she:FinalizeTeam a skos:Concept ;
+    skos:prefLabel "finalize team" ;
+    she:follows she:NewGeneration .
+
+she:NewGeneration a skos:Concept ;
+    skos:prefLabel "new generation" ;
+    she:follows she:ConditionFulfil .
+
+she:ConditionFulfil a skos:Concept ;
+    skos:prefLabel "condition fulfil?" ;
+    she:ifYesLeadsTo she:EndProcess ;
+    she:ifNoLeadsTo she:TournamentSelection .
+
+she:EndProcess a skos:Concept ;
+    skos:prefLabel "end process" .

@@ -1,0 +1,34 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:nextStep she:ExampleOfFlowChartSymbols .
+
+she:ExampleOfFlowChartSymbols a skos:Concept ;
+    skos:prefLabel "this is an example of flow chart symbols." ;
+    she:nextStep she:Num1Num2Input .
+
+she:Num1Num2Input a skos:Concept ;
+    skos:prefLabel "num1 num2" ;
+    she:nextStep she:Num1GreaterThanNum2 .
+
+she:Num1GreaterThanNum2 a skos:Concept ;
+    skos:prefLabel "num1 > num2" ;
+    she:trueBranch she:Update ;
+    she:falseBranch she:IncrementNum1DecrementNum2 .
+
+she:Update a skos:Concept ;
+    skos:prefLabel "update" ;
+    she:nextStep she:DisplayNum1Num2 .
+
+she:IncrementNum1DecrementNum2 a skos:Concept ;
+    skos:prefLabel "num1++ num2--" ;
+    she:nextStep she:DisplayNum1Num2 .
+
+she:DisplayNum1Num2 a skos:Concept ;
+    skos:prefLabel "display: num1, num2" ;
+    she:nextStep she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

@@ -1,0 +1,40 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8775 a schema:LineChart ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "15-64 years" ;
+    :yMin "0.0"^^xsd:decimal ;
+    :yMax "0.7"^^xsd:decimal .
+
+:DataPoint8775_1 :belongsToChart :Chart8775 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8775_2 :belongsToChart :Chart8775 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8775_3 :belongsToChart :Chart8775 ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8775_4 :belongsToChart :Chart8775 ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8775_5 :belongsToChart :Chart8775 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "0.65"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

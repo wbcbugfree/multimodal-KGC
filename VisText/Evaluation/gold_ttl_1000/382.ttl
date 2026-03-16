@@ -1,0 +1,77 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-382 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of monthly active Instagram users from January 2013 to June 2018 (in millions)" ;
+    chart:xAxis ex:x-382 ;
+    chart:yAxis ex:y-382 .
+
+ex:x-382 a chart:Axis ;
+    chart:label "Number of users in millions" .
+
+ex:y-382 a chart:Axis ;
+    chart:label "Month while the x-axis shows Number of users in millions" .
+
+ex:series-382-1 a chart:Series .
+
+ex:mark-382-1-1 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "of users in millions Month" ;
+    chart:value "1000"^^xsd:decimal .
+
+ex:mark-382-1-2 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Jun '18" ;
+    chart:value "800"^^xsd:decimal .
+
+ex:mark-382-1-3 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Sep '17" ;
+    chart:value "700"^^xsd:decimal .
+
+ex:mark-382-1-4 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Apr '17" ;
+    chart:value "600"^^xsd:decimal .
+
+ex:mark-382-1-5 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Dec '16" ;
+    chart:value "500"^^xsd:decimal .
+
+ex:mark-382-1-6 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Jun '16" ;
+    chart:value "400"^^xsd:decimal .
+
+ex:mark-382-1-7 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Sep '15" ;
+    chart:value "300"^^xsd:decimal .
+
+ex:mark-382-1-8 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Dec '14" ;
+    chart:value "200"^^xsd:decimal .
+
+ex:mark-382-1-9 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Mar '14" ;
+    chart:value "150"^^xsd:decimal .
+
+ex:mark-382-1-10 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Sep '13" ;
+    chart:value "130"^^xsd:decimal .
+
+ex:mark-382-1-11 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Jun '13" ;
+    chart:value "100"^^xsd:decimal .
+
+ex:mark-382-1-12 a chart:DataPoint ;
+    chart:series ex:series-382-1 ;
+    chart:category "Feb '13" ;
+    chart:value "90"^^xsd:decimal .

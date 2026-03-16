@@ -1,0 +1,73 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart4639 a schema:LineChart ;
+    schema:title "Average Comex spot price of silver from 1975 to 2019 (in U.S. dollars per ounce)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Price in U.S. dollars per ounce" ;
+    :xMin "1975"^^xsd:string ;
+    :xMax "2019"^^xsd:string ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "40"^^xsd:decimal .
+
+:DataPoint4639_1 :belongsToChart :Chart4639 ;
+    rdfs:label "1975" ;
+    :xValue "1975" ;
+    :yValue "2.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_2 :belongsToChart :Chart4639 ;
+    rdfs:label "1980" ;
+    :xValue "1980" ;
+    :yValue "20.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_3 :belongsToChart :Chart4639 ;
+    rdfs:label "1985" ;
+    :xValue "1985" ;
+    :yValue "5.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_4 :belongsToChart :Chart4639 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "4.5"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_5 :belongsToChart :Chart4639 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "5.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_6 :belongsToChart :Chart4639 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "5.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_7 :belongsToChart :Chart4639 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "7.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_8 :belongsToChart :Chart4639 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "35.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_9 :belongsToChart :Chart4639 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "15.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4639_10 :belongsToChart :Chart4639 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "17.0"^^xsd:decimal ;
+    :valueEstimated "true" .

@@ -1,0 +1,72 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8203 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Share of online users in the United States who use selected social media platforms as of 3rd quarter 2020" ;
+    chart:xAxis ex:x-8203 ;
+    chart:yAxis ex:y-8203 .
+
+ex:x-8203 a chart:Axis ;
+    chart:label "Q4 2018" .
+
+ex:y-8203 a chart:Axis ;
+    chart:label "Platform while the x-axis shows Q4 2018" .
+
+ex:series-8203-1 a chart:Series .
+
+ex:mark-8203-1-1 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Platform" ;
+    chart:value "0.67"^^xsd:decimal .
+
+ex:mark-8203-1-2 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "YouTube" ;
+    chart:value "0.77"^^xsd:decimal .
+
+ex:mark-8203-1-3 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Facebook" ;
+    chart:value "0.46"^^xsd:decimal .
+
+ex:mark-8203-1-4 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Instagram" ;
+    chart:value "0.37"^^xsd:decimal .
+
+ex:mark-8203-1-5 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Twitter" ;
+    chart:value "0.34"^^xsd:decimal .
+
+ex:mark-8203-1-6 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Pinterest" ;
+    chart:value "0.29"^^xsd:decimal .
+
+ex:mark-8203-1-7 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "LinkedIn" ;
+    chart:value "0.13"^^xsd:decimal .
+
+ex:mark-8203-1-8 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Reddit" ;
+    chart:value "0.25"^^xsd:decimal .
+
+ex:mark-8203-1-9 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Snapchat" ;
+    chart:value "0.16"^^xsd:decimal .
+
+ex:mark-8203-1-10 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "WhatsApp" ;
+    chart:value "0.1"^^xsd:decimal .
+
+ex:mark-8203-1-11 a chart:DataPoint ;
+    chart:series ex:series-8203-1 ;
+    chart:category "Tumblr" ;
+    chart:value "0.02"^^xsd:decimal .

@@ -1,0 +1,17 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:AreYouHappy .
+
+she:AreYouHappy a skos:Concept ;
+    skos:prefLabel "are you happy?" ;
+    she:ifYesLeadsTo she:YesALot ;
+    she:ifNoLeadsTo she:WantToBeHappy .
+
+she:YesALot a skos:Concept ;
+    skos:prefLabel "yes a lot" .
+
+she:WantToBeHappy a skos:Concept ;
+    skos:prefLabel "want to be happy?" .

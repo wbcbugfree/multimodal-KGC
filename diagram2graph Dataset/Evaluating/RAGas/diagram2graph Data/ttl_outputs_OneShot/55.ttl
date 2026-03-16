@@ -1,0 +1,18 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:Condition .
+
+she:Condition a skos:Concept ;
+    skos:prefLabel "condition" ;
+    she:ifTrueLeadsTo she:LoopBody ;
+    she:ifFalseLeadsTo she:EndOfLoop .
+
+she:LoopBody a skos:Concept ;
+    skos:prefLabel "loop body" ;
+    she:loopsBackTo she:Condition .
+
+she:EndOfLoop a skos:Concept ;
+    skos:prefLabel "end of loop" .

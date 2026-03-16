@@ -1,0 +1,30 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:CreateASwarmOfParticles .
+
+she:CreateASwarmOfParticles a skos:Concept ;
+    skos:prefLabel "create a swarm of particles" ;
+    she:leadsTo she:CalculateEachParticleSFitness .
+
+she:CalculateEachParticleSFitness a skos:Concept ;
+    skos:prefLabel "calculate each particle's fitness" ;
+    she:leadsTo she:DetermineBestValue .
+
+she:DetermineBestValue a skos:Concept ;
+    skos:prefLabel "determine best value" ;
+    she:leadsTo she:UpdateValue .
+
+she:UpdateValue a skos:Concept ;
+    skos:prefLabel "update value" ;
+    she:leadsTo she:Termination .
+
+she:Termination a skos:Concept ;
+    skos:prefLabel "termination" ;
+    she:onNo she:CalculateEachParticleSFitness ;
+    she:onYes she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

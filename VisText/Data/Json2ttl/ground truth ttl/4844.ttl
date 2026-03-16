@@ -1,0 +1,64 @@
+@prefix : <http://example.org/chart-data/4844/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Total number of magnetic resonance imaging (MRI) units in the United Kingdom (UK) from 2000 to 2014" ;
+    :hasXAxisLabel "Year is drawn with a categorical scale from 2000* to" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "*" ;
+    :y "411"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "*" ;
+    :y "340"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "*" ;
+    :y "271"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "*" ;
+    :y "296"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "*" ;
+    :y "367"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "2000*" ;
+    :y "331"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "2006*" ;
+    :y "342"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "2011*" ;
+    :y "441"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "2012*" ;
+    :y "456"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "2013*" ;
+    :y "462"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :YearIsDrawnWithACategoricalScaleFrom2000To ;
+    rdfs:label "Number of scanners 2014*" ;
+    :y "467"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

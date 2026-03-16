@@ -1,0 +1,87 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8771 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Distribution of Garmin 's revenue from 2009 to 2019 , by segment" ;
+    chart:xAxis ex:x-8771 ;
+    chart:yAxis ex:y-8771 .
+
+ex:x-8771 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2009" ;
+    chart:scaleMax "2019" .
+
+ex:y-8771 a chart:Axis ;
+    chart:label "Aviation" ;
+    chart:scaleMin "0.00" ;
+    chart:scaleMax "0.20" .
+
+ex:series-8771-1 a chart:Series .
+
+ex:dp-8771-1-1 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2009" ;
+    chart:yVal "0.07"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-2 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "0.09"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-3 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2011" ;
+    chart:yVal "0.095"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-4 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "0.10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-5 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2013" ;
+    chart:yVal "0.115"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-6 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "0.12"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-7 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2015" ;
+    chart:yVal "0.13"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-8 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "0.145"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-9 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2017" ;
+    chart:yVal "0.16"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-10 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "0.18"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:dp-8771-1-11 a chart:DataPoint ;
+    chart:series ex:series-8771-1 ;
+    chart:xVal "2019" ;
+    chart:yVal "0.195"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

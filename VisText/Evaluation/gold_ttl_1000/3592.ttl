@@ -1,0 +1,77 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3592 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of tourist arrivals from the United Kingdom (UK) in Lanzarote in 2014 , by region of origin" ;
+    chart:xAxis ex:x-3592 ;
+    chart:yAxis ex:y-3592 .
+
+ex:x-3592 a chart:Axis ;
+    chart:label "region of England" .
+
+ex:y-3592 a chart:Axis ;
+    chart:label "Number of arrivals while the x-axis plots region of England" .
+
+ex:series-3592-1 a chart:Series .
+
+ex:mark-3592-1-1 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "of England Number of arrivals North-West" ;
+    chart:value "147634"^^xsd:decimal .
+
+ex:mark-3592-1-2 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "South-East" ;
+    chart:value "121398"^^xsd:decimal .
+
+ex:mark-3592-1-3 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "Scotland" ;
+    chart:value "117838"^^xsd:decimal .
+
+ex:mark-3592-1-4 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "Yorkshire and the Humber" ;
+    chart:value "112578"^^xsd:decimal .
+
+ex:mark-3592-1-5 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "West Midlands" ;
+    chart:value "105042"^^xsd:decimal .
+
+ex:mark-3592-1-6 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "London" ;
+    chart:value "103724"^^xsd:decimal .
+
+ex:mark-3592-1-7 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "East Midlands" ;
+    chart:value "97227"^^xsd:decimal .
+
+ex:mark-3592-1-8 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "East of England" ;
+    chart:value "86605"^^xsd:decimal .
+
+ex:mark-3592-1-9 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "South-West" ;
+    chart:value "67188"^^xsd:decimal .
+
+ex:mark-3592-1-10 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "Wales" ;
+    chart:value "43283"^^xsd:decimal .
+
+ex:mark-3592-1-11 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "North-East" ;
+    chart:value "27099"^^xsd:decimal .
+
+ex:mark-3592-1-12 a chart:DataPoint ;
+    chart:series ex:series-3592-1 ;
+    chart:category "Northern Ireland" ;
+    chart:value "21451"^^xsd:decimal .

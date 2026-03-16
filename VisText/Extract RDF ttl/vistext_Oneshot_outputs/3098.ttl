@@ -1,0 +1,51 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart3098 a schema:LineChart ;
+    schema:title "Number of passengers boarded by the major Canadian air carriers from 1990 to 2019 (in 1,000s)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Number of passengers boarded in thousands" .
+
+:DataPoint3098_1 :belongsToChart :Chart3098 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "21000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_2 :belongsToChart :Chart3098 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "22000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_3 :belongsToChart :Chart3098 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "26000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_4 :belongsToChart :Chart3098 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "35000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_5 :belongsToChart :Chart3098 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "39000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_6 :belongsToChart :Chart3098 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "65000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3098_7 :belongsToChart :Chart3098 ;
+    rdfs:label "2019" ;
+    :xValue "2019" ;
+    :yValue "85000.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

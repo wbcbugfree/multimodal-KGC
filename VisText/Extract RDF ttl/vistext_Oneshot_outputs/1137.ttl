@@ -1,0 +1,53 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart1137 a schema:LineChart ;
+    schema:title "Libya : Youth unemployment rate from 1999 to 2020" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Youth unemployment rate" ;
+    :yMin "0.0"^^xsd:decimal ;
+    :yMax "0.5"^^xsd:decimal .
+
+:DataPoint1137_1 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "1999" ;
+    :xValue "1999" ;
+    :yValue "0.46"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1137_2 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "0.46"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1137_3 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "0.47"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1137_4 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "0.49"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1137_5 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "0.50"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint1137_6 a schema:DataPoint ;
+    :belongsToChart :Chart1137 ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "0.50"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

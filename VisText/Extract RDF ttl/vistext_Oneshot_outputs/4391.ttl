@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart4391 a schema:LineChart ;
+    schema:title "Birth rate in the United States from 1990 to 2018 (per 1,000 of population)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Birth rate per 1,000 of population" ;
+    :xMin "1990" ;
+    :xMax "2018" ;
+    :yMin "0" ;
+    :yMax "18" .
+
+:DataPoint4391_1 :belongsToChart :Chart4391 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "16.7"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_2 :belongsToChart :Chart4391 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "15.6"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_3 :belongsToChart :Chart4391 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "14.7"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_4 :belongsToChart :Chart4391 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "14.0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_5 :belongsToChart :Chart4391 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "13.2"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_6 :belongsToChart :Chart4391 ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "12.4"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4391_7 :belongsToChart :Chart4391 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "11.8"^^xsd:decimal ;
+    :valueEstimated "true" .

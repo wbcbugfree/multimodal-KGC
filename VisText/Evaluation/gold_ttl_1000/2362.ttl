@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2362 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average number of civilian deaths per day from gunfire and executions in Iraq war from 2003 to 2013" ;
+    chart:xAxis ex:x-2362 ;
+    chart:yAxis ex:y-2362 .
+
+ex:x-2362 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-2362 a chart:Axis ;
+    chart:label "" .
+
+ex:series-2362-1 a chart:Series .
+
+ex:mark-2362-1-1 a chart:DataPoint ;
+    chart:series ex:series-2362-1 ;
+    chart:category "Average number of civilian deaths per day 2013*" ;
+    chart:value "2.9"^^xsd:decimal .

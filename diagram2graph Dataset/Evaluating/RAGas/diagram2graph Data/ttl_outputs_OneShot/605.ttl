@@ -1,0 +1,39 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:MailInvoiceToAccountsPayable a skos:Concept ;
+    skos:prefLabel "mail invoice to accounts payable" ;
+    she:followedBy she:ReviewInvoiceForCompliance .
+
+she:ReviewInvoiceForCompliance a skos:Concept ;
+    skos:prefLabel "review invoice for compliance" ;
+    she:followedBy she:InvoiceMeetsRequirement .
+
+she:InvoiceMeetsRequirement a skos:Concept ;
+    skos:prefLabel "invoice meets requirement?" ;
+    she:ifConditionNotMet she:DontAccept ;
+    she:ifConditionMet she:Approval .
+
+she:DontAccept a skos:Concept ;
+    skos:prefLabel "don't accept" .
+
+she:Approval a skos:Concept ;
+    skos:prefLabel "approval?" ;
+    she:ifConditionNotMet she:PlaceInQueue ;
+    she:ifConditionMet she:InvoicePlacedInPaymentQueue .
+
+she:PlaceInQueue a skos:Concept ;
+    skos:prefLabel "place in queue" ;
+    she:followedBy she:ActionTakenIssueResolved .
+
+she:ActionTakenIssueResolved a skos:Concept ;
+    skos:prefLabel "action taken, issue resolved?" ;
+    she:ifConditionNotMet she:PlaceInQueue ;
+    she:ifConditionMet she:Approval .
+
+she:InvoicePlacedInPaymentQueue a skos:Concept ;
+    skos:prefLabel "invoice placed in payment queue" ;
+    she:followedBy she:PaymentProcessed .
+
+she:PaymentProcessed a skos:Concept ;
+    skos:prefLabel "payment processed" .

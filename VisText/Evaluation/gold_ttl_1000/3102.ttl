@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3102 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of persons with migration background in Germany in 2019 , by gender (in 1,000)" ;
+    chart:xAxis ex:x-3102 ;
+    chart:yAxis ex:y-3102 .
+
+ex:x-3102 a chart:Axis ;
+    chart:label "Number" .
+
+ex:y-3102 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3102-1 a chart:Series .
+
+ex:mark-3102-1-1 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "of persons in thousands Migration Background" ;
+    chart:value "10855"^^xsd:decimal .
+
+ex:mark-3102-1-2 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Men with a migration background (s. str.)" ;
+    chart:value "2438"^^xsd:decimal .
+
+ex:mark-3102-1-3 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: men with own migration experience" ;
+    chart:value "3073"^^xsd:decimal .
+
+ex:mark-3102-1-4 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: men without own migration experience" ;
+    chart:value "4490"^^xsd:decimal .
+
+ex:mark-3102-1-5 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: foreign men with own migration experi..." ;
+    chart:value "854"^^xsd:decimal .
+
+ex:mark-3102-1-6 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: foreign men without own migration exp..." ;
+    chart:value "10391"^^xsd:decimal .
+
+ex:mark-3102-1-7 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Women with a migration background (s. str.)" ;
+    chart:value "2687"^^xsd:decimal .
+
+ex:mark-3102-1-8 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: women with own migration experience" ;
+    chart:value "2927"^^xsd:decimal .
+
+ex:mark-3102-1-9 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: women without own migration experienc..." ;
+    chart:value "4066"^^xsd:decimal .
+
+ex:mark-3102-1-10 a chart:DataPoint ;
+    chart:series ex:series-3102-1 ;
+    chart:category "Among these: foreign women with own migration expe..." ;
+    chart:value "711"^^xsd:decimal .

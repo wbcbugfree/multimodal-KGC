@@ -1,0 +1,26 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:leadsTo she:CheckWeather .
+
+she:CheckWeather a skos:Concept ;
+    skos:prefLabel "check weather" ;
+    she:leadsTo she:IsItRaining .
+
+she:IsItRaining a skos:Concept ;
+    skos:prefLabel "is it raining?" ;
+    she:ifNo she:LeaveUmbrellaAtHome ;
+    she:ifYes she:TakeAnUmbrella .
+
+she:LeaveUmbrellaAtHome a skos:Concept ;
+    skos:prefLabel "leave umbrella at home." ;
+    she:leadsTo she:End .
+
+she:TakeAnUmbrella a skos:Concept ;
+    skos:prefLabel "take an umbrella." ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7674 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Consumer spending expectations for the following six months on consumer products due to the coronavirus in the United States as of March 9 , 2020" ;
+    chart:xAxis ex:x-7674 ;
+    chart:yAxis ex:y-7674 .
+
+ex:x-7674 a chart:Axis ;
+    chart:label "About the same while the y-axis plots consumer products" .
+
+ex:y-7674 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7674-1 a chart:Series .
+
+ex:mark-7674-1-1 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "the same consumer products" ;
+    chart:value "0.67"^^xsd:decimal .
+
+ex:mark-7674-1-2 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Fresh and organic goods" ;
+    chart:value "0.72"^^xsd:decimal .
+
+ex:mark-7674-1-3 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Vitamins, minerals, herbs, or supplements" ;
+    chart:value "0.61"^^xsd:decimal .
+
+ex:mark-7674-1-4 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Home furniture and décor" ;
+    chart:value "0.64"^^xsd:decimal .
+
+ex:mark-7674-1-5 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Nonmobile consumer electronics and appliances" ;
+    chart:value "0.67"^^xsd:decimal .
+
+ex:mark-7674-1-6 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Cars/automobiles" ;
+    chart:value "0.64"^^xsd:decimal .
+
+ex:mark-7674-1-7 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Mobile electronics" ;
+    chart:value "0.63"^^xsd:decimal .
+
+ex:mark-7674-1-8 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Toys and games" ;
+    chart:value "0.63"^^xsd:decimal .
+
+ex:mark-7674-1-9 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Luxury/fashion" ;
+    chart:value "0.59"^^xsd:decimal .
+
+ex:mark-7674-1-10 a chart:DataPoint ;
+    chart:series ex:series-7674-1 ;
+    chart:category "Tobacco and smoking products" ;
+    chart:value "0.63"^^xsd:decimal .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3777 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Chicago White Sox all-time home run leaders as of October 2020" ;
+    chart:xAxis ex:x-3777 ;
+    chart:yAxis ex:y-3777 .
+
+ex:x-3777 a chart:Axis ;
+    chart:label "Home run leader" .
+
+ex:y-3777 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3777-1 a chart:Series .
+
+ex:mark-3777-1-1 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "run leader Number of home runs Frank Thomas" ;
+    chart:value "448"^^xsd:decimal .
+
+ex:mark-3777-1-2 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Paul Konerko" ;
+    chart:value "432"^^xsd:decimal .
+
+ex:mark-3777-1-3 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Harold Baines" ;
+    chart:value "221"^^xsd:decimal .
+
+ex:mark-3777-1-4 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Carlton Fisk" ;
+    chart:value "214"^^xsd:decimal .
+
+ex:mark-3777-1-5 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Jose Abreu" ;
+    chart:value "198"^^xsd:decimal .
+
+ex:mark-3777-1-6 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Magglio Ordonez" ;
+    chart:value "187"^^xsd:decimal .
+
+ex:mark-3777-1-7 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Robin Ventura" ;
+    chart:value "171"^^xsd:decimal .
+
+ex:mark-3777-1-8 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Jermaine Dye" ;
+    chart:value "164"^^xsd:decimal .
+
+ex:mark-3777-1-9 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Bill Melton" ;
+    chart:value "154"^^xsd:decimal .
+
+ex:mark-3777-1-10 a chart:DataPoint ;
+    chart:series ex:series-3777-1 ;
+    chart:category "Carlos Lee" ;
+    chart:value "152"^^xsd:decimal .

@@ -1,0 +1,64 @@
+@prefix : <http://example.org/chart-data/7609/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Average spending per consumer on selected music activities in the United States as of July 2018" ;
+    :hasXAxisLabel "Response" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Response ;
+    rdfs:label "$40 to $99.99 Tickets for music con..." ;
+    :y "0.31"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Response ;
+    rdfs:label "CD albums/singles" ;
+    :y "0.16"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Response ;
+    rdfs:label "MP3/download albums" ;
+    :y "0.09"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Response ;
+    rdfs:label "MP3/download singles/tracks" ;
+    :y "0.08"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Response ;
+    rdfs:label "Music DVDs" ;
+    :y "0.14"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Response ;
+    rdfs:label "Music merchandise items" ;
+    :y "0.34"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Response ;
+    rdfs:label "Music streaming subscription gift c..." ;
+    :y "0.24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Response ;
+    rdfs:label "Pre-paid music voucher" ;
+    :y "0.24"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Response ;
+    rdfs:label "Tickets for festivals" ;
+    :y "0.35"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Response ;
+    rdfs:label "Vinyl albums" ;
+    :y "0.26"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Response ;
+    rdfs:label "Vinyl singles" ;
+    :y "0.07"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,87 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4440 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:xAxis ex:x-4440 ;
+    chart:yAxis ex:y-4440 ;
+    chart:title "Latin American passports with the most visa free access to other countries as of July 2020 (visa free score)" .
+
+ex:x-4440 a chart:Axis ;
+    chart:label "Visa free score*" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "150" .
+
+ex:y-4440 a chart:Axis ;
+    chart:label "Country" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-4440-1 a chart:Series .
+
+ex:mark-4440-1-1 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Argentina" ;
+    chart:value "170"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-2 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Brazil" ;
+    chart:value "170"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-3 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Chile" ;
+    chart:value "170"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-4 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Costa Rica" ;
+    chart:value "150"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-5 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "El Salvador" ;
+    chart:value "140"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-6 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Honduras" ;
+    chart:value "140"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-7 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Mexico" ;
+    chart:value "155"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-8 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Panama" ;
+    chart:value "150"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-9 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Paraguay" ;
+    chart:value "140"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-10 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Peru" ;
+    chart:value "140"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4440-1-11 a chart:Bar ;
+    chart:series ex:series-4440-1 ;
+    chart:category "Uruguay" ;
+    chart:value "155"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

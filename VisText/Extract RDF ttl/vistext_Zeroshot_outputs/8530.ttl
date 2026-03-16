@@ -1,0 +1,58 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8530 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:title "Spain : Distribution of the workforce across economic sectors from 2010 to 2020" ;
+    chart:xAxis ex:x-8530 ;
+    chart:yAxis ex:y-8530 .
+
+ex:x-8530 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2020" .
+
+ex:y-8530 a chart:Axis ;
+    chart:label "Agriculture" ;
+    chart:scaleMin "0.00" ;
+    chart:scaleMax "0.05" .
+
+ex:series-8530-1 a chart:Series ;
+    chart:seriesName "Agriculture" .
+
+ex:point-8530-1-1 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2010" ;
+    chart:yVal 0.042 ;
+    chart:valueEstimated "false"^^xsd:boolean .
+
+ex:point-8530-1-2 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2012" ;
+    chart:yVal 0.041 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8530-1-3 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2014" ;
+    chart:yVal 0.042 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8530-1-4 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2016" ;
+    chart:yVal 0.043 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8530-1-5 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2018" ;
+    chart:yVal 0.041 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-8530-1-6 a chart:Point ;
+    chart:series ex:series-8530-1 ;
+    chart:xVal "2020" ;
+    chart:yVal 0.040 ;
+    chart:valueEstimated "true"^^xsd:boolean .

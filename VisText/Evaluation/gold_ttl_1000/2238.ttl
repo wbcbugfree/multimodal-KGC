@@ -1,0 +1,27 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2238 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Worldwide refinery production of cobalt from 2008 to 2017 (in metric tons)" ;
+    chart:xAxis ex:x-2238 ;
+    chart:yAxis ex:y-2238 .
+
+ex:x-2238 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-2238 a chart:Axis ;
+    chart:label "" .
+
+ex:series-2238-1 a chart:Series .
+
+ex:mark-2238-1-1 a chart:DataPoint ;
+    chart:series ex:series-2238-1 ;
+    chart:category "Production in metric tons" ;
+    chart:value "2017"^^xsd:decimal .
+
+ex:mark-2238-1-2 a chart:DataPoint ;
+    chart:series ex:series-2238-1 ;
+    chart:category "2014*" ;
+    chart:value "92600"^^xsd:decimal .

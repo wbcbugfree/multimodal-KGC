@@ -1,0 +1,53 @@
+ex:chart-4812 a chart:Chart ;
+    chart:chartType "line" ;
+    chart:xAxis ex:x-4812 ;
+    chart:yAxis ex:y-4812 ;
+    chart:title "Malaysia : Fertility rate from 2008 to 2018" .
+
+ex:x-4812 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2008" ;
+    chart:scaleMax "2018" .
+
+ex:y-4812 a chart:Axis ;
+    chart:label "Number of born children per woman" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "2.5" .
+
+ex:series-4812-1 a chart:Series .
+
+ex:point-4812-1-1 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2008" ;
+    chart:yVal "2.2"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-4812-1-2 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "2.15"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-4812-1-3 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "2.1"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-4812-1-4 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "2.05"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-4812-1-5 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "2.0"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-4812-1-6 a chart:Point ;
+    chart:series ex:series-4812-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "1.95"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

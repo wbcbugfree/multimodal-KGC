@@ -1,0 +1,43 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart4744 a schema:LineChart ;
+    schema:title "Cumulative number of positive cases of COVID-19 in New York State from March 4 , 2020 to January 5 , 2021 , by day" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Cumulative number of positive cases" ;
+    :xMin "2020"^^xsd:decimal ;
+    :xMax "2021"^^xsd:decimal ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "1000000"^^xsd:decimal .
+
+:DataPoint4744_1 :belongsToChart :Chart4744 ;
+    rdfs:label "April" ;
+    :xValue "April" ;
+    :yValue "0"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4744_2 :belongsToChart :Chart4744 ;
+    rdfs:label "April" ;
+    :xValue "April" ;
+    :yValue "20000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4744_3 :belongsToChart :Chart4744 ;
+    rdfs:label "July" ;
+    :xValue "July" ;
+    :yValue "400000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4744_4 :belongsToChart :Chart4744 ;
+    rdfs:label "October" ;
+    :xValue "October" ;
+    :yValue "600000"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint4744_5 :belongsToChart :Chart4744 ;
+    rdfs:label "January 2021" ;
+    :xValue "2021" ;
+    :yValue "1000000"^^xsd:decimal ;
+    :valueEstimated "true" .

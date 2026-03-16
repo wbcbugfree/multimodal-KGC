@@ -1,0 +1,47 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8105 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Monthly year-over-year retail sales development in the United States from 2019 to 2020 , by sector" ;
+    chart:xAxis ex:x-8105 ;
+    chart:yAxis ex:y-8105 .
+
+ex:x-8105 a chart:Axis ;
+    chart:label "Month" .
+
+ex:y-8105 a chart:Axis ;
+    chart:label "Sporting goods stores" .
+
+ex:series-8105-1 a chart:Series .
+
+ex:mark-8105-1-1 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Oct20" ;
+    chart:value "0.141"^^xsd:decimal .
+
+ex:mark-8105-1-2 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Aug20" ;
+    chart:value "0.08"^^xsd:decimal .
+
+ex:mark-8105-1-3 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Jun20" ;
+    chart:value "0.224"^^xsd:decimal .
+
+ex:mark-8105-1-4 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Apr20 −0.487 Feb20" ;
+    chart:value "0.001"^^xsd:decimal .
+
+ex:mark-8105-1-5 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Dec19 −0.004 Oct19" ;
+    chart:value "0.004"^^xsd:decimal .
+
+ex:mark-8105-1-6 a chart:DataPoint ;
+    chart:series ex:series-8105-1 ;
+    chart:category "Aug19" ;
+    chart:value "0.038"^^xsd:decimal .

@@ -1,0 +1,26 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiates she:ReadTemperature .
+
+she:ReadTemperature a skos:Concept ;
+    skos:prefLabel "read temperature" ;
+    she:leadsTo she:TemperatureLessThan32 .
+
+she:TemperatureLessThan32 a skos:Concept ;
+    skos:prefLabel "temperature < 32?" ;
+    she:hasYesOutcome she:NotSoCold ;
+    she:hasNoOutcome she:Cold .
+
+she:NotSoCold a skos:Concept ;
+    skos:prefLabel "not so cold" ;
+    she:concludesWith she:End .
+
+she:Cold a skos:Concept ;
+    skos:prefLabel "cold" ;
+    she:concludesWith she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

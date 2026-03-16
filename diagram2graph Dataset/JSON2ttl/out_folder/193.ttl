@@ -1,0 +1,118 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/round_1> a d2g:Process, d2g:Node ;
+    rdfs:label "Round 1
+T = 1" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/draw_lots> a d2g:Process, d2g:Node ;
+    rdfs:label "Draw lots to select witness nodes" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/binarize_block> a d2g:Process, d2g:Node ;
+    rdfs:label "Binarize block" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/packing_block> a d2g:Process, d2g:Node ;
+    rdfs:label "Packing block" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/block_verification> a d2g:Decision, d2g:Node ;
+    rdfs:label "Block verification" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/finish> a d2g:Terminator, d2g:Node ;
+    rdfs:label "Finish" ;
+    d2g:shape d2g:EndEvent .
+
+<http://example.org/diagram/diagram/node/timeout_verification> a d2g:Decision, d2g:Node ;
+    rdfs:label "Timeout verification" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/next_round_draw> a d2g:Process, d2g:Node ;
+    rdfs:label "Next round draw" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/authentication> a d2g:Process, d2g:Node ;
+    rdfs:label "Authentication" ;
+    d2g:shape d2g:Task .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/startround_1> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/start> ;
+    d2g:target <http://example.org/diagram/diagram/node/round_1> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/start> d2g:follows <http://example.org/diagram/diagram/node/round_1> .
+
+<http://example.org/diagram/diagram/edge/round_1draw_lots> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/round_1> ;
+    d2g:target <http://example.org/diagram/diagram/node/draw_lots> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/round_1> d2g:follows <http://example.org/diagram/diagram/node/draw_lots> .
+
+<http://example.org/diagram/diagram/edge/draw_lotsbinarize_block> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/draw_lots> ;
+    d2g:target <http://example.org/diagram/diagram/node/binarize_block> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/draw_lots> d2g:follows <http://example.org/diagram/diagram/node/binarize_block> .
+
+<http://example.org/diagram/diagram/edge/binarize_blockpacking_block> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/binarize_block> ;
+    d2g:target <http://example.org/diagram/diagram/node/packing_block> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/binarize_block> d2g:follows <http://example.org/diagram/diagram/node/packing_block> .
+
+<http://example.org/diagram/diagram/edge/packing_blockblock_verification> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/packing_block> ;
+    d2g:target <http://example.org/diagram/diagram/node/block_verification> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/packing_block> d2g:follows <http://example.org/diagram/diagram/node/block_verification> .
+
+<http://example.org/diagram/diagram/edge/block_verificationfinish> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/block_verification> ;
+    d2g:target <http://example.org/diagram/diagram/node/finish> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Success" .
+
+<http://example.org/diagram/diagram/node/block_verification> d2g:depends_on <http://example.org/diagram/diagram/node/finish> .
+
+<http://example.org/diagram/diagram/edge/block_verificationtimeout_verification> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/block_verification> ;
+    d2g:target <http://example.org/diagram/diagram/node/timeout_verification> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Verification failed" .
+
+<http://example.org/diagram/diagram/node/block_verification> d2g:depends_on <http://example.org/diagram/diagram/node/timeout_verification> .
+
+<http://example.org/diagram/diagram/edge/authenticationbinarize_block> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/authentication> ;
+    d2g:target <http://example.org/diagram/diagram/node/binarize_block> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/authentication> d2g:follows <http://example.org/diagram/diagram/node/binarize_block> .
+
+<http://example.org/diagram/diagram/edge/timeout_verificationnext_round_draw> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/timeout_verification> ;
+    d2g:target <http://example.org/diagram/diagram/node/next_round_draw> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Timeout" .
+
+<http://example.org/diagram/diagram/node/timeout_verification> d2g:depends_on <http://example.org/diagram/diagram/node/next_round_draw> .
+
+<http://example.org/diagram/diagram/edge/next_round_drawdraw_lots> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/next_round_draw> ;
+    d2g:target <http://example.org/diagram/diagram/node/draw_lots> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/next_round_draw> d2g:follows <http://example.org/diagram/diagram/node/draw_lots> .

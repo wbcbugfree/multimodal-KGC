@@ -1,0 +1,69 @@
+@prefix : <http://example.org/chart-data/8496/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Number of book readers in Italy in 2019 , by occupation and number of books read (in 1,000 readers)" ;
+    :hasXAxisLabel "labeled occupation" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :LabeledOccupation ;
+    rdfs:label "Blue collar, apprentice" ;
+    :y "1206"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :LabeledOccupation ;
+    rdfs:label "books Middle management, white coll..." ;
+    :y "2323"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :LabeledOccupation ;
+    rdfs:label "Executive, employer, professional" ;
+    :y "601"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :LabeledOccupation ;
+    rdfs:label "From" ;
+    :y "1"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :LabeledOccupation ;
+    rdfs:label "Housewife" ;
+    :y "976"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :LabeledOccupation ;
+    rdfs:label "Other condition" ;
+    :y "97"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :LabeledOccupation ;
+    rdfs:label "Retired" ;
+    :y "1345"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :LabeledOccupation ;
+    rdfs:label "Self-employed, family worker" ;
+    :y "470"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :LabeledOccupation ;
+    rdfs:label "Student" ;
+    :y "1164"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :LabeledOccupation ;
+    rdfs:label "to" ;
+    :y "3"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :LabeledOccupation ;
+    rdfs:label "Unemployed person with work experie..." ;
+    :y "645"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :LabeledOccupation ;
+    rdfs:label "Unemployed person without work expe..." ;
+    :y "128"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

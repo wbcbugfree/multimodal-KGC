@@ -1,0 +1,47 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4401 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "India : National debt from 2014 to 2024 (in billion U.S. dollars)" ;
+    chart:xAxis ex:x-4401 ;
+    chart:yAxis ex:y-4401 .
+
+ex:x-4401 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-4401 a chart:Axis ;
+    chart:label "National debt in billion U" .
+
+ex:series-4401-1 a chart:Series .
+
+ex:mark-4401-1-1 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "National debt in billion U.S. dollars 2024*" ;
+    chart:value "3299.94"^^xsd:decimal .
+
+ex:mark-4401-1-2 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "2023*" ;
+    chart:value "2984.05"^^xsd:decimal .
+
+ex:mark-4401-1-3 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "2022*" ;
+    chart:value "2701.91"^^xsd:decimal .
+
+ex:mark-4401-1-4 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "2021*" ;
+    chart:value "2449"^^xsd:decimal .
+
+ex:mark-4401-1-5 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "2020*" ;
+    chart:value "2219.37"^^xsd:decimal .
+
+ex:mark-4401-1-6 a chart:DataPoint ;
+    chart:series ex:series-4401-1 ;
+    chart:category "2019*" ;
+    chart:value "2009.81"^^xsd:decimal .

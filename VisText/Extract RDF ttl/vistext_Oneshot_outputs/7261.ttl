@@ -1,0 +1,39 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart7261 a schema:LineChart ;
+    schema:title "Japan : Distribution of the workforce across economic sectors from 2010 to 2020" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Services" ;
+    :yMin "0.0"^^xsd:decimal ;
+    :yMax "0.8"^^xsd:decimal .
+
+:DataPoint7261_1 a schema:DataPoint ;
+    rdfs:label "Services" ;
+    :xValue "2010" ;
+    :yValue "0.69"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart7261 .
+
+:DataPoint7261_2 a schema:DataPoint ;
+    rdfs:label "Services" ;
+    :xValue "2014" ;
+    :yValue "0.71"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart7261 .
+
+:DataPoint7261_3 a schema:DataPoint ;
+    rdfs:label "Services" ;
+    :xValue "2018" ;
+    :yValue "0.73"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart7261 .
+
+:DataPoint7261_4 a schema:DataPoint ;
+    rdfs:label "Services" ;
+    :xValue "2020" ;
+    :yValue "0.74"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart7261 .

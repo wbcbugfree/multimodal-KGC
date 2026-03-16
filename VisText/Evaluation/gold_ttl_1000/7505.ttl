@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7505 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Confirmed cases and deaths of major virus outbreaks worldwide in the last 50 years as of 2020" ;
+    chart:xAxis ex:x-7505 ;
+    chart:yAxis ex:y-7505 .
+
+ex:x-7505 a chart:Axis ;
+    chart:label "Virus (year identified)" .
+
+ex:y-7505 a chart:Axis ;
+    chart:label "" .
+
+ex:series-7505-1 a chart:Series .
+
+ex:mark-7505-1-1 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "(year identified) Deaths Marberg" ;
+    chart:value "1967"^^xsd:decimal .
+
+ex:mark-7505-1-2 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "Ebola*" ;
+    chart:value "1976"^^xsd:decimal .
+
+ex:mark-7505-1-3 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "Hendra" ;
+    chart:value "1994"^^xsd:decimal .
+
+ex:mark-7505-1-4 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "H5N1 Bird Flu" ;
+    chart:value "1997"^^xsd:decimal .
+
+ex:mark-7505-1-5 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "Nipah" ;
+    chart:value "1998"^^xsd:decimal .
+
+ex:mark-7505-1-6 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "SARS" ;
+    chart:value "2002"^^xsd:decimal .
+
+ex:mark-7505-1-7 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "H1N1**" ;
+    chart:value "2009"^^xsd:decimal .
+
+ex:mark-7505-1-8 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "MERS***(2012)" ;
+    chart:value "858"^^xsd:decimal .
+
+ex:mark-7505-1-9 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "H7N9 Bird Flu" ;
+    chart:value "2013"^^xsd:decimal .
+
+ex:mark-7505-1-10 a chart:DataPoint ;
+    chart:series ex:series-7505-1 ;
+    chart:category "2019-nCoV*" ;
+    chart:value "2020"^^xsd:decimal .

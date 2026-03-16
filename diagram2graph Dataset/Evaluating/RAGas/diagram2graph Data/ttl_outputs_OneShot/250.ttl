@@ -1,0 +1,42 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:EnterLimit .
+
+she:EnterLimit a skos:Concept ;
+    skos:prefLabel "enter limit" ;
+    she:leadsTo she:InitializeNumber .
+
+she:InitializeNumber a skos:Concept ;
+    skos:prefLabel "initialize number" ;
+    she:leadsTo she:SetSumEqualTo0 .
+
+she:SetSumEqualTo0 a skos:Concept ;
+    skos:prefLabel "set sum equal to 0" ;
+    she:leadsTo she:Do .
+
+she:Do a skos:Concept ;
+    skos:prefLabel "do" ;
+    she:leadsTo she:IfSumGreaterThanLimit .
+
+she:IfSumGreaterThanLimit a skos:Concept ;
+    skos:prefLabel "if sum > limit" ;
+    she:evaluatesToFalseAndLeadsTo she:UpdateValues ;
+    she:evaluatesToTrueAndLeadsTo she:DisplayNumberAndSum .
+
+she:UpdateValues a skos:Concept ;
+    skos:prefLabel "update values" ;
+    she:leadsTo she:DecreaseLoss .
+
+she:DecreaseLoss a skos:Concept ;
+    skos:prefLabel "decrease loss" ;
+    she:loopsBackTo she:Do .
+
+she:DisplayNumberAndSum a skos:Concept ;
+    skos:prefLabel "display number and sum" ;
+    she:leadsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

@@ -1,0 +1,14 @@
+@prefix : <http://example.org/chart-data/3762/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Number of enterprises in the manufacture of leather and related products industry in Denmark from 2008 to 2017" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Year ;
+    rdfs:label "Number of enterprises 2017*" ;
+    :y "70"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

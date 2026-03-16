@@ -1,0 +1,51 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart2009 a schema:LineChart ;
+    schema:title "Forecast of the life expectancy at birth in the Netherlands from 2015 to 2060 (in years)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Life expectancy in years" .
+
+:DataPoint2009_1 a schema:DataPoint ;
+    rdfs:label "2015" ;
+    :xValue "2015" ;
+    :yValue "81.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .
+
+:DataPoint2009_2 a schema:DataPoint ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "81.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .
+
+:DataPoint2009_3 a schema:DataPoint ;
+    rdfs:label "2030" ;
+    :xValue "2030" ;
+    :yValue "82.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .
+
+:DataPoint2009_4 a schema:DataPoint ;
+    rdfs:label "2040" ;
+    :xValue "2040" ;
+    :yValue "83.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .
+
+:DataPoint2009_5 a schema:DataPoint ;
+    rdfs:label "2050" ;
+    :xValue "2050" ;
+    :yValue "84.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .
+
+:DataPoint2009_6 a schema:DataPoint ;
+    rdfs:label "2060" ;
+    :xValue "2060" ;
+    :yValue "85.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart2009 .

@@ -1,0 +1,29 @@
+@prefix : <http://example.org/chart-data/1515/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Average expenditure per person per week on food and drink in the United Kingdom (UK) from 2006 to 2018/2019 (in pence)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Average expenditure in British pence sterling" .
+
+:DataPoint1 a :Year ;
+    rdfs:label "2015/2016" ;
+    :averageExpenditureInBritishPenceSterling "4225"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Year ;
+    rdfs:label "2016/2017" ;
+    :averageExpenditureInBritishPenceSterling "4402"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Year ;
+    rdfs:label "2017/2018" ;
+    :averageExpenditureInBritishPenceSterling "4531"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Year ;
+    rdfs:label "2018/2019" ;
+    :averageExpenditureInBritishPenceSterling "4660"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,62 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2366 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "From the following list , please pick the five main environmental issues that you are worried about ." ;
+    chart:xAxis ex:x-2366 ;
+    chart:yAxis ex:y-2366 .
+
+ex:x-2366 a chart:Axis ;
+    chart:label "Share of respondents" .
+
+ex:y-2366 a chart:Axis ;
+    chart:label "Response" .
+
+ex:series-2366-1 a chart:Series .
+
+ex:mark-2366-1-1 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Air pollution" ;
+    chart:value "0.52"^^xsd:decimal .
+
+ex:mark-2366-1-2 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Water pollution (seas, rivers, lakes and undergrou..." ;
+    chart:value "0.51"^^xsd:decimal .
+
+ex:mark-2366-1-3 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "The impact on our health of chemicals used in ever..." ;
+    chart:value "0.47"^^xsd:decimal .
+
+ex:mark-2366-1-4 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Depletion of natural resources" ;
+    chart:value "0.41"^^xsd:decimal .
+
+ex:mark-2366-1-5 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "The growing amount of waste" ;
+    chart:value "0.35"^^xsd:decimal .
+
+ex:mark-2366-1-6 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Agricultural pollution (use of pesticides. fertili..." ;
+    chart:value "0.33"^^xsd:decimal .
+
+ex:mark-2366-1-7 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Shortage of drinking water" ;
+    chart:value "0.29"^^xsd:decimal .
+
+ex:mark-2366-1-8 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Loss or extinction of species and their habitats a..." ;
+    chart:value "0.28"^^xsd:decimal .
+
+ex:mark-2366-1-9 a chart:DataPoint ;
+    chart:series ex:series-2366-1 ;
+    chart:category "Our consumption habits" ;
+    chart:value "0.19"^^xsd:decimal .

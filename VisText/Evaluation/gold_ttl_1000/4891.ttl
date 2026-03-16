@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4891 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Leading fashion brands with the most Facebook fans as of October 2020 (in millions)" ;
+    chart:xAxis ex:x-4891 ;
+    chart:yAxis ex:y-4891 .
+
+ex:x-4891 a chart:Axis ;
+    chart:label "brand" .
+
+ex:y-4891 a chart:Axis ;
+    chart:label "Number of fans in millions while the x-axis measures brand" .
+
+ex:series-4891-1 a chart:Series .
+
+ex:mark-4891-1-1 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Number of fans in millions Louis Vuitton" ;
+    chart:value "23.8"^^xsd:decimal .
+
+ex:mark-4891-1-2 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Dior" ;
+    chart:value "17.27"^^xsd:decimal .
+
+ex:mark-4891-1-3 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Chalany High Heels" ;
+    chart:value "14.58"^^xsd:decimal .
+
+ex:mark-4891-1-4 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Pit Bull Jeans" ;
+    chart:value "11.99"^^xsd:decimal .
+
+ex:mark-4891-1-5 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Mango" ;
+    chart:value "11.51"^^xsd:decimal .
+
+ex:mark-4891-1-6 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Fastrack" ;
+    chart:value "8.86"^^xsd:decimal .
+
+ex:mark-4891-1-7 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "BOSS" ;
+    chart:value "8.46"^^xsd:decimal .
+
+ex:mark-4891-1-8 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "ROLEX" ;
+    chart:value "7.44"^^xsd:decimal .
+
+ex:mark-4891-1-9 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Prada" ;
+    chart:value "6.96"^^xsd:decimal .
+
+ex:mark-4891-1-10 a chart:DataPoint ;
+    chart:series ex:series-4891-1 ;
+    chart:category "Amore Mio" ;
+    chart:value "6.43"^^xsd:decimal .

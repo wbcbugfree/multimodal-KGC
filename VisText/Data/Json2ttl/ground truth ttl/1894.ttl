@@ -1,0 +1,79 @@
+@prefix : <http://example.org/chart-data/1894/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Share of people using the internet to pay bills or shop som...the past year in Singapore in 2017 , by type of population" ;
+    :hasXAxisLabel "Share" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :Share ;
+    rdfs:label "(income)" ;
+    :y "0.71"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :Share ;
+    rdfs:label "(income)" ;
+    :y "0.27"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :Share ;
+    rdfs:label "Adults" ;
+    :y "25"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :Share ;
+    rdfs:label "In labor" ;
+    :y "0.66"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :Share ;
+    rdfs:label "Men" ;
+    :y "0.49"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :Share ;
+    rdfs:label "of respondents Response" ;
+    :y "0.72"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :Share ;
+    rdfs:label "Out of labor" ;
+    :y "0.17"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :Share ;
+    rdfs:label "Poorest" ;
+    :y "40"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :Share ;
+    rdfs:label "Richest" ;
+    :y "60"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :Share ;
+    rdfs:label "Secondary education or less" ;
+    :y "0.58"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :Share ;
+    rdfs:label "Total" ;
+    :y "0.56"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :Share ;
+    rdfs:label "Women" ;
+    :y "0.57"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :Share ;
+    rdfs:label "years and older)" ;
+    :y "0.57"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :Share ;
+    rdfs:label "Young adults (15-24 years)" ;
+    :y "0.33"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart8066 a schema:AreaChart ;
+    schema:title "Is casino gaming in the U.S. acceptable for yourself and others ?" ;
+    :hasXAxisLabel "Response" ;
+    :hasYAxisLabel "Acceptable for you and others**" ;
+    :xMin "2002"^^xsd:decimal ;
+    :xMax "2012"^^xsd:decimal ;
+    :yMin "0.0"^^xsd:decimal ;
+    :yMax "0.6"^^xsd:decimal .
+
+:DataPoint8066_1 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2002" ;
+    :xValue "2002" ;
+    :yValue "0.55"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8066_2 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2004" ;
+    :xValue "2004" ;
+    :yValue "0.57"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8066_3 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2006" ;
+    :xValue "2006" ;
+    :yValue "0.54"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8066_4 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2008" ;
+    :xValue "2008" ;
+    :yValue "0.52"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8066_5 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "0.47"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint8066_6 a :DataPoint ;
+    :belongsToChart :Chart8066 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "0.49"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

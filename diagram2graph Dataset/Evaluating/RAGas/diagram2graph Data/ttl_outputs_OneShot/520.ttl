@@ -1,0 +1,34 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:ReadNum1 .
+
+she:ReadNum1 a skos:Concept ;
+    skos:prefLabel "read num1" ;
+    she:leadsTo she:InitializeVariables .
+
+she:InitializeVariables a skos:Concept ;
+    skos:prefLabel "i=1 bun=1" ;
+    she:leadsTo she:CheckLoopCondition .
+
+she:CheckLoopCondition a skos:Concept ;
+    skos:prefLabel "is i < num1" ;
+    she:ifTrue she:IncrementLoopCounter ;
+    she:ifFalse she:PrintResult .
+
+she:IncrementLoopCounter a skos:Concept ;
+    skos:prefLabel "i = i+1" ;
+    she:leadsTo she:MultiplyBunByI .
+
+she:MultiplyBunByI a skos:Concept ;
+    skos:prefLabel "bun = bun*i" ;
+    she:leadsTo she:CheckLoopCondition .
+
+she:PrintResult a skos:Concept ;
+    skos:prefLabel "print bun" ;
+    she:leadsTo she:Stop .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

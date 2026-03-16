@@ -1,0 +1,14 @@
+@prefix : <http://example.org/chart-data/3120/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Turnover from retail sale of food , beverages and tobacco i...zed stores in Croatia from 2008 to 2018 (in million euros)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Annual turnover in million euros" .
+
+:DataPoint1 a :Year ;
+    rdfs:label "2018*" ;
+    :annualTurnoverInMillionEuros "527.8"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

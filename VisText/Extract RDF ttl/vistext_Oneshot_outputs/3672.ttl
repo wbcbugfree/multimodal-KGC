@@ -1,0 +1,39 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart3672 a schema:LineChart ;
+    schema:title "Greenhouse gas emissions of the agricultural sector in Finland in selected years from 1990 to 2017 (in million tons of CO2 equivalent)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Emissions in million tons of CO2" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "8"^^xsd:decimal .
+
+:DataPoint3672_1 a :DataPoint ;
+    :belongsToChart :Chart3672 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "7.3"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint3672_2 a :DataPoint ;
+    :belongsToChart :Chart3672 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "6.4"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint3672_3 a :DataPoint ;
+    :belongsToChart :Chart3672 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "6.4"^^xsd:decimal ;
+    :valueEstimated "true" .
+
+:DataPoint3672_4 a :DataPoint ;
+    :belongsToChart :Chart3672 ;
+    rdfs:label "2017" ;
+    :xValue "2017" ;
+    :yValue "6.4"^^xsd:decimal ;
+    :valueEstimated "true" .

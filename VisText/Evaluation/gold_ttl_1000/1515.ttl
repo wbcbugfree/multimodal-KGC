@@ -1,0 +1,37 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-1515 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Average expenditure per person per week on food and drink in the United Kingdom (UK) from 2006 to 2018/2019 (in pence)" ;
+    chart:xAxis ex:x-1515 ;
+    chart:yAxis ex:y-1515 .
+
+ex:x-1515 a chart:Axis ;
+    chart:label "Year" .
+
+ex:y-1515 a chart:Axis ;
+    chart:label "" .
+
+ex:series-1515-1 a chart:Series .
+
+ex:mark-1515-1-1 a chart:DataPoint ;
+    chart:series ex:series-1515-1 ;
+    chart:category "Average expenditure in British pence sterling 2018..." ;
+    chart:value "4660"^^xsd:decimal .
+
+ex:mark-1515-1-2 a chart:DataPoint ;
+    chart:series ex:series-1515-1 ;
+    chart:category "2017/2018" ;
+    chart:value "4531"^^xsd:decimal .
+
+ex:mark-1515-1-3 a chart:DataPoint ;
+    chart:series ex:series-1515-1 ;
+    chart:category "2016/2017" ;
+    chart:value "4402"^^xsd:decimal .
+
+ex:mark-1515-1-4 a chart:DataPoint ;
+    chart:series ex:series-1515-1 ;
+    chart:category "2015/2016" ;
+    chart:value "4225"^^xsd:decimal .

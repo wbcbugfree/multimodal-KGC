@@ -1,0 +1,82 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-8783 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of international visitor arrivals in Finland from January to July 2020 , by country of origin" ;
+    chart:xAxis ex:x-8783 ;
+    chart:yAxis ex:y-8783 .
+
+ex:x-8783 a chart:Axis ;
+    chart:label "January* while the y-axis measures Country" .
+
+ex:y-8783 a chart:Axis ;
+    chart:label "Country" .
+
+ex:series-8783-1 a chart:Series .
+
+ex:mark-8783-1-1 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Russia" ;
+    chart:value "17885"^^xsd:decimal .
+
+ex:mark-8783-1-2 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Germany" ;
+    chart:value "17782"^^xsd:decimal .
+
+ex:mark-8783-1-3 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "United Kingdom" ;
+    chart:value "15573"^^xsd:decimal .
+
+ex:mark-8783-1-4 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Sweden" ;
+    chart:value "32268"^^xsd:decimal .
+
+ex:mark-8783-1-5 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "China" ;
+    chart:value "13338"^^xsd:decimal .
+
+ex:mark-8783-1-6 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "France" ;
+    chart:value "7519"^^xsd:decimal .
+
+ex:mark-8783-1-7 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Estonia" ;
+    chart:value "10755"^^xsd:decimal .
+
+ex:mark-8783-1-8 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Netherlands" ;
+    chart:value "9186"^^xsd:decimal .
+
+ex:mark-8783-1-9 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "United States" ;
+    chart:value "4332"^^xsd:decimal .
+
+ex:mark-8783-1-10 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Norway" ;
+    chart:value "8877"^^xsd:decimal .
+
+ex:mark-8783-1-11 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Japan" ;
+    chart:value "4618"^^xsd:decimal .
+
+ex:mark-8783-1-12 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Switzerland" ;
+    chart:value "6237"^^xsd:decimal .
+
+ex:mark-8783-1-13 a chart:DataPoint ;
+    chart:series ex:series-8783-1 ;
+    chart:category "Italy" ;
+    chart:value "4356"^^xsd:decimal .

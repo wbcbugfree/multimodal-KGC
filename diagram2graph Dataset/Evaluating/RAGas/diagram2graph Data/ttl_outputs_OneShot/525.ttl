@@ -1,0 +1,22 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:LogIn a skos:Concept ;
+    skos:prefLabel "log in" ;
+    she:initiatesAction she:OpenIdLoginAction .
+
+she:OpenIdLoginAction a skos:Concept ;
+    skos:prefLabel "openid login" ;
+    she:leadsToDecision she:LoggedInDecision .
+
+she:LoggedInDecision a skos:Concept ;
+    skos:prefLabel "logged in" ;
+    she:ifYesProceedsTo she:End ;
+    she:ifNoProceedsTo she:OpenIdLoginProcess .
+
+she:OpenIdLoginProcess a skos:Concept ;
+    skos:prefLabel "openid log in" ;
+    she:completesAndProceedsTo she:End .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

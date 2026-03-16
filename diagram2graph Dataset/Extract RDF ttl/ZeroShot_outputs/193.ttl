@@ -1,0 +1,127 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/diagram/diagram/node/1> a d2g:Node, d2g:Start ;
+    rdfs:label "Start" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a d2g:Node, d2g:Process ;
+    rdfs:label "Round 1 T = 1" .
+
+<http://example.org/diagram/diagram/node/3> a d2g:Node, d2g:Process ;
+    rdfs:label "Draw lots to select witness nodes" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/4> a d2g:Node, d2g:Process ;
+    rdfs:label "Binarize block" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/5> a d2g:Node, d2g:Process ;
+    rdfs:label "Packing block" .
+
+<http://example.org/diagram/diagram/node/6> a d2g:Node, d2g:Decision ;
+    rdfs:label "Block verification" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/7> a d2g:Node, d2g:Process ;
+    rdfs:label "Authentication" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/8> a d2g:Node, d2g:Decision ;
+    rdfs:label "Timeout verification" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/9> a d2g:Node, d2g:Process ;
+    rdfs:label "Next round draw" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/10> a d2g:Node, d2g:Terminator ;
+    rdfs:label "Finish" ;
+    d2g:shape d2g:EndEvent .
+
+<http://example.org/diagram/diagram/edge/12> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/1> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+
+<http://example.org/diagram/diagram/edge/23> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/2> ;
+    d2g:target <http://example.org/diagram/diagram/node/3> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+
+<http://example.org/diagram/diagram/edge/34> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/3> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/45> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/5> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/4> d2g:follows <http://example.org/diagram/diagram/node/5> .
+
+<http://example.org/diagram/diagram/edge/48> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/4> ;
+    d2g:target <http://example.org/diagram/diagram/node/8> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/4> d2g:follows <http://example.org/diagram/diagram/node/8> .
+
+<http://example.org/diagram/diagram/edge/56> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/5> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/67> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/7> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Verification failed" .
+
+<http://example.org/diagram/diagram/node/6> d2g:branches <http://example.org/diagram/diagram/node/7> .
+
+<http://example.org/diagram/diagram/edge/610> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/6> ;
+    d2g:target <http://example.org/diagram/diagram/node/10> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Success" .
+
+<http://example.org/diagram/diagram/node/6> d2g:branches <http://example.org/diagram/diagram/node/10> .
+
+<http://example.org/diagram/diagram/edge/74> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/7> ;
+    d2g:target <http://example.org/diagram/diagram/node/4> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/7> d2g:follows <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/86> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/8> ;
+    d2g:target <http://example.org/diagram/diagram/node/6> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/89> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/8> ;
+    d2g:target <http://example.org/diagram/diagram/node/9> ;
+    d2g:relationshipType d2g:Branches ;
+    d2g:relationshipValue "Timeout" .
+
+<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/9> .
+
+<http://example.org/diagram/diagram/edge/92> a d2g:Edge, d2g:Solid ;
+    d2g:source <http://example.org/diagram/diagram/node/9> ;
+    d2g:target <http://example.org/diagram/diagram/node/2> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/9> d2g:follows <http://example.org/diagram/diagram/node/2> .

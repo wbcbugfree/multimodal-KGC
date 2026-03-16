@@ -1,0 +1,79 @@
+@prefix : <http://example.org/chart-data/6107/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart1 a schema:BarChart ;
+    schema:title "Clinical trial costs by selected cost component and clinical phase as of 2014 (in U.S. dollars)" ;
+    :hasXAxisLabel "marked Phase 1" ;
+    :hasYAxisLabel "y" .
+
+:DataPoint1 a :MarkedPhase1 ;
+    rdfs:label "Administrative Staff Costs" ;
+    :y "198896"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint2 a :MarkedPhase1 ;
+    rdfs:label "Central Lab Costs" ;
+    :y "51904"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint3 a :MarkedPhase1 ;
+    rdfs:label "Clinical Procedure Total" ;
+    :y "252163"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint4 a :MarkedPhase1 ;
+    rdfs:label "Cost component" ;
+    :y "50331"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint5 a :MarkedPhase1 ;
+    rdfs:label "Cost of IRB Amendments" ;
+    :y "326437"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint6 a :MarkedPhase1 ;
+    rdfs:label "Cost Per IRB Approvals" ;
+    :y "1094"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint7 a :MarkedPhase1 ;
+    rdfs:label "Data Management Costs" ;
+    :y "11962"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint8 a :MarkedPhase1 ;
+    rdfs:label "Patient Recruitment Costs" ;
+    :y "6145"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint9 a :MarkedPhase1 ;
+    rdfs:label "Patient Retention Costs" ;
+    :y "178237"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint10 a :MarkedPhase1 ;
+    rdfs:label "Physician Costs" ;
+    :y "475667"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint11 a :MarkedPhase1 ;
+    rdfs:label "RN/CRA Costs" ;
+    :y "109681"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint12 a :MarkedPhase1 ;
+    rdfs:label "SDV Costs" ;
+    :y "37050"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint13 a :MarkedPhase1 ;
+    rdfs:label "Site Recruitment Costs" ;
+    :y "193615"^^xsd:decimal ;
+    :belongsToChart :Chart1 .
+
+:DataPoint14 a :MarkedPhase1 ;
+    rdfs:label "Site Retention Costs" ;
+    :y "237869"^^xsd:decimal ;
+    :belongsToChart :Chart1 .

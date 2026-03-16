@@ -1,0 +1,51 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7238 a chart:Chart ;
+    chart:chartType "line" ;
+    chart:title "Ghana : Distribution of employment by economic sector from 2010 to 2020" ;
+    chart:xAxis ex:x-7238 ;
+    chart:yAxis ex:y-7238 .
+
+ex:x-7238 a chart:Axis ;
+    chart:label "Year" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2018" .
+
+ex:y-7238 a chart:Axis ;
+    chart:label "Services" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.5" .
+
+ex:series-7238-1 a chart:Series .
+
+ex:dp-7238-1-1 a chart:DataPoint ;
+    chart:series ex:series-7238-1 ;
+    chart:xVal "2010" ;
+    chart:yVal "0.35"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7238-1-2 a chart:DataPoint ;
+    chart:series ex:series-7238-1 ;
+    chart:xVal "2012" ;
+    chart:yVal "0.38"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7238-1-3 a chart:DataPoint ;
+    chart:series ex:series-7238-1 ;
+    chart:xVal "2014" ;
+    chart:yVal "0.42"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7238-1-4 a chart:DataPoint ;
+    chart:series ex:series-7238-1 ;
+    chart:xVal "2016" ;
+    chart:yVal "0.46"^^xsd:decimal ;
+    chart:valueEstimated "true" .
+
+ex:dp-7238-1-5 a chart:DataPoint ;
+    chart:series ex:series-7238-1 ;
+    chart:xVal "2018" ;
+    chart:yVal "0.49"^^xsd:decimal ;
+    chart:valueEstimated "true" .

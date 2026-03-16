@@ -1,0 +1,39 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart6305 a schema:LineChart ;
+    schema:title "Projected population in Russia from 2020 to 2036 , by scenario (in 1,000s)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Low expectation" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "150000"^^xsd:decimal .
+
+:DataPoint6305_1 a schema:DataPoint ;
+    rdfs:label "2020" ;
+    :xValue "2020" ;
+    :yValue "150000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart6305 .
+
+:DataPoint6305_2 a schema:DataPoint ;
+    rdfs:label "2025" ;
+    :xValue "2025" ;
+    :yValue "148000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart6305 .
+
+:DataPoint6305_3 a schema:DataPoint ;
+    rdfs:label "2030" ;
+    :xValue "2030" ;
+    :yValue "145000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart6305 .
+
+:DataPoint6305_4 a schema:DataPoint ;
+    rdfs:label "2035" ;
+    :xValue "2035" ;
+    :yValue "140000"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean ;
+    :belongsToChart :Chart6305 .

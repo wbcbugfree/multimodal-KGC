@@ -1,0 +1,106 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4896 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number of doping cases in international sports between 2000 and 2010 , by sport" ;
+    chart:subtitle "type of sport" ;
+    chart:xAxis ex:x-4896 ;
+    chart:yAxis ex:y-4896 .
+
+ex:x-4896 a chart:Axis ;
+    chart:label "Number of doping cases" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "1000" .
+
+ex:y-4896 a chart:Axis ;
+    chart:label "" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:series-4896-1 a chart:Series .
+
+ex:mark-4896-1-1 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "American sports" ;
+    chart:value "250"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-2 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Animal sports" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-3 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Athletics*" ;
+    chart:value "850"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-4 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Combat sports" ;
+    chart:value "50"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-5 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Cricket" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-6 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Cycling" ;
+    chart:value "180"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-7 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Football" ;
+    chart:value "20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-8 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Motor sports" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-9 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Power sports" ;
+    chart:value "20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-10 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Racquet sports" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-11 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Rugby" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-12 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Water sports" ;
+    chart:value "20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-13 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "Winter sports" ;
+    chart:value "20"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-4896-1-14 a chart:Bar ;
+    chart:series ex:series-4896-1 ;
+    chart:category "other" ;
+    chart:value "10"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4049 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Leading U.S. states based on value of barley production in 2018 (in 1,000 U.S. dollars)" ;
+    chart:xAxis ex:x-4049 ;
+    chart:yAxis ex:y-4049 .
+
+ex:x-4049 a chart:Axis ;
+    chart:label "Production" .
+
+ex:y-4049 a chart:Axis ;
+    chart:label "" .
+
+ex:series-4049-1 a chart:Series .
+
+ex:mark-4049-1-1 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "value in thousand U.S. dollars State" ;
+    chart:value "264974"^^xsd:decimal .
+
+ex:mark-4049-1-2 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Idaho" ;
+    chart:value "157920"^^xsd:decimal .
+
+ex:mark-4049-1-3 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Montana" ;
+    chart:value "122507"^^xsd:decimal .
+
+ex:mark-4049-1-4 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "North Dakota" ;
+    chart:value "33930"^^xsd:decimal .
+
+ex:mark-4049-1-5 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Colorado" ;
+    chart:value "23750"^^xsd:decimal .
+
+ex:mark-4049-1-6 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Wyoming" ;
+    chart:value "21132"^^xsd:decimal .
+
+ex:mark-4049-1-7 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Minnesota" ;
+    chart:value "19564"^^xsd:decimal .
+
+ex:mark-4049-1-8 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Washington" ;
+    chart:value "8791"^^xsd:decimal .
+
+ex:mark-4049-1-9 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "California" ;
+    chart:value "6029"^^xsd:decimal .
+
+ex:mark-4049-1-10 a chart:DataPoint ;
+    chart:series ex:series-4049-1 ;
+    chart:category "Pennsylvania" ;
+    chart:value "3420"^^xsd:decimal .

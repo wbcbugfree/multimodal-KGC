@@ -1,0 +1,44 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:initiates she:Round1T1 .
+
+she:Round1T1 a skos:Concept ;
+    skos:prefLabel "round 1 t = 1" ;
+    she:proceedsTo she:DrawLotsToSelectWitnessNodes .
+
+she:DrawLotsToSelectWitnessNodes a skos:Concept ;
+    skos:prefLabel "draw lots to select witness nodes" ;
+    she:proceedsTo she:BinarizeBlock .
+
+she:BinarizeBlock a skos:Concept ;
+    skos:prefLabel "binarize block" ;
+    she:proceedsTo she:PackingBlock .
+
+she:PackingBlock a skos:Concept ;
+    skos:prefLabel "packing block" ;
+    she:proceedsTo she:BlockVerification .
+
+she:BlockVerification a skos:Concept ;
+    skos:prefLabel "block verification" ;
+    she:onSuccess she:Finish ;
+    she:onFailure she:TimeoutVerification ;
+    she:requiresAuthentication she:Authentication .
+
+she:Authentication a skos:Concept ;
+    skos:prefLabel "authentication" ;
+    she:returnsTo she:BinarizeBlock .
+
+she:TimeoutVerification a skos:Concept ;
+    skos:prefLabel "timeout verification" ;
+    she:onTimeout she:NextRoundDraw ;
+    she:restartsBlockProcessing she:BinarizeBlock .
+
+she:NextRoundDraw a skos:Concept ;
+    skos:prefLabel "next round draw" ;
+    she:proceedsTo she:DrawLotsToSelectWitnessNodes .
+
+she:Finish a skos:Concept ;
+    skos:prefLabel "finish" .

@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:<https://schema.org/> .
+
+:Chart2501 a schema:LineChart ;
+    schema:title "Number of shopping malls in the United States with more than 1 million sq . feet of gross leasable area from 1986 to 2010" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Number of shopping malls" ;
+    :xMin "1986"^^xsd:decimal ;
+    :xMax "2010"^^xsd:decimal ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "550"^^xsd:decimal .
+
+:DataPoint2501_1 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "1986" ;
+    :xValue "1986" ;
+    :yValue "330"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2501_2 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "1990" ;
+    :xValue "1990" ;
+    :yValue "350"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2501_3 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "1995" ;
+    :xValue "1995" ;
+    :yValue "390"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2501_4 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "2000" ;
+    :xValue "2000" ;
+    :yValue "430"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2501_5 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "2005" ;
+    :xValue "2005" ;
+    :yValue "470"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint2501_6 a :DataPoint ;
+    :belongsToChart :Chart2501 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "500"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

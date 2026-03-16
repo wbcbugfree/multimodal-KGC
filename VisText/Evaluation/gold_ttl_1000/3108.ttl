@@ -1,0 +1,92 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3108 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Percentage of students to obtain a graduate degree in the United States in 2013 , by major group" ;
+    chart:xAxis ex:x-3108 ;
+    chart:yAxis ex:y-3108 .
+
+ex:x-3108 a chart:Axis ;
+    chart:label "Share of U" .
+
+ex:y-3108 a chart:Axis ;
+    chart:label "Response while the x-axis shows Share of U" .
+
+ex:series-3108-1 a chart:Series .
+
+ex:mark-3108-1-1 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "of U.S. students with a graduate degree Response" ;
+    chart:value "0.577"^^xsd:decimal .
+
+ex:mark-3108-1-2 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Biology and life sciences" ;
+    chart:value "0.5"^^xsd:decimal .
+
+ex:mark-3108-1-3 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Physical sciences" ;
+    chart:value "0.453"^^xsd:decimal .
+
+ex:mark-3108-1-4 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Psychology and social work" ;
+    chart:value "0.446"^^xsd:decimal .
+
+ex:mark-3108-1-5 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Education" ;
+    chart:value "0.414"^^xsd:decimal .
+
+ex:mark-3108-1-6 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Humanities and liberal arts" ;
+    chart:value "0.414"^^xsd:decimal .
+
+ex:mark-3108-1-7 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Social sciences" ;
+    chart:value "0.382"^^xsd:decimal .
+
+ex:mark-3108-1-8 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Architecture and engineering" ;
+    chart:value "0.351"^^xsd:decimal .
+
+ex:mark-3108-1-9 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "All majors" ;
+    chart:value "0.338"^^xsd:decimal .
+
+ex:mark-3108-1-10 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Health" ;
+    chart:value "0.333"^^xsd:decimal .
+
+ex:mark-3108-1-11 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Computers, statistics, and mathematics" ;
+    chart:value "0.279"^^xsd:decimal .
+
+ex:mark-3108-1-12 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Agriculture and natural resources" ;
+    chart:value "0.242"^^xsd:decimal .
+
+ex:mark-3108-1-13 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Industrial arts, consumer services, and recreation" ;
+    chart:value "0.242"^^xsd:decimal .
+
+ex:mark-3108-1-14 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Law and public policy" ;
+    chart:value "0.232"^^xsd:decimal .
+
+ex:mark-3108-1-15 a chart:DataPoint ;
+    chart:series ex:series-3108-1 ;
+    chart:category "Arts" ;
+    chart:value "0.222"^^xsd:decimal .

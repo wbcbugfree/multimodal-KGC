@@ -1,0 +1,38 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Start a skos:Concept ;
+    skos:prefLabel "start" ;
+    she:precedes she:DefineOptimizationProblem .
+
+she:DefineOptimizationProblem a skos:Concept ;
+    skos:prefLabel "define optimization problem" ;
+    she:precedes she:CalculateMatrix .
+
+she:CalculateMatrix a skos:Concept ;
+    skos:prefLabel "calculate matrix" ;
+    she:precedes she:ObtainResult .
+
+she:ObtainResult a skos:Concept ;
+    skos:prefLabel "obtain result" ;
+    she:precedes she:PerformDataMiningAlgorithms .
+
+she:PerformDataMiningAlgorithms a skos:Concept ;
+    skos:prefLabel "perform data mining algorithms" ;
+    she:precedes she:Evaluate .
+
+she:Evaluate a skos:Concept ;
+    skos:prefLabel "evaluate" ;
+    she:precedes she:MeetDesignRequirements .
+
+she:MeetDesignRequirements a skos:Concept ;
+    skos:prefLabel "meet design requirements?" ;
+    she:ifNoPrecedes she:ModifyMiningRules ;
+    she:ifYesPrecedes she:Stop .
+
+she:ModifyMiningRules a skos:Concept ;
+    skos:prefLabel "modify mining rules" ;
+    she:revises she:PerformDataMiningAlgorithms .
+
+she:Stop a skos:Concept ;
+    skos:prefLabel "stop" .

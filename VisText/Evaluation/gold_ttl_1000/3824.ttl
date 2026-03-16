@@ -1,0 +1,82 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3824 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Many people have concerns or fears for their retirement . Which , if any , of the following concerns or fears do you have ?" ;
+    chart:xAxis ex:x-3824 ;
+    chart:yAxis ex:y-3824 .
+
+ex:x-3824 a chart:Axis ;
+    chart:label "Fears" .
+
+ex:y-3824 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3824-1 a chart:Series .
+
+ex:mark-3824-1-1 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "and concerns Share of respondents Financial hardsh..." ;
+    chart:value "0.57"^^xsd:decimal .
+
+ex:mark-3824-1-2 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Poor health" ;
+    chart:value "0.54"^^xsd:decimal .
+
+ex:mark-3824-1-3 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Not having enough money for good healthcare provis..." ;
+    chart:value "0.46"^^xsd:decimal .
+
+ex:mark-3824-1-4 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Not being able to realise hopes and aspirations" ;
+    chart:value "0.31"^^xsd:decimal .
+
+ex:mark-3824-1-5 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Loneliness" ;
+    chart:value "0.28"^^xsd:decimal .
+
+ex:mark-3824-1-6 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Loss of memory" ;
+    chart:value "0.27"^^xsd:decimal .
+
+ex:mark-3824-1-7 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Having to work for longer than I want to" ;
+    chart:value "0.27"^^xsd:decimal .
+
+ex:mark-3824-1-8 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Boredom" ;
+    chart:value "0.25"^^xsd:decimal .
+
+ex:mark-3824-1-9 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Not being able to work" ;
+    chart:value "0.24"^^xsd:decimal .
+
+ex:mark-3824-1-10 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "The move from 'active' to 'passive' retirement" ;
+    chart:value "0.17"^^xsd:decimal .
+
+ex:mark-3824-1-11 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Discrimination" ;
+    chart:value "0.08"^^xsd:decimal .
+
+ex:mark-3824-1-12 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "None of these" ;
+    chart:value "0.03"^^xsd:decimal .
+
+ex:mark-3824-1-13 a chart:DataPoint ;
+    chart:series ex:series-3824-1 ;
+    chart:category "Don't know" ;
+    chart:value "0.02"^^xsd:decimal .

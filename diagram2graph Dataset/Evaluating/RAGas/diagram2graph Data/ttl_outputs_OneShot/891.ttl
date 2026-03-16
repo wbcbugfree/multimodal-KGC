@@ -1,0 +1,27 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:NewBudget a skos:Concept ;
+    skos:prefLabel "new budget" ;
+    she:leadsTo she:MakeAnEdit .
+
+she:MakeAnEdit a skos:Concept ;
+    skos:prefLabel "make an edit" ;
+    she:waitsForEvaluation she:WasTheArticleEditedFurther .
+
+she:WasTheArticleEditedFurther a skos:Concept ;
+    skos:prefLabel "was the article edited further?" ;
+    she:ifYesThen she:DoYouAgreeWithTheChange ;
+    she:ifNoThen she:ImplementBudget .
+
+she:Discuss a skos:Concept ;
+    skos:prefLabel "discuss" ;
+    she:leadsToImplementationOf she:MakeAnEdit .
+
+she:DoYouAgreeWithTheChange a skos:Concept ;
+    skos:prefLabel "do you agree with the change?" ;
+    she:ifDisagreeThen she:Discuss ;
+    she:ifAgreeThen she:ImplementBudget .
+
+she:ImplementBudget a skos:Concept ;
+    skos:prefLabel "implement budget" .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-2178 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Best-performing restaurant stocks in the United States in 2014" ;
+    chart:xAxis ex:x-2178 ;
+    chart:yAxis ex:y-2178 .
+
+ex:x-2178 a chart:Axis ;
+    chart:label "Year-over-year" .
+
+ex:y-2178 a chart:Axis ;
+    chart:label "" .
+
+ex:series-2178-1 a chart:Series .
+
+ex:mark-2178-1-1 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "increase in share price best-performing restaurant..." ;
+    chart:value "0.6165"^^xsd:decimal .
+
+ex:mark-2178-1-2 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "BJ's Restaurant Inc." ;
+    chart:value "0.5986"^^xsd:decimal .
+
+ex:mark-2178-1-3 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Jack in the Box Inc." ;
+    chart:value "0.587"^^xsd:decimal .
+
+ex:mark-2178-1-4 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Nathan's Famous Inc." ;
+    chart:value "0.4616"^^xsd:decimal .
+
+ex:mark-2178-1-5 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Popeye's Louisiana Kitchen Inc." ;
+    chart:value "0.4355"^^xsd:decimal .
+
+ex:mark-2178-1-6 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Famous Dave's of America Inc." ;
+    chart:value "0.4339"^^xsd:decimal .
+
+ex:mark-2178-1-7 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Denny's Corp." ;
+    chart:value "0.352"^^xsd:decimal .
+
+ex:mark-2178-1-8 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Domino's Pizza Inc." ;
+    chart:value "0.3487"^^xsd:decimal .
+
+ex:mark-2178-1-9 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Sonic Corp." ;
+    chart:value "0.2848"^^xsd:decimal .
+
+ex:mark-2178-1-10 a chart:DataPoint ;
+    chart:series ex:series-2178-1 ;
+    chart:category "Chipotle Mexican Grill Inc." ;
+    chart:value "0.2788"^^xsd:decimal .

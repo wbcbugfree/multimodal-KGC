@@ -1,0 +1,55 @@
+@prefix :      <http://example.org/chart-extraction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+:Chart3322 a schema:LineChart ;
+    schema:title "Costa Rica : Birth rate from 2008 to 2018 (per 1,000 inhabitants)" ;
+    :hasXAxisLabel "Year" ;
+    :hasYAxisLabel "Birth rate per thousand population" ;
+    :xMin "2008" ;
+    :xMax "2018" ;
+    :yMin "0"^^xsd:decimal ;
+    :yMax "17"^^xsd:decimal .
+
+:DataPoint3322_1 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2008" ;
+    :xValue "2008" ;
+    :yValue "16.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3322_2 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2010" ;
+    :xValue "2010" ;
+    :yValue "16.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3322_3 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2012" ;
+    :xValue "2012" ;
+    :yValue "15.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3322_4 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2014" ;
+    :xValue "2014" ;
+    :yValue "15.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3322_5 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2016" ;
+    :xValue "2016" ;
+    :yValue "14.5"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .
+
+:DataPoint3322_6 a schema:DataPoint ;
+    :belongsToChart :Chart3322 ;
+    rdfs:label "2018" ;
+    :xValue "2018" ;
+    :yValue "14.0"^^xsd:decimal ;
+    :valueEstimated "true"^^xsd:boolean .

@@ -1,0 +1,39 @@
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Begin a skos:Concept ;
+    skos:prefLabel "begin" ;
+    she:leadsTo she:InitializeWeightsAndBiasesWithRandomValues .
+
+she:InitializeWeightsAndBiasesWithRandomValues a skos:Concept ;
+    skos:prefLabel "initialize weights and biases with random values" ;
+    she:leadsTo she:PerformOperations .
+
+she:PerformOperations a skos:Concept ;
+    skos:prefLabel "perform operations" ;
+    she:leadsTo she:CalculateError .
+
+she:CalculateError a skos:Concept ;
+    skos:prefLabel "calculate error" ;
+    she:leadsTo she:ErrorComparison .
+
+she:ErrorComparison a skos:Concept ;
+    skos:prefLabel "error <= error" ;
+    she:ifTrueLeadsTo she:End ;
+    she:ifFalseLeadsTo she:EpochComparison .
+
+she:EpochComparison a skos:Concept ;
+    skos:prefLabel "epoch >= epoch" ;
+    she:ifTrueLeadsTo she:End ;
+    she:ifFalseLeadsTo she:UpdateWeightsAndBiases .
+
+she:UpdateWeightsAndBiases a skos:Concept ;
+    skos:prefLabel "update weights and biases" ;
+    she:leadsTo she:IncrementEpoch .
+
+she:IncrementEpoch a skos:Concept ;
+    skos:prefLabel "epoch = epoch + 1" ;
+    she:loopsBackTo she:PerformOperations .
+
+she:End a skos:Concept ;
+    skos:prefLabel "end" .

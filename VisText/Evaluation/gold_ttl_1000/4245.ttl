@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4245 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Leading video gaming markets in Africa in 2018 , by revenue (in million U.S. dollars)" ;
+    chart:xAxis ex:x-4245 ;
+    chart:yAxis ex:y-4245 .
+
+ex:x-4245 a chart:Axis ;
+    chart:label "Country" .
+
+ex:y-4245 a chart:Axis ;
+    chart:label "" .
+
+ex:series-4245-1 a chart:Series .
+
+ex:mark-4245-1-1 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Revenue in million U.S. dollars Egypt" ;
+    chart:value "293"^^xsd:decimal .
+
+ex:mark-4245-1-2 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "South Africa" ;
+    chart:value "216"^^xsd:decimal .
+
+ex:mark-4245-1-3 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Morocco" ;
+    chart:value "129"^^xsd:decimal .
+
+ex:mark-4245-1-4 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Nigeria" ;
+    chart:value "122"^^xsd:decimal .
+
+ex:mark-4245-1-5 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Algeria" ;
+    chart:value "107"^^xsd:decimal .
+
+ex:mark-4245-1-6 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Tunisia" ;
+    chart:value "45"^^xsd:decimal .
+
+ex:mark-4245-1-7 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Ethiopia" ;
+    chart:value "26"^^xsd:decimal .
+
+ex:mark-4245-1-8 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Ghana" ;
+    chart:value "23"^^xsd:decimal .
+
+ex:mark-4245-1-9 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Kenya" ;
+    chart:value "23"^^xsd:decimal .
+
+ex:mark-4245-1-10 a chart:DataPoint ;
+    chart:series ex:series-4245-1 ;
+    chart:category "Angola" ;
+    chart:value "22"^^xsd:decimal .

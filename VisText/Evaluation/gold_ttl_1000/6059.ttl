@@ -1,0 +1,22 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-6059 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Number people emigrating from Denmark from 2009 to 2019 , by citizenship" ;
+    chart:xAxis ex:x-6059 ;
+    chart:yAxis ex:y-6059 .
+
+ex:x-6059 a chart:Axis ;
+    chart:label "Foreign" .
+
+ex:y-6059 a chart:Axis ;
+    chart:label "" .
+
+ex:series-6059-1 a chart:Series .
+
+ex:mark-6059-1-1 a chart:DataPoint ;
+    chart:series ex:series-6059-1 ;
+    chart:category "citizenship Danish citizenship" ;
+    chart:value "54470"^^xsd:decimal .

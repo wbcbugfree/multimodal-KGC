@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-3324 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Los Angeles Angels all-time home run leaders as of October 2020" ;
+    chart:xAxis ex:x-3324 ;
+    chart:yAxis ex:y-3324 .
+
+ex:x-3324 a chart:Axis ;
+    chart:label "Home" .
+
+ex:y-3324 a chart:Axis ;
+    chart:label "" .
+
+ex:series-3324-1 a chart:Series .
+
+ex:mark-3324-1-1 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "run leaders Number of home runs Mike Trout" ;
+    chart:value "302"^^xsd:decimal .
+
+ex:mark-3324-1-2 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Tim Salmon" ;
+    chart:value "299"^^xsd:decimal .
+
+ex:mark-3324-1-3 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Garret Anderson" ;
+    chart:value "272"^^xsd:decimal .
+
+ex:mark-3324-1-4 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Brian Downing" ;
+    chart:value "222"^^xsd:decimal .
+
+ex:mark-3324-1-5 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Albert Pujols" ;
+    chart:value "217"^^xsd:decimal .
+
+ex:mark-3324-1-6 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Troy Glaus" ;
+    chart:value "182"^^xsd:decimal .
+
+ex:mark-3324-1-7 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Vladimir Guerrero" ;
+    chart:value "173"^^xsd:decimal .
+
+ex:mark-3324-1-8 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Chili Davis" ;
+    chart:value "156"^^xsd:decimal .
+
+ex:mark-3324-1-9 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Bobby Grich" ;
+    chart:value "154"^^xsd:decimal .
+
+ex:mark-3324-1-10 a chart:DataPoint ;
+    chart:series ex:series-3324-1 ;
+    chart:category "Don Baylor" ;
+    chart:value "141"^^xsd:decimal .

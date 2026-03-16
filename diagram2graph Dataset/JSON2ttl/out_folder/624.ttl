@@ -1,0 +1,121 @@
+@prefix d2g: <http://example.org/diagram2graph#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/fruits> a d2g:Start, d2g:Node ;
+    rdfs:label "Fruits" ;
+    d2g:shape d2g:StartEvent .
+
+<http://example.org/diagram/diagram/node/input_mango_pitaya_durian> a d2g:Process, d2g:Node ;
+    rdfs:label "Input mango, pitaya, durian" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/prefer_pitaya_to_durian> a d2g:Decision, d2g:Node ;
+    rdfs:label "Prefer pitaya to durian?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/prefer_mango_to_pitaya> a d2g:Decision, d2g:Node ;
+    rdfs:label "Prefer mango to pitaya?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/prefer_mango_durian> a d2g:Decision, d2g:Node ;
+    rdfs:label "Prefer mango to durian?" ;
+    d2g:shape d2g:Gateway .
+
+<http://example.org/diagram/diagram/node/go_for_mango> a d2g:Process, d2g:Node ;
+    rdfs:label "Go for mango" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/go_for_pitaya> a d2g:Process, d2g:Node ;
+    rdfs:label "Go for pitaya" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/go_for_pitaya_1> a d2g:Process, d2g:Node ;
+    rdfs:label "Go for pitaya" ;
+    d2g:shape d2g:Task .
+
+<http://example.org/diagram/diagram/node/end> a d2g:Terminator, d2g:Node ;
+    rdfs:label "End" ;
+    d2g:shape d2g:EndEvent .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/e47486> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/input_mango_pitaya_durian> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/input_mango_pitaya_durian> .
+
+<http://example.org/diagram/diagram/edge/e11740> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/prefer_mango_to_pitaya> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/prefer_mango_to_pitaya> .
+
+<http://example.org/diagram/diagram/edge/e52813> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/prefer_pitaya_to_durian> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/> d2g:branches <http://example.org/diagram/diagram/node/prefer_pitaya_to_durian> .
+
+<http://example.org/diagram/diagram/edge/e86838> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/prefer_mango_durian> ;
+    d2g:relationshipType d2g:Branches .
+
+<http://example.org/diagram/diagram/node/> d2g:branches <http://example.org/diagram/diagram/node/prefer_mango_durian> .
+
+<http://example.org/diagram/diagram/edge/e56111> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/go_for_mango> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/go_for_mango> .
+
+<http://example.org/diagram/diagram/edge/e56111> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/go_for_mango> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/go_for_mango> .
+
+<http://example.org/diagram/diagram/edge/e47105> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/go_for_pitaya_> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "No" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/go_for_pitaya_> .
+
+<http://example.org/diagram/diagram/edge/e33711> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/go_for_pitaya_1> ;
+    d2g:relationshipType d2g:DependsOn ;
+    d2g:relationshipValue "Yes" .
+
+<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/go_for_pitaya_1> .
+
+<http://example.org/diagram/diagram/edge/e95726> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/end> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/end> .
+
+<http://example.org/diagram/diagram/edge/e95726> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/end> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/end> .
+
+<http://example.org/diagram/diagram/edge/e95726> a d2g:Solid, d2g:Edge ;
+    d2g:source <http://example.org/diagram/diagram/node/> ;
+    d2g:target <http://example.org/diagram/diagram/node/end> ;
+    d2g:relationshipType d2g:Follows .
+
+<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/end> .

@@ -1,0 +1,67 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-4426 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Which of the following issues do you think politicians should talk about most between now and the next general election ?" ;
+    chart:xAxis ex:x-4426 ;
+    chart:yAxis ex:y-4426 .
+
+ex:x-4426 a chart:Axis ;
+    chart:label "Response" .
+
+ex:y-4426 a chart:Axis ;
+    chart:label "" .
+
+ex:series-4426-1 a chart:Series .
+
+ex:mark-4426-1-1 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Share of respondents Immigration" ;
+    chart:value "0.5"^^xsd:decimal .
+
+ex:mark-4426-1-2 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "NHS" ;
+    chart:value "0.48"^^xsd:decimal .
+
+ex:mark-4426-1-3 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "European Union" ;
+    chart:value "0.26"^^xsd:decimal .
+
+ex:mark-4426-1-4 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Economic growth" ;
+    chart:value "0.26"^^xsd:decimal .
+
+ex:mark-4426-1-5 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Living standards" ;
+    chart:value "0.25"^^xsd:decimal .
+
+ex:mark-4426-1-6 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Welfare benefits" ;
+    chart:value "0.22"^^xsd:decimal .
+
+ex:mark-4426-1-7 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Education" ;
+    chart:value "0.14"^^xsd:decimal .
+
+ex:mark-4426-1-8 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Inequality" ;
+    chart:value "0.13"^^xsd:decimal .
+
+ex:mark-4426-1-9 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Tax" ;
+    chart:value "0.1"^^xsd:decimal .
+
+ex:mark-4426-1-10 a chart:DataPoint ;
+    chart:series ex:series-4426-1 ;
+    chart:category "Housing" ;
+    chart:value "0.09"^^xsd:decimal .

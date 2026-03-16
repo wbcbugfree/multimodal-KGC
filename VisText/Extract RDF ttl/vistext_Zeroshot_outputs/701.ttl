@@ -1,0 +1,77 @@
+ex:chart-701 a chart:Chart ;
+    chart:chartType "bar" ;
+    chart:title "Top 10 therapeutic categories worldwide by number of R & D products in 2020" ;
+    chart:xAxis ex:x-701 ;
+    chart:yAxis ex:y-701 .
+
+ex:x-701 a chart:Axis ;
+    chart:label "Therapeutic category" ;
+    chart:scaleMin "" ;
+    chart:scaleMax "" .
+
+ex:y-701 a chart:Axis ;
+    chart:label "Number of R&D products" ;
+    chart:scaleMin "0" ;
+    chart:scaleMax "3500" .
+
+ex:series-701-1 a chart:Series .
+
+ex:mark-701-1-1 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Anti-inflammatory" ;
+    chart:value "450"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-2 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Anti-cancer, immunological" ;
+    chart:value "3300"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-3 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Anti-cancer, other" ;
+    chart:value "2300"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-4 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Antidiabetic" ;
+    chart:value "500"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-5 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Gene therapy" ;
+    chart:value "1100"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-6 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Immunosuppressant" ;
+    chart:value "450"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-7 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Monoclonal antibody, other" ;
+    chart:value "850"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-8 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Neurological" ;
+    chart:value "650"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-9 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Ophthalmological, other" ;
+    chart:value "600"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:mark-701-1-10 a chart:Bar ;
+    chart:series ex:series-701-1 ;
+    chart:category "Prophylactic vaccine, anti-infective" ;
+    chart:value "550"^^xsd:decimal ;
+    chart:valueEstimated "true"^^xsd:boolean .

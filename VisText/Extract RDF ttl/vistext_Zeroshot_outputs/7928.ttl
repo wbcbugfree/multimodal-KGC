@@ -1,0 +1,51 @@
+@prefix ex:    <http://example.org/> .
+@prefix chart: <http://example.org/chart#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:chart-7928 a chart:Chart ;
+    chart:chartType "area" ;
+    chart:xAxis ex:x-7928 ;
+    chart:yAxis ex:y-7928 ;
+    chart:title "Usage penetration of mobile internet in France from 2010 to 2020 , by age group" .
+
+ex:x-7928 a chart:Axis ;
+    chart:label "Response" ;
+    chart:scaleMin "2010" ;
+    chart:scaleMax "2018" .
+
+ex:y-7928 a chart:Axis ;
+    chart:label "60-74 years" ;
+    chart:scaleMin "0.0" ;
+    chart:scaleMax "0.6" .
+
+ex:series-7928-1 a chart:Series .
+
+ex:point-7928-1-1 a chart:Point ;
+    chart:series ex:series-7928-1 ;
+    chart:xVal "2010" ;
+    chart:yVal 0.08 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7928-1-2 a chart:Point ;
+    chart:series ex:series-7928-1 ;
+    chart:xVal "2012" ;
+    chart:yVal 0.22 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7928-1-3 a chart:Point ;
+    chart:series ex:series-7928-1 ;
+    chart:xVal "2014" ;
+    chart:yVal 0.30 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7928-1-4 a chart:Point ;
+    chart:series ex:series-7928-1 ;
+    chart:xVal "2016" ;
+    chart:yVal 0.35 ;
+    chart:valueEstimated "true"^^xsd:boolean .
+
+ex:point-7928-1-5 a chart:Point ;
+    chart:series ex:series-7928-1 ;
+    chart:xVal "2018" ;
+    chart:yVal 0.57 ;
+    chart:valueEstimated "true"^^xsd:boolean .
