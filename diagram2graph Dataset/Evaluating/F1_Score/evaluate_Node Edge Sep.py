@@ -1,192 +1,224 @@
-import os
+import argparse
 import csv
+import sys
+from pathlib import Path
 
-def parse_triples(file_path: str) -> tuple[set[str], set[str]]:
-    """
-    Parse a TTL file into two sets: one for node triples and one for edge triples.
-    Lines starting with '@' (prefix declarations) and '#' (comments) are ignored.
-    
-    Returns:
-        tuple: (node_triples, edge_triples)
-    """
+
+EDGE_RELATIONSHIPS = ("d2g:follows", "d2g:branches", "d2g:source", "d2g:target")
+
+
+def sortable_image_name(image_name: str) -> tuple[int, str]:
+    try:
+        return (0, f"{int(image_name):012d}")
+    except ValueError:
+        return (1, image_name)
+
+
+def parse_triples(file_path: Path) -> tuple[set[str], set[str]]:
     node_triples = []
     edge_triples = []
-    
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # Filter out prefix/comment lines
+    content = file_path.read_text(encoding="utf-8")
+
     lines = []
     for line in content.splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        if s.startswith('@') or s.startswith('#'):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("@") or stripped.startswith("#"):
             continue
         lines.append(line)
-    
-    text = '\n'.join(lines)
-    
-    # Split on '.' to get individual triple-like statements
-    statements = text.split('.')
-    for stmt in statements:
-        stmt = stmt.strip()
-        if not stmt:
+
+    for statement in "\n".join(lines).split("."):
+        normalized = " ".join(statement.split())
+        if not normalized:
             continue
-        # Normalize whitespace to a single space
-        norm = ' '.join(stmt.split())
-        
-        # Classify as node or edge based on patterns
-        # Nodes: contain "/node/" and typically have "a d2g:Node" or node type declarations
-        # Edges: contain "/edge/" or relationship predicates like "d2g:follows", "d2g:branches"
-        if '/node/' in norm and '/edge/' not in norm:
-            # Check if it's a direct relationship statement (e.g., "node/1 d2g:follows node/2")
-            # These should be classified as edges even though they contain "/node/"
-            if any(rel in norm for rel in ['d2g:follows', 'd2g:branches', 'd2g:source', 'd2g:target']):
-                edge_triples.append(norm)
+
+        if "/node/" in normalized and "/edge/" not in normalized:
+            if any(relationship in normalized for relationship in EDGE_RELATIONSHIPS):
+                edge_triples.append(normalized)
             else:
-                node_triples.append(norm)
-        elif '/edge/' in norm or any(rel in norm for rel in ['d2g:follows', 'd2g:branches', 'd2g:source', 'd2g:target']):
-            edge_triples.append(norm)
+                node_triples.append(normalized)
+        elif "/edge/" in normalized or any(
+            relationship in normalized for relationship in EDGE_RELATIONSHIPS
+        ):
+            edge_triples.append(normalized)
         else:
-            # Default: if unsure, treat as node triple
-            node_triples.append(norm)
-    
+            node_triples.append(normalized)
+
     return set(node_triples), set(edge_triples)
 
-def calculate_metrics(label_set: set, output_set: set) -> dict:
-    """
-    Calculate precision, recall, F1-score, and Jaccard similarity.
-    
-    Returns:
-        dict with keys: precision, recall, f1, jaccard, overlap, label_count, output_count
-    """
+
+def calculate_metrics(label_set: set[str], output_set: set[str]) -> dict[str, object]:
     overlap = label_set & output_set
-    
     precision = len(overlap) / len(output_set) if output_set else 0
     recall = len(overlap) / len(label_set) if label_set else 0
     f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0
-    jaccard = len(overlap) / len(label_set | output_set) if (label_set | output_set) else 0
-    
+    union = label_set | output_set
+    jaccard = len(overlap) / len(union) if union else 0
+
     return {
-        'precision': round(precision, 4),
-        'recall': round(recall, 4),
-        'f1': round(f1, 4),
-        'jaccard': round(jaccard, 4),
-        'overlap': len(overlap),
-        'label_count': len(label_set),
-        'output_count': len(output_set)
+        "precision": round(precision, 4),
+        "recall": round(recall, 4),
+        "f1": round(f1, 4),
+        "jaccard": round(jaccard, 4),
+        "overlap": len(overlap),
+        "label_count": len(label_set),
+        "output_count": len(output_set),
     }
 
-# Paths to the extracted folders
-label_dir = '/Users/ali/Desktop/RA/Wageningen/Github/Uploading/V10/Soil-Health/diagram2graph Dataset/Evaluating/F1_Score/out_folder'
-output_dir = '/Users/ali/Desktop/RA/Wageningen/Github/Uploading/V10/Soil-Health/diagram2graph Dataset/Evaluating/F1_Score/ZeroShot_outputs'
 
-# Map filenames to full paths
-label_files = [f for f in os.listdir(label_dir) if f.endswith('.ttl')]
-output_files = [f for f in os.listdir(output_dir) if f.endswith('.ttl')]
-label_map = {f: os.path.join(label_dir, f) for f in label_files}
-output_map = {f: os.path.join(output_dir, f) for f in output_files}
+def load_ttl_map(folder: Path) -> dict[str, Path]:
+    return {path.name: path for path in folder.iterdir() if path.is_file() and path.suffix == ".ttl"}
 
-rows = []
-for name, label_path in label_map.items():
-    # Only compute metrics if there is a corresponding output TTL
-    if name in output_map:
+
+def evaluate_folders(label_dir: Path, output_dir: Path) -> list[list[object]]:
+    label_map = load_ttl_map(label_dir)
+    output_map = load_ttl_map(output_dir)
+
+    rows = []
+    for name, label_path in label_map.items():
+        if name not in output_map:
+            continue
+
         output_path = output_map[name]
-        
-        # Parse nodes and edges separately
         label_nodes, label_edges = parse_triples(label_path)
         output_nodes, output_edges = parse_triples(output_path)
-        
-        # Calculate metrics for nodes
+
         node_metrics = calculate_metrics(label_nodes, output_nodes)
-        
-        # Calculate metrics for edges
         edge_metrics = calculate_metrics(label_edges, output_edges)
-        
-        # Calculate overall metrics (combining nodes and edges)
-        all_label_triples = label_nodes | label_edges
-        all_output_triples = output_nodes | output_edges
-        overall_metrics = calculate_metrics(all_label_triples, all_output_triples)
-        
-        rows.append([
-            name.replace('.ttl', ''),
-            # Node metrics
-            node_metrics['label_count'],
-            node_metrics['output_count'],
-            node_metrics['overlap'],
-            node_metrics['precision'],
-            node_metrics['recall'],
-            node_metrics['f1'],
-            node_metrics['jaccard'],
-            # Edge metrics
-            edge_metrics['label_count'],
-            edge_metrics['output_count'],
-            edge_metrics['overlap'],
-            edge_metrics['precision'],
-            edge_metrics['recall'],
-            edge_metrics['f1'],
-            edge_metrics['jaccard'],
-            # Overall metrics
-            overall_metrics['label_count'],
-            overall_metrics['output_count'],
-            overall_metrics['overlap'],
-            overall_metrics['precision'],
-            overall_metrics['recall'],
-            overall_metrics['f1'],
-            overall_metrics['jaccard']
-        ])
+        overall_metrics = calculate_metrics(label_nodes | label_edges, output_nodes | output_edges)
 
-# Sort rows numerically by image name if possible
-def sort_key(x):
-    try:
-        return int(x[0])
-    except ValueError:
-        return x[0]
+        rows.append(
+            [
+                name.removesuffix(".ttl"),
+                node_metrics["label_count"],
+                node_metrics["output_count"],
+                node_metrics["overlap"],
+                node_metrics["precision"],
+                node_metrics["recall"],
+                node_metrics["f1"],
+                node_metrics["jaccard"],
+                edge_metrics["label_count"],
+                edge_metrics["output_count"],
+                edge_metrics["overlap"],
+                edge_metrics["precision"],
+                edge_metrics["recall"],
+                edge_metrics["f1"],
+                edge_metrics["jaccard"],
+                overall_metrics["label_count"],
+                overall_metrics["output_count"],
+                overall_metrics["overlap"],
+                overall_metrics["precision"],
+                overall_metrics["recall"],
+                overall_metrics["f1"],
+                overall_metrics["jaccard"],
+            ]
+        )
 
-rows.sort(key=sort_key)
+    rows.sort(key=lambda row: sortable_image_name(str(row[0])))
+    return rows
 
-# Write results to CSV
-with open('ZeroShot_outputs_node_edge_separate.csv', 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerow([
-        'image',
-        # Node columns
-        'node_label_triples',
-        'node_output_triples',
-        'node_overlap_triples',
-        'node_precision',
-        'node_recall',
-        'node_f1',
-        'node_jaccard',
-        # Edge columns
-        'edge_label_triples',
-        'edge_output_triples',
-        'edge_overlap_triples',
-        'edge_precision',
-        'edge_recall',
-        'edge_f1',
-        'edge_jaccard',
-        # Overall columns
-        'overall_label_triples',
-        'overall_output_triples',
-        'overall_overlap_triples',
-        'overall_precision',
-        'overall_recall',
-        'overall_f1',
-        'overall_jaccard'
-    ])
-    writer.writerows(rows)
 
-print("Evaluation complete! Results saved to 'FewShot_outputs_node_edge_separate.csv'")
+def write_csv(output_csv: Path, rows: list[list[object]]) -> None:
+    output_csv.parent.mkdir(parents=True, exist_ok=True)
+    with output_csv.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(
+            [
+                "image",
+                "node_label_triples",
+                "node_output_triples",
+                "node_overlap_triples",
+                "node_precision",
+                "node_recall",
+                "node_f1",
+                "node_jaccard",
+                "edge_label_triples",
+                "edge_output_triples",
+                "edge_overlap_triples",
+                "edge_precision",
+                "edge_recall",
+                "edge_f1",
+                "edge_jaccard",
+                "overall_label_triples",
+                "overall_output_triples",
+                "overall_overlap_triples",
+                "overall_precision",
+                "overall_recall",
+                "overall_f1",
+                "overall_jaccard",
+            ]
+        )
+        writer.writerows(rows)
 
-# Optional: Print summary statistics
-if rows:
+
+def print_summary(rows: list[list[object]]) -> None:
+    if not rows:
+        print("No matching TTL filenames were found.")
+        return
+
+    node_f1_avg = sum(float(str(row[6])) for row in rows) / len(rows)
+    edge_f1_avg = sum(float(str(row[13])) for row in rows) / len(rows)
+    overall_f1_avg = sum(float(str(row[20])) for row in rows) / len(rows)
+
     print("\n=== Summary Statistics ===")
-    node_f1_avg = sum(row[6] for row in rows) / len(rows)
-    edge_f1_avg = sum(row[13] for row in rows) / len(rows)
-    overall_f1_avg = sum(row[20] for row in rows) / len(rows)
-    
     print(f"Average Node F1-Score: {node_f1_avg:.4f}")
     print(f"Average Edge F1-Score: {edge_f1_avg:.4f}")
     print(f"Average Overall F1-Score: {overall_f1_avg:.4f}")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    script_dir = Path(__file__).resolve().parent
+    dataset_dir = script_dir.parents[1]
+
+    parser = argparse.ArgumentParser(
+        description="Evaluate node, edge, and overall F1 metrics between Turtle folders."
+    )
+    parser.add_argument(
+        "--labels-dir",
+        type=Path,
+        default=dataset_dir / "JSON2ttl" / "out_folder",
+        help="Folder containing reference TTL files.",
+    )
+    parser.add_argument(
+        "--outputs-dir",
+        type=Path,
+        default=dataset_dir / "prompt engineering" / "ZeroShot_outputs",
+        help="Folder containing predicted TTL files.",
+    )
+    parser.add_argument(
+        "--output-csv",
+        type=Path,
+        default=script_dir / "result" / "Node_edge_sepratly" / "ZeroShot_outputs_node_edge_separate.csv",
+        help="CSV file to write evaluation results to.",
+    )
+    return parser
+
+
+def validate_dir(path: Path, label: str) -> Path:
+    resolved = path.resolve()
+    if not resolved.is_dir():
+        raise FileNotFoundError(f"{label} does not exist or is not a directory: {resolved}")
+    return resolved
+
+
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
+
+    try:
+        labels_dir = validate_dir(args.labels_dir, "Labels directory")
+        outputs_dir = validate_dir(args.outputs_dir, "Outputs directory")
+    except FileNotFoundError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    rows = evaluate_folders(labels_dir, outputs_dir)
+    output_csv = args.output_csv.resolve()
+    write_csv(output_csv, rows)
+
+    print(f"Saved {len(rows)} matching evaluations to {output_csv}")
+    print_summary(rows)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

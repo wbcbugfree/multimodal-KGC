@@ -1,90 +1,147 @@
-import os
+import argparse
 import csv
+import sys
+from pathlib import Path
 
-def parse_triples(file_path: str) -> set[str]:
-    """
-    Parse a TTL file into a set of normalized triple statements.
-    Lines starting with '@' (prefix declarations) and '#' (comments) are ignored.
-    Each statement is split on '.' to isolate triples, and whitespace is normalized.
-    """
+
+def sortable_image_name(image_name: str) -> tuple[int, str]:
+    try:
+        return (0, f"{int(image_name):012d}")
+    except ValueError:
+        return (1, image_name)
+
+
+def parse_triples(file_path: Path) -> set[str]:
     triples = []
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    # Filter out prefix/comment lines
+    content = file_path.read_text(encoding="utf-8")
+
     lines = []
     for line in content.splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        if s.startswith('@') or s.startswith('#'):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("@") or stripped.startswith("#"):
             continue
         lines.append(line)
-    text = '\n'.join(lines)
-    # Split on '.' to get individual triple-like statements
-    statements = text.split('.')
-    for stmt in statements:
-        stmt = stmt.strip()
-        if not stmt:
-            continue
-        # Normalize whitespace to a single space
-        norm = ' '.join(stmt.split())
-        triples.append(norm)
+
+    for statement in "\n".join(lines).split("."):
+        normalized = " ".join(statement.split())
+        if normalized:
+            triples.append(normalized)
+
     return set(triples)
 
-# Paths to the extracted folders
-label_dir = '/Users/ali/Desktop/RA/Wageningen/Github/Uploading/V10/Soil-Health/diagram2graph Dataset/Evaluating/F1_Score/out_folder'
-output_dir = '/Users/ali/Desktop/RA/Wageningen/Github/Uploading/V10/Soil-Health/diagram2graph Dataset/Evaluating/F1_Score/ZeroShot_outputs'
 
-# Map filenames to full paths
-label_files = [f for f in os.listdir(label_dir) if f.endswith('.ttl')]
-output_files = [f for f in os.listdir(output_dir) if f.endswith('.ttl')]
-label_map = {f: os.path.join(label_dir, f) for f in label_files}
-output_map = {f: os.path.join(output_dir, f) for f in output_files}
+def load_ttl_map(folder: Path) -> dict[str, Path]:
+    return {path.name: path for path in folder.iterdir() if path.is_file() and path.suffix == ".ttl"}
 
-rows = []
-for name, label_path in label_map.items():
-    # Only compute metrics if there is a corresponding output TTL
-    if name in output_map:
+
+def evaluate_folders(label_dir: Path, output_dir: Path) -> list[list[object]]:
+    label_map = load_ttl_map(label_dir)
+    output_map = load_ttl_map(output_dir)
+
+    rows = []
+    for name, label_path in label_map.items():
+        if name not in output_map:
+            continue
+
         output_path = output_map[name]
-        label_triples  = parse_triples(label_path)
+        label_triples = parse_triples(label_path)
         output_triples = parse_triples(output_path)
         overlap = label_triples & output_triples
-        # Precision, recall, F1-score, and Jaccard similarity
+
         precision = len(overlap) / len(output_triples) if output_triples else 0
-        recall    = len(overlap) / len(label_triples)  if label_triples  else 0
+        recall = len(overlap) / len(label_triples) if label_triples else 0
         f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0
-        jaccard = len(overlap) / len(label_triples | output_triples) if (label_triples | output_triples) else 0
-        rows.append([
-            name.replace('.ttl', ''),
-            len(label_triples),
-            len(output_triples),
-            len(overlap),
-            round(precision, 4),
-            round(recall,    4),
-            round(f1,        4),
-            round(jaccard,   4)
-        ])
+        union = label_triples | output_triples
+        jaccard = len(overlap) / len(union) if union else 0
 
-# Sort rows numerically by image name if possible
-def sort_key(x):
+        rows.append(
+            [
+                name.removesuffix(".ttl"),
+                len(label_triples),
+                len(output_triples),
+                len(overlap),
+                round(precision, 4),
+                round(recall, 4),
+                round(f1, 4),
+                round(jaccard, 4),
+            ]
+        )
+
+    rows.sort(key=lambda row: sortable_image_name(str(row[0])))
+    return rows
+
+
+def write_csv(output_csv: Path, rows: list[list[object]]) -> None:
+    output_csv.parent.mkdir(parents=True, exist_ok=True)
+    with output_csv.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(
+            [
+                "image",
+                "label_triples",
+                "output_triples",
+                "overlap_triples",
+                "precision",
+                "recall",
+                "f1",
+                "jaccard",
+            ]
+        )
+        writer.writerows(rows)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    script_dir = Path(__file__).resolve().parent
+    dataset_dir = script_dir.parents[1]
+
+    parser = argparse.ArgumentParser(
+        description="Evaluate graph-level F1 metrics between label and output Turtle folders."
+    )
+    parser.add_argument(
+        "--labels-dir",
+        type=Path,
+        default=dataset_dir / "JSON2ttl" / "out_folder",
+        help="Folder containing reference TTL files.",
+    )
+    parser.add_argument(
+        "--outputs-dir",
+        type=Path,
+        default=dataset_dir / "prompt engineering" / "ZeroShot_outputs",
+        help="Folder containing predicted TTL files.",
+    )
+    parser.add_argument(
+        "--output-csv",
+        type=Path,
+        default=script_dir / "result" / "Node_Edge_simultaneous" / "ZeroShot_outputs.csv",
+        help="CSV file to write evaluation results to.",
+    )
+    return parser
+
+
+def validate_dir(path: Path, label: str) -> Path:
+    resolved = path.resolve()
+    if not resolved.is_dir():
+        raise FileNotFoundError(f"{label} does not exist or is not a directory: {resolved}")
+    return resolved
+
+
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
+
     try:
-        return int(x[0])
-    except ValueError:
-        return x[0]
+        labels_dir = validate_dir(args.labels_dir, "Labels directory")
+        outputs_dir = validate_dir(args.outputs_dir, "Outputs directory")
+    except FileNotFoundError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
 
-rows.sort(key=sort_key)
+    rows = evaluate_folders(labels_dir, outputs_dir)
+    write_csv(args.output_csv.resolve(), rows)
 
-# Write results to CSV
-with open('ZeroShot_outputs.csv', 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerow([
-        'image',
-        'label_triples',
-        'output_triples',
-        'overlap_triples',
-        'precision',
-        'recall',
-        'f1',
-        'jaccard'
-    ])
-    writer.writerows(rows)
+    print(f"Saved {len(rows)} matching evaluations to {args.output_csv.resolve()}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
