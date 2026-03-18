@@ -108,9 +108,7 @@ Example `config` shape:
 
 ```json
 {
-  "gemini_api_key": "...",
-  "openai_api_key": "...",
-  "avalai_api_key": "..."
+  "gemini_api_key": "..."
 }
 ```
 
