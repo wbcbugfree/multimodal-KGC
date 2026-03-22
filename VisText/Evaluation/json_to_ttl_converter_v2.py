@@ -33,6 +33,12 @@ def escape_ttl_string(text: str) -> str:
     return text
 
 
+def string_safe_dates(date_str: str) -> str:
+    """Replace spaces in date strings with @ to keep them as single tokens (e.g. 'Dec 31, 2020' → 'Dec@31,@2020')."""
+    pattern = r'[A-Z][a-z]{2} \d{1,2}, \d{4}'
+    return re.sub(pattern, lambda m: m.group().replace(' ', '@'), date_str)
+
+
 def truncate_end(text: str, max_length: int = 35) -> str:
     """Truncate at the end and add '...'."""
     return text if len(text) <= max_length else text[:max_length] + "..."
@@ -88,102 +94,23 @@ def parse_numeric_token(token: str) -> Tuple[str, bool]:
 
 
 @dataclass
-class CaptionInfo:
+class PropertiesInfo:
     chart_type: str = ""
     title: str = ""
     x_label: str = ""
     y_label: str = ""
-    y_min: str = ""
-    y_max: str = ""
 
-
-def parse_caption_l1(caption_l1: str) -> CaptionInfo:
-    """
-    Extract (best-effort) chart type, title, axis labels, and y-range from caption_L1.
-    """
-    info = CaptionInfo()
-    if not caption_l1:
+def parse_L1_properties(l1_properties: list) -> PropertiesInfo:
+    info = PropertiesInfo()
+    if not l1_properties:
         return info
 
-    cap = " ".join(caption_l1.strip().split())
-    low = cap.lower()
-
-    # chart type
-    m = re.search(r"\b(bar|line|pie|scatter|area)\s+(?:chart|diagram|graph|plot)\b", low)
-    if m:
-        info.chart_type = m.group(1)
-    else:
-        # Also check for "is a bar plot" pattern
-        m2 = re.search(r"\bis\s+(?:a|an)\s+(bar|line|pie|scatter|area)\s+(?:chart|diagram|graph|plot)\b", low)
-        if m2:
-            info.chart_type = m2.group(1)
-        else:
-            for t in ("bar", "line", "pie", "scatter", "area"):
-                if t in low:
-                    info.chart_type = t
-                    break
-
-    # title - multiple patterns
-    # Pattern 1: "called/titled/named X"
-    m = re.search(
-        r"\b(?:called|titled|named)\s+(.+?)(?:\s*\.\s*(?:The|On|A)|$)",
-        cap,
-        flags=re.IGNORECASE,
-    )
-    if m:
-        info.title = m.group(1).strip().strip('"').rstrip('.')
+    info.chart_type = l1_properties[0].strip().lower()
+    info.title = l1_properties[1].strip()
+    info.x_label = l1_properties[2].strip()
+    info.y_label = l1_properties[3].strip()
     
-    # Pattern 2: "is a bar plot named X"
-    if not info.title:
-        m = re.search(
-            r"(?:bar|line|pie|scatter|area)\s+(?:chart|diagram|graph|plot)\s+(?:called|titled|named)\s+(.+?)(?:\s*\.\s*(?:The|On|A)|$)",
-            cap,
-            flags=re.IGNORECASE,
-        )
-        if m:
-            info.title = m.group(1).strip().strip('"').rstrip('.')
-
-    # x label - "x-axis shows/measures/displays X"
-    m = re.search(
-        r"\bx-?axis\s+(?:shows?|measures?|displays?|plots?)\s+([^.]+?)(?:\s+(?:as|along|on|using)\s+|\.|$)",
-        cap,
-        flags=re.IGNORECASE,
-    )
-    if m:
-        info.x_label = m.group(1).strip().strip('"')
-    
-    # Fallback: "while the x-axis shows X"
-    if not info.x_label:
-        m = re.search(
-            r"while\s+the\s+x-?axis\s+(?:shows?|measures?|displays?)\s+([^.]+?)(?:\s+(?:as|along)\s+|\.|$)",
-            cap,
-            flags=re.IGNORECASE,
-        )
-        if m:
-            info.x_label = m.group(1).strip().strip('"')
-
-    # y label - "y-axis measures/shows/labeled Y"
-    m = re.search(
-        r"\by-?axis\s+(?:measures?|shows?|displays?|labeled|labelled)\s+([^.]+?)(?:\s+(?:as|along|on|using|with)\s+|\.|$)",
-        cap,
-        flags=re.IGNORECASE,
-    )
-    if m:
-        info.y_label = m.group(1).strip().strip('"')
-
-    # y range - "minimum of X and maximum of Y" or "range X to Y"
-    m = re.search(r"\bminimum\s+(?:of\s+)?([-\d\.,]+)\s+and\s+(?:a\s+)?maximum\s+(?:of\s+)?([-\d\.,]+)\b", cap, flags=re.IGNORECASE)
-    if m:
-        info.y_min = m.group(1).replace(",", "")
-        info.y_max = m.group(2).replace(",", "")
-    else:
-        m = re.search(r"\brange\s+(?:of\s+)?([-\d\.,]+)\s*(?:to|–|-)\s*([-\d\.,]+)\b", cap, flags=re.IGNORECASE)
-        if m:
-            info.y_min = m.group(1).replace(",", "")
-            info.y_max = m.group(2).replace(",", "")
-
     return info
-
 
 def chart_type_string(chart_type: str) -> str:
     """Return chart type string for TTL."""
@@ -218,6 +145,13 @@ def parse_datatable(
     else:
         title = ""
         data_section = datatable.strip()
+        
+    # Treat dates as single tokens by replacing spaces with @ (e.g. "Dec 31, 2020" → "Dec@31,@2020")
+    data_section = string_safe_dates(data_section)
+    
+    # If the xlabel or ylabel are "year", they could get interpreted as independent variables instead of labels.
+    # To prevent this, we add a @ after anything that looks like a 4-digit year
+    # TODO: Write this check
 
     # Multi-line: first line header, remaining rows.
     lines = [ln.strip() for ln in data_section.splitlines() if ln.strip()]
@@ -241,6 +175,8 @@ def parse_datatable(
             y_val, is_num = parse_numeric_token(toks[-1])
             x_val = " ".join(toks[:-1])
             points.append((x_val, y_val if is_num else toks[-1]))
+            
+        points = [(x.replace("@", " "), y) for x, y in points]
         return title, x_label, y_label, points
 
     # One-line datatable
@@ -292,6 +228,8 @@ def parse_datatable(
                 x_label = tokens[0]
             if not y_label and data_start > 1:
                 y_label = " ".join(tokens[1:data_start])
+                y_label = y_label.replace("@", " ")
+            
             return title, x_label, y_label, best_points
 
     # Parse rows: (words...) + (number) repeating
@@ -306,6 +244,7 @@ def parse_datatable(
         else:
             x_parts.append(tok)
 
+    points = [(x.replace("@", " "), y) for x, y in points]
     return title, x_label, y_label, points
 
 
@@ -338,19 +277,19 @@ class JSONToTTLConverterV2:
         img_id = str(json_data.get("img_id", "unknown"))
 
         datatable = json_data.get("datatable", "") or ""
-        caption_l1 = json_data.get("caption_L1", "") or ""
-
-        cap = parse_caption_l1(caption_l1)
+        l1_properties = json_data.get("L1_properties", "") or ""
+        
+        properties = parse_L1_properties(l1_properties)
         dt_title, dt_x, dt_y, points = parse_datatable(
             datatable,
-            x_label_hint=cap.x_label,
-            y_label_hint=cap.y_label,
+            x_label_hint=properties.x_label,
+            y_label_hint=properties.y_label,
         )
 
-        title = dt_title or cap.title or ""
-        x_label = cap.x_label or dt_x or ""
-        y_label = cap.y_label or dt_y or ""
-        chart_type = chart_type_string(cap.chart_type)
+        title = properties.title or dt_title or ""
+        x_label = properties.x_label or dt_x or ""
+        y_label = properties.y_label or dt_y or ""
+        chart_type = chart_type_string(properties.chart_type)
 
         # Build TTL matching the prediction schema
         ttl_lines: List[str] = [
@@ -386,10 +325,6 @@ class JSONToTTLConverterV2:
         else:
             ttl_lines.append(f'    chart:label "" .')
         ttl_lines.append("")
-        
-        # Series
-        ttl_lines.append(f"ex:series-{img_id}-1 a chart:Series .")
-        ttl_lines.append("")
 
         # Sort if requested
         if self.sort_points:
@@ -400,12 +335,14 @@ class JSONToTTLConverterV2:
             category_clean = truncate_end(category, self.truncate_point_label_len)
             value, is_num = parse_numeric_token(value_raw)
 
-            ttl_lines.append(f"ex:mark-{img_id}-1-{i} a chart:DataPoint ;")
-            ttl_lines.append(f"    chart:series ex:series-{img_id}-1 ;")
+            ttl_lines.append(f"ex:DataPoint{i} a chart:DataPoint ;")
             ttl_lines.append(f'    chart:category "{escape_ttl_string(category_clean)}" ;')
             
             if is_num:
-                ttl_lines.append(f'    chart:value "{value}"^^xsd:decimal .')
+                if '.' in value:
+                    ttl_lines.append(f'    chart:value "{value}"^^xsd:decimal .')
+                else:
+                    ttl_lines.append(f'    chart:value "{value}"^^xsd:integer .')
             else:
                 ttl_lines.append(f'    chart:value "{escape_ttl_string(str(value_raw))}" .')
 
