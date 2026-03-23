@@ -13,6 +13,12 @@ Only these JSON fields are used:
 (and img_id just to build a stable namespace)
 """
 
+# TODO: Get rid of chart prefix
+# TODO: Change chart catgory in the first triples
+# TODO: Fix vertical bar charts
+# TODO: Write the check for 4-digit year
+
+
 from __future__ import annotations
 
 import argparse
@@ -151,7 +157,7 @@ def parse_datatable(
     
     # If the xlabel or ylabel are "year", they could get interpreted as independent variables instead of labels.
     # To prevent this, we add a @ after anything that looks like a 4-digit year
-    # TODO: Write this check
+
 
     # Multi-line: first line header, remaining rows.
     lines = [ln.strip() for ln in data_section.splitlines() if ln.strip()]

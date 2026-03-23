@@ -1,84 +1,82 @@
 @prefix : <http://example.org/vistext#> .
-@prefix : <http://example.org/chart#> .
 
-:chart-3 a :Chart ;
-    :chartType "area" ;
+:Chart a :AreaChart ;
     :title "Worldwide number of Michelin 's full-time employees from 2006 to 2019" ;
-    :xAxis :x-3 ;
-    :yAxis :y-3 .
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:x-3 a :Axis ;
-    :label "Year" .
+:XAxis a :Axis ;
+    :title "Year" .
 
-:y-3 a :Axis ;
-    :label "Number of employees" .
+:YAxis a :Axis ;
+    :title "Number of employees" .
 
 :DataPoint1 a :DataPoint ;
     :xValue "Dec 31, 2005" ;
     :yValue "123975" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint2 a :DataPoint ;
     :xValue "Dec 31, 2006" ;
     :yValue "121356" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint3 a :DataPoint ;
     :xValue "Dec 31, 2007" ;
     :yValue "117565" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint4 a :DataPoint ;
     :xValue "Dec 31, 2008" ;
     :yValue "110300" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint5 a :DataPoint ;
     :xValue "Dec 31, 2009" ;
     :yValue "102700" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint6 a :DataPoint ;
     :xValue "Dec 31, 2010" ;
     :yValue "105100" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint7 a :DataPoint ;
     :xValue "Dec 31, 2011" ;
     :yValue "107300" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint8 a :DataPoint ;
     :xValue "Dec 31, 2012" ;
     :yValue "105700" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint9 a :DataPoint ;
     :xValue "Dec 31, 2013" ;
     :yValue "106700" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint10 a :DataPoint ;
     :xValue "Dec 31, 2014" ;
     :yValue "105800" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint11 a :DataPoint ;
     :xValue "Dec 31, 2015" ;
     :yValue "105700" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint12 a :DataPoint ;
     :xValue "Dec 31, 2016" ;
     :yValue "107800" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint13 a :DataPoint ;
     :xValue "Dec 31, 2017" ;
     :yValue "111100" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
 
 :DataPoint14 a :DataPoint ;
     :xValue "Dec 31, 2018" ;
     :yValue "121300" ;
-    :belongsTo :chart-3 .
+    :belongsTo :Chart .
