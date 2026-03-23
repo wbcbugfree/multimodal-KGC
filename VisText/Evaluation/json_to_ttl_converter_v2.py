@@ -15,8 +15,9 @@ Only these JSON fields are used:
 
 # TODO: Get rid of chart prefix
 # TODO: Change chart catgory in the first triples
-# TODO: Fix vertical bar charts
+# TODO: Fix vertical bar charts, in where the value and also which is x and y labeled, calling it XValue and YValue instead of category and value. This is because in vertical bar charts, the x-axis is the category and the y-axis is the value, but in horizontal bar charts, it's reversed. So to be consistent, we can use XValue and YValue for all chart types.
 # TODO: Write the check for 4-digit year
+# TODO: add fail points during creation
 
 
 from __future__ import annotations
@@ -122,14 +123,14 @@ def chart_type_string(chart_type: str) -> str:
     """Return chart type string for TTL."""
     t = (chart_type or "").lower()
     if "line" in t:
-        return "line"
+        return "LineChart"
     if "pie" in t:
-        return "pie"
+        return "PieChart"
     if "scatter" in t:
-        return "scatter"
+        return "ScatterPlot"
     if "area" in t:
-        return "area"
-    return "bar"
+        return "AreaChart"
+    return "BarChart"
 
 
 def parse_datatable(
@@ -299,37 +300,32 @@ class JSONToTTLConverterV2:
 
         # Build TTL matching the prediction schema
         ttl_lines: List[str] = [
-            f"@prefix ex:    <http://example.org/> .",
-            f"@prefix chart: <http://example.org/chart#> .",
-            f"@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .",
+            f"@prefix : <http://example.org/> .",
             "",
-            f"ex:chart-{img_id} a chart:Chart ;",
+            f":Chart a :{chart_type} ;",
         ]
         
-        if chart_type:
-            ttl_lines.append(f'    chart:chartType "{chart_type}" ;')
-        
         if title:
-            ttl_lines.append(f'    chart:title "{escape_ttl_string(truncate_middle(title, self.truncate_title_len))}" ;')
+            ttl_lines.append(f'    :title "{escape_ttl_string(truncate_middle(title, self.truncate_title_len))}" ;')
         
-        ttl_lines.append(f"    chart:xAxis ex:x-{img_id} ;")
-        ttl_lines.append(f"    chart:yAxis ex:y-{img_id} .")
+        ttl_lines.append(f"    :xAxis :XAxis ;")
+        ttl_lines.append(f"    :yAxis :YAxis .")
         ttl_lines.append("")
         
         # X-axis
-        ttl_lines.append(f"ex:x-{img_id} a chart:Axis ;")
+        ttl_lines.append(f":XAxis a :Axis ;")
         if x_label:
-            ttl_lines.append(f'    chart:label "{escape_ttl_string(x_label)}" .')
+            ttl_lines.append(f'    :title "{escape_ttl_string(x_label)}" .')
         else:
-            ttl_lines.append(f'    chart:label "" .')
+            ttl_lines.append(f'    :title "" .')
         ttl_lines.append("")
         
         # Y-axis
-        ttl_lines.append(f"ex:y-{img_id} a chart:Axis ;")
+        ttl_lines.append(f":YAxis a :Axis ;")
         if y_label:
-            ttl_lines.append(f'    chart:label "{escape_ttl_string(y_label)}" .')
+            ttl_lines.append(f'    :title "{escape_ttl_string(y_label)}" .')
         else:
-            ttl_lines.append(f'    chart:label "" .')
+            ttl_lines.append(f'    :title "" .')
         ttl_lines.append("")
 
         # Sort if requested
@@ -341,17 +337,15 @@ class JSONToTTLConverterV2:
             category_clean = truncate_end(category, self.truncate_point_label_len)
             value, is_num = parse_numeric_token(value_raw)
 
-            ttl_lines.append(f"ex:DataPoint{i} a chart:DataPoint ;")
-            ttl_lines.append(f'    chart:category "{escape_ttl_string(category_clean)}" ;')
+            ttl_lines.append(f":DataPoint{i} a :DataPoint ;")
+            ttl_lines.append(f'    :category "{escape_ttl_string(category_clean)}" ;')
             
             if is_num:
-                if '.' in value:
-                    ttl_lines.append(f'    chart:value "{value}"^^xsd:decimal .')
-                else:
-                    ttl_lines.append(f'    chart:value "{value}"^^xsd:integer .')
+                ttl_lines.append(f'    :value "{value}" ;')
             else:
-                ttl_lines.append(f'    chart:value "{escape_ttl_string(str(value_raw))}" .')
-
+                ttl_lines.append(f'    :value "{escape_ttl_string(str(value_raw))}" ;')
+            
+            ttl_lines.append(f'    :belongsTo :Chart .')
             ttl_lines.append("")
 
         return "\n".join(ttl_lines).rstrip() + "\n"
