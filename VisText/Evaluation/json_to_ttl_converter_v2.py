@@ -257,11 +257,22 @@ class JSONToTTLConverterV2:
         datatable = json_data.get("datatable", "") or ""
         l1_properties = json_data.get("L1_properties", "") or ""
         
+        # If datatable or L1properties are empty, we can't parse the chart, so we raise an error to fix the data before conversion.
+        if not datatable or not l1_properties or len(l1_properties) < 5:
+            raise ValueError(f"Missing datatable or L1_properties in img_id {img_id}, correct before rerunning")
+        
         properties = parse_L1_properties(l1_properties)
         
         # Raise error and continue to the next file if any of the properties is missing, since we rely on them to parse the datatable and get the data points.
-        if not properties.title or not properties.x_label or not properties.y_label:
-            raise ValueError(f"Missing L1_properties fields in img_id {img_id}: {properties}, correct before rerunning")
+        missing = [k for k, v in {
+            "chart_type": properties.chart_type,
+            "title": properties.title,
+            "x_label": properties.x_label,
+            "y_label": properties.y_label,
+        }.items() if not v]
+
+        if missing:
+            raise ValueError(f"Missing fields {missing} in img_id {img_id}: {properties}, correct before rerunning")
         
         dt_title, dt_x, dt_y, points = parse_datatable(
             datatable,
