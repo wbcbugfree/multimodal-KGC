@@ -13,9 +13,6 @@ Only these JSON fields are used:
 (and img_id just to build a stable namespace)
 """
 
-# TODO: Get rid of chart prefix
-# TODO: Change chart catgory in the first triples
-# TODO: Fix vertical bar charts, in where the value and also which is x and y labeled, calling it XValue and YValue instead of category and value. This is because in vertical bar charts, the x-axis is the category and the y-axis is the value, but in horizontal bar charts, it's reversed. So to be consistent, we can use XValue and YValue for all chart types.
 # TODO: Write the check for 4-digit year
 # TODO: add fail points during creation
 
@@ -160,31 +157,10 @@ def parse_datatable(
     # To prevent this, we add a @ after anything that looks like a 4-digit year
 
 
-    # Multi-line: first line header, remaining rows.
+    # Multi-line: first line header, remaining rows. Join them with spaces to parse as one line.
     lines = [ln.strip() for ln in data_section.splitlines() if ln.strip()]
     if len(lines) > 1:
-        header = lines[0]
-        x_label = x_label_hint.strip()
-        y_label = y_label_hint.strip()
-
-        if not (x_label and y_label):
-            header_tokens = header.split()
-            if not x_label and header_tokens:
-                x_label = header_tokens[0]
-            if not y_label and len(header_tokens) > 1:
-                y_label = " ".join(header_tokens[1:])
-
-        points: List[Tuple[str, str]] = []
-        for ln in lines[1:]:
-            toks = ln.split()
-            if len(toks) < 2:
-                continue
-            y_val, is_num = parse_numeric_token(toks[-1])
-            x_val = " ".join(toks[:-1])
-            points.append((x_val, y_val if is_num else toks[-1]))
-            
-        points = [(x.replace("@", " "), y) for x, y in points]
-        return title, x_label, y_label, points
+        data_section = " ".join(lines[1:])
 
     # One-line datatable
     data_section = " ".join(data_section.split())
@@ -198,61 +174,56 @@ def parse_datatable(
     y_label = y_label_hint.strip()
     data_start = 0
 
-    # Prefer: find y_label_hint sequence inside tokens -> start data right after it.
-    if y_label:
-        y_seq = [_norm_token(t) for t in y_label.split()]
-        idx = _find_subsequence(norm_tokens, y_seq)
-        if idx is not None:
-            data_start = idx + len(y_seq)
-            if not x_label and idx > 0:
-                x_label = " ".join(tokens[:idx])
+    #Find y_label_hint sequence inside tokens -> start data right after it.
+    y_seq = [_norm_token(t) for t in y_label.split()]
+    idx = _find_subsequence(norm_tokens, y_seq)
+    if idx is not None:
+        data_start = idx + len(y_seq)
+        
+    first_token_after_y_label = tokens[data_start]
+    _, is_num = parse_numeric_token(first_token_after_y_label)
+    if is_num:
+        labels_first = False
+    else:
+        labels_first = True
 
-    # Fallback: guess header length that maximizes extracted points.
-    if data_start == 0:
-        best_points: List[Tuple[str, str]] = []
-        best_header_len = 0
+    if labels_first:
+        # Parse rows: (words...) + (number) repeating
+        points: List[Tuple[str, str]] = []
+        x_parts: List[str] = []
+        for tok in tokens[data_start:]:
+            val, is_num = parse_numeric_token(tok)
+            if is_num:
+                if x_parts:
+                    points.append((" ".join(x_parts), val))
+                    x_parts = []
+            else:
+                x_parts.append(tok)
 
-        for header_len in range(1, min(10, len(tokens))):
-            pts: List[Tuple[str, str]] = []
-            x_parts: List[str] = []
+        points = [(x.replace("@", " "), y) for x, y in points]
+        return title, x_label, y_label, points
+    
+    else:
+        # Parse rows: (number) + (words...) repeating
+        points: List[Tuple[str, str]] = []
+        y_parts: List[str] = []
+        
+        current_value = None
+        for tok in tokens[data_start:]:
+            val, is_num = parse_numeric_token(tok)
+            if is_num:
+                if y_parts:
+                    points.append((current_value, " ".join(y_parts)))
+                    y_parts = []
 
-            for tok in tokens[header_len:]:
-                val, is_num = parse_numeric_token(tok)
-                if is_num:
-                    if x_parts:
-                        pts.append((" ".join(x_parts), val))
-                        x_parts = []
-                else:
-                    x_parts.append(tok)
+                current_value = val
+            else:
+                y_parts.append(tok)
+        if current_value is not None and y_parts:
+            points.append((current_value, " ".join(y_parts)))
 
-            if len(pts) > len(best_points):
-                best_points = pts
-                best_header_len = header_len
-
-        if best_points:
-            data_start = best_header_len
-            if not x_label:
-                x_label = tokens[0]
-            if not y_label and data_start > 1:
-                y_label = " ".join(tokens[1:data_start])
-                y_label = y_label.replace("@", " ")
-            
-            return title, x_label, y_label, best_points
-
-    # Parse rows: (words...) + (number) repeating
-    points: List[Tuple[str, str]] = []
-    x_parts: List[str] = []
-    for tok in tokens[data_start:]:
-        val, is_num = parse_numeric_token(tok)
-        if is_num:
-            if x_parts:
-                points.append((" ".join(x_parts), val))
-                x_parts = []
-        else:
-            x_parts.append(tok)
-
-    points = [(x.replace("@", " "), y) for x, y in points]
-    return title, x_label, y_label, points
+        points = [(x.replace("@", " "), y) for x, y in points]
+        return title, x_label, y_label, points
 
 
 class JSONToTTLConverterV2:
@@ -287,6 +258,11 @@ class JSONToTTLConverterV2:
         l1_properties = json_data.get("L1_properties", "") or ""
         
         properties = parse_L1_properties(l1_properties)
+        
+        # Raise error and continue to the next file if any of the properties is missing, since we rely on them to parse the datatable and get the data points.
+        if not properties.title or not properties.x_label or not properties.y_label:
+            raise ValueError(f"Missing L1_properties fields in img_id {img_id}: {properties}, correct before rerunning")
+        
         dt_title, dt_x, dt_y, points = parse_datatable(
             datatable,
             x_label_hint=properties.x_label,
@@ -333,17 +309,23 @@ class JSONToTTLConverterV2:
             points = sorted(points, key=lambda p: p[0].lower())
 
         # Data points - using chart:category and chart:value (with #-based URIs)
-        for i, (category, value_raw) in enumerate(points, start=1):
-            category_clean = truncate_end(category, self.truncate_point_label_len)
-            value, is_num = parse_numeric_token(value_raw)
+        for i, (x, y) in enumerate(points, start=1):
+            x_clean = truncate_end(str(x), self.truncate_point_label_len)
+            y_clean = truncate_end(str(y), self.truncate_point_label_len)
 
             ttl_lines.append(f":DataPoint{i} a :DataPoint ;")
-            ttl_lines.append(f'    :category "{escape_ttl_string(category_clean)}" ;')
             
+            value, is_num = parse_numeric_token(x_clean)
             if is_num:
-                ttl_lines.append(f'    :value "{value}" ;')
+                ttl_lines.append(f'    :xValue "{value}" ;')
             else:
-                ttl_lines.append(f'    :value "{escape_ttl_string(str(value_raw))}" ;')
+                ttl_lines.append(f'    :xValue "{escape_ttl_string(x_clean)}" ;')
+            
+            value, is_num = parse_numeric_token(y_clean)
+            if is_num:
+                ttl_lines.append(f'    :yValue "{value}" ;')
+            else:
+                ttl_lines.append(f'    :yValue "{escape_ttl_string(y_clean)}" ;')
             
             ttl_lines.append(f'    :belongsTo :Chart .')
             ttl_lines.append("")

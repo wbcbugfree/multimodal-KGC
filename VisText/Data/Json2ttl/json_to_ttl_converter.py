@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+########
+#### DEPRECATED, SEE json_to_ttl_converter_v2.py INSTEAD ####
+########
+
 """
 JSON → TTL (Turtle) converter (datatable + caption_L1 only)
 
