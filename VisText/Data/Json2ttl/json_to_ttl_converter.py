@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+########
+#### DEPRECATED, SEE json_to_ttl_converter_v2.py INSTEAD ####
+########
+
 """
 JSON → TTL (Turtle) converter (datatable + caption_L1 only)
 
@@ -126,11 +131,11 @@ def parse_caption_l1(caption_l1: str) -> CaptionInfo:
     low = cap.lower()
 
     # chart type
-    m = re.search(r"\b(bar|line|pie|scatter)\s+(?:chart|diagram|graph|plot)\b", low)
+    m = re.search(r"\b(bar|line|pie|scatter|area)\s+(?:chart|diagram|graph|plot)\b", low)
     if m:
         info.chart_type = m.group(1)
     else:
-        for t in ("bar", "line", "pie", "scatter"):
+        for t in ("bar", "line", "pie", "scatter", "area"):
             if t in low:
                 info.chart_type = t
                 break
@@ -175,6 +180,8 @@ def chart_class_from_type(chart_type: str) -> str:
         return "schema:PieChart"
     if "scatter" in t:
         return "schema:ScatterPlot"
+    if "area" in t:
+        return "schema:AreaChart"
     return "schema:BarChart"
 
 

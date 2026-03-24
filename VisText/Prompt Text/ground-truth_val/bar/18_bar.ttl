@@ -1,63 +1,62 @@
 @prefix : <http://example.org/vistext#> .
 
-:chart-18 a :Chart ;
-    :chartType "bar" ;
+:Chart a :BarChart ;
     :title "Top 10 U.S. metro areas by plastic surgeon density as of 2016 (per 100,000 residents)" ;
-    :xAxis :x-18 ;
-    :yAxis :y-18 .
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:x-18 a :Axis ;
-    :label "Number of surgeons per 100,000 residents" .
+:XAxis a :Axis ;
+    :title "Number of surgeons per 100,000 residents" .
 
-:y-18 a :Axis ;
-    :label "city of the United States" .
+:YAxis a :Axis ;
+    :title "city of the United States" .
 
 :DataPoint1 a :DataPoint ;
     :xValue "3.9" ;
     :yValue "Miami, FL" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint2 a :DataPoint ;
     :xValue "3.12" ;
     :yValue "Salt Lake City, UT" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint3 a :DataPoint ;
     :xValue "2.98" ;
     :yValue "Los Angeles, CA" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint4 a :DataPoint ;
     :xValue "2.82" ;
     :yValue "San Jose, CA" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint5 a :DataPoint ;
     :xValue "2.78" ;
     :yValue "Austin, TX" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint6 a :DataPoint ;
     :xValue "2.74" ;
     :yValue "San Francisco, CA" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint7 a :DataPoint ;
     :xValue "2.72" ;
     :yValue "Grand Rapids, MI" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint8 a :DataPoint ;
     :xValue "2.61" ;
     :yValue "New York, NY" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint9 a :DataPoint ;
     :xValue "2.5" ;
     :yValue "Tampa, FL" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
 
 :DataPoint10 a :DataPoint ;
     :xValue "2.48" ;
     :yValue "Baltimore, MD" ;
-    :belongsTo :chart-18 .
+    :belongsTo :Chart .
