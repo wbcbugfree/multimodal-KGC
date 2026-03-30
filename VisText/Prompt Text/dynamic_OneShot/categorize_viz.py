@@ -7,7 +7,7 @@ from api_key import API_key
 os.environ['GEMINI_API_KEY'] = API_key
 
 contents = """
-You are a a chart identification assistant.You will be given a visualization of a scientific chart,
+You are a chart identification assistant.You will be given a visualization of a scientific chart,
 and your task is to identify its category. The possible categories are: bar, area, line.
 Respond with only the category, and no other text. The value must be one of the allowed categories.
 """

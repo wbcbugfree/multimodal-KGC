@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/2428/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Average spending of adults in the United States on selected...companies or services as of January 2016 (in U.S. dollars)" ;
-    :hasXAxisLabel "company" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Average spending of adults in the United States on selected sharing companies or services as of January 2016 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Company ;
-    rdfs:label "DogVacay*" ;
-    :y "42"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "company or service" .
 
-:DataPoint2 a :Company ;
-    rdfs:label "Etsy" ;
-    :y "37"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Average amunt spent in U.S. dollars" .
 
-:DataPoint3 a :Company ;
-    rdfs:label "Instacart*" ;
-    :y "65"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "AirBnB" ;
+    :yValue "114" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Company ;
-    rdfs:label "Lyft" ;
-    :y "24"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Task Rabbit*" ;
+    :yValue "83" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Company ;
-    rdfs:label "or service Average amunt spent in U..." ;
-    :y "114"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Instacart*" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Company ;
-    rdfs:label "Post Mates*" ;
-    :y "34"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "DogVacay*" ;
+    :yValue "42" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Company ;
-    rdfs:label "Shyp*" ;
-    :y "12"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Turo*" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Company ;
-    rdfs:label "Task Rabbit*" ;
-    :y "83"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Etsy" ;
+    :yValue "37" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Company ;
-    rdfs:label "Turo*" ;
-    :y "39"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Post Mates*" ;
+    :yValue "34" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Company ;
-    rdfs:label "Uber" ;
-    :y "32"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Uber" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lyft" ;
+    :yValue "24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Shyp*" ;
+    :yValue "12" ;
+    :belongsTo :Chart .

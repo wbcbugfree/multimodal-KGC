@@ -1,214 +1,217 @@
-@prefix : <http://example.org/chart-data/6247/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:LineChart ;
-    schema:title "Mobility in selected cities between March 3 , 2020 and Dece..., compared with movement prior to the coronavirus outbreak" ;
-    :hasXAxisLabel "Response is plotted on a categorical scale from April to October" ;
-    :hasYAxisLabel "y" .
+:Chart a :LineChart ;
+    :title "Mobility in selected cities between March 3 , 2020 and December 7 , 2020 , compared with movement prior to the coronavirus outbreak" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Apr" ;
-    :y "06"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Response" .
 
-:DataPoint2 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Apr" ;
-    :y "13"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Stockholm" .
 
-:DataPoint3 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Apr" ;
-    :y "20"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Mar 02, 2020" ;
+    :yValue "0.93" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Apr" ;
-    :y "27"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Mar 09, 2020" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Aug" ;
-    :y "03"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Mar 16, 2020" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Aug" ;
-    :y "10"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Mar 23, 2020" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Aug" ;
-    :y "17"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Mar 30, 2020" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Aug" ;
-    :y "24"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Apr 06, 2020" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Aug" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Apr 13, 2020" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Dec" ;
-    :y "07"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Apr 20, 2020" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jul" ;
-    :y "06"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Apr 27, 2020" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jul" ;
-    :y "13"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "May 04, 2020" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jul" ;
-    :y "20"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "May 11, 2020" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jul" ;
-    :y "27"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "May 18, 2020" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jun" ;
-    :y "01"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "May 25, 2020" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jun" ;
-    :y "08"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "Jun 01, 2020" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jun" ;
-    :y "15"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "Jun 08, 2020" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jun" ;
-    :y "22"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "Jun 15, 2020" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
 
-:DataPoint19 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Jun" ;
-    :y "29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint17 a :DataPoint ;
+    :xValue "Jun 22, 2020" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
 
-:DataPoint20 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Mar" ;
-    :y "09"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint18 a :DataPoint ;
+    :xValue "Jun 29, 2020" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
 
-:DataPoint21 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Mar" ;
-    :y "16"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint19 a :DataPoint ;
+    :xValue "Jul 06, 2020" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
 
-:DataPoint22 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Mar" ;
-    :y "23"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint20 a :DataPoint ;
+    :xValue "Jul 13, 2020" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
 
-:DataPoint23 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Mar" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint21 a :DataPoint ;
+    :xValue "Jul 20, 2020" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
 
-:DataPoint24 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "May" ;
-    :y "04"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint22 a :DataPoint ;
+    :xValue "Jul 27, 2020" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
 
-:DataPoint25 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "May" ;
-    :y "11"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint23 a :DataPoint ;
+    :xValue "Aug 03, 2020" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
 
-:DataPoint26 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "May" ;
-    :y "18"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint24 a :DataPoint ;
+    :xValue "Aug 10, 2020" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
 
-:DataPoint27 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "May" ;
-    :y "25"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint25 a :DataPoint ;
+    :xValue "Aug 17, 2020" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
 
-:DataPoint28 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Nov" ;
-    :y "02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint26 a :DataPoint ;
+    :xValue "Aug 24, 2020" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
 
-:DataPoint29 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Nov" ;
-    :y "09"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint27 a :DataPoint ;
+    :xValue "Aug 31, 2020" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .
 
-:DataPoint30 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Nov" ;
-    :y "16"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint28 a :DataPoint ;
+    :xValue "Sep 07, 2020" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
 
-:DataPoint31 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Nov" ;
-    :y "23"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint29 a :DataPoint ;
+    :xValue "Sep 14, 2020" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
 
-:DataPoint32 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Nov" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint30 a :DataPoint ;
+    :xValue "Sep 21, 2020" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
 
-:DataPoint33 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Oct" ;
-    :y "05"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint31 a :DataPoint ;
+    :xValue "Sep 28, 2020" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
 
-:DataPoint34 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Oct" ;
-    :y "12"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint32 a :DataPoint ;
+    :xValue "Oct 05, 2020" ;
+    :yValue "0.76" ;
+    :belongsTo :Chart .
 
-:DataPoint35 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Oct" ;
-    :y "19"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint33 a :DataPoint ;
+    :xValue "Oct 12, 2020" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
 
-:DataPoint36 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Oct" ;
-    :y "26"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint34 a :DataPoint ;
+    :xValue "Oct 19, 2020" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
 
-:DataPoint37 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Sep" ;
-    :y "07"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint35 a :DataPoint ;
+    :xValue "Oct 26, 2020" ;
+    :yValue "0.74" ;
+    :belongsTo :Chart .
 
-:DataPoint38 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Sep" ;
-    :y "14"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint36 a :DataPoint ;
+    :xValue "Nov 02, 2020" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
 
-:DataPoint39 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Sep" ;
-    :y "21"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint37 a :DataPoint ;
+    :xValue "Nov 09, 2020" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
 
-:DataPoint40 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Sep" ;
-    :y "28"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint38 a :DataPoint ;
+    :xValue "Nov 16, 2020" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
 
-:DataPoint41 a :ResponseIsPlottedOnACategoricalScaleFromAprilToOctober ;
-    rdfs:label "Stockholm Mar" ;
-    :y "02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint39 a :DataPoint ;
+    :xValue "Nov 23, 2020" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint40 a :DataPoint ;
+    :xValue "Nov 30, 2020" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint41 a :DataPoint ;
+    :xValue "Dec 07, 2020" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .

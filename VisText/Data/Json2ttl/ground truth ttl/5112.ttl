@@ -1,0 +1,77 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Earthquakes of magnitude 3.6 and over in Italy between January and May 2020 , by magnitude" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Magnitude" .
+
+:YAxis a :Axis ;
+    :title "region of Italy" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.8" ;
+    :yValue "Albi (Cosenza) - January" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.6" ;
+    :yValue "Carpino (Foggia) - January" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.8" ;
+    :yValue "North-west coast in Calabria (Cosenza) - January" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4.3" ;
+    :yValue "Castiglione Cosentino (Cosenza) - February" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.7" ;
+    :yValue "Aeolian Islands (Messina) - February" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.9" ;
+    :yValue "South tyrrhenian sea - March" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.6" ;
+    :yValue "Troina (Enna) - March" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Ionian coast (Crotone) - March" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4.4" ;
+    :yValue "South tyrrhenian sea - March" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.9" ;
+    :yValue "South-west coast in Calabra (Catanzaro, Vibo Valen..." ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Cerignale (Piacenza) - April" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "3.7" ;
+    :yValue "Poggio Imperiale (Foggia) - April" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "3.7" ;
+    :yValue "Redavalle (Pavia) - April" ;
+    :belongsTo :Chart .

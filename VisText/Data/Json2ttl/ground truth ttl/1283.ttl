@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading BBC Radio stations ranked by weekly reach in the United Kingdom (UK) as of 1st quarter 2020 (in 1,000 listeners)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Listeners reached in thousands*" .
+
+:YAxis a :Axis ;
+    :title "radio station" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "14362" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11105" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8915" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5219" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "live" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2556" ;
+    :yValue "BBC" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Music" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1983" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Extra" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1980" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1346" ;
+    :yValue "BBC World Service" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "986" ;
+    :yValue "1Xtra from the BBC" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "601" ;
+    :yValue "BBC Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "live sports extra" ;
+    :belongsTo :Chart .

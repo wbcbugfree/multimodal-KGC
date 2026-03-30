@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/7058/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Leading male Italian golfers as of October 11 , 2020 , by OWRG score" ;
-    :hasXAxisLabel "marked Leading male Italian golfers" ;
-    :hasYAxisLabel "Events Played" .
+:Chart a :BarChart ;
+    :title "Leading male Italian golfers as of October 11 , 2020 , by OWRG score" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Andrea Pavan" ;
-    :eventsPlayed "52"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Leading male Italian golfers" .
 
-:DataPoint2 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Edoardo Molinari" ;
-    :eventsPlayed "52"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Events Played" .
 
-:DataPoint3 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Edoardo Raffaele Lipparelli" ;
-    :eventsPlayed "40"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Francesco Molinari" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Francesco Laporta" ;
-    :eventsPlayed "46"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Renato Paratore" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Francesco Molinari" ;
-    :eventsPlayed "40"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Guido Migliozzi" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Guido Migliozzi" ;
-    :eventsPlayed "47"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Francesco Laporta" ;
+    :yValue "46" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Lorenzo Fillippo Scalise" ;
-    :eventsPlayed "44"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Andrea Pavan" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Lorenzo Gagli" ;
-    :eventsPlayed "50"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Lorenzo Gagli" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Nino Bertasio" ;
-    :eventsPlayed "48"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Nino Bertasio" ;
+    :yValue "48" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :MarkedLeadingMaleItalianGolfers ;
-    rdfs:label "Renato Paratore" ;
-    :eventsPlayed "52"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Edoardo Molinari" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lorenzo Fillippo Scalise" ;
+    :yValue "44" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Edoardo Raffaele Lipparelli" ;
+    :yValue "40" ;
+    :belongsTo :Chart .

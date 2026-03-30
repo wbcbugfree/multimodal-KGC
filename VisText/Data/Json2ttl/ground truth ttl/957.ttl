@@ -1,159 +1,162 @@
-@prefix : <http://example.org/chart-data/957/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:LineChart ;
-    schema:title "Number of reported motor vehicle theft cases in the United States from 1990 to 2019" ;
-    :hasXAxisLabel "Year" ;
-    :hasYAxisLabel "y" .
+:Chart a :LineChart ;
+    :title "Number of reported motor vehicle theft cases in the United States from 1990 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Year" .
 
-:DataPoint2 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Number of reported cases" .
 
-:DataPoint3 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 1989" ;
+    :yValue "1635900" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 1990" ;
+    :yValue "1661700" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 1991" ;
+    :yValue "1610800" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 1992" ;
+    :yValue "1563100" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 1993" ;
+    :yValue "1539300" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 1994" ;
+    :yValue "1472400" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 1995" ;
+    :yValue "1394200" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 1996" ;
+    :yValue "1353700" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 1997" ;
+    :yValue "1242781" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 1998" ;
+    :yValue "1152075" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "Dec 31, 1999" ;
+    :yValue "1160002" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "Dec 31, 2000" ;
+    :yValue "1226457" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "Dec 31, 2001" ;
+    :yValue "1246646" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "Dec 31, 2002" ;
+    :yValue "1261226" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "Dec 31, 2003" ;
+    :yValue "1237851" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "Dec 31, 2004" ;
+    :yValue "1235859" ;
+    :belongsTo :Chart .
 
-:DataPoint19 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint17 a :DataPoint ;
+    :xValue "Dec 31, 2005" ;
+    :yValue "1198245" ;
+    :belongsTo :Chart .
 
-:DataPoint20 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint18 a :DataPoint ;
+    :xValue "Dec 31, 2006" ;
+    :yValue "1100472" ;
+    :belongsTo :Chart .
 
-:DataPoint21 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint19 a :DataPoint ;
+    :xValue "Dec 31, 2007" ;
+    :yValue "959059" ;
+    :belongsTo :Chart .
 
-:DataPoint22 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint20 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "795652" ;
+    :belongsTo :Chart .
 
-:DataPoint23 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint21 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "739565" ;
+    :belongsTo :Chart .
 
-:DataPoint24 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint22 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "716508" ;
+    :belongsTo :Chart .
 
-:DataPoint25 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint23 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "723186" ;
+    :belongsTo :Chart .
 
-:DataPoint26 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint24 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "700288" ;
+    :belongsTo :Chart .
 
-:DataPoint27 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint25 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "686803" ;
+    :belongsTo :Chart .
 
-:DataPoint28 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint26 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "713063" ;
+    :belongsTo :Chart .
 
-:DataPoint29 a :Year ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint27 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "767290" ;
+    :belongsTo :Chart .
 
-:DataPoint30 a :Year ;
-    rdfs:label "Number of reported cases Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint28 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "772943" ;
+    :belongsTo :Chart .
+
+:DataPoint29 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "751904" ;
+    :belongsTo :Chart .
+
+:DataPoint30 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "721885" ;
+    :belongsTo :Chart .

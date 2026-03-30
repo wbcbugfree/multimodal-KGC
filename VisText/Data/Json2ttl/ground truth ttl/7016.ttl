@@ -1,69 +1,72 @@
-@prefix : <http://example.org/chart-data/7016/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Monthly sales of cookies , confectionery and snack foods at...m January 2015 to April 2019 (in million Canadian dollars)" ;
-    :hasXAxisLabel "2016" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Monthly sales of cookies , confectionery and snack foods at large retailers in Canada from January 2015 to April 2019 (in million Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :2016 ;
-    rdfs:label "Apr" ;
-    :y "364.69"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "2016" .
 
-:DataPoint2 a :2016 ;
-    rdfs:label "Aug" ;
-    :y "294.04"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Month" .
 
-:DataPoint3 a :2016 ;
-    rdfs:label "Dec" ;
-    :y "352.24"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "480.22" ;
+    :yValue "Dec" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :2016 ;
-    rdfs:label "Feb" ;
-    :y "275.38"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "352.24" ;
+    :yValue "Nov" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :2016 ;
-    rdfs:label "Jul" ;
-    :y "282.58"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "392.5" ;
+    :yValue "Oct" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :2016 ;
-    rdfs:label "Jun" ;
-    :y "291.21"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "318.03" ;
+    :yValue "Sep" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :2016 ;
-    rdfs:label "Mar" ;
-    :y "284.92"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "280.86" ;
+    :yValue "Aug" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :2016 ;
-    rdfs:label "May" ;
-    :y "397.08"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "294.04" ;
+    :yValue "Jul" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :2016 ;
-    rdfs:label "Month" ;
-    :y "480.22"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "282.58" ;
+    :yValue "Jun" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :2016 ;
-    rdfs:label "Nov" ;
-    :y "392.5"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "291.21" ;
+    :yValue "May" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :2016 ;
-    rdfs:label "Oct" ;
-    :y "318.03"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "397.08" ;
+    :yValue "Apr" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :2016 ;
-    rdfs:label "Sep" ;
-    :y "280.86"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "364.69" ;
+    :yValue "Mar" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "284.92" ;
+    :yValue "Feb" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "275.38" ;
+    :yValue "Jan" ;
+    :belongsTo :Chart .

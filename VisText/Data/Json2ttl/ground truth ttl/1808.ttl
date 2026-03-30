@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/1808/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Degree of internet freedom in Middle East and North Africa...o the Freedom House Index 2019 , by country (index points)" ;
-    :hasXAxisLabel "Country" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Degree of internet freedom in Middle East and North Africa according to the Freedom House Index 2019 , by country (index points)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Country ;
-    rdfs:label "Bahrain" ;
-    :y "29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Country" .
 
-:DataPoint2 a :Country ;
-    rdfs:label "Egypt" ;
-    :y "26"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Index points" .
 
-:DataPoint3 a :Country ;
-    rdfs:label "Index points Tunisia" ;
-    :y "64"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Tunisia" ;
+    :yValue "64" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Country ;
-    rdfs:label "Iran" ;
-    :y "15"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Morocco" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Country ;
-    rdfs:label "Jordan" ;
-    :y "47"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Lebanon" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Country ;
-    rdfs:label "Lebanon" ;
-    :y "52"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Libya" ;
+    :yValue "49" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Country ;
-    rdfs:label "Libya" ;
-    :y "49"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Jordan" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Country ;
-    rdfs:label "Morocco" ;
-    :y "54"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Bahrain" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Country ;
-    rdfs:label "Saudi Arabia" ;
-    :y "25"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "United Arab Emirates" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Country ;
-    rdfs:label "Syria" ;
-    :y "17"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Egypt" ;
+    :yValue "26" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Country ;
-    rdfs:label "United Arab Emirates" ;
-    :y "28"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Saudi Arabia" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Syria" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Iran" ;
+    :yValue "15" ;
+    :belongsTo :Chart .

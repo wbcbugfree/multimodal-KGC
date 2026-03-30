@@ -1,109 +1,112 @@
-@prefix : <http://example.org/chart-data/1046/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Main import partners of Sweden in 2019 , by import value (in million SEK)" ;
-    :hasXAxisLabel "Country" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Main import partners of Sweden in 2019 , by import value (in million SEK)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Country ;
-    rdfs:label "Austria" ;
-    :y "18679"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Country" .
 
-:DataPoint2 a :Country ;
-    rdfs:label "Belgium" ;
-    :y "65674"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Import value million SEK" .
 
-:DataPoint3 a :Country ;
-    rdfs:label "China" ;
-    :y "77878"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "267851" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Country ;
-    rdfs:label "Czech Republic" ;
-    :y "24605"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Netherlands" ;
+    :yValue "142099" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Country ;
-    rdfs:label "Denmark" ;
-    :y "99266"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Norway" ;
+    :yValue "138510" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Country ;
-    rdfs:label "Estonia" ;
-    :y "14120"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Denmark" ;
+    :yValue "99266" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Country ;
-    rdfs:label "Finland" ;
-    :y "73812"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "77878" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Country ;
-    rdfs:label "France" ;
-    :y "56766"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Finland" ;
+    :yValue "73812" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Country ;
-    rdfs:label "Hungary" ;
-    :y "16197"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "68388" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Country ;
-    rdfs:label "Import value million SEK Germany" ;
-    :y "267851"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Belgium" ;
+    :yValue "65674" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Country ;
-    rdfs:label "Ireland" ;
-    :y "15116"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Poland" ;
+    :yValue "63217" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Country ;
-    rdfs:label "Italy" ;
-    :y "50292"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "56766" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Country ;
-    rdfs:label "Japan" ;
-    :y "15226"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "Italy" ;
+    :yValue "50292" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Country ;
-    rdfs:label "Netherlands" ;
-    :y "142099"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "United States" ;
+    :yValue "39620" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :Country ;
-    rdfs:label "Norway" ;
-    :y "138510"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "Russian Federation" ;
+    :yValue "38540" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :Country ;
-    rdfs:label "Poland" ;
-    :y "63217"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "Czech Republic" ;
+    :yValue "24605" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :Country ;
-    rdfs:label "Russian Federation" ;
-    :y "38540"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "21089" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :Country ;
-    rdfs:label "Spain" ;
-    :y "21089"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "Austria" ;
+    :yValue "18679" ;
+    :belongsTo :Chart .
 
-:DataPoint19 a :Country ;
-    rdfs:label "United Kingdom" ;
-    :y "68388"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint17 a :DataPoint ;
+    :xValue "Hungary" ;
+    :yValue "16197" ;
+    :belongsTo :Chart .
 
-:DataPoint20 a :Country ;
-    rdfs:label "United States" ;
-    :y "39620"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint18 a :DataPoint ;
+    :xValue "Japan" ;
+    :yValue "15226" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Ireland" ;
+    :yValue "15116" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Estonia" ;
+    :yValue "14120" ;
+    :belongsTo :Chart .

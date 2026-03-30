@@ -1,0 +1,77 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "To what extent are you interested in the following sports ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Soccer" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "Hockey" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Biathlon" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Volleyball" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Basketball" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Boxing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Extreme sports" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "Tennis" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Mixed martial arts (MMA)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Motorsport" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Sambo / judo" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Wrestling (Greco-Roman, freestyle)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Crossfit" ;
+    :belongsTo :Chart .

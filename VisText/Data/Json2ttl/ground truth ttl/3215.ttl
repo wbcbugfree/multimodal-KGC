@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading digital media agencies in the United Kingdom (UK) ranked by income in 2014 (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Agency (parent)" .
+
+:YAxis a :Axis ;
+    :title "Income in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mediacom (WPP)" ;
+    :yValue "335.44" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mindshare (WPP)" ;
+    :yValue "204.91" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "MEC (WPP)" ;
+    :yValue "172.77" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Essence (Independent)" ;
+    :yValue "76.15" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Neo Ogilvy (WPP)" ;
+    :yValue "66.44" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "equimedia Limited (Independent)" ;
+    :yValue "50.48" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Periscopix (Independent)" ;
+    :yValue "33.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "agenda21 Digital (Independent)" ;
+    :yValue "23.37" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Harvest Digital (Independent)" ;
+    :yValue "8.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Net Media Planet (Incubeta)" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Navigate Digital (Independent)" ;
+    :yValue "1.74" ;
+    :belongsTo :Chart .

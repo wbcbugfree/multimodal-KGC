@@ -1,0 +1,102 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Most affected industries by the coronavirus (COVID-19) epidemic in Romania in the 2nd quarter of 2020 compared to the 1st quarter , by change in GDP" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Quartely GDP forecast" .
+
+:YAxis a :Axis ;
+    :title "industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "-0.104" ;
+    :yValue "Mining and Quarrying" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "-0.674" ;
+    :yValue "Tourism and Hospitality" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "-0.136" ;
+    :yValue "Administrative Services" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "-0.071" ;
+    :yValue "Financial Services and Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "-0.604" ;
+    :yValue "Culture, Arts and Other Services" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "-0.022" ;
+    :yValue "Energy and Utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "-0.08" ;
+    :yValue "Education" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-0.013" ;
+    :yValue "Agriculture" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.147" ;
+    :yValue "Health Services" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "-0.099" ;
+    :yValue "Professional and Scientific Services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "-0.039" ;
+    :yValue "Information and Communication" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Public Administration and Defense" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "-0.006" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "-0.232" ;
+    :yValue "Transportation and Logistics" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "-0.233" ;
+    :yValue "Real Estate Services" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "-0.132" ;
+    :yValue "Light Industries" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "-0.161" ;
+    :yValue "Commerce and Repair" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "-0.291" ;
+    :yValue "Heavy Industries" ;
+    :belongsTo :Chart .

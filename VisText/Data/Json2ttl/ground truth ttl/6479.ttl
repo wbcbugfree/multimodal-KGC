@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/6479/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Breakdown of Johnson & Johnson 's revenue worldwide from 2013 to 2021 , by sub-category" ;
-    :hasXAxisLabel "Sub-category" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Breakdown of Johnson & Johnson 's revenue worldwide from 2013 to 2021 , by sub-category" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :SubCategory ;
-    rdfs:label "DePuy orthopedics & spine" ;
-    :y "0.163"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Sub-category" .
 
-:DataPoint2 a :SubCategory ;
-    rdfs:label "Sub-category: Anti-infectives** OTC..." ;
-    :y "0.0587"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "2019" .
 
-:DataPoint3 a :SubCategory ;
-    rdfs:label "Sub-category: Central nervous syste..." ;
-    :y "0.0603"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "DePuy orthopedics & spine" ;
+    :yValue "0.163" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :SubCategory ;
-    rdfs:label "Sub-category: DePuy orthopedics & s..." ;
-    :y "0.156"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Sub-category: DePuy orthopedics & spine* Surgical ..." ;
+    :yValue "0.156" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :SubCategory ;
-    rdfs:label "Sub-category: Neutrogena, Aveena & ..." ;
-    :y "0.0315"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Sub-category: Surgical devices* Stents, catheters ..." ;
+    :yValue "0.115" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :SubCategory ;
-    rdfs:label "Sub-category: OTC drugs & nutrition..." ;
-    :y "0.0685"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Sub-category: Stents, catheters & other medical de..." ;
+    :yValue "0.121" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :SubCategory ;
-    rdfs:label "Sub-category: Procrit, Velcade & ot..." ;
-    :y "0.11"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Sub-category: Procrit, Velcade & other** Remicade ..." ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :SubCategory ;
-    rdfs:label "Sub-category: Remicade & immunology..." ;
-    :y "0.0601"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Sub-category: Remicade & immunology** Central nerv..." ;
+    :yValue "0.0601" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :SubCategory ;
-    rdfs:label "Sub-category: Stents, catheters & o..." ;
-    :y "0.121"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Sub-category: Central nervous system** Anti-infect..." ;
+    :yValue "0.0603" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :SubCategory ;
-    rdfs:label "Sub-category: Surgical devices* Ste..." ;
-    :y "0.115"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Sub-category: Anti-infectives** OTC drugs & nutrit..." ;
+    :yValue "0.0587" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :SubCategory ;
-    rdfs:label "Sub-category: Women's health, wound..." ;
-    :y "0.0559"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Sub-category: OTC drugs & nutritionals*** Women's ..." ;
+    :yValue "0.0685" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sub-category: Women's health, wound & oral care***..." ;
+    :yValue "0.0559" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sub-category: Neutrogena, Aveena & other skin care..." ;
+    :yValue "0.0315" ;
+    :belongsTo :Chart .

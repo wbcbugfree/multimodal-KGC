@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Market share of the leading contact lens retailers on JD.com in China as of July 2017 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "leading contact lens retailers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.4267" ;
+    :yValue "Bausch & Lomb" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.2512" ;
+    :yValue "Hydron" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.1365" ;
+    :yValue "Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.0636" ;
+    :yValue "Horien" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0248" ;
+    :yValue "CooperVision" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.0228" ;
+    :yValue "Alcon" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.0123" ;
+    :yValue "NEO" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.0109" ;
+    :yValue "Jie Da" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.0096" ;
+    :yValue "Wei Kang" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0051" ;
+    :yValue "Seed" ;
+    :belongsTo :Chart .

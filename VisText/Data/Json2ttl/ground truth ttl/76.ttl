@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/76/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Non-English main home languages ranked by number of speakers in Welsh schools in 2020" ;
-    :hasXAxisLabel "geographic" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Non-English main home languages ranked by number of speakers in Welsh schools in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Geographic ;
-    rdfs:label "Arabic" ;
-    :y "3484"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "geographic region" .
 
-:DataPoint2 a :Geographic ;
-    rdfs:label "Bengali" ;
-    :y "3019"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Number of speakers" .
 
-:DataPoint3 a :Geographic ;
-    rdfs:label "Chinese" ;
-    :y "1466"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Polish" ;
+    :yValue "4961" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Geographic ;
-    rdfs:label "Panjabi" ;
-    :y "1242"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Arabic" ;
+    :yValue "3484" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Geographic ;
-    rdfs:label "Portuguese" ;
-    :y "846"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Bengali" ;
+    :yValue "3019" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Geographic ;
-    rdfs:label "region Number of speakers Polish" ;
-    :y "4961"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Urdu" ;
+    :yValue "1508" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Geographic ;
-    rdfs:label "Romanian" ;
-    :y "1091"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Chinese" ;
+    :yValue "1466" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Geographic ;
-    rdfs:label "Somali" ;
-    :y "852"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Panjabi" ;
+    :yValue "1242" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Geographic ;
-    rdfs:label "Tagalog/Filipino" ;
-    :y "830"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Romanian" ;
+    :yValue "1091" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Geographic ;
-    rdfs:label "Urdu" ;
-    :y "1508"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Somali" ;
+    :yValue "852" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Portuguese" ;
+    :yValue "846" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tagalog/Filipino" ;
+    :yValue "830" ;
+    :belongsTo :Chart .

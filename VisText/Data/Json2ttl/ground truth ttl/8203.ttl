@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/8203/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Share of online users in the United States who use selected social media platforms as of 3rd quarter 2020" ;
-    :hasXAxisLabel "Q4" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Share of online users in the United States who use selected social media platforms as of 3rd quarter 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Q4 ;
-    rdfs:label "Facebook" ;
-    :y "0.46"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Q4 2018" .
 
-:DataPoint2 a :Q4 ;
-    rdfs:label "Instagram" ;
-    :y "0.37"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Platform" .
 
-:DataPoint3 a :Q4 ;
-    rdfs:label "LinkedIn" ;
-    :y "0.13"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "YouTube" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Q4 ;
-    rdfs:label "Pinterest" ;
-    :y "0.29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Q4 ;
-    rdfs:label "Platform" ;
-    :y "0.67"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Instagram" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Q4 ;
-    rdfs:label "Reddit" ;
-    :y "0.25"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Twitter" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Q4 ;
-    rdfs:label "Snapchat" ;
-    :y "0.16"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Pinterest" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Q4 ;
-    rdfs:label "Tumblr" ;
-    :y "0.02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "LinkedIn" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Q4 ;
-    rdfs:label "Twitter" ;
-    :y "0.34"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Reddit" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Q4 ;
-    rdfs:label "WhatsApp" ;
-    :y "0.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Snapchat" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Q4 ;
-    rdfs:label "YouTube" ;
-    :y "0.77"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "WhatsApp" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Tumblr" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Periscope" ;
+    :belongsTo :Chart .

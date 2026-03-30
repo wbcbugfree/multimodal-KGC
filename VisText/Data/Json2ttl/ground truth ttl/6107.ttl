@@ -1,79 +1,82 @@
-@prefix : <http://example.org/chart-data/6107/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Clinical trial costs by selected cost component and clinical phase as of 2014 (in U.S. dollars)" ;
-    :hasXAxisLabel "marked Phase 1" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Clinical trial costs by selected cost component and clinical phase as of 2014 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :MarkedPhase1 ;
-    rdfs:label "Administrative Staff Costs" ;
-    :y "198896"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Phase 1" .
 
-:DataPoint2 a :MarkedPhase1 ;
-    rdfs:label "Central Lab Costs" ;
-    :y "51904"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Cost component" .
 
-:DataPoint3 a :MarkedPhase1 ;
-    rdfs:label "Clinical Procedure Total" ;
-    :y "252163"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "50331" ;
+    :yValue "Data Management Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :MarkedPhase1 ;
-    rdfs:label "Cost component" ;
-    :y "50331"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "11962" ;
+    :yValue "Cost Per IRB Approvals" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :MarkedPhase1 ;
-    rdfs:label "Cost of IRB Amendments" ;
-    :y "326437"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "1094" ;
+    :yValue "Cost of IRB Amendments" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :MarkedPhase1 ;
-    rdfs:label "Cost Per IRB Approvals" ;
-    :y "1094"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "326437" ;
+    :yValue "SDV Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :MarkedPhase1 ;
-    rdfs:label "Data Management Costs" ;
-    :y "11962"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "37050" ;
+    :yValue "Patient Recruitment Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :MarkedPhase1 ;
-    rdfs:label "Patient Recruitment Costs" ;
-    :y "6145"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "6145" ;
+    :yValue "Patient Retention Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :MarkedPhase1 ;
-    rdfs:label "Patient Retention Costs" ;
-    :y "178237"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "178237" ;
+    :yValue "RN/CRA Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :MarkedPhase1 ;
-    rdfs:label "Physician Costs" ;
-    :y "475667"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "109681" ;
+    :yValue "Physician Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :MarkedPhase1 ;
-    rdfs:label "RN/CRA Costs" ;
-    :y "109681"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "475667" ;
+    :yValue "Clinical Procedure Total" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :MarkedPhase1 ;
-    rdfs:label "SDV Costs" ;
-    :y "37050"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "252163" ;
+    :yValue "Central Lab Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :MarkedPhase1 ;
-    rdfs:label "Site Recruitment Costs" ;
-    :y "193615"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "51904" ;
+    :yValue "Site Recruitment Costs" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :MarkedPhase1 ;
-    rdfs:label "Site Retention Costs" ;
-    :y "237869"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "193615" ;
+    :yValue "Site Retention Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "237869" ;
+    :yValue "Administrative Staff Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "198896" ;
+    :yValue "Site Monitoring Costs" ;
+    :belongsTo :Chart .

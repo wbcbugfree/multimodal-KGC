@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Results in the European Parliament elections in the United Kingdom (UK) in 2014 , by national party" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of votes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "UKIP" ;
+    :yValue "0.2677" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The Labour Party" ;
+    :yValue "0.2474" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Conservative Party" ;
+    :yValue "0.2331" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Greens" ;
+    :yValue "0.0767" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Liberal Democrats" ;
+    :yValue "0.0669" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Other parties GB" ;
+    :yValue "0.0402" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "SNP" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "BNP" ;
+    :yValue "0.0111" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other parties NI" ;
+    :yValue "0.0071" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Plaid Cymru" ;
+    :yValue "0.0069" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sinn Féin" ;
+    :yValue "0.0066" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "DUP" ;
+    :yValue "0.0054" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "UUP" ;
+    :yValue "0.0035" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "SDLP" ;
+    :yValue "0.0034" ;
+    :belongsTo :Chart .

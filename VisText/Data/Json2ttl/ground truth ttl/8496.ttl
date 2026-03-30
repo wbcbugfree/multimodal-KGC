@@ -1,69 +1,62 @@
-@prefix : <http://example.org/chart-data/8496/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Number of book readers in Italy in 2019 , by occupation and number of books read (in 1,000 readers)" ;
-    :hasXAxisLabel "labeled occupation" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Number of book readers in Italy in 2019 , by occupation and number of books read (in 1,000 readers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :LabeledOccupation ;
-    rdfs:label "Blue collar, apprentice" ;
-    :y "1206"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "occupation" .
 
-:DataPoint2 a :LabeledOccupation ;
-    rdfs:label "books Middle management, white coll..." ;
-    :y "2323"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "From 1 to 3 books" .
 
-:DataPoint3 a :LabeledOccupation ;
-    rdfs:label "Executive, employer, professional" ;
-    :y "601"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Middle management, white collar" ;
+    :yValue "2323" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :LabeledOccupation ;
-    rdfs:label "From" ;
-    :y "1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Retired" ;
+    :yValue "1345" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :LabeledOccupation ;
-    rdfs:label "Housewife" ;
-    :y "976"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Student" ;
+    :yValue "1164" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :LabeledOccupation ;
-    rdfs:label "Other condition" ;
-    :y "97"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Housewife" ;
+    :yValue "976" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :LabeledOccupation ;
-    rdfs:label "Retired" ;
-    :y "1345"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Executive, employer, professional" ;
+    :yValue "601" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :LabeledOccupation ;
-    rdfs:label "Self-employed, family worker" ;
-    :y "470"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Unemployed person with work experience" ;
+    :yValue "645" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :LabeledOccupation ;
-    rdfs:label "Student" ;
-    :y "1164"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Blue collar, apprentice" ;
+    :yValue "1206" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :LabeledOccupation ;
-    rdfs:label "to" ;
-    :y "3"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Self-employed, family worker" ;
+    :yValue "470" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :LabeledOccupation ;
-    rdfs:label "Unemployed person with work experie..." ;
-    :y "645"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Unemployed person without work experience" ;
+    :yValue "128" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :LabeledOccupation ;
-    rdfs:label "Unemployed person without work expe..." ;
-    :y "128"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "Other condition" ;
+    :yValue "97" ;
+    :belongsTo :Chart .

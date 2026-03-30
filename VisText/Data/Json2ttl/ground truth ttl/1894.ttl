@@ -1,79 +1,82 @@
-@prefix : <http://example.org/chart-data/1894/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Share of people using the internet to pay bills or shop som...the past year in Singapore in 2017 , by type of population" ;
-    :hasXAxisLabel "Share" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Share of people using the internet to pay bills or shop something in the past year in Singapore in 2017 , by type of population" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Share ;
-    rdfs:label "(income)" ;
-    :y "0.71"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Share of respondents" .
 
-:DataPoint2 a :Share ;
-    rdfs:label "(income)" ;
-    :y "0.27"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Response" .
 
-:DataPoint3 a :Share ;
-    rdfs:label "Adults" ;
-    :y "25"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Richest" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Share ;
-    rdfs:label "In labor" ;
-    :y "0.66"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "(income)" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Share ;
-    rdfs:label "Men" ;
-    :y "0.49"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.71" ;
+    :yValue "In labor" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Share ;
-    rdfs:label "of respondents Response" ;
-    :y "0.72"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.66" ;
+    :yValue "Secondary education or less" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Share ;
-    rdfs:label "Out of labor" ;
-    :y "0.17"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Adults" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Share ;
-    rdfs:label "Poorest" ;
-    :y "40"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "years and older)" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Share ;
-    rdfs:label "Richest" ;
-    :y "60"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Women" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Share ;
-    rdfs:label "Secondary education or less" ;
-    :y "0.58"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Share ;
-    rdfs:label "Total" ;
-    :y "0.56"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Men" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Share ;
-    rdfs:label "Women" ;
-    :y "0.57"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Young adults (15-24 years)" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Share ;
-    rdfs:label "years and older)" ;
-    :y "0.57"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "Poorest" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Share ;
-    rdfs:label "Young adults (15-24 years)" ;
-    :y "0.33"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "(income)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Out of labor" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Primary education or less" ;
+    :belongsTo :Chart .

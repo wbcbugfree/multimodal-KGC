@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Share of families with debt in the United States in 2019 , by type of debt" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of families" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Installment loans" ;
+    :yValue "0.5146" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Credit card balances" ;
+    :yValue "0.4539" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Home secured debt" ;
+    :yValue "0.4209" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mortgages & home equity loans" ;
+    :yValue "0.4001" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Vehicle installment loans" ;
+    :yValue "0.3689" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Education installment loans" ;
+    :yValue "0.2137" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other installment loans" ;
+    :yValue "0.1073" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other debt" ;
+    :yValue "0.0523" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other residential real estate debt" ;
+    :yValue "0.0473" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Home equity lines of credit" ;
+    :yValue "0.0448" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other lines of credit" ;
+    :yValue "0.0151" ;
+    :belongsTo :Chart .

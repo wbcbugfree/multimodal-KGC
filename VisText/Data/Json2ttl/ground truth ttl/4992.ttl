@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Top 10 movies in Malaysia in 2019 , by box office revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Box office revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "21.04" ;
+    :yValue "Avengers: Endgame" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13.06" ;
+    :yValue "Jumanji: The Next Level" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10.95" ;
+    :yValue "Captain Marvel" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "10.11" ;
+    :yValue "Fast & Furious presents: Hobbs & Shaw" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9.4" ;
+    :yValue "Frozen II" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8.69" ;
+    :yValue "Spider-Man: Far from Home" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.63" ;
+    :yValue "Maleficent: Mistress of Evil" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6.21" ;
+    :yValue "The Lion King" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5.99" ;
+    :yValue "Aladdin" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4.91" ;
+    :yValue "How to Train Your Drageon: The Hidden World" ;
+    :belongsTo :Chart .

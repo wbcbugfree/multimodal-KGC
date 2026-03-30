@@ -1,109 +1,112 @@
-@prefix : <http://example.org/chart-data/6573/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Average penetration rate of bottled water brands in Turkey in 2012 and 2013" ;
-    :hasXAxisLabel "2013 is measured as a scale with a minimum of 0" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Average penetration rate of bottled water brands in Turkey in 2012 and 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Abant" ;
-    :y "0.01"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "2013" .
 
-:DataPoint2 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Aqua" ;
-    :y "0.01"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Brand" .
 
-:DataPoint3 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Aquafina" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Erikli" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Aytaç" ;
-    :y "0.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Hayat" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Brand" ;
-    :y "0.28"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Pinar" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Buxton" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Damla" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Damla" ;
-    :y "0.11"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Aytaç" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Dasani" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Saka" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Erikli" ;
-    :y "0.27"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Sirma" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Evian" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Güzelpinar" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Güzelpinar" ;
-    :y "0.02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Pure Life" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Hayat" ;
-    :y "0.17"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Abant" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "NAYA" ;
-    :y "0.01"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Aqua" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Perrier" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "NAYA" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Pinar" ;
-    :y "0.14"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Aquafina" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Pure Life" ;
-    :y "0.01"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Buxton" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Saka" ;
-    :y "0.09"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Dasani" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Sirma" ;
-    :y "0.02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Evian" ;
+    :belongsTo :Chart .
 
-:DataPoint19 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "SPA" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint17 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Perrier" ;
+    :belongsTo :Chart .
 
-:DataPoint20 a :2013IsMeasuredAsAScaleWithAMinimumOf0 ;
-    rdfs:label "Vittel" ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint18 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "SPA" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Vittel" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Volvic" ;
+    :belongsTo :Chart .

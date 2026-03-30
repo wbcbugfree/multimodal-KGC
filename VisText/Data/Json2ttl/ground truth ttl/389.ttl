@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/389/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Leading 10 U.S. companies based on medical device revenue in 2019 (in billion U.S. dollars)" ;
-    :hasXAxisLabel "Revenue" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Leading 10 U.S. companies based on medical device revenue in 2019 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Revenue ;
-    rdfs:label "Abbott Laboratories" ;
-    :y "11.36"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
 
-:DataPoint2 a :Revenue ;
-    rdfs:label "Baxter International Inc." ;
-    :y "10.65"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "companies based on medical device" .
 
-:DataPoint3 a :Revenue ;
-    rdfs:label "Becton Dickinson & Co." ;
-    :y "12.23"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "30.55" ;
+    :yValue "Medtronic Inc.*" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Revenue ;
-    rdfs:label "Boston Scientific Corp." ;
-    :y "7.98"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "25.96" ;
+    :yValue "Johnson & Johnson Medical Devices & Diagnostics*" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Revenue ;
-    rdfs:label "Cardinal Health" ;
-    :y "14.88"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "19.94" ;
+    :yValue "General Electric Healthcare**" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Revenue ;
-    rdfs:label "General Electric Healthcare**" ;
-    :y "15.63"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "15.63" ;
+    :yValue "Cardinal Health" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Revenue ;
-    rdfs:label "in billion U.S. dollars companies b..." ;
-    :y "30.55"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "14.88" ;
+    :yValue "Stryker Corp." ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Revenue ;
-    rdfs:label "Johnson & Johnson Medical Devices &..." ;
-    :y "19.94"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "12.99" ;
+    :yValue "Becton Dickinson & Co." ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Revenue ;
-    rdfs:label "Medtronic Inc.*" ;
-    :y "25.96"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "12.23" ;
+    :yValue "Abbott Laboratories" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Revenue ;
-    rdfs:label "Stryker Corp." ;
-    :y "12.99"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "11.36" ;
+    :yValue "Baxter International Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10.65" ;
+    :yValue "Boston Scientific Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.98" ;
+    :yValue "Zimmer Biomet" ;
+    :belongsTo :Chart .

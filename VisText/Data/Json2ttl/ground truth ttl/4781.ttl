@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/4781/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Consumption of tree nuts worldwide in 2018 , by type (in 1,000 metric tons)" ;
-    :hasXAxisLabel "Consumption" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Consumption of tree nuts worldwide in 2018 , by type (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Consumption ;
-    rdfs:label "Almond" ;
-    :y "888.67"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Consumption in thousand metric tons" .
 
-:DataPoint2 a :Consumption ;
-    rdfs:label "Brazil Nut" ;
-    :y "21.69"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "type of nut" .
 
-:DataPoint3 a :Consumption ;
-    rdfs:label "Cashew" ;
-    :y "669.86"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "42596" ;
+    :yValue "Peanut" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Consumption ;
-    rdfs:label "Hazelnut" ;
-    :y "125.5"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "1188.69" ;
+    :yValue "Almond" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Consumption ;
-    rdfs:label "in thousand metric tons type of nut" ;
-    :y "42596"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "888.67" ;
+    :yValue "Walnut" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Consumption ;
-    rdfs:label "Macadamia" ;
-    :y "26.96"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "792.32" ;
+    :yValue "Cashew" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Consumption ;
-    rdfs:label "Peanut" ;
-    :y "1188.69"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "669.86" ;
+    :yValue "Pistachio" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Consumption ;
-    rdfs:label "Pecan" ;
-    :y "50.36"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "424.14" ;
+    :yValue "Hazelnut" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Consumption ;
-    rdfs:label "Pistachio" ;
-    :y "424.14"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "125.5" ;
+    :yValue "Pecan" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Consumption ;
-    rdfs:label "Walnut" ;
-    :y "792.32"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "50.36" ;
+    :yValue "Macadamia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "26.96" ;
+    :yValue "Brazil Nut" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "21.69" ;
+    :yValue "Pine Nut" ;
+    :belongsTo :Chart .
