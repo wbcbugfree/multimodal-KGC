@@ -1,84 +1,87 @@
-@prefix : <http://example.org/chart-data/2409/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Most trusted institutions to tell the truth about the coronavirus (COVID-19) in Brazil in March 2020" ;
-    :hasXAxisLabel "Share" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Most trusted institutions to tell the truth about the coronavirus (COVID-19) in Brazil in March 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Share ;
-    rdfs:label "A person like yourself" ;
-    :y "0.74"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Share of respondents" .
 
-:DataPoint2 a :Share ;
-    rdfs:label "Countries most affected" ;
-    :y "0.64"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Response" .
 
-:DataPoint3 a :Share ;
-    rdfs:label "Doctors/health experts online" ;
-    :y "0.79"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.91" ;
+    :yValue "Scientists" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Share ;
-    rdfs:label "Healthcare authorities" ;
-    :y "0.7"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.86" ;
+    :yValue "My doctor" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Share ;
-    rdfs:label "Healthcare CEOs" ;
-    :y "0.68"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.82" ;
+    :yValue "WHO officials" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Share ;
-    rdfs:label "Journalists" ;
-    :y "0.59"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.81" ;
+    :yValue "Doctors/health experts online" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Share ;
-    rdfs:label "My co-workers" ;
-    :y "0.6"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "0.79" ;
+    :yValue "A person like yourself" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Share ;
-    rdfs:label "My country's leader" ;
-    :y "0.53"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "0.74" ;
+    :yValue "Healthcare authorities" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Share ;
-    rdfs:label "My doctor" ;
-    :y "0.82"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "NGO representatives" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Share ;
-    rdfs:label "My employer CEO" ;
-    :y "0.67"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "0.68" ;
+    :yValue "Healthcare CEOs" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Share ;
-    rdfs:label "NGO representatives" ;
-    :y "0.68"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "0.68" ;
+    :yValue "My employer CEO" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Share ;
-    rdfs:label "of respondents Response" ;
-    :y "0.91"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "Countries most affected" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Share ;
-    rdfs:label "Scientists" ;
-    :y "0.86"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "0.64" ;
+    :yValue "My co-workers" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Share ;
-    rdfs:label "The news media" ;
-    :y "0.55"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Journalists" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :Share ;
-    rdfs:label "WHO officials" ;
-    :y "0.81"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "The news media" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "My country's leader" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.53" ;
+    :yValue "Governmental officials" ;
+    :belongsTo :Chart .

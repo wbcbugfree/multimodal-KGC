@@ -1,54 +1,77 @@
-@prefix : <http://example.org/chart-data/8603/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Impact of coronavirus (COVID-19) on monthly retail sales development in the United States 2020 , by retail sector" ;
-    :hasXAxisLabel "July" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Impact of coronavirus (COVID-19) on monthly retail sales development in the United States 2020 , by retail sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :July ;
-    rdfs:label "Building material & garden equipmen..." ;
-    :y "0.008"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "July to August" .
 
-:DataPoint2 a :July ;
-    rdfs:label "Clothing & clothing accessories sto..." ;
-    :y "0"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "retail sector" .
 
-:DataPoint3 a :July ;
-    rdfs:label "Electronics & appliance stores" ;
-    :y "0.02"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.002" ;
+    :yValue "Motor vehicle & parts dealers" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :July ;
-    rdfs:label "Furniture & home furniture stores" ;
-    :y "0.008"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.021" ;
+    :yValue "Furniture & home furniture stores" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :July ;
-    rdfs:label "Gasoline stations" ;
-    :y "0.029"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.008" ;
+    :yValue "Electronics & appliance stores" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :July ;
-    rdfs:label "Health & personal care stores" ;
-    :y "0.004"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Building material & garden equipment & supplies de..." ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :July ;
-    rdfs:label "Motor vehicle & parts dealers" ;
-    :y "0.021"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "-0.012" ;
+    :yValue "Food & beverage stores" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :July ;
-    rdfs:label "Nonstore retailers" ;
-    :y "0.006"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "0.008" ;
+    :yValue "Health & personal care stores" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :July ;
-    rdfs:label "to August retail sector" ;
-    :y "0.002"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Gasoline stations" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.029" ;
+    :yValue "Clothing & clothing accessories stores" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "-0.057" ;
+    :yValue "Sporting goods, hobby, musical instrument, & book ..." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "-0.004" ;
+    :yValue "General merchandise stores" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "-0.002" ;
+    :yValue "Miscellaneous store retailers" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Nonstore retailers" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Total retail" ;
+    :belongsTo :Chart .

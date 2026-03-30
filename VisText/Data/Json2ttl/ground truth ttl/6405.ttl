@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Global search engine market share as of January 2020 , by search query size" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "AOL" .
+
+:YAxis a :Axis ;
+    :title "search query size" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.0003" ;
+    :yValue "One word" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.0001" ;
+    :yValue "Two words" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.0001" ;
+    :yValue "Three words" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0001" ;
+    :yValue "Four words" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Five words" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Six words" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Seven words" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Eight words" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Nine words" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Ten or more words" ;
+    :belongsTo :Chart .

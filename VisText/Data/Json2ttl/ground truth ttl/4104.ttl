@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/4104/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Leading gaming content on Twitch worldwide from January 1 , 2019 to June 30 , 2019 , by hours watched (in millions)" ;
-    :hasXAxisLabel "Number of hours watched" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Leading gaming content on Twitch worldwide from January 1 , 2019 to June 30 , 2019 , by hours watched (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :NumberOfHoursWatched ;
-    rdfs:label "Apex Legends" ;
-    :y "178"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Number of hours watched" .
 
-:DataPoint2 a :NumberOfHoursWatched ;
-    rdfs:label "Counter-Strike: Global Offensive" ;
-    :y "127.3"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "gaming content" .
 
-:DataPoint3 a :NumberOfHoursWatched ;
-    rdfs:label "Dota" ;
-    :y "2"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "512.3" ;
+    :yValue "League of Legends" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :NumberOfHoursWatched ;
-    rdfs:label "Fortnite" ;
-    :y "372.5"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "465" ;
+    :yValue "Fortnite" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :NumberOfHoursWatched ;
-    rdfs:label "Grand Theft Auto V" ;
-    :y "237.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "372.5" ;
+    :yValue "Just Chatting" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :NumberOfHoursWatched ;
-    rdfs:label "Hearthstone" ;
-    :y "118.5"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "269.1" ;
+    :yValue "Grand Theft Auto V" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :NumberOfHoursWatched ;
-    rdfs:label "Just Chatting" ;
-    :y "269.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "237.1" ;
+    :yValue "Dota" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :NumberOfHoursWatched ;
-    rdfs:label "League of Legends" ;
-    :y "465"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "181.4" ;
+    :yValue "Apex Legends" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :NumberOfHoursWatched ;
-    rdfs:label "of hours watched gaming content" ;
-    :y "512.3"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "178" ;
+    :yValue "Counter-Strike: Global Offensive" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :NumberOfHoursWatched ;
-    rdfs:label "Overwatch" ;
-    :y "120.7"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "127.3" ;
+    :yValue "Overwatch" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "120.7" ;
+    :yValue "Hearthstone" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "118.5" ;
+    :yValue "World of Warcraft" ;
+    :belongsTo :Chart .

@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/2357/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:LineChart ;
-    schema:title "Djibouti : Infant mortality rate from 2009 to 2019 (in deaths per 1,000 live births)" ;
-    :hasXAxisLabel "marked Year" ;
-    :hasYAxisLabel "Deaths per 1,000 live births" .
+:Chart a :LineChart ;
+    :title "Djibouti : Infant mortality rate from 2009 to 2019 (in deaths per 1,000 live births)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Year" .
 
-:DataPoint2 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Deaths per 1,000 live births" .
 
-:DataPoint3 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "64.1" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "62.4" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "60.7" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "57.4" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "55.9" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "54.3" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "52.7" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :MarkedYear ;
-    rdfs:label "Dec" ;
-    :deathsPer1000LiveBirths "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "51.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "49.8" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "48.4" ;
+    :belongsTo :Chart .

@@ -1,59 +1,62 @@
-@prefix : <http://example.org/chart-data/7163/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Proportion of young people reading various media outside of class in the United Kingdom (UK) from 2014 to 2019" ;
-    :hasXAxisLabel "media read by young people" ;
-    :hasYAxisLabel "2017/18" .
+:Chart a :BarChart ;
+    :title "Proportion of young people reading various media outside of class in the United Kingdom (UK) from 2014 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :MediaReadByYoungPeople ;
-    rdfs:label "Comics" ;
-    :201718 "0.399"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "media read by young people" .
 
-:DataPoint2 a :MediaReadByYoungPeople ;
-    rdfs:label "Fiction" ;
-    :201718 "0.549"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "2017/18" .
 
-:DataPoint3 a :MediaReadByYoungPeople ;
-    rdfs:label "Instant messages" ;
-    :201718 "0.79"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Text messages" ;
+    :yValue "0.888" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :MediaReadByYoungPeople ;
-    rdfs:label "Lyrics" ;
-    :201718 "0.478"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Instant messages" ;
+    :yValue "0.79" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :MediaReadByYoungPeople ;
-    rdfs:label "Magazines" ;
-    :201718 "0.348"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Websites" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :MediaReadByYoungPeople ;
-    rdfs:label "Newspapers" ;
-    :201718 "0.307"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Lyrics" ;
+    :yValue "0.478" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :MediaReadByYoungPeople ;
-    rdfs:label "Non-fiction" ;
-    :201718 "0.485"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Fiction" ;
+    :yValue "0.549" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :MediaReadByYoungPeople ;
-    rdfs:label "Poems" ;
-    :201718 "0.172"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Non-fiction" ;
+    :yValue "0.485" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :MediaReadByYoungPeople ;
-    rdfs:label "Text messages" ;
-    :201718 "0.888"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Newspapers" ;
+    :yValue "0.307" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :MediaReadByYoungPeople ;
-    rdfs:label "Websites" ;
-    :201718 "0.84"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Magazines" ;
+    :yValue "0.348" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Comics" ;
+    :yValue "0.399" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Poems" ;
+    :yValue "0.172" ;
+    :belongsTo :Chart .

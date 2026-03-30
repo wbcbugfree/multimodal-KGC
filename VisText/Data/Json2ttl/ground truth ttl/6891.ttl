@@ -1,99 +1,102 @@
-@prefix : <http://example.org/chart-data/6891/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Crime rate per 1,000 population in the United Kingdom from 2002/03 to 2019/20 , by country" ;
-    :hasXAxisLabel "United" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Crime rate per 1,000 population in the United Kingdom from 2002/03 to 2019/20 , by country" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :United ;
-    rdfs:label "2003/04" ;
-    :y "110.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "United Kingdom" .
 
-:DataPoint2 a :United ;
-    rdfs:label "2004/05" ;
-    :y "109.9"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Year" .
 
-:DataPoint3 a :United ;
-    rdfs:label "2005/06" ;
-    :y "103.3"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "96.4" ;
+    :yValue "2019/20" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :United ;
-    rdfs:label "2006/07" ;
-    :y "100.9"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "95" ;
+    :yValue "2018/19" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :United ;
-    rdfs:label "2007/08" ;
-    :y "98.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "88.8" ;
+    :yValue "2017/18" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :United ;
-    rdfs:label "2008/09" ;
-    :y "88.8"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "81" ;
+    :yValue "2016/17" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :United ;
-    rdfs:label "2009/10" ;
-    :y "84"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "74.7" ;
+    :yValue "2015/16" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :United ;
-    rdfs:label "2010/11" ;
-    :y "76.9"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "70.1" ;
+    :yValue "2014/15" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :United ;
-    rdfs:label "2011/12" ;
-    :y "75.8"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "68.7" ;
+    :yValue "2013/14" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :United ;
-    rdfs:label "2012/13" ;
-    :y "69.6"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "68.7" ;
+    :yValue "2012/13" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :United ;
-    rdfs:label "2013/14" ;
-    :y "68.7"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "69.6" ;
+    :yValue "2011/12" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :United ;
-    rdfs:label "2014/15" ;
-    :y "68.7"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "75.8" ;
+    :yValue "2010/11" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :United ;
-    rdfs:label "2015/16" ;
-    :y "70.1"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "76.9" ;
+    :yValue "2009/10" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :United ;
-    rdfs:label "2016/17" ;
-    :y "74.7"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "84" ;
+    :yValue "2008/09" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :United ;
-    rdfs:label "2017/18" ;
-    :y "81"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "88.8" ;
+    :yValue "2007/08" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :United ;
-    rdfs:label "2018/19" ;
-    :y "88.8"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "98.1" ;
+    :yValue "2006/07" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :United ;
-    rdfs:label "2019/20" ;
-    :y "95"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "100.9" ;
+    :yValue "2005/06" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :United ;
-    rdfs:label "Kingdom Year" ;
-    :y "96.4"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "103.3" ;
+    :yValue "2004/05" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "109.9" ;
+    :yValue "2003/04" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "110.1" ;
+    :yValue "2002/03" ;
+    :belongsTo :Chart .

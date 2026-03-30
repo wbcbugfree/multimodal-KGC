@@ -1,114 +1,117 @@
-@prefix : <http://example.org/chart-data/5838/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:LineChart ;
-    schema:title "Auction price of tea per kilogram in Kenya from January 2019 to September 2020 (in U.S. dollars)" ;
-    :hasXAxisLabel "Month" ;
-    :hasYAxisLabel "y" .
+:Chart a :AreaChart ;
+    :title "Auction price of tea per kilogram in Kenya from January 2019 to September 2020 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Month ;
-    rdfs:label "Apr" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Month" .
 
-:DataPoint2 a :Month ;
-    rdfs:label "Apr" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Auction price of tea in U.S. dollars" .
 
-:DataPoint3 a :Month ;
-    rdfs:label "Auction price of tea in U.S. dollar..." ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "2.3" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Month ;
-    rdfs:label "Aug" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Jan 31, 2019" ;
+    :yValue "2.16" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Month ;
-    rdfs:label "Aug" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Feb 28, 2019" ;
+    :yValue "2.13" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Month ;
-    rdfs:label "Dec" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Mar 31, 2019" ;
+    :yValue "2.26" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Month ;
-    rdfs:label "Feb" ;
-    :y "28"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Apr 30, 2019" ;
+    :yValue "2.39" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Month ;
-    rdfs:label "Feb" ;
-    :y "29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "May 31, 2019" ;
+    :yValue "2.16" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Month ;
-    rdfs:label "Jan" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Jun 30, 2019" ;
+    :yValue "1.99" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Month ;
-    rdfs:label "Jan" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Jul 31, 2019" ;
+    :yValue "2.11" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Month ;
-    rdfs:label "Jul" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Aug 31, 2019" ;
+    :yValue "2.21" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Month ;
-    rdfs:label "Jul" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "Sep 30, 2019" ;
+    :yValue "2.33" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Month ;
-    rdfs:label "Jun" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "Oct 31, 2019" ;
+    :yValue "2.3" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Month ;
-    rdfs:label "Jun" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "Nov 30, 2019" ;
+    :yValue "2.21" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :Month ;
-    rdfs:label "Mar" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "Dec 31, 2019" ;
+    :yValue "2.29" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :Month ;
-    rdfs:label "Mar" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "Jan 31, 2020" ;
+    :yValue "2.13" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :Month ;
-    rdfs:label "May" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "Feb 29, 2020" ;
+    :yValue "1.99" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :Month ;
-    rdfs:label "May" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "Mar 31, 2020" ;
+    :yValue "2.11" ;
+    :belongsTo :Chart .
 
-:DataPoint19 a :Month ;
-    rdfs:label "Nov" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint17 a :DataPoint ;
+    :xValue "Apr 30, 2020" ;
+    :yValue "1.97" ;
+    :belongsTo :Chart .
 
-:DataPoint20 a :Month ;
-    rdfs:label "Oct" ;
-    :y "31"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint18 a :DataPoint ;
+    :xValue "May 31, 2020" ;
+    :yValue "1.86" ;
+    :belongsTo :Chart .
 
-:DataPoint21 a :Month ;
-    rdfs:label "Sep" ;
-    :y "30"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint19 a :DataPoint ;
+    :xValue "Jun 30, 2020" ;
+    :yValue "1.81" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Jul 31, 2020" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint21 a :DataPoint ;
+    :xValue "Aug 31, 2020" ;
+    :yValue "2.03" ;
+    :belongsTo :Chart .

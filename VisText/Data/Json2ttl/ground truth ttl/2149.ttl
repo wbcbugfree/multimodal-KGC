@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading stock life and health insurance companies in the United States in 2019 , by revenue (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "69.62" ;
+    :yValue "MetLife" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "64.81" ;
+    :yValue "Prudential Financial" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "22.31" ;
+    :yValue "Aflac" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "17.26" ;
+    :yValue "Lincoln National" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "16.22" ;
+    :yValue "Principal Financial" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14.3" ;
+    :yValue "Reinsurance Group of America" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Unum Group" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11.85" ;
+    :yValue "Pacific Life" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10.46" ;
+    :yValue "Mutual of Omaha Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9.59" ;
+    :yValue "Equitable Holdings" ;
+    :belongsTo :Chart .

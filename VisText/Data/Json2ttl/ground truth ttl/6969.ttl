@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading countries for Italian cosmetic industry exports from 2014 to 2019 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Franc" ;
+    :yValue "609" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Country: France German" ;
+    :yValue "562" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Country: Germany United State" ;
+    :yValue "513" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Country: United States United Kingdo" ;
+    :yValue "351" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Country: United Kingdom Spai" ;
+    :yValue "294" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Country: Spain Hong Kon" ;
+    :yValue "244" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Country: Hong Kong Netherland" ;
+    :yValue "171" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Country: Netherlands United Arab Emirate" ;
+    :yValue "139" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Country: United Arab Emirates Polan" ;
+    :yValue "156" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Country: Poland Belgiu" ;
+    :yValue "140" ;
+    :belongsTo :Chart .

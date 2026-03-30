@@ -1,0 +1,77 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "What do you think are the two most important issues facing Sweden at the moment ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Health and social security" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "The enviroment, climate and energy issues" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "The education system" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Crime" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Immigration" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Housing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Economic situation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Pensions" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Unemployment" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Taxation" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Rising prices/ inflation/ cost of living" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Terrorism" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Government debt" ;
+    :belongsTo :Chart .

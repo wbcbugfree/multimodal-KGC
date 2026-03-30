@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/7037/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Do you use a smartphone for any of the following ?" ;
-    :hasXAxisLabel "8-12" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Do you use a smartphone for any of the following ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :812 ;
-    rdfs:label "Activities" ;
-    :y "0.81"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "8-12" .
 
-:DataPoint2 a :812 ;
-    rdfs:label "Browsing online" ;
-    :y "0.44"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Activities" .
 
-:DataPoint3 a :812 ;
-    rdfs:label "Chatting with friends" ;
-    :y "0.72"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.81" ;
+    :yValue "Taking pictures or films" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :812 ;
-    rdfs:label "Downloading apps" ;
-    :y "0.48"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.66" ;
+    :yValue "Chatting with friends" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :812 ;
-    rdfs:label "Playing games" ;
-    :y "0.55"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Downloading apps" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :812 ;
-    rdfs:label "Social networking (e.g. Facebook or..." ;
-    :y "0.77"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Social networking (e.g. Facebook or Twitter)" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :812 ;
-    rdfs:label "Taking pictures or films" ;
-    :y "0.66"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Playing games" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :812 ;
-    rdfs:label "To learn things" ;
-    :y "0.29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "Browsing online" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :812 ;
-    rdfs:label "Video chat (e.g. Skype or FaceTime)" ;
-    :y "0.16"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Watching videos" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :812 ;
-    rdfs:label "Watching TV" ;
-    :y "0.03"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "To learn things" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :812 ;
-    rdfs:label "Watching videos" ;
-    :y "0.39"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Video chat (e.g. Skype or FaceTime)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Watching TV" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "None of the above" ;
+    :belongsTo :Chart .

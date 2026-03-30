@@ -13,10 +13,6 @@ Only these JSON fields are used:
 (and img_id just to build a stable namespace)
 """
 
-# TODO: Write the check for 4-digit year
-# TODO: add fail points during creation
-
-
 from __future__ import annotations
 
 import argparse
@@ -26,6 +22,7 @@ import re
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
+# TODO: Handle FY Years ex. 4985.
 
 def escape_ttl_string(text: str) -> str:
     """Escape special characters for TTL string literals."""
@@ -88,6 +85,7 @@ def parse_numeric_token(token: str) -> Tuple[str, bool]:
     t = t.strip("()[]{}")
     t = t.rstrip(",;")
     t = t.replace(",", "")
+    t = t.replace("−", "-")  # Handle unicode minus sign
     t_no_pct = t.replace("%", "")
 
     try:
@@ -179,8 +177,14 @@ def parse_datatable(
     idx = _find_subsequence(norm_tokens, y_seq)
     if idx is not None:
         data_start = idx + len(y_seq)
-        
-    first_token_after_y_label = tokens[data_start]
+
+    # Check if the x and y axes are both numeric, then it won't be possible to automatically parse.
+    label_types = [parse_numeric_token(t)[1] for t in tokens[data_start:]]
+    # % that are numeric, if more than 50, then raise error since it's likely that the labels are numeric and we can't parse the datatable.
+    if label_types.count(True) / len(label_types) > 0.5:
+        raise ValueError(f"Labels are mostly numeric in datatable: {tokens[data_start:data_start+10]}, cannot reliably parse data points")
+    
+    first_token_after_y_label = tokens[data_start]    
     _, is_num = parse_numeric_token(first_token_after_y_label)
     if is_num:
         labels_first = False

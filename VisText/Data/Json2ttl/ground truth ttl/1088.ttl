@@ -1,64 +1,67 @@
-@prefix : <http://example.org/chart-data/1088/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Given the current state of the business what are the CEO 's...to help business preserve through the current disruption ?" ;
-    :hasXAxisLabel "Response" ;
-    :hasYAxisLabel "Share of respondents" .
+:Chart a :BarChart ;
+    :title "Given the current state of the business what are the CEO 's top three priorities for you to help business preserve through the current disruption ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Response ;
-    rdfs:label "Collaborate with business departmen..." ;
-    :shareOfRespondents "0.22"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Response" .
 
-:DataPoint2 a :Response ;
-    rdfs:label "Enable new plan for customer acquis..." ;
-    :shareOfRespondents "0.23"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Share of respondents" .
 
-:DataPoint3 a :Response ;
-    rdfs:label "Help reach specific goal for corpor..." ;
-    :shareOfRespondents "0.25"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "Lead digital buisness/digital transformation activ..." ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Response ;
-    rdfs:label "Identify new data-driven business o..." ;
-    :shareOfRespondents "0.24"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "Improve remote work experiences" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Response ;
-    rdfs:label "Improve remote work experiences" ;
-    :shareOfRespondents "0.37"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "Upgrade IT and data security to boost corporate re..." ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Response ;
-    rdfs:label "Increases collaboration with LOB to..." ;
-    :shareOfRespondents "0.11"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "Reduce or rationalize IT spending" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Response ;
-    rdfs:label "Lead a product innovation effort" ;
-    :shareOfRespondents "0.14"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "Help reach specific goal for corporate revenue gro..." ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Response ;
-    rdfs:label "Lead digital buisness/digital trans..." ;
-    :shareOfRespondents "0.37"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "Identify new data-driven business opportunities" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Response ;
-    rdfs:label "Lead merger integration or due dill..." ;
-    :shareOfRespondents "0.08"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "Enable new plan for customer acquisition & retenti..." ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Response ;
-    rdfs:label "Reduce or rationalize IT spending" ;
-    :shareOfRespondents "0.28"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "Collaborate with business departments om major cus..." ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Response ;
-    rdfs:label "Upgrade IT and data security to boo..." ;
-    :shareOfRespondents "0.29"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "Lead a product innovation effort" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Increases collaboration with LOB to help streamlin..." ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Lead merger integration or due dilligence on a pot..." ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
