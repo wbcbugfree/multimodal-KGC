@@ -34,10 +34,38 @@ def escape_ttl_string(text: str) -> str:
     return text
 
 
-def string_safe_dates(date_str: str) -> str:
-    """Replace spaces in date strings with @ to keep them as single tokens (e.g. 'Dec 31, 2020' → 'Dec@31,@2020')."""
-    pattern = r'[A-Z][a-z]{2} \d{1,2}, \d{4}'
-    return re.sub(pattern, lambda m: m.group().replace(' ', '@'), date_str)
+def single_token_string(date_str: str) -> str:
+    """Replace spaces in date strings with @ to keep them as single tokens 
+    (e.g. 'Dec 31, 2020' → 'Dec@31,@2020', 'FY 2017' → 'FY@2017', 'Q1 2020' → 'Q1@2020')."""
+    
+    months = r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|June|July|August|September|October|November|December|Septembre)'
+    
+    patterns = [
+        r'[A-Z][a-z]{2} \d{1,2}, \d{4}',     # e.g. Dec 31, 2020
+        r'FY \d{4}',                         # e.g. FY 2017
+        r'Q[1-4] \d{4}\*?',                  # e.g. Q1 2020 or Q2 2023*
+        r'\d{4} / \d{4}\*?',                 # e.g. 2019 / 2020 or 2019 / 2020*
+        r'\d+ to \d+ years',                 # e.g. 1 to 5 years
+        r'\d+ years and more',                # e.g. 75 years and more
+        r'\d+ years or older',
+        r'\d+ years or younger',
+        r'Younger than \d+ years',              # e.g. Younger than 18 years
+        r'Younger than \d+',              # e.g. Younger than 18
+        r'\d+ to \d+ people',
+        r'Greater than \d+ people',
+        r'Less than \d+ people',
+        r'{months} \d{{4}}'.format(months=months),  # e.g. January 2020
+        # r'Mar \d{2,4}',                         # e.g. Mar 2020
+        r'H\d{1} \d{4}',                            # e.g. H1 2020
+        r'{months} \d{{2,4}} - {months} \d{{2,4}}'.format(months=months),  # e.g. January 2020 - March 2020
+        r'{months} \d{{2,4}}-{months} \d{{2,4}}'.format(months=months),
+        r'\d{4} \*', # Eg. 2013 *,
+        r'\d{2} \*'
+        
+    ]
+    
+    combined_pattern = '|'.join(f'(?:{p})' for p in patterns)
+    return re.sub(combined_pattern, lambda m: m.group().replace(' ', '@'), date_str)
 
 
 def truncate_end(text: str, max_length: int = 35) -> str:
@@ -94,6 +122,58 @@ def parse_numeric_token(token: str) -> Tuple[str, bool]:
     except ValueError:
         return token, False
 
+def is_year(t: str) -> bool:
+    if re.fullmatch(r"\d{4}", t):
+        t_int = int(t)
+        return 1900 <= t_int <= 2100
+    
+    if re.fullmatch(r"\d{4}\/\d{4}", t):
+        parts = t.split("/")
+        if len(parts) == 2 and all(re.fullmatch(r"\d{4}", p) for p in parts) and all(1900 <= int(p) <= 2100 for p in parts):
+            return True
+    return False
+
+def check_year_value_pattern(tokens: List[str]) -> bool:
+    """Check if tokens 0 and 2 looks like a 4-digit year, removing all commas and *, and tokens 1 and 3 look like numeric values, which would suggest a pattern of Year Value Year Value that we can parse."""
+    if len(tokens) < 4:
+        return False
+    
+    year1 = re.sub(r"[,*]", "", tokens[0])
+    year2 = re.sub(r"[,*]", "", tokens[2])
+    
+    if is_year(year1) and is_year(year2):
+        val1, is_num1 = parse_numeric_token(tokens[1])
+        val2, is_num2 = parse_numeric_token(tokens[3])
+        
+        # Also check that the values are not years themselves, to avoid confusion with patterns like Year Year Year Year
+        if is_num1 and is_num2:
+            val1_no_pct = val1.replace("*", "")
+            val2_no_pct = val2.replace("*", "")
+            if not (is_year(val1_no_pct) or is_year(val2_no_pct)):
+                return True
+    return False 
+
+def check_value_year_pattern(tokens: List[str]) -> bool:
+    """Check if tokens 1 and 3 looks like a 4-digit year, removing all commas and *, and tokens 0 and 2 look like numeric values, which would suggest a pattern of Value Year Value Year that we can parse."""
+    if len(tokens) < 4:
+        return False
+    
+    year1 = re.sub(r"[,*]", "", tokens[1])
+    year2 = re.sub(r"[,*]", "", tokens[3])
+    
+    if is_year(year1) and is_year(year2):
+        val1, is_num1 = parse_numeric_token(tokens[0])
+        val2, is_num2 = parse_numeric_token(tokens[2])
+        # Also check that the values are not years themselves, to avoid confusion with patterns like Year Year Year Year
+        if is_num1 and is_num2:
+                val1_no_pct = val1.replace("*", "")
+                val2_no_pct = val2.replace("*", "")
+                
+                if not (is_year(val1_no_pct) or is_year(val2_no_pct)):
+                    return True
+                else:
+                    print("Failed last if")
+    return False
 
 @dataclass
 class PropertiesInfo:
@@ -149,7 +229,7 @@ def parse_datatable(
         data_section = datatable.strip()
         
     # Treat dates as single tokens by replacing spaces with @ (e.g. "Dec 31, 2020" → "Dec@31,@2020")
-    data_section = string_safe_dates(data_section)
+    data_section = single_token_string(data_section)
     
     # If the xlabel or ylabel are "year", they could get interpreted as independent variables instead of labels.
     # To prevent this, we add a @ after anything that looks like a 4-digit year
@@ -182,7 +262,22 @@ def parse_datatable(
     label_types = [parse_numeric_token(t)[1] for t in tokens[data_start:]]
     # % that are numeric, if more than 50, then raise error since it's likely that the labels are numeric and we can't parse the datatable.
     if label_types.count(True) / len(label_types) > 0.5:
-        raise ValueError(f"Labels are mostly numeric in datatable: {tokens[data_start:data_start+10]}, cannot reliably parse data points")
+        # Labels are mostly numeric in datatable, trying alternative parsing strategies...
+        year_value_pattern = check_year_value_pattern(tokens[data_start:])
+        value_year_pattern = check_value_year_pattern(tokens[data_start:])
+
+        if year_value_pattern or value_year_pattern:
+            # Caught Year Value / Value Year pattern...
+            points: List[Tuple[str, str]] = []
+            for i in range(data_start, len(tokens)-1, 2):
+                x = tokens[i]
+                y = tokens[i+1]
+                points.append((x.replace("@", " "), y.replace("@", " ")))
+            
+            return title, x_label, y_label, points
+
+        raise ValueError(f"Labels are mostly numeric in datatable: {tokens[data_start:data_start+10]}, cannot reliably parse data points, and no known patterns detected")
+
     
     first_token_after_y_label = tokens[data_start]    
     _, is_num = parse_numeric_token(first_token_after_y_label)
@@ -204,7 +299,7 @@ def parse_datatable(
             else:
                 x_parts.append(tok)
 
-        points = [(x.replace("@", " "), y) for x, y in points]
+        points = [(x.replace("@", " "), y.replace("@", " ")) for x, y in points]
         return title, x_label, y_label, points
     
     else:
@@ -226,7 +321,7 @@ def parse_datatable(
         if current_value is not None and y_parts:
             points.append((current_value, " ".join(y_parts)))
 
-        points = [(x.replace("@", " "), y) for x, y in points]
+        points = [(x.replace("@", " "), y.replace("@", " ")) for x, y in points]
         return title, x_label, y_label, points
 
 
