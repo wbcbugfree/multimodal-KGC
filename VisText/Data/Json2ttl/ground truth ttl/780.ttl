@@ -1,0 +1,47 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Sales price of bakers ' yeast per ton manufactured in the United Kingdom (UK) from 2008 to 2017 (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Price per ton in British pounds" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "555.43" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2014" ;
+    :yValue "537.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2013" ;
+    :yValue "675.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2012" ;
+    :yValue "534.55" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2011" ;
+    :yValue "584.72" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2009" ;
+    :yValue "572.24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2008" ;
+    :yValue "521.79" ;
+    :belongsTo :Chart .
