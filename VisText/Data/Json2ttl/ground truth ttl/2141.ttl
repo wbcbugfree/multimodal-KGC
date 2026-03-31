@@ -1,34 +1,62 @@
-@prefix : <http://example.org/chart-data/2141/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "B2C e-commerce as percentage of GDP in Japan from 2009 to 2018" ;
-    :hasXAxisLabel "Percentage of gross domestic product is plotted as a linear scale from 0" ;
-    :hasYAxisLabel "Response" .
+:Chart a :BarChart ;
+    :title "B2C e-commerce as percentage of GDP in Japan from 2009 to 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
-    rdfs:label "2014*" ;
-    :response "0.0101"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Percentage of gross domestic product" .
 
-:DataPoint2 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
-    rdfs:label "2015*" ;
-    :response "0.0105"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "Response" .
 
-:DataPoint3 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
-    rdfs:label "2016*" ;
-    :response "0.0123"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "0.0172" ;
+    :yValue "2018*" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
-    rdfs:label "2017*" ;
-    :response "0.0145"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "0.0159" ;
+    :yValue "2017*" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :PercentageOfGrossDomesticProductIsPlottedAsALinearScaleFrom0 ;
-    rdfs:label "2018*" ;
-    :response "0.0159"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "0.0145" ;
+    :yValue "2016*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.0123" ;
+    :yValue "2015*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0105" ;
+    :yValue "2014*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.0101" ;
+    :yValue "2013" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.0086" ;
+    :yValue "2012" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.008" ;
+    :yValue "2011" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.0071" ;
+    :yValue "2010" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0064" ;
+    :yValue "2009" ;
+    :belongsTo :Chart .

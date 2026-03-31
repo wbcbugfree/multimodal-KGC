@@ -1,99 +1,97 @@
-@prefix : <http://example.org/chart-data/2392/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://example.org/> .
 
-:Chart1 a schema:BarChart ;
-    schema:title "Route length of railways across Uttar Pradesh in India from financial year 2003 to 2019 (in kilometers)" ;
-    :hasXAxisLabel "Route" ;
-    :hasYAxisLabel "y" .
+:Chart a :BarChart ;
+    :title "Route length of railways across Uttar Pradesh in India from financial year 2003 to 2019 (in kilometers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-:DataPoint1 a :Route ;
-    rdfs:label "FY" ;
-    :y "2019"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:XAxis a :Axis ;
+    :title "Route length in kilometers" .
 
-:DataPoint2 a :Route ;
-    rdfs:label "FY" ;
-    :y "2018"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:YAxis a :Axis ;
+    :title "year" .
 
-:DataPoint3 a :Route ;
-    rdfs:label "FY" ;
-    :y "2017"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint1 a :DataPoint ;
+    :xValue "8823" ;
+    :yValue "FY 2019" ;
+    :belongsTo :Chart .
 
-:DataPoint4 a :Route ;
-    rdfs:label "FY" ;
-    :y "2016"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint2 a :DataPoint ;
+    :xValue "10324" ;
+    :yValue "FY 2018" ;
+    :belongsTo :Chart .
 
-:DataPoint5 a :Route ;
-    rdfs:label "FY" ;
-    :y "2015"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint3 a :DataPoint ;
+    :xValue "9167" ;
+    :yValue "FY 2017" ;
+    :belongsTo :Chart .
 
-:DataPoint6 a :Route ;
-    rdfs:label "FY" ;
-    :y "2014"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint4 a :DataPoint ;
+    :xValue "9077" ;
+    :yValue "FY 2016" ;
+    :belongsTo :Chart .
 
-:DataPoint7 a :Route ;
-    rdfs:label "FY" ;
-    :y "2013"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint5 a :DataPoint ;
+    :xValue "8950" ;
+    :yValue "FY 2015" ;
+    :belongsTo :Chart .
 
-:DataPoint8 a :Route ;
-    rdfs:label "FY" ;
-    :y "2012"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint6 a :DataPoint ;
+    :xValue "8920" ;
+    :yValue "FY 2014" ;
+    :belongsTo :Chart .
 
-:DataPoint9 a :Route ;
-    rdfs:label "FY" ;
-    :y "2011"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint7 a :DataPoint ;
+    :xValue "8832" ;
+    :yValue "FY 2013" ;
+    :belongsTo :Chart .
 
-:DataPoint10 a :Route ;
-    rdfs:label "FY" ;
-    :y "2010"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint8 a :DataPoint ;
+    :xValue "8800" ;
+    :yValue "FY 2012" ;
+    :belongsTo :Chart .
 
-:DataPoint11 a :Route ;
-    rdfs:label "FY" ;
-    :y "2009"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint9 a :DataPoint ;
+    :xValue "8763" ;
+    :yValue "FY 2011" ;
+    :belongsTo :Chart .
 
-:DataPoint12 a :Route ;
-    rdfs:label "FY" ;
-    :y "2008"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint10 a :DataPoint ;
+    :xValue "8726" ;
+    :yValue "FY 2010" ;
+    :belongsTo :Chart .
 
-:DataPoint13 a :Route ;
-    rdfs:label "FY" ;
-    :y "2007"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint11 a :DataPoint ;
+    :xValue "8703" ;
+    :yValue "FY 2009" ;
+    :belongsTo :Chart .
 
-:DataPoint14 a :Route ;
-    rdfs:label "FY" ;
-    :y "2006"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint12 a :DataPoint ;
+    :xValue "8554" ;
+    :yValue "FY 2008" ;
+    :belongsTo :Chart .
 
-:DataPoint15 a :Route ;
-    rdfs:label "FY" ;
-    :y "2005"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint13 a :DataPoint ;
+    :xValue "8575" ;
+    :yValue "FY 2007" ;
+    :belongsTo :Chart .
 
-:DataPoint16 a :Route ;
-    rdfs:label "FY" ;
-    :y "2004"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint14 a :DataPoint ;
+    :xValue "8546" ;
+    :yValue "FY 2006" ;
+    :belongsTo :Chart .
 
-:DataPoint17 a :Route ;
-    rdfs:label "FY" ;
-    :y "2003"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint15 a :DataPoint ;
+    :xValue "8546" ;
+    :yValue "FY 2005" ;
+    :belongsTo :Chart .
 
-:DataPoint18 a :Route ;
-    rdfs:label "length in kilometers year" ;
-    :y "8823"^^xsd:decimal ;
-    :belongsToChart :Chart1 .
+:DataPoint16 a :DataPoint ;
+    :xValue "8566" ;
+    :yValue "FY 2004" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "8799" ;
+    :yValue "FY 2003" ;
+    :belongsTo :Chart .
