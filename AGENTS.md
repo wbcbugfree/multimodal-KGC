@@ -22,37 +22,37 @@ It folds in the repo-specific guidance from `CLAUDE.md`.
 - Work is organized by dataset folder, not as a single Python package.
 - Most experimentation and evaluation happen in Jupyter notebooks.
 - Python scripts are mainly converters, evaluators, and data-fixing utilities.
-- Directory names contain spaces; always quote shell paths.
+- Canonical dataset paths now use lowercase underscore-separated names.
 - There is no formal build system, lockfile, linter config, or unit test suite.
 
 ## Main Areas
-- `Soil Dataset/`: soil-health tables and figures; `she:` ontology work.
-- `VisText/`: chart dataset; canonical local inputs now live in `VisText/Data/images/` and `VisText/Data/labels/`, with JSON-to-TTL conversion and evaluation alongside preserved historical outputs.
-- `diagram2graph Dataset/`: flowchart/process diagrams; `d2g:` ontology and F1 evaluation.
+- `soil_dataset/`: soil-health tables and figures; `she:` ontology work.
+- `vistext/`: chart dataset; canonical local inputs now live in `vistext/data/images/` and `vistext/data/labels/`, with JSON-to-TTL conversion and evaluation alongside preserved historical outputs.
+- `diagram2graph_dataset/`: flowchart/process diagrams; `d2g:` ontology and F1 evaluation.
 
 ## Canonical And Legacy Boundaries
 - Shared reusable helpers live under `common/`.
-- Treat `Soil Dataset/Data/`, `Soil Dataset/prompt engineering/Prompt Text/`, and `Soil Dataset/Extract All RDFs/` as Soil canonical areas.
-- Treat `VisText/Data/images/`, `VisText/Data/labels/`, and `VisText/Data/Json2ttl/` as VisText canonical areas.
-- Treat `diagram2graph Dataset/Data/`, `diagram2graph Dataset/JSON2ttl/`, and `diagram2graph Dataset/prompt engineering/Prompt Text/` as diagram2graph canonical areas.
+- Treat `soil_dataset/data/`, `soil_dataset/prompt_engineering/prompt_text/`, and `soil_dataset/extract_all_rdfs/` as Soil canonical areas.
+- Treat `vistext/data/images/`, `vistext/data/labels/`, and `vistext/data/json2ttl/` as vistext canonical areas.
+- Treat `diagram2graph_dataset/data/`, `diagram2graph_dataset/json2ttl/`, and `diagram2graph_dataset/prompt_engineering/prompt_text/` as diagram2graph canonical areas.
 - Treat preserved outputs and evaluation or staging packets as historical or compatibility areas unless a task explicitly migrates them.
 
-## Common Dataset Flow
-1. `Data/` for raw inputs and labels.
-2. `prompt engineering/` or `Prompt Text/` for prompt design.
-3. `Extract RDF .../` for model outputs.
-4. `JSON2ttl/` or `Build KG/` for KG generation.
-5. `Evaluating/` for F1, RAGAS, and notebook analysis.
+## Common dataset Flow
+1. `data/` for raw inputs and labels.
+2. `prompt_engineering/` or `prompt_text/` for prompt design.
+3. `extract_rdf_ttl/`, `extract_rdf_json/`, or `extract_all_rdfs/` for model outputs.
+4. `json2ttl/` or `build_kg/` for KG generation.
+5. `evaluation/` for F1, RAGAS, and notebook analysis.
 
 ## Environment
-- Use `python3`; `python` is not available in this environment.
+- Use `python` in this Windows checkout; on Unix-like environments `python3` is typically equivalent.
 - A top-level `requirements.txt` now exists for common notebook and script dependencies, but there is still no lockfile or packaging metadata.
 - Common dependencies mentioned in code and notebooks include `openai`, `google-generativeai`, `rdflib`, `ragas`, `pandas`, `numpy`, and `matplotlib`.
 - The top-level `config` file is gitignored and used for API keys; never commit it.
 
 ## Working In This Repo
 - Prefer minimal, local edits over broad cleanup.
-- Preserve dataset-specific folder names, typos, and workflow-specific naming unless the user asks to rename them.
+- Preserve the canonical lowercase underscore-separated dataset paths unless the user asks for another naming refactor.
 - Treat notebooks as first-class project assets; do not replace notebook workflows with scripts unless asked.
 - Be careful with generated TTL/JSON data and label files; large directories are part of the working dataset.
 - If you touch notebooks, mention whether outputs were preserved, cleared, or changed.
@@ -68,44 +68,42 @@ It folds in the repo-specific guidance from `CLAUDE.md`.
 These commands were run successfully in this checkout and are the closest equivalent to a single test:
 
 ```bash
-python3 "VisText/Data/Json2ttl/json_to_ttl_converter.py" \
-  "VisText/Data/labels/1046.json" \
-  -o "/tmp/1046-v1.ttl"
+python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" \
+  "vistext/data/labels/1046.json" \
+  -o ".tmp/1046-v2.ttl"
 
-python3 "VisText/Evaluation/json_to_ttl_converter_v2.py" \
-  "VisText/Data/labels/1046.json" \
-  -o "/tmp/1046-v2.ttl"
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" \
+  --dry-run --sample-mode ids --ids 1046
 
-python3 "diagram2graph Dataset/JSON2ttl/Script.py" \
-  "diagram2graph Dataset/Data/labels/9.json" \
-  "/tmp/d2g-9.ttl"
+python "diagram2graph_dataset/json2ttl/script.py" \
+  "diagram2graph_dataset/data/labels/9.json" \
+  ".tmp/d2g-9.ttl"
 ```
 
 ## Main CLI Commands
 Use `--help` for full flags:
 
 ```bash
-python3 "VisText/Data/Json2ttl/json_to_ttl_converter.py" --help
-python3 "VisText/Evaluation/json_to_ttl_converter_v2.py" --help
-python3 "diagram2graph Dataset/JSON2ttl/Script.py" --help
+python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" --help
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --help
+python "diagram2graph_dataset/json2ttl/script.py" --help
 ```
 
 Common command forms:
 
 ```bash
-python3 "VisText/Data/Json2ttl/json_to_ttl_converter.py" <input> [-o <output>]
-python3 "VisText/Evaluation/json_to_ttl_converter_v2.py" <input> [-o <output>] [--sort]
-python3 "diagram2graph Dataset/JSON2ttl/Script.py" <input_path> <output_path> [--base IRI] [--recursive] [--pattern "*.json"]
-python3 "diagram2graph Dataset/Evaluating/F1_Score/evaluate_metrics.py"
-python3 "diagram2graph Dataset/Evaluating/F1_Score/evaluate_Node Edge Sep.py"
-python3 "VisText/Evaluation/complete_data.py"
+python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" <input> [-o <output>]
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" [--sample-mode {all,random,ids}] [--sample-count N] [--ids ...]
+python "diagram2graph_dataset/json2ttl/script.py" <input_path> <output_path> [--base IRI] [--recursive] [--pattern "*.json"]
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py"
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py"
 ```
 
 ## Command Caveats
-- `diagram2graph Dataset/Evaluating/F1_Score/evaluate_metrics.py` has been parameterized, but downstream inputs still need to exist locally.
-- `diagram2graph Dataset/Evaluating/F1_Score/evaluate_Node Edge Sep.py` has been parameterized, but downstream inputs still need to exist locally.
-- `diagram2graph Dataset/Evaluating/report/plot_summaries.py` has been parameterized; `plot_summaries Clude.py` remains a legacy script with older assumptions.
-- `VisText/Evaluation/complete_data.py` is interactive and mutates files in place.
+- `diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py` has been parameterized, but downstream inputs still need to exist locally.
+- `diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py` has been parameterized, but downstream inputs still need to exist locally.
+- `diagram2graph_dataset/evaluation/report/plot_summaries.py` has been parameterized; `plot_summaries_claude.py` remains a legacy script with older assumptions.
+- The Gemini runners under `vistext/extract_rdf_ttl/` require a local `config` file with a valid `gemini_api_key`.
 - Most evaluation beyond these scripts happens in notebooks.
 
 ## If A User Asks For Build, Lint, Or Test Commands
@@ -133,8 +131,8 @@ python3 "VisText/Evaluation/complete_data.py"
 ## Types And Naming
 - Add type hints to new functions when practical.
 - Match the local file's typing style.
-- `diagram2graph Dataset/JSON2ttl/Script.py` uses built-in generics like `list[str]`.
-- `VisText` converters use `typing.List`, `Dict`, `Tuple`, and `Optional`.
+- `diagram2graph_dataset/json2ttl/script.py` uses built-in generics like `list[str]`.
+- `vistext` converters use `typing.List`, `Dict`, `Tuple`, and `Optional`.
 - `from __future__ import annotations` and dataclasses are good defaults for new standalone scripts when they fit nearby style.
 - Use `snake_case` for functions, variables, and helpers.
 - Use `PascalCase` for classes and dataclasses.
@@ -159,13 +157,12 @@ python3 "VisText/Evaluation/complete_data.py"
 - If you change a script with hardcoded paths, either parameterize it or say exactly what path edits are still required.
 
 ## Known Pitfalls
-- Paths with spaces are common; unquoted shell commands will break.
+- Some historical docs or notebook text may still mention pre-refactor paths from earlier layouts.
 - Several scripts use absolute filesystem paths from another machine.
 - Notebook workflows may assume Colab, Kaggle, or local-machine paths.
 - Notebook outputs may contain secrets, stale execution state, or machine-specific paths.
-- `VisText/Evaluation/complete_data.py` prompts for confirmation and rewrites JSON files.
 - This repo mixes polished converters, ad hoc research scripts, notebooks, and data artifacts; not everything is production-hardened.
 
 ## Bottom Line
 Treat this repository as a notebook-first, dataset-centric research codebase.
-Use `python3`, quote paths, avoid assuming a test framework exists, and validate changes with small real-data smoke tests.
+Use `python`, prefer canonical lowercase underscore paths, avoid assuming a test framework exists, and validate changes with small real-data smoke tests.

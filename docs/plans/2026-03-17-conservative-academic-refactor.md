@@ -11,7 +11,7 @@
 ## Approved Direction
 
 - This plan defines a conservative refactor for an academic, notebook-first repository.
-- Keep the top-level dataset directories for now: `Soil Dataset/`, `VisText/`, and `diagram2graph Dataset/`.
+- Keep the top-level dataset directories for now: `soil_dataset/`, `vistext/`, and `diagram2graph_dataset/`.
 - Do not rewrite `README.md` in this task; README work happens later.
 - Preserve valuable outputs, reports, and notebook assets unless they are confirmed safe to remove.
 - Remove hardcoded secret leakage and replace it with environment-variable or local-config patterns.
@@ -31,7 +31,7 @@ Document the current dataset-first layout and note that the top level remains st
 
 **Step 2: Record the approved migration rules**
 
-Capture the specific VisText decision: move `VisText/Data/1000_sub data/` contents into canonical `VisText/Data/images/` and `VisText/Data/labels/`, then remove `VisText/Data/sub-image/`, `VisText/Data/ground truth/`, and `VisText/Data/1000_sub data/` only after path migration and verification are complete.
+Capture the specific vistext decision: move `vistext/data/1000_sub data/` contents into canonical `vistext/data/images/` and `vistext/data/labels/`, then remove `vistext/data/sub-image/`, `vistext/data/ground truth/`, and `vistext/data/1000_sub data/` only after path migration and verification are complete.
 
 **Step 3: Record preservation rules**
 
@@ -44,25 +44,25 @@ List hardcoded secrets, machine-specific paths, and confirmed duplicate scripts 
 ## Task 2: Path Normalization Without Top-Level Moves
 
 **Files:**
-- Modify later: `VisText/**`
-- Modify later: `diagram2graph Dataset/**`
-- Modify later: `Soil Dataset/**`
+- Modify later: `vistext/**`
+- Modify later: `diagram2graph_dataset/**`
+- Modify later: `soil_dataset/**`
 
-**Step 1: Create canonical data targets inside VisText**
+**Step 1: Create canonical data targets inside vistext**
 
-Create `VisText/Data/images/` and `VisText/Data/labels/` as the canonical locations for image and label assets.
+Create `vistext/data/images/` and `vistext/data/labels/` as the canonical locations for image and label assets.
 
-**Step 2: Migrate VisText inputs by content type**
+**Step 2: Migrate vistext inputs by content type**
 
-Move image files from `VisText/Data/sub-image/` and any image payloads in `VisText/Data/1000_sub data/` into `VisText/Data/images/`. Move label JSON files from `VisText/Data/ground truth/` and `VisText/Data/1000_sub data/label/` into `VisText/Data/labels/`.
+Move image files from `vistext/data/sub-image/` and any image payloads in `vistext/data/1000_sub data/` into `vistext/data/images/`. Move label JSON files from `vistext/data/ground truth/` and `vistext/data/1000_sub data/label/` into `vistext/data/labels/`.
 
 **Step 3: Update code and notebook references**
 
-Update scripts, notebooks, and docs to point to `VisText/Data/images/` and `VisText/Data/labels/`.
+Update scripts, notebooks, and docs to point to `vistext/data/images/` and `vistext/data/labels/`.
 
-**Step 4: Remove legacy VisText folders only after verification**
+**Step 4: Remove legacy vistext folders only after verification**
 
-Remove `VisText/Data/sub-image/`, `VisText/Data/ground truth/`, and `VisText/Data/1000_sub data/` only after path migration is complete and representative conversions still work.
+Remove `vistext/data/sub-image/`, `vistext/data/ground truth/`, and `vistext/data/1000_sub data/` only after path migration is complete and representative conversions still work.
 
 ## Task 3: Secret And Machine-Path Cleanup
 
@@ -88,7 +88,7 @@ Add usage notes near scripts that currently depend on manual file placement or n
 
 **Step 1: Keep both copies until reference usage is checked**
 
-Examples already visible include `diagram2graph Dataset/Evaluating/report/plot_summaries.py` and `diagram2graph Dataset/Evaluating/report/plot_summaries Clude.py`, which appear identical and are strong candidates for deduplication.
+Examples already visible include `diagram2graph_dataset/evaluation/report/plot_summaries.py` and `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`, which appear identical and are strong candidates for deduplication.
 
 **Step 2: Remove only confirmed duplicates**
 
@@ -101,7 +101,7 @@ Do not deduplicate generated outputs, CSVs, or reports solely by filename simila
 ## Task 5: Soil Cleanup And Staging Clarification
 
 **Files:**
-- Modify later: `Soil Dataset/**`
+- Modify later: `soil_dataset/**`
 
 **Step 1: Trim only confirmed Soil staging mirrors**
 
@@ -109,7 +109,7 @@ Remove exact mirrored files from Soil staging folders only after confirming that
 
 **Step 2: Keep compatibility mirrors where active consumers still depend on them**
 
-If a staging notebook still expects a specific file name such as `rdf_extractions_FewShot.json`, retain a compatibility mirror and document why it remains.
+If a staging notebook still expects a specific file name such as `rdf_extractions_fewshot.json`, retain a compatibility mirror and document why it remains.
 
 **Step 3: Label staging-only assets clearly**
 
@@ -118,7 +118,7 @@ Document which Soil folders are canonical, which are evaluation-specific, and wh
 ## Task 6: Secret Loading Cleanup Across Notebooks
 
 **Files:**
-- Modify later: secret-bearing notebooks in `Soil Dataset/`, `VisText/`, and `diagram2graph Dataset/`
+- Modify later: secret-bearing notebooks in `soil_dataset/`, `vistext/`, and `diagram2graph_dataset/`
 
 **Step 1: Remove embedded keys and unsafe prompts**
 
@@ -136,7 +136,7 @@ Make source-only notebook edits where possible so research outputs remain intact
 
 **Files:**
 - Create: `docs/task7-asset-boundaries.md`
-- Create or update: dataset-level `README-internal.md` notes
+- Create or update: dataset-level `readme_internal.md` notes
 
 **Step 1: Classify reusable vs historical areas in place**
 
@@ -189,7 +189,7 @@ Ensure README and internal docs match the actual folder structure, preserved out
 ## Validation Expectations For Later Tasks
 
 - Use representative smoke tests, not invented repo-wide test commands.
-- Validate at least one VisText conversion after path migration.
+- Validate at least one vistext conversion after path migration.
 - Validate at least one diagram2graph conversion after path or script cleanup.
 - State exactly what was validated; do not claim a unified test suite exists.
 
