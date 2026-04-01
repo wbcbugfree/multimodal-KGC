@@ -1,87 +1,67 @@
-@prefix ex:    <http://example.org/> .
-@prefix chart: <http://example.org/chart#> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/vistext#> .
 
-ex:chart-3107 a chart:Chart ;
-    chart:chartType "bar" ;
-    chart:title "Most viewed YouTube video categories of male Millennial users in the United States as of April 2016" ;
-    chart:xAxis ex:x-3107 ;
-    chart:yAxis ex:y-3107 .
+:Chart a :BarChart ;
+    :title "Most viewed YouTube video categories of male Millennial users in the United States as of April 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-ex:x-3107 a chart:Axis ;
-    chart:label "Response" ;
-    chart:scaleMin "" ;
-    chart:scaleMax "" .
+:XAxis a :Axis ;
+    :title "Response" .
 
-ex:y-3107 a chart:Axis ;
-    chart:label "Share of views" ;
-    chart:scaleMin "0.0" ;
-    chart:scaleMax "0.5" .
+:YAxis a :Axis ;
+    :title "Share of views" .
 
-ex:series-3107-1 a chart:Series .
+:DataPoint1 a :DataPoint ;
+    :xValue "Comedy" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-1 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Comedy" ;
-    chart:value "0.02"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint2 a :DataPoint ;
+    :xValue "Education and reference" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-2 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Education and reference" ;
-    chart:value "0.02"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint3 a :DataPoint ;
+    :xValue "Gaming" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-3 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Gaming" ;
-    chart:value "0.51"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint4 a :DataPoint ;
+    :xValue "Health and fitness" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-4 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Health and fitness" ;
-    chart:value "0.02"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint5 a :DataPoint ;
+    :xValue "Hobbies" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-5 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Hobbies" ;
-    chart:value "0.02"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint6 a :DataPoint ;
+    :xValue "Movies and TV" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-6 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Movies and TV" ;
-    chart:value "0.12"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint7 a :DataPoint ;
+    :xValue "Music" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-7 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Music" ;
-    chart:value "0.15"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint8 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-8 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Other" ;
-    chart:value "0.03"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint9 a :DataPoint ;
+    :xValue "Shopping" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-9 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Shopping" ;
-    chart:value "0.02"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint10 a :DataPoint ;
+    :xValue "Sports" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
 
-ex:mark-3107-1-10 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Sports" ;
-    chart:value "0.06"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
-
-ex:mark-3107-1-11 a chart:Bar ;
-    chart:series ex:series-3107-1 ;
-    chart:category "Technology" ;
-    chart:value "0.05"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint11 a :DataPoint ;
+    :xValue "Technology" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

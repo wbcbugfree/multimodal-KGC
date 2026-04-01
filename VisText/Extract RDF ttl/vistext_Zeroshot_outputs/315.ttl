@@ -1,100 +1,342 @@
-ex:chart-315 a chart:Chart ;
-    chart:chartType "area" ;
-    chart:xAxis ex:x-315 ;
-    chart:yAxis ex:y-315 .
+@prefix : <http://example.org/vistext#> .
 
-ex:x-315 a chart:Axis ;
-    chart:label "Year" ;
-    chart:scaleMin "1950" ;
-    chart:scaleMax "2020" .
+:Chart a :AreaChart ;
+    :title "Number of operational nuclear reactors worldwide from 1954 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
 
-ex:y-315 a chart:Axis ;
-    chart:label "Number of nuclear power plants" ;
-    chart:scaleMin "0" ;
-    chart:scaleMax "400" .
+:XAxis a :Axis ;
+    :title "Year" .
 
-ex:series-315-1 a chart:Series .
+:YAxis a :Axis ;
+    :title "Number of nuclear power plants" .
 
-ex:point-315-1-1 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1958" ;
-    chart:yVal "0"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 1953" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-2 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1960" ;
-    chart:yVal "10"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 1954" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-3 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1965" ;
-    chart:yVal "50"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 1955" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-4 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1970" ;
-    chart:yVal "100"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 1956" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-5 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1975" ;
-    chart:yVal "200"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 1957" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-6 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1980" ;
-    chart:yVal "300"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 1958" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-7 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1985" ;
-    chart:yVal "400"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 1959" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-8 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1990" ;
-    chart:yVal "420"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 1960" ;
+    :yValue "22" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-9 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "1995" ;
-    chart:yVal "430"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 1961" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-10 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "2000" ;
-    chart:yVal "435"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 1962" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-11 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "2005" ;
-    chart:yVal "438"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint11 a :DataPoint ;
+    :xValue "Dec 31, 1963" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-12 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "2010" ;
-    chart:yVal "440"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint12 a :DataPoint ;
+    :xValue "Dec 31, 1964" ;
+    :yValue "55" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-13 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "2015" ;
-    chart:yVal "442"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint13 a :DataPoint ;
+    :xValue "Dec 31, 1965" ;
+    :yValue "66" ;
+    :belongsTo :Chart .
 
-ex:point-315-1-14 a chart:Point ;
-    chart:series ex:series-315-1 ;
-    chart:xVal "2018" ;
-    chart:yVal "445"^^xsd:decimal ;
-    chart:valueEstimated "true"^^xsd:boolean .
+:DataPoint14 a :DataPoint ;
+    :xValue "Dec 31, 1966" ;
+    :yValue "77" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Dec 31, 1967" ;
+    :yValue "88" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Dec 31, 1968" ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Dec 31, 1969" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Dec 31, 1970" ;
+    :yValue "135" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Dec 31, 1971" ;
+    :yValue "155" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Dec 31, 1972" ;
+    :yValue "175" ;
+    :belongsTo :Chart .
+
+:DataPoint21 a :DataPoint ;
+    :xValue "Dec 31, 1973" ;
+    :yValue "195" ;
+    :belongsTo :Chart .
+
+:DataPoint22 a :DataPoint ;
+    :xValue "Dec 31, 1974" ;
+    :yValue "210" ;
+    :belongsTo :Chart .
+
+:DataPoint23 a :DataPoint ;
+    :xValue "Dec 31, 1975" ;
+    :yValue "225" ;
+    :belongsTo :Chart .
+
+:DataPoint24 a :DataPoint ;
+    :xValue "Dec 31, 1976" ;
+    :yValue "235" ;
+    :belongsTo :Chart .
+
+:DataPoint25 a :DataPoint ;
+    :xValue "Dec 31, 1977" ;
+    :yValue "242" ;
+    :belongsTo :Chart .
+
+:DataPoint26 a :DataPoint ;
+    :xValue "Dec 31, 1978" ;
+    :yValue "255" ;
+    :belongsTo :Chart .
+
+:DataPoint27 a :DataPoint ;
+    :xValue "Dec 31, 1979" ;
+    :yValue "275" ;
+    :belongsTo :Chart .
+
+:DataPoint28 a :DataPoint ;
+    :xValue "Dec 31, 1980" ;
+    :yValue "298" ;
+    :belongsTo :Chart .
+
+:DataPoint29 a :DataPoint ;
+    :xValue "Dec 31, 1981" ;
+    :yValue "325" ;
+    :belongsTo :Chart .
+
+:DataPoint30 a :DataPoint ;
+    :xValue "Dec 31, 1982" ;
+    :yValue "355" ;
+    :belongsTo :Chart .
+
+:DataPoint31 a :DataPoint ;
+    :xValue "Dec 31, 1983" ;
+    :yValue "385" ;
+    :belongsTo :Chart .
+
+:DataPoint32 a :DataPoint ;
+    :xValue "Dec 31, 1984" ;
+    :yValue "410" ;
+    :belongsTo :Chart .
+
+:DataPoint33 a :DataPoint ;
+    :xValue "Dec 31, 1985" ;
+    :yValue "430" ;
+    :belongsTo :Chart .
+
+:DataPoint34 a :DataPoint ;
+    :xValue "Dec 31, 1986" ;
+    :yValue "425" ;
+    :belongsTo :Chart .
+
+:DataPoint35 a :DataPoint ;
+    :xValue "Dec 31, 1987" ;
+    :yValue "422" ;
+    :belongsTo :Chart .
+
+:DataPoint36 a :DataPoint ;
+    :xValue "Dec 31, 1988" ;
+    :yValue "428" ;
+    :belongsTo :Chart .
+
+:DataPoint37 a :DataPoint ;
+    :xValue "Dec 31, 1989" ;
+    :yValue "438" ;
+    :belongsTo :Chart .
+
+:DataPoint38 a :DataPoint ;
+    :xValue "Dec 31, 1990" ;
+    :yValue "445" ;
+    :belongsTo :Chart .
+
+:DataPoint39 a :DataPoint ;
+    :xValue "Dec 31, 1991" ;
+    :yValue "452" ;
+    :belongsTo :Chart .
+
+:DataPoint40 a :DataPoint ;
+    :xValue "Dec 31, 1992" ;
+    :yValue "448" ;
+    :belongsTo :Chart .
+
+:DataPoint41 a :DataPoint ;
+    :xValue "Dec 31, 1993" ;
+    :yValue "450" ;
+    :belongsTo :Chart .
+
+:DataPoint42 a :DataPoint ;
+    :xValue "Dec 31, 1994" ;
+    :yValue "453" ;
+    :belongsTo :Chart .
+
+:DataPoint43 a :DataPoint ;
+    :xValue "Dec 31, 1995" ;
+    :yValue "458" ;
+    :belongsTo :Chart .
+
+:DataPoint44 a :DataPoint ;
+    :xValue "Dec 31, 1996" ;
+    :yValue "462" ;
+    :belongsTo :Chart .
+
+:DataPoint45 a :DataPoint ;
+    :xValue "Dec 31, 1997" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint46 a :DataPoint ;
+    :xValue "Dec 31, 1998" ;
+    :yValue "465" ;
+    :belongsTo :Chart .
+
+:DataPoint47 a :DataPoint ;
+    :xValue "Dec 31, 1999" ;
+    :yValue "462" ;
+    :belongsTo :Chart .
+
+:DataPoint48 a :DataPoint ;
+    :xValue "Dec 31, 2000" ;
+    :yValue "465" ;
+    :belongsTo :Chart .
+
+:DataPoint49 a :DataPoint ;
+    :xValue "Dec 31, 2001" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint50 a :DataPoint ;
+    :xValue "Dec 31, 2002" ;
+    :yValue "465" ;
+    :belongsTo :Chart .
+
+:DataPoint51 a :DataPoint ;
+    :xValue "Dec 31, 2003" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint52 a :DataPoint ;
+    :xValue "Dec 31, 2004" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint53 a :DataPoint ;
+    :xValue "Dec 31, 2005" ;
+    :yValue "462" ;
+    :belongsTo :Chart .
+
+:DataPoint54 a :DataPoint ;
+    :xValue "Dec 31, 2006" ;
+    :yValue "468" ;
+    :belongsTo :Chart .
+
+:DataPoint55 a :DataPoint ;
+    :xValue "Dec 31, 2007" ;
+    :yValue "470" ;
+    :belongsTo :Chart .
+
+:DataPoint56 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "465" ;
+    :belongsTo :Chart .
+
+:DataPoint57 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "468" ;
+    :belongsTo :Chart .
+
+:DataPoint58 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint59 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "455" ;
+    :belongsTo :Chart .
+
+:DataPoint60 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "460" ;
+    :belongsTo :Chart .
+
+:DataPoint61 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "463" ;
+    :belongsTo :Chart .
+
+:DataPoint62 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "468" ;
+    :belongsTo :Chart .
+
+:DataPoint63 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "472" ;
+    :belongsTo :Chart .
+
+:DataPoint64 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "475" ;
+    :belongsTo :Chart .
+
+:DataPoint65 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "478" ;
+    :belongsTo :Chart .
+
+:DataPoint66 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "472" ;
+    :belongsTo :Chart .
