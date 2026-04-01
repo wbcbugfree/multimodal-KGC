@@ -4,50 +4,49 @@ This map reflects the current worktree state and the approved conservative refac
 
 ## Root Layout
 
-- `Soil Dataset/` - soil tables and figures, prompt engineering, extraction notebooks, KG building, executability checks, and evaluation outputs.
-- `VisText/` - chart dataset prompts, data assets, JSON-to-TTL conversion, and evaluation scripts.
-- `diagram2graph Dataset/` - diagram dataset labels and outputs, extraction notebooks, conversion scripts, and evaluation reports.
+- `soil_dataset/` - soil tables and figures, prompt_engineering, extraction notebooks, KG building, executability checks, and evaluation outputs.
+- `vistext/` - chart dataset prompts, canonical image and label inputs, JSON-to-TTL conversion, Gemini extraction runners, and preserved outputs.
+- `diagram2graph_dataset/` - diagram dataset labels and outputs, extraction notebooks, conversion scripts, and evaluation reports.
 - `README.md` - repository entry point to be expanded as part of the documentation refactor.
 - `docs/` - planning and repository structure documentation.
 
-## Dataset-Level Notes
+## dataset-Level Notes
 
-### `Soil Dataset/`
+### `soil_dataset/`
 
-- `Data/` holds figures and tables.
-- `prompt engineering/` and nested `Prompt Text/` hold prompting assets.
-- `Extract RDF Method/` and `Extract All RDFs/` hold extraction notebooks and outputs.
-- `Build KG/` and `Executability/` hold KG outputs and RDF validation artifacts.
-- `Evaluating/` holds RAGAS and other evaluation work.
-- Reusable core areas are `Data/`, `prompt engineering/Prompt Text/`, and `Extract All RDFs/`.
-- `Executability/`, `Evaluating/`, and `Extract RDF Method/` should be treated as legacy or staging areas.
+- `data/` holds figures and tables.
+- `prompt_engineering/` and nested `prompt_text/` hold prompting assets.
+- `extract_rdf_method/` and `extract_all_rdfs/` hold extraction notebooks and outputs.
+- `build_kg/` and `executability/` hold KG outputs and RDF validation artifacts.
+- `evaluating/` holds RAGAS and other evaluation work.
+- Reusable core areas are `data/`, `prompt_engineering/prompt_text/`, and `extract_all_rdfs/`.
+- `executability/`, `evaluating/`, and `extract_rdf_method/` should be treated as legacy or staging areas.
 
-### `VisText/`
+### `vistext/`
 
-- `Prompt Text/` holds prompt variants.
-- `Data/Json2ttl/` contains conversion code.
-- `Evaluation/` contains conversion and evaluation utilities.
-- Canonical `Data/` layout is:
-  - `VisText/Data/images/`
-  - `VisText/Data/labels/`
-  - `VisText/Data/Json2ttl/`
+- `prompt_text/` holds prompt variants.
+- `data/json2ttl/` contains the canonical converter code.
+- `extract_rdf_ttl/` contains Gemini runners plus preserved output folders.
+- Canonical `data/` layout is:
+  - `vistext/data/images/`
+  - `vistext/data/labels/`
+  - `vistext/data/json2ttl/`
 - Historical note: these canonical folders replaced the legacy `sub-image/`, `ground truth/`, and `1000_sub data/` inputs after conservative path migration.
-- Reusable core areas are the canonical `Data/` folders plus `Prompt Text/` and the converter scripts.
-- `Extract RDF ttl/vistext_*_outputs/` and `Evaluation/gold_ttl_1000/` are preserved historical outputs.
-- `Evaluation/complete_data.py` remains a manual staging utility.
+- Reusable core areas are the canonical `data/` folders plus `prompt_text/` and the converter scripts.
+- `extract_rdf_ttl/vistext_*_outputs/` are preserved historical outputs.
 
-### `diagram2graph Dataset/`
+### `diagram2graph_dataset/`
 
-- `JSON2ttl/Script.py` is the main converter script.
-- `Extract RDF ttl/` and `Extrcat RDF json/` hold extraction notebooks, prompts, and generated outputs.
-- `Evaluating/` contains F1, RAGAS, and report-generation assets.
-- Reusable core areas are `Data/`, `JSON2ttl/Script.py`, `prompt engineering/Prompt Text/`, and `Evaluating/report/plot_summaries.py`.
-- `Extract RDF ttl/`, `Build KG/`, and `prompt engineering/*_outputs/` are preserved historical outputs.
-- `Extrcat RDF json/` and `Evaluating/report/plot_summaries Clude.py` are legacy areas retained for provenance.
+- `json2ttl/script.py` is the main converter script.
+- `extract_rdf_ttl/` and `extract_rdf_json/` hold extraction notebooks, prompts, and generated outputs.
+- `evaluating/` contains F1, RAGAS, and report-generation assets.
+- Reusable core areas are `data/`, `json2ttl/script.py`, `prompt_engineering/prompt_text/`, and `evaluating/report/plot_summaries.py`.
+- `extract_rdf_ttl/`, `build_kg/`, and `prompt_engineering/*_outputs/` are preserved historical outputs.
+- `extract_rdf_json/` and `evaluating/report/plot_summaries_claude.py` are legacy areas retained for provenance.
 
 ## Cross-Cutting Refactor Priorities
 
-- Keep top-level dataset directories for now.
+- Keep the lowercase underscore-separated dataset directories as the canonical repo layout.
 - Preserve valuable outputs and reports unless they are confirmed safe to remove.
 - Remove hardcoded secret leakage before broader cleanup.
 - Replace absolute machine paths with configurable or relative paths.

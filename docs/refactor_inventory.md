@@ -2,8 +2,8 @@
 
 ## Scope And Constraints
 
-- Approved conservative refactor for an academic, dataset-first repository.
-- Keep top-level dataset directories for now: `Soil Dataset/`, `VisText/`, `diagram2graph Dataset/`.
+- Approved naming normalization refactor for an academic, dataset-first repository.
+- Canonical top-level dataset directories are now `soil_dataset/`, `vistext/`, and `diagram2graph_dataset/`.
 - Preserve valuable outputs by default, including generated TTL, CSV summaries, reports, plots, and notebooks.
 - Remove hardcoded secret leakage.
 - Deduplicate only confirmed duplicates.
@@ -11,44 +11,44 @@
 
 ## Current Top-Level Areas
 
-- `Soil Dataset/`: tables, figures, prompts, extraction notebooks, KG outputs, executability checks, and evaluation artifacts.
-- `VisText/`: prompt text, data folders, JSON-to-TTL converters, and evaluation utilities.
-- `diagram2graph Dataset/`: labels, extraction notebooks, TTL outputs, JSON-to-TTL conversion, and evaluation reports.
+- `soil_dataset/`: tables, figures, prompts, extraction notebooks, KG outputs, executability checks, and evaluation artifacts.
+- `vistext/`: prompt text, data folders, JSON-to-TTL converters, Gemini runners, and preserved outputs.
+- `diagram2graph_dataset/`: labels, extraction notebooks, TTL outputs, JSON-to-TTL conversion, and evaluation reports.
 
 ## Canonicalization Decisions
 
-### VisText
+### vistext
 
-- Canonical `VisText/Data/` layout is:
-  - `VisText/Data/images/`
-  - `VisText/Data/labels/`
-  - keep `VisText/Data/Json2ttl/`
-- Historical note: the canonical folders were populated from the approved `VisText/Data/1000_sub data/` source, then the duplicate legacy input directories were removed.
+- Canonical `vistext/data/` layout is:
+  - `vistext/data/images/`
+  - `vistext/data/labels/`
+  - keep `vistext/data/json2ttl/`
+- Historical note: the canonical folders were populated from the approved `vistext/data/1000_sub_data/` source, then the duplicate legacy input directories were removed.
 
 ## Preserve-By-Default Assets
 
 - Jupyter notebooks across all three datasets.
 - Generated TTL output folders, including experimental and evaluation outputs.
-- Evaluation CSVs, PNG plots, Markdown/HTML reports, and archive bundles.
+- evaluation CSVs, PNG plots, Markdown/HTML reports, and archive bundles.
 - One-off research outputs that may represent costly model runs.
 
 ## Confirmed Refactor Risks And Targets
 
 ### Hardcoded Secret Leakage
 
-- Confirmed embedded Gemini API keys appear in notebooks such as `diagram2graph Dataset/Extrcat RDF json/diagram2graph-inferance.ipynb`.
-- Confirmed embedded keys also appear in `diagram2graph Dataset/Extract RDF ttl/Code.ipynb`.
+- Confirmed embedded Gemini API keys appear in notebooks such as `diagram2graph_dataset/extract_rdf_json/diagram2graph_inference.ipynb`.
+- Confirmed embedded keys also appear in `diagram2graph_dataset/extract_rdf_ttl/code.ipynb`.
 - These should be replaced with environment variables or local ignored configuration before broader publication or cleanup.
 
 ### Hardcoded Machine Paths
 
-- `diagram2graph Dataset/Evaluating/report/plot_summaries Clude.py` still uses `/mnt/data` assumptions and should be treated as legacy until it is removed or aligned.
+- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py` still uses `/mnt/data` assumptions and should be treated as legacy until it is removed or aligned.
 - Multiple reports reference `/mnt/data/...` assets directly, which makes them non-portable.
 - Additional notebooks include Colab or Kaggle paths such as `/content/drive` and `/kaggle/input/...`.
 
 ### Confirmed Duplicate Candidates
 
-- `diagram2graph Dataset/Evaluating/report/plot_summaries Clude.py`
+- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`
 - This file now diverges from the parameterized `plot_summaries.py` and should be removed or archived in a later legacy-cleanup task.
 
 ## Task 7 Asset Boundaries
@@ -60,6 +60,6 @@
 
 ## Deferred Work
 
-- `README.md` rewrite and repository-facing narrative cleanup.
-- Top-level directory renaming or consolidation.
-- Broad notebook standardization beyond secrets, paths, and reference fixes.
+- Additional cleanup of legacy notebook machine paths.
+- Possible retirement of `plot_summaries_claude.py` after provenance review.
+- Broader notebook standardization beyond secrets, paths, and reference fixes.

@@ -6,17 +6,17 @@ This repository is a notebook-first research artifact. It preserves extraction o
 
 ## What this repository contains
 
-- `Soil Dataset/` - soil-health figures and tables, prompt assets, extraction notebooks, KG-building notebooks, executability checks, and evaluation packets.
-- `VisText/` - chart dataset inputs, prompt text, JSON-to-TTL converters, preserved TTL outputs, and evaluation utilities.
-- `diagram2graph Dataset/` - diagram images and labels, extraction notebooks, KG outputs, JSON-to-TTL conversion, and F1 or report-generation scripts.
+- `soil_dataset/` - soil-health figures and tables, prompt assets, extraction notebooks, KG-building notebooks, executability checks, and evaluation packets.
+- `vistext/` - chart dataset inputs, prompt text, JSON-to-TTL converters, preserved TTL outputs, and evaluation utilities.
+- `diagram2graph_dataset/` - diagram images and labels, extraction notebooks, KG outputs, JSON-to-TTL conversion, and F1 or report-generation scripts.
 - `common/` - shared helpers for repo-root discovery and secret loading from environment variables or the ignored top-level `config` file.
 - `docs/` - refactor notes, repository maps, and internal asset-boundary documentation.
 
 ## Current repository status
 
-This checkout has been conservatively refactored.
+This checkout has been refactored for publication-friendly naming.
 
-- Top-level dataset folders stay unchanged.
+- Top-level dataset folders now use lowercase underscore-separated names.
 - Valuable generated outputs are preserved by default.
 - Confirmed duplicate mirrors have been removed where references were migrated safely.
 - Secret-bearing notebooks were updated to load keys from environment variables or the local ignored `config` file.
@@ -29,76 +29,77 @@ If you are reviewing the repository for paper evaluation, start here:
 - Read this `README.md` for the canonical layout and the validation commands.
 - Check `docs/repo_map.md` for a concise map of the current repository structure.
 - Check `docs/task7-asset-boundaries.md` for the reusable-vs-historical boundary decisions.
-- Inspect one preserved output directory such as `VisText/Extract RDF ttl/vistext_Zeroshot_outputs/` or `diagram2graph Dataset/Build KG/` to see retained research artifacts.
+- Inspect one preserved output directory such as `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/` or `diagram2graph_dataset/build_kg/` to see retained research artifacts.
 - Use the smoke-test commands in this README instead of looking for a nonexistent repo-wide `pytest` suite.
 
 Current canonical input counts in this checkout:
 
-- Soil Dataset: 15 figure images and 56 table images under `Soil Dataset/Data/`
-- VisText: 882 images and 882 label JSON files under `VisText/Data/`
-- diagram2graph Dataset: 219 diagram images and 219 label JSON files under `diagram2graph Dataset/Data/`
+- soil_dataset: 15 figure images and 56 table images under `soil_dataset/data/`
+- vistext: 882 images and 882 label JSON files under `vistext/data/`
+- diagram2graph_dataset: 219 diagram images and 219 label JSON files under `diagram2graph_dataset/data/`
 
 ## Canonical inputs and reusable entry points
 
-### Soil Dataset
+### soil_dataset
 
 - Canonical raw inputs:
-  - `Soil Dataset/Data/figures/`
-  - `Soil Dataset/Data/tables/`
+  - `soil_dataset/data/figures/`
+  - `soil_dataset/data/tables/`
 - Canonical extraction outputs:
-  - `Soil Dataset/Extract All RDFs/`
+  - `soil_dataset/extract_all_rdfs/`
 - Reusable prompt assets:
-  - `Soil Dataset/prompt engineering/Prompt Text/`
+  - `soil_dataset/prompt_engineering/prompt_text/`
 - Legacy or staging areas retained for workflow compatibility:
-  - `Soil Dataset/Executability/`
-  - `Soil Dataset/Evaluating/`
-  - `Soil Dataset/Extract RDF Method/`
+  - `soil_dataset/executability/`
+  - `soil_dataset/evaluating/`
+  - `soil_dataset/extract_rdf_method/`
 
-### VisText
+### vistext
 
 - Canonical local inputs:
-  - `VisText/Data/images/`
-  - `VisText/Data/labels/`
+  - `vistext/data/images/`
+  - `vistext/data/labels/`
 - Reusable converter entry points:
-  - `VisText/Data/Json2ttl/json_to_ttl_converter.py`
-  - `VisText/Evaluation/json_to_ttl_converter_v2.py`
+  - `vistext/data/json2ttl/json_to_ttl_converter_v2.py`
+  - `vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py`
 - Reusable prompt assets:
-  - `VisText/Prompt Text/`
+  - `vistext/prompt_text/`
 - Preserved historical outputs:
-  - `VisText/Extract RDF ttl/vistext_Zeroshot_outputs/`
-  - `VisText/Extract RDF ttl/vistext_Oneshot_outputs/`
-  - `VisText/Extract RDF ttl/vistext_Fewshot_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_oneshot_static_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_oneshot_dynamic_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_fewshot_outputs/`
 
-### diagram2graph Dataset
+### diagram2graph_dataset
 
 - Canonical inputs:
-  - `diagram2graph Dataset/Data/diagram2graph/`
-  - `diagram2graph Dataset/Data/labels/`
+  - `diagram2graph_dataset/data/diagram2graph/`
+  - `diagram2graph_dataset/data/labels/`
 - Reusable converter and report scripts:
-  - `diagram2graph Dataset/JSON2ttl/Script.py`
-  - `diagram2graph Dataset/Evaluating/report/plot_summaries.py`
+  - `diagram2graph_dataset/json2ttl/script.py`
+  - `diagram2graph_dataset/evaluating/report/plot_summaries.py`
 - Reusable prompt assets:
-  - `diagram2graph Dataset/prompt engineering/Prompt Text/`
+  - `diagram2graph_dataset/prompt_engineering/prompt_text/`
 - Preserved historical outputs:
-  - `diagram2graph Dataset/Extract RDF ttl/`
-  - `diagram2graph Dataset/Build KG/`
-  - `diagram2graph Dataset/prompt engineering/ZeroShot_outputs/`
-  - `diagram2graph Dataset/prompt engineering/OneShot_outputs/`
-  - `diagram2graph Dataset/prompt engineering/FewShot_outputs/`
+  - `diagram2graph_dataset/extract_rdf_ttl/`
+  - `diagram2graph_dataset/build_kg/`
+  - `diagram2graph_dataset/prompt_engineering/zeroshot_outputs/`
+  - `diagram2graph_dataset/prompt_engineering/oneshot_outputs/`
+  - `diagram2graph_dataset/prompt_engineering/fewshot_outputs/`
 
-## Dataset workflow overview
+## dataset workflow overview
 
 Although each dataset evolved independently, the repository generally follows this pattern:
 
-1. `Data/` contains source images, tables, figures, or labels.
-2. `prompt engineering/` or `Prompt Text/` contains prompt variants or notebook-driven prompt workflows.
+1. `data/` contains source images, tables, figures, or labels.
+2. `prompt_engineering/` or `prompt_text/` contains prompt variants or notebook-driven prompt workflows.
 3. `Extract RDF .../` stores multimodal model outputs.
-4. `JSON2ttl/` or `Build KG/` converts outputs into knowledge-graph artifacts.
-5. `Evaluating/` stores F1 analysis, RAGAS notebooks, bridge evaluation notebooks, and summary plots.
+4. `json2ttl/` or `build_kg/` converts outputs into knowledge-graph artifacts.
+5. `evaluating/` stores F1 analysis, RAGAS notebooks, bridge evaluation notebooks, and summary plots.
 
 ## Local environment and secrets
 
-- Use `python3`. This environment does not provide `python`.
+- Use `python` in this Windows checkout; on Unix-like environments `python3` is typically equivalent.
 - There is no lockfile, `pyproject.toml`, or centralized test suite.
 - The ignored top-level `config` file is the local place for API keys.
 - Environment variables override values in `config`.
@@ -117,7 +118,7 @@ Example `config` shape:
 This repository is notebook-heavy and does not define a reproducible environment yet, but a practical local setup is:
 
 ```bash
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -128,45 +129,42 @@ Some notebooks may also require optional heavy packages that are intentionally l
 
 There is no official repo-wide test command. Use small representative conversions instead.
 
-### VisText v1 converter
+### vistext converter
 
 ```bash
-python3 "VisText/Data/Json2ttl/json_to_ttl_converter.py" \
-  "VisText/Data/labels/1046.json" \
-  -o "/tmp/1046-v1.ttl"
+python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" \
+  "vistext/data/labels/1046.json" \
+  -o ".tmp/1046-v2.ttl"
 ```
 
-### VisText v2 converter
+### vistext Gemini runner dry-run
 
 ```bash
-python3 "VisText/Evaluation/json_to_ttl_converter_v2.py" \
-  "VisText/Data/labels/1046.json" \
-  -o "/tmp/1046-v2.ttl"
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" \
+  --dry-run --sample-mode ids --ids 1046
 ```
 
 ### diagram2graph converter
 
 ```bash
-python3 "diagram2graph Dataset/JSON2ttl/Script.py" \
-  "diagram2graph Dataset/Data/labels/9.json" \
-  "/tmp/d2g-9.ttl"
+python "diagram2graph_dataset/json2ttl/script.py" \
+  "diagram2graph_dataset/data/labels/9.json" \
+  ".tmp/d2g-9.ttl"
 ```
 
 ## Important caveats
 
-- Quote paths in shell commands because many directories contain spaces.
+- The canonical repo layout no longer uses spaces in dataset paths.
 - Several notebooks still contain Kaggle or Colab path examples as historical workflow context.
-- `VisText/Extract RDF ttl/README.md` explains why preserved `manifest.json` files still mention older Kaggle-era input paths.
-- `VisText/Evaluation/complete_data.py` is interactive and mutates files in place.
-- `diagram2graph Dataset/Evaluating/report/plot_summaries Clude.py` is retained as a legacy script, not a recommended entry point.
+- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py` is retained as a legacy script, not a recommended entry point.
 
 ## Repository guidance for contributors and agents
 
 - Internal refactor notes live in `docs/refactor_inventory.md`, `docs/repo_map.md`, and `docs/task7-asset-boundaries.md`.
-- Dataset-level internal notes live in:
-  - `Soil Dataset/README-internal.md`
-  - `VisText/README-internal.md`
-  - `diagram2graph Dataset/README-internal.md`
+- dataset-level internal notes live in:
+  - `soil_dataset/readme_internal.md`
+  - `vistext/readme_internal.md`
+  - `diagram2graph_dataset/readme_internal.md`
 - Prefer canonical paths for new work and treat legacy staging folders as compatibility areas unless you verify references first.
 
 ## License

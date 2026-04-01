@@ -15,15 +15,15 @@ def docs_dir() -> Path:
 
 
 def vistext_dir() -> Path:
-    return repo_root() / "VisText"
+    return repo_root() / "vistext"
 
 
 def vistext_data_dir() -> Path:
-    return vistext_dir() / "Data"
+    return vistext_dir() / "data"
 
 
 def vistext_json2ttl_dir() -> Path:
-    return vistext_data_dir() / "Json2ttl"
+    return vistext_data_dir() / "json2ttl"
 
 
 def vistext_images_dir() -> Path:
@@ -35,16 +35,16 @@ def vistext_labels_dir() -> Path:
 
 
 def soil_dataset_dir() -> Path:
-    return repo_root() / "Soil Dataset"
+    return repo_root() / "soil_dataset"
 
 
 def soil_data_dir() -> Path:
-    return soil_dataset_dir() / "Data"
+    return soil_dataset_dir() / "data"
 
 
 def diagram2graph_dataset_dir() -> Path:
-    return repo_root() / "diagram2graph Dataset"
+    return repo_root() / "diagram2graph_dataset"
 
 
 def diagram2graph_data_dir() -> Path:
-    return diagram2graph_dataset_dir() / "Data"
+    return diagram2graph_dataset_dir() / "data"

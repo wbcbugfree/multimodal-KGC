@@ -1,62 +1,61 @@
 # Task 7 Asset Boundaries
 
-This note separates reusable assets from legacy or experiment-specific areas without moving top-level dataset folders.
+This note separates reusable assets from legacy or experiment-specific areas within the normalized lowercase underscore path layout.
 
 ## Shared Reusable Helpers
 
 - `common/` is the reusable helper area for config loading, repo-root discovery, and notebook bootstrap logic.
 
-## Soil Dataset
+## soil_dataset
 
 - Reusable canonical assets:
-  - `Soil Dataset/Data/figures/`
-  - `Soil Dataset/Data/tables/`
-  - `Soil Dataset/prompt engineering/Prompt Text/`
-  - `Soil Dataset/Extract All RDFs/`
+  - `soil_dataset/data/figures/`
+  - `soil_dataset/data/tables/`
+  - `soil_dataset/prompt_engineering/prompt_text/`
+  - `soil_dataset/extract_all_rdfs/`
 - Preserve as valuable outputs, but not reusable core:
-  - `Soil Dataset/Build KG/`
+  - `soil_dataset/build_kg/`
 - Legacy or staging areas:
-  - `Soil Dataset/Executability/`
-  - `Soil Dataset/Evaluating/`
-  - `Soil Dataset/Extract RDF Method/`
+  - `soil_dataset/executability/`
+  - `soil_dataset/evaluating/`
+  - `soil_dataset/extract_rdf_method/`
 
-## VisText
+## vistext
 
 - Reusable canonical assets:
-  - `VisText/Data/images/`
-  - `VisText/Data/labels/`
-  - `VisText/Data/Json2ttl/`
-  - `VisText/Prompt Text/`
-  - `VisText/Evaluation/json_to_ttl_converter_v2.py`
+  - `vistext/data/images/`
+  - `vistext/data/labels/`
+  - `vistext/data/json2ttl/`
+  - `vistext/prompt_text/`
+  - `vistext/data/json2ttl/json_to_ttl_converter_v2.py`
+  - `vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py`
 - Preserve as historical experiment outputs:
-  - `VisText/Extract RDF ttl/vistext_Zeroshot_outputs/`
-  - `VisText/Extract RDF ttl/vistext_Oneshot_outputs/`
-  - `VisText/Extract RDF ttl/vistext_Fewshot_outputs/`
-  - `VisText/Evaluation/gold_ttl_1000/`
-- Legacy or manual staging area:
-  - `VisText/Evaluation/complete_data.py`
+  - `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_oneshot_static_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_oneshot_dynamic_outputs/`
+  - `vistext/extract_rdf_ttl/vistext_fewshot_outputs/`
 
-## diagram2graph Dataset
+## diagram2graph_dataset
 
 - Reusable canonical assets:
-  - `diagram2graph Dataset/Data/diagram2graph/`
-  - `diagram2graph Dataset/Data/labels/`
-  - `diagram2graph Dataset/JSON2ttl/Script.py`
-  - `diagram2graph Dataset/Evaluating/report/plot_summaries.py`
-  - `diagram2graph Dataset/prompt engineering/Prompt Text/`
+  - `diagram2graph_dataset/data/diagram2graph/`
+  - `diagram2graph_dataset/data/labels/`
+  - `diagram2graph_dataset/json2ttl/script.py`
+  - `diagram2graph_dataset/evaluating/report/plot_summaries.py`
+  - `diagram2graph_dataset/prompt_engineering/prompt_text/`
 - Preserve as historical experiment outputs:
-  - `diagram2graph Dataset/Extract RDF ttl/`
-  - `diagram2graph Dataset/Build KG/`
-  - `diagram2graph Dataset/prompt engineering/ZeroShot_outputs/`
-  - `diagram2graph Dataset/prompt engineering/OneShot_outputs/`
-  - `diagram2graph Dataset/prompt engineering/FewShot_outputs/`
+  - `diagram2graph_dataset/extract_rdf_ttl/`
+  - `diagram2graph_dataset/build_kg/`
+  - `diagram2graph_dataset/prompt_engineering/zeroshot_outputs/`
+  - `diagram2graph_dataset/prompt_engineering/oneshot_outputs/`
+  - `diagram2graph_dataset/prompt_engineering/fewshot_outputs/`
 - Legacy or staging areas:
-  - `diagram2graph Dataset/Extrcat RDF json/`
-  - `diagram2graph Dataset/prompt engineering/Evaluation/`
-  - `diagram2graph Dataset/Evaluating/report/plot_summaries Clude.py`
+  - `diagram2graph_dataset/extract_rdf_json/`
+  - `diagram2graph_dataset/prompt_engineering/evaluation/`
+  - `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`
 
 ## Guardrails
 
-- Do not rename typo-bearing legacy folders yet.
+- Do not reintroduce mixed-case or space-bearing dataset paths.
 - Do not move preserved outputs into a new top-level archive folder in this phase.
 - Prefer labeling and documenting historical areas before attempting later cleanup.
