@@ -18,9 +18,9 @@ This map reflects the current worktree state and the approved conservative refac
 - `prompt_engineering/` and nested `prompt_text/` hold prompting assets.
 - `extract_rdf_method/` and `extract_all_rdfs/` hold extraction notebooks and outputs.
 - `build_kg/` and `executability/` hold KG outputs and RDF validation artifacts.
-- `evaluating/` holds RAGAS and other evaluation work.
+- `evaluation/` holds RAGAS and other evaluation work.
 - Reusable core areas are `data/`, `prompt_engineering/prompt_text/`, and `extract_all_rdfs/`.
-- `executability/`, `evaluating/`, and `extract_rdf_method/` should be treated as legacy or staging areas.
+- `executability/`, `evaluation/`, and `extract_rdf_method/` should be treated as legacy or staging areas.
 
 ### `vistext/`
 
@@ -39,10 +39,10 @@ This map reflects the current worktree state and the approved conservative refac
 
 - `json2ttl/script.py` is the main converter script.
 - `extract_rdf_ttl/` and `extract_rdf_json/` hold extraction notebooks, prompts, and generated outputs.
-- `evaluating/` contains F1, RAGAS, and report-generation assets.
-- Reusable core areas are `data/`, `json2ttl/script.py`, `prompt_engineering/prompt_text/`, and `evaluating/report/plot_summaries.py`.
+- `evaluation/` contains F1, RAGAS, and report-generation assets.
+- Reusable core areas are `data/`, `json2ttl/script.py`, `prompt_engineering/prompt_text/`, and `evaluation/report/plot_summaries.py`.
 - `extract_rdf_ttl/`, `build_kg/`, and `prompt_engineering/*_outputs/` are preserved historical outputs.
-- `extract_rdf_json/` and `evaluating/report/plot_summaries_claude.py` are legacy areas retained for provenance.
+- `extract_rdf_json/` and `evaluation/report/plot_summaries_claude.py` are legacy areas retained for provenance.
 
 ## Cross-Cutting Refactor Priorities
 

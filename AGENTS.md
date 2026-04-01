@@ -42,7 +42,7 @@ It folds in the repo-specific guidance from `CLAUDE.md`.
 2. `prompt_engineering/` or `prompt_text/` for prompt design.
 3. `extract_rdf_ttl/`, `extract_rdf_json/`, or `extract_all_rdfs/` for model outputs.
 4. `json2ttl/` or `build_kg/` for KG generation.
-5. `evaluating/` for F1, RAGAS, and notebook analysis.
+5. `evaluation/` for F1, RAGAS, and notebook analysis.
 
 ## Environment
 - Use `python` in this Windows checkout; on Unix-like environments `python3` is typically equivalent.
@@ -95,14 +95,14 @@ Common command forms:
 python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" <input> [-o <output>]
 python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" [--sample-mode {all,random,ids}] [--sample-count N] [--ids ...]
 python "diagram2graph_dataset/json2ttl/script.py" <input_path> <output_path> [--base IRI] [--recursive] [--pattern "*.json"]
-python "diagram2graph_dataset/evaluating/f1_score/evaluate_metrics.py"
-python "diagram2graph_dataset/evaluating/f1_score/evaluate_node_edge_sep.py"
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py"
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py"
 ```
 
 ## Command Caveats
-- `diagram2graph_dataset/evaluating/f1_score/evaluate_metrics.py` has been parameterized, but downstream inputs still need to exist locally.
-- `diagram2graph_dataset/evaluating/f1_score/evaluate_node_edge_sep.py` has been parameterized, but downstream inputs still need to exist locally.
-- `diagram2graph_dataset/evaluating/report/plot_summaries.py` has been parameterized; `plot_summaries_claude.py` remains a legacy script with older assumptions.
+- `diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py` has been parameterized, but downstream inputs still need to exist locally.
+- `diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py` has been parameterized, but downstream inputs still need to exist locally.
+- `diagram2graph_dataset/evaluation/report/plot_summaries.py` has been parameterized; `plot_summaries_claude.py` remains a legacy script with older assumptions.
 - The Gemini runners under `vistext/extract_rdf_ttl/` require a local `config` file with a valid `gemini_api_key`.
 - Most evaluation beyond these scripts happens in notebooks.
 

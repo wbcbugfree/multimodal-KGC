@@ -17,7 +17,7 @@ This note separates reusable assets from legacy or experiment-specific areas wit
   - `soil_dataset/build_kg/`
 - Legacy or staging areas:
   - `soil_dataset/executability/`
-  - `soil_dataset/evaluating/`
+  - `soil_dataset/evaluation/`
   - `soil_dataset/extract_rdf_method/`
 
 ## vistext
@@ -41,7 +41,7 @@ This note separates reusable assets from legacy or experiment-specific areas wit
   - `diagram2graph_dataset/data/diagram2graph/`
   - `diagram2graph_dataset/data/labels/`
   - `diagram2graph_dataset/json2ttl/script.py`
-  - `diagram2graph_dataset/evaluating/report/plot_summaries.py`
+  - `diagram2graph_dataset/evaluation/report/plot_summaries.py`
   - `diagram2graph_dataset/prompt_engineering/prompt_text/`
 - Preserve as historical experiment outputs:
   - `diagram2graph_dataset/extract_rdf_ttl/`
@@ -52,7 +52,7 @@ This note separates reusable assets from legacy or experiment-specific areas wit
 - Legacy or staging areas:
   - `diagram2graph_dataset/extract_rdf_json/`
   - `diagram2graph_dataset/prompt_engineering/evaluation/`
-  - `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`
+  - `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`
 
 ## Guardrails
 

@@ -51,7 +51,7 @@ Current canonical input counts in this checkout:
   - `soil_dataset/prompt_engineering/prompt_text/`
 - Legacy or staging areas retained for workflow compatibility:
   - `soil_dataset/executability/`
-  - `soil_dataset/evaluating/`
+  - `soil_dataset/evaluation/`
   - `soil_dataset/extract_rdf_method/`
 
 ### vistext
@@ -77,7 +77,7 @@ Current canonical input counts in this checkout:
   - `diagram2graph_dataset/data/labels/`
 - Reusable converter and report scripts:
   - `diagram2graph_dataset/json2ttl/script.py`
-  - `diagram2graph_dataset/evaluating/report/plot_summaries.py`
+  - `diagram2graph_dataset/evaluation/report/plot_summaries.py`
 - Reusable prompt assets:
   - `diagram2graph_dataset/prompt_engineering/prompt_text/`
 - Preserved historical outputs:
@@ -95,7 +95,7 @@ Although each dataset evolved independently, the repository generally follows th
 2. `prompt_engineering/` or `prompt_text/` contains prompt variants or notebook-driven prompt workflows.
 3. `Extract RDF .../` stores multimodal model outputs.
 4. `json2ttl/` or `build_kg/` converts outputs into knowledge-graph artifacts.
-5. `evaluating/` stores F1 analysis, RAGAS notebooks, bridge evaluation notebooks, and summary plots.
+5. `evaluation/` stores F1 analysis, RAGAS notebooks, bridge evaluation notebooks, and summary plots.
 
 ## Local environment and secrets
 
@@ -156,7 +156,7 @@ python "diagram2graph_dataset/json2ttl/script.py" \
 
 - The canonical repo layout no longer uses spaces in dataset paths.
 - Several notebooks still contain Kaggle or Colab path examples as historical workflow context.
-- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py` is retained as a legacy script, not a recommended entry point.
+- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` is retained as a legacy script, not a recommended entry point.
 
 ## Repository guidance for contributors and agents
 

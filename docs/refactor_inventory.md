@@ -42,13 +42,13 @@
 
 ### Hardcoded Machine Paths
 
-- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py` still uses `/mnt/data` assumptions and should be treated as legacy until it is removed or aligned.
+- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` still uses `/mnt/data` assumptions and should be treated as legacy until it is removed or aligned.
 - Multiple reports reference `/mnt/data/...` assets directly, which makes them non-portable.
 - Additional notebooks include Colab or Kaggle paths such as `/content/drive` and `/kaggle/input/...`.
 
 ### Confirmed Duplicate Candidates
 
-- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`
+- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`
 - This file now diverges from the parameterized `plot_summaries.py` and should be removed or archived in a later legacy-cleanup task.
 
 ## Task 7 Asset Boundaries

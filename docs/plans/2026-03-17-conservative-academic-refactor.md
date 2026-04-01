@@ -88,7 +88,7 @@ Add usage notes near scripts that currently depend on manual file placement or n
 
 **Step 1: Keep both copies until reference usage is checked**
 
-Examples already visible include `diagram2graph_dataset/evaluating/report/plot_summaries.py` and `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`, which appear identical and are strong candidates for deduplication.
+Examples already visible include `diagram2graph_dataset/evaluation/report/plot_summaries.py` and `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`, which appear identical and are strong candidates for deduplication.
 
 **Step 2: Remove only confirmed duplicates**
 

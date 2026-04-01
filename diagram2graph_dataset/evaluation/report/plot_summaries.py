@@ -8,9 +8,9 @@ from pathlib import Path
 
 def build_parser() -> argparse.ArgumentParser:
     script_dir = Path(__file__).resolve().parent
-    evaluating_dir = script_dir.parent
-    f1_dir = evaluating_dir / "f1_score" / "result"
-    ragas_dir = evaluating_dir / "ragas"
+    evaluation_dir = script_dir.parent
+    f1_dir = evaluation_dir / "f1_score" / "result"
+    ragas_dir = evaluation_dir / "ragas"
 
     parser = argparse.ArgumentParser(
         description="Generate mean bar plots for node-edge and ragas summary CSV files."

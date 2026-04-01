@@ -31,8 +31,8 @@ python "diagram2graph_dataset/json2ttl/script.py" \
 python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" --help
 python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --help
 python "diagram2graph_dataset/json2ttl/script.py" --help
-python "diagram2graph_dataset/evaluating/f1_score/evaluate_metrics.py" --help
-python "diagram2graph_dataset/evaluating/f1_score/evaluate_node_edge_sep.py" --help
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py" --help
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py" --help
 ```
 
 ## High-level architecture
@@ -50,7 +50,7 @@ Each dataset broadly follows:
 2. `prompt_engineering/` or `prompt_text/` for prompt assets and notebooks
 3. `extract_rdf_ttl/`, `extract_rdf_json/`, or `extract_all_rdfs/` for model outputs
 4. `json2ttl/` or `build_kg/` for conversion and graph artifacts
-5. `evaluating/` for F1, RAGAS, bridge evaluation, and reports
+5. `evaluation/` for F1, RAGAS, bridge evaluation, and reports
 
 Most execution in this repo is notebook-driven; standalone Python scripts are primarily converters, evaluators, and data-fixing utilities.
 
@@ -61,13 +61,13 @@ Most execution in this repo is notebook-driven; standalone Python scripts are pr
 - `vistext/data/json2ttl/json_to_ttl_converter_v2.py` is the canonical vistext converter in this checkout.
 - The Gemini runners under `vistext/extract_rdf_ttl/` are the canonical vistext extraction entry points.
 
-- `diagram2graph_dataset/json2ttl/script.py` is the canonical diagram2graph converter. The parameterized F1 and plotting scripts under `diagram2graph_dataset/evaluating/` are preferred over older hardcoded variants.
+- `diagram2graph_dataset/json2ttl/script.py` is the canonical diagram2graph converter. The parameterized F1 and plotting scripts under `diagram2graph_dataset/evaluation/` are preferred over older hardcoded variants.
 
 - Preserve valuable generated outputs, KG render folders, evaluation CSVs, and notebooks by default. Treat them as research artifacts, not disposable build products.
 
 - Some folders remain intentionally legacy for provenance or compatibility, including:
   - `diagram2graph_dataset/extract_rdf_json/`
-  - `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py`
+  - `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`
   - selected Soil evaluation staging packets
 
 - A top-level `config` file is used for API keys and is gitignored. Never commit key contents.
@@ -83,4 +83,4 @@ Most execution in this repo is notebook-driven; standalone Python scripts are pr
 
 - Paths with spaces are common; always quote them in shell commands.
 - Some notebooks still contain Kaggle or Colab path examples as workflow context.
-- `diagram2graph_dataset/evaluating/report/plot_summaries_claude.py` is a legacy script and should not be treated as the preferred entry point.
+- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` is a legacy script and should not be treated as the preferred entry point.
