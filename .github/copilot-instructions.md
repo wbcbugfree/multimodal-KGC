@@ -7,7 +7,7 @@ Validation is done by running dataset-specific scripts and representative smoke 
 
 Use the canonical lowercase underscore-separated dataset paths in examples and code changes.
 
-### Representative smoke tests
+### Representative single-run smoke tests
 
 ```bash
 # vistext converter
@@ -23,6 +23,13 @@ python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" \
 python "diagram2graph_dataset/json2ttl/script.py" \
   "diagram2graph_dataset/data/labels/9.json" \
   ".tmp/d2g-9.ttl"
+```
+
+### Evaluation entry points (folder-to-folder checks)
+
+```bash
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py"
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py"
 ```
 
 ### Main CLI entry points
@@ -41,8 +48,8 @@ The repo is organized as three dataset-first pipelines plus a small shared helpe
 
 - `soil_dataset/` - soil tables and figures, prompt assets, extraction notebooks, KG build artifacts, executability checks, and evaluation packets.
 - `vistext/` - chart-focused pipeline with canonical local inputs in `vistext/data/images/` and `vistext/data/labels/`, plus preserved historical output folders.
-- `diagram2graph_dataset/` - flowchart and diagram pipeline with canonical images and labels under `data/`, JSON-to-TTL conversion, and evaluation scripts.
-- `common/` - shared helpers for repo-root discovery and secret loading from environment variables or the ignored top-level `config` file.
+- `diagram2graph_dataset/` - flowchart and diagram pipeline with canonical images and labels under `data/`, JSON-to-TTL conversion, and F1 evaluation scripts.
+- `common/` - shared helpers for repo-root discovery and secret loading (top-level ignored `config` + env overrides).
 
 Each dataset broadly follows:
 
@@ -54,6 +61,11 @@ Each dataset broadly follows:
 
 Most execution in this repo is notebook-driven; standalone Python scripts are primarily converters, evaluators, and data-fixing utilities.
 
+Across scripts, there are two shared architecture patterns worth preserving:
+
+1. VisText Gemini runners (`vistext/extract_rdf_ttl/gemini_vistext_*.py`) are thin strategy wrappers over `gemini_vistext_runner_core.py`. The core handles sampling, request execution, Turtle validation, and manifest upserts.
+2. Path and secret resolution is centralized in `common/paths.py` and `common/config.py`; scripts should prefer these helpers over hardcoded machine-local paths.
+
 ## Key codebase conventions
 
 - Prompting variants are encoded in folder and file names (`fewshot`, `oneshot`, `zeroshot`) and reused across extraction outputs, KG artifacts, and reports. Preserve this naming when adding artifacts.
@@ -62,25 +74,15 @@ Most execution in this repo is notebook-driven; standalone Python scripts are pr
 - The Gemini runners under `vistext/extract_rdf_ttl/` are the canonical vistext extraction entry points.
 
 - `diagram2graph_dataset/json2ttl/script.py` is the canonical diagram2graph converter. The parameterized F1 and plotting scripts under `diagram2graph_dataset/evaluation/` are preferred over older hardcoded variants.
+- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` is retained for legacy provenance and should not be treated as the primary entry point.
 
 - Preserve valuable generated outputs, KG render folders, evaluation CSVs, and notebooks by default. Treat them as research artifacts, not disposable build products.
 
 - Some folders remain intentionally legacy for provenance or compatibility, including:
   - `diagram2graph_dataset/extract_rdf_json/`
-  - `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py`
   - selected Soil evaluation staging packets
 
-- A top-level `config` file is used for API keys and is gitignored. Never commit key contents.
-
-## Environment and dependency notes
-
-- Use `python` in this Windows checkout; on Unix-like systems `python3` is usually equivalent.
-- A top-level `requirements.txt` exists for common notebook and script dependencies.
-- There is still no lockfile, package metadata, or unified automated test suite.
-- Some optional notebook-only dependencies may remain commented in `requirements.txt` because they are heavier or more version-sensitive.
-
-## Practical cautions
-
-- Paths with spaces are common; always quote them in shell commands.
-- Some notebooks still contain Kaggle or Colab path examples as workflow context.
-- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` is a legacy script and should not be treated as the preferred entry point.
+- Secrets are loaded from env vars and/or the top-level gitignored `config` file; env values override file values (`common/config.py`).
+- Keep output schema expectations stable when changing converters:
+  - VisText converter V2 intentionally maps `datatable` + `caption_L1` into `chart:` Turtle output.
+  - diagram2graph conversion/evaluation depends on node/edge field names such as `type_of_node`, `type_of_edge`, and `relationship_type`.
