@@ -1,0 +1,102 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Number of employees in the United States in November 2020 , by industry (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of employees in thousands" .
+
+:YAxis a :Axis ;
+    :title "industry type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "20469" ;
+    :yValue "Professional and business services" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "19873.5" ;
+    :yValue "Health care and social assistance" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "15107" ;
+    :yValue "Retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "13664" ;
+    :yValue "Local government" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13405" ;
+    :yValue "Leisure and hospitality" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12241" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7353" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6498.1" ;
+    :yValue "Finance and insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5647.7" ;
+    :yValue "Wholesale trade" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5549.9" ;
+    :yValue "Transportation and warehousing" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "5504" ;
+    :yValue "Other services" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4849" ;
+    :yValue "State government" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "3433.5" ;
+    :yValue "Educational services" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "2897" ;
+    :yValue "Federal government" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "2611" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "2223.6" ;
+    :yValue "Real estate and rental and leasing" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "623" ;
+    :yValue "Mining and logging" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "538.1" ;
+    :yValue "Utilities" ;
+    :belongsTo :Chart .

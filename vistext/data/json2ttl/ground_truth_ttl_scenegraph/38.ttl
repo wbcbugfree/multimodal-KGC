@@ -1,0 +1,87 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Quantity of roses sold in the U.S. from 2002 to 2018 (in 1,000 stems)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Sales in 1,000 stems" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2002" ;
+    :yValue "157673" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2003" ;
+    :yValue "123813" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2004" ;
+    :yValue "104138" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2005" ;
+    :yValue "100038" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2006.571" ;
+    :yValue "82358" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2008" ;
+    :yValue "67882" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2009" ;
+    :yValue "58154" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "201" ;
+    :yValue "42144" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2011" ;
+    :yValue "39602" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2012" ;
+    :yValue "37103" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2013" ;
+    :yValue "32824" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2015" ;
+    :yValue "28702" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2016" ;
+    :yValue "30637" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "27886" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "2018" ;
+    :yValue "29854" ;
+    :belongsTo :Chart .

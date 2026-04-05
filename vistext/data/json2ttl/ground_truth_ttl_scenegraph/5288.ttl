@@ -1,0 +1,72 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Annual salaries of selected heads of state and government leaders in 2010 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "government leaders" .
+
+:YAxis a :Axis ;
+    :title "Annual salary (in U.S. dollars)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lee Hsien Loong (Singapore)" ;
+    :yValue "2181319" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mwai Kibaki (Kenya)" ;
+    :yValue "427473" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Barack Obama (United States)" ;
+    :yValue "399604" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Nicolas Sarkozy (France)" ;
+    :yValue "302099" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Stephen Harper (Canada)" ;
+    :yValue "296099" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Brian Cowen (Ireland)" ;
+    :yValue "287615" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Julia Gillard (Australia)" ;
+    :yValue "286516" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Angela Merkel (Germany)" ;
+    :yValue "283319" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Naoto Kan (Japan)" ;
+    :yValue "273429" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jacob Zuma (South Africa)" ;
+    :yValue "272033" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "John Key (New Zealand)" ;
+    :yValue "271527" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "David Cameron (United Kingdom)" ;
+    :yValue "215187" ;
+    :belongsTo :Chart .

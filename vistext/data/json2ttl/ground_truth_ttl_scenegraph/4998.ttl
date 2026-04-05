@@ -1,0 +1,77 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "What attributes do you consider the most important when selecting healthy meals ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Local and fresh ingredients" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Low-calorie options" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nutritional information on menus" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Low-sodium options" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Portion control offerings" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Antibiotic- and hormone-free ingredients" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Organic products" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "GMO-free ingredients" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sustainable and/or humane ingredient-supply practi..." ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Gluten-free offerings" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Plant-based meal offerings" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Items backed by recognized diet programs" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .

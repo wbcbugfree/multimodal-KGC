@@ -1,0 +1,72 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Distribution of causes of death in Belgium in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Distribution of deaths" .
+
+:YAxis a :Axis ;
+    :title "causes of death" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.938" ;
+    :yValue "Natural causes" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.277" ;
+    :yValue "Cardiovascular diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.264" ;
+    :yValue "Neoplasms" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.104" ;
+    :yValue "Respiratory system disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.079" ;
+    :yValue "Other natural causes" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.062" ;
+    :yValue "Unnatural causes" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.051" ;
+    :yValue "Nervous system disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.049" ;
+    :yValue "Psychological disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.045" ;
+    :yValue "Digestive system disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "Urogential disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.024" ;
+    :yValue "Endocrine diseases and metabolism disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "Infections and parasitic diseases" ;
+    :belongsTo :Chart .

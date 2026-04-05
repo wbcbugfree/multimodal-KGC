@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Budget deficit in Central and Eastern European countries as a percentage of GDP in the 1st quarter of 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of deficit in GDP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Romania" ;
+    :yValue "-0.072" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Slovenia" ;
+    :yValue "-0.044" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Estonia" ;
+    :yValue "-0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Poland" ;
+    :yValue "-0.041" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Slovakia" ;
+    :yValue "-0.035" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hungary" ;
+    :yValue "-0.033" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "EU-27 average" ;
+    :yValue "-0.023" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Latvia" ;
+    :yValue "-0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Czechia" ;
+    :yValue "-0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lithuania" ;
+    :yValue "-0.016" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Bulgaria" ;
+    :yValue "-0.003" ;
+    :belongsTo :Chart .

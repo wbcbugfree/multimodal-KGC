@@ -1,0 +1,102 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Sales-to-assets ratio of top 20 pharmaceutical companies worldwide in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales to assets ratio" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Novo Nordisk" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.8" ;
+    :yValue "Roche" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Merck & Co." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "GlaxoSmithKline" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Johnson & Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Biogen" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Lilly" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Novartis" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Gilead" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "AbbVie" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Amgen" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "AstraZeneca" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Mylan" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Teva" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Bristol-Myers Squibb" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Pfizer" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Sanofi" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Endo" ;
+    :belongsTo :Chart .

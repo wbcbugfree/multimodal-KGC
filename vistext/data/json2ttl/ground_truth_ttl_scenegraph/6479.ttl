@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Breakdown of Johnson & Johnson 's revenue worldwide from 2013 to 2021 , by sub-category" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sub-category" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "DePuy orthopedics & spine*" ;
+    :yValue "0.163" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Surgical devices*" ;
+    :yValue "0.156" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Stents, catheters & other medical devices*" ;
+    :yValue "0.115" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Procrit, Velcade & other**" ;
+    :yValue "0.121" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Remicade & immunology**" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Central nervous system**" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Anti-infectives**" ;
+    :yValue "0.0602" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "OTC drugs & nutritionals***" ;
+    :yValue "0.0586" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Women's health, wound & oral care***" ;
+    :yValue "0.0684" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Neutrogena, Aveena & other skin care***" ;
+    :yValue "0.0558" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Baby care***" ;
+    :yValue "0.0314" ;
+    :belongsTo :Chart .

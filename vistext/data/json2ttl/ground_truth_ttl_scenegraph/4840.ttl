@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :LineChart ;
+    :title "Unemployment rate for individuals aged 15 to 24 years in Singapore from 2011 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Youth unemployment rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "0.0928" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "0.0896" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "0.0936" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "0.0874" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "0.0934" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "0.0912" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "0.0878" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "0.0861" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "0.0843" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2019" ;
+    :yValue "0.0835" ;
+    :belongsTo :Chart .
