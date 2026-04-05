@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Clinical trial costs by selected cost component and clinical phase as of 2014 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Phase 1" .
+
+:YAxis a :Axis ;
+    :title "Cost component" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5033" ;
+    :yValue "Physician Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11963" ;
+    :yValue "SDV Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1095" ;
+    :yValue "RN/CRA Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "326438" ;
+    :yValue "Cost Per IRB Approvals" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3705" ;
+    :yValue "Patient Retention Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6145" ;
+    :yValue "Patient Recruitment Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "178238" ;
+    :yValue "Cost of IRB Amendments" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "10968" ;
+    :yValue "Data Management Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "475668" ;
+    :yValue "Site Monitoring Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "252163" ;
+    :yValue "Site Recruitment Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "51905" ;
+    :yValue "Central Lab Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "193615" ;
+    :yValue "Administrative Staff Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "23787" ;
+    :yValue "Site Retention Costs" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "198895" ;
+    :yValue "Clinical Procedure Total" ;
+    :belongsTo :Chart .

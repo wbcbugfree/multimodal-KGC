@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "How do you think each of the following US Presidents will go down in history ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "U\\.S\\. Presidents in chronological order" .
+
+:YAxis a :Axis ;
+    :title "Below average / poor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dwight D. Eisenhower" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "John F. Kennedy" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lyndon B. Johnson" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Richard Nixon" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gerald Ford" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jimmy Carter" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ronald Reagan" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "George H.W. Bush" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bill Clinton" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "George W. Bush" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Barack Obama" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .

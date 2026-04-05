@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Consumption of tree nuts worldwide in 2018 , by type (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Consumption in thousand metric tons" .
+
+:YAxis a :Axis ;
+    :title "type of nut" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "42543" ;
+    :yValue "Peanut" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1187.19" ;
+    :yValue "Almond" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "887.64" ;
+    :yValue "Walnut" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "791.24" ;
+    :yValue "Cashew" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "668.99" ;
+    :yValue "Pistachio" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "423.6" ;
+    :yValue "Hazelnut" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "125.4" ;
+    :yValue "Pecan" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "50.34" ;
+    :yValue "Macadamia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "26.97" ;
+    :yValue "Brazil Nut" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "21.57" ;
+    :yValue "Pine Nut" ;
+    :belongsTo :Chart .

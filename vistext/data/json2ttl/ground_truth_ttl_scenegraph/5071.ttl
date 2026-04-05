@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Average gross income per household in the United Kingdom (UK) in 2018/19 , by decile group (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average gross income per household income in GBP" .
+
+:YAxis a :Axis ;
+    :title "Decile group" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "171004" ;
+    :yValue "Top" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "92269" ;
+    :yValue "9th" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "70047" ;
+    :yValue "8th" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "55956" ;
+    :yValue "7th" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "49843" ;
+    :yValue "6th" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "41992" ;
+    :yValue "5th" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "35757" ;
+    :yValue "4th" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "28531" ;
+    :yValue "3rd" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "23353" ;
+    :yValue "2nd" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14404" ;
+    :yValue "Bottom" ;
+    :belongsTo :Chart .

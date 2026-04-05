@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Ranking of countries with the highest share of alcohol-related deaths in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of alcohol-attributable deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Belarus" ;
+    :yValue "0.347" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ukraine" ;
+    :yValue "0.344" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Moldova" ;
+    :yValue "0.331" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lithuania" ;
+    :yValue "0.309" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "0.305" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Latvia" ;
+    :yValue "0.244" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Estonia" ;
+    :yValue "0.214" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Venezuela" ;
+    :yValue "0.108" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mongolia" ;
+    :yValue "0.105" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kazakhstan" ;
+    :yValue "0.092" ;
+    :belongsTo :Chart .

@@ -1,0 +1,27 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Compensation of Snap 's leading executive officers from 2015 to 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Snap\\'s leading executive officers" .
+
+:YAxis a :Axis ;
+    :title "2016" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Evan Spiegel (CEO)" ;
+    :yValue "2.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Imran Khan (Former Chief Strategy Officer)" ;
+    :yValue "5.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Timothy Sehn (SVP of Engineering)**" ;
+    :yValue "41.36" ;
+    :belongsTo :Chart .

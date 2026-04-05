@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Number of people affected by the world 's major volcanic eruptions from 1900 to 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "volcanic eruption and date" .
+
+:YAxis a :Axis ;
+    :title "Number of victims" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Volcanic eruption in the Philippines (June 9, 1991..." ;
+    :yValue "1035027" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Volcano eruption in Ecuador (August 14, 2015)" ;
+    :yValue "799203" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Volcanic eruption in Nicaragua (April 9, 1992)" ;
+    :yValue "299775" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Volcano eruption in Ecuador (August 14, 2006)" ;
+    :yValue "299714" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Volcano eruption in Indonesia (April 5, 1982)" ;
+    :yValue "299698" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Volcano eruption in Indonesia (1969)" ;
+    :yValue "249753" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Volcanic eruption in Comoros (November 24, 2005)" ;
+    :yValue "244753" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Volcanic eruption in the Philippines (Feb. 6, 1993..." ;
+    :yValue "164846" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Volcanic eruption in Papua New Guinea (September 1..." ;
+    :yValue "151852" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Volcanic eruption in Indonesia (October 24, 2002)" ;
+    :yValue "137005" ;
+    :belongsTo :Chart .

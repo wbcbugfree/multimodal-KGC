@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Non-English main home languages ranked by number of speakers in Welsh schools in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "geographic region" .
+
+:YAxis a :Axis ;
+    :title "Number of speakers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Polish" ;
+    :yValue "4961" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Arabic" ;
+    :yValue "3484" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bengali" ;
+    :yValue "3019" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Urdu" ;
+    :yValue "1508" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chinese" ;
+    :yValue "1466" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Panjabi" ;
+    :yValue "1242" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Romanian" ;
+    :yValue "1091" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Somali" ;
+    :yValue "852" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Portuguese" ;
+    :yValue "846" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tagalog/Filipino" ;
+    :yValue "83" ;
+    :belongsTo :Chart .

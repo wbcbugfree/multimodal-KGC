@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Total cost of violence to the U.S. economy in 2010 , by static and dynamic indicators (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Economic effect in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Static and dynamic indicators" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "178426.8" ;
+    :yValue "Robbery, property damage (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "71010" ;
+    :yValue "Incarceration, lost work (dynamic)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "56394.9" ;
+    :yValue "Homicide, medical costs (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "48555.9" ;
+    :yValue "Rape, lost productivity (dynamic)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "41684.4" ;
+    :yValue "Legal and judicial, government costs (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "37977.3" ;
+    :yValue "Robbery, property damage (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20498.4" ;
+    :yValue "Homicide, lost productivity (dynamic)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5702.4" ;
+    :yValue "Incarceration, government costs (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "489.6" ;
+    :yValue "Assault, medical costs (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "91.8" ;
+    :yValue "Police, wages (static)" ;
+    :belongsTo :Chart .
