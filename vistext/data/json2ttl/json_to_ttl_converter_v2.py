@@ -403,7 +403,7 @@ class JSONToTTLConverterV2:
             x_clean = str(x)
             y_clean = str(y)
 
-            ttl_lines.append(f":dataPoint{i} a :dataPoint ;")
+            ttl_lines.append(f":DataPoint{i} a :DataPoint ;")
             
             value, is_num = parse_numeric_token(x_clean)
             if is_num:
