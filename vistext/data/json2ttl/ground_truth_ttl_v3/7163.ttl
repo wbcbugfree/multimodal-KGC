@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Proportion of young people reading various media outside of class in the United Kingdom (UK) from 2014 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "media read by young people" .
+
+:YAxis a :Axis ;
+    :title "2017/18" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Text messages" ;
+    :yValue "0.888" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Instant messages" ;
+    :yValue "0.79" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Websites" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lyrics" ;
+    :yValue "0.478" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fiction" ;
+    :yValue "0.549" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Non-fiction" ;
+    :yValue "0.485" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Newspapers" ;
+    :yValue "0.307" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Magazines" ;
+    :yValue "0.348" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Comics" ;
+    :yValue "0.399" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Poems" ;
+    :yValue "0.172" ;
+    :belongsTo :Chart .

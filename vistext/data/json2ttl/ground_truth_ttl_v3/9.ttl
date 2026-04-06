@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Number of car registrations in Europe in 2019 , by segment (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "New registrations in thousands" .
+
+:YAxis a :Axis ;
+    :title "programming language" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2685.29" ;
+    :yValue "Small" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2163.77" ;
+    :yValue "Compact" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2090.17" ;
+    :yValue "Compact SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1922.69" ;
+    :yValue "Small SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1101.78" ;
+    :yValue "Minicar" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "746.61" ;
+    :yValue "Compact premium" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "614.35" ;
+    :yValue "Premium compact SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "540.17" ;
+    :yValue "Midsize premium" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "515.16" ;
+    :yValue "Premium midsize SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "403.92" ;
+    :yValue "Midsize" ;
+    :belongsTo :Chart .

@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Number of visitors to destinations which featured in select screen products before and after the film/TV series release (in thousands) as of 2011" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "After release" .
+
+:YAxis a :Axis ;
+    :title "Title/location/years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1502" ;
+    :yValue "Tomb Raider, Angkor, Cambodia (visitors in 1999 and 2011)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1202" ;
+    :yValue "Heartbeat, Goathland, England (visitors in 1991 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "83" ;
+    :yValue "Alice in Wonderland, Anthony House, England (visitors in 2008 and 2011)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "139" ;
+    :yValue "The Da Vinci Code, Rosslyn Chapel (visiotrs in 2002 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Twilight, Forks, U.S. (visitors in 2008 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "126" ;
+    :yValue "Braveheart, National Wallace Monument, Scotland (visitors in 2007 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "91.58" ;
+    :yValue "Pride and Prejudice (TV version), Lyme Park, England (visitors in 1994 and 1995)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "295" ;
+    :yValue "Winter Sonata, Nami Island, Korea (foreign visitors in 2003 and 2005)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "360.57" ;
+    :yValue "Arn, Skaraborg; Sweden (visitors in1999 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "132" ;
+    :yValue "Harry Potter, Alnwick Castle, England" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Captain Corelli's Mandolin, Kefalonia, Greece (passengers arriving on charter flights/year in 1993 and 2002)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "103" ;
+    :yValue "Miss Potter, Hilltop Farm, England (visitors in 2006 and 2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2504.01" ;
+    :yValue "The Lord of the Rings, New Zealand (international visitors in 1999 and 2008)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "551" ;
+    :yValue "Balamory, Tobermory, Scotland" ;
+    :belongsTo :Chart .

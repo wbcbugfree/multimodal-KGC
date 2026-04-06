@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Top 10 most expensive conditions in U.S. hospitals with an expected payer of Medicare in 2017 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Conditions" .
+
+:YAxis a :Axis ;
+    :title "Costs in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Septicemia" ;
+    :yValue "22795" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Osteoarthritis" ;
+    :yValue "11290" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Heart failure" ;
+    :yValue "9397" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Acute myocardial infarction" ;
+    :yValue "8007" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Spondylopathies/spondyloarthropathy (including infective)" ;
+    :yValue "5791" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Respiratory failure; insufficiency; arrest" ;
+    :yValue "5182" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Coronary atherosclerosis and other heart disease" ;
+    :yValue "5066" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Chronic obstructive pulmonary disease and bronchiectasis" ;
+    :yValue "4981" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cardiac dysrhythmias" ;
+    :yValue "4764" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cerebral infarction" ;
+    :yValue "4607" ;
+    :belongsTo :Chart .

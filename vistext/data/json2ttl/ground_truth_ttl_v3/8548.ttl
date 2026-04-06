@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Merger and acquisitions (M & A) transaction volume in the United Kingdom (UK) in 2018 and 2019 , by city or region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "city or region of United Kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2536" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "989" ;
+    :yValue "South East" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "958" ;
+    :yValue "Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "831" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "657" ;
+    :yValue "Yorkshire and Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "553" ;
+    :yValue "East of England" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "536" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "526" ;
+    :yValue "South West" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "350" ;
+    :yValue "North East" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "252" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "218" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .

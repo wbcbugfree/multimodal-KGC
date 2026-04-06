@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Top ten media markets for the 2016 presidential general election in the United States , as of August 18 , 2016 , by ad airings" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "media market" .
+
+:YAxis a :Axis ;
+    :title "Number of ads aired" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tampa , FL" ;
+    :yValue "6553" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Orlando , FL" ;
+    :yValue "5723" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cleveland , OH" ;
+    :yValue "5092" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Charlotte , NC" ;
+    :yValue "4697" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Palm Beach , FL" ;
+    :yValue "4623" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Las Vegas , NV" ;
+    :yValue "4299" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Columbus , OH" ;
+    :yValue "4267" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Reno , NV" ;
+    :yValue "3903" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Denver , CO" ;
+    :yValue "3590" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Raleigh , NC" ;
+    :yValue "3501" ;
+    :belongsTo :Chart .

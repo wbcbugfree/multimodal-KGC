@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Share of traditional quantitative methods used in the market research industry worldwide in Q3 and Q4 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.79" ;
+    :yValue "Online surveys" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.53" ;
+    :yValue "Mobile surveys" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "CATI**" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Face-to-face" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "CAPI***" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Biometrics/ neuromarketing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Mail" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Automated measures/ People meters" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Other quantitative techniques" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "IVR****" ;
+    :belongsTo :Chart .

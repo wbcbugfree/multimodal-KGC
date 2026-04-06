@@ -1,0 +1,112 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the 20 most popular tourist attractions in the world (according to visitor numbers in 2006)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Tourist attraction" .
+
+:YAxis a :Axis ;
+    :title "Visitors (in millions)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Times Square, New York" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "National Mall & Memorial Park, Washington D.C." ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Disney World's Magic Kingdom, Florida" ;
+    :yValue "16.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Trafalgar Square, London" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Disneyland Park, Anaheim, California" ;
+    :yValue "14.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Niagarafälle, Ontario and New York" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fisherman's Warf/ Golden Gate Bridge, San Francisco" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tokyo Disneyland/ Disney Sea, Tokyo" ;
+    :yValue "12.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Notre Dame de Paris" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Disneyland Paris, Marne-La-Vallee" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "The Great Wall of China, Badaling" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "The Great Smoky Mountain Nationalpark, Tennessee" ;
+    :yValue "9.2" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Universal Studios, Osaka" ;
+    :yValue "8.5" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Basilique du Sacré-Cœur de Montmartre, Paris" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Musée de Louvre, Paris" ;
+    :yValue "7.5" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Everland, South Korea" ;
+    :yValue "7.5" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "The Forbidden City, Beijing" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "The Eiffel Tower, Paris" ;
+    :yValue "6.7" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Universal Studios/ Island of Adventure, Orlando" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Sea World, Orlando" ;
+    :yValue "5.7" ;
+    :belongsTo :Chart .

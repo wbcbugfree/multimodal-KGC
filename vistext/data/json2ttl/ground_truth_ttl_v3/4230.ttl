@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Value of handicrafts exported from Indian between financial year 2011 and 2020 (in billion Indian rupees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Export value in billion Indian rupees" .
+
+:YAxis a :Axis ;
+    :title "Financial year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "126.57" ;
+    :yValue "FY 2020" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "128.35" ;
+    :yValue "FY 2019" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "117.54" ;
+    :yValue "FY 2018" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "129.2" ;
+    :yValue "FY 2017" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "108" ;
+    :yValue "FY 2016" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "84.26" ;
+    :yValue "FY 2015" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "91.3" ;
+    :yValue "FY 2014" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "53.77" ;
+    :yValue "FY 2013" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "47.61" ;
+    :yValue "FY 2012" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "34.63" ;
+    :yValue "FY 2011" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Zinc production value in Canada in 2019 , by province (in 1,000 Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Production in 1,000 Canadian dollars" .
+
+:YAxis a :Axis ;
+    :title "province of Canada" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Nunavut" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "142750" ;
+    :yValue "Quebec" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "246073" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "231189" ;
+    :yValue "Northwest Territories" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "381257" ;
+    :yValue "Saskatchewan" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Yukon" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "30092" ;
+    :yValue "Yukon" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Nova Scotia" ;
+    :belongsTo :Chart .

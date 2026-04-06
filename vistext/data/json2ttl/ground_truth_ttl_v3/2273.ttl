@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Budget of the Department of Homeland Security in the fiscal year of 2021 , by organization (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Budget authority in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Organization" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "18209.97" ;
+    :yValue "Cybersecurity and Infrastructure Security Agency" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14533.08" ;
+    :yValue "U.S. Coast Guard" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12261.14" ;
+    :yValue "Federal Emergency Management Agency" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "10416.16" ;
+    :yValue "Countering Weapons of Mass Destruction" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8241.79" ;
+    :yValue "Management Directorate" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4075.09" ;
+    :yValue "Federal Law Enforcement Training Centers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3350.39" ;
+    :yValue "Transportation Security Administration" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1757.8" ;
+    :yValue "U.S. Customs and Border Protection" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "643.73" ;
+    :yValue "Office of Inspector General" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "377.16" ;
+    :yValue "U.S. Immigration and Customs Enforcement" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "331.48" ;
+    :yValue "U.S. Citizenship and Immigration Services" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "312.64" ;
+    :yValue "U.S. Immigration and Customs Enforcement" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "177.78" ;
+    :yValue "Science and Technology Directorate" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "150.36" ;
+    :yValue "Office of the Secretary and Executive Management" ;
+    :belongsTo :Chart .

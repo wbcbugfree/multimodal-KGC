@@ -1,0 +1,72 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Channels used to purchase products according to internet users in the United States as of March 2019 , by category" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Physical store" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Books" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.65" ;
+    :yValue "Clothing and apparel" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.76" ;
+    :yValue "Consumer packaged goods" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.83" ;
+    :yValue "Food/grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Furniture" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Household goods" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Luxury goods" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.51" ;
+    :yValue "Office supplies" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Pet supplies" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Sporting goods" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Tools and home improvement" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.69" ;
+    :yValue "Health and beauty" ;
+    :belongsTo :Chart .

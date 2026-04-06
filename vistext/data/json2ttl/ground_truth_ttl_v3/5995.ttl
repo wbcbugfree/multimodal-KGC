@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Share of American women who have given oral sex to a female in their lifetime , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age group" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "14-15" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "16-17" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18-19" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "20-24" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "25-29" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "30-39" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "40-49" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "50-59" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "60-69" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "70 and older" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Average number of search terms for online search queries in Canada as of January 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of searches" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "One word" ;
+    :yValue "0.191" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Two words" ;
+    :yValue "0.4562" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Three words" ;
+    :yValue "0.2184" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Four words" ;
+    :yValue "0.072" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Five words" ;
+    :yValue "0.0318" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Six words" ;
+    :yValue "0.0146" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Seven words" ;
+    :yValue "0.0073" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Eight words" ;
+    :yValue "0.0039" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nine words" ;
+    :yValue "0.0021" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ten or more words" ;
+    :yValue "0.0027" ;
+    :belongsTo :Chart .

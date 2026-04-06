@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Top ten countries of birth for foreign-born people in Canada in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of people residing in Canada" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "668565" ;
+    :yValue "India" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "649260" ;
+    :yValue "China" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "588305" ;
+    :yValue "Philippines" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "499115" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "253715" ;
+    :yValue "United States" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "236640" ;
+    :yValue "Italy" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "208940" ;
+    :yValue "Hong Kong" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "202260" ;
+    :yValue "Pakistan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "169250" ;
+    :yValue "Viet Nam" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "154425" ;
+    :yValue "Iran" ;
+    :belongsTo :Chart .

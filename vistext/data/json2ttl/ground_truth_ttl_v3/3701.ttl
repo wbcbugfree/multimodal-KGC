@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :LineChart ;
+    :title "Number of Kia cars sold in Italy from 2011 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Units sold" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "19454" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "27062" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "29913" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "32736" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "39044" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "45154" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "47957" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "47757" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "47762" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2019" ;
+    :yValue "35454" ;
+    :belongsTo :Chart .

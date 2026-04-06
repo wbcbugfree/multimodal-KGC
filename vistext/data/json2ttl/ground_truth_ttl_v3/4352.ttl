@@ -1,0 +1,112 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Gross domestic product of Ontario , Canada in 2019 , by industry (in million chained 2012 Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Industry" .
+
+:YAxis a :Axis ;
+    :title "GDP in million chained 2012 Canadian dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Real estate and rental and leasing" ;
+    :yValue "96526" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "89281.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Finance and insurance" ;
+    :yValue "69833.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Professional, scientific and technical services" ;
+    :yValue "53746.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Public administration" ;
+    :yValue "53333.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Health care and social assistance" ;
+    :yValue "51032.2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "50792.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wholesale trade x None val" ;
+    :yValue "47989.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Educational services" ;
+    :yValue "42663.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Retail trade" ;
+    :yValue "37948" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Transportation and warehousing" ;
+    :yValue "29849.6" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Information and cultural industries" ;
+    :yValue "28697.6" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Administrative and support, waste management and remediation services" ;
+    :yValue "23607" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Accommodation and food services" ;
+    :yValue "15733.3" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Utilities" ;
+    :yValue "14363.7" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Other services (except public administration)" ;
+    :yValue "13764" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Agriculture, forestry, fishing and hunting" ;
+    :yValue "8635.7" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Mining, quarrying, and oil and gas extraction" ;
+    :yValue "6653.9" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Arts, entertainment and recreation" ;
+    :yValue "6424.6" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Management of companies and enterprises" ;
+    :yValue "3846.8" ;
+    :belongsTo :Chart .

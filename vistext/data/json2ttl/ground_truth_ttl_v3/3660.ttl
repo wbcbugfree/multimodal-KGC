@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :AreaChart ;
+    :title "Spending on chilled quiches and flans in the United Kingdom from December 2007 to December 2019 (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "day" .
+
+:YAxis a :Axis ;
+    :title "Spend in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 04, 2007" ;
+    :yValue "145.15" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nov 29, 2008" ;
+    :yValue "146.88" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 26, 2009" ;
+    :yValue "145" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 25, 2010" ;
+    :yValue "147.76" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 24, 2011" ;
+    :yValue "145.67" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jan 07, 2012" ;
+    :yValue "145.82" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Feb 02, 2013" ;
+    :yValue "150.76" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Feb 01, 2014" ;
+    :yValue "166.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jan 31, 2015" ;
+    :yValue "170.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jan 02, 2016" ;
+    :yValue "171.85" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "172.81" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Dec 30, 2017" ;
+    :yValue "185.67" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Dec 29, 2018" ;
+    :yValue "190.74" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Dec 28, 2019" ;
+    :yValue "188.09" ;
+    :belongsTo :Chart .

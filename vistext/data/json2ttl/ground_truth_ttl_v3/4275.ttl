@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading ten markets for the export of champagne from France in 2018 (in millions of 75 cl . bottles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of bottles in millions" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26.76" ;
+    :yValue "Belgium" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "23.71" ;
+    :yValue "China and Taiwan" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13.59" ;
+    :yValue "Japan" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12.14" ;
+    :yValue "Switzerland" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9.09" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8.38" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.36" ;
+    :yValue "Spain" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.78" ;
+    :yValue "Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4.65" ;
+    :yValue "USA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.16" ;
+    :yValue "Italy" ;
+    :belongsTo :Chart .

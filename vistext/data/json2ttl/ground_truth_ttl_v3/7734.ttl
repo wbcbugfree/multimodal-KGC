@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Migration flow of foreign nationals in Spain from 2010 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Inflow" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2019" ;
+    :yValue "309874" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2018" ;
+    :yValue "559309" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "454424" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2016" ;
+    :yValue "352174" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2015" ;
+    :yValue "290005" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2014" ;
+    :yValue "264485" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2013" ;
+    :yValue "248350" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2012" ;
+    :yValue "272489" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2011" ;
+    :yValue "335893" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2010" ;
+    :yValue "330286" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Share of online users in the United States who use selected social media platforms as of 3rd quarter 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Q4 2018" .
+
+:YAxis a :Axis ;
+    :title "Platform" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "YouTube" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Instagram" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Twitter" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Pinterest" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "LinkedIn" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Reddit" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Snapchat" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "WhatsApp" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Tumblr" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Periscope" ;
+    :belongsTo :Chart .

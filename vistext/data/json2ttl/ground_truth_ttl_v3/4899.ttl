@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading electric utilities based on the number of customers in the United States in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of consumers in thousands" .
+
+:YAxis a :Axis ;
+    :title "electric utility" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5061483" ;
+    :yValue "Florida Power & Light Co" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4120399" ;
+    :yValue "Southern California Edison Co" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2773146" ;
+    :yValue "Consolidated Edison Co-NY Inc" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2730588" ;
+    :yValue "Commonwealth Edison Co" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2635291" ;
+    :yValue "Pacific Gas & Electric Co" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2572624" ;
+    :yValue "Georgia Power Co" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2505988" ;
+    :yValue "Virginia Electric & Power Co" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2209021" ;
+    :yValue "DTE Electric Company" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2047365" ;
+    :yValue "Duke Energy Carolinas, LLC" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2034027" ;
+    :yValue "Public Service Elec & Gas Co" ;
+    :belongsTo :Chart .

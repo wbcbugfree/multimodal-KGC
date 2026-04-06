@@ -1,0 +1,52 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Annual net revenue of Jumia Technologies AG from 2017 to 2019 , by segment (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "Jumia Technologies AG marketplace segment" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "81.2" ;
+    :yValue "1P sales of goods" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Commissions" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "26.9" ;
+    :yValue "Fulfillment" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6.1" ;
+    :yValue "Marketing & Advertising" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20.5" ;
+    :yValue "Other services – value-added services" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "78.5" ;
+    :yValue "Total revenue related to third-party sales" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "159.6" ;
+    :yValue "Platform revenue (1P + 3P)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.8" ;
+    :yValue "Other services – non-platform revenue" ;
+    :belongsTo :Chart .

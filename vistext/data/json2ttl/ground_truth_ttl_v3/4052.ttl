@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Net sales growth of the world 's leading 10 consumer products companies in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (Country of origin)" .
+
+:YAxis a :Axis ;
+    :title "Net sales growth" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Samsung Electronics (South Korea)" ;
+    :yValue "0.137" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Apple (United States)" ;
+    :yValue "0.092" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nestlé (Switzerland)" ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Procter & Gamble (United States)" ;
+    :yValue "-0.013" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sony (Japan)" ;
+    :yValue "0.174" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "PepsiCo (United States)" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Unilever (Netherlands and U.K.)" ;
+    :yValue "-0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "LG Electronics" ;
+    :yValue "0.141" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "The Coca-Cola Company (United States)" ;
+    :yValue "-0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "JBS S.A. (Brazil)" ;
+    :yValue "0.227" ;
+    :belongsTo :Chart .

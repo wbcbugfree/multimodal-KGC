@@ -1,0 +1,42 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Average retail price for peanut butter in Canada from January 2015 to June 2020 (in Canadian dollars per 500 grams)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jun" ;
+    :yValue "2.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "May" ;
+    :yValue "2.98" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Apr" ;
+    :yValue "2.79" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mar" ;
+    :yValue "2.82" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Feb" ;
+    :yValue "2.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jan" ;
+    :yValue "2.83" ;
+    :belongsTo :Chart .

@@ -1,0 +1,92 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Rate of unemployment in Canada in 2019 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "Unemployment rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Forestry, fishing, mining, quarrying, oil and gas" ;
+    :yValue "0.073" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Business, building and other support services" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Accommodation and food services" ;
+    :yValue "0.055" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Information, culture and recreation" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Agriculture" ;
+    :yValue "0.044" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wholesale and retail trade" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Educational services" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Transportation and warehousing" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other services (except public administration)" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Professional, scientific and technical services" ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Public administration" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Utilities" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Finance, insurance, real estate, rental and leasing" ;
+    :yValue "0.016" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Health care and social assistance" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .

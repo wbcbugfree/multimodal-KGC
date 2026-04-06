@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Number of book readers in Italy in 2019 , by occupation and number of books read (in 1,000 readers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "occupation" .
+
+:YAxis a :Axis ;
+    :title "From 1 to 3 books" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Middle management, white collar" ;
+    :yValue "2323" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Retired" ;
+    :yValue "1345" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Student" ;
+    :yValue "1164" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Housewife" ;
+    :yValue "976" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Executive, employer, professional" ;
+    :yValue "601" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Unemployed person with work experience" ;
+    :yValue "645" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Blue collar, apprentice" ;
+    :yValue "1206" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Self-employed, family worker" ;
+    :yValue "470" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Unemployed person without work experience" ;
+    :yValue "128" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other condition" ;
+    :yValue "97" ;
+    :belongsTo :Chart .

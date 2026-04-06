@@ -1,0 +1,62 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "Leading value retail centres in the United Kingdom (UK) in 2013 , ranked by number of stores" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading value retail centres" .
+
+:YAxis a :Axis ;
+    :title "Number of stores" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Blackpool" ;
+    :yValue "314" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Doncaster" ;
+    :yValue "288" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Huddersfield" ;
+    :yValue "266" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Romford" ;
+    :yValue "224" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Burton-upon-Trent" ;
+    :yValue "224" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Southport" ;
+    :yValue "220" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sunderland" ;
+    :yValue "220" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wakefield x None val" ;
+    :yValue "206" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Newport" ;
+    :yValue "205" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bradford" ;
+    :yValue "200" ;
+    :belongsTo :Chart .

@@ -1,0 +1,82 @@
+@prefix : <http://example.org/> .
+
+:Chart a :BarChart ;
+    :title "What keeps you from joining a health club now ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Too expensive / cannot afford it" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "I exercise somewhere else for free" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "No time" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "I do not exercise" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "I would feel out of place" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "I participate in another type of exercise outside the health club" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "There is no health club located close to me" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "It's too crowded" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Nobody I know goes to a health club" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "I don't know what I would do there" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "I have an injury / surgery / other condition and therefore cannot join a health club" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "I am too out of shape to even think about it" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "I am not sure there is someone there to guide" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "I might hurt myself" ;
+    :belongsTo :Chart .
