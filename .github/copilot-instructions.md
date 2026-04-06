@@ -5,7 +5,8 @@
 This repository does **not** use a centralized build system, linter, or automated test suite.
 Validation is done by running dataset-specific scripts and representative smoke tests.
 
-Use the canonical lowercase underscore-separated dataset paths in examples and code changes.
+Use `python` in Windows shells and `python3` in Linux/macOS shells.  
+Use canonical lowercase underscore-separated dataset paths in commands and code changes.
 
 ### Representative single-run smoke tests
 
@@ -28,8 +29,11 @@ python "diagram2graph_dataset/json2ttl/script.py" \
 ### Evaluation entry points (folder-to-folder checks)
 
 ```bash
-python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py"
-python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py"
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py" \
+  --output-csv ".tmp/metrics.csv"
+
+python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py" \
+  --output-csv ".tmp/node-edge.csv"
 ```
 
 ### Main CLI entry points
@@ -41,6 +45,11 @@ python "diagram2graph_dataset/json2ttl/script.py" --help
 python "diagram2graph_dataset/evaluation/f1_score/evaluate_metrics.py" --help
 python "diagram2graph_dataset/evaluation/f1_score/evaluate_node_edge_sep.py" --help
 ```
+
+### Dependency caveat for Gemini scripts
+
+`requirements.txt` is intentionally minimal and does not include the Gemini SDK used by `vistext/extract_rdf_ttl/gemini_vistext_runner_core.py` (`from google import genai`).
+Install it separately when running Gemini extraction scripts.
 
 ## High-level architecture
 
@@ -61,10 +70,13 @@ Each dataset broadly follows:
 
 Most execution in this repo is notebook-driven; standalone Python scripts are primarily converters, evaluators, and data-fixing utilities.
 
-Across scripts, there are two shared architecture patterns worth preserving:
+Across scripts, there are shared architecture patterns worth preserving:
 
 1. VisText Gemini runners (`vistext/extract_rdf_ttl/gemini_vistext_*.py`) are thin strategy wrappers over `gemini_vistext_runner_core.py`. The core handles sampling, request execution, Turtle validation, and manifest upserts.
-2. Path and secret resolution is centralized in `common/paths.py` and `common/config.py`; scripts should prefer these helpers over hardcoded machine-local paths.
+2. Dynamic one-shot (`gemini_vistext_oneshot_dynamic.py`) adds an upfront chart-type classification step (`prompt_text/dynamic_oneshot/categorize_viz.py`) before selecting chart-specific system prompts and examples.
+3. `manifest.json` in each VisText output directory is the run ledger; items are upserted per `img_id` with statuses such as `saved`, `invalid_ttl`, `api_error`, and `skipped_existing`.
+4. Path and secret resolution is centralized in `common/paths.py` and `common/config.py`; scripts should prefer these helpers over hardcoded machine-local paths.
+5. diagram2graph evaluators in `evaluation/f1_score/` compare matching filename-based TTL pairs, with defaults tied to `json2ttl/out_folder` and `prompt_engineering/zeroshot_outputs`.
 
 ## Key codebase conventions
 
@@ -83,6 +95,9 @@ Across scripts, there are two shared architecture patterns worth preserving:
   - selected Soil evaluation staging packets
 
 - Secrets are loaded from env vars and/or the top-level gitignored `config` file; env values override file values (`common/config.py`).
+- Prefer setting `GEMINI_API_KEY`; `get_api_key("gemini_api_key")` accepts multiple key-name variants.
 - Keep output schema expectations stable when changing converters:
   - VisText converter V2 intentionally maps `datatable` + `caption_L1` into `chart:` Turtle output.
   - diagram2graph conversion/evaluation depends on node/edge field names such as `type_of_node`, `type_of_edge`, and `relationship_type`.
+- `diagram2graph_dataset/json2ttl/script.py` currently infers `diagram_id` with `re.search(r"(\\d+)", input_json_path.stem)`; when no match is found, IRIs fall back to `/diagram/diagram/...`.
+- When prose docs and executable scripts disagree, trust current filesystem state and script behavior.

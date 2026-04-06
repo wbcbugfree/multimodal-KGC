@@ -68,22 +68,6 @@ def single_token_string(date_str: str) -> str:
     return re.sub(combined_pattern, lambda m: m.group().replace(' ', '@'), date_str)
 
 
-def truncate_end(text: str, max_length: int = 35) -> str:
-    """Truncate at the end and add '...'."""
-    return text if len(text) <= max_length else text[:max_length] + "..."
-
-
-def truncate_middle(text: str, max_length: int = 120) -> str:
-    """Truncate in the middle and add '...' (keeps start + end)."""
-    if len(text) <= max_length:
-        return text
-    if max_length <= 3:
-        return text[:max_length]
-    front = (max_length - 3) // 2 + (max_length - 3) % 2
-    back = (max_length - 3) // 2
-    return text[:front].rstrip() + "..." + text[-back:].lstrip()
-
-
 def _label_words(label: str) -> List[str]:
     """Tokenize a label into alphanumeric words (for URI local-names)."""
     return re.findall(r"[A-Za-z0-9]+", label)
@@ -337,13 +321,9 @@ class JSONToTTLConverterV2:
     def __init__(
         self,
         base_uri: str = "http://example.org/",
-        truncate_point_label_len: int = 50,
-        truncate_title_len: int = 150,
         sort_points: bool = False,  # Don't sort to preserve original order
     ):
         self.base_uri_template = base_uri
-        self.truncate_point_label_len = truncate_point_label_len
-        self.truncate_title_len = truncate_title_len
         self.sort_points = sort_points
 
     def convert_json_to_ttl(self, json_data: Dict[str, Any]) -> str:
@@ -392,7 +372,7 @@ class JSONToTTLConverterV2:
         ]
         
         if title:
-            ttl_lines.append(f'    :title "{escape_ttl_string(truncate_middle(title, self.truncate_title_len))}" ;')
+            ttl_lines.append(f'    :title "{escape_ttl_string(title)}" ;')
         
         ttl_lines.append(f"    :xAxis :XAxis ;")
         ttl_lines.append(f"    :yAxis :YAxis .")
@@ -420,8 +400,8 @@ class JSONToTTLConverterV2:
 
         # data points - using chart:category and chart:value (with #-based URIs)
         for i, (x, y) in enumerate(points, start=1):
-            x_clean = truncate_end(str(x), self.truncate_point_label_len)
-            y_clean = truncate_end(str(y), self.truncate_point_label_len)
+            x_clean = str(x)
+            y_clean = str(y)
 
             ttl_lines.append(f":dataPoint{i} a :dataPoint ;")
             
@@ -457,7 +437,7 @@ class JSONToTTLConverterV2:
 
         return output_file_path
 
-    def convert_directory(self, input_dir: str, output_dir: Optional[str] = None) -> None:
+    def convert_directory(self, input_dir: str, output_dir: Optional[str] = None) -> Dict[str, Any]:
         if output_dir is None:
             output_dir = input_dir
 
@@ -468,6 +448,8 @@ class JSONToTTLConverterV2:
 
         converted = 0
         errors = 0
+        converted_files: List[str] = []
+        error_details: List[Dict[str, str]] = []
         for json_file in json_files:
             input_path = os.path.join(input_dir, json_file)
             output_filename = os.path.splitext(json_file)[0] + ".ttl"
@@ -476,11 +458,34 @@ class JSONToTTLConverterV2:
             try:
                 self.convert_file(input_path, output_path)
                 converted += 1
+                converted_files.append(output_filename)
             except Exception as e:
                 print(f"Error converting {json_file}: {e}")
                 errors += 1
-        
+                if os.path.exists(output_path):
+                    os.remove(output_path)
+                error_details.append(
+                    {
+                        "file": json_file,
+                        "error": str(e),
+                    }
+                )
+
+        report = {
+            "input_dir": input_dir,
+            "output_dir": output_dir,
+            "converted": converted,
+            "errors": errors,
+            "converted_files": converted_files,
+            "error_details": error_details,
+        }
+        report_path = os.path.join(output_dir, "exceptions_report.json")
+        with open(report_path, "w", encoding="utf-8") as handle:
+            json.dump(report, handle, ensure_ascii=False, indent=2)
+
         print(f"Converted {converted} files, {errors} errors")
+        print(f"Exception report written to: {report_path}")
+        return report
 
 
 def main() -> int:
@@ -490,14 +495,10 @@ def main() -> int:
     parser.add_argument("input", help="Input JSON file or a directory containing JSON files")
     parser.add_argument("-o", "--output", help="Output TTL file (if input is a file) OR output directory (if input is a directory)")
     parser.add_argument("--sort", action="store_true", help="Alphabetically sort data points by category")
-    parser.add_argument("--truncate-label", type=int, default=50, help="Max chars for each category label")
-    parser.add_argument("--truncate-title", type=int, default=150, help="Max chars for title")
 
     args = parser.parse_args()
 
     converter = JSONToTTLConverterV2(
-        truncate_point_label_len=args.truncate_label,
-        truncate_title_len=args.truncate_title,
         sort_points=args.sort,
     )
 
