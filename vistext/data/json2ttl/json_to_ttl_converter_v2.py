@@ -42,15 +42,30 @@ def single_token_string(date_str: str) -> str:
     
     patterns = [
         r'[A-Z][a-z]{2} \d{1,2}, \d{4}',     # e.g. Dec 31, 2020
+        r'{months} \d{{1,2}}'.format(months=months),  # e.g. Mar 23
         r'FY \d{4}',                         # e.g. FY 2017
         r'Q[1-4] \d{4}\*?',                  # e.g. Q1 2020 or Q2 2023*
         r'\d{4} / \d{4}\*?',                 # e.g. 2019 / 2020 or 2019 / 2020*
         r'\d+ to \d+ years',                 # e.g. 1 to 5 years
         r'\d+ years and more',                # e.g. 75 years and more
+        r'\d+ years and older',
+        r'\d+ years old and over',
         r'\d+ years or older',
         r'\d+ years or younger',
         r'Younger than \d+ years',              # e.g. Younger than 18 years
+        r'Younger than \d+ years old',
         r'Younger than \d+',              # e.g. Younger than 18
+        r'\d+ to \d+ years old',
+        r'\d+\s*-\s*\d+\s+years\s+old',
+        r'\(\d+ years and older\)',
+        r'Total \(\d+ countries\)',
+        r'(?:Richest|Poorest) \d+% \(income\)',
+        r'Avengers: Infinity War',
+        r'BBC Radio \d+(?: [A-Za-z]+)*',
+        r'BBC [1-9] [A-Za-z]+',
+        r'Rema \d+ AS',
+        r'\d{4} and \d{4}',
+        r'in\d{4} and \d{4}',
         r'\d+ to \d+ people',
         r'Greater than \d+ people',
         r'Less than \d+ people',
@@ -165,6 +180,8 @@ class PropertiesInfo:
     title: str = ""
     x_label: str = ""
     y_label: str = ""
+    x_scale: str = ""
+    y_scale: str = ""
 
 def parse_L1_properties(l1_properties: list) -> PropertiesInfo:
     info = PropertiesInfo()
@@ -175,8 +192,20 @@ def parse_L1_properties(l1_properties: list) -> PropertiesInfo:
     info.title = l1_properties[1].strip()
     info.x_label = l1_properties[2].strip()
     info.y_label = l1_properties[3].strip()
+    if len(l1_properties) > 4:
+        info.x_scale = str(l1_properties[4]).strip()
+    if len(l1_properties) > 5:
+        info.y_scale = str(l1_properties[5]).strip()
     
     return info
+
+def axis_kind_from_scale(scale_text: str) -> str:
+    txt = (scale_text or "").lower()
+    if "categorical" in txt:
+        return "categorical"
+    if "linear" in txt or "logarith" in txt:
+        return "numeric"
+    return "unknown"
 
 def chart_type_string(chart_type: str) -> str:
     """Return chart type string for TTL."""
@@ -196,6 +225,8 @@ def parse_datatable(
     datatable: str,
     x_label_hint: str = "",
     y_label_hint: str = "",
+    x_scale_hint: str = "",
+    y_scale_hint: str = "",
 ) -> Tuple[str, str, str, List[Tuple[str, str]]]:
     """
     Parse datatable into:
@@ -263,20 +294,36 @@ def parse_datatable(
         raise ValueError(f"Labels are mostly numeric in datatable: {tokens[data_start:data_start+10]}, cannot reliably parse data points, and no known patterns detected")
 
     
-    first_token_after_y_label = tokens[data_start]    
-    _, is_num = parse_numeric_token(first_token_after_y_label)
-    if is_num:
+    x_axis_kind = axis_kind_from_scale(x_scale_hint)
+    y_axis_kind = axis_kind_from_scale(y_scale_hint)
+    if x_axis_kind == "categorical" and y_axis_kind == "numeric":
+        labels_first = True
+    elif x_axis_kind == "numeric" and y_axis_kind == "categorical":
         labels_first = False
     else:
-        labels_first = True
+        first_token_after_y_label = tokens[data_start]
+        _, is_num = parse_numeric_token(first_token_after_y_label)
+        labels_first = not is_num
 
     if labels_first:
         # Parse rows: (words...) + (number) repeating
         points: List[Tuple[str, str]] = []
         x_parts: List[str] = []
-        for tok in tokens[data_start:]:
+        sequence = tokens[data_start:]
+        for i, tok in enumerate(sequence):
             val, is_num = parse_numeric_token(tok)
+            next_is_num = (
+                i + 1 < len(sequence)
+                and parse_numeric_token(sequence[i + 1])[1]
+            )
             if is_num:
+                numeric_in_label = (
+                    (x_parts and next_is_num)
+                    or (not x_parts and i + 1 < len(sequence) and not next_is_num)
+                )
+                if numeric_in_label:
+                    x_parts.append(tok)
+                    continue
                 if x_parts:
                     points.append((" ".join(x_parts), val))
                     x_parts = []
@@ -296,7 +343,8 @@ def parse_datatable(
             val, is_num = parse_numeric_token(tok)
             if is_num:
                 if y_parts:
-                    points.append((current_value, " ".join(y_parts)))
+                    if current_value is not None:
+                        points.append((current_value, " ".join(y_parts)))
                     y_parts = []
 
                 current_value = val
@@ -357,6 +405,8 @@ class JSONToTTLConverterV2:
             datatable,
             x_label_hint=properties.x_label,
             y_label_hint=properties.y_label,
+            x_scale_hint=properties.x_scale,
+            y_scale_hint=properties.y_scale,
         )
 
         title = properties.title or dt_title or ""
