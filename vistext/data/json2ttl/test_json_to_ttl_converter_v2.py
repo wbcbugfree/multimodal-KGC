@@ -47,6 +47,16 @@ class JsonToTTLConverterV2RegressionTests(unittest.TestCase):
         self.assertIn(':xValue "Ashley Young"', ttl)
         self.assertNotIn(':xValue "omelu Lukaku"', ttl)
 
+    def test_axis_headers_do_not_leak_into_first_line_datapoint(self):
+        ttl = self._ttl_for(8564)
+        self.assertIn(':xValue "Dec 31, 2008"', ttl)
+        self.assertNotIn(':xValue "Year 65 years and older Dec 31, 2008"', ttl)
+
+    def test_bar_header_strip_does_not_flip_numeric_and_categorical_fields(self):
+        ttl = self._ttl_for(3605)
+        self.assertIn(':xValue "123" ;\n    :yValue "George Washington *"', ttl)
+        self.assertNotIn(':xValue "George Washington *" ;\n    :yValue "0"', ttl)
+
     def test_year_mapping_guard_is_preserved(self):
         ttl = self._ttl_for(1358)
         self.assertIn(':xValue "10.15" ;\n    :yValue "2025*"', ttl)

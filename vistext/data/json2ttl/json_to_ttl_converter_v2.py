@@ -87,6 +87,21 @@ def protect_label_phrases(text: str, phrases: List[str]) -> str:
     return protected
 
 
+def strip_datatable_header_prefix(text: str, x_label_hint: str, y_label_hint: str) -> str:
+    """Remove an exact leading header prefix such as `x_label y_label`."""
+    compact = " ".join(text.split())
+    candidates = [
+        " ".join(filter(None, [x_label_hint.strip(), y_label_hint.strip()])),
+        " ".join(filter(None, [y_label_hint.strip(), x_label_hint.strip()])),
+    ]
+    for candidate in sorted({candidate for candidate in candidates if candidate}, key=len, reverse=True):
+        if compact == candidate:
+            return ""
+        if compact.startswith(candidate + " "):
+            return compact[len(candidate) + 1 :]
+    return compact
+
+
 def _label_words(label: str) -> List[str]:
     """Tokenize a label into alphanumeric words (for URI local-names)."""
     return re.findall(r"[A-Za-z0-9]+", label)
@@ -454,13 +469,15 @@ def parse_datatable(
         title = ""
         data_section = datatable.strip()
 
-    if protected_label_phrases:
-        data_section = protect_label_phrases(data_section, protected_label_phrases)
-    data_section = single_token_string(data_section)
-
     lines = [ln.strip() for ln in data_section.splitlines() if ln.strip()]
     if len(lines) > 1:
         data_section = " ".join(lines[1:])
+
+    data_section = strip_datatable_header_prefix(data_section, x_label_hint, y_label_hint)
+
+    if protected_label_phrases:
+        data_section = protect_label_phrases(data_section, protected_label_phrases)
+    data_section = single_token_string(data_section)
 
     data_section = " ".join(data_section.split())
     tokens = data_section.split()
@@ -476,7 +493,10 @@ def parse_datatable(
     y_seq = [_norm_token(t) for t in y_label.split()]
     idx = _find_subsequence(norm_tokens, y_seq)
     if idx is not None:
-        data_start = idx + len(y_seq)
+        prefix_tokens = tokens[:idx]
+        prefix_has_numeric = any(parse_numeric_token(token)[1] for token in prefix_tokens)
+        if not prefix_has_numeric:
+            data_start = idx + len(y_seq)
 
     if data_start >= len(tokens):
         return title, x_label, y_label, []
