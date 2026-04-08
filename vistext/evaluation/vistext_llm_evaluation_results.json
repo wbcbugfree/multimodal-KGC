@@ -1,0 +1,639 @@
+{
+  "generated_at_utc": "2026-04-08T19:50:45.702922+00:00",
+  "gold_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\data\\json2ttl\\ground_truth_ttl",
+  "extract_root": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl",
+  "labels_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\data\\labels",
+  "metrics_used": [
+    "triple_match_micro_prf",
+    "triple_match_accuracy",
+    "graph_match_accuracy",
+    "rouge",
+    "bleu",
+    "bert_score",
+    "normalized_ged"
+  ],
+  "excluded_metrics": [
+    "optimal_edit_path",
+    "hallucination",
+    "omission"
+  ],
+  "metric_parameters": {
+    "ged": {
+      "check_interval": 5.0,
+      "stable_threshold": 3,
+      "max_time": 120.0
+    }
+  },
+  "strategies": {
+    "zeroshot": {
+      "strategy": "zeroshot",
+      "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs",
+      "intersection_ids": [
+        "315",
+        "1248",
+        "3107",
+        "6479",
+        "7416"
+      ],
+      "intersection_size": 5,
+      "summary": {
+        "triple_match_micro": {
+          "precision": 0.8028455284552846,
+          "recall": 0.8028455284552846,
+          "f1": 0.8028455284552846
+        },
+        "triple_match_accuracy_mean": 0.8376885369532429,
+        "graph_match_accuracy": 0.4,
+        "rouge": {
+          "precision": 0.9912907031792765,
+          "recall": 0.9912907031792765,
+          "f1": 0.9912907031792765
+        },
+        "bleu": {
+          "precision": 0.9885581430835447,
+          "recall": 0.9885581430835447,
+          "f1": 0.9885581430835447
+        },
+        "bert_score": {
+          "precision": 0.9990053753192968,
+          "recall": 0.9990053753192968,
+          "f1": 0.9990053753192968
+        },
+        "normalized_ged_mean": 0.07594151259814885
+      },
+      "per_image": [
+        {
+          "img_id": "315",
+          "triple_match_accuracy": 0.7610294117647058,
+          "rouge": {
+            "precision": 0.9758467612406158,
+            "recall": 0.9758467612406158,
+            "f1": 0.9758467612406158
+          },
+          "bleu": {
+            "precision": 0.9848415490210213,
+            "recall": 0.9848415490210213,
+            "f1": 0.9848415490210213
+          },
+          "bert_score": {
+            "precision": 0.9988513779552544,
+            "recall": 0.9988513779552544,
+            "f1": 0.9988513779552544
+          },
+          "normalized_ged": 0.12781954887218044
+        },
+        {
+          "img_id": "1248",
+          "triple_match_accuracy": 0.8088235294117647,
+          "rouge": {
+            "precision": 0.9943189866245776,
+            "recall": 0.9943189866245776,
+            "f1": 0.9943189866245776
+          },
+          "bleu": {
+            "precision": 0.9883636362559498,
+            "recall": 0.9883636362559498,
+            "f1": 0.9883636362559498
+          },
+          "bert_score": {
+            "precision": 0.9992084459346884,
+            "recall": 0.9992084459346884,
+            "f1": 0.9992084459346884
+          },
+          "normalized_ged": 0.13559322033898305
+        },
+        {
+          "img_id": "3107",
+          "triple_match_accuracy": 1.0,
+          "rouge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bleu": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bert_score": {
+            "precision": 0.9999999633202186,
+            "recall": 0.9999999633202186,
+            "f1": 0.9999999633202186
+          },
+          "normalized_ged": 0.0
+        },
+        {
+          "img_id": "6479",
+          "triple_match_accuracy": 0.8269230769230769,
+          "rouge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bleu": {
+            "precision": 0.9873546616750066,
+            "recall": 0.9873546616750066,
+            "f1": 0.9873546616750066
+          },
+          "bert_score": {
+            "precision": 0.9985709969814007,
+            "recall": 0.9985709969814007,
+            "f1": 0.9985709969814007
+          },
+          "normalized_ged": 0.058823529411764705
+        },
+        {
+          "img_id": "7416",
+          "triple_match_accuracy": 0.7916666666666666,
+          "rouge": {
+            "precision": 0.9862877680311891,
+            "recall": 0.9862877680311891,
+            "f1": 0.9862877680311891
+          },
+          "bleu": {
+            "precision": 0.9822308684657459,
+            "recall": 0.9822308684657459,
+            "f1": 0.9822308684657459
+          },
+          "bert_score": {
+            "precision": 0.9983960924049219,
+            "recall": 0.9983960924049219,
+            "f1": 0.9983960924049219
+          },
+          "normalized_ged": 0.05747126436781609
+        }
+      ]
+    },
+    "oneshot_static": {
+      "strategy": "oneshot_static",
+      "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs",
+      "intersection_ids": [
+        "315",
+        "1248",
+        "3107",
+        "6479",
+        "7416"
+      ],
+      "intersection_size": 5,
+      "summary": {
+        "triple_match_micro": {
+          "precision": 0.8130081300813008,
+          "recall": 0.8130081300813008,
+          "f1": 0.8130081300813008
+        },
+        "triple_match_accuracy_mean": 0.8411010558069382,
+        "graph_match_accuracy": 0.4,
+        "rouge": {
+          "precision": 0.9912261844816252,
+          "recall": 0.9912261844816252,
+          "f1": 0.9912261844816252
+        },
+        "bleu": {
+          "precision": 0.9889944506496007,
+          "recall": 0.9889944506496007,
+          "f1": 0.9889944506496007
+        },
+        "bert_score": {
+          "precision": 0.9990921052557671,
+          "recall": 0.9990921052557671,
+          "f1": 0.9990921052557671
+        },
+        "normalized_ged_mean": 0.07260041655275214
+      },
+      "per_image": [
+        {
+          "img_id": "315",
+          "triple_match_accuracy": 0.7794117647058824,
+          "rouge": {
+            "precision": 0.981058967704729,
+            "recall": 0.981058967704729,
+            "f1": 0.981058967704729
+          },
+          "bleu": {
+            "precision": 0.9868387030753949,
+            "recall": 0.9868387030753949,
+            "f1": 0.9868387030753949
+          },
+          "bert_score": {
+            "precision": 0.9990421209265204,
+            "recall": 0.9990421209265204,
+            "f1": 0.9990421209265204
+          },
+          "normalized_ged": 0.12081984897518878
+        },
+        {
+          "img_id": "1248",
+          "triple_match_accuracy": 0.8235294117647058,
+          "rouge": {
+            "precision": 0.9913047107387847,
+            "recall": 0.9913047107387847,
+            "f1": 0.9913047107387847
+          },
+          "bleu": {
+            "precision": 0.9887536478311327,
+            "recall": 0.9887536478311327,
+            "f1": 0.9887536478311327
+          },
+          "bert_score": {
+            "precision": 0.9992326313958448,
+            "recall": 0.9992326313958448,
+            "f1": 0.9992326313958448
+          },
+          "normalized_ged": 0.12133891213389121
+        },
+        {
+          "img_id": "3107",
+          "triple_match_accuracy": 1.0,
+          "rouge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bleu": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bert_score": {
+            "precision": 0.9999999633202186,
+            "recall": 0.9999999633202186,
+            "f1": 0.9999999633202186
+          },
+          "normalized_ged": 0.0
+        },
+        {
+          "img_id": "6479",
+          "triple_match_accuracy": 0.7692307692307693,
+          "rouge": {
+            "precision": 0.9929655870445344,
+            "recall": 0.9929655870445344,
+            "f1": 0.9929655870445344
+          },
+          "bleu": {
+            "precision": 0.9828823710319896,
+            "recall": 0.9828823710319896,
+            "f1": 0.9828823710319896
+          },
+          "bert_score": {
+            "precision": 0.9984355809596869,
+            "recall": 0.9984355809596869,
+            "f1": 0.9984355809596869
+          },
+          "normalized_ged": 0.0748663101604278
+        },
+        {
+          "img_id": "7416",
+          "triple_match_accuracy": 0.8333333333333334,
+          "rouge": {
+            "precision": 0.990801656920078,
+            "recall": 0.990801656920078,
+            "f1": 0.990801656920078
+          },
+          "bleu": {
+            "precision": 0.9864975313094863,
+            "recall": 0.9864975313094863,
+            "f1": 0.9864975313094863
+          },
+          "bert_score": {
+            "precision": 0.9987502296765646,
+            "recall": 0.9987502296765646,
+            "f1": 0.9987502296765646
+          },
+          "normalized_ged": 0.04597701149425287
+        }
+      ]
+    },
+    "oneshot_dynamic": {
+      "strategy": "oneshot_dynamic",
+      "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_dynamic_outputs",
+      "intersection_ids": [
+        "315",
+        "1248",
+        "3107",
+        "6479",
+        "7416"
+      ],
+      "intersection_size": 5,
+      "summary": {
+        "triple_match_micro": {
+          "precision": 0.7967479674796748,
+          "recall": 0.7967479674796748,
+          "f1": 0.7967479674796748
+        },
+        "triple_match_accuracy_mean": 0.8310708898944192,
+        "graph_match_accuracy": 0.4,
+        "rouge": {
+          "precision": 0.9894922778325164,
+          "recall": 0.9894922778325164,
+          "f1": 0.9894922778325164
+        },
+        "bleu": {
+          "precision": 0.9880892656086276,
+          "recall": 0.9880892656086276,
+          "f1": 0.9880892656086276
+        },
+        "bert_score": {
+          "precision": 0.9990056995274345,
+          "recall": 0.9990056995274345,
+          "f1": 0.9990056995274345
+        },
+        "normalized_ged_mean": 0.06498285002916365
+      },
+      "per_image": [
+        {
+          "img_id": "315",
+          "triple_match_accuracy": 0.7573529411764706,
+          "rouge": {
+            "precision": 0.9774969520832069,
+            "recall": 0.9774969520832069,
+            "f1": 0.9774969520832069
+          },
+          "bleu": {
+            "precision": 0.9846389706934424,
+            "recall": 0.9846389706934424,
+            "f1": 0.9846389706934424
+          },
+          "bert_score": {
+            "precision": 0.9989901612348416,
+            "recall": 0.9989901612348416,
+            "f1": 0.9989901612348416
+          },
+          "normalized_ged": 0.11695278969957082
+        },
+        {
+          "img_id": "1248",
+          "triple_match_accuracy": 0.7794117647058824,
+          "rouge": {
+            "precision": 0.9878095975232197,
+            "recall": 0.9878095975232197,
+            "f1": 0.9878095975232197
+          },
+          "bleu": {
+            "precision": 0.9888521626314533,
+            "recall": 0.9888521626314533,
+            "f1": 0.9888521626314533
+          },
+          "bert_score": {
+            "precision": 0.9992970377206802,
+            "recall": 0.9992970377206802,
+            "f1": 0.9992970377206802
+          },
+          "normalized_ged": 0.09166666666666666
+        },
+        {
+          "img_id": "3107",
+          "triple_match_accuracy": 1.0,
+          "rouge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bleu": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bert_score": {
+            "precision": 0.9999999621739755,
+            "recall": 0.9999999621739755,
+            "f1": 0.9999999621739755
+          },
+          "normalized_ged": 0.0
+        },
+        {
+          "img_id": "6479",
+          "triple_match_accuracy": 0.8269230769230769,
+          "rouge": {
+            "precision": 0.9969635627530363,
+            "recall": 0.9969635627530363,
+            "f1": 0.9969635627530363
+          },
+          "bleu": {
+            "precision": 0.9857007207977143,
+            "recall": 0.9857007207977143,
+            "f1": 0.9857007207977143
+          },
+          "bert_score": {
+            "precision": 0.9985378751387963,
+            "recall": 0.9985378751387963,
+            "f1": 0.9985378751387963
+          },
+          "normalized_ged": 0.058823529411764705
+        },
+        {
+          "img_id": "7416",
+          "triple_match_accuracy": 0.7916666666666666,
+          "rouge": {
+            "precision": 0.9851912768031189,
+            "recall": 0.9851912768031189,
+            "f1": 0.9851912768031189
+          },
+          "bleu": {
+            "precision": 0.9812544739205281,
+            "recall": 0.9812544739205281,
+            "f1": 0.9812544739205281
+          },
+          "bert_score": {
+            "precision": 0.9982034613688787,
+            "recall": 0.9982034613688787,
+            "f1": 0.9982034613688787
+          },
+          "normalized_ged": 0.05747126436781609
+        }
+      ],
+      "chart_type_classification": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "confusion_matrix": {
+          "bar": {
+            "bar": 2,
+            "line": 0,
+            "area": 0
+          },
+          "line": {
+            "bar": 0,
+            "line": 1,
+            "area": 0
+          },
+          "area": {
+            "bar": 0,
+            "line": 0,
+            "area": 2
+          }
+        },
+        "per_image": [
+          {
+            "img_id": "315",
+            "predicted_chart_type": "area",
+            "gold_chart_type": "area",
+            "correct": true
+          },
+          {
+            "img_id": "1248",
+            "predicted_chart_type": "area",
+            "gold_chart_type": "area",
+            "correct": true
+          },
+          {
+            "img_id": "3107",
+            "predicted_chart_type": "bar",
+            "gold_chart_type": "bar",
+            "correct": true
+          },
+          {
+            "img_id": "6479",
+            "predicted_chart_type": "bar",
+            "gold_chart_type": "bar",
+            "correct": true
+          },
+          {
+            "img_id": "7416",
+            "predicted_chart_type": "line",
+            "gold_chart_type": "line",
+            "correct": true
+          }
+        ]
+      }
+    },
+    "fewshot": {
+      "strategy": "fewshot",
+      "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_fewshot_outputs",
+      "intersection_ids": [
+        "315",
+        "1248",
+        "3107",
+        "6479",
+        "7416"
+      ],
+      "intersection_size": 5,
+      "summary": {
+        "triple_match_micro": {
+          "precision": 0.7596153846153846,
+          "recall": 0.4817073170731707,
+          "f1": 0.5895522388059701
+        },
+        "triple_match_accuracy_mean": 0.7904698668765164,
+        "graph_match_accuracy": 0.6,
+        "rouge": {
+          "precision": 0.9842352283478276,
+          "recall": 0.858347084062317,
+          "f1": 0.8901649666839295
+        },
+        "bleu": {
+          "precision": 0.9861183237739412,
+          "recall": 0.8572946216307415,
+          "f1": 0.8898544584361656
+        },
+        "bert_score": {
+          "precision": 0.9987958943025348,
+          "recall": 0.8667225563519411,
+          "f1": 0.9001037296801131
+        },
+        "normalized_ged_mean": 0.15966997102101063
+      },
+      "per_image": [
+        {
+          "img_id": "315",
+          "triple_match_accuracy": 0.5543478260869565,
+          "rouge": {
+            "precision": 0.9511548679349694,
+            "recall": 0.32171414650741614,
+            "f1": 0.48080355961547905
+          },
+          "bleu": {
+            "precision": 0.9733346384152857,
+            "recall": 0.32921612769928776,
+            "f1": 0.4920153117264081
+          },
+          "bert_score": {
+            "precision": 0.9978874422933744,
+            "recall": 0.33752075254040603,
+            "f1": 0.5044266191812662
+          },
+          "normalized_ged": 0.6242038216560509
+        },
+        {
+          "img_id": "1248",
+          "triple_match_accuracy": 0.7794117647058824,
+          "rouge": {
+            "precision": 0.9855263157894737,
+            "recall": 0.9855263157894737,
+            "f1": 0.9855263157894737
+          },
+          "bleu": {
+            "precision": 0.9890504471547887,
+            "recall": 0.9890504471547887,
+            "f1": 0.9890504471547887
+          },
+          "bert_score": {
+            "precision": 0.999241531771772,
+            "recall": 0.999241531771772,
+            "f1": 0.999241531771772
+          },
+          "normalized_ged": 0.05785123966942149
+        },
+        {
+          "img_id": "3107",
+          "triple_match_accuracy": 1.0,
+          "rouge": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bleu": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "bert_score": {
+            "precision": 0.9999999644664618,
+            "recall": 0.9999999644664618,
+            "f1": 0.9999999644664618
+          },
+          "normalized_ged": 0.0
+        },
+        {
+          "img_id": "6479",
+          "triple_match_accuracy": 0.8269230769230769,
+          "rouge": {
+            "precision": 0.9979757085020242,
+            "recall": 0.9979757085020242,
+            "f1": 0.9979757085020242
+          },
+          "bleu": {
+            "precision": 0.9862520344234784,
+            "recall": 0.9862520344234784,
+            "f1": 0.9862520344234784
+          },
+          "bert_score": {
+            "precision": 0.9985743440114535,
+            "recall": 0.9985743440114535,
+            "f1": 0.9985743440114535
+          },
+          "normalized_ged": 0.058823529411764705
+        },
+        {
+          "img_id": "7416",
+          "triple_match_accuracy": 0.7916666666666666,
+          "rouge": {
+            "precision": 0.9865192495126706,
+            "recall": 0.9865192495126706,
+            "f1": 0.9865192495126706
+          },
+          "bleu": {
+            "precision": 0.9819544988761528,
+            "recall": 0.9819544988761528,
+            "f1": 0.9819544988761528
+          },
+          "bert_score": {
+            "precision": 0.9982761889696121,
+            "recall": 0.9982761889696121,
+            "f1": 0.9982761889696121
+          },
+          "normalized_ged": 0.05747126436781609
+        }
+      ]
+    }
+  }
+}

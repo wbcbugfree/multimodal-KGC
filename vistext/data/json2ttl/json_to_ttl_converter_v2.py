@@ -735,7 +735,7 @@ class JSONToTTLConverterV2:
 
     def __init__(
         self,
-        base_uri: str = "http://example.org/",
+        base_uri: str = "http://example.org/vistext#",
         sort_points: bool = False,
     ):
         self.base_uri_template = base_uri
@@ -750,7 +750,7 @@ class JSONToTTLConverterV2:
         points: List[Tuple[str, str]],
     ) -> str:
         ttl_lines: List[str] = [
-            "@prefix : <http://example.org/> .",
+            "@prefix : <http://example.org/vistext#> .",
             "",
             f":Chart a :{chart_type} ;",
         ]
