@@ -37,7 +37,7 @@ You must classify the chart as exactly one of:
 - :LineChart
 - :AreaChart
 - :Axis
-- :dataPoint
+- :DataPoint
 
 ### Properties
 
@@ -67,12 +67,12 @@ Create exactly two axis resources:
 
 Create one resource for each extracted data item:
 
-:dataPoint1 a :dataPoint ;
+:DataPoint1 a :DataPoint ;
     :xValue "..." ;
     :yValue "..." ;
     :belongsTo :Chart .
 
-:dataPoint2 a :dataPoint ;
+:DataPoint2 a :DataPoint ;
     :xValue "..." ;
     :yValue "..." ;
     :belongsTo :Chart .
@@ -177,7 +177,7 @@ For non-temporal or categorical x-axes:
   - `:Chart`
   - `:XAxis`
   - `:YAxis`
-  - `:dataPoint1`, `:dataPoint2`, `:dataPoint3`, ...
+  - `:DataPoint1`, `:DataPoint2`, `:DataPoint3`, ...
 
 ### Bar charts
 
@@ -204,4 +204,4 @@ For non-temporal or categorical x-axes:
   - `:Chart`
   - `:XAxis`
   - `:YAxis`
-  - `:dataPoint1 ... :dataPointN`
+  - `:DataPoint1 ... :DataPointN`
