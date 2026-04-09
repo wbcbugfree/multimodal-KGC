@@ -1,10 +1,9 @@
 {
-  "generated_at_utc": "2026-04-09T08:42:38.716175+00:00",
-  "gold_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\data\\json2ttl\\ground_truth_ttl",
-  "extract_root": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl",
-  "labels_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\data\\labels",
+  "generated_at_utc": "2026-04-09T13:42:03.904068+00:00",
+  "gold_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\json2ttl\\ground_truth_ttl",
+  "extract_root": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl",
+  "labels_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\labels",
   "graph_modes_requested": [
-    "full_graph",
     "content_only"
   ],
   "metrics_used": [
@@ -23,10 +22,14 @@
   ],
   "metric_parameters": {
     "ged": {
-      "check_interval": 5.0,
-      "stable_threshold": 3,
-      "max_time": 120.0,
-      "workers": 1
+      "check_interval": 10.0,
+      "stable_threshold": 5,
+      "max_time": 300.0,
+      "workers": 10
+    },
+    "numeric_tolerance": {
+      "relative_tolerance": 0.01,
+      "structural_metrics_only": true
     }
   },
   "graph_mode_definitions": {
@@ -34,630 +37,13 @@
     "content_only": "Evaluate literal-valued triples plus the Chart rdf:type triple only."
   },
   "graph_modes": {
-    "full_graph": {
-      "strategies": {
-        "zeroshot": {
-          "strategy": "zeroshot",
-          "graph_mode": "full_graph",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs",
-          "intersection_ids": [
-            "315",
-            "1248",
-            "3107",
-            "6479",
-            "7416"
-          ],
-          "intersection_size": 5,
-          "summary": {
-            "triple_match_micro": {
-              "precision": 0.8028455284552846,
-              "recall": 0.8028455284552846,
-              "f1": 0.8028455284552846
-            },
-            "triple_match_accuracy_mean": 0.8376885369532429,
-            "graph_match_accuracy": 0.4,
-            "rouge": {
-              "precision": 0.9912907031792765,
-              "recall": 0.9912907031792765,
-              "f1": 0.9912907031792765
-            },
-            "bleu": {
-              "precision": 0.9885581430835447,
-              "recall": 0.9885581430835447,
-              "f1": 0.9885581430835447
-            },
-            "bert_score": {
-              "precision": 0.9990053748079825,
-              "recall": 0.9990053748079825,
-              "f1": 0.9990053748079825
-            },
-            "normalized_ged_mean": 0.07594151259814885
-          },
-          "per_image": [
-            {
-              "img_id": "315",
-              "triple_match_accuracy": 0.7610294117647058,
-              "rouge": {
-                "precision": 0.9758467612406158,
-                "recall": 0.9758467612406158,
-                "f1": 0.9758467612406158
-              },
-              "bleu": {
-                "precision": 0.9848415490210213,
-                "recall": 0.9848415490210213,
-                "f1": 0.9848415490210213
-              },
-              "bert_score": {
-                "precision": 0.9988513766404461,
-                "recall": 0.9988513766404461,
-                "f1": 0.9988513766404461
-              },
-              "normalized_ged": 0.12781954887218044
-            },
-            {
-              "img_id": "1248",
-              "triple_match_accuracy": 0.8088235294117647,
-              "rouge": {
-                "precision": 0.9943189866245776,
-                "recall": 0.9943189866245776,
-                "f1": 0.9943189866245776
-              },
-              "bleu": {
-                "precision": 0.9883636362559498,
-                "recall": 0.9883636362559498,
-                "f1": 0.9883636362559498
-              },
-              "bert_score": {
-                "precision": 0.9992084459346884,
-                "recall": 0.9992084459346884,
-                "f1": 0.9992084459346884
-              },
-              "normalized_ged": 0.13559322033898305
-            },
-            {
-              "img_id": "3107",
-              "triple_match_accuracy": 1.0,
-              "rouge": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bleu": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bert_score": {
-                "precision": 0.9999999633202186,
-                "recall": 0.9999999633202186,
-                "f1": 0.9999999633202186
-              },
-              "normalized_ged": 0.0
-            },
-            {
-              "img_id": "6479",
-              "triple_match_accuracy": 0.8269230769230769,
-              "rouge": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bleu": {
-                "precision": 0.9873546616750066,
-                "recall": 0.9873546616750066,
-                "f1": 0.9873546616750066
-              },
-              "bert_score": {
-                "precision": 0.9985709969814007,
-                "recall": 0.9985709969814007,
-                "f1": 0.9985709969814007
-              },
-              "normalized_ged": 0.058823529411764705
-            },
-            {
-              "img_id": "7416",
-              "triple_match_accuracy": 0.7916666666666666,
-              "rouge": {
-                "precision": 0.9862877680311891,
-                "recall": 0.9862877680311891,
-                "f1": 0.9862877680311891
-              },
-              "bleu": {
-                "precision": 0.9822308684657459,
-                "recall": 0.9822308684657459,
-                "f1": 0.9822308684657459
-              },
-              "bert_score": {
-                "precision": 0.9983960911631584,
-                "recall": 0.9983960911631584,
-                "f1": 0.9983960911631583
-              },
-              "normalized_ged": 0.05747126436781609
-            }
-          ]
-        },
-        "oneshot_static": {
-          "strategy": "oneshot_static",
-          "graph_mode": "full_graph",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs",
-          "intersection_ids": [
-            "315",
-            "1248",
-            "3107",
-            "6479",
-            "7416"
-          ],
-          "intersection_size": 5,
-          "summary": {
-            "triple_match_micro": {
-              "precision": 0.8130081300813008,
-              "recall": 0.8130081300813008,
-              "f1": 0.8130081300813008
-            },
-            "triple_match_accuracy_mean": 0.8411010558069382,
-            "graph_match_accuracy": 0.4,
-            "rouge": {
-              "precision": 0.9912261844816252,
-              "recall": 0.9912261844816252,
-              "f1": 0.9912261844816252
-            },
-            "bleu": {
-              "precision": 0.9889944506496007,
-              "recall": 0.9889944506496007,
-              "f1": 0.9889944506496007
-            },
-            "bert_score": {
-              "precision": 0.9990921051490091,
-              "recall": 0.9990921051490091,
-              "f1": 0.9990921051490091
-            },
-            "normalized_ged_mean": 0.07260041655275214
-          },
-          "per_image": [
-            {
-              "img_id": "315",
-              "triple_match_accuracy": 0.7794117647058824,
-              "rouge": {
-                "precision": 0.981058967704729,
-                "recall": 0.981058967704729,
-                "f1": 0.981058967704729
-              },
-              "bleu": {
-                "precision": 0.9868387030753949,
-                "recall": 0.9868387030753949,
-                "f1": 0.9868387030753949
-              },
-              "bert_score": {
-                "precision": 0.9990421196117121,
-                "recall": 0.9990421196117121,
-                "f1": 0.9990421196117121
-              },
-              "normalized_ged": 0.12081984897518878
-            },
-            {
-              "img_id": "1248",
-              "triple_match_accuracy": 0.8235294117647058,
-              "rouge": {
-                "precision": 0.9913047107387847,
-                "recall": 0.9913047107387847,
-                "f1": 0.9913047107387847
-              },
-              "bleu": {
-                "precision": 0.9887536478311327,
-                "recall": 0.9887536478311327,
-                "f1": 0.9887536478311327
-              },
-              "bert_score": {
-                "precision": 0.9992326322723838,
-                "recall": 0.9992326322723838,
-                "f1": 0.9992326322723838
-              },
-              "normalized_ged": 0.12133891213389121
-            },
-            {
-              "img_id": "3107",
-              "triple_match_accuracy": 1.0,
-              "rouge": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bleu": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bert_score": {
-                "precision": 0.9999999644664618,
-                "recall": 0.9999999644664618,
-                "f1": 0.9999999644664618
-              },
-              "normalized_ged": 0.0
-            },
-            {
-              "img_id": "6479",
-              "triple_match_accuracy": 0.7692307692307693,
-              "rouge": {
-                "precision": 0.9929655870445344,
-                "recall": 0.9929655870445344,
-                "f1": 0.9929655870445344
-              },
-              "bleu": {
-                "precision": 0.9828823710319896,
-                "recall": 0.9828823710319896,
-                "f1": 0.9828823710319896
-              },
-              "bert_score": {
-                "precision": 0.9984355809596869,
-                "recall": 0.9984355809596869,
-                "f1": 0.9984355809596869
-              },
-              "normalized_ged": 0.0748663101604278
-            },
-            {
-              "img_id": "7416",
-              "triple_match_accuracy": 0.8333333333333334,
-              "rouge": {
-                "precision": 0.990801656920078,
-                "recall": 0.990801656920078,
-                "f1": 0.990801656920078
-              },
-              "bleu": {
-                "precision": 0.9864975313094863,
-                "recall": 0.9864975313094863,
-                "f1": 0.9864975313094863
-              },
-              "bert_score": {
-                "precision": 0.9987502284348011,
-                "recall": 0.9987502284348011,
-                "f1": 0.9987502284348011
-              },
-              "normalized_ged": 0.04597701149425287
-            }
-          ]
-        },
-        "oneshot_dynamic": {
-          "strategy": "oneshot_dynamic",
-          "graph_mode": "full_graph",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_dynamic_outputs",
-          "intersection_ids": [
-            "315",
-            "1248",
-            "3107",
-            "6479",
-            "7416"
-          ],
-          "intersection_size": 5,
-          "summary": {
-            "triple_match_micro": {
-              "precision": 0.7967479674796748,
-              "recall": 0.7967479674796748,
-              "f1": 0.7967479674796748
-            },
-            "triple_match_accuracy_mean": 0.8310708898944192,
-            "graph_match_accuracy": 0.4,
-            "rouge": {
-              "precision": 0.9894922778325164,
-              "recall": 0.9894922778325164,
-              "f1": 0.9894922778325164
-            },
-            "bleu": {
-              "precision": 0.9880892656086276,
-              "recall": 0.9880892656086276,
-              "f1": 0.9880892656086276
-            },
-            "bert_score": {
-              "precision": 0.9990056997274651,
-              "recall": 0.9990056997274651,
-              "f1": 0.9990056997274651
-            },
-            "normalized_ged_mean": 0.06519744230384177
-          },
-          "per_image": [
-            {
-              "img_id": "315",
-              "triple_match_accuracy": 0.7573529411764706,
-              "rouge": {
-                "precision": 0.9774969520832069,
-                "recall": 0.9774969520832069,
-                "f1": 0.9774969520832069
-              },
-              "bleu": {
-                "precision": 0.9846389706934424,
-                "recall": 0.9846389706934424,
-                "f1": 0.9846389706934424
-              },
-              "bert_score": {
-                "precision": 0.9989901614539763,
-                "recall": 0.9989901614539763,
-                "f1": 0.9989901614539763
-              },
-              "normalized_ged": 0.11802575107296137
-            },
-            {
-              "img_id": "1248",
-              "triple_match_accuracy": 0.7794117647058824,
-              "rouge": {
-                "precision": 0.9878095975232197,
-                "recall": 0.9878095975232197,
-                "f1": 0.9878095975232197
-              },
-              "bleu": {
-                "precision": 0.9888521626314533,
-                "recall": 0.9888521626314533,
-                "f1": 0.9888521626314533
-              },
-              "bert_score": {
-                "precision": 0.9992970385972191,
-                "recall": 0.9992970385972191,
-                "f1": 0.9992970385972191
-              },
-              "normalized_ged": 0.09166666666666666
-            },
-            {
-              "img_id": "3107",
-              "triple_match_accuracy": 1.0,
-              "rouge": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bleu": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bert_score": {
-                "precision": 0.9999999633202186,
-                "recall": 0.9999999633202186,
-                "f1": 0.9999999633202186
-              },
-              "normalized_ged": 0.0
-            },
-            {
-              "img_id": "6479",
-              "triple_match_accuracy": 0.8269230769230769,
-              "rouge": {
-                "precision": 0.9969635627530363,
-                "recall": 0.9969635627530363,
-                "f1": 0.9969635627530363
-              },
-              "bleu": {
-                "precision": 0.9857007207977143,
-                "recall": 0.9857007207977143,
-                "f1": 0.9857007207977143
-              },
-              "bert_score": {
-                "precision": 0.9985378751387963,
-                "recall": 0.9985378751387963,
-                "f1": 0.9985378751387963
-              },
-              "normalized_ged": 0.058823529411764705
-            },
-            {
-              "img_id": "7416",
-              "triple_match_accuracy": 0.7916666666666666,
-              "rouge": {
-                "precision": 0.9851912768031189,
-                "recall": 0.9851912768031189,
-                "f1": 0.9851912768031189
-              },
-              "bleu": {
-                "precision": 0.9812544739205281,
-                "recall": 0.9812544739205281,
-                "f1": 0.9812544739205281
-              },
-              "bert_score": {
-                "precision": 0.9982034601271152,
-                "recall": 0.9982034601271152,
-                "f1": 0.9982034601271152
-              },
-              "normalized_ged": 0.05747126436781609
-            }
-          ],
-          "chart_type_classification": {
-            "correct": 5,
-            "total": 5,
-            "accuracy": 1.0,
-            "confusion_matrix": {
-              "bar": {
-                "bar": 2,
-                "line": 0,
-                "area": 0
-              },
-              "line": {
-                "bar": 0,
-                "line": 1,
-                "area": 0
-              },
-              "area": {
-                "bar": 0,
-                "line": 0,
-                "area": 2
-              }
-            },
-            "per_image": [
-              {
-                "img_id": "315",
-                "predicted_chart_type": "area",
-                "gold_chart_type": "area",
-                "correct": true
-              },
-              {
-                "img_id": "1248",
-                "predicted_chart_type": "area",
-                "gold_chart_type": "area",
-                "correct": true
-              },
-              {
-                "img_id": "3107",
-                "predicted_chart_type": "bar",
-                "gold_chart_type": "bar",
-                "correct": true
-              },
-              {
-                "img_id": "6479",
-                "predicted_chart_type": "bar",
-                "gold_chart_type": "bar",
-                "correct": true
-              },
-              {
-                "img_id": "7416",
-                "predicted_chart_type": "line",
-                "gold_chart_type": "line",
-                "correct": true
-              }
-            ]
-          }
-        },
-        "fewshot": {
-          "strategy": "fewshot",
-          "graph_mode": "full_graph",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_fewshot_outputs",
-          "intersection_ids": [
-            "315",
-            "1248",
-            "3107",
-            "6479",
-            "7416"
-          ],
-          "intersection_size": 5,
-          "summary": {
-            "triple_match_micro": {
-              "precision": 0.7596153846153846,
-              "recall": 0.4817073170731707,
-              "f1": 0.5895522388059701
-            },
-            "triple_match_accuracy_mean": 0.7904698668765164,
-            "graph_match_accuracy": 0.6,
-            "rouge": {
-              "precision": 0.9842352283478276,
-              "recall": 0.858347084062317,
-              "f1": 0.8901649666839295
-            },
-            "bleu": {
-              "precision": 0.9861183237739412,
-              "recall": 0.8572946216307415,
-              "f1": 0.8898544584361656
-            },
-            "bert_score": {
-              "precision": 0.9987958975023904,
-              "recall": 0.8667225588658097,
-              "f1": 0.9001037323673631
-            },
-            "normalized_ged_mean": 0.15966997102101063
-          },
-          "per_image": [
-            {
-              "img_id": "315",
-              "triple_match_accuracy": 0.5543478260869565,
-              "rouge": {
-                "precision": 0.9511548679349694,
-                "recall": 0.32171414650741614,
-                "f1": 0.48080355961547905
-              },
-              "bleu": {
-                "precision": 0.9733346384152857,
-                "recall": 0.32921612769928776,
-                "f1": 0.4920153117264081
-              },
-              "bert_score": {
-                "precision": 0.997887447476387,
-                "recall": 0.3375207542934838,
-                "f1": 0.5044266218012505
-              },
-              "normalized_ged": 0.6242038216560509
-            },
-            {
-              "img_id": "1248",
-              "triple_match_accuracy": 0.7794117647058824,
-              "rouge": {
-                "precision": 0.9855263157894737,
-                "recall": 0.9855263157894737,
-                "f1": 0.9855263157894737
-              },
-              "bleu": {
-                "precision": 0.9890504471547887,
-                "recall": 0.9890504471547887,
-                "f1": 0.9890504471547887
-              },
-              "bert_score": {
-                "precision": 0.9992415379075443,
-                "recall": 0.9992415379075443,
-                "f1": 0.9992415379075443
-              },
-              "normalized_ged": 0.05785123966942149
-            },
-            {
-              "img_id": "3107",
-              "triple_match_accuracy": 1.0,
-              "rouge": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bleu": {
-                "precision": 1.0,
-                "recall": 1.0,
-                "f1": 1.0
-              },
-              "bert_score": {
-                "precision": 0.9999999679051913,
-                "recall": 0.9999999679051913,
-                "f1": 0.9999999679051913
-              },
-              "normalized_ged": 0.0
-            },
-            {
-              "img_id": "6479",
-              "triple_match_accuracy": 0.8269230769230769,
-              "rouge": {
-                "precision": 0.9979757085020242,
-                "recall": 0.9979757085020242,
-                "f1": 0.9979757085020242
-              },
-              "bleu": {
-                "precision": 0.9862520344234784,
-                "recall": 0.9862520344234784,
-                "f1": 0.9862520344234784
-              },
-              "bert_score": {
-                "precision": 0.9985743440114535,
-                "recall": 0.9985743440114535,
-                "f1": 0.9985743440114535
-              },
-              "normalized_ged": 0.058823529411764705
-            },
-            {
-              "img_id": "7416",
-              "triple_match_accuracy": 0.7916666666666666,
-              "rouge": {
-                "precision": 0.9865192495126706,
-                "recall": 0.9865192495126706,
-                "f1": 0.9865192495126706
-              },
-              "bleu": {
-                "precision": 0.9819544988761528,
-                "recall": 0.9819544988761528,
-                "f1": 0.9819544988761528
-              },
-              "bert_score": {
-                "precision": 0.9982761902113756,
-                "recall": 0.9982761902113756,
-                "f1": 0.9982761902113756
-              },
-              "normalized_ged": 0.05747126436781609
-            }
-          ]
-        }
-      }
-    },
     "content_only": {
       "strategies": {
         "zeroshot": {
           "strategy": "zeroshot",
           "graph_mode": "content_only",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs",
+          "numeric_tolerance": 0.01,
+          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs",
           "intersection_ids": [
             "315",
             "1248",
@@ -668,12 +54,12 @@
           "intersection_size": 5,
           "summary": {
             "triple_match_micro": {
-              "precision": 0.6056910569105691,
-              "recall": 0.6056910569105691,
-              "f1": 0.6056910569105691
+              "precision": 0.6707317073170732,
+              "recall": 0.6707317073170732,
+              "f1": 0.6707317073170732
             },
-            "triple_match_accuracy_mean": 0.6753770739064857,
-            "graph_match_accuracy": 0.4,
+            "triple_match_accuracy_mean": 0.7902714932126697,
+            "graph_match_accuracy": 0.6,
             "rouge": {
               "precision": 0.9825814063585531,
               "recall": 0.9825814063585531,
@@ -685,11 +71,20 @@
               "f1": 0.9771162861670895
             },
             "bert_score": {
-              "precision": 0.9980107853967319,
-              "recall": 0.9980107853967319,
-              "f1": 0.9980107853967319
+              "precision": 0.9980107918471592,
+              "recall": 0.9980107918471592,
+              "f1": 0.9980107918471592
             },
-            "normalized_ged_mean": 0.11098662824946356
+            "normalized_ged_mean": 0.06503362395015205
+          },
+          "tolerance": {
+            "enabled": true,
+            "relative_tolerance": 0.01,
+            "eligible_predicate_counts": {
+              "xValue": 0,
+              "yValue": 5
+            },
+            "normalized_literals_total": 16
           },
           "per_image": [
             {
@@ -706,15 +101,30 @@
                 "f1": 0.9696830980420427
               },
               "bert_score": {
-                "precision": 0.9977027743178255,
-                "recall": 0.9977027743178255,
-                "f1": 0.9977027743178255
+                "precision": 0.9977027782622505,
+                "recall": 0.9977027782622505,
+                "f1": 0.9977027782622505
               },
-              "normalized_ged": 0.18167938931297709
+              "normalized_ged": 0.18167938931297709,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Number of nuclear power plants",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 66,
+                "normalized_literals": 0,
+                "img_id": "315"
+              }
             },
             {
               "img_id": "1248",
-              "triple_match_accuracy": 0.6176470588235294,
+              "triple_match_accuracy": 0.8235294117647058,
               "rouge": {
                 "precision": 0.9886379732491553,
                 "recall": 0.9886379732491553,
@@ -726,11 +136,26 @@
                 "f1": 0.9767272725118997
               },
               "bert_score": {
-                "precision": 0.9984169251778546,
-                "recall": 0.9984169251778546,
-                "f1": 0.9984169251778546
+                "precision": 0.9984169269309324,
+                "recall": 0.9984169269309324,
+                "f1": 0.9984169269309324
               },
-              "normalized_ged": 0.2073170731707317
+              "normalized_ged": 0.0658682634730539,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Equity ratio",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 15,
+                "normalized_literals": 7,
+                "img_id": "1248"
+              }
             },
             {
               "img_id": "3107",
@@ -750,11 +175,26 @@
                 "recall": 0.999999965612705,
                 "f1": 0.999999965612705
               },
-              "normalized_ged": 0.0
+              "normalized_ged": 0.0,
+              "tolerance": {
+                "x_axis_title": "Response",
+                "y_axis_title": "Share of views",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 11,
+                "normalized_literals": 0,
+                "img_id": "3107"
+              }
             },
             {
               "img_id": "6479",
-              "triple_match_accuracy": 0.6538461538461539,
+              "triple_match_accuracy": 0.7307692307692307,
               "rouge": {
                 "precision": 1.0,
                 "recall": 1.0,
@@ -766,15 +206,30 @@
                 "f1": 0.9747093233500131
               },
               "bert_score": {
-                "precision": 0.9971420398125281,
-                "recall": 0.9971420398125281,
-                "f1": 0.9971420398125281
+                "precision": 0.9971420489824735,
+                "recall": 0.9971420489824735,
+                "f1": 0.9971420489824735
               },
-              "normalized_ged": 0.08396946564885496
+              "normalized_ged": 0.05303030303030303,
+              "tolerance": {
+                "x_axis_title": "Sub-category",
+                "y_axis_title": "2019",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 8,
+                "normalized_literals": 2,
+                "img_id": "6479"
+              }
             },
             {
               "img_id": "7416",
-              "triple_match_accuracy": 0.5833333333333334,
+              "triple_match_accuracy": 0.875,
               "rouge": {
                 "precision": 0.9725755360623781,
                 "recall": 0.9725755360623781,
@@ -786,18 +241,34 @@
                 "f1": 0.964461736931492
               },
               "bert_score": {
-                "precision": 0.9967922220627466,
-                "recall": 0.9967922220627466,
-                "f1": 0.9967922220627466
+                "precision": 0.9967922394474348,
+                "recall": 0.9967922394474348,
+                "f1": 0.9967922394474348
               },
-              "normalized_ged": 0.08196721311475409
+              "normalized_ged": 0.02459016393442623,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Other",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 10,
+                "normalized_literals": 7,
+                "img_id": "7416"
+              }
             }
           ]
         },
         "oneshot_static": {
           "strategy": "oneshot_static",
           "graph_mode": "content_only",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs",
+          "numeric_tolerance": 0.01,
+          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs",
           "intersection_ids": [
             "315",
             "1248",
@@ -808,12 +279,12 @@
           "intersection_size": 5,
           "summary": {
             "triple_match_micro": {
-              "precision": 0.6260162601626016,
-              "recall": 0.6260162601626016,
-              "f1": 0.6260162601626016
+              "precision": 0.7804878048780488,
+              "recall": 0.7804878048780488,
+              "f1": 0.7804878048780488
             },
-            "triple_match_accuracy_mean": 0.6822021116138763,
-            "graph_match_accuracy": 0.4,
+            "triple_match_accuracy_mean": 0.8549773755656108,
+            "graph_match_accuracy": 0.8,
             "rouge": {
               "precision": 0.9824523689632504,
               "recall": 0.9824523689632504,
@@ -825,16 +296,25 @@
               "f1": 0.9779889012992015
             },
             "bert_score": {
-              "precision": 0.9981842488455017,
-              "recall": 0.9981842488455017,
-              "f1": 0.9981842488455017
+              "precision": 0.9981842514054448,
+              "recall": 0.9981842514054448,
+              "f1": 0.9981842514054449
             },
-            "normalized_ged_mean": 0.10602315055341902
+            "normalized_ged_mean": 0.040507121948028586
+          },
+          "tolerance": {
+            "enabled": true,
+            "relative_tolerance": 0.01,
+            "eligible_predicate_counts": {
+              "xValue": 0,
+              "yValue": 5
+            },
+            "normalized_literals_total": 38
           },
           "per_image": [
             {
               "img_id": "315",
-              "triple_match_accuracy": 0.5588235294117647,
+              "triple_match_accuracy": 0.6911764705882353,
               "rouge": {
                 "precision": 0.9621179354094577,
                 "recall": 0.9621179354094577,
@@ -846,15 +326,30 @@
                 "f1": 0.9736774061507899
               },
               "bert_score": {
-                "precision": 0.9980842650813215,
-                "recall": 0.9980842650813215,
-                "f1": 0.9980842650813215
+                "precision": 0.9980842690257465,
+                "recall": 0.9980842690257465,
+                "f1": 0.9980842690257467
               },
-              "normalized_ged": 0.17204301075268819
+              "normalized_ged": 0.10244648318042814,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Number of nuclear power plants",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 66,
+                "normalized_literals": 18,
+                "img_id": "315"
+              }
             },
             {
               "img_id": "1248",
-              "triple_match_accuracy": 0.6470588235294118,
+              "triple_match_accuracy": 0.8529411764705882,
               "rouge": {
                 "precision": 0.9826094214775694,
                 "recall": 0.9826094214775694,
@@ -866,11 +361,26 @@
                 "f1": 0.9775072956622654
               },
               "bert_score": {
-                "precision": 0.9984652996063232,
-                "recall": 0.9984652996063232,
-                "f1": 0.9984652996063232
+                "precision": 0.9984653031124788,
+                "recall": 0.9984653031124788,
+                "f1": 0.9984653031124788
               },
-              "normalized_ged": 0.18562874251497005
+              "normalized_ged": 0.047058823529411764,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Equity ratio",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 15,
+                "normalized_literals": 7,
+                "img_id": "1248"
+              }
             },
             {
               "img_id": "3107",
@@ -886,15 +396,30 @@
                 "f1": 1.0
               },
               "bert_score": {
-                "precision": 0.9999999701976776,
-                "recall": 0.9999999701976776,
-                "f1": 0.9999999701976776
+                "precision": 0.999999965612705,
+                "recall": 0.999999965612705,
+                "f1": 0.999999965612705
               },
-              "normalized_ged": 0.0
+              "normalized_ged": 0.0,
+              "tolerance": {
+                "x_axis_title": "Response",
+                "y_axis_title": "Share of views",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 11,
+                "normalized_literals": 0,
+                "img_id": "3107"
+              }
             },
             {
               "img_id": "6479",
-              "triple_match_accuracy": 0.5384615384615384,
+              "triple_match_accuracy": 0.7307692307692307,
               "rouge": {
                 "precision": 0.9859311740890688,
                 "recall": 0.9859311740890688,
@@ -910,11 +435,26 @@
                 "recall": 0.9968712077691004,
                 "f1": 0.9968712077691004
               },
-              "normalized_ged": 0.10687022900763359
+              "normalized_ged": 0.05303030303030303,
+              "tolerance": {
+                "x_axis_title": "Sub-category",
+                "y_axis_title": "2019",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 8,
+                "normalized_literals": 5,
+                "img_id": "6479"
+              }
             },
             {
               "img_id": "7416",
-              "triple_match_accuracy": 0.6666666666666666,
+              "triple_match_accuracy": 1.0,
               "rouge": {
                 "precision": 0.981603313840156,
                 "recall": 0.981603313840156,
@@ -926,18 +466,34 @@
                 "f1": 0.9729950626189727
               },
               "bert_score": {
-                "precision": 0.9975005015730858,
-                "recall": 0.9975005015730858,
-                "f1": 0.9975005015730857
+                "precision": 0.9975005115071932,
+                "recall": 0.9975005115071932,
+                "f1": 0.9975005115071932
               },
-              "normalized_ged": 0.06557377049180328
+              "normalized_ged": 0.0,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Other",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 10,
+                "normalized_literals": 8,
+                "img_id": "7416"
+              }
             }
           ]
         },
         "oneshot_dynamic": {
           "strategy": "oneshot_dynamic",
           "graph_mode": "content_only",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_oneshot_dynamic_outputs",
+          "numeric_tolerance": 0.01,
+          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_dynamic_outputs",
           "intersection_ids": [
             "315",
             "1248",
@@ -948,12 +504,12 @@
           "intersection_size": 5,
           "summary": {
             "triple_match_micro": {
-              "precision": 0.5934959349593496,
-              "recall": 0.5934959349593496,
-              "f1": 0.5934959349593496
+              "precision": 0.7032520325203252,
+              "recall": 0.7032520325203252,
+              "f1": 0.7032520325203252
             },
-            "triple_match_accuracy_mean": 0.6621417797888386,
-            "graph_match_accuracy": 0.4,
+            "triple_match_accuracy_mean": 0.8058069381598794,
+            "graph_match_accuracy": 0.6,
             "rouge": {
               "precision": 0.9789845556650328,
               "recall": 0.9789845556650328,
@@ -965,16 +521,25 @@
               "f1": 0.9761785312172553
             },
             "bert_score": {
-              "precision": 0.9980114363235046,
-              "recall": 0.9980114363235046,
-              "f1": 0.9980114363235046
+              "precision": 0.9980114383620194,
+              "recall": 0.9980114383620194,
+              "f1": 0.9980114383620194
             },
-            "normalized_ged_mean": 0.09260951926027118
+            "normalized_ged_mean": 0.05223236720789889
+          },
+          "tolerance": {
+            "enabled": true,
+            "relative_tolerance": 0.01,
+            "eligible_predicate_counts": {
+              "xValue": 0,
+              "yValue": 5
+            },
+            "normalized_literals_total": 27
           },
           "per_image": [
             {
               "img_id": "315",
-              "triple_match_accuracy": 0.5147058823529411,
+              "triple_match_accuracy": 0.5735294117647058,
               "rouge": {
                 "precision": 0.9549939041664137,
                 "recall": 0.9549939041664137,
@@ -986,15 +551,30 @@
                 "f1": 0.9692779413868846
               },
               "bert_score": {
-                "precision": 0.997980340877,
-                "recall": 0.997980340877,
-                "f1": 0.997980340877
+                "precision": 0.9979803439448861,
+                "recall": 0.9979803439448861,
+                "f1": 0.9979803439448861
               },
-              "normalized_ged": 0.16615853658536586
+              "normalized_ged": 0.14198473282442747,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Number of nuclear power plants",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 66,
+                "normalized_literals": 8,
+                "img_id": "315"
+              }
             },
             {
               "img_id": "1248",
-              "triple_match_accuracy": 0.5588235294117647,
+              "triple_match_accuracy": 0.8529411764705882,
               "rouge": {
                 "precision": 0.9756191950464396,
                 "recall": 0.9756191950464396,
@@ -1006,11 +586,26 @@
                 "f1": 0.9777043252629065
               },
               "bert_score": {
-                "precision": 0.9985941157621496,
-                "recall": 0.9985941157621496,
-                "f1": 0.9985941157621496
+                "precision": 0.9985941087498384,
+                "recall": 0.9985941087498384,
+                "f1": 0.9985941087498384
               },
-              "normalized_ged": 0.13095238095238096
+              "normalized_ged": 0.04093567251461988,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Equity ratio",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 15,
+                "normalized_literals": 10,
+                "img_id": "1248"
+              }
             },
             {
               "img_id": "3107",
@@ -1026,15 +621,30 @@
                 "f1": 1.0
               },
               "bert_score": {
-                "precision": 0.9999999587352459,
-                "recall": 0.9999999587352459,
-                "f1": 0.9999999587352459
+                "precision": 0.9999999679051913,
+                "recall": 0.9999999679051913,
+                "f1": 0.9999999679051913
               },
-              "normalized_ged": 0.0
+              "normalized_ged": 0.0,
+              "tolerance": {
+                "x_axis_title": "Response",
+                "y_axis_title": "Share of views",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 11,
+                "normalized_literals": 0,
+                "img_id": "3107"
+              }
             },
             {
               "img_id": "6479",
-              "triple_match_accuracy": 0.6538461538461539,
+              "triple_match_accuracy": 0.7692307692307693,
               "rouge": {
                 "precision": 0.993927125506073,
                 "recall": 0.993927125506073,
@@ -1050,11 +660,26 @@
                 "recall": 0.997075793834833,
                 "f1": 0.997075793834833
               },
-              "normalized_ged": 0.08396946564885496
+              "normalized_ged": 0.045454545454545456,
+              "tolerance": {
+                "x_axis_title": "Sub-category",
+                "y_axis_title": "2019",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 8,
+                "normalized_literals": 3,
+                "img_id": "6479"
+              }
             },
             {
               "img_id": "7416",
-              "triple_match_accuracy": 0.5833333333333334,
+              "triple_match_accuracy": 0.8333333333333334,
               "rouge": {
                 "precision": 0.9703825536062379,
                 "recall": 0.9703825536062379,
@@ -1066,11 +691,26 @@
                 "f1": 0.9625089478410566
               },
               "bert_score": {
-                "precision": 0.9964069724082947,
-                "recall": 0.9964069724082947,
-                "f1": 0.9964069724082947
+                "precision": 0.9964069773753484,
+                "recall": 0.9964069773753484,
+                "f1": 0.9964069773753484
               },
-              "normalized_ged": 0.08196721311475409
+              "normalized_ged": 0.03278688524590164,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Other",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 10,
+                "normalized_literals": 6,
+                "img_id": "7416"
+              }
             }
           ],
           "chart_type_classification": {
@@ -1131,7 +771,8 @@
         "fewshot": {
           "strategy": "fewshot",
           "graph_mode": "content_only",
-          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\.worktrees\\vistext-eval-workflow\\vistext\\extract_rdf_ttl\\vistext_fewshot_outputs",
+          "numeric_tolerance": 0.01,
+          "prediction_dir": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_fewshot_outputs",
           "intersection_ids": [
             "315",
             "1248",
@@ -1142,12 +783,12 @@
           "intersection_size": 5,
           "summary": {
             "triple_match_micro": {
-              "precision": 0.5192307692307693,
-              "recall": 0.32926829268292684,
-              "f1": 0.4029850746268657
+              "precision": 0.6666666666666666,
+              "recall": 0.42276422764227645,
+              "f1": 0.5174129353233831
             },
-            "triple_match_accuracy_mean": 0.580939733753033,
-            "graph_match_accuracy": 0.6,
+            "triple_match_accuracy_mean": 0.7412715587907404,
+            "graph_match_accuracy": 0.8,
             "rouge": {
               "precision": 0.9684704566956552,
               "recall": 0.8490471093011045,
@@ -1159,11 +800,20 @@
               "f1": 0.87861001577343
             },
             "bert_score": {
-              "precision": 0.9975918308854166,
-              "recall": 0.865798089472327,
-              "f1": 0.8991085955437672
+              "precision": 0.9975918384292211,
+              "recall": 0.8657980978736151,
+              "f1": 0.8991086037283287
             },
-            "normalized_ged_mean": 0.18630950769842317
+            "normalized_ged_mean": 0.15240694588814166
+          },
+          "tolerance": {
+            "enabled": true,
+            "relative_tolerance": 0.01,
+            "eligible_predicate_counts": {
+              "xValue": 0,
+              "yValue": 5
+            },
+            "normalized_literals_total": 27
           },
           "per_image": [
             {
@@ -1180,15 +830,30 @@
                 "f1": 0.4785361179583105
               },
               "bert_score": {
-                "precision": 0.9957749351211216,
-                "recall": 0.3368062280556735,
-                "f1": 0.5033587584128747
+                "precision": 0.9957749286423558,
+                "recall": 0.33680622586432624,
+                "f1": 0.5033587551378942
               },
-              "normalized_ged": 0.6832579185520362
+              "normalized_ged": 0.6825396825396826,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Number of nuclear power plants",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 21,
+                "normalized_literals": 4,
+                "img_id": "315"
+              }
             },
             {
               "img_id": "1248",
-              "triple_match_accuracy": 0.5588235294117647,
+              "triple_match_accuracy": 0.9117647058823529,
               "rouge": {
                 "precision": 0.9710526315789473,
                 "recall": 0.9710526315789473,
@@ -1200,11 +865,26 @@
                 "f1": 0.9781008943095773
               },
               "bert_score": {
-                "precision": 0.9984831038643333,
-                "recall": 0.9984831038643333,
-                "f1": 0.9984831038643333
+                "precision": 0.9984831073704887,
+                "recall": 0.9984831073704887,
+                "f1": 0.9984831073704887
               },
-              "normalized_ged": 0.08235294117647059
+              "normalized_ged": 0.01764705882352941,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Equity ratio",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 15,
+                "normalized_literals": 12,
+                "img_id": "1248"
+              }
             },
             {
               "img_id": "3107",
@@ -1220,15 +900,30 @@
                 "f1": 1.0
               },
               "bert_score": {
-                "precision": 0.9999999564427596,
-                "recall": 0.9999999564427596,
-                "f1": 0.9999999564427596
+                "precision": 0.9999999701976776,
+                "recall": 0.9999999701976776,
+                "f1": 0.9999999701976776
               },
-              "normalized_ged": 0.0
+              "normalized_ged": 0.0,
+              "tolerance": {
+                "x_axis_title": "Response",
+                "y_axis_title": "Share of views",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 11,
+                "normalized_literals": 0,
+                "img_id": "3107"
+              }
             },
             {
               "img_id": "6479",
-              "triple_match_accuracy": 0.6538461538461539,
+              "triple_match_accuracy": 0.7692307692307693,
               "rouge": {
                 "precision": 0.9959514170040487,
                 "recall": 0.9959514170040487,
@@ -1240,15 +935,30 @@
                 "f1": 0.9725040688469568
               },
               "bert_score": {
-                "precision": 0.9971487338726337,
-                "recall": 0.9971487338726337,
-                "f1": 0.9971487338726337
+                "precision": 0.9971487384576064,
+                "recall": 0.9971487384576064,
+                "f1": 0.9971487384576064
               },
-              "normalized_ged": 0.08396946564885496
+              "normalized_ged": 0.045454545454545456,
+              "tolerance": {
+                "x_axis_title": "Sub-category",
+                "y_axis_title": "2019",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 8,
+                "normalized_literals": 3,
+                "img_id": "6479"
+              }
             },
             {
               "img_id": "7416",
-              "triple_match_accuracy": 0.5833333333333334,
+              "triple_match_accuracy": 0.9166666666666666,
               "rouge": {
                 "precision": 0.9730384990253412,
                 "recall": 0.9730384990253412,
@@ -1260,11 +970,26 @@
                 "f1": 0.9639089977523055
               },
               "bert_score": {
-                "precision": 0.9965524251262347,
-                "recall": 0.9965524251262347,
-                "f1": 0.9965524251262347
+                "precision": 0.9965524474779764,
+                "recall": 0.9965524474779764,
+                "f1": 0.9965524474779764
               },
-              "normalized_ged": 0.08196721311475409
+              "normalized_ged": 0.01639344262295082,
+              "tolerance": {
+                "x_axis_title": "Year",
+                "y_axis_title": "Other",
+                "gold_x_numeric": false,
+                "gold_y_numeric": true,
+                "pred_x_numeric": false,
+                "pred_y_numeric": true,
+                "eligible_predicate": "yValue",
+                "reason": "only_y_axis_fully_numeric",
+                "enabled": true,
+                "numeric_tolerance": 0.01,
+                "matched_datapoints": 10,
+                "normalized_literals": 8,
+                "img_id": "7416"
+              }
             }
           ]
         }
