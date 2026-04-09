@@ -10,7 +10,9 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from gemini_vistext_runner_core import (  # noqa: E402
+    DEFAULT_MODEL,
     PROMPT_ROOT,
+    PromptBuilderContext,
     PromptPackage,
     ground_truth_example,
     load_text,
@@ -36,9 +38,15 @@ SYSTEM_PROMPT_BY_TYPE = {
 
 def build_prompt_package(
     image_path: Path,
-    classifier: Callable[[Path], str] = classify_chart_type,
+    context: PromptBuilderContext | None = None,
+    classifier: Callable[..., str] = classify_chart_type,
 ) -> PromptPackage:
-    chart_type = classifier(image_path)
+    effective_context = context or PromptBuilderContext(model=DEFAULT_MODEL, client=None)
+    chart_type = classifier(
+        image_path,
+        model=effective_context.model,
+        client=effective_context.client,
+    )
     if chart_type not in SYSTEM_PROMPT_BY_TYPE:
         raise ValueError(f"Unsupported chart type: {chart_type}")
 

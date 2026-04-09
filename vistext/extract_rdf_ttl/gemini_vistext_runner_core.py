@@ -4,8 +4,10 @@ import argparse
 import json
 import random
 import sys
+import threading
 import time
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
@@ -26,6 +28,7 @@ from common.paths import vistext_dir  # noqa: E402
 
 DEFAULT_MODEL = "gemini-3-flash-preview"
 REQUEST_DELAY = 2.0
+PARALLEL_WORKERS = 1
 SAMPLE_MODE = "random"
 SAMPLE_COUNT = 5
 RANDOM_SEED = 42
@@ -61,6 +64,12 @@ class PromptPackage:
 
 
 @dataclass(frozen=True)
+class PromptBuilderContext:
+    model: str
+    client: genai.Client | None = None
+
+
+@dataclass(frozen=True)
 class RuntimeConfig:
     model: str
     images_root: Path
@@ -72,11 +81,13 @@ class RuntimeConfig:
     sample_count: int | None
     seed: int
     ids: list[str] | None
+    parallel_workers: int
     skip_existing: bool
     dry_run: bool
 
 
-PromptBuilder = Callable[[Path], PromptPackage]
+PromptBuilder = Callable[[Path, PromptBuilderContext], PromptPackage]
+_THREAD_LOCAL = threading.local()
 
 
 def build_parser(
@@ -102,6 +113,12 @@ def build_parser(
         type=int,
         default=RANDOM_SEED,
         help="Random seed for deterministic sampling.",
+    )
+    parser.add_argument(
+        "--parallel-workers",
+        type=int,
+        default=PARALLEL_WORKERS,
+        help="Number of parallel Gemini worker threads to use.",
     )
     parser.add_argument(
         "--ids",
@@ -156,6 +173,9 @@ def parse_args(
     if args.request_delay < 0:
         parser.error("--request-delay must be greater than or equal to 0")
 
+    if args.parallel_workers <= 0:
+        parser.error("--parallel-workers must be greater than 0")
+
     return args
 
 
@@ -178,6 +198,7 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         sample_count=args.sample_count,
         seed=args.seed,
         ids=normalize_ids(args.ids),
+        parallel_workers=args.parallel_workers,
         skip_existing=args.skip_existing,
         dry_run=args.dry_run,
     )
@@ -319,6 +340,14 @@ def create_gemini_client() -> genai.Client:
     return genai.Client(api_key=get_api_key("gemini_api_key"))
 
 
+def get_worker_client() -> genai.Client:
+    client = getattr(_THREAD_LOCAL, "gemini_client", None)
+    if client is None:
+        client = create_gemini_client()
+        _THREAD_LOCAL.gemini_client = client
+    return client
+
+
 def call_gemini(
     client: genai.Client,
     model: str,
@@ -456,7 +485,7 @@ def write_ttl(path: Path, text: str) -> None:
 
 
 def process_image(
-    client: genai.Client,
+    client: genai.Client | None,
     config: RuntimeConfig,
     prompt_builder: PromptBuilder,
     image_path: Path,
@@ -476,14 +505,18 @@ def process_image(
         )
 
     try:
-        prompt_package = prompt_builder(image_path)
+        effective_client = client or create_gemini_client()
+        prompt_package = prompt_builder(
+            image_path,
+            PromptBuilderContext(model=config.model, client=effective_client),
+        )
         contents = build_request_contents(
             user_prompt=build_user_prompt(image_id),
             image_path=image_path,
             examples=prompt_package.examples,
         )
         raw_output = call_gemini(
-            client=client,
+            client=effective_client,
             model=config.model,
             system_prompt=prompt_package.system_prompt,
             contents=contents,
@@ -524,6 +557,19 @@ def process_image(
         )
 
 
+def process_image_in_worker(
+    config: RuntimeConfig,
+    prompt_builder: PromptBuilder,
+    image_path: Path,
+) -> dict[str, Any]:
+    return process_image(
+        client=get_worker_client(),
+        config=config,
+        prompt_builder=prompt_builder,
+        image_path=image_path,
+    )
+
+
 def run_strategy(
     argv: list[str] | None,
     description: str,
@@ -549,28 +595,61 @@ def run_strategy(
         return 0
 
     manifest = load_existing_manifest(config.manifest_path)
-    client = create_gemini_client()
     run_items: list[dict[str, Any]] = []
+    if config.parallel_workers == 1:
+        client = create_gemini_client()
+        for index, image_path in enumerate(selected_images, start=1):
+            print(f"[{index}/{len(selected_images)}] Processing {image_path.name}")
+            item = process_image(
+                client=client,
+                config=config,
+                prompt_builder=prompt_builder,
+                image_path=image_path,
+            )
+            run_items.append(item)
+            upsert_manifest_item(manifest, item)
+            write_manifest(config.manifest_path, manifest)
 
-    for index, image_path in enumerate(selected_images, start=1):
-        print(f"[{index}/{len(selected_images)}] Processing {image_path.name}")
-        item = process_image(
-            client=client,
-            config=config,
-            prompt_builder=prompt_builder,
-            image_path=image_path,
+            status = item["status"]
+            if status == "saved":
+                print(f"  saved -> {Path(item['ttl_file']).name}")
+            elif "error" in item:
+                print(f"  {status}: {item['error']}")
+            else:
+                print(f"  {status}")
+    else:
+        print(
+            f"[PARALLEL] Processing {len(selected_images)} image(s) "
+            f"with {config.parallel_workers} worker(s)"
         )
-        run_items.append(item)
-        upsert_manifest_item(manifest, item)
-        write_manifest(config.manifest_path, manifest)
+        with ThreadPoolExecutor(
+            max_workers=config.parallel_workers,
+            thread_name_prefix="gemini-vistext",
+        ) as executor:
+            future_to_image = {
+                executor.submit(
+                    process_image_in_worker,
+                    config,
+                    prompt_builder,
+                    image_path,
+                ): image_path
+                for image_path in selected_images
+            }
+            for index, future in enumerate(as_completed(future_to_image), start=1):
+                image_path = future_to_image[future]
+                item = future.result()
+                print(f"[{index}/{len(selected_images)}] Processed {image_path.name}")
+                run_items.append(item)
+                upsert_manifest_item(manifest, item)
+                write_manifest(config.manifest_path, manifest)
 
-        status = item["status"]
-        if status == "saved":
-            print(f"  saved -> {Path(item['ttl_file']).name}")
-        elif "error" in item:
-            print(f"  {status}: {item['error']}")
-        else:
-            print(f"  {status}")
+                status = item["status"]
+                if status == "saved":
+                    print(f"  saved -> {Path(item['ttl_file']).name}")
+                elif "error" in item:
+                    print(f"  {status}: {item['error']}")
+                else:
+                    print(f"  {status}")
 
     counts = Counter(item.get("status", "unknown") for item in run_items)
     print("[SUMMARY]")

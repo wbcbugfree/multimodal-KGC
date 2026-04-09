@@ -22,7 +22,7 @@ SYSTEM_PROMPT_PATH = PROMPT_ROOT / "zeroshot.md"
 DESCRIPTION = "Call Gemini on vistext chart images with the static bar-chart one-shot prompt and save only valid Turtle outputs."
 
 
-def build_prompt_package(_: Path) -> PromptPackage:
+def build_prompt_package(_: Path, __: object | None = None) -> PromptPackage:
     return PromptPackage(
         system_prompt=load_text(SYSTEM_PROMPT_PATH),
         examples=[ground_truth_example("bar")],
