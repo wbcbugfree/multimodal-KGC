@@ -105,11 +105,9 @@ def canonicalize_datapoint_subjects(triples: List[List[str]]) -> List[List[str]]
 
 
 def _is_chart_type_triple(subject: Any, predicate: Any, obj: Any) -> bool:
-    return (
-        normalize_rdf_term(subject) == "Chart"
-        and normalize_rdf_term(predicate) in {"22-rdf-syntax-ns#type", "type"}
-        and normalize_rdf_term(obj) in {"BarChart", "LineChart", "AreaChart"}
-    )
+    normalized_subject = normalize_rdf_term(subject).lower()
+    normalized_predicate = normalize_rdf_term(predicate).lower()
+    return normalized_subject == "chart" and normalized_predicate in {"22-rdf-syntax-ns#type", "type"}
 
 
 def _keep_triple(subject: Any, predicate: Any, obj: Any, graph_mode: str) -> bool:
