@@ -463,7 +463,6 @@ def evaluate_strategy(
     gold_tokens, pred_tokens = metrics.get_tokens(gold_edges, pred_edges)
 
     triple_precision, triple_recall, triple_f1 = metrics.get_triple_match_prf(structural_gold_graphs, structural_pred_graphs)
-    graph_match_accuracy = metrics.get_graph_match_accuracy(structural_pred_graphs, structural_gold_graphs)
     print(f"[{strategy_name}:{graph_mode}] BLEU/ROUGE")
     rouge_p, rouge_r, rouge_f, bleu_p, bleu_r, bleu_f = metrics.get_bleu_rouge(
         gold_tokens, pred_tokens, gold_edges, pred_edges
@@ -522,7 +521,6 @@ def evaluate_strategy(
                 "f1": _float(triple_f1),
             },
             "triple_match_accuracy_mean": _mean(triple_accs),
-            "graph_match_accuracy": _float(graph_match_accuracy),
             "rouge": {
                 "precision": _mean(rouge_p),
                 "recall": _mean(rouge_r),
@@ -577,7 +575,6 @@ def build_report(
         "metrics_used": [
             "triple_match_micro_prf",
             "triple_match_accuracy",
-            "graph_match_accuracy",
             "rouge",
             "bleu",
             "bert_score",
