@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Penetration rate of connected devices in China as of May 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Net reach" .
+
+:YAxis a :Axis ;
+    :title "Device Type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.951" ;
+    :yValue "PC" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.724" ;
+    :yValue "Desktop" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.709" ;
+    :yValue "Laptop" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.936" ;
+    :yValue "Smartphone" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Tablets" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.465" ;
+    :yValue "Smart TVs" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Streaming Media Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.215" ;
+    :yValue "Wearable devices" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Portable Media Player" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.166" ;
+    :yValue "Video Game Consoles" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.039" ;
+    :yValue "e-readers" ;
+    :belongsTo :Chart .

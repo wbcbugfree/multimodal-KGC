@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Educational attainment of religious groups in the United States in 2017 , by faith tradition" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "College degree" .
+
+:YAxis a :Axis ;
+    :title "faith tradition" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Unitarian/Universalist" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Hindu" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Jewish" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Orthodox Chrisitan" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Mormon" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Buddhist" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "White Catholic" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "White mainline Protestant" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Unaffiliated" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Muslim" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "White evangelical Protestant" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Black Protestant" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Hispanic Protestant" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Jehovah’s Witness" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Hispanic Catholic" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest wind turbines worldwide as of September 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Largest wind turbines" .
+
+:YAxis a :Axis ;
+    :title "Rotor diameter (in meters)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "MHI Vestas V164 8MW" ;
+    :yValue "164" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Siemens-Gamesa SG 8.0-167 DD" ;
+    :yValue "167" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Goldwind GW154 6.7MW" ;
+    :yValue "154" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Senvion 6.2M152**" ;
+    :yValue "152" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "GE Haliade 150-6MW" ;
+    :yValue "150" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ming Yang SCD 6.0" ;
+    :yValue "140" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Doosan WindS500" ;
+    :yValue "140" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Hitachi HTW5.2-136***" ;
+    :yValue "136" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "CSIC Haizhuang H151-5.0MW" ;
+    :yValue "151" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Adwen AD5-135" ;
+    :yValue "135" ;
+    :belongsTo :Chart .

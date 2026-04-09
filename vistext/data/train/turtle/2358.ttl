@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Value of wine exported from India in 2018 , by region (in 1,000 U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value in thousand U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1939.52" ;
+    :yValue "Netherlands" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1691.33" ;
+    :yValue "Hong Kong" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1152.32" ;
+    :yValue "Singapore" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "986.72" ;
+    :yValue "Australia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "701.29" ;
+    :yValue "United Arab Emirates" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "647.65" ;
+    :yValue "Others" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "634.73" ;
+    :yValue "Sri Lanka" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "395.7" ;
+    :yValue "France" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "315.96" ;
+    :yValue "Japan" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "260.54" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "182.14" ;
+    :yValue "Spain" ;
+    :belongsTo :Chart .

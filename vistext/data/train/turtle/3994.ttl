@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of students enrolled in postsecondary institutions in Canada in 2017/18 , by program type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type of program" .
+
+:YAxis a :Axis ;
+    :title "Number of students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Undergraduate program" ;
+    :yValue "1057440" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Career, technical or professional training program" ;
+    :yValue "511905" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Graduate program (second cycle)" ;
+    :yValue "153003" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Pre-university program" ;
+    :yValue "87411" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Non-program (credit, undergraduate)" ;
+    :yValue "66042" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Non-program (non-credit)" ;
+    :yValue "62187" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Graduate program (third cycle)" ;
+    :yValue "54303" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Basic education and skills program" ;
+    :yValue "27717" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Post-baccalaureate non-graduate program" ;
+    :yValue "22047" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Post career, technical or professional training program" ;
+    :yValue "20808" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Qualifying program for career, technical or pre-university" ;
+    :yValue "18696" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Health-related residency program" ;
+    :yValue "15678" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Non-program (credit, other postsecondary)" ;
+    :yValue "9618" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Non-program (credit, graduate)" ;
+    :yValue "4329" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Other programs" ;
+    :yValue "2460" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Undergraduate qualifying program" ;
+    :yValue "2250" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Graduate qualifying program (second cycle)" ;
+    :yValue "102" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Graduate program (above the third cycle)" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Graduate qualifying program (third cycle)" ;
+    :yValue "3" ;
+    :belongsTo :Chart .

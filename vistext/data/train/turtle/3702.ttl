@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of provider contracts of top healthcare management consulting firms in the United States in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of provider contracts" .
+
+:YAxis a :Axis ;
+    :title "top healthcare management consulting firms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3200" ;
+    :yValue "Advisory Board Co. (Washington)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1181" ;
+    :yValue "Croe Horwath (Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1100" ;
+    :yValue "KPMG (New York)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "735" ;
+    :yValue "Huron Healthcare (Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "704" ;
+    :yValue "FTI Consulting (Washington)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "422" ;
+    :yValue "Beacon Partners (Weymouth, Mass.)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "390" ;
+    :yValue "Quorum Health Resources (Brentwood, Tenn.)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "321" ;
+    :yValue "CTG Health Solutions (Buffalo, N.Y.)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "214" ;
+    :yValue "Ernst & Young (New York)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "125" ;
+    :yValue "Perficient (St. Louis)" ;
+    :belongsTo :Chart .

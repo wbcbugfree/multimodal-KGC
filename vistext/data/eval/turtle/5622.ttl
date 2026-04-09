@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value growth worldwide in 2020 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "Year-on-year growth" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Retail" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Technology" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Insurance" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Beverages" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Personal care" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Luxury" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Apparel" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fast food" ;
+    :yValue "-0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Telecom providers" ;
+    :yValue "-0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Beer" ;
+    :yValue "-0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Cars" ;
+    :yValue "-0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Regional banks" ;
+    :yValue "-0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Global banks" ;
+    :yValue "-0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Energy" ;
+    :yValue "-0.22" ;
+    :belongsTo :Chart .

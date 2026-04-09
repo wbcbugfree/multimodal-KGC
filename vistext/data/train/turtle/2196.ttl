@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. rates of treat-and-release ED visits for animal-related injuries in 2009 , by type of injury (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Per 100,000 population" .
+
+:YAxis a :Axis ;
+    :title "type of injury" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "418.2" ;
+    :yValue "Any animal-related injury*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "141.6" ;
+    :yValue "Non-venomous arthropods" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "103.6" ;
+    :yValue "Dog bites" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "77.8" ;
+    :yValue "Venomous arthropods" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "30.6" ;
+    :yValue "Other animal bites" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "24.5" ;
+    :yValue "All other animal-related injuries" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "22.2" ;
+    :yValue "Animal being ridden" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12.8" ;
+    :yValue "Venomous sea animals/plants" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "Venomous reptiles" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.1" ;
+    :yValue "Non-venomous reptiles" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Rat bites" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Animal-related accident involving vehicle" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Animal being drawn" ;
+    :belongsTo :Chart .

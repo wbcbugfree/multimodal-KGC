@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 U.S. non-profit hospitals based on the number of beds as of 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hospital (Location)" .
+
+:YAxis a :Axis ;
+    :title "Number of beds" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jackson Memorial Hospital (Miami)*" ;
+    :yValue "5266" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Florida Hospital Orlando" ;
+    :yValue "2473" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "New York Presbyterian Hospital/Weill Cornell Medical Center (New York City)" ;
+    :yValue "2428" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Baptist Medical Center (San Antonio)" ;
+    :yValue "1563" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "University of Pittsburgh Medical Center Presbyterian" ;
+    :yValue "1540" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Orlando (Fla.) Regional Medical Center" ;
+    :yValue "1530" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Montefiore Medical Center-Moses Division Hospital (Bronx, N.Y.)" ;
+    :yValue "1526" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Yale-New Haven (Conn.) Hospital" ;
+    :yValue "1499" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Barnes-Jewish Hospital (Saint Louis)" ;
+    :yValue "1394" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Methodist University Hospital (Memphis)" ;
+    :yValue "1373" ;
+    :belongsTo :Chart .

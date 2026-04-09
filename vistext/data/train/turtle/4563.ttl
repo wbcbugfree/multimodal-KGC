@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How did bullying impact you ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Developed depression" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Developed social anxiety" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Have had suicidal thoughts" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Have self-harmed" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Have truanted from school of college" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Have developed anti-social behaviors" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Developed an eating disorder" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ran away from home" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Have abused drugs and/or alcohol" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Have engaged in risky social behaviour" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

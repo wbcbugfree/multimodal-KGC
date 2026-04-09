@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage change of police recorded crime in London (UK) in 2018/19 , by offence group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Crime Type" .
+
+:YAxis a :Axis ;
+    :title "Percentage change on a year earlier" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Possession of weapons offences" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Public order offences" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Violence against the person" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sexual offences" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Shoplifting" ;
+    :yValue "-0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Vehicle offences" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Criminal damage and arson" ;
+    :yValue "-0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bicycle theft" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Theft offences" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Theft from the person" ;
+    :yValue "-0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Miscellaneous crimes against society" ;
+    :yValue "-0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Robbery" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Burglary" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Non-domestic burglary" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Domestic burglary" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Drug offences" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "All other theft offences" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .

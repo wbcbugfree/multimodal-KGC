@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Platform as a Service (PaaS) market share in 2011 and 2016 , by type of service" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "different Platform as a Service (PaaS) systems" .
+
+:YAxis a :Axis ;
+    :title "2016*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cloud Application platform services (aPaaS)" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cloud ALM Services (almPaaS)" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cloud BPM platform services (bpmPaaS)" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cloud Integration services (iPaaS)" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cloud Application Security Services" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Cloud MFT Services" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Cloud Application Services Governance" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Cloud Business Analytics Services (baPaaS)" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cloud MOM Services" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cloud Database services (dbPaas)" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Cloud Horizontal Portal Services (Portal PaaS)" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

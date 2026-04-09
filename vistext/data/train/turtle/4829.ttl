@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Countries with the highest employment in the travel and tourism industry worldwide in 2019 (in thousands)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of jobs" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "29089" ;
+    :yValue "China" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "27404" ;
+    :yValue "India" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5905" ;
+    :yValue "United States" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5798" ;
+    :yValue "Philippines" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4750" ;
+    :yValue "Indonesia" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4668" ;
+    :yValue "Mexico" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3131" ;
+    :yValue "Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2566" ;
+    :yValue "Vietnam" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2482" ;
+    :yValue "Thailand" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1734" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .

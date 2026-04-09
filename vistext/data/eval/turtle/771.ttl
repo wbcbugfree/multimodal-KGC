@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading mutual life and health insurance companies in the United States in 2019 , by revenue (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "mutual life and health insurance companies" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "44.12" ;
+    :yValue "New York Life Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "40.45" ;
+    :yValue "TIAA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "37.25" ;
+    :yValue "Massachusetts Mutual Life Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "32.29" ;
+    :yValue "Northwestern Mutual" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13.48" ;
+    :yValue "Guardian Life Ins. Co. of America" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8.61" ;
+    :yValue "Thrivent Financial for Lutherans" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.92" ;
+    :yValue "Western & Southern Financial Group" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.5" ;
+    :yValue "Medical Mutual of Ohio" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Mutual of America Life Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.39" ;
+    :yValue "Knights of Columbus" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Non-English languages ranked by number of speakers in England and Wales in 2011 (in 1,000 speakers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "language" .
+
+:YAxis a :Axis ;
+    :title "Speakers in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Polish" ;
+    :yValue "546" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Panjabi" ;
+    :yValue "273" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Urdu" ;
+    :yValue "269" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Bengali (with Sylheti and Chatgaya)" ;
+    :yValue "221" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gujarati" ;
+    :yValue "213" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Arabic" ;
+    :yValue "159" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "French" ;
+    :yValue "147" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "All Other Chinese**" ;
+    :yValue "141" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Portuguese" ;
+    :yValue "133" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Spanish" ;
+    :yValue "120" ;
+    :belongsTo :Chart .

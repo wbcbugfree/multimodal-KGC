@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of live births delivered by cesarean section worldwide in 2000 and 2015 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2000" .
+
+:YAxis a :Axis ;
+    :title "geographic region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.121" ;
+    :yValue "Global" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "West and Central Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.046" ;
+    :yValue "Eastern and Southern Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Middle East and North Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.072" ;
+    :yValue "South Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.134" ;
+    :yValue "East Asia and Pacific" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.323" ;
+    :yValue "Latin America and Caribbean" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.119" ;
+    :yValue "Eastern Europe and Central Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.243" ;
+    :yValue "North America" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.196" ;
+    :yValue "Western Europe" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ten highest-rated Netflix Original productions among Polish viewers in 2020 , according to Filmweb user ratings" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Netflix Original Production" .
+
+:YAxis a :Axis ;
+    :title "Rating out of 10" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "The Last Dance" ;
+    :yValue "8.75" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Caliphate" ;
+    :yValue "8.17" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Night on Earth" ;
+    :yValue "8.12" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Midnight Gospel" ;
+    :yValue "7.97" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The Trials of Gabriel Fernandez" ;
+    :yValue "7.65" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Unorthodox" ;
+    :yValue "7.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Love 101" ;
+    :yValue "7.53" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Money Heist: The Phenomenon" ;
+    :yValue "7.46" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lenox Hill" ;
+    :yValue "7.41" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The English Game" ;
+    :yValue "7.41" ;
+    :belongsTo :Chart .

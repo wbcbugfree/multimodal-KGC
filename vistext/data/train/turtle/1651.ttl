@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of four-star and five-star hotel rooms in France as of January 2019 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of hotel rooms" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Île-de-France" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Provence-Alpes-Côté d'Azur" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "21.4" ;
+    :yValue "Auvergne-Rhône-Alpes" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "18.8" ;
+    :yValue "Corsica" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "18.5" ;
+    :yValue "Brittany" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "17.6" ;
+    :yValue "Nouvelle-Aquitaine" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17.5" ;
+    :yValue "Grand Est" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "17.2" ;
+    :yValue "Normandy" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Occitanie" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "16.5" ;
+    :yValue "Pays de la Loire" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15.7" ;
+    :yValue "Hauts-de-France" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "15.3" ;
+    :yValue "Centre-Val de Loire" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "11.8" ;
+    :yValue "Bourgogne-Franche-Comté" ;
+    :belongsTo :Chart .

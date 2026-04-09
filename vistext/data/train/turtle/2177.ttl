@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading rum brands worldwide in 2013 , based on sales volume growth (in 1,000 9-liter cases)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Volume sales growth in thousand 9-liter cases" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1790" ;
+    :yValue "Hercules" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1247" ;
+    :yValue "Celebration" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "710" ;
+    :yValue "Khoday's" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "691" ;
+    :yValue "Captain Morgan" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "625" ;
+    :yValue "White House" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "511" ;
+    :yValue "Barceló" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "385" ;
+    :yValue "Jagatjit Aristocrat" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "280" ;
+    :yValue "Old Port XXX" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "206" ;
+    :yValue "Bozkov" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "200" ;
+    :yValue "Myanmar" ;
+    :belongsTo :Chart .

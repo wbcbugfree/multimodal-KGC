@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Amount Canadian consumers spent on home decor during holiday season 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Amount spent in Canadian dollars" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "0.509" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1-100" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "101-200" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "201-300" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "301-400" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "401-500" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "501-600*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "601-700*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "701-800*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "801-900*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "901-1000" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1000+*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

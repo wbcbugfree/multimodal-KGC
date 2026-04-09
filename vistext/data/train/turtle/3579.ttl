@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total number of passengers entering and exiting from Birmingham New St Station between 2004/05 and 2016/17" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of passenger entries and exits" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2016/17" ;
+    :yValue "42366776" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2015/16" ;
+    :yValue "39077018" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2014/15" ;
+    :yValue "35312788" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2013/14" ;
+    :yValue "34748984" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2012/13" ;
+    :yValue "32090346" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2011/12" ;
+    :yValue "31235638" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2010/11" ;
+    :yValue "24686632" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2009/10" ;
+    :yValue "25267757" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2008/09" ;
+    :yValue "25191945" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2007/08" ;
+    :yValue "17007185" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2006/07" ;
+    :yValue "14525873" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2005/06" ;
+    :yValue "17303169" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2004/05" ;
+    :yValue "16243912" ;
+    :belongsTo :Chart .

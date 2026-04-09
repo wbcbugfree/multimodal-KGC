@@ -1,0 +1,112 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual revenue of French video game publishers in 2016 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Annual revenue in million euros" .
+
+:YAxis a :Axis ;
+    :title "Video game publisher" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1475" ;
+    :yValue "Ubisoft*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "257" ;
+    :yValue "Gameloft (Vivendi)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "75" ;
+    :yValue "Focus Home Interactive" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Bigben Interactive" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Pretty Simple**" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Ankama" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Atari***" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Arkane Studio" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Quantic Dream" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Cyanide Studio" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Asobo Studio" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Don't Nod Entertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Anuman Interactive" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "IsCool Entertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "kylotonn Games" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Acute Games-Boostr****" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Plus in Digital" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Interaction Games" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Artefacts" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Playsoft****" ;
+    :belongsTo :Chart .

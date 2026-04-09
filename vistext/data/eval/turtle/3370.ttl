@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. merchandise imports that came from NAFTA countries in 2019 , by industry classification (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Import value in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "industry classification" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "195.6" ;
+    :yValue "Transportation equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "82.43" ;
+    :yValue "Oil & gas" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "72.92" ;
+    :yValue "Computer and electronic products" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "38.01" ;
+    :yValue "Machinery; except electrical" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35.45" ;
+    :yValue "Electrical equipment; appliances & components" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "30.18" ;
+    :yValue "Primary metal mfg" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "30.02" ;
+    :yValue "Chemicals" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "25.85" ;
+    :yValue "Food manufactures" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "24.04" ;
+    :yValue "Goods ret to ca (exp); us goods ret & reimps (imp)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "18.84" ;
+    :yValue "Agricultural products" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "16.04" ;
+    :yValue "Fabricated metal products; nesoi" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "14.27" ;
+    :yValue "Plastics & rubber products" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "13.84" ;
+    :yValue "Petroleum & coal products" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "12.45" ;
+    :yValue "Miscellaneous manufactured commodities" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "9.69" ;
+    :yValue "Paper" ;
+    :belongsTo :Chart .

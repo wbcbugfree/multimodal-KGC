@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average viewership of the leading news broadcasts on TVN24 during coronavirus (COVID-19) pandemic in Poland in 2020 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average Minute Rating (AMR) in millions" .
+
+:YAxis a :Axis ;
+    :title "News Broadcast" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.2" ;
+    :yValue "Fakty po faktach - Mar 13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.15" ;
+    :yValue "Konferencja prasowa - Mar 13" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.14" ;
+    :yValue "Kawa na ławę - Mar 15" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.05" ;
+    :yValue "Serwis informacyjny - Mar 14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.04" ;
+    :yValue "Tak jest - Mar 13" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.02" ;
+    :yValue "Konferencja prasowa - Mar 14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.01" ;
+    :yValue "Fakty po faktach - Mar 14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Loża prasowa - Mar 15" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Bez komentarza - Mar 15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.99" ;
+    :yValue "Kropka nad i - Mar 12" ;
+    :belongsTo :Chart .

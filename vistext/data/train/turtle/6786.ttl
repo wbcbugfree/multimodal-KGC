@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average fixed internet download and upload speeds in selected cities in the United States between 2nd and 3rd quarter 2018 (in Mbps)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Upload" .
+
+:YAxis a :Axis ;
+    :title "city of the United States" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "127.03" ;
+    :yValue "Kansas City, Missouri" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "70.65" ;
+    :yValue "Austin, Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "26.98" ;
+    :yValue "Lubbock, Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "75.62" ;
+    :yValue "Raleigh, North Carolina" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "49.86" ;
+    :yValue "San Antonio, Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "105.29" ;
+    :yValue "Lincoln, Nebraska" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "23.48" ;
+    :yValue "Henderson, Nevada" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "69.28" ;
+    :yValue "San Francisco, California" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "46.8" ;
+    :yValue "Boston, Massachusetts" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "58.93" ;
+    :yValue "Durham, North Carolina" ;
+    :belongsTo :Chart .

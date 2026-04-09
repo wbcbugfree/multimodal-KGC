@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of coronavirus (COVID-19) cases in Norway in 2020 , by county (as of November 26 , 2020)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of cases" .
+
+:YAxis a :Axis ;
+    :title "county of Norway" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10434" ;
+    :yValue "Oslo" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10273" ;
+    :yValue "Viken" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5040" ;
+    :yValue "Vestland" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1536" ;
+    :yValue "Rogaland" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1656" ;
+    :yValue "Innlandet" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1212" ;
+    :yValue "Trøndelag" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1025" ;
+    :yValue "Agder" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1178" ;
+    :yValue "Vestfold og Telemark" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "844" ;
+    :yValue "Troms og Finnmark" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "629" ;
+    :yValue "Møre og Romsdal" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "536" ;
+    :yValue "Nordland" ;
+    :belongsTo :Chart .

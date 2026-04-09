@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global market share of over-the-counter (OTC) drugs in 2016 , by therapeutic area" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "medical specialty" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cough, Cold and Allergy Remedies" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Analgesics" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Digestive Remedies" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dermatological" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Eye Care" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Wound Care" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Smoking Cessation Aids" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sleep Aids" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Emergency Contraception" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Adult Mouth Care" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

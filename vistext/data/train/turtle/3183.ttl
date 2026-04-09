@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Private data stored on digital devices according to internet users worldwide as of June 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Photos/videos/music/e-books" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Personal e-mail messages" ;
+    :yValue "0.62" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Address book/phone contacts" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Files for personal use" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "SMS or MMS" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Files for work use" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Work e-mails messages" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Passwords for personal e-mail accounts" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Passwords for personal online accounts" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sensitive info I would not want others to see" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Banking details" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other payment credentials" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Passwords for your work e-mail account" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Passwords for work VPN/intranet access" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Any financial data" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Any passwords or account details/logins" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Any private/personal information" ;
+    :yValue "0.88" ;
+    :belongsTo :Chart .

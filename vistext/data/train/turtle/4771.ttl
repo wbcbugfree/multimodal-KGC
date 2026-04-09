@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular social networks in the United States in October 2018 , based on monthly active users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Platform" .
+
+:YAxis a :Axis ;
+    :title "Number of total unique visitors in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Facebook" ;
+    :yValue "204.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Instagram" ;
+    :yValue "154.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Facebook Messenger" ;
+    :yValue "120.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Twitter" ;
+    :yValue "110" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Google Hangouts" ;
+    :yValue "93.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pinterest" ;
+    :yValue "86.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Blogger" ;
+    :yValue "64.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Reddit" ;
+    :yValue "56.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Snapchat" ;
+    :yValue "51.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tumblr" ;
+    :yValue "32.6" ;
+    :belongsTo :Chart .

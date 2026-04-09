@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of bankruptcies after the coronavirus outbreak in Sweden from February to November 2020 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Construction" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "102" ;
+    :yValue "Feb" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "125" ;
+    :yValue "Mar" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "119" ;
+    :yValue "Apr" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "90" ;
+    :yValue "May" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "90" ;
+    :yValue "Jun" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Jul" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Aug" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "72" ;
+    :yValue "Sep" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "90" ;
+    :yValue "Oct" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "105" ;
+    :yValue "Nov" ;
+    :belongsTo :Chart .

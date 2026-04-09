@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of the most valuable Malaysian brands in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Petronas" ;
+    :yValue "15215" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Maybank" ;
+    :yValue "3979" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Genting" ;
+    :yValue "3482" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tenaga Nasional" ;
+    :yValue "2742" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sime Darby" ;
+    :yValue "2475" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Public Bank" ;
+    :yValue "1843" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "CIMB" ;
+    :yValue "1813" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Maxis" ;
+    :yValue "1593" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "AirAsia" ;
+    :yValue "1575" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "DiGi" ;
+    :yValue "1065" ;
+    :belongsTo :Chart .

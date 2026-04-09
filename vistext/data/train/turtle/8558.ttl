@@ -1,0 +1,37 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Stadiums in Germany ranked by number of events hosted in the first half of 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Other events***" .
+
+:YAxis a :Axis ;
+    :title "stadiums/arenas" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "368" ;
+    :yValue "Signal Iduna Park (Dortmund)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "49" ;
+    :yValue "Veltins-Arena (Gelsenkirchen)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Commerzbank-Arena (Frankfurt)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "HDI-Arena (Hannover)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Grundig Stadion (Nurnberg)" ;
+    :belongsTo :Chart .

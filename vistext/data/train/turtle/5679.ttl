@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of leading worker compensation insurance companies in the United States in 2018 , by direct premiums written" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.075" ;
+    :yValue "Travelers Companies Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.059" ;
+    :yValue "Hartford Financial Services" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.047" ;
+    :yValue "Zurich Insurance Group*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.046" ;
+    :yValue "AmTrust Financial Services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.043" ;
+    :yValue "Liberty Mutual" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.042" ;
+    :yValue "Chubb**" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Berkshire Hathaway Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.039" ;
+    :yValue "State Insurance Fund Workers' Comp. (NY)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "AF Group" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.026" ;
+    :yValue "Old Republic Insurance" ;
+    :belongsTo :Chart .

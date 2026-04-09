@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading radio stations ranked by weekly reach percent in the United Kingdom (UK) as of 1st quarter 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Weekly reach percent*" .
+
+:YAxis a :Axis ;
+    :title "radio station" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.61" ;
+    :yValue "Channel 103 FM" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Island FM 104.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "MFR" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "West Sound (including West FM)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Manx Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Yorkshire Coast Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "Radio Borders" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "3FM" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Wessex FM" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "IOW Radio" ;
+    :belongsTo :Chart .

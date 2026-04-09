@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average house prices in rural and urban areas in the United Kingdom (UK) in 2013 , by region (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of the United Kingdom" .
+
+:YAxis a :Axis ;
+    :title "Rural" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "318185" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "235876" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "232630" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Great Britain" ;
+    :yValue "206423" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Mindlands" ;
+    :yValue "231876" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "160374" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "179692" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "200997" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "154270" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Yorkshire and The Humber" ;
+    :yValue "175466" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "137010" ;
+    :belongsTo :Chart .

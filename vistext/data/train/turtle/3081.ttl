@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of employees working for SoftBank Group Corp. from fiscal year 2010 to 2019 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of employees in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2019" ;
+    :yValue "80.91" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2018" ;
+    :yValue "76.87" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "74.95" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2016" ;
+    :yValue "68.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2015" ;
+    :yValue "63.59" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2014" ;
+    :yValue "66.15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2013" ;
+    :yValue "70.34" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2012*" ;
+    :yValue "25.89" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2011" ;
+    :yValue "22.71" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2010" ;
+    :yValue "21.8" ;
+    :belongsTo :Chart .

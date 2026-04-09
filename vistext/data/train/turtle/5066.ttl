@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of stores of key food and grocery retailers in Germany in 2013 , by store count" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of stores" .
+
+:YAxis a :Axis ;
+    :title "retailer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4190" ;
+    :yValue "Aldi" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4150" ;
+    :yValue "Netto" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3300" ;
+    :yValue "Lidl" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3000" ;
+    :yValue "Rewe" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "630" ;
+    :yValue "Kaufland" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "501" ;
+    :yValue "Kaiser's Tengelmann" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "377" ;
+    :yValue "Spar" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "324" ;
+    :yValue "Real" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "107" ;
+    :yValue "Metro" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "46" ;
+    :yValue "Globus" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "44" ;
+    :yValue "Selgros" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Handelshof" ;
+    :belongsTo :Chart .

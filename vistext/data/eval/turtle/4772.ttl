@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Paints used the most by construction firms in the United States in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sherwin-Williams" ;
+    :yValue "0.495" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Benjamin Moore" ;
+    :yValue "0.224" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Behr Paint Cooperation" ;
+    :yValue "0.121" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Kelly Moore" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Valspar" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "PPG Pittsburgh Paints" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Zar (United Gilsonite Labs)" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Devoe & Raynolds" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dutch Boy" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Olympic" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global smartphone application processor (AP) revenue from 2014 to 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Q2 2020" ;
+    :yValue "5.794" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Q1 2020" ;
+    :yValue "4.695" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2019" ;
+    :yValue "19.58" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1H 2019" ;
+    :yValue "9.091" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2018" ;
+    :yValue "20.579" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "20.18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1H 2017" ;
+    :yValue "9.391" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1H 2016" ;
+    :yValue "9.99" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2015" ;
+    :yValue "20.08" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2014" ;
+    :yValue "20.879" ;
+    :belongsTo :Chart .

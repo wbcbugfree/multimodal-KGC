@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Usage of online banking credentials for various online services in Finland in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Never" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Paying online purchases from your bank account" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Credit card payment verification likeVerified by Visa or Mastercard Secure Code" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Kela, the Finnish Social Insurance Institution" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "Verohallinto (the Finnish Tax office)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Insurance company's services" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Municipal healthcare services" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Posti (the main Finnish postal service)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Other governmental services" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.71" ;
+    :yValue "Trafi (Finnish Transport Safety Agency)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.68" ;
+    :yValue "Other municipal services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.69" ;
+    :yValue "Väestörekisterikeskus (the Population Register Centre)" ;
+    :belongsTo :Chart .

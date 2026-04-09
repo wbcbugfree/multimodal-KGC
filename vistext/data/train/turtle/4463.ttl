@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of homicide offences recorded in the United Kingdom in 2019/20 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region" .
+
+:YAxis a :Axis ;
+    :title "Number of homicide offences" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "130" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "114" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "East" ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "85" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "83" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "64" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Yorkshire and The Humber" ;
+    :yValue "61" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "51" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "33" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "27" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "20" ;
+    :belongsTo :Chart .

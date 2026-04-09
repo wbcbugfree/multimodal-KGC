@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Worldwide revenue from hardware maintenance and support services between 2005 and 2015 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "98985" ;
+    :yValue "2015*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "96022" ;
+    :yValue "2014*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "93126" ;
+    :yValue "2013*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "90296" ;
+    :yValue "2012*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "87502" ;
+    :yValue "2011*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "85838" ;
+    :yValue "2010" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "84892" ;
+    :yValue "2009" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "91106" ;
+    :yValue "2008" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "86138" ;
+    :yValue "2007" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "80845" ;
+    :yValue "2006" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "79283" ;
+    :yValue "2005" ;
+    :belongsTo :Chart .

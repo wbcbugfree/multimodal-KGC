@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population size of the United Kingdom (UK) in 2011 , by ethnic group (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of people in thousands" .
+
+:YAxis a :Axis ;
+    :title "ethnic group" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "55010" ;
+    :yValue "White*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1905" ;
+    :yValue "Black/African/Caribbean/Black British" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1452" ;
+    :yValue "Asian/ Asian British: Indian" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1250" ;
+    :yValue "Mixed / Multiple Ethnic Groups" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1175" ;
+    :yValue "Asian/ Asian British: Pakistani" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "862" ;
+    :yValue "Asian/ Asian British: Other Asian" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "580" ;
+    :yValue "Other Ethnic Group" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "452" ;
+    :yValue "Asian/ Asian British: Bangladeshi" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "433" ;
+    :yValue "Asian/ Asian British: Chinese" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Gypsy/Traveller/Irish Traveller**" ;
+    :belongsTo :Chart .

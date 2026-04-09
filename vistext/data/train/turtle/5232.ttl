@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Racist incidents recorded by the police in England and Wales in 2019/20 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Region of England" .
+
+:YAxis a :Axis ;
+    :title "Number of incidents*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "17596" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "5468" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "10526" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Yorkshire and the Humber" ;
+    :yValue "9472" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "8114" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "6709" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "4861" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "4814" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "3073" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "2634" ;
+    :belongsTo :Chart .

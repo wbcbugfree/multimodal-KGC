@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which , if any , of the following measures do you think the British Government should take to contain the Coronavirus (COVID-19) ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Apr 16 to Apr 17" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.87" ;
+    :yValue "Cancel large sporting events, concerts or other large events" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.82" ;
+    :yValue "Encourage companies to allow people to work from home" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.74" ;
+    :yValue "Temporarily close schools" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Quarantine anyone who has been in contact with a contaminated patient" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "Quarantine all inbound flights from countries with confirmed cases of Coronavirus" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Stop all inbound flights from countries with confirmed cases of Coronavirus" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.61" ;
+    :yValue "Quarantine all passengers on all flights from Mainland China" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Stop all flights from Mainland China" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Cancel routine hospital appointments and operations" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Provide free masks for all people in Britain" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Quarantine all Chinese travellers currently in Britain" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Quarantine any location in Britain that a contaminated patient has been in" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "I don't think the government should take any measures" ;
+    :belongsTo :Chart .

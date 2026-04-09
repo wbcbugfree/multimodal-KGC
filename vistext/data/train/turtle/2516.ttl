@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most in-demand skills in market research worldwide in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Data analytics/ data science" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Storytelling/ visualization" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sales and business knowledge" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Research skills" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Software developer/ coding or programming skills" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Critical thinking" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Professional/ workplace skills" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other skills" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "AI/ machine learning" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Marketing/ digital marketing" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Social media related skills" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Behavioral economics" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

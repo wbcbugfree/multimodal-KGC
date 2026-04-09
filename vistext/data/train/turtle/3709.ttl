@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular syndicated TV shows presence on Twitter as of August 2017 , by number of followers" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Millions of followers" .
+
+:YAxis a :Axis ;
+    :title "Most popular syndicated TV shows" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "71.83" ;
+    :yValue "The Ellen DeGeneres Show" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4.68" ;
+    :yValue "TMZ" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.2" ;
+    :yValue "The Dr. Oz Show" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.54" ;
+    :yValue "The Wendy Williams Show" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.32" ;
+    :yValue "Entertainment Tonight" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.32" ;
+    :yValue "The Rachel Ray Show" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.95" ;
+    :yValue "Live with Kelly and Ryan" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.92" ;
+    :yValue "Access Hollywood" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "The Doctors" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Extra" ;
+    :belongsTo :Chart .

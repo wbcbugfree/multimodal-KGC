@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rural population with access to improved water sources in selected countries in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "UK" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Australia" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Canada" ;
+    :yValue "0.99" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "US" ;
+    :yValue "0.94" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "0.92" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Brazil" ;
+    :yValue "0.85" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "0.85" ;
+    :belongsTo :Chart .

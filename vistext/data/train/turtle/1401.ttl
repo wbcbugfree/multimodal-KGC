@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading sports media companies in the United States on social media in 2019 , by user engagement (in million actions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sports media company" .
+
+:YAxis a :Axis ;
+    :title "Number of actions in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bleacher Report - Turner Sports" ;
+    :yValue "4225.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "ESPN" ;
+    :yValue "2547.96" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Barstool Sports" ;
+    :yValue "1328.31" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Wave" ;
+    :yValue "802.77" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Overtime" ;
+    :yValue "492.43" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ballislife" ;
+    :yValue "394.14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Score Media and Gaming Inc." ;
+    :yValue "354.69" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Clutchpoints Inc." ;
+    :yValue "324.84" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Slam Media Inc." ;
+    :yValue "254.76" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "ViacomCBS" ;
+    :yValue "233.73" ;
+    :belongsTo :Chart .

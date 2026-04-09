@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How often do you use various hygienic products ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Never" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Shampoo" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Conditioner" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Body soap or wash" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Facial soap" ;
+    :yValue "0.112" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Facial toner" ;
+    :yValue "0.512" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Facial mask" ;
+    :yValue "0.315" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Shaving cream or gel" ;
+    :yValue "0.438" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Deodorant or anti-perspirant" ;
+    :yValue "0.063" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Toothpaste" ;
+    :yValue "0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mouthwash" ;
+    :yValue "0.285" ;
+    :belongsTo :Chart .

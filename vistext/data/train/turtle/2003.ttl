@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Economic sectors most affected by the coronavirus (COVID-19) outbreak according to businesspeople in Chile in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tourism and hospitality" ;
+    :yValue "0.89" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mass consumption and retail" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Construction and real estate" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Transport" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Professional services / Consulting" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Industry" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Health / Education" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Financial services (banking, insurance and investments)" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Natural resources (mining, forestry, fishing, agriculture, energy)" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Public sector" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Telecommunications / Technology" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

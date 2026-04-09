@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total annual player salaries in the sports industry in 2019/20 , by league (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total player salaries in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "professional sports league" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5.52" ;
+    :yValue "NFL" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.66" ;
+    :yValue "NBA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.45" ;
+    :yValue "MLB" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.07" ;
+    :yValue "NHL" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.97" ;
+    :yValue "EPL" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.25" ;
+    :yValue "La Liga" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.22" ;
+    :yValue "Serie A" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.98" ;
+    :yValue "Bundesliga" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Ligue 1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "CSL" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "NPB" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "MLS" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "AFL" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "J-League" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "IPL" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "SPFL" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "CFL" ;
+    :belongsTo :Chart .

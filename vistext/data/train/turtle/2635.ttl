@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest car crime rate cities in Great Britain (UK) in 2011 and 2012 (in offences per 10,000 registered vehicles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Offences per 10,000 registered vehicles" .
+
+:YAxis a :Axis ;
+    :title "city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "505" ;
+    :yValue "Manchester" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "457" ;
+    :yValue "Bradford" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "443" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "420" ;
+    :yValue "Leeds" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "389" ;
+    :yValue "Sheffield" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "318" ;
+    :yValue "Newcastle-upon-Tyne" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "313" ;
+    :yValue "Birmingham" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "287" ;
+    :yValue "Liverpool" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "285" ;
+    :yValue "Cardiff" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "255" ;
+    :yValue "Bristol" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "121" ;
+    :yValue "National average" ;
+    :belongsTo :Chart .

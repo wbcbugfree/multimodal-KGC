@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of active physicians in Florida in 2020 , by specialty area" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of physicians" .
+
+:YAxis a :Axis ;
+    :title "Specialty area" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2303" ;
+    :yValue "Psychiatry" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2818" ;
+    :yValue "Surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2806" ;
+    :yValue "Anesthesiologists" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2928" ;
+    :yValue "Emergency medicine" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2684" ;
+    :yValue "Radiology" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2107" ;
+    :yValue "Cardiology" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1099" ;
+    :yValue "Oncology (cancer)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "422" ;
+    :yValue "Endocrinology, diabetes, & metabolism" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11936" ;
+    :yValue "All other specialities" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "29103" ;
+    :yValue "Total specialty" ;
+    :belongsTo :Chart .

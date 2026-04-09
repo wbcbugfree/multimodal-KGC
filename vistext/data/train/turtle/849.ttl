@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Miami Marlins all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Miami Marlins all-time home run leaders" .
+
+:YAxis a :Axis ;
+    :title "Number of home runs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Giancarlo Stanton" ;
+    :yValue "267" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dan Uggla" ;
+    :yValue "154" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Hanley Ramirez" ;
+    :yValue "148" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mike Lowell" ;
+    :yValue "143" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Miguel Cabrera" ;
+    :yValue "138" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Derrek Lee" ;
+    :yValue "129" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gary Sheffield" ;
+    :yValue "122" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jeff Conine" ;
+    :yValue "120" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cliff Floyd" ;
+    :yValue "110" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Preston Wilson" ;
+    :yValue "104" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Online poker related keywords ranked by search volume in the United Kingdom (UK) in March 2016 (in 1,000 searches)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "keywords" .
+
+:YAxis a :Axis ;
+    :title "Searches in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "poker" ;
+    :yValue "60.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "poker hands" ;
+    :yValue "33.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "poker games" ;
+    :yValue "12.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "texas holdem poker" ;
+    :yValue "9.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "how to play poker" ;
+    :yValue "9.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "poker rules" ;
+    :yValue "8.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "free poker" ;
+    :yValue "5.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "online poker" ;
+    :yValue "5.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "texas holdem" ;
+    :yValue "4.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "poker chips" ;
+    :yValue "3.6" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "other keywords" ;
+    :yValue "46.39" ;
+    :belongsTo :Chart .

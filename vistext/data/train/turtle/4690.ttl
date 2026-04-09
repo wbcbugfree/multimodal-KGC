@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population in Italy in 2019 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of individuals" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1324549" ;
+    :yValue "0 to 2 years" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1473800" ;
+    :yValue "3 to 5 years" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3299439" ;
+    :yValue "6 to 11 years" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3444969" ;
+    :yValue "12 to 17 years" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4166245" ;
+    :yValue "18 to 24 years" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6497501" ;
+    :yValue "25 to 34 years" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7863188" ;
+    :yValue "35 to 44 years" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9722784" ;
+    :yValue "45 to 54 years" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8505210" ;
+    :yValue "55 to 64 years" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6845171" ;
+    :yValue "65 to 74 years" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "7101783" ;
+    :yValue "75 years and more" ;
+    :belongsTo :Chart .

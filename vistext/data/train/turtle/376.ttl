@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 most valuable NFL football club brands in 2012 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value (in million U.S. dollars)" .
+
+:YAxis a :Axis ;
+    :title "American football team" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "510" ;
+    :yValue "Dallas Cowboys" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "New England Patriots" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "471" ;
+    :yValue "New York Giants" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "460" ;
+    :yValue "Green Bay Packers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "410" ;
+    :yValue "Pittsburgh Steelers" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "340" ;
+    :yValue "New Orleans Saints" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "337" ;
+    :yValue "Philadelphia Eagles" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "329" ;
+    :yValue "Baltimore Ravens" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "325" ;
+    :yValue "Houston Texans" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "325" ;
+    :yValue "Washington Football Team" ;
+    :belongsTo :Chart .

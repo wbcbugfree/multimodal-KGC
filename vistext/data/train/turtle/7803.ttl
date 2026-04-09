@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Positive and negative influence of selected factors on hedge fund performance according to hedge fund managers worldwide in H2 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Negative Impact" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "President Trump's proposals" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Continued low interest rate environment" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "US Fed interest rate increase" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Extended low volatility in equity markets" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Fallout of UKBrekit decision" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Volatility in commodity markets" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Volatility in oil prices" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "ZIRP and NIRP* in Europe and Japan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Extended low volatility in bond markets" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Geopolitical volatility in North Korea" ;
+    :belongsTo :Chart .

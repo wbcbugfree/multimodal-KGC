@@ -1,0 +1,27 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Net income of U.S. and European medical technology companies from 2009 to 2019 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Combined" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2019**" ;
+    :yValue "28.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2018**" ;
+    :yValue "20.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2017**" ;
+    :yValue "15" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of sentenced prisoners in the United States under state jurisdiction in 2018 , by offense" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of prisoners" .
+
+:YAxis a :Axis ;
+    :title "Offense" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "177700" ;
+    :yValue "Murder *" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "162700" ;
+    :yValue "Rape/sexual assault" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "155000" ;
+    :yValue "Robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "153100" ;
+    :yValue "Public-order *" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "135900" ;
+    :yValue "Aggravated or simple assault" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "129900" ;
+    :yValue "Other drug *" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "106500" ;
+    :yValue "Burglary" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "46500" ;
+    :yValue "Drug possession" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "43500" ;
+    :yValue "Other violent" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "38700" ;
+    :yValue "Larceny-theft" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "22400" ;
+    :yValue "Fraud" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "21900" ;
+    :yValue "Other property" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "18600" ;
+    :yValue "Negligent manslaughter" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "10200" ;
+    :yValue "Motor vehicle theft" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "7300" ;
+    :yValue "Other/unspecified *" ;
+    :belongsTo :Chart .

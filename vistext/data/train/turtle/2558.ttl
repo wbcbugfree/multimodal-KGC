@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Theme of mosques in the United Kingdom in 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of masjids" .
+
+:YAxis a :Axis ;
+    :title "Theme of mosques" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Ibadi" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Exclusive unaffiliated Sunni" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Modernist" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Inclusive unaffiliated Sunni" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Ikhwaan" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Non -Muslim, Qadiani faith" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "51" ;
+    :yValue "Maudoodi-inspired, Islamic Movementy" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "59" ;
+    :yValue "Shi'a, Twelvers, Shi'a, Twelvers," ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "Arabic or African mainstream" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "79" ;
+    :yValue "Other Sufi" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "144" ;
+    :yValue "Non -denom prayer rooms" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "182" ;
+    :yValue "Salafi" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "459" ;
+    :yValue "Barelvi" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "797" ;
+    :yValue "Deobandi" ;
+    :belongsTo :Chart .

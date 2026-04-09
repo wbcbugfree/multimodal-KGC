@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Revenue of Sotheby 's worldwide from 2009 to 2017 , by country (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "China*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "50.06" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "111.65" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "156.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "108.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "153.91" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "165.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "146.26" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "145.89" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "223.26" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "176.64" ;
+    :belongsTo :Chart .

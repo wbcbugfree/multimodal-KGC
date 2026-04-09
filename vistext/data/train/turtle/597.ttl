@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading primary silver mines worldwide in 2018 (in million ounces)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "primary silver mines" .
+
+:YAxis a :Axis ;
+    :title "Production in million ounces" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Saucito (Mexico)" ;
+    :yValue "19.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dukat (Russia)**" ;
+    :yValue "16.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Uchucchacua (Peru)" ;
+    :yValue "15.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Fresnillo Mine (Mexico)" ;
+    :yValue "15.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "San Julián (Mexico)" ;
+    :yValue "14.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Cannington (Australia)*" ;
+    :yValue "13.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "San José (Mexico)" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Greens Creek (U.S.)" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Imiter (Morocco)" ;
+    :yValue "7.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "La Colorada (Mexico)" ;
+    :yValue "7.5" ;
+    :belongsTo :Chart .

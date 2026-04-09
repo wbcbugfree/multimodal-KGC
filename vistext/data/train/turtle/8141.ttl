@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of mental health expenditures in the United States in 1990 and 2009 , by type of service" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "1990" .
+
+:YAxis a :Axis ;
+    :title "type of service" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.129" ;
+    :yValue "General hospital, specialty units" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.029" ;
+    :yValue "General hospital, nonspecialty care" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.237" ;
+    :yValue "Specialty hospitals" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.086" ;
+    :yValue "Psychiatrists" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.044" ;
+    :yValue "Nonpsychiatric physicians" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.059" ;
+    :yValue "Other professionals" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.124" ;
+    :yValue "Freestanding nursing homes" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Freestanding home health" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.152" ;
+    :yValue "Specialty mental health centers" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Specialty substance abuse centers" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.086" ;
+    :yValue "Retail prescription medication" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Insurance administration" ;
+    :belongsTo :Chart .

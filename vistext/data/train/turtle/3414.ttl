@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of sickness absence in the United Kingdom (UK) in 2013 , by reason" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Proportion of sickness absences" .
+
+:YAxis a :Axis ;
+    :title "reason" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Minor illnesses" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Musculoskeletal problems**" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Other***" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Stress, depression, anxiety" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Gastrointestinal problems" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Eye/ear/nose/mouth/dental problems" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Respiratory conditions" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Heart, blood pressure, circulation problems" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Genito-urinary problems" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Headaches and migraines" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Serious mental health problems" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Prefers not to give details" ;
+    :belongsTo :Chart .

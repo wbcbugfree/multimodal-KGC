@@ -1,0 +1,32 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "NCAA revenue returned to Division I conferences and member institutions from 2010/11 to 2019/20 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Basketball fund" .
+
+:YAxis a :Axis ;
+    :title "Special Assistance Fund" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "165.57" ;
+    :yValue "18.75" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "168.5" ;
+    :yValue "18.63" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "162.64" ;
+    :yValue "18.18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "159.71" ;
+    :yValue "17.69" ;
+    :belongsTo :Chart .

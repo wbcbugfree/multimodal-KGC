@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular YouTube channels as of October 2020 , ranked by number of subscribers (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "YouTube channel" .
+
+:YAxis a :Axis ;
+    :title "Number of subscribers in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "T-Series" ;
+    :yValue "156" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "PewDiePie" ;
+    :yValue "107" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cocomelon - Nursey Rhymes" ;
+    :yValue "95.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "SET India" ;
+    :yValue "84.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5-Minute Crafts" ;
+    :yValue "68.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "WWE" ;
+    :yValue "67.3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Kids Diana Show" ;
+    :yValue "64.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Zee Music Company" ;
+    :yValue "62.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Like Nastya" ;
+    :yValue "61.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Canal KondZilla" ;
+    :yValue "60.8" ;
+    :belongsTo :Chart .

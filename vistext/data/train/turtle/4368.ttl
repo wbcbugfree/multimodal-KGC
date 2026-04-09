@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Soccer player transfers by highest all-time transfer fee worldwide as of October 2020 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Soccer player" .
+
+:YAxis a :Axis ;
+    :title "Transfer fee in million euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Neymar (17/18)" ;
+    :yValue "222" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Philippe Coutinho (17/18)" ;
+    :yValue "145" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kylian Mbappé (18/19)" ;
+    :yValue "145" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Ousmane Dembélé (17/18)" ;
+    :yValue "130" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "João Félix (19/20)" ;
+    :yValue "127.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Antoine Griezmann (19/20)" ;
+    :yValue "120" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Christiano Ronaldo (18/19)" ;
+    :yValue "117" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Eden Hazard (19/20)" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Paul Pogba (16/17)" ;
+    :yValue "105" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Gareth Bale (13/14)" ;
+    :yValue "101" ;
+    :belongsTo :Chart .

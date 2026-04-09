@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of fleet vans in the United Kingdom (UK) from January to September 2014 and January to September 2015 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2014" .
+
+:YAxis a :Axis ;
+    :title "Vehicle brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "50671" ;
+    :yValue "Ford" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26480" ;
+    :yValue "VW" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20090" ;
+    :yValue "Peugeot" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12947" ;
+    :yValue "Vauxhall" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13319" ;
+    :yValue "Renault" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "13210" ;
+    :yValue "Mercedes" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11951" ;
+    :yValue "Citroen" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7123" ;
+    :yValue "Nissan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7051" ;
+    :yValue "Toyota" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6528" ;
+    :yValue "Fiat" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2561" ;
+    :yValue "Mitsubishi" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1788" ;
+    :yValue "Land Rover" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "472" ;
+    :yValue "Others" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "1018" ;
+    :yValue "Iveco" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Circulation of selected large daily newspapers in Finland in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of copies" .
+
+:YAxis a :Axis ;
+    :title "newspaper" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "339437" ;
+    :yValue "Helsingin Sanomat" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "72979" ;
+    :yValue "Turun Sanomat" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "68589" ;
+    :yValue "Keskisuomalainen" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "55535" ;
+    :yValue "Savon Sanomat" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "38713" ;
+    :yValue "Etelä-Suomen Sanomat" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "37226" ;
+    :yValue "Ilkka" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "31116" ;
+    :yValue "Karjalainen" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "29965" ;
+    :yValue "Hufvudstadsbladet" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "18834" ;
+    :yValue "Etelä-Saimaa" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "18045" ;
+    :yValue "Kouvolan Sanomat" ;
+    :belongsTo :Chart .

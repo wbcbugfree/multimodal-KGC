@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Large luxury car and SUV sales in the United States in 2019 , by key model (in units)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2018" .
+
+:YAxis a :Axis ;
+    :title "Large luxury car and SUV models" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "36032" ;
+    :yValue "Cadillac Escalade" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "21973" ;
+    :yValue "Mercedes-Benz GLS-Class" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "19207" ;
+    :yValue "Infiniti QX80" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "19030" ;
+    :yValue "Land Rover Range Rover" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "17839" ;
+    :yValue "Lincoln Navigator" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "29950" ;
+    :yValue "Tesla Model S" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14978" ;
+    :yValue "Mercedes-Benz S-Class" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8271" ;
+    :yValue "BMW 7-Series" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8114" ;
+    :yValue "Porsche Panamera" ;
+    :belongsTo :Chart .

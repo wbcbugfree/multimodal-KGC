@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Common equity tier 1 capital (CET1) ratio of selected large financial institutions in the United States as of Q2 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Financial institution" .
+
+:YAxis a :Axis ;
+    :title "CET1 ratio" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Morgan Stanley" ;
+    :yValue "0.1654" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "TD Group US Holdings LLC" ;
+    :yValue "0.1632" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "HSBC North American Holdings" ;
+    :yValue "0.1364" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "American Express Company" ;
+    :yValue "0.1358" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Goldman Sachs Group" ;
+    :yValue "0.1327" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bank of New York Mellon Corporation" ;
+    :yValue "0.1274" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "JPMorgan Chase" ;
+    :yValue "0.1238" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Capital One Financial" ;
+    :yValue "0.1236" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "State Street Corporation" ;
+    :yValue "0.1233" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Citigroup" ;
+    :yValue "0.1176" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Bank of America Corporation" ;
+    :yValue "0.1159" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "PNC Financial SVC Group" ;
+    :yValue "0.1126" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Wells Fargo & Company" ;
+    :yValue "0.1097" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Truist Financial" ;
+    :yValue "0.0969" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "U.S. Bancorp" ;
+    :yValue "0.0905" ;
+    :belongsTo :Chart .

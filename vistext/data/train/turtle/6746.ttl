@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Direct contribution of travel and tourism to GDP worldwide in 2016 , by region (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "geographic region" .
+
+:YAxis a :Axis ;
+    :title "2017" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "European Unio" ;
+    :yValue "665.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "European Union North Americ" ;
+    :yValue "623.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "North America North East Asi" ;
+    :yValue "573.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "North East Asia South East Asi" ;
+    :yValue "135.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "South East Asia Latin Americ" ;
+    :yValue "127.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Latin America South Asi" ;
+    :yValue "112.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "South Asia Other Europ" ;
+    :yValue "94.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other Europe Middle Eas" ;
+    :yValue "84.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Middle East Oceani" ;
+    :yValue "58.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Oceania Sub Saharan Afric" ;
+    :yValue "43.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sub Saharan Africa North Afric" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "North Africa Caribbea" ;
+    :yValue "17.9" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Caribbean Central Asi" ;
+    :yValue "3.4" ;
+    :belongsTo :Chart .

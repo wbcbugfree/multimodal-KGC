@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Driving under the influence of alcohol in the United States in 2015 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:YAxis a :Axis ;
+    :title "Age in years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "12-20" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.189" ;
+    :yValue "21-25 (2014)**" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.169" ;
+    :yValue "26-29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.139" ;
+    :yValue "30-34" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.125" ;
+    :yValue "35-39" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.118" ;
+    :yValue "40-44" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.098" ;
+    :yValue "45-49" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "50-54" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.093" ;
+    :yValue "55-59" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.064" ;
+    :yValue "60-64" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.035" ;
+    :yValue "65+" ;
+    :belongsTo :Chart .

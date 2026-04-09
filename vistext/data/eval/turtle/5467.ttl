@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The Lord of the Rings : Age of selected characters" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age in years" .
+
+:YAxis a :Axis ;
+    :title "Character" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "589" ;
+    :yValue "Gollum" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "140" ;
+    :yValue "Gimli" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "129" ;
+    :yValue "Bilbo" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "89" ;
+    :yValue "Denethor" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "88" ;
+    :yValue "Aragorn" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "51" ;
+    :yValue "Frodo" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "41" ;
+    :yValue "Boromir" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "Samwise Gamgee" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Merry" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Faramir" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Pippin" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Eomer" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Eowyn" ;
+    :belongsTo :Chart .

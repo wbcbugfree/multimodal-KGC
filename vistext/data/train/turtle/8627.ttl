@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ratio of household rent to income in the United Kingdom (UK) December 2018 and December 2019 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of United Kingdom" .
+
+:YAxis a :Axis ;
+    :title "Dec '19" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "0.359" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "0.325" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "0.318" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "UK Average" ;
+    :yValue "0.311" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "East England" ;
+    :yValue "0.307" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "UK Average (Excluding London)" ;
+    :yValue "0.297" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "0.287" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "0.288" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "0.287" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "0.296" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "0.277" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Yorkshire & Humber" ;
+    :yValue "0.267" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "0.244" ;
+    :belongsTo :Chart .

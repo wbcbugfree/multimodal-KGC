@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The 10 most valuable corporate brands worldwide in 2015 (in billion euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand corporation" .
+
+:YAxis a :Axis ;
+    :title "Brand value in billion euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Apple" ;
+    :yValue "136.91" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Google" ;
+    :yValue "73.63" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Microsoft" ;
+    :yValue "66.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Coca-Cola Company" ;
+    :yValue "66.52" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Johnson & Johnson" ;
+    :yValue "52.11" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "China Mobile" ;
+    :yValue "48.68" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Procter & Gamble" ;
+    :yValue "47.93" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Verizon" ;
+    :yValue "47.26" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "AT&T" ;
+    :yValue "47.06" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Philip Morris" ;
+    :yValue "46.34" ;
+    :belongsTo :Chart .

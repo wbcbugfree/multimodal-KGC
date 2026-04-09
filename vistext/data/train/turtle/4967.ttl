@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten national and international DIY retailers in Italy as of June 2020 , by number of stores" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of stores" .
+
+:YAxis a :Axis ;
+    :title "DIY retailers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "107" ;
+    :yValue "Brico io" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "103" ;
+    :yValue "Brico Ok" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "87" ;
+    :yValue "Bricofer" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "84" ;
+    :yValue "Bricolife" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Bricocenter" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "57" ;
+    :yValue "Obi" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "49" ;
+    :yValue "Leroy Merlin" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "Evoluzione Brico" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "FDT Group" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Self" ;
+    :belongsTo :Chart .

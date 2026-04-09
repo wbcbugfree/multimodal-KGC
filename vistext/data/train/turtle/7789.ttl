@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Unemployment rate after the coronavirus outbreak in Norway in 2020 , by industry (as of December 8)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "Before COVID-19" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tourism and transportation" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Office work" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Executives" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Service and related industries" ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Industrial work" ;
+    :yValue "0.033" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Retail and sales" ;
+    :yValue "0.029" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Building and construction" ;
+    :yValue "0.038" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Child and adolescent related work" ;
+    :yValue "0.026" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Farming, forestry and fisheries" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Brokers and consultants" ;
+    :yValue "0.013" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Engineers" ;
+    :yValue "0.011" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Academic occupations" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Health care" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Education" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .

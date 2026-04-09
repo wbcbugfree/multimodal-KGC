@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular TV shows on Facebook as of August 2014 , by number of likes (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of likes in millions" .
+
+:YAxis a :Axis ;
+    :title "Most popular TV shows on Facebook" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "74.4" ;
+    :yValue "The Simpsons" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "60.4" ;
+    :yValue "Mr. Bean" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "58.2" ;
+    :yValue "SpongeBob SquarePants" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "56.3" ;
+    :yValue "Family Guy" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "50.7" ;
+    :yValue "South Park" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "44.1" ;
+    :yValue "House" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "31.9" ;
+    :yValue "The Big Bang Theory" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30.9" ;
+    :yValue "Two and a Half Men" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "30.4" ;
+    :yValue "Futurama" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "29.8" ;
+    :yValue "The Walking Dead" ;
+    :belongsTo :Chart .

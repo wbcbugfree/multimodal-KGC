@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total motorcycle sales in the Netherlands in 2016 to 2018 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Motorcycle brand" .
+
+:YAxis a :Axis ;
+    :title "2017" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BM" ;
+    :yValue "2020" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BMW Yamah" ;
+    :yValue "1836" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Yamaha Kawasak" ;
+    :yValue "1842" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Kawasaki KT" ;
+    :yValue "1111" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "KTM Suzuk" ;
+    :yValue "1162" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Suzuki Harley-Davidso" ;
+    :yValue "1022" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Harley-Davidson Hond" ;
+    :yValue "1210" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Honda Triump" ;
+    :yValue "643" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Triumph Piaggio" ;
+    :yValue "439" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Piaggio* Ducat" ;
+    :yValue "586" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Ducati Husqvarn" ;
+    :yValue "137" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Husqvarna Kymc" ;
+    :yValue "120" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Kymco Mas" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Mash Aprili" ;
+    :yValue "49" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Aprilia Moto Guzz" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Moto Guzzi MV August" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "MV Augusta Peugeo" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Peugeot Othe" ;
+    :yValue "471" ;
+    :belongsTo :Chart .

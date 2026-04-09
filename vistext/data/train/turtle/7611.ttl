@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Regional distribution of BBC network TV programming spending in the United Kingdom (UK) from 2012 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2012" .
+
+:YAxis a :Axis ;
+    :title "geographic region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.458" ;
+    :yValue "Total nations and regions" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.542" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.301" ;
+    :yValue "Total regions excl. London" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.167" ;
+    :yValue "North of England" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.157" ;
+    :yValue "Total nations" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.076" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.074" ;
+    :yValue "South of England" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.068" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.023" ;
+    :yValue "Multi-region**" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.037" ;
+    :yValue "Midlands" ;
+    :belongsTo :Chart .

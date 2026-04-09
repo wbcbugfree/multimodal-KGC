@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Deadliest creatures worldwide by annual number of human deaths as of 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Annual number of human deaths" .
+
+:YAxis a :Axis ;
+    :title "Creature" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "750000" ;
+    :yValue "Mosquitoes" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "437000" ;
+    :yValue "Humans" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "100000" ;
+    :yValue "Snakes" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "35000" ;
+    :yValue "Dogs" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20000" ;
+    :yValue "Snails" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12000" ;
+    :yValue "Assassin bugs" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10000" ;
+    :yValue "Tsetse Flies" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4500" ;
+    :yValue "Ascaris roundworms" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "Crocodiles" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "700" ;
+    :yValue "Tapeworms" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "Hippopotamuses" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "Elephants" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Lions" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Wolves" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Sharks" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of directly operated Kering Group stores worldwide in 2019 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of directly operated stores" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "487" ;
+    :yValue "Gucci" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "268" ;
+    :yValue "Bottega Veneta" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "222" ;
+    :yValue "Saint Laurent" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "155" ;
+    :yValue "Balenciaga*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Alexander McQueen*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "48" ;
+    :yValue "Pomellato*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "Boucheron*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "Brioni*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Qeelin*" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "DoDo*" ;
+    :belongsTo :Chart .

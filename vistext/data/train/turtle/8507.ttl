@@ -1,0 +1,42 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average retail price for roasted coffee in Canada from January 2015 to June 2020 (in Canadian dollars per 300 grams)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2020" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5.04" ;
+    :yValue "Jun" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4.88" ;
+    :yValue "May" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.99" ;
+    :yValue "Apr" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Mar" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5.02" ;
+    :yValue "Feb" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.95" ;
+    :yValue "Jan" ;
+    :belongsTo :Chart .

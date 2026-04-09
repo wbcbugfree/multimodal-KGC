@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of people affected by major mudslides worldwide from 1900 to 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of affected people" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4000000" ;
+    :yValue "Brazil (January 11, 1966)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2500000" ;
+    :yValue "India (July 1986)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2100000" ;
+    :yValue "China (May 2010)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1100000" ;
+    :yValue "India (September 12, 1995)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "700000" ;
+    :yValue "Peru (January 1983)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "300000" ;
+    :yValue "Afghanistan (January 13, 2006)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "265865" ;
+    :yValue "Nepal (July 15, 2002)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "237600" ;
+    :yValue "China (May 4, 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "229548" ;
+    :yValue "Indonesia (March 31, 2003)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "217988" ;
+    :yValue "Philippines (December 19, 2003)" ;
+    :belongsTo :Chart .

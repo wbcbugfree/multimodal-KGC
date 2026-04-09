@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Breakdown of power consumption in a semiconductor fabrication plant , as of 2015 , by specific application" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of power consumption" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Manufacturing equipment" ;
+    :yValue "0.456" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Exhaust" ;
+    :yValue "0.149" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chilled water" ;
+    :yValue "0.129" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Ultrapure water (UPW)" ;
+    :yValue "0.095" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nitrogen (N2)" ;
+    :yValue "0.062" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Clean dry air (CDA)" ;
+    :yValue "0.052" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Waste water" ;
+    :yValue "0.013" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Recirculated air" ;
+    :yValue "0.011" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lighting" ;
+    :yValue "0.011" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Make-up air" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Bulk gases" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Automated material handling system (AMHS)" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Volatile organic compound (VOC) abatement" ;
+    :yValue "0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Hot water" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .

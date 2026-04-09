@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of food grains produced in India in financial year 2020 , by type (in million metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type of grain" .
+
+:YAxis a :Axis ;
+    :title "Production volume in million metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Rice" ;
+    :yValue "117.94" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Wheat" ;
+    :yValue "107.18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Coarse cereals" ;
+    :yValue "47.54" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Maize" ;
+    :yValue "28.98" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gram" ;
+    :yValue "10.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bajra" ;
+    :yValue "10.31" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jowar" ;
+    :yValue "4.63" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tur" ;
+    :yValue "3.75" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Moong" ;
+    :yValue "2.34" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Urad" ;
+    :yValue "2.33" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Ragi" ;
+    :yValue "1.69" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Barley" ;
+    :yValue "1.59" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Smal millets" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .

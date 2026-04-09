@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of Ashok Leyland Limited from financial year 2010 to 2020 (in billion Indian rupees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "year" .
+
+:YAxis a :Axis ;
+    :title "Revenue in billion Indian rupees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "FY 2020" ;
+    :yValue "174.67" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "FY 2019" ;
+    :yValue "290.55" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "FY 2018*" ;
+    :yValue "266.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "FY 2017" ;
+    :yValue "214.53" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "FY 2016" ;
+    :yValue "199.93" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "FY 2015" ;
+    :yValue "144.86" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "FY 2014" ;
+    :yValue "105.61" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "FY 2013" ;
+    :yValue "132.99" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "FY 2012" ;
+    :yValue "137.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "FY 2011" ;
+    :yValue "121.53" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "FY 2010" ;
+    :yValue "78.73" ;
+    :belongsTo :Chart .

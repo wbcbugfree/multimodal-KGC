@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of Toyota and Lexus hybrid cars sold in the United Kingdom (UK) in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Units sold" .
+
+:YAxis a :Axis ;
+    :title "Toyota and Lexus  hybrid car" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "17001" ;
+    :yValue "Yaris Hybrid" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11972" ;
+    :yValue "Auris Hybrid (incl. TS)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6918" ;
+    :yValue "RAV4 Hybrid" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4835" ;
+    :yValue "Lexus NX" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4187" ;
+    :yValue "Prius" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2846" ;
+    :yValue "Lexus CT" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2204" ;
+    :yValue "Lexus RX" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1572" ;
+    :yValue "Lexus IS" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "978" ;
+    :yValue "Prius +" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "771" ;
+    :yValue "Prius Plug-in" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "274" ;
+    :yValue "Lexus GS" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "76" ;
+    :yValue "Lexus LS" ;
+    :belongsTo :Chart .

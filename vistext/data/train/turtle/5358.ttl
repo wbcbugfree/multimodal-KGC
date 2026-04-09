@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Pharma companies involved in COVID-19 R & D with largest market capitalization change until May 27 , 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Change in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Gilead Sciences" ;
+    :yValue "26.33" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Johnson & Johnson" ;
+    :yValue "25.97" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Roche" ;
+    :yValue "19.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sanofi" ;
+    :yValue "13.78" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "BioNTech" ;
+    :yValue "10.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pfizer" ;
+    :yValue "8.76" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Astrazeneca" ;
+    :yValue "5.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Moderna" ;
+    :yValue "5.01" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "GlaxoSmithKline" ;
+    :yValue "4.86" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Takeda" ;
+    :yValue "4.42" ;
+    :belongsTo :Chart .

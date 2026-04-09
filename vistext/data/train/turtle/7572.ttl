@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of votes in the Brexit referendum of 2016 in the United Kingdom , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Remain" .
+
+:YAxis a :Axis ;
+    :title "region of the united kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.599" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.558" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.482" ;
+    :yValue "South East" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.475" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.474" ;
+    :yValue "South West" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.463" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.435" ;
+    :yValue "East" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.423" ;
+    :yValue "Yorkshire and the Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "North East" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.412" ;
+    :yValue "East Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.407" ;
+    :yValue "West Midlands" ;
+    :belongsTo :Chart .

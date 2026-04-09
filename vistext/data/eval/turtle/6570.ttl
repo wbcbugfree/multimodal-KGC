@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Preliminary share of total votes for each party in the Canadian federal election held on October 21 , 2019 (as of October 22 , 2019) , by province" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "NDP-New Democratic Party" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "0.115" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "0.244" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "0.207" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "0.094" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "0.239" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Northwest Territories" ;
+    :yValue "0.218" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "0.189" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "0.412" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "0.168" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "0.107" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "0.195" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Yukon" ;
+    :yValue "0.218" ;
+    :belongsTo :Chart .

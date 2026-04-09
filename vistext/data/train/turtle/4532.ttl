@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest city parks in the United States in 2019 (in acres)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "park" .
+
+:YAxis a :Axis ;
+    :title "Park size in acres" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "McDowell Sonoran Preserve, Scottsdale" ;
+    :yValue "30500" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "South Mountain Preserve, Phoenix" ;
+    :yValue "16306" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sonoran Preserve, Phoenix" ;
+    :yValue "9487" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cullen Park, Houston" ;
+    :yValue "9270" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mission Trails Regional Park, San Diego" ;
+    :yValue "6932" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jefferson Memorial Forest, Louisville" ;
+    :yValue "6218" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lake Stanley Draper, Oklahoma City" ;
+    :yValue "6190" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Forest Park, Portland" ;
+    :yValue "5172" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lake Houston Wilderness Park, Houston" ;
+    :yValue "4787" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Shooting Range Park, Albuquerque" ;
+    :yValue "4596" ;
+    :belongsTo :Chart .

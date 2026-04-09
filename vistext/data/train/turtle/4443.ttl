@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "New York Yankees all-time hits leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hits" .
+
+:YAxis a :Axis ;
+    :title "Hit leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3465" ;
+    :yValue "Derek Jeter" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2721" ;
+    :yValue "Lou Gehrig" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2518" ;
+    :yValue "Babe Ruth" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2415" ;
+    :yValue "Mickey Mantle" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2336" ;
+    :yValue "Bernie Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2214" ;
+    :yValue "Joe DiMaggio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2153" ;
+    :yValue "Don Mattingly" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2148" ;
+    :yValue "Yogi Berra" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1969" ;
+    :yValue "Bill Dickey" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1866" ;
+    :yValue "Earle Combs" ;
+    :belongsTo :Chart .

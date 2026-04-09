@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of days American presidents have been in office until their disapproval rating reached 51 percent from Truman to Trump" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of days in office" .
+
+:YAxis a :Axis ;
+    :title "American presidents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Donald Trump (current)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "936" ;
+    :yValue "Barack Obama (2009-2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1205" ;
+    :yValue "George W. Bush (2001-2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "573" ;
+    :yValue "Bill Clinton (1993-2001)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1136" ;
+    :yValue "George H.W. Bush (1989-1993)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "727" ;
+    :yValue "Ronald Reagan (1981-1989)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "851" ;
+    :yValue "Jimmy Carter (1977-1981)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1659" ;
+    :yValue "Richard Nixon (1969-1974)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1575" ;
+    :yValue "Lyndon B. Johnson (1963-1969)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "588" ;
+    :yValue "Harry S. Truman (1945-1953)" ;
+    :belongsTo :Chart .

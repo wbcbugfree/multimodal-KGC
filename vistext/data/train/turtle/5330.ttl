@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rate of civilians killed by the police annually in selected countries , as of 2019 (per 10 million residents)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "country" .
+
+:YAxis a :Axis ;
+    :title "Rate of police killings per 10 million residents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "United States" ;
+    :yValue "33.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Canada**" ;
+    :yValue "9.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Australia***" ;
+    :yValue "8.5" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Netherlands" ;
+    :yValue "2.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "New Zealand****" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Germany****" ;
+    :yValue "1.3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "England and Wales" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Japan****" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Iceland****" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Norway****" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

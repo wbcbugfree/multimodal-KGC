@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Do you use a tablet for any of the following ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "activities children carried out on tablets" .
+
+:YAxis a :Axis ;
+    :title "8-12" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Playing games" ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "To learn things" ;
+    :yValue "0.78" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Watching videos" ;
+    :yValue "0.77" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Downloading apps" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Browsing online" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Taking pictures or films" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chating with friends" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Video chat (e.g. Skype or FaceTime)" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Watching TV" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Social networking (e.g. Facebook or Twitter)" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "None of the above" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

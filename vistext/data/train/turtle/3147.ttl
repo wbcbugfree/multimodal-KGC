@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of animal food manufacturing establishments in Canada as of December in 2019 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of establishments" .
+
+:YAxis a :Axis ;
+    :title "province of Canada" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "129" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "104" ;
+    :yValue "Quebec" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "Alberta" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "51" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Saskatchewan" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Nova Scotia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .

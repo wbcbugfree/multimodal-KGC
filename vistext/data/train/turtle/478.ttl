@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Red Sox all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "Boston Red Sox all-time RBI leaders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1844" ;
+    :yValue "Carl Yastrzemski" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1839" ;
+    :yValue "Ted Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1530" ;
+    :yValue "David Ortiz" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1451" ;
+    :yValue "Jim Rice" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1346" ;
+    :yValue "Dwight Evans" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1247" ;
+    :yValue "Bobby Doerr" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "868" ;
+    :yValue "Manny Ramirez" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "788" ;
+    :yValue "Jimmie Foxx" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "773" ;
+    :yValue "Rico Petrocelli" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "757" ;
+    :yValue "Jason Varitek" ;
+    :belongsTo :Chart .

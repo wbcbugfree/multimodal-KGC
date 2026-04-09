@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "In your opinion , how important are the following criteria when choosing an online shop ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Very important" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Product quality" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Detailed product descriptions" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Prices" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Transparent and simple return policy" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Available payment methods" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Product range" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Free shipping" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Information on returns directly during payment" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Online shop image" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Customer ratings" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Quality seals" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Shipping service options" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Degree of online shop awareness" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How often have you worn a face mask outside your home to protect yourself or others from coronavirus (COVID-19) ? (as of October 18 , 2020)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Survey date" .
+
+:YAxis a :Axis ;
+    :title "Always" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "0.958" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Italy" ;
+    :yValue "0.922" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "0.844" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "0.685" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Netherlands" ;
+    :yValue "0.212" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Denmark" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Finland" ;
+    :yValue "0.109" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Norway" ;
+    :yValue "0.087" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sweden" ;
+    :yValue "0.043" ;
+    :belongsTo :Chart .

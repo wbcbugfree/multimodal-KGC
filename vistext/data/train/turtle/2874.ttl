@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Value of services exports of the United Kingdom (UK) into the European Union (EU) in 2019 , by type (in billion GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value of trade in services in billion GBP" .
+
+:YAxis a :Axis ;
+    :title "Service Type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "39.81" ;
+    :yValue "Other business services" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26.21" ;
+    :yValue "Financial" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18.22" ;
+    :yValue "Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14.47" ;
+    :yValue "Transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10.55" ;
+    :yValue "ICT" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7.04" ;
+    :yValue "Insurance and Pension" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6.43" ;
+    :yValue "Intellectual property" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.92" ;
+    :yValue "Maintenance and repair" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.91" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Personal, cultural and recreational" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1.09" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.76" ;
+    :yValue "Government" ;
+    :belongsTo :Chart .

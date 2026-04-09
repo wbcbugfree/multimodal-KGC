@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of tourist arrivals in Egypt from 2012 to 2018 , by month (in1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2012" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "978.26" ;
+    :yValue "Dec 1102.68 Nov 1163.04 Oct" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "993.78" ;
+    :yValue "Sept" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1037.79" ;
+    :yValue "Aug 1013.65 Jul" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "849.52" ;
+    :yValue "Jun" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "845.64" ;
+    :yValue "May 1047.19 Apr" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "926.78" ;
+    :yValue "Mar" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "753.45" ;
+    :yValue "Feb" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "820.07" ;
+    :yValue "Jan" ;
+    :belongsTo :Chart .

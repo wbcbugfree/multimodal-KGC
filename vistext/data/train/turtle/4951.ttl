@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Non-English main home languages in Scottish schools in 2018 , by language" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of speakers" .
+
+:YAxis a :Axis ;
+    :title "language" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "16425" ;
+    :yValue "Polish" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "6312" ;
+    :yValue "Urdu" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6130" ;
+    :yValue "Scotstish" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4158" ;
+    :yValue "Arabic" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3887" ;
+    :yValue "Punjabi" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1888" ;
+    :yValue "Chinese (Modern Standard/Mandarin)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1740" ;
+    :yValue "Romanian" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1323" ;
+    :yValue "Spanish" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1191" ;
+    :yValue "Russian" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1135" ;
+    :yValue "Cantonese" ;
+    :belongsTo :Chart .

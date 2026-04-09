@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rates of the 10 leading causes of death in the United States in 2018 (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cause of death" .
+
+:YAxis a :Axis ;
+    :title "Deaths per 100,000 population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Heart disease" ;
+    :yValue "163.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Malignant neoplasms" ;
+    :yValue "149.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Accidents (unintentional injuries)" ;
+    :yValue "48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chronic lower respiratorydiseases" ;
+    :yValue "39.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cerebrovascular diseases" ;
+    :yValue "37.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Alzheimer’s disease" ;
+    :yValue "30.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Diabetes mellitus" ;
+    :yValue "21.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Influenza and pneumonia" ;
+    :yValue "14.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nephritis, nephrotic syndrome and nephrosis" ;
+    :yValue "12.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Intentional self-harm (suicide)" ;
+    :yValue "14.2" ;
+    :belongsTo :Chart .

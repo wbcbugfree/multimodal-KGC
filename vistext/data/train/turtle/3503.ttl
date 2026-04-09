@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following actions has your organization taken to control data leakage of sensitive information ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of repondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Defined a specific policy regarding the classification and handling of sensitive information" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.68" ;
+    :yValue "Employee awareness programs" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Implemented additional security mechanisms for protecting information (e.g. encryption)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Locked down or restricted use of certain hardware (e.g. USBs, Firewall ports)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Used internal auditing for testing of controls" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "Defined specific requirements for telecommuting/telework regarding the protection of information that is taken outside the office" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Implemented data loss prevention tools (e.g. McAfee, Symantec)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Implemented log review tools" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Restricted use of instant messaging or email for sensitive sata transmission" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Prohibited use of camera devices within sensitive or restricted areas" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Restricted access to sensitive information to specific time periods" ;
+    :belongsTo :Chart .

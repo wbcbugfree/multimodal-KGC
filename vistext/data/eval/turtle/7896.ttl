@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular music streaming services in the United States in March 2018 and September 2019 , by monthly users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "September 2019" .
+
+:YAxis a :Axis ;
+    :title "music streaming service" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "44.5" ;
+    :yValue "Apple Music" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "44.2" ;
+    :yValue "Spotify" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "31.47" ;
+    :yValue "Pandora Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25.9" ;
+    :yValue "iHeartRadio" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "21.77" ;
+    :yValue "Google Play Music" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16.46" ;
+    :yValue "Amazon Music" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "15.31" ;
+    :yValue "SoundCloud" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13.11" ;
+    :yValue "Shazam" ;
+    :belongsTo :Chart .

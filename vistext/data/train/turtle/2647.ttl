@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of government employees furloughed after U.S. government shutdown as of October 1 , 2013 , by agency and department" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Government departments and agencies" .
+
+:YAxis a :Axis ;
+    :title "Percentage of employees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "NASA" ;
+    :yValue "0.97" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Environmental Protection Agency" ;
+    :yValue "0.94" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Department of Commerce" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Department of Labor" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Department of the Interior" ;
+    :yValue "0.81" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Department of the Treasury" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Department of Energy" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Department of Health and Human Services" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Department of Defense" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Department of Transportation" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Social Security Administration" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Department of Justice" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Department of Homeland Security" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Department of Veteran Affairs" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population of Luxembourg in 2020 , by canton" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "canton of Luxembourg" .
+
+:YAxis a :Axis ;
+    :title "Population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Grand Duchy of Luxembourg" ;
+    :yValue "626108" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Canton Luxembourg" ;
+    :yValue "190671" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Canton Esch" ;
+    :yValue "183364" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Canton Capellen" ;
+    :yValue "50094" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Canton Diekirch" ;
+    :yValue "33782" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Canton Mersch" ;
+    :yValue "33326" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Canton Grevenmacher" ;
+    :yValue "30887" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Canton Remich" ;
+    :yValue "23244" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Canton Redange" ;
+    :yValue "19473" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Canton Echternach" ;
+    :yValue "19189" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Canton Clervaux" ;
+    :yValue "18936" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Canton Wiltz" ;
+    :yValue "17632" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Canton Vianden" ;
+    :yValue "5510" ;
+    :belongsTo :Chart .

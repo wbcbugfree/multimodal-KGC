@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading pharmaceutical companies in Denmark in 2018 , by revenue (in billion DKK)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "pharmaceutical company" .
+
+:YAxis a :Axis ;
+    :title "Revenue in billion DKK" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Novo Nordisk" ;
+    :yValue "111.83" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "H. Lundbeck" ;
+    :yValue "18.12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Leo Pharma" ;
+    :yValue "10.41" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Orifam Group" ;
+    :yValue "6.22" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "ALK-Abello" ;
+    :yValue "2.92" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Xellia Pharmaceuticals" ;
+    :yValue "1.89" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Takeda Pharma" ;
+    :yValue "1.78" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sandoz" ;
+    :yValue "1.53" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dako Denmark" ;
+    :yValue "1.51" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Biogen Denmark" ;
+    :yValue "1.42" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Ferring Pharmaceuticals" ;
+    :yValue "1.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Paranova Group" ;
+    :yValue "1.37" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "William Cook Europe" ;
+    :yValue "1.28" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Janssen-Cilag" ;
+    :yValue "1.91" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Astellas Pharma" ;
+    :yValue "1.18" ;
+    :belongsTo :Chart .

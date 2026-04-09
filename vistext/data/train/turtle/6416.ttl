@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Why do n't you use / what is the main reason you do n't use local bus services (more often) ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "All reasons" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "It is easier/more convenient by car" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "It is quicker by car" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "I prefer to walk/cycle" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Buses are not frequent enough/do not run when I need them" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Buses do not go to/go directly to places where I want to go" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Bus fares are too high" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Journeys take too long by bus" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "I have difficulty getting on and off buses" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "The nearest bus stop is too far away" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "It is cheaper by car" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Not safe on the buses/stops/stations/anti-social behaviour" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "I have difficulty getting to the bus stop/station" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "I do not know what bus services are available" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Buses are not reliable enough" ;
+    :belongsTo :Chart .

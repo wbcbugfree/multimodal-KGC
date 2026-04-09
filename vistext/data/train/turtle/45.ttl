@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of plumbing and HVAC contractor establishments in Canada in 2019 , by province" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of establishments" .
+
+:YAxis a :Axis ;
+    :title "province of Canada" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10580" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4151" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3826" ;
+    :yValue "Alberta" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3783" ;
+    :yValue "Quebec" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "927" ;
+    :yValue "Saskatchewan" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "822" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "597" ;
+    :yValue "Nova Scotia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "447" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "250" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "125" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "51" ;
+    :yValue "Yukon" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Northwest Territories" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Nunavut" ;
+    :belongsTo :Chart .

@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of COVID-19-associated hospitalizations in the U.S. from March 1 to 30 , 2020 with select with underlying conditions" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of hospitalizations" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Any underlying condition" ;
+    :yValue "0.893" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Hypertension" ;
+    :yValue "0.497" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Obesity" ;
+    :yValue "0.483" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chronic metabolic disease" ;
+    :yValue "0.361" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Diabetes mellitus" ;
+    :yValue "0.283" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Chronic lung disease" ;
+    :yValue "0.346" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Asthma" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Chronic obstructive pulmonary disease" ;
+    :yValue "0.107" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cardiovascular disease" ;
+    :yValue "0.278" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Coronary artery disease" ;
+    :yValue "0.142" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Congestive heart failure" ;
+    :yValue "0.068" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Neurologic disease" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Renal disease" ;
+    :yValue "0.131" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Immunosuppressive condition" ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Gastrointestinal/Liver disease" ;
+    :yValue "0.066" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Blood disorder" ;
+    :yValue "0.058" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Rheumatologic/Autoimmune disease" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Pregnancy" ;
+    :yValue "0.091" ;
+    :belongsTo :Chart .

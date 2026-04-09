@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Growth in bankruptcies after the coronavirus outbreak in Sweden from February to November 2020 , by industry (compared to the previous year)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Nov" .
+
+:YAxis a :Axis ;
+    :title "industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "-0.14" ;
+    :yValue "Trade in motor vehicles (incl. service)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Restaurant and hotel" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "-0.48" ;
+    :yValue "Information and communication" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Wholesale" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "-0.21" ;
+    :yValue "Surveillance, real estate services, office services, etc." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Law, economics, science and technology" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-0.02" ;
+    :yValue "Retail" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "-0.03" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Other service companies and companies for personal services, etc." ;
+    :belongsTo :Chart .

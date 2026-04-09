@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading health and fitness apps in the Google Play Store in Canada in September 2020 , by number of downloads" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of downloads" .
+
+:YAxis a :Axis ;
+    :title "Leading health and fitness app" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "63734" ;
+    :yValue "Motivation - Daily quotes" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "30083" ;
+    :yValue "Calm: Sleep, Meditate, Relax" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "29634" ;
+    :yValue "Flo: Health & Period Tracker" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "27694" ;
+    :yValue "AllTrails: Hike, Bike & Run" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "24961" ;
+    :yValue "Fitbit: Health & Fitness" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "21120" ;
+    :yValue "Strava: Run, Ride, Swim" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "19810" ;
+    :yValue "MyFitnessPal" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "19432" ;
+    :yValue "Fitness Coach" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "16593" ;
+    :yValue "Headspace: Meditation & Sleep" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14869" ;
+    :yValue "Heart Rate Monitor by InPulse" ;
+    :belongsTo :Chart .

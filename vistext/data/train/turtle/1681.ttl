@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most affordable cities for backpacking in Europe in 2020 , by daily price index (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "capital" .
+
+:YAxis a :Axis ;
+    :title "Daily price in U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bucharest, Romania" ;
+    :yValue "27.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Belgrade, Serbia" ;
+    :yValue "27.33" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sofia, Bulgaria" ;
+    :yValue "30.93" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Budapest, Hungary" ;
+    :yValue "33.55" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Krakow, Poland" ;
+    :yValue "33.63" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Riga, Latvia" ;
+    :yValue "34.78" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sarajevo, Bosnia and Herzegovina" ;
+    :yValue "36.33" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Vilnius, Lithuania" ;
+    :yValue "36.44" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Istanbul, Turkey" ;
+    :yValue "36.53" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Warsaw, Poland" ;
+    :yValue "37.65" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Kiev, Ukraine" ;
+    :yValue "38.87" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Bratislava, Slovakia" ;
+    :yValue "40.13" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Zagreb, Croatia" ;
+    :yValue "40.81" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Český Krumlov, Czech Republic" ;
+    :yValue "40.81" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Santorini, Greece" ;
+    :yValue "44.78" ;
+    :belongsTo :Chart .

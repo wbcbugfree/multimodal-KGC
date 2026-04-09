@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading U.S. passenger airlines by number of full-time equivalent employees in December 2019 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Employees in thousands" .
+
+:YAxis a :Axis ;
+    :title "Airline" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "101.45" ;
+    :yValue "American" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "85.6" ;
+    :yValue "United" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "85.12" ;
+    :yValue "Delta" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "60.77" ;
+    :yValue "Southwest" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "19.07" ;
+    :yValue "JetBlue" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16.99" ;
+    :yValue "Alaska" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "15.6" ;
+    :yValue "SkyWest" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "14.69" ;
+    :yValue "Envoy" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8.8" ;
+    :yValue "Spirit Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6.72" ;
+    :yValue "Hawaiian" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average ticket price Buffalo Sabres (NHL) games from 2005/06 to 2014/15 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Average ticket price in U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "14/15" ;
+    :yValue "49.72" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13/14" ;
+    :yValue "47.94" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12/13" ;
+    :yValue "46.15" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "11/12" ;
+    :yValue "38.25" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10/11" ;
+    :yValue "36.43" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "09/10" ;
+    :yValue "36.43" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "08/09" ;
+    :yValue "36.43" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "07/08" ;
+    :yValue "36.43" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "06/07" ;
+    :yValue "32.56" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "05/06" ;
+    :yValue "30.07" ;
+    :belongsTo :Chart .

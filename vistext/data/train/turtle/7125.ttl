@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The leading U.S. Internet car dealerships based on new and used unit sales in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "New Internet unit sales" .
+
+:YAxis a :Axis ;
+    :title "The leading U\\.S\\. Internet car dealerships" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10884" ;
+    :yValue "Cardinale Automotive Group - Internet Unit" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11510" ;
+    :yValue "Chapman Automotive - Internet Unit" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "9769" ;
+    :yValue "Dave Smith Motors" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4775" ;
+    :yValue "Ed Morse Internet Division" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4240" ;
+    :yValue "Jim Koons - Tysons GM/Chrysler" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3734" ;
+    :yValue "Jim Koons - Tyson's Toyota" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2410" ;
+    :yValue "Rick Case Automall Davie" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1743" ;
+    :yValue "Herb Chambers Lexus" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1876" ;
+    :yValue "Jim Koons - White Marsh" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1478" ;
+    :yValue "Herb Chambers Honda of Seekonk" ;
+    :belongsTo :Chart .

@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Wheat consumption worldwide in 2018/2019 , by country (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "Consumption in thousand metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "125000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "European Union" ;
+    :yValue "123200" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "95629" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "40500" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "United States" ;
+    :yValue "30024" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pakistan" ;
+    :yValue "25300" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Egypt" ;
+    :yValue "20100" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Turkey" ;
+    :yValue "18100" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Iran" ;
+    :yValue "16100" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Brazil" ;
+    :yValue "12100" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Algeria" ;
+    :yValue "10750" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Morocco" ;
+    :yValue "10700" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Indonesia" ;
+    :yValue "10600" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Uzbekistan" ;
+    :yValue "9600" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Canada" ;
+    :yValue "8862" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Ukraine" ;
+    :yValue "8800" ;
+    :belongsTo :Chart .

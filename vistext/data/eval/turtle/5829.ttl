@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to M & A in Sweden in 2016 , by deal value (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Deal value in billion U.S. dollar" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "15.72" ;
+    :yValue "SEB" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14.4" ;
+    :yValue "Rothschild" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "14.33" ;
+    :yValue "Handelsbanken Capital Markets" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "13.7" ;
+    :yValue "Goldman Sachs" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "12.53" ;
+    :yValue "Morgan Stanley" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "10.92" ;
+    :yValue "JPMorgan" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10.48" ;
+    :yValue "Bank of America Merrill Lynch" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9.93" ;
+    :yValue "Centerview Partners" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.35" ;
+    :yValue "Carnegie Investment Bank" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6.24" ;
+    :yValue "NC Advisory" ;
+    :belongsTo :Chart .

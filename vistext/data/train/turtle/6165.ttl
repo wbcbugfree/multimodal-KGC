@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Enterprise-value-to-EBITDA (EV/EBITDA) of leading vertical e-commerce companies worldwide from 2020 to 2022" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2021*" .
+
+:YAxis a :Axis ;
+    :title "Factor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "51.1" ;
+    :yValue "Wayfair (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "19.6" ;
+    :yValue "HelloFresh (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18.3" ;
+    :yValue "Stamps (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "1-800-FLOWERS.COM (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "26.8" ;
+    :yValue "Zooplus (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "18.9" ;
+    :yValue "AO World (United Kingdom)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "8.4" ;
+    :yValue "Blue Apron (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.4" ;
+    :yValue "SRP Groupe (France)" ;
+    :belongsTo :Chart .

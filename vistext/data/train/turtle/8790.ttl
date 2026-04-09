@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of households in the United States that paid no income tax in 2019 , by income level" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cash income level in U\\.S\\. dollars" .
+
+:YAxis a :Axis ;
+    :title "Households that don't pay income tax" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Less than 10,000" ;
+    :yValue "0.998" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10,000 to 20,000" ;
+    :yValue "0.893" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20,000 to 30,000" ;
+    :yValue "0.719" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30,000 to 40,000" ;
+    :yValue "0.599" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40,000 to 50,000" ;
+    :yValue "0.466" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50,000 to 75,000" ;
+    :yValue "0.326" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "75,000 to 100,000" ;
+    :yValue "0.169" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "100,000 to 200,000" ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "200,000 to 500,000" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "500,000 to 1 million" ;
+    :yValue "0.006" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "More than 1 million" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "All" ;
+    :yValue "0.433" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable Chinese brands in 2020 , by brand value (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "bank" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "ICBC" ;
+    :yValue "80791" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ping An" ;
+    :yValue "69041" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Huawei" ;
+    :yValue "65084" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "China Construction Bank" ;
+    :yValue "62602" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "State Grid" ;
+    :yValue "56965" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Agricultural Bank of China" ;
+    :yValue "54658" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "WeChat" ;
+    :yValue "54146" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bank of China" ;
+    :yValue "50630" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "China Mobile" ;
+    :yValue "49023" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tencent (QQ)" ;
+    :yValue "44091" ;
+    :belongsTo :Chart .

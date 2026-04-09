@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of consumers who pay for news publications in the United States as of March 2017 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Magazine in any format" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Print version of a magazine" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Both a print and a digital version of a magazine" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Digital version of a magazine" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Newspaper in any format" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Print version of a newspaper" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Both a print and a digital version of a newspaper" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Digital version of a newspaper" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "News apps for your smartphone or tablet" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Digital news site" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Print or digital newsletter" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Public television, public radio, or other nonprofit journalism" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Public television" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Other nonprofit journalism" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Public radio" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .

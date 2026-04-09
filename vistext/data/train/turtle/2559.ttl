@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Confirmed coronavirus (COVID-19) cases in South Africa as of January 06 , 2021 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of cases" .
+
+:YAxis a :Axis ;
+    :title "province of South Africa" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1149591" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "310201" ;
+    :yValue "Gauteng" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "230283" ;
+    :yValue "KwaZulu-Natal" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "227654" ;
+    :yValue "Western Cape" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "175941" ;
+    :yValue "Eastern Cape" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "64409" ;
+    :yValue "Free State" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "43159" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "40751" ;
+    :yValue "Mpumalanga" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "30840" ;
+    :yValue "Limpopo" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "26353" ;
+    :yValue "Northern Cape" ;
+    :belongsTo :Chart .

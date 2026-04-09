@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of employees at Opel/Vauxhall in selected European cities in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of employees" .
+
+:YAxis a :Axis ;
+    :title "city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "14180" ;
+    :yValue "Rüsselsheim (plant)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5120" ;
+    :yValue "Zaragoza" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2890" ;
+    :yValue "Gliwice" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2130" ;
+    :yValue "Kaiserslautern" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1870" ;
+    :yValue "Ellesmere Port" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1850" ;
+    :yValue "Eisenach" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1450" ;
+    :yValue "Aspern" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1340" ;
+    :yValue "Luton" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1200" ;
+    :yValue "Szentgotthárd" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "480" ;
+    :yValue "Tychy" ;
+    :belongsTo :Chart .

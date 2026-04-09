@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total charitable donations in Canada in 2018 , by province (in 1,000 Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "Total donations in 1,000 Canadian dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "4330225" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "1758810" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "1603995" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "951820" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "468355" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "362220" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "192555" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "153660" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "80695" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "34070" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Yukon" ;
+    :yValue "7155" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northwest Territories" ;
+    :yValue "5985" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "2960" ;
+    :belongsTo :Chart .

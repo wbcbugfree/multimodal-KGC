@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular subreddits with the highest number of comments from May to September 2015 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Subreddit" .
+
+:YAxis a :Axis ;
+    :title "Number of comments in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "AskReddit" ;
+    :yValue "12.37" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "leagueoflegends" ;
+    :yValue "3.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "funny" ;
+    :yValue "2.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "nfl" ;
+    :yValue "1.85" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "pics" ;
+    :yValue "1.83" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "DestinyTheGame" ;
+    :yValue "1.79" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "videos" ;
+    :yValue "1.76" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "nba" ;
+    :yValue "1.69" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "news" ;
+    :yValue "1.68" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "worldnews" ;
+    :yValue "1.64" ;
+    :belongsTo :Chart .

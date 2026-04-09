@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths from unintentional carbon monoxide poisoning in the United Kingdom (UK) from 1995 to 2019 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age in years" .
+
+:YAxis a :Axis ;
+    :title "Number of deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Not known" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "91 and over" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "81-90" ;
+    :yValue "94" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "71-80" ;
+    :yValue "119" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "61-70" ;
+    :yValue "93" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "51-60" ;
+    :yValue "95" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "41-50" ;
+    :yValue "93" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "31-40" ;
+    :yValue "77" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "21-30" ;
+    :yValue "62" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11-20" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0-10" ;
+    :yValue "18" ;
+    :belongsTo :Chart .

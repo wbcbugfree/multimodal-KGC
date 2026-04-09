@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading wicket-takers in The Ashes in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of wickets taken" .
+
+:YAxis a :Axis ;
+    :title "cricketer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Pat Cummins (Australia)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "23" ;
+    :yValue "Stuart Broad (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Jofra Archer (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Josh Hazlewood (Australia)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Nathan Lyon (Australia)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Jack Leach (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Chris Woakes (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Ben Stokes (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Mitchell Marsh (Australia)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Peter Siddle (Australia)" ;
+    :belongsTo :Chart .

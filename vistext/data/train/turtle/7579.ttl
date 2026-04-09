@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average contributed income of not-for-profit theatres in the United States by contributor from 2010 to 2018 (in thousand U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "not-for-profit theatres" .
+
+:YAxis a :Axis ;
+    :title "2011" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Foundation" ;
+    :yValue "457" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Foundations Trustee" ;
+    :yValue "349" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Trustees Fundraising events/guild" ;
+    :yValue "271" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Fundraising events/guilds Corporation" ;
+    :yValue "209" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Corporations In-kind services/materials/ facilitie" ;
+    :yValue "135" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "In-kind services/materials/ facilities Stat" ;
+    :yValue "227" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "State City/Count" ;
+    :yValue "200" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "City/County Federa" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Federal United arts fund" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "United arts funds Other individual" ;
+    :yValue "632" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other individuals Other source" ;
+    :yValue "126" ;
+    :belongsTo :Chart .

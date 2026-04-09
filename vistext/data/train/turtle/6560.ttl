@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of the Walt Disney Company from 1st quarter 2018 to 4th quarter 2020 , by segment (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Parks, experiences and products" .
+
+:YAxis a :Axis ;
+    :title "Quarter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2580" ;
+    :yValue "Q4 2020" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "983" ;
+    :yValue "Q3 2020" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5543" ;
+    :yValue "Q2 2020" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7396" ;
+    :yValue "Q1 2020" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6655" ;
+    :yValue "Q4 2019" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6575" ;
+    :yValue "Q3 2019" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6169" ;
+    :yValue "Q2 2019*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6824" ;
+    :yValue "Q1 2019" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6136" ;
+    :yValue "Q3 2018" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5903" ;
+    :yValue "Q2 2018" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "6527" ;
+    :yValue "Q1 2018" ;
+    :belongsTo :Chart .

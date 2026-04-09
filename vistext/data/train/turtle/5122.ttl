@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading beauty and cosmetics brands on Twitter as of July 2018 , by followers (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand fans in 1,000s" .
+
+:YAxis a :Axis ;
+    :title "company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1493.01" ;
+    :yValue "MACcosmetics" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1223.79" ;
+    :yValue "Urban Decay" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1022.79" ;
+    :yValue "NYX Cosmetics" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "950.53" ;
+    :yValue "Benefit Cosmetics US" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "768.06" ;
+    :yValue "Tarte Cosmetics" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "674.21" ;
+    :yValue "Maybelline New York" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "657.29" ;
+    :yValue "Smashbox Cosmetics" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "652.55" ;
+    :yValue "Make Up for Ever" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "629.78" ;
+    :yValue "Covergirl" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "608.05" ;
+    :yValue "Bobbi Brown Cosmetics" ;
+    :belongsTo :Chart .

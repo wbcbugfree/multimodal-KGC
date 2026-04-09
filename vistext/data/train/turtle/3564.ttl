@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of leading causes of deaths attributable to drug use worldwide as of 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of deaths attributable to drug use" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.307" ;
+    :yValue "Hepatitis C, cirrhosis and other chronic liver diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.191" ;
+    :yValue "Opioid use disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.138" ;
+    :yValue "Hepatitis C, liver cancer" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.118" ;
+    :yValue "HIV/AIDS resulting in other diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.096" ;
+    :yValue "Other drug use disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.083" ;
+    :yValue "Self-harm" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.023" ;
+    :yValue "HIV/AIDS - tuberculosis" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "Cocaine use disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.012" ;
+    :yValue "Amphetamine use disorders" ;
+    :belongsTo :Chart .

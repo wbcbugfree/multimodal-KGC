@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the highest-paid CEOs in the United States as of 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Compensation in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "highest-paid CEOs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "58.53" ;
+    :yValue "Lisa T. Su (AMD)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "45.84" ;
+    :yValue "David M. Zaslav (Discovery)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "45.55" ;
+    :yValue "Robert A. Iger (Walt Disney)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "39.15" ;
+    :yValue "Shantanu Narayen (Adobe)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "38.58" ;
+    :yValue "Reed Hastings (Netflix)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "36.45" ;
+    :yValue "Larry J. Merlo (CVS Health)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "36.37" ;
+    :yValue "Brian L. Roberts (Comcast)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "31.62" ;
+    :yValue "James P. Gorman (Morgan Stanley)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "31.58" ;
+    :yValue "James Dimon (JPMorgan Chase)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "30.38" ;
+    :yValue "Prologis (Hamid Moghadam)" ;
+    :belongsTo :Chart .

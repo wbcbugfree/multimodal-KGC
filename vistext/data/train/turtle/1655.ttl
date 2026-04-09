@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Survey on the employment situation during the coronavirus (COVID-19) prevention non-working week in Russia from March 30 to April 5 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Continued to work (in total)" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Working in spheres where limitations did not apply***" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Management said all employees will work as usual" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Management let employees choose, protecting the salary" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Individual entrepreneurs, freelancers, self-employed" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Will not work (in total)" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Management sent all employees to the paid vacations" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Were sent on unpaid vacations" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Were already cut due to the current crisis" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lost jobs as employers went bankrupt/ closed down due to the crisis" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .

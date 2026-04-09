@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average daily rate of hotels in London by quarter from 2011 to 2013 (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Rate in Great Britain Pounds" .
+
+:YAxis a :Axis ;
+    :title "Quarter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "138.26" ;
+    :yValue "Q4 ´13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "131.39" ;
+    :yValue "Q3 ´13" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "130.83" ;
+    :yValue "Q2 ´13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "122.7" ;
+    :yValue "Q1 ´13" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "134.9" ;
+    :yValue "Q4 ´12" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "156.2" ;
+    :yValue "Q3 ´12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "129.27" ;
+    :yValue "Q2 ´12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "121.35" ;
+    :yValue "Q1 ´12" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "137" ;
+    :yValue "Q4 ´11" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "136.17" ;
+    :yValue "Q3 ´11" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "140.7" ;
+    :yValue "Q2 ´11" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "121.29" ;
+    :yValue "Q1 ´11" ;
+    :belongsTo :Chart .

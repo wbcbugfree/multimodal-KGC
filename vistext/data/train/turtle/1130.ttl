@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of households in the United Kingdom 2019 , by region (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Region" .
+
+:YAxis a :Axis ;
+    :title "Number of households" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "3.69" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "3.34" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "3.07" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "East" ;
+    :yValue "2.63" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "2.49" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "2.47" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "2.43" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Yorkshire and The Humber" ;
+    :yValue "2.36" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "2.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "1.37" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "1.18" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "0.78" ;
+    :belongsTo :Chart .

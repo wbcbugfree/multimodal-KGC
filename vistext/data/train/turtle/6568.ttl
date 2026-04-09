@@ -1,0 +1,47 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Preliminary share of total votes for each party in the Canadian federal election held on October 21 , 2019 (as of October 22 , 2019) , by province" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Christian Heritage Party" .
+
+:YAxis a :Axis ;
+    :title "province of Canada" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.002" ;
+    :yValue "Alberta" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.005" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.005" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .

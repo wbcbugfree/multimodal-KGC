@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Chicago White Sox all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Home run leader" .
+
+:YAxis a :Axis ;
+    :title "Number of home runs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Frank Thomas" ;
+    :yValue "448" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Paul Konerko" ;
+    :yValue "432" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Harold Baines" ;
+    :yValue "221" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Carlton Fisk" ;
+    :yValue "214" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jose Abreu" ;
+    :yValue "198" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Magglio Ordonez" ;
+    :yValue "187" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Robin Ventura" ;
+    :yValue "171" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jermaine Dye" ;
+    :yValue "164" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bill Melton" ;
+    :yValue "154" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carlos Lee" ;
+    :yValue "152" ;
+    :belongsTo :Chart .

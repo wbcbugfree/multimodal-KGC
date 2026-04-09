@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "New York Mets all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "all-time RBI leaders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "970" ;
+    :yValue "David Wright" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "733" ;
+    :yValue "Darryl Strawberry" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "655" ;
+    :yValue "Mike Piazza" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "629" ;
+    :yValue "Howard Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "614" ;
+    :yValue "Ed Kranepool" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "559" ;
+    :yValue "Carlos Beltran" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "538" ;
+    :yValue "Edgardo Alfonzo" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "521" ;
+    :yValue "Cleon Jones" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "521" ;
+    :yValue "Jose Reyes" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "468" ;
+    :yValue "Keith Hernandez" ;
+    :belongsTo :Chart .

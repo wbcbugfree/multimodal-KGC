@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "From the following list , please pick the five main environmental issues that you are worried about ." ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Air pollution" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Water pollution (seas, rivers, lakes and underground sources)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.51" ;
+    :yValue "The impact on our health of chemicals used in everyday products" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Depletion of natural resources" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "The growing amount of waste" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Agricultural pollution (use of pesticides. fertilizers, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "Shortage of drinking water" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Loss or extinction of species and their habitats and of natural ecosystems (forests, fertile soils)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Our consumption habits" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Urban problems (traffic jams, pollution, lack of green spaces, etc.)" ;
+    :belongsTo :Chart .

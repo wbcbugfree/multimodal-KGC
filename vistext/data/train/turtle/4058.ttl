@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fashion websites ranked by share of paid search voice in the United Kingdom (UK) in February 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of paid search voice**" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "amazon.co.uk" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "asos.com" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "dresslily.com" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "houseoffraser.co.uk" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "jcpenney.com" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "johnlewis.com" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "missguided.co.uk" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "debenhams.com" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "sammydress.com" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "very.co.uk" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .

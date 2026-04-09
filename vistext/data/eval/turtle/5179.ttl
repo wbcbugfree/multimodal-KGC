@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of WhatsApp downloads from the Google Play store worldwide in 3rd quarter 2020 , by country (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "Number of downloads in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "17.86" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Indonesia" ;
+    :yValue "8.08" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mexico" ;
+    :yValue "6.39" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Brazil" ;
+    :yValue "6.11" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Pakistan" ;
+    :yValue "5.05" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "5.03" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "USA" ;
+    :yValue "3.72" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Turkey" ;
+    :yValue "2.95" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Egypt" ;
+    :yValue "2.91" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "South Africa" ;
+    :yValue "2.43" ;
+    :belongsTo :Chart .

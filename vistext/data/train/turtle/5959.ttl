@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten banks in Italy as of September 2020 , by number of branches" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of branches" .
+
+:YAxis a :Axis ;
+    :title "bank" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3285" ;
+    :yValue "Intesa Sanpaolo" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2622" ;
+    :yValue "UniCredit" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1760" ;
+    :yValue "Banco BPM" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1598" ;
+    :yValue "UBI Banca" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1420" ;
+    :yValue "Banca Monte dei Paschi di Siena" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "944" ;
+    :yValue "BPER Banca" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "729" ;
+    :yValue "Banco Nazionale del Lavoro" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "544" ;
+    :yValue "Crédit Agricole Italia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "482" ;
+    :yValue "Banca Popolare di Sondrio" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "427" ;
+    :yValue "Credito Emiliano" ;
+    :belongsTo :Chart .

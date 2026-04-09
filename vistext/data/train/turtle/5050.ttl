@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :LineChart ;
+    :title "Percentage growth of total grocery market in Great Britain from November 2010 to November 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Percentage growth (year-on-year)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Nov 27, 2010" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nov 26, 2011" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nov 24, 2012" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Nov 09, 2013" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nov 08, 2014" ;
+    :yValue "-0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nov 08, 2015" ;
+    :yValue "0.005" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nov 05, 2016" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nov 04, 2017" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nov 03, 2018" ;
+    :yValue "0.026" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nov 02, 2019" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

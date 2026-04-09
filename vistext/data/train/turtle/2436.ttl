@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Adolescent population worldwide in 2010 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Region" .
+
+:YAxis a :Axis ;
+    :title "Adolescents in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "243" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "201" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "East Asia and the Pacific (excluding China)" ;
+    :yValue "122" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Industrialized countries" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Latin America and the Caribbean" ;
+    :yValue "108" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "West and Central Africa" ;
+    :yValue "94" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Eastern and Southern Africa" ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "South Asia (excluding India)" ;
+    :yValue "90" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Middle East and North Africa" ;
+    :yValue "82" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "CEE /CIS*" ;
+    :yValue "55" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rate of most common operating room procedures in United states hospital stays in 2012 (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "most common operating room procedures" .
+
+:YAxis a :Axis ;
+    :title "Procedures per 100,000 population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Arthroplasty knee" ;
+    :yValue "223" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Percutaneous coronary angioplasty (PTCA)" ;
+    :yValue "170.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Laminectomy, excision intervertebral disc" ;
+    :yValue "149.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Hip replacement, total and partial" ;
+    :yValue "149.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Spinal fusion" ;
+    :yValue "143.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Cholecystectomy and common duct exploration" ;
+    :yValue "129.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Partial excision bone" ;
+    :yValue "107.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Hysterectomy, abdominal and vaginal" ;
+    :yValue "99.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Colorectal resection" ;
+    :yValue "97.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Excision, lysis peritoneal adhesions" ;
+    :yValue "97.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Appendectomy" ;
+    :yValue "93.3" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Treatment, fracture or dislocation of hip and femur" ;
+    :yValue "88" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Oophorectomy, unilateral and bilateral" ;
+    :yValue "71.3" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Coronary artery bypass graft (CABG)" ;
+    :yValue "64.6" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Treatment, fracture or dislocation of lower extremity (other than hip or femur)" ;
+    :yValue "60.2" ;
+    :belongsTo :Chart .

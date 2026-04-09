@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of earthquake insurance writers in the United States in 2019 , by direct premiums written" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "insurance writers" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "California Earthquake Authority" ;
+    :yValue "0.228" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "State Farm Mutual Automobile Insurance" ;
+    :yValue "0.077" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Zurich Insurance Group" ;
+    :yValue "0.065" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chubb Ltd." ;
+    :yValue "0.048" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Travelers Companies Inc." ;
+    :yValue "0.039" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Palomar Specialty Insurance Co." ;
+    :yValue "0.039" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "American International Group (AIG)" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "AXA" ;
+    :yValue "0.029" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "GeoVera Insurance Group" ;
+    :yValue "0.029" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sompo Holdings Inc." ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .

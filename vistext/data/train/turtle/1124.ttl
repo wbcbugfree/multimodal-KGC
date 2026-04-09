@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Indian states with the highest number of pigs in 2019 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "state of India" .
+
+:YAxis a :Axis ;
+    :title "Pig population in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Assam" ;
+    :yValue "2.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jharkhand" ;
+    :yValue "1.28" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Meghalaya" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "West Bengal" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chhattisgarh" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Uttar Pradesh" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nagaland" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bihar" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Karnataka" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mizoram" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .

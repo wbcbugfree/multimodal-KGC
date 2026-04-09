@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of take-up of logistics space in the United Kingdom (UK) in the first and second halves of 2014 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Race" .
+
+:YAxis a :Axis ;
+    :title "Second half 2014" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3PL / distribution" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Other manufacturing" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Motor industry" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Food industry" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Postal Services" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Retail - Food" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Retail - Other" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Retail - Online" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

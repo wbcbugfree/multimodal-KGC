@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most expensive international cities for room service cost worldwide as of February 2014 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cost in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "88.94" ;
+    :yValue "Helsinki, Finland" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "87.59" ;
+    :yValue "Oslo, Norway" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "73.31" ;
+    :yValue "Seoul, South Korea" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "72.34" ;
+    :yValue "Zurich, Switzerland" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "69.16" ;
+    :yValue "Stockholm, Sweden" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "67.89" ;
+    :yValue "Paris, France" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "67.83" ;
+    :yValue "New York City, New York" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "65.7" ;
+    :yValue "Toronto, Canada" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "62.34" ;
+    :yValue "Singapore" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "59.88" ;
+    :yValue "Copenhagen, Denmark" ;
+    :belongsTo :Chart .

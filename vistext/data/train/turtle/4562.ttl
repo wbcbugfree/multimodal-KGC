@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the most popular blogs in Norway as of October 2020 , by number of visitors in the past day" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of visitors in the past day" .
+
+:YAxis a :Axis ;
+    :title "blog" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "27006" ;
+    :yValue "Kokkejaelvel" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8135" ;
+    :yValue "Vibbedille" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "7531" ;
+    :yValue "Straad" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6925" ;
+    :yValue "Sofienils1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6838" ;
+    :yValue "Konatil" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6586" ;
+    :yValue "Ingridaguiluz" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5938" ;
+    :yValue "Stina" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5006" ;
+    :yValue "Stineskoli" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4317" ;
+    :yValue "Andreaasveinsdottir" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3803" ;
+    :yValue "Martinehalvs" ;
+    :belongsTo :Chart .

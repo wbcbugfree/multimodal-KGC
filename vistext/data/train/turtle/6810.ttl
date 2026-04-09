@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of reported crimes on the London Underground (UK) in 2013/14 , 2016/17 and 2018/19 , by crime type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2013/14**" .
+
+:YAxis a :Axis ;
+    :title "type of crime" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5102" ;
+    :yValue "Theft of Passenger Property" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2077" ;
+    :yValue "Violence Against the Person" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "883" ;
+    :yValue "Serious Public Order" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "429" ;
+    :yValue "Sexual Offences" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "607" ;
+    :yValue "Criminal Damage" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "332" ;
+    :yValue "Motor Vehicle/Cycle Offences" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "913" ;
+    :yValue "Drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "83" ;
+    :yValue "Robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "189" ;
+    :yValue "Theft of Railway Property/Burglary" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "103" ;
+    :yValue "Other Serious Offences" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Serious Fraud" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "65" ;
+    :yValue "Line of Route" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Oldest directing Academy Award winners as of March 2019 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age in years" .
+
+:YAxis a :Axis ;
+    :title "Director (movie title, release year)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Clint Eastwood (Million Dollar Baby, 2004)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Roman Polanski (The Pianist, 2002)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "65" ;
+    :yValue "George Cukor (My Fair Lady, 1964)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "64" ;
+    :yValue "Martin Scorsese (The Departed, 2006)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "62" ;
+    :yValue "Clint Eastwood (Unforgiven, 1992)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "62" ;
+    :yValue "Carol Reed (Oliver!, 1968)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "59" ;
+    :yValue "Fred Zinnemann (A Man for All Seasons, 1966)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "59" ;
+    :yValue "Richard Attenborough (Gandhi, 1982)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "59" ;
+    :yValue "John Ford (The Quiet Man, 1952)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Ang Lee (Life of Pi, 2012)" ;
+    :belongsTo :Chart .

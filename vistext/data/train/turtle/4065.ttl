@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue per employee of major IT services vendors worldwide (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue per employee in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "IT service vendor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "289474" ;
+    :yValue "IBM" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "185784" ;
+    :yValue "ACN" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "177953" ;
+    :yValue "Dell" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "171628" ;
+    :yValue "CSC" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "165205" ;
+    :yValue "HP" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "136838" ;
+    :yValue "Atos Origin" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "130230" ;
+    :yValue "XRX/ACS" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "120911" ;
+    :yValue "Capgemini" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "54702" ;
+    :yValue "Wipro" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "43946" ;
+    :yValue "INFY 41485 CTSH" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "36350" ;
+    :yValue "TCS" ;
+    :belongsTo :Chart .

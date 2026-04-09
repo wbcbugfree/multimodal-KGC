@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the most registered male baby names in France in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of newly registered male names" .
+
+:YAxis a :Axis ;
+    :title "the most registered male baby names" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5419" ;
+    :yValue "Gabriel" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4591" ;
+    :yValue "Raphaël" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4446" ;
+    :yValue "Léo" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4415" ;
+    :yValue "Louis" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3979" ;
+    :yValue "Lucas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3897" ;
+    :yValue "Adam" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3755" ;
+    :yValue "Arthur" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3698" ;
+    :yValue "Jules" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3686" ;
+    :yValue "Hugo" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3259" ;
+    :yValue "Maël" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How do you expect COVID-19 to impact your client 's spending on any of the following ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Decrease" .
+
+:YAxis a :Axis ;
+    :title "IT enterprises" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Cybersecurity" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Automation" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Smart analytics" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Hybrid or multi-cloud" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "AI" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "IoT" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "5G" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "AR/VR" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Edge computing" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Blockchain" ;
+    :belongsTo :Chart .

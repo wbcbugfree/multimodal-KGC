@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten craft bakers ranked by number of outlets in the United Kingdom (UK) in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "secondary school" .
+
+:YAxis a :Axis ;
+    :title "Number of outlets" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Greggs" ;
+    :yValue "1968" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Stephens" ;
+    :yValue "177" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Patisserie Holdings" ;
+    :yValue "175" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sayers the Bakers" ;
+    :yValue "170" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Coopland and Son" ;
+    :yValue "144" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Aulds" ;
+    :yValue "79" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Stuart's of Buckhaven" ;
+    :yValue "73" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Greenhalgh's Craft Bakery" ;
+    :yValue "61" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Birds the Confectioners" ;
+    :yValue "56" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bayne's" ;
+    :yValue "53" ;
+    :belongsTo :Chart .

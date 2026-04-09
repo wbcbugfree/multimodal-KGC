@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths due to weather conditions and storms in the U.S. in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "weather conditions and storms" .
+
+:YAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Rip current" ;
+    :yValue "72" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Extreme heat" ;
+    :yValue "63" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "River flood" ;
+    :yValue "49" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Flash flood" ;
+    :yValue "43" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tornado" ;
+    :yValue "42" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Thunderstorm wind" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Extreme cold" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Lightning strike" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Avalanche" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Winter storm" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "High Wind" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Fire Weather" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Miscellaneous" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Mud slide" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Patients profile of coronavirus disease (COVID-19) cases in Japan as of May 7 , 2020 , by age group and state of health" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9 years and younger" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10 to 19 years" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20 to 29 years" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30 to 39 years" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40 to 49 years" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50 to 59 years" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60 to 69 years" ;
+    :yValue "44" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70 to 79 years" ;
+    :yValue "102" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80 years and older" ;
+    :yValue "228" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Age unknown" ;
+    :yValue "3" ;
+    :belongsTo :Chart .

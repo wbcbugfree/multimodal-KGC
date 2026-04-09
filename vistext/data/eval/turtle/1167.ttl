@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of immigrants in France in 2015 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of immigrants" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Île-de-France" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Provence-Alpes-Côte d'Azur" ;
+    :yValue "0.105" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Corsica" ;
+    :yValue "0.102" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Auvergne-Rhône-Alpes" ;
+    :yValue "0.092" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Grand Est" ;
+    :yValue "0.087" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Occitanie" ;
+    :yValue "0.086" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Centre-Val-de-Loire" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bourgogne-Franche-Comté" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nouvelle-Aquitaine" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hauts-de-France" ;
+    :yValue "0.052" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Normandy" ;
+    :yValue "0.041" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Pays de la Loire" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Brittany" ;
+    :yValue "0.033" ;
+    :belongsTo :Chart .

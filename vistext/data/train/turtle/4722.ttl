@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of parallel imports in pharmacy market sales in selected European countries in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of parallel imports" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "0.086" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sweden" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Poland" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Netherlands" ;
+    :yValue "0.079" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ireland" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "0.085" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Finland" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Denmark" ;
+    :yValue "0.262" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Belgium" ;
+    :yValue "0.021" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Austria" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .

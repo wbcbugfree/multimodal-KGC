@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Crime severity index in Canada in 2019 , by province" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Crime severity index" .
+
+:YAxis a :Axis ;
+    :title "Province" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "388.55" ;
+    :yValue "Northwest Territories" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "361.27" ;
+    :yValue "Nunavut" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "215.68" ;
+    :yValue "Yukon" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "148.18" ;
+    :yValue "Saskatchewan" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "139.26" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "119.07" ;
+    :yValue "Alberta" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "104.41" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "79.45" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "71.56" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "66.05" ;
+    :yValue "Nova Scotia" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "64.03" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "60.7" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "55.87" ;
+    :yValue "Quebec" ;
+    :belongsTo :Chart .

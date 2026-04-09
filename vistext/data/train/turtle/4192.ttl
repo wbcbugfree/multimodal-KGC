@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of terrorist attacks in the European Union (EU) in 2019 , by member state" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "Number of terrorist attacks" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "64" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Italy" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Greece" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Netherlands" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Czechia" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Denmark" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Poland" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Belgium" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Bulgaria" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Finland" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Sweden" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

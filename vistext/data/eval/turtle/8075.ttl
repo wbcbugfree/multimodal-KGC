@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average hourly pay and tips for massage therapists in the U.S. in 2012 , by work setting (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "work setting" .
+
+:YAxis a :Axis ;
+    :title "Average tip" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hotel / Resort / Cruise" ;
+    :yValue "17.48" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Client's home" ;
+    :yValue "10.51" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Client's workplace" ;
+    :yValue "6.92" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "My office" ;
+    :yValue "7.87" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "My home" ;
+    :yValue "7.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Health club or athletic facility" ;
+    :yValue "7.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Spa or salon" ;
+    :yValue "12.62" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Chiropractic office or integrated clinic" ;
+    :yValue "5.61" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Hospital / medical office or clinic" ;
+    :yValue "2.38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Massage therapy franchise or chain" ;
+    :yValue "11.42" ;
+    :belongsTo :Chart .

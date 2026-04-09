@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Car sales in Canada in 3rd quarter 2019 and 3rd quarter 2020 , by main brand (in units)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Car brand" .
+
+:YAxis a :Axis ;
+    :title "Q2 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ford" ;
+    :yValue "81541" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Toyota" ;
+    :yValue "57286" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Honda" ;
+    :yValue "41846" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Hyundai" ;
+    :yValue "39199" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chevrolet" ;
+    :yValue "31636" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ram" ;
+    :yValue "28391" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nissan" ;
+    :yValue "27827" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kia" ;
+    :yValue "25090" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "GMC" ;
+    :yValue "22126" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mazda" ;
+    :yValue "19053" ;
+    :belongsTo :Chart .

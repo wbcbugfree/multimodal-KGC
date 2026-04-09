@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of employees of the tire manufacturer Michelin at its French sites as of December 31 , 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "site" .
+
+:YAxis a :Axis ;
+    :title "Number of employees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cataroux **" ;
+    :yValue "2023" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cholet" ;
+    :yValue "1223" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Montceau-les-Mines" ;
+    :yValue "1006" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Roanne" ;
+    :yValue "894" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Troyes" ;
+    :yValue "794" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Combaude **" ;
+    :yValue "785" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gravanches **" ;
+    :yValue "718" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "La Roche-sur-Yon" ;
+    :yValue "696" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bourges" ;
+    :yValue "564" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Puy-en-Velay" ;
+    :yValue "555" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Avallon" ;
+    :yValue "487" ;
+    :belongsTo :Chart .

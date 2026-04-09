@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Crude birth rate in each continent and worldwide , from 1950 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Europe" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2015-2020" ;
+    :yValue "10.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2010-2015" ;
+    :yValue "10.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2005-2010" ;
+    :yValue "10.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2000-2005" ;
+    :yValue "10.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1995-2000" ;
+    :yValue "10.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1990-1995" ;
+    :yValue "11.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1985-1990" ;
+    :yValue "13.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1980-1985" ;
+    :yValue "14.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1975-1980" ;
+    :yValue "14.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1970-1975" ;
+    :yValue "15.6" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1965-1970" ;
+    :yValue "16.8" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1960-1965" ;
+    :yValue "19.1" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1955-1960" ;
+    :yValue "20.9" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "1950-1955" ;
+    :yValue "21.5" ;
+    :belongsTo :Chart .

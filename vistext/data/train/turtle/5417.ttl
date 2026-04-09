@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of U.S. imports of advanced technology products in 2019 , by group (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Volume of trade goods in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "247.57" ;
+    :yValue "Information & Communications" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "60.71" ;
+    :yValue "Aerospace" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "54.7" ;
+    :yValue "Life Science" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "45.19" ;
+    :yValue "Biotechnology" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "41.86" ;
+    :yValue "Electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "23.59" ;
+    :yValue "Opto-Electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17.1" ;
+    :yValue "Flexible Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.88" ;
+    :yValue "Advanced Materials" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.06" ;
+    :yValue "Nuclear Technology" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.92" ;
+    :yValue "Weapons" ;
+    :belongsTo :Chart .

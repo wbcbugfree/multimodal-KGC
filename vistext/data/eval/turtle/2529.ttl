@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Online penetration of key retail product sectors in Germany in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Online share of retail sales" .
+
+:YAxis a :Axis ;
+    :title "key retail sectors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.344" ;
+    :yValue "Music, video and games" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.175" ;
+    :yValue "Electricals and electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.168" ;
+    :yValue "Sports and leisure equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.129" ;
+    :yValue "Clothing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.122" ;
+    :yValue "Footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.075" ;
+    :yValue "Books, news and stationery" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.072" ;
+    :yValue "Luggage and leather goods" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.068" ;
+    :yValue "Jewellery, watches and accessories" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Personal care" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.031" ;
+    :yValue "Furniture and floor coverings" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Home and garden products" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Food and grocery" ;
+    :belongsTo :Chart .

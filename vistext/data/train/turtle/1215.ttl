@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Commission rates for leading app stores worldwide as of July 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "App Store" .
+
+:YAxis a :Axis ;
+    :title "Commission rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Apple App Store (standard)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Apple App Store (subscriptions)" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Google Play (standard)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Google Play (subscriptions after 12 months)" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Amazon Appstore (standard)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Amazon Apptore (subscriptions after 12 months)" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Samsung Galaxy Store (standard, unless otherwise agreed upon)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Microsoft Store (games)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Microsoft Store (sales in Business and Education stores)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Microsoft Store (for Windows 8 devices)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Windows Store (other)" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .

@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue and profit of the Otto Group from 2006/07 to 2019/20 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Business year" .
+
+:YAxis a :Axis ;
+    :title "Revenue" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "19/20" ;
+    :yValue "14263" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "18/19" ;
+    :yValue "13446" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17/18" ;
+    :yValue "13653" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "16/17" ;
+    :yValue "12512" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15/16" ;
+    :yValue "12104" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14/15" ;
+    :yValue "12057" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "13/14" ;
+    :yValue "12001" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12/13" ;
+    :yValue "11784" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11/12" ;
+    :yValue "11597" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "10/11" ;
+    :yValue "11404" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "09/10" ;
+    :yValue "10132" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "08/09" ;
+    :yValue "9993" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "07/08" ;
+    :yValue "10058" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "06/07" ;
+    :yValue "11243" ;
+    :belongsTo :Chart .

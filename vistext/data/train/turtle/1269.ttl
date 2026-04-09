@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular online apparel retailers for Millennials in the United States in 2016 , by share of online fashion revenue" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of revenue" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Amazon" ;
+    :yValue "0.166" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nordstrom" ;
+    :yValue "0.081" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Old Navy" ;
+    :yValue "0.051" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "J.Crew" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Victoria's Secret" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Macy's" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gap" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Stitch Fix" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "asos" ;
+    :yValue "0.029" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Banana Republic" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

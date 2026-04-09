@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fastest-growing summer destinations for Airbnb bookings in the United States in 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "destinations" .
+
+:YAxis a :Axis ;
+    :title "Year-over year change in bookings" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Nashville" ;
+    :yValue "3.65" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "New Orleans" ;
+    :yValue "3.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Palm Springs" ;
+    :yValue "3.34" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Portland, Maine" ;
+    :yValue "3.28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Santa Barbara" ;
+    :yValue "3.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Oregon Coast" ;
+    :yValue "3.16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "The Adirondacks" ;
+    :yValue "3.16" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Denver" ;
+    :yValue "3.06" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Coastal Orange County" ;
+    :yValue "3.06" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Boulder" ;
+    :yValue "2.91" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading most valuable brands in the United States in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Platform" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "334.65" ;
+    :yValue "Amazon" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "303.38" ;
+    :yValue "Apple" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "303.22" ;
+    :yValue "Google" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "261.09" ;
+    :yValue "Microsoft" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "187.91" ;
+    :yValue "Visa" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "159.7" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "143.79" ;
+    :yValue "McDonald's" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "106.26" ;
+    :yValue "Mastercard" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "99.43" ;
+    :yValue "AT&T" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "98.38" ;
+    :yValue "Verizon" ;
+    :belongsTo :Chart .

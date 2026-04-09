@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Property crime rate in Canada in 2019 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "property crime ttypes" .
+
+:YAxis a :Axis ;
+    :title "Rate of crime per 100,000 residents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Total theft under $5,000 (non-motor vehicle)" ;
+    :yValue "1502.36" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Total mischief" ;
+    :yValue "757.08" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Total breaking and entering" ;
+    :yValue "429.09" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Fraud" ;
+    :yValue "378.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Total theft of motor vehicle" ;
+    :yValue "231.62" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Total possession of stolen property" ;
+    :yValue "65.48" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Total theft over $5,000 (non-motor vehicle)" ;
+    :yValue "56.82" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Identity fraud" ;
+    :yValue "52.31" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Arson" ;
+    :yValue "21.79" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Identity theft" ;
+    :yValue "12.46" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Total trafficking in stolen property" ;
+    :yValue "3.03" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Altering, removing or destroying Vehicle Identification Number (VIN)" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .

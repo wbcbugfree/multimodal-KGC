@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of U.S. adult readers that like certain genres of books in 2008" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "literary genre" .
+
+:YAxis a :Axis ;
+    :title "Types of books read" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mysteries" ;
+    :yValue "0.325" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Health/fitness/self-improvement" ;
+    :yValue "0.266" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Religious texts" ;
+    :yValue "0.258" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other fiction" ;
+    :yValue "0.238" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "History/political" ;
+    :yValue "0.232" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Biographies/memoirs" ;
+    :yValue "0.228" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Thrillers" ;
+    :yValue "0.212" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other non-fiction" ;
+    :yValue "0.199" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Romance" ;
+    :yValue "0.183" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Science fiction/fantasy" ;
+    :yValue "0.167" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .

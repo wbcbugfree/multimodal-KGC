@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to M & A transactions in Greater London (United Kingdom) in 2019 , by aggregate value of deals (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Financial Advisory Company" .
+
+:YAxis a :Axis ;
+    :title "Value of deals in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Goldman Sachs" ;
+    :yValue "63919" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Morgan Stanley" ;
+    :yValue "52049" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jefferies" ;
+    :yValue "33495" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Barclays" ;
+    :yValue "31785" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "JP Morgan" ;
+    :yValue "30202" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Evercore Partners" ;
+    :yValue "29517" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Bank of America Merrill Lynch" ;
+    :yValue "24244" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rothscild & Co" ;
+    :yValue "22301" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Credit Suisse" ;
+    :yValue "21567" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lazard" ;
+    :yValue "21250" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "UBS" ;
+    :yValue "15199" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the ten best-paid French sportsmen in 2018 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Annual salaries in millions of euros" .
+
+:YAxis a :Axis ;
+    :title "best-paid French sportsmen" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Antoine Griezmann" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "24.7" ;
+    :yValue "Kylian Mbappé (football)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "22.1" ;
+    :yValue "Paul Pogba (football)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Karim Benzema (football)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20.9" ;
+    :yValue "Nicolas Batum (basket)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "20.6" ;
+    :yValue "Rudy Gobert (basket)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "19.1" ;
+    :yValue "Ousmane Dembélé (football)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "17.5" ;
+    :yValue "Joakim Noah (basket)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "15.2" ;
+    :yValue "Evan Fournier (basket)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14.3" ;
+    :yValue "Franck Ribéry (football)" ;
+    :belongsTo :Chart .

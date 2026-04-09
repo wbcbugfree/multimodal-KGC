@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best-selling American single-issue comic books of all time in the United States as of July 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "comic book" .
+
+:YAxis a :Axis ;
+    :title "Unit sales" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "X-Men #1 (1991)" ;
+    :yValue "8186500" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Star Wars #1 (2015)" ;
+    :yValue "1073000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Fantastic Four #60 (2002)" ;
+    :yValue "752699" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Batman:The 10-Cent Adventure #1 (2002)" ;
+    :yValue "702126" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "FCBD Edition Ultimate Spider-Man #1 (2002)" ;
+    :yValue "631990" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Amazing Spider-Man #1 (2014)" ;
+    :yValue "559200" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Secret Wars #1 (2015)" ;
+    :yValue "550500" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Amazing Spider-Man #583 (2009)" ;
+    :yValue "530500" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Detective Comics #1000 (2019)" ;
+    :yValue "526941" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Action Comics #1000 (2018)" ;
+    :yValue "504200" ;
+    :belongsTo :Chart .

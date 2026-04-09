@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Racial structure of the population in the largest metropolitan areas in the U.S. 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "largest metropolitan areas in the U\\.S\\." .
+
+:YAxis a :Axis ;
+    :title "Black or African American alone" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "New York-Northern New Jersey-Long Island, NY-NJ-PA" ;
+    :yValue "3676314" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Los Angeles-Long Beach-Santa Ana, CA" ;
+    :yValue "979444" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chicago-Naperville-Joliet, IL-IN-WI" ;
+    :yValue "1715530" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dallas-Fort Worth-Arlington, TX" ;
+    :yValue "937999" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Houston-Sugar Land-Baytown, TX" ;
+    :yValue "1009716" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD" ;
+    :yValue "1256380" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Miami-Fort Lauderdale-Pompano Beach, FL" ;
+    :yValue "1162729" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Boston-Cambridge-Quincy, MA-NH" ;
+    :yValue "362075" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Washington-Arlington-Alexandria, DC-VA-MD-WV" ;
+    :yValue "1456689" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Atlanta-Sandy Springs-Marietta, GA" ;
+    :yValue "1741850" ;
+    :belongsTo :Chart .

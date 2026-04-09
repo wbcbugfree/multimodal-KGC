@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of sports coverage on local network affiliates and ESPN SportsCenter in the United States in 2014 , by sport" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Distribution of coverage" .
+
+:YAxis a :Axis ;
+    :title "type of sport" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.355" ;
+    :yValue "Men’s basketball" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.201" ;
+    :yValue "Men’s football" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.189" ;
+    :yValue "Men’s baseball" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Men’s other" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.055" ;
+    :yValue "Men’s hockey" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.053" ;
+    :yValue "Men’s golf" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.041" ;
+    :yValue "Men’s soccer" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.023" ;
+    :yValue "Women’s basketball" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Neutral" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.005" ;
+    :yValue "Women’s other" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular online activities of adult internet users in the United States as of November 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of internet users" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Using text messaging or instant messaging" ;
+    :yValue "0.923" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Using e-mail" ;
+    :yValue "0.903" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Watching video online" ;
+    :yValue "0.743" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Using online social networks" ;
+    :yValue "0.737" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Shopping, making reservations, or using other consumer services online" ;
+    :yValue "0.722" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Using online financial services (banking, investing, paying bills etc.)" ;
+    :yValue "0.699" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Streaming or downloading music, radio, podcasts etc." ;
+    :yValue "0.559" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Participating in online video calls or conferences" ;
+    :yValue "0.508" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Requesting services provided by other people via the internet" ;
+    :yValue "0.338" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Working remotely via internet" ;
+    :yValue "0.238" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Searching for a job online" ;
+    :yValue "0.205" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Interacting with household equipment via internet" ;
+    :yValue "0.175" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Publishing or uploading blog posts, videos, or other original content" ;
+    :yValue "0.167" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Selling goods via the internet" ;
+    :yValue "0.113" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Offering services for sales via the internet" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .

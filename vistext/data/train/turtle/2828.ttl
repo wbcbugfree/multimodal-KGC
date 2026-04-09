@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most visited paid attractions in South West England in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Attraction" .
+
+:YAxis a :Axis ;
+    :title "Number of visits" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Stonehenge" ;
+    :yValue "1604248" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Roman Baths" ;
+    :yValue "1325085" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Longleat Safari & Adventure Park" ;
+    :yValue "1011314" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Eden Project" ;
+    :yValue "1010095" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Westonbirt, The National Arboretum" ;
+    :yValue "566565" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bristol Zoo Gardens" ;
+    :yValue "512934" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Paignton Zoo" ;
+    :yValue "427080" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kingston Lacy Estate" ;
+    :yValue "410812" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Stourhead House and Garden" ;
+    :yValue "392929" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "St Michael's Mount" ;
+    :yValue "359554" ;
+    :belongsTo :Chart .

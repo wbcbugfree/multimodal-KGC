@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top ten horse racing meeting attendances in Britain in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "horse racing venue" .
+
+:YAxis a :Axis ;
+    :title "Number of attendees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Royal Ascot" ;
+    :yValue "280268" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cheltenham Festival" ;
+    :yValue "237369" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Epsom Derby" ;
+    :yValue "157347" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Aintree Grand National" ;
+    :yValue "150268" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Glorious Goodwood" ;
+    :yValue "102475" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "York - Ebor" ;
+    :yValue "91339" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Cheltenham Open" ;
+    :yValue "70771" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Doncaster St. Leger" ;
+    :yValue "57269" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ascot - King George" ;
+    :yValue "54180" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "York - Music Showcase" ;
+    :yValue "53370" ;
+    :belongsTo :Chart .

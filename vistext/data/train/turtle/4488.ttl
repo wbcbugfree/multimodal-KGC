@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "San Francisco Giants all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "646" ;
+    :yValue "Willie Mays" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "586" ;
+    :yValue "Barry Bonds" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "511" ;
+    :yValue "Mel Ott" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "469" ;
+    :yValue "Willie McCovey" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "247" ;
+    :yValue "Matt Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "226" ;
+    :yValue "Orlando Cepeda" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "189" ;
+    :yValue "Bobby Thomson" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "186" ;
+    :yValue "Bobby Bonds" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "176" ;
+    :yValue "Will Clark" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Jeff Kent" ;
+    :belongsTo :Chart .

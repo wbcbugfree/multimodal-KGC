@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 U.S. states based on hay production in 2018 (in 1,000 tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Production in thousand tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Texas" ;
+    :yValue "8374" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nebraska" ;
+    :yValue "6985" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "South Dakota" ;
+    :yValue "5788" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "California" ;
+    :yValue "5682" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Montana" ;
+    :yValue "5595" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Missouri" ;
+    :yValue "5408" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Oklahoma" ;
+    :yValue "5121" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kentucky" ;
+    :yValue "5088" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Idaho" ;
+    :yValue "5019" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kansas" ;
+    :yValue "4760" ;
+    :belongsTo :Chart .

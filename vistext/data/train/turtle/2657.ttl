@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 origins of drugs in R & D pipeline worldwide by number of active drugs in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Origin" .
+
+:YAxis a :Axis ;
+    :title "Number of active drugs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chemical, synthetic" ;
+    :yValue "8921" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Biological, protein, antibody" ;
+    :yValue "2224" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Biological, protein, recombinant" ;
+    :yValue "795" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Biological, cellular, autologous" ;
+    :yValue "602" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Biological, protein" ;
+    :yValue "549" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Biological, nucleic acid, viral vector" ;
+    :yValue "485" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chemical, synthetic, peptide" ;
+    :yValue "478" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Biological, cellular" ;
+    :yValue "464" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Biological, virus particles" ;
+    :yValue "405" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chemical, synthetic, nucleic acid" ;
+    :yValue "401" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. states with the biggest share of eBay sellers as of June 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Percent of U.S. sellers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "California" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Florida" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "New York" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Texas" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Pennsylvania" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Illinois" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "New Jersey" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ohio" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Michigan" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Georgia" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .

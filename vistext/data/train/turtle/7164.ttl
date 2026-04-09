@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Activities that most respondents are passionate about in Poland in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Men" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Listening to music" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Watching movies" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Reading books" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Watching series" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cooking" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Walks" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Cycling" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Reading newspapers/magazines" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Looking after pets" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Growing decorative/potted plants" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .

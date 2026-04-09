@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rate of sexual assaults by family members in Canada in 2016 , by province (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of victims per 100,000 population" .
+
+:YAxis a :Axis ;
+    :title "Province" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "111" ;
+    :yValue "Nunavut" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "92" ;
+    :yValue "Northwest Territories" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "Yukon" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Saskatchewan" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Manitoba" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Quebec" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Newfoundland and Labrador" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "New Brunswick" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Nova Scotia" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Canada" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Alberta" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Ontario" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "British Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Prince Edward Island" ;
+    :belongsTo :Chart .

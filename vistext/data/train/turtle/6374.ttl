@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average cigarette prices in Canada from 2006 to 2014 , by region (in Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of Canada" .
+
+:YAxis a :Axis ;
+    :title "Apr 1, 2014" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "104.96" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "92.94" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "110.22" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "125.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "84.96" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "81.19" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "88.65" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "112.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "107.32" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "108.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Yukon Territory" ;
+    :yValue "93" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northwest Territories" ;
+    :yValue "117.86" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "101.4" ;
+    :belongsTo :Chart .

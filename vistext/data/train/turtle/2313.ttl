@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to M & A transactions in the Republic of Ireland in 2019 , by deal volume" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of M&A deals" .
+
+:YAxis a :Axis ;
+    :title "Leading financial advisors to M&A transactions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "IBI Corporate Finance" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Davy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "JPA Brenson Lawlor" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "PWC" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Goldman Sachs" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "RSM" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "RBC Capital Markets" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Investec" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Grant Thornton" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Morgan Stanley" ;
+    :belongsTo :Chart .

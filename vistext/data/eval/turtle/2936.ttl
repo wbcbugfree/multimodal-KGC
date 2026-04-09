@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading brands of frozen mixed vegetables in the United States in 2020 , based on unit sales (in million units)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million units" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "80.75" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26.57" ;
+    :yValue "Birds Eye Steamfresh" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25.35" ;
+    :yValue "Birds Eye" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15.63" ;
+    :yValue "Pictsweet Farms" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4.25" ;
+    :yValue "Green Giant Steamers" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.14" ;
+    :yValue "Flav-R-Pac" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.95" ;
+    :yValue "Pictsweet" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.92" ;
+    :yValue "Green Giant Riced Veggies" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.14" ;
+    :yValue "Pictsweet Deluxe Steamables" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.13" ;
+    :yValue "Pictsweet Farms Steamables" ;
+    :belongsTo :Chart .

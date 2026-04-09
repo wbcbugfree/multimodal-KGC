@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average custodial sentence length (ACSL) at all courts to immediate custody in England and Wales in 2018/19 by offence group (in months)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Offence Group" .
+
+:YAxis a :Axis ;
+    :title "Average custodial sentence length in months" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sexual offences" ;
+    :yValue "58.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Robbery" ;
+    :yValue "51.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Drug offences" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Criminal damage and arson" ;
+    :yValue "31.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Violence against the person" ;
+    :yValue "22.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Fraud offences" ;
+    :yValue "22.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "All offences" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Miscellaneous crimes against society" ;
+    :yValue "12.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Possession of weapons" ;
+    :yValue "11.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Theft offences" ;
+    :yValue "10.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Public order offences" ;
+    :yValue "7.7" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Summary motoring offences*" ;
+    :yValue "2.9" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Summary non-motiring offences*" ;
+    :yValue "2.6" ;
+    :belongsTo :Chart .

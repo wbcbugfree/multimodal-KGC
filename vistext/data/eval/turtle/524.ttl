@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of the 10 most valuable fast food brands worldwide in 2012 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "95188" ;
+    :yValue "McDonald's" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "17072" ;
+    :yValue "Starbucks" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "14843" ;
+    :yValue "Subway" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8852" ;
+    :yValue "KFC" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5397" ;
+    :yValue "Pizza Hut" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3346" ;
+    :yValue "Tim Hortons" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2045" ;
+    :yValue "Taco Bell" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1722" ;
+    :yValue "Wendy's" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "797" ;
+    :yValue "Domino's" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "344" ;
+    :yValue "Arby's" ;
+    :belongsTo :Chart .

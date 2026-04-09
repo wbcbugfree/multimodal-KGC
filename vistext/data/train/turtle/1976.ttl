@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of adult population in federal correctional services in Canada in the fiscal year of 2019 , by religion" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of adults in federal custodial programs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Christian" ;
+    :yValue "0.478" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "No Religion Affiliation" ;
+    :yValue "0.157" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Unknown" ;
+    :yValue "0.134" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Muslim" ;
+    :yValue "0.072" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Traditional Aboriginal Spirituality" ;
+    :yValue "0.068" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Other Religions" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Buddhist" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wicca/Pagan" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jewish" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Rastafarian" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sikh" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Hindu" ;
+    :yValue "0.003" ;
+    :belongsTo :Chart .

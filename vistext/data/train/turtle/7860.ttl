@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Crime clearance rate in the United States in 2019 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "West" .
+
+:YAxis a :Axis ;
+    :title "crimes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.461" ;
+    :yValue "Violent crime (total)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.637" ;
+    :yValue "Murder and nonnegligent manslaughter" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.304" ;
+    :yValue "Rape" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.313" ;
+    :yValue "Robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.544" ;
+    :yValue "Aggravated assault" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.136" ;
+    :yValue "Property crime (total)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.124" ;
+    :yValue "Burglary" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.143" ;
+    :yValue "Larceny-theft" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.105" ;
+    :yValue "Motor vehicle theft" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Arson" ;
+    :belongsTo :Chart .

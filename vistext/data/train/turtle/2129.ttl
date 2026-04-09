@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Taste rating of selected sandwich restaurant chains in the United States as of July 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "restaurant chain" .
+
+:YAxis a :Axis ;
+    :title "Taste rating" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Portillo's Hot Dogs" ;
+    :yValue "8.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Firehouse Subs" ;
+    :yValue "8.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Schiotzsky's" ;
+    :yValue "8.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jason's Deli" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "McAllister's Deli" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jersey Mike's Subs" ;
+    :yValue "7.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Panera Bread" ;
+    :yValue "7.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jimmy John's Gourmet Sandwiches" ;
+    :yValue "7.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Potbelly Sandwich Shop" ;
+    :yValue "7.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Quiznos" ;
+    :yValue "7.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Einstein Bros. Bagels" ;
+    :yValue "7.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Corner Bakery Cafe" ;
+    :yValue "7.3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Arby's" ;
+    :yValue "7.3" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Subway" ;
+    :yValue "7.2" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Au Bon Pain" ;
+    :yValue "7" ;
+    :belongsTo :Chart .

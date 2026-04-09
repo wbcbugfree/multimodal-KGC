@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of IPTV subscribers in Japan from 1st quarter 2012 to 4th quarter 2014 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "IPTV subscribers in millions" .
+
+:YAxis a :Axis ;
+    :title "Quarter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4.8" ;
+    :yValue "Q4 '14" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4.7" ;
+    :yValue "Q3 '14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.6" ;
+    :yValue "Q2 '14" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4.5" ;
+    :yValue "Q1 '14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4.3" ;
+    :yValue "Q4 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.06" ;
+    :yValue "Q2 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4.43" ;
+    :yValue "Q1 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4.27" ;
+    :yValue "Q4 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4.13" ;
+    :yValue "Q3 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.92" ;
+    :yValue "Q2 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "3.81" ;
+    :yValue "Q1 '12" ;
+    :belongsTo :Chart .

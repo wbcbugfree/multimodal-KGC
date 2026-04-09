@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales revenue of the leading music albums on digital music platforms in China in 2019 (in million yuan)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "leading music albums" .
+
+:YAxis a :Axis ;
+    :title "Sales revenue in million yuan" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "'Young' - Cai Xukun (Chinese)" ;
+    :yValue "66.23" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "'I Really Want to Love This World' - Hua Chenyu (Chinese)" ;
+    :yValue "63.89" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "'No Sense' - Wang Yibo (Chinese)" ;
+    :yValue "46.81" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "'HONEY' - Lay Zhang (Chinese)" ;
+    :yValue "37.67" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "'Wa' - Chris Lee (Chinese)" ;
+    :yValue "36.78" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "'Going To Powerfully Burst' - R1SE (Chinese)" ;
+    :yValue "36.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "'Lover' - Taylor Swift (English)" ;
+    :yValue "33.06" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "'Won't Cry' - Jay Chou (Chinese)" ;
+    :yValue "31.88" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "'The Wind' - Rocket Girls 101 (Chinese)" ;
+    :yValue "19.35" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "'Blue Sky' - Zhang Yunlei (Chinese)" ;
+    :yValue "16.88" ;
+    :belongsTo :Chart .

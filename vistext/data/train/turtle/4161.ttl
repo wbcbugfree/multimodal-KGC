@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Los Angeles Lakers all-time points leaders from 1948 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Basketball player" .
+
+:YAxis a :Axis ;
+    :title "Points scored" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Kobe Bryant" ;
+    :yValue "33643" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jerry West" ;
+    :yValue "25192" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kareem Abdul-Jabbar" ;
+    :yValue "24176" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Elgin Baylor" ;
+    :yValue "23149" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Magic Johnson" ;
+    :yValue "17707" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "James Worthy" ;
+    :yValue "16320" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Shaquille O'Neal" ;
+    :yValue "13895" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gail Goodrich" ;
+    :yValue "13044" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Byron Scott" ;
+    :yValue "12780" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jamaal Wilkes" ;
+    :yValue "10601" ;
+    :belongsTo :Chart .

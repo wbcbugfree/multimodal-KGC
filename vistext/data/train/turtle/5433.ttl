@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading global reinsurers in 2016 , by gross reinsurance premiums written (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Net premiums written in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Swiss Re Ltd." ;
+    :yValue "35.62" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Munich Re Co." ;
+    :yValue "33.15" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Hannover Re" ;
+    :yValue "17.23" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "SCOR S.E." ;
+    :yValue "14.57" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Berkshire Hathaway Inc" ;
+    :yValue "12.71" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Lloyd's" ;
+    :yValue "11.58" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Reinsurance Group of America Inc" ;
+    :yValue "10.11" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "China Reinsurance (Group) Corp" ;
+    :yValue "7.86" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Great West Lifeco" ;
+    :yValue "6.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Korean Reinsurance Company" ;
+    :yValue "5.55" ;
+    :belongsTo :Chart .

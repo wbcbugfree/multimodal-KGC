@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "National Accounts receipts forecast as a share of gross domestic product (GDP) in the United Kingdom (UK) in 2018/19 , by source" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2018/19" .
+
+:YAxis a :Axis ;
+    :title "major receipts to the National Accounts" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Income tax" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.065" ;
+    :yValue "NICs" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Value added tax" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.026" ;
+    :yValue "Onshore corporation tax" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Fuel duties" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.015" ;
+    :yValue "Business rates" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.016" ;
+    :yValue "Council tax" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Alcohol and tobacco duties" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.015" ;
+    :yValue "Capital taxes*" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "UK oil and gas receipts" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.034" ;
+    :yValue "Other taxes" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.346" ;
+    :yValue "National Accounts taxes" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Interest and dividend receipts" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Other receipts" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Current receipts" ;
+    :belongsTo :Chart .

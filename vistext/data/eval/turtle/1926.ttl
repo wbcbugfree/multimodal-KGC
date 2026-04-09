@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of downloads of leading Android apps in Spain in 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Mobile App" .
+
+:YAxis a :Axis ;
+    :title "Number of downloads" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tuenti" ;
+    :yValue "17500000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Instant Buttons" ;
+    :yValue "7950000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Smileys para Chat" ;
+    :yValue "6300000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "DogFight" ;
+    :yValue "5000000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "El Ahorcado en Español" ;
+    :yValue "4688943" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Colormania" ;
+    :yValue "2757639" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "iBasket" ;
+    :yValue "2072134" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Memedroid" ;
+    :yValue "1420000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "NBA General Manager" ;
+    :yValue "1046673" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lets Bonus" ;
+    :yValue "1000000" ;
+    :belongsTo :Chart .

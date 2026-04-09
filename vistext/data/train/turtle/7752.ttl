@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading high street fashion labels ranked by Instagram user engagement as of May 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Instagram likes" .
+
+:YAxis a :Axis ;
+    :title "Leading high street fashion labels" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12511530" ;
+    :yValue "Forever 21" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10421526" ;
+    :yValue "H&M" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6012399" ;
+    :yValue "Primark" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4434419" ;
+    :yValue "Topshop" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4157131" ;
+    :yValue "ASOS" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2655324" ;
+    :yValue "Zara" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1001155" ;
+    :yValue "Mango" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "971061" ;
+    :yValue "New Look" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "305015" ;
+    :yValue "GAP" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "163265" ;
+    :yValue "Next" ;
+    :belongsTo :Chart .

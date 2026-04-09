@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total value of retail real estate investment in Europe from first to third quarter of 2018 and 2019 , by city (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Q1-Q3 2018" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Germany (big four)*" ;
+    :yValue "2179" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Central Paris" ;
+    :yValue "1177" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Milan" ;
+    :yValue "220" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Central London" ;
+    :yValue "778" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Madrid" ;
+    :yValue "725" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dublin" ;
+    :yValue "243" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Brussels" ;
+    :yValue "868" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Lisbon" ;
+    :yValue "267" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Warsaw" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Amsterdam" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Prague" ;
+    :yValue "89" ;
+    :belongsTo :Chart .

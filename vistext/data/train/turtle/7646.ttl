@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How much do you agree with the following statements about consumers ' shopping attitudes ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Strongly agree" .
+
+:YAxis a :Axis ;
+    :title "consumers on certain shopping attitudes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "I´m careful about avoiding waste nowadays" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "I prefer to buy ingredients to make meals from scratch rather than ready meals" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "I would like to feel that the money I spend goes on the product, and not on the marketing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "I buy fresh food when I actually need it, so it really is fresh" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "I try to avoid being tempted to buy things I don´t need" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "I make things go further nowadays" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "I try to carefully plan what I buy before I go to the shops" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "I´m more focused on price than ethical or environmental considerations nowadays" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "I prefer it if the money I spend benefits British businesses" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "I believe that cutting back and being more careful has made me a more environmentally friendly shopper" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "I prefer it if the money I spend benefits local businesses" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of committed crimes in the United States in 2019 , by type of crime" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type of crime" .
+
+:YAxis a :Axis ;
+    :title "Number of committed crimes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Property crime (total)" ;
+    :yValue "6925677" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Larceny-theft" ;
+    :yValue "5086096" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Violent crime (total)" ;
+    :yValue "1203808" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Burglary" ;
+    :yValue "1117696" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Aggravated assault" ;
+    :yValue "821182" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Motor vehicle theft" ;
+    :yValue "721885" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Robbery" ;
+    :yValue "267988" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rape (revised definition)" ;
+    :yValue "139815" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Rape (legacy definition)" ;
+    :yValue "98213" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Murder and nonnegligent manslaughter" ;
+    :yValue "16425" ;
+    :belongsTo :Chart .

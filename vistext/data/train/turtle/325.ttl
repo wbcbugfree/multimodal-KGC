@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cincinnati Reds all-time hits leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hits" .
+
+:YAxis a :Axis ;
+    :title "Cincinnati Reds all-time hits leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3358" ;
+    :yValue "Pete Rose" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2340" ;
+    :yValue "Barry Larkin" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2326" ;
+    :yValue "Dave Concepcion" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2258" ;
+    :yValue "Bid McPhee" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2048" ;
+    :yValue "Johnny Bench" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1908" ;
+    :yValue "Joey Votto" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1934" ;
+    :yValue "Tony Perez" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1881" ;
+    :yValue "Vada Pinson" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1784" ;
+    :yValue "Edd Roush" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1774" ;
+    :yValue "Brandon Phillips" ;
+    :belongsTo :Chart .

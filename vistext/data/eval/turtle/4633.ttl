@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest prisons in England and Wales in 2020 , by prisoner population" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "prison" .
+
+:YAxis a :Axis ;
+    :title "Number of prisoners" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "HMP Oakwood (West Midlands)" ;
+    :yValue "2007" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "HMP Berwyn (Wales)" ;
+    :yValue "1782" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "HMP Parc (Wales)" ;
+    :yValue "1580" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "HMP Wandsworth (London)" ;
+    :yValue "1468" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "HMP Forest Bank (North West England)" ;
+    :yValue "1432" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "HMP Northumberland (North East England)" ;
+    :yValue "1306" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "HMP Highpoint (East England)" ;
+    :yValue "1274" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "HMP Littlehey (East England)" ;
+    :yValue "1189" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "HMP Dovegate (West Midlands)" ;
+    :yValue "1159" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "HMP Holme House (North East England)" ;
+    :yValue "1153" ;
+    :belongsTo :Chart .

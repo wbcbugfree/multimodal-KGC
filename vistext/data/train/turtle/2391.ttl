@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top goal scorers of Feyenoord Rotterdam as of January 2021 , by player" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "player" .
+
+:YAxis a :Axis ;
+    :title "Number of goals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dirk Kuyt" ;
+    :yValue "118" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ove Kindvall" ;
+    :yValue "94" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jon Dahl Tomasson" ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Peter Houtman" ;
+    :yValue "91" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Steven Berghuis" ;
+    :yValue "77" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "André Hoekstra" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wim van Hanegem" ;
+    :yValue "73" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Pierre van Hooijdonk" ;
+    :yValue "72" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "József Kiprich" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Graziano Pellè" ;
+    :yValue "55" ;
+    :belongsTo :Chart .

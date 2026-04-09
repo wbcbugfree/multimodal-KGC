@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Contemporary artworks with the highest auction price worldwide between July 2018 and June 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Contemporary artworks" .
+
+:YAxis a :Axis ;
+    :title "Top hammer price in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jeff KoonsRabbit" ;
+    :yValue "91.08" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jean-Michel BasquiatUntitled (Pollo Frito)" ;
+    :yValue "25.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jean-Michel BasquiatDiscography Two" ;
+    :yValue "20.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Christopher WoolUntitled(1990)" ;
+    :yValue "15.22" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "KAWSThe Kaws Album" ;
+    :yValue "14.77" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Christopher WoolUntitled" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jenny SavillePropped" ;
+    :yValue "12.49" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jean-Michel BasquiatApex" ;
+    :yValue "10.82" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jean-Michel BasquiatSabado por la Noche (Saturday Night)" ;
+    :yValue "10.64" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Peter DoigBuffalo Station 1" ;
+    :yValue "9.9" ;
+    :belongsTo :Chart .

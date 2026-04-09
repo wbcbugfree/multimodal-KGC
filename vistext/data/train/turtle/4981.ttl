@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of plants of selected leading cement producers worldwide in 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (country)" .
+
+:YAxis a :Axis ;
+    :title "Number of plants" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "LafargeHolcim (Switzerland)" ;
+    :yValue "220" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "HeidelbergCement (Germany)" ;
+    :yValue "141" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cemex (Mexico)" ;
+    :yValue "61" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Votorantim (Brazil)" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "CRH (Ireland)" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "InterCement (Brazil)" ;
+    :yValue "42" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "UltraTech Cement (India)" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Buzzi Unicem (italy)" ;
+    :yValue "37" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Eurocement (Russia)" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dangote Cement (Nigeria)" ;
+    :yValue "12" ;
+    :belongsTo :Chart .

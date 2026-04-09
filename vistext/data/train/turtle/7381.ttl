@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total spending of Barack Obama and Mitt Romney in the 2012 elections as of October 2012 , by major category (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Romney" .
+
+:YAxis a :Axis ;
+    :title "spending major category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "356.8" ;
+    :yValue "Advertising" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "123.9" ;
+    :yValue "Mail" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "48" ;
+    :yValue "Payroll" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "90.7" ;
+    :yValue "Fundraising" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20.8" ;
+    :yValue "Administration" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "31.4" ;
+    :yValue "Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11.9" ;
+    :yValue "Polling" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "21.1" ;
+    :yValue "Consult." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Lists" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5.6" ;
+    :yValue "Events" ;
+    :belongsTo :Chart .

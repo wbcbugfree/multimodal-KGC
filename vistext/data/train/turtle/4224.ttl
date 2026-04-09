@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Professional golfers with the most money earned on the PGA tour in the 2020 season (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Golf player" .
+
+:YAxis a :Axis ;
+    :title "Money earned in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dustin Johnson" ;
+    :yValue "3.11" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Bryson DeChambeau" ;
+    :yValue "2.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jason Kokrak" ;
+    :yValue "2.01" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Matthew Wolff" ;
+    :yValue "2.01" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Patrick Cantlay" ;
+    :yValue "1.89" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Xander Schauffele" ;
+    :yValue "1.83" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Justin Thomas" ;
+    :yValue "1.75" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Cameron Smith" ;
+    :yValue "1.68" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Stewart Cink" ;
+    :yValue "1.49" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sungjae Im" ;
+    :yValue "1.38" ;
+    :belongsTo :Chart .

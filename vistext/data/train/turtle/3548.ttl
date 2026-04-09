@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of substance abuse treatment facilities in the U.S. with specifically tailored programs as of 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of facilities" .
+
+:YAxis a :Axis ;
+    :title "Specifically tailored program or group" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.53" ;
+    :yValue "Clients with co-occuring mental and substance abuse disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Adult women" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Adult men" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Clients who have experienced trauma" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Criminal justice clients (other than DUI/DWI)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Young adults" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Persons who have experienced intimate partner violence, domestic violence" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Persons who have experienced sexual abuse" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "Adolescents" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "DUI or DWI clients" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "Pregnant or postpartum women" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Seniors or older adults" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Persons with HIV or AIDS" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Lesbian, gay, bisexual, transgender clients" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Veterans" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Members of military families" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Active duty military" ;
+    :belongsTo :Chart .

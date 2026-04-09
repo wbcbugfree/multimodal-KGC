@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of nominal gross domestic product (GDP) in Singapore in 2019 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of nominal GDP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Utilities" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Accommodation and food services" ;
+    :yValue "0.021" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Ownership of dwellings" ;
+    :yValue "0.038" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Information and communications" ;
+    :yValue "0.043" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Transportation and storage" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other services industries" ;
+    :yValue "0.113" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Finance and insurance" ;
+    :yValue "0.139" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Business services" ;
+    :yValue "0.148" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wholesale and retail trade" ;
+    :yValue "0.173" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.209" ;
+    :belongsTo :Chart .

@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average price per ounce of high quality marijuana as of October 2020 , by select U.S. state (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Price in U.S. dollars per ounce" .
+
+:YAxis a :Axis ;
+    :title "State" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "591.42" ;
+    :yValue "District of Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "352.13" ;
+    :yValue "Illinois" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "342.21" ;
+    :yValue "Oklahoma" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "332.21" ;
+    :yValue "Connecticut" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "323.35" ;
+    :yValue "Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "319.04" ;
+    :yValue "U.S. average" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "298.62" ;
+    :yValue "Florida" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "296.58" ;
+    :yValue "Arizona" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "289.53" ;
+    :yValue "Michigan" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "283.34" ;
+    :yValue "New Mexico" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "271.48" ;
+    :yValue "Nevada" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "266.18" ;
+    :yValue "Montana" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "258.51" ;
+    :yValue "California" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "241.38" ;
+    :yValue "Colorado" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "233.93" ;
+    :yValue "Washington" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "209.99" ;
+    :yValue "Oregon" ;
+    :belongsTo :Chart .

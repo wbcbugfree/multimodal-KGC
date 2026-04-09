@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Customer reasons for becoming members of car sharing clubs in London in 2017/2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.93" ;
+    :yValue "To have access to a car without the hassle of ownership" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "To have another travel option available to me" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "To make trips I cannot easily make using other modes" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "To hire cars on a short term basis" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "To reduce the cost of owing a car in London" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "To be environmentally friendly" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "To have access to different types of car" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "To hire cars for one-way journeys" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "To try out an electric car" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

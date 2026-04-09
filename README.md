@@ -35,7 +35,10 @@ If you are reviewing the repository for paper evaluation, start here:
 Current canonical input counts in this checkout:
 
 - soil_dataset: 15 figure images and 56 table images under `soil_dataset/data/`
-- vistext: 882 images and 882 label JSON files under `vistext/data/`
+- vistext:
+  - `vistext/data/train/`: 7057 images, 7057 label JSON files, 7050 Turtle files
+  - `vistext/data/eval/`: 883 images, 883 label JSON files, 882 Turtle files
+  - `vistext/data/test/`: 882 images, 882 label JSON files, 882 Turtle files
 - diagram2graph_dataset: 219 diagram images and 219 label JSON files under `diagram2graph_dataset/data/`
 
 ## Canonical inputs and reusable entry points
@@ -57,10 +60,11 @@ Current canonical input counts in this checkout:
 ### vistext
 
 - Canonical local inputs:
-  - `vistext/data/images/`
-  - `vistext/data/labels/`
+  - `vistext/data/train/`
+  - `vistext/data/eval/`
+  - `vistext/data/test/`
 - Reusable converter entry points:
-  - `vistext/data/json2ttl/json_to_ttl_converter_v2.py`
+  - `vistext/data/json2ttl_converter.py`
   - `vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py`
 - Reusable prompt assets:
   - `vistext/prompt_text/`
@@ -92,6 +96,7 @@ Current canonical input counts in this checkout:
 Although each dataset evolved independently, the repository generally follows this pattern:
 
 1. `data/` contains source images, tables, figures, or labels.
+   VisText now uses split-specific subfolders with `images/`, `labels/`, and `turtle/` under `train/`, `eval/`, and `test/`.
 2. `prompt_engineering/` or `prompt_text/` contains prompt variants or notebook-driven prompt workflows.
 3. `Extract RDF .../` stores multimodal model outputs.
 4. `json2ttl/` or `build_kg/` converts outputs into knowledge-graph artifacts.
@@ -132,9 +137,9 @@ There is no official repo-wide test command. Use small representative conversion
 ### vistext converter
 
 ```bash
-python "vistext/data/json2ttl/json_to_ttl_converter_v2.py" \
-  "vistext/data/labels/1046.json" \
-  -o ".tmp/1046-v2.ttl"
+python "vistext/data/json2ttl_converter.py" \
+  "vistext/data/test/labels/1046.json" \
+  -o ".tmp/1046.ttl"
 ```
 
 ### vistext Gemini runner dry-run

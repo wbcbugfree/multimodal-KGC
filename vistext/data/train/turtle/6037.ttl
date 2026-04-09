@@ -1,0 +1,112 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Gender wage gap for the 20 most common occupations for men in the U.S. in 2019 , by median weekly earnings (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Men's earnings" .
+
+:YAxis a :Axis ;
+    :title "Occupation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2509" ;
+    :yValue "Chief executives" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1920" ;
+    :yValue "Software developers, applications and systems software" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1476" ;
+    :yValue "General and operations managers" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1419" ;
+    :yValue "Accountants and auditors" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1262" ;
+    :yValue "Sales representatives, wholesale and manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1161" ;
+    :yValue "Elementary and middle school teachers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1050" ;
+    :yValue "First-line supervisors of production and operating workers" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1015" ;
+    :yValue "Electricians *" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "955" ;
+    :yValue "First-line supervisors of retail sales workers" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "861" ;
+    :yValue "Driver/sales workers and truck drivers" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "826" ;
+    :yValue "Carpenters *" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "811" ;
+    :yValue "Automotive service technicians and mechanics*" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "806" ;
+    :yValue "Retail salespersons" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "767" ;
+    :yValue "Production workers, all other" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "736" ;
+    :yValue "Customer service representatives" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "724" ;
+    :yValue "Construction laborers *" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "657" ;
+    :yValue "Laborers and freight, stock, and material movers, hand" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "610" ;
+    :yValue "Janitors and building cleaners" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "607" ;
+    :yValue "Grounds maintenance workers *" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "535" ;
+    :yValue "Cooks" ;
+    :belongsTo :Chart .

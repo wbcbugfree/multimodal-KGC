@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Minor League Baseball attendance by league in the U.S. from 2011 to 2012 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2011" .
+
+:YAxis a :Axis ;
+    :title "Minor League Baseball" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6.93" ;
+    :yValue "Pacific Coast League" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "6.66" ;
+    :yValue "International League" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.98" ;
+    :yValue "Midwest League" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.32" ;
+    :yValue "Mexican League" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.92" ;
+    :yValue "Eastern League" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.13" ;
+    :yValue "South Atlantic League" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.82" ;
+    :yValue "Texas League" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.18" ;
+    :yValue "Southern League" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.79" ;
+    :yValue "Carolina League" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.75" ;
+    :yValue "New York-Penn" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1.59" ;
+    :yValue "California League" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Florida State League" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.91" ;
+    :yValue "Northwest League" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "Pioneer League" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Appalachian League" ;
+    :belongsTo :Chart .

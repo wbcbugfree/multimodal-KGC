@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly average TV viewership per game of Major League Soccer (MLS) in the United States in 2016 and 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "2016" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Marc" ;
+    :yValue "276667" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "March Apri" ;
+    :yValue "246000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "April Ma" ;
+    :yValue "277571" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "May Jun 478200; Month: June Jul 324100; Month: July Augus" ;
+    :yValue "177733" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "August Septembe" ;
+    :yValue "303100" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "September Octobe" ;
+    :yValue "214071" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "October Novembe" ;
+    :yValue "291125" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "November Decembe" ;
+    :yValue "2012000" ;
+    :belongsTo :Chart .

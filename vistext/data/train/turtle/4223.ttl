@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of raw silk produced in India in financial year 2017 , by state (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "state of India" .
+
+:YAxis a :Axis ;
+    :title "Raw silk production in thousand metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Karnataka" ;
+    :yValue "9.57" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Andhra Pradesh" ;
+    :yValue "5.97" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Assam" ;
+    :yValue "3.81" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jharkhand" ;
+    :yValue "2.63" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Bengal" ;
+    :yValue "2.57" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tamil Nadu" ;
+    :yValue "1.91" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Meghalaya" ;
+    :yValue "0.93" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nagaland" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manipur" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Uttar Pradesh" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .

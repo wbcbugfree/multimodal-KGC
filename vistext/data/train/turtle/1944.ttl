@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most traffic jam prone cities in Russia in 2019 , by congestion level" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Excess travel time due to traffic congestion" .
+
+:YAxis a :Axis ;
+    :title "Cities in Russia" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Moscow region (oblast)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Saint Petersburg" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Novosibirsk" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Samara" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Yekaterinburg" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Rostov-on-Don" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Chelyabinsk" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Nizhny Novgorod" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Omsk" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Tomsk" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Kazan" ;
+    :belongsTo :Chart .

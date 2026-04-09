@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average monthly rainfall deviation in the United Kingdom (UK) from 2015 to 2020 (in millimeters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "2018" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "De" ;
+    :yValue "-26.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec No" ;
+    :yValue "-9.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nov Oc" ;
+    :yValue "12.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Oct Se" ;
+    :yValue "33.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sep Au" ;
+    :yValue "-16.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Aug Ju" ;
+    :yValue "-19.9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jul Jun" ;
+    :yValue "-26.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "June Ma" ;
+    :yValue "-51.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "May Ap" ;
+    :yValue "1.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Apr Ma" ;
+    :yValue "-20.2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Mar Fe" ;
+    :yValue "-4.8" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Feb Ja" ;
+    :yValue "14.5" ;
+    :belongsTo :Chart .

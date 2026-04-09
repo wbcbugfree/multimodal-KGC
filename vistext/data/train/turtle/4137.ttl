@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading websites in South Africa as of January 2020 , by average monthly traffic (in million visits)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "website" .
+
+:YAxis a :Axis ;
+    :title "Monthly traffic in million visits" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Google.com" ;
+    :yValue "567.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Facebook.com" ;
+    :yValue "195.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Youtube.com" ;
+    :yValue "169.5" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Google.co.za" ;
+    :yValue "29.53" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Xvideoscom" ;
+    :yValue "28.91" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Instagram.com" ;
+    :yValue "25.62" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Twitter.com" ;
+    :yValue "25.37" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dstv.com" ;
+    :yValue "23.79" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Netflix.com" ;
+    :yValue "23.09" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hollywoodbets.net" ;
+    :yValue "18.02" ;
+    :belongsTo :Chart .

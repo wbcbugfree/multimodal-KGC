@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of carloads transported by U.S. class I railroads by commodity from 2004 to 2009 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Commodity group" .
+
+:YAxis a :Axis ;
+    :title "2006" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Miscellaneous mixed shipments, primarily intermoda" ;
+    :yValue "8536" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Miscellaneous mixed shipments, primarily intermodal Coa" ;
+    :yValue "7574" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Coal All other carload" ;
+    :yValue "2896" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "All other carloads Chemical" ;
+    :yValue "1969" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chemicals Farm product" ;
+    :yValue "1590" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Farm products Food and similar product" ;
+    :yValue "1487" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Food and similar products Non-metallic mineral" ;
+    :yValue "1470" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Non-metallic minerals Motor vehicles and equipmen" ;
+    :yValue "1714" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Motor vehicles and equipment Waste and scrap materia" ;
+    :yValue "701" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Waste and scrap material Pulp, paper, and allied product" ;
+    :yValue "671" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Pulp, paper, and allied products Metallic ore" ;
+    :yValue "674" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Metallic ores Petroleum and cok" ;
+    :yValue "663" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Petroleum and coke Metal and product" ;
+    :yValue "778" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Metal and products Stone, clay, and glass product" ;
+    :yValue "570" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Stone, clay, and glass products Lumber and wood product" ;
+    :yValue "548" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Lumber and wood products Forwarder and shipper association traffi" ;
+    :yValue "276" ;
+    :belongsTo :Chart .

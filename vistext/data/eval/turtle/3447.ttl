@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue share from the internet or electronic data interchange (EDI) segment of companies in Germany in 2014 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "Revenue share from online sales" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Transport, storage, post, courier und express services" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Repair of data processing and telecommunication devices" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Total researched fields" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Trade, Handel, maintenance andrepair of automobiles" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hotel and restaurant industry" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Provision of further commercial services" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Property and apartment management" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Information and communication" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Construction industry" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .

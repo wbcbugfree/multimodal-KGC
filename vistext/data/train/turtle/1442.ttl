@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading mining companies worldwide based on market capitalization in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market capitalization in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Mining company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "92.13" ;
+    :yValue "BHP, Australia/UK" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "79.42" ;
+    :yValue "Rio Tinto, Australia/UK" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "50.58" ;
+    :yValue "Newmont Corporation, U.S." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "47.66" ;
+    :yValue "Barrick Gold, Canada" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "41.73" ;
+    :yValue "China Shenhua Energy, China" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "25.53" ;
+    :yValue "Franco-Nevada, Canada" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "23.36" ;
+    :yValue "Anglo American, UK" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "23.07" ;
+    :yValue "Glencore, UK" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "21.81" ;
+    :yValue "Polyus, Russia" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "17.69" ;
+    :yValue "Wheaton Precious Metals, Canada" ;
+    :belongsTo :Chart .

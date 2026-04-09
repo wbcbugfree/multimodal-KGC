@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading marketing approaches used by travel agents to attract new clients in the United States as of August 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Email" ;
+    :yValue "0.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Social media" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Agent's website" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Newsletter" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Charity/community events" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Travel nights/coffees" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Flyers" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Internet ads" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mobile" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Newspaper ads" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Telemarketing" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Radio ads" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

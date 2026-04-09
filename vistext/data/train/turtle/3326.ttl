@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Unhappiest jobs in the United States 2012 , as rated by workers" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Unhappiest jobs" .
+
+:YAxis a :Axis ;
+    :title "Career Bliss rating" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Marketing Director" ;
+    :yValue "3.69" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Maintenance Supervisor" ;
+    :yValue "3.69" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Director of Sales" ;
+    :yValue "3.68" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Marketing Manager" ;
+    :yValue "3.67" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Program Manager" ;
+    :yValue "3.66" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Product Manager" ;
+    :yValue "3.65" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sales Engineer" ;
+    :yValue "3.64" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Teacher" ;
+    :yValue "3.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Registered Nurse" ;
+    :yValue "3.55" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Security Officer" ;
+    :yValue "3.51" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading baby wipes vendors in the United States in 2016 , based on sales (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Private label" ;
+    :yValue "494.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Kimberly Clark Corp." ;
+    :yValue "416.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Procter & Gamble" ;
+    :yValue "276.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Seventh Generation" ;
+    :yValue "9.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The Honest Co." ;
+    :yValue "8.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Johnson & Johnson" ;
+    :yValue "7.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nice-Pak Products" ;
+    :yValue "6.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Paper Partners" ;
+    :yValue "6.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Kas Direct" ;
+    :yValue "5.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Irish Breeze" ;
+    :yValue "4.4" ;
+    :belongsTo :Chart .

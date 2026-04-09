@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular e-commerce properties in the United States as of September 2018 , by average session duration (in minutes.seconds)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average session duration in minutes.seconds" .
+
+:YAxis a :Axis ;
+    :title "e-commerce website" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10.16" ;
+    :yValue "Amazon" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8.09" ;
+    :yValue "eBay" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6.25" ;
+    :yValue "Kohl's" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5.29" ;
+    :yValue "Etsy" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5.13" ;
+    :yValue "The Home Depot" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.19" ;
+    :yValue "Walmart" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4.19" ;
+    :yValue "Best Buy" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.59" ;
+    :yValue "Target" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3.44" ;
+    :yValue "Coupons.com" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.36" ;
+    :yValue "Groupon" ;
+    :belongsTo :Chart .

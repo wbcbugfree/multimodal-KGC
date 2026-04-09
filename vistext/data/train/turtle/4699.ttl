@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Regional crime rate in Germany in 2019 (per 100,000 people)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Crime rate per 100 thousand people" .
+
+:YAxis a :Axis ;
+    :title "Country" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "13746" ;
+    :yValue "Berlin" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11068" ;
+    :yValue "Hamburg" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "11036" ;
+    :yValue "Bremen" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7716" ;
+    :yValue "Saxony-Anhalt" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7386" ;
+    :yValue "Saarland" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6790" ;
+    :yValue "Mecklenburg-Vorpommern" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6720" ;
+    :yValue "North-Rhein Westphalia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6639" ;
+    :yValue "Brandenburg" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6419" ;
+    :yValue "Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6349" ;
+    :yValue "Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "6272" ;
+    :yValue "Lower Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "6163" ;
+    :yValue "Schleswig-Holstein" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "5971" ;
+    :yValue "Thüringen" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "5777" ;
+    :yValue "Rhineland-Palatinate" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "5449" ;
+    :yValue "Hessen" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "5037" ;
+    :yValue "Baden-Württemberg" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "4343" ;
+    :yValue "Bavaria" ;
+    :belongsTo :Chart .

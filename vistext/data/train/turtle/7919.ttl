@@ -1,0 +1,37 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Change in nitrogen dioxide (NOâ‚ ? air pollution level in selected cities in Latin America in April 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "cities in Latin America" .
+
+:YAxis a :Axis ;
+    :title "Partial lockdown" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Kingston, Jamaica" ;
+    :yValue "-0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mexico City, Mexico" ;
+    :yValue "-0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "São Paulo, Brazil" ;
+    :yValue "-0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Rio de Janeiro, Brazil" ;
+    :yValue "-0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Santiago, Chile" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .

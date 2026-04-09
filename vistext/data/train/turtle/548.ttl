@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of skyscrapers in the U.S. as of 2019 , by number of floors" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of floors" .
+
+:YAxis a :Axis ;
+    :title "Building (city)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "108" ;
+    :yValue "Willis Tower(Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "104" ;
+    :yValue "One World Trade Center(New York City)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "102" ;
+    :yValue "Empire State Building(New York City)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "875 North Michigan Avenue(Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "98" ;
+    :yValue "Trump International Hotel & Tower(Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "96" ;
+    :yValue "432 Park Avenue(New York City)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "83" ;
+    :yValue "Aon Center(Chicago)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Chrysler Building(New York City)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "73" ;
+    :yValue "53W53(New York)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "73" ;
+    :yValue "Wilshire Grand Center (Los Angeles)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "73" ;
+    :yValue "30 Hudson Yards(New York)" ;
+    :belongsTo :Chart .

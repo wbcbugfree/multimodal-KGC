@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of followers on Twitter for major political parties in the United Kingdom (UK) as of June 3 , 2020 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "political party" .
+
+:YAxis a :Axis ;
+    :title "Number of followers in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Labour" ;
+    :yValue "871.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Conservatives" ;
+    :yValue "499.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Liberal Democrats" ;
+    :yValue "325.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Green" ;
+    :yValue "298.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "SNP" ;
+    :yValue "281.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Brexit Party" ;
+    :yValue "217.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "UKIP" ;
+    :yValue "212.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sinn Féin" ;
+    :yValue "130.8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Plaid Cymru" ;
+    :yValue "48.6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "DUP" ;
+    :yValue "43.5" ;
+    :belongsTo :Chart .

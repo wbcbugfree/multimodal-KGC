@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Development of jobs held by Mexican immigrants in the U.S. between 2008 and 2010 by economic sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of jobs in thousands" .
+
+:YAxis a :Axis ;
+    :title "Economic Sector in US" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "65" ;
+    :yValue "Agriculture, fishing, and reforestation" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "-26" ;
+    :yValue "Mining" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "-241" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "-91" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "-72" ;
+    :yValue "Retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-55" ;
+    :yValue "Financial activities" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "-33" ;
+    :yValue "Professional and business services" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Educational and health care services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "78" ;
+    :yValue "Tourism and leisure activities" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "-45" ;
+    :yValue "Other services" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Public administration" ;
+    :belongsTo :Chart .

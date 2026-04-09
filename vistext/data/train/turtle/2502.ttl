@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. states with the highest number of HIV diagnoses in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of diagnoses" .
+
+:YAxis a :Axis ;
+    :title "State" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4683" ;
+    :yValue "Florida" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4483" ;
+    :yValue "Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4398" ;
+    :yValue "California" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2552" ;
+    :yValue "Georgia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2470" ;
+    :yValue "New York" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1352" ;
+    :yValue "Illinois" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1200" ;
+    :yValue "North Carolina" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1044" ;
+    :yValue "New Jersey" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1002" ;
+    :yValue "Pennsylvania" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "986" ;
+    :yValue "Louisiana" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Time spent per person on leading website categories in Italy in October 2020 (in minutes)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "leading website categories" .
+
+:YAxis a :Axis ;
+    :title "Time spent online in minutes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Member communities" ;
+    :yValue "1018" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Instant messaging" ;
+    :yValue "807" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Videos/movies" ;
+    :yValue "406" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "E-mail" ;
+    :yValue "190" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Search" ;
+    :yValue "140" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mass merchandiser" ;
+    :yValue "135" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Software manufacturers" ;
+    :yValue "120" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Internet tools/web services" ;
+    :yValue "102" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Current events and global news" ;
+    :yValue "84" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "General interest portals & communities" ;
+    :yValue "71" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Corporate information" ;
+    :yValue "42" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Maps/travel info" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Health, fitness & nutrition" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Food & cooking" ;
+    :yValue "27" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Weather" ;
+    :yValue "19" ;
+    :belongsTo :Chart .

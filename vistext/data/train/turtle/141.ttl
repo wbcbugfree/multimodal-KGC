@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most common baby names of boys in Norway in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "baby names" .
+
+:YAxis a :Axis ;
+    :title "Number of individuals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jakob/Jacob" ;
+    :yValue "423" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Lucas/Lukas" ;
+    :yValue "392" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Filip/Fillip/Philip/Phillip" ;
+    :yValue "387" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Oskar/Oscar" ;
+    :yValue "358" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Oliver" ;
+    :yValue "353" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Emil" ;
+    :yValue "347" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Henrik" ;
+    :yValue "339" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "William" ;
+    :yValue "333" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Noah/Noa" ;
+    :yValue "314" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Aksel/Axel" ;
+    :yValue "311" ;
+    :belongsTo :Chart .

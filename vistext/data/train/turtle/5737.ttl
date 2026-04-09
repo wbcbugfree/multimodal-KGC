@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of active personnel in the Royal Canadian Mounted Police in 2019 , by rank" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "military rank" .
+
+:YAxis a :Axis ;
+    :title "Number of personnel" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Commissioner" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Deputy Commissioners" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Assistant commissioners" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chief Superintendents" ;
+    :yValue "57" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Superintendents" ;
+    :yValue "187" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Inspectors" ;
+    :yValue "322" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Corps Sergeant Major" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sergeants major" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Staff sergeants major" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Staff sergeants" ;
+    :yValue "838" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sergeants" ;
+    :yValue "2018" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Corporals" ;
+    :yValue "3599" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Constables" ;
+    :yValue "11913" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Special constables" ;
+    :yValue "122" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Public Service employees" ;
+    :yValue "7695" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Civilian members" ;
+    :yValue "3403" ;
+    :belongsTo :Chart .

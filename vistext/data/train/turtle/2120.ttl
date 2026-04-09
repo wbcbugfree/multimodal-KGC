@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of top healthcare management consulting firms in the United States in 2013 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "healthcare management consulting firm" .
+
+:YAxis a :Axis ;
+    :title "Total revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Deloitte Consulting (New York)" ;
+    :yValue "1900" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Accenture (Chicago)" ;
+    :yValue "966" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Advisory Board Co. (Washington)" ;
+    :yValue "520.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Booz Allen Hamilton (McLean, Va.)" ;
+    :yValue "518.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Huron Healthcare (Chicago)" ;
+    :yValue "492.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Navigant (Chicago)" ;
+    :yValue "253.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ernst & Young (New York)" ;
+    :yValue "249.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "KPMG (New York)" ;
+    :yValue "223" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "FTI Consulting (Washington)" ;
+    :yValue "192.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "CTG Health Solutions (Buffalo, N.Y.)" ;
+    :yValue "118.5" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Quorum Health Resources (Brentwood, Tenn.)" ;
+    :yValue "104.8" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Croe Horwath (Chicago)" ;
+    :yValue "97.9" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Alvarez & Marsal Healthcare Industry Group (New York)" ;
+    :yValue "92.3" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Perficient (St. Louis)" ;
+    :yValue "81.7" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Beacon Partners (Weymouth, Mass.)" ;
+    :yValue "61.8" ;
+    :belongsTo :Chart .

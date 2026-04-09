@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of numerical control software licenses worldwide in 2013 , by software provider" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of installed seats" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Vero Software" ;
+    :yValue "0.202" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "CNC Software" ;
+    :yValue "0.094" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Delcam" ;
+    :yValue "0.083" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "PTC" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Siemens PLM Software" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dassault Systèmes" ;
+    :yValue "0.056" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Cimatron" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "DP Technology" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Missler Software" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "NTT Data Engineering Systems" ;
+    :yValue "0.031" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "0.282" ;
+    :belongsTo :Chart .

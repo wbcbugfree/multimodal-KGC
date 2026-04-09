@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Length of life and cause of death of United States Presidents from 1799 to November 20 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "United States Presidents" .
+
+:YAxis a :Axis ;
+    :title "Heart attack, failure or cardiovascular disease" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Gerald Ford" ;
+    :yValue "93.45" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "John Adams" ;
+    :yValue "90.68" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "James Madison" ;
+    :yValue "85.28" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dwight D. Eisenhower" ;
+    :yValue "78.45" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Andrew Jackson" ;
+    :yValue "78.23" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "William Howard Taft" ;
+    :yValue "72.47" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Grover Cleveland" ;
+    :yValue "71.26" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rutherford B. Hayes" ;
+    :yValue "70.29" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lyndon B. Johnson" ;
+    :yValue "64.41" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Calvin Coolidge" ;
+    :yValue "60.51" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Warren G. Harding *" ;
+    :yValue "57.75" ;
+    :belongsTo :Chart .

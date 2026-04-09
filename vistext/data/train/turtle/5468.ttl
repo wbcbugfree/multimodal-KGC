@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The economic contribution of tourism in London (UK) in 2013 (in billion GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "economic sector" .
+
+:YAxis a :Axis ;
+    :title "in billion GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Visitor exports" ;
+    :yValue "14.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Personal travel & tourism (domestic + outbound)" ;
+    :yValue "20.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Business travel (domestic + outbound)" ;
+    :yValue "7.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Gouvernment expenditure (individual + collective)" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Capital investment" ;
+    :yValue "5.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Travel & tourism demand" ;
+    :yValue "49.2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Outbound tourism spending spending (fares + travel)" ;
+    :yValue "8.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Direct industry contribution to GDP" ;
+    :yValue "15.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tourism economic contribution to GDP" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Total contribution to GDP" ;
+    :yValue "45.5" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of enterprise Internet of Things (IoT) projects worldwide as of January 2018 , by segment and region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "APAC" .
+
+:YAxis a :Axis ;
+    :title "Race" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Smart city" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Connected industry" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Connected building" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Connected car" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Smart energy" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Connected health" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Smart supply chain" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Smart agriculture" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Smart retail" ;
+    :belongsTo :Chart .

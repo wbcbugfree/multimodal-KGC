@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of stolen or lost firearms in the U.S. in 2019 , by type of weapon" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of firearms stolen or lost" .
+
+:YAxis a :Axis ;
+    :title "Type of firearm" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6262" ;
+    :yValue "Pistols" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2848" ;
+    :yValue "Rifles" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1218" ;
+    :yValue "Shotguns" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1180" ;
+    :yValue "Revolvers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "994" ;
+    :yValue "Receivers/frames" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "212" ;
+    :yValue "Silencers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "Derringers" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Machine guns" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Unknown types" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Combinations" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Destructive Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Any other weapon" ;
+    :belongsTo :Chart .

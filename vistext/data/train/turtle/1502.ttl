@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Artillery and heavy guns used by the British forces during the First Battle of the Somme in 1916" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of guns" .
+
+:YAxis a :Axis ;
+    :title "Weapon type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "808" ;
+    :yValue "QF 18 pounder gun" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "202" ;
+    :yValue "QF 4.5 inch Howitzer" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "128" ;
+    :yValue "BL 60 pounder gun" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "104" ;
+    :yValue "BL 6 inch Howitzer" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "BL 9.2-inch Howitzer" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "32" ;
+    :yValue "QF 4.7-inch naval gun Mk I" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "BL 6-inch naval gun Mk VII" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "BL 12-inch Howitzer" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "BL 15-inch Howitzer" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "BL 9.2-inch naval gun Mk IX" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "BL 12-inch naval gun Mk X" ;
+    :belongsTo :Chart .

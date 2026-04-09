@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of World of Warcraft Alliance characters in U.S. and EU realms as of December 2019 , by race" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "World of Warcraft Alliance characters" .
+
+:YAxis a :Axis ;
+    :title "EU realms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Human" ;
+    :yValue "0.301" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Night Elf" ;
+    :yValue "0.232" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Draenei" ;
+    :yValue "0.106" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Worgen" ;
+    :yValue "0.087" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gnome" ;
+    :yValue "0.079" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dwarf" ;
+    :yValue "0.073" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Pandaren (Alliance)" ;
+    :yValue "0.046" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Void Elf" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lightforged Draenei" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dark Iron Dwarf" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Kul Tiran" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Costs of a night out for two people in the most expensive United States cities in 2014 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hotel" .
+
+:YAxis a :Axis ;
+    :title "most expensive United States cities" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "380.92" ;
+    :yValue "San Francisco, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "363.74" ;
+    :yValue "New York City, NY" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "363.06" ;
+    :yValue "Boston, MA" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "359.72" ;
+    :yValue "Seattle, WA" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "307.03" ;
+    :yValue "Honolulu, HI" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "297.19" ;
+    :yValue "Chicago, IL" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "276.59" ;
+    :yValue "Los Angeles, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "271.11" ;
+    :yValue "Washington, D.C." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "280.09" ;
+    :yValue "Portland, OR" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "269.71" ;
+    :yValue "San Diego, CA" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of consumers holding supermarket loyalty cards and credit cards in the United Kingdom (UK) , in 2015 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tesco Clubcard" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sainsbury´s Nectar Card" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Morrisons Match and More" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tesco Credit Card" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "MyWaitrose card" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "M&S Credit Card" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sainsbury´s Credit Card" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "ASDA Money Credit Card" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Waitrose Credit Card" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

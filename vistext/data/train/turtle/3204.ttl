@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average number of daily brand posts on Twitter in 2019 , by vertical" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of brand tweets per day" .
+
+:YAxis a :Axis ;
+    :title "Vertical" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9.54" ;
+    :yValue "Media" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "7.24" ;
+    :yValue "Sports teams" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.92" ;
+    :yValue "Nonprofits" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.44" ;
+    :yValue "Higher ed" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.19" ;
+    :yValue "Tech & software" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.88" ;
+    :yValue "Financial services" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.84" ;
+    :yValue "Influencers" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Home decor" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Hotels & resorts" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Retail" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Alcohol" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Health & beauty" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Food & beverage" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Fashion" ;
+    :belongsTo :Chart .

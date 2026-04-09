@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular luxury brands in the United States on social media between January and November 2019 , by actions per post (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "brand" .
+
+:YAxis a :Axis ;
+    :title "Number of social media actions per post" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BALENCIAGA" ;
+    :yValue "710" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Victoria Beckham" ;
+    :yValue "113" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "CHANEL" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Micheal Kors" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ralph Lauren" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Balmain" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "TOM FORD" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Marc Jacobs" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Christian Siriano" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carolina Herrera" ;
+    :yValue "6" ;
+    :belongsTo :Chart .

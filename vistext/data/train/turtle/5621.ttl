@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading unicorn companies based on market value in Latin America in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (headquarters)" .
+
+:YAxis a :Axis ;
+    :title "Value in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Nubank(Brazil)" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Rappi (Colombia)" ;
+    :yValue "3.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Wildlife Studios (Brazil)" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "dLocal(Uruguay)" ;
+    :yValue "1.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "LifeMiles(Colombia)" ;
+    :yValue "1.15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Kavak(Mexico)" ;
+    :yValue "1.15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "iFood(Brazil)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Loggi(Brazil)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "QuintoAndar(Brazil)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "EBANX(Brazil)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Loft(Brazil)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

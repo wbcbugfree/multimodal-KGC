@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Year over year foot traffic growth of selected shopping malls during the coronavirus (COVID-19) outbreak in the United States in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "shopping malls" .
+
+:YAxis a :Axis ;
+    :title "Second week of March" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Natick Mall" ;
+    :yValue "-0.212" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "King of Prussia" ;
+    :yValue "-0.344" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The Mall at Short Hills" ;
+    :yValue "-0.397" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Westfield San Fran Center" ;
+    :yValue "-0.465" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Westfield Seattle" ;
+    :yValue "-0.332" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pallsades Center" ;
+    :yValue "-0.154" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Galleria Dallas" ;
+    :yValue "-0.366" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Aventura Mall" ;
+    :yValue "-0.262" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Woodfield Mall" ;
+    :yValue "-0.271" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Westfield Century City (LA)" ;
+    :yValue "-0.075" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Westfield Garden (NJ)" ;
+    :yValue "-0.363" ;
+    :belongsTo :Chart .

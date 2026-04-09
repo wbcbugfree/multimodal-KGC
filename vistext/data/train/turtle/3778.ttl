@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Workforce jobs in the wholesale and retail trade sector in the United Kingdom (UK) as of March 2020 , by region (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Number of workforce jobs in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "147" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "356" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "185" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "419" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "745" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "657" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "476" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "452" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "388" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Yorkshire and The Humber" ;
+    :yValue "386" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "602" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "158" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of sentenced prisoners in the United States under federal jurisdiction in 2019 , by offense" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of prisoners" .
+
+:YAxis a :Axis ;
+    :title "offense" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "73210" ;
+    :yValue "Drug-related*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "29327" ;
+    :yValue "Weapons" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "26040" ;
+    :yValue "Other public-order crime" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8324" ;
+    :yValue "Immigration" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6637" ;
+    :yValue "Fraud" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5521" ;
+    :yValue "Robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2707" ;
+    :yValue "Other violent crime" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2663" ;
+    :yValue "Homicide*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1471" ;
+    :yValue "Other property crime" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "292" ;
+    :yValue "Burglary" ;
+    :belongsTo :Chart .

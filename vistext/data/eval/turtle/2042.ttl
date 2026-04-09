@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The 10 most valuable corporate brands in China in 2018 (in billion euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in billion euros" .
+
+:YAxis a :Axis ;
+    :title "Brand corporation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "53.73" ;
+    :yValue "Alibaba Group (retail)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "45.4" ;
+    :yValue "Tencent/QQ (IT & technology)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "29.84" ;
+    :yValue "ICBC (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "29.55" ;
+    :yValue "China Construction Bank (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "28.54" ;
+    :yValue "Pingan Insurance (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "25.1" ;
+    :yValue "Agricultural Bank of China (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "23.94" ;
+    :yValue "Bank of China (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "23.43" ;
+    :yValue "Huawei (IT & technology)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "22.62" ;
+    :yValue "China Life Insurance (financial services)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "16.51" ;
+    :yValue "Baidu (IT & technology)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average life expectancy of major household appliances as of 2011 (in years)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average life expectancy in years" .
+
+:YAxis a :Axis ;
+    :title "Household appliance" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "18" ;
+    :yValue "Ranges, Gas" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Ranges, Electric" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Refrigerators, Standard" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Freezers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Dryers, Gas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Dryers, Electric" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Water Heaters, Electric" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Disposers" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Dishwashers" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Washers" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Water Heaters, Gas" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Microwave Ovens" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Compactors" ;
+    :belongsTo :Chart .

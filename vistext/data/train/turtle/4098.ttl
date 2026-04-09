@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 causes of death in low-income countries worldwide in 2016 (in deaths per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cause of death" .
+
+:YAxis a :Axis ;
+    :title "Deaths per 100,000 population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lower respiratory infections" ;
+    :yValue "75.8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Diarrhoeal diseases" ;
+    :yValue "58.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ischaemic heart disease" ;
+    :yValue "52.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "HIV/AIDS" ;
+    :yValue "44.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Stroke" ;
+    :yValue "42.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Malaria" ;
+    :yValue "37.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tuberculosis" ;
+    :yValue "34.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Preterm birth complications" ;
+    :yValue "32.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Birth asphyxia and birth trauma" ;
+    :yValue "30.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Road injury" ;
+    :yValue "29.4" ;
+    :belongsTo :Chart .

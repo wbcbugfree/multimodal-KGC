@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average price (including tax) of passenger cars in the EU in 2014 and 2018 , by country (in euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "2014" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Norwa" ;
+    :yValue "43079" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Norway Denmar" ;
+    :yValue "32457" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Denmark Switzerlan" ;
+    :yValue "34005" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Switzerland Luxembour" ;
+    :yValue "31311" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Luxembourg Finlan" ;
+    :yValue "32414" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Finland Swede" ;
+    :yValue "31117" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sweden Netherland" ;
+    :yValue "25884" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Netherlands U" ;
+    :yValue "27793" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "UK Austri" ;
+    :yValue "28004" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Austria German" ;
+    :yValue "29588" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Germany Belgiu" ;
+    :yValue "25702" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Belgium EU-28 averag" ;
+    :yValue "26435" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "EU-28 average Portuga" ;
+    :yValue "27441" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Portugal Irelan" ;
+    :yValue "26948" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Ireland Franc" ;
+    :yValue "24324" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "France Spai" ;
+    :yValue "23920" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Spain Ital" ;
+    :yValue "22271" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Italy EU-13 averag" ;
+    :yValue "21270" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "EU-13 average Greec" ;
+    :yValue "20987" ;
+    :belongsTo :Chart .

@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average in-store merchandise sales of convenience stores in the United States in 2015 , by category (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average sales in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "433822" ;
+    :yValue "Cigarettes" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "178561" ;
+    :yValue "Packaged beverages" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "133750" ;
+    :yValue "Beer/malt beverages" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "71879" ;
+    :yValue "Edible grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "69098" ;
+    :yValue "Other tobacco" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "45702" ;
+    :yValue "General merchandise" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "45325" ;
+    :yValue "Candy/gum" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "38410" ;
+    :yValue "Salty snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "26560" ;
+    :yValue "Non-edible grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "23924" ;
+    :yValue "Fluid milk products" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "17742" ;
+    :yValue "Wine & Liquor" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "15285" ;
+    :yValue "Alternative snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "13197" ;
+    :yValue "Ice cream & frozen novelties" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "10258" ;
+    :yValue "Health & beauty care" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "7094" ;
+    :yValue "Publications" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "6618" ;
+    :yValue "Ice" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "4247" ;
+    :yValue "Packaged sweet snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "44315" ;
+    :yValue "All other merchandise" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading brands in the United States in 2015 , by simplicity" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Simplicity score" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Google" ;
+    :yValue "871" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Netflix" ;
+    :yValue "861" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Publix" ;
+    :yValue "859" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Amazon" ;
+    :yValue "851" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chipotle" ;
+    :yValue "843" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Zappos.com" ;
+    :yValue "826" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dunkin' Donuts" ;
+    :yValue "822" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Burger King" ;
+    :yValue "818" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "KFC" ;
+    :yValue "815" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pizza Hut" ;
+    :yValue "815" ;
+    :belongsTo :Chart .

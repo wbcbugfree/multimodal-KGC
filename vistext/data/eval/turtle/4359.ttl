@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of companies in the global domestic appliances market in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Whirlpool" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Electrolux" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Bosch-Siemens" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Haier" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "LG Electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "GE/Mabe" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Samsung" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Panasonic" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Groupe SEB" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Arcelik" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Midea" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Indesit" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Hitachi" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Fagor" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

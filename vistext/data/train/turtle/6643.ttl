@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of seniors in Canada in 2018 , by province and age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "55 to 64 years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "1787820" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "1174140" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "648130" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "489190" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "158290" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "139400" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "139840" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "114790" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "80330" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "21420" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Yukon" ;
+    :yValue "5300" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northwest Territories" ;
+    :yValue "4840" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "2320" ;
+    :belongsTo :Chart .

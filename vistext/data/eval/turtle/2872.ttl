@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable Swiss watch brands worldwide in 2016 (in million CHF)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million CHF" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Rolex" ;
+    :yValue "7387" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Omega" ;
+    :yValue "3677" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Patek Philippe" ;
+    :yValue "1885" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chopard" ;
+    :yValue "1098" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Longines" ;
+    :yValue "1089" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Breguet" ;
+    :yValue "1004" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Audemars Piguet" ;
+    :yValue "961" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tissot" ;
+    :yValue "847" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Vacheron Constantin" ;
+    :yValue "809" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tag Heuer" ;
+    :yValue "764" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Swatch" ;
+    :yValue "772" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "IWC" ;
+    :yValue "779" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Jaeger Lecoultre" ;
+    :yValue "673" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Hublot" ;
+    :yValue "401" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Breitling" ;
+    :yValue "359" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Rado" ;
+    :yValue "335" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Box office gross for horror movies in North America as of September 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Box office revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "64.91" ;
+    :yValue "The Invisible Man" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26.44" ;
+    :yValue "Fantas Island" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "15.5" ;
+    :yValue "The New Mutants" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15.47" ;
+    :yValue "The Turning" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15.35" ;
+    :yValue "Gretel & Hansel" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12.61" ;
+    :yValue "Brahms: The Boy II" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "8.81" ;
+    :yValue "The Grudge" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.14" ;
+    :yValue "The Lodge" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.82" ;
+    :yValue "The Wretched" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.94" ;
+    :yValue "Ban-do" ;
+    :belongsTo :Chart .

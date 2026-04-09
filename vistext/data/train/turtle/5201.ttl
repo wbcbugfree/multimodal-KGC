@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of hotel rooms in France in 2019 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hotel rooms" .
+
+:YAxis a :Axis ;
+    :title "region of France" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "156880" ;
+    :yValue "Île-de-France" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "85495" ;
+    :yValue "Auvergne-Rhône-Alpes" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "73626" ;
+    :yValue "Provence-Alpes-Côte d'Azur" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "63303" ;
+    :yValue "Occitanie" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "55121" ;
+    :yValue "Nouvelle-Aquitaine" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "44111" ;
+    :yValue "Grand Est" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "29073" ;
+    :yValue "Hauts-de-France" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "26850" ;
+    :yValue "Brittany" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "26035" ;
+    :yValue "Normandy" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "24264" ;
+    :yValue "Bourgogne-Franche-Comté" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "24842" ;
+    :yValue "Pays de la Loire" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "20610" ;
+    :yValue "Centre-Val de Loire" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "12569" ;
+    :yValue "Corsica" ;
+    :belongsTo :Chart .

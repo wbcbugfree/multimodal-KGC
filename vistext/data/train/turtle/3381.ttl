@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 15 occupations with the largest projected employment growth in the United States from 2018 to 2028 (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Top 15 occupations" .
+
+:YAxis a :Axis ;
+    :title "Number of new jobs in thousand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Personal care aides" ;
+    :yValue "881" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Combined food preparation and serving workers, including fast food" ;
+    :yValue "640.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Registered nurses" ;
+    :yValue "371.5" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Home health aides" ;
+    :yValue "304.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cooks, restaurant" ;
+    :yValue "299" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Software developers, applications" ;
+    :yValue "241.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Waiters and waitresses" ;
+    :yValue "170.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "General and operations managers" ;
+    :yValue "165" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Janitors and cleaners, except maids and housekeeping cleaners" ;
+    :yValue "159.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Medical assistants" ;
+    :yValue "154.9" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Construction laborers" ;
+    :yValue "148.1" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Laborers and freight, stock, and material movers, hand" ;
+    :yValue "144" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Market research analysts and marketing specialists" ;
+    :yValue "139.2" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Nursing assistants" ;
+    :yValue "135.4" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Management analysts" ;
+    :yValue "118.3" ;
+    :belongsTo :Chart .

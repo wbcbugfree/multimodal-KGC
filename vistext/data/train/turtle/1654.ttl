@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Approval rates of selected presidents in Latin America as of June 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Approval rate" .
+
+:YAxis a :Axis ;
+    :title "Political Leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.71" ;
+    :yValue "Nayib Bukele (El Salvador)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.64" ;
+    :yValue "Andrés Manuel López Obrador (Mexico)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Danilo Medina (Dominican Republic)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Martín Vizcarra (Peru)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Evo Morales (Bolivia)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Jair Bolsonaro (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Iván Duque Márquez (Colombia)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Daniel Ortega (Nicaragua)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Mauricio Macri (Argentina)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Tabaré Vazquez (Uruguay)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Sebastián Piñera (Chile)" ;
+    :belongsTo :Chart .

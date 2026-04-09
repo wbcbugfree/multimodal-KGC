@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly number of deaths in Italy in from January 2019 to August 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2020" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "61101" ;
+    :yValue "January 55428 February 85786 March 72093 April 51791 May 47780 June 50262 July 51433 August" ;
+    :belongsTo :Chart .

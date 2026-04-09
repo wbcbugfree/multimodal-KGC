@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Celtics all-time rebounds leaders from 1946 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "rebounds leaders" .
+
+:YAxis a :Axis ;
+    :title "Rebounds" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bill Russell" ;
+    :yValue "21620" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Robert Parish" ;
+    :yValue "11051" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dave Cowens" ;
+    :yValue "10170" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Larry Bird" ;
+    :yValue "8974" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "John Havlicek" ;
+    :yValue "8007" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Kevin McHale" ;
+    :yValue "7122" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Paul Pierce" ;
+    :yValue "6651" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Thomas Sanders" ;
+    :yValue "5798" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tom Heinsohn" ;
+    :yValue "5749" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Antoine Walker" ;
+    :yValue "4782" ;
+    :belongsTo :Chart .

@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly export price of high-density polyethylene in the United States from January 2017 to October 2017 (in U.S. dollars per ton)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Price in U.S. dollars per ton" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1390" ;
+    :yValue "October 1300 September 1260 August 1240 July 1220 June 1270 May 1290 April 1210 March 1220 February 1210 January" ;
+    :belongsTo :Chart .

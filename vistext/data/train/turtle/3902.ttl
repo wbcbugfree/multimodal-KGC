@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of committed crimes in Sweden in 2016 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of commited crimes" .
+
+:YAxis a :Axis ;
+    :title "type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "507752" ;
+    :yValue "Burglary and robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "220695" ;
+    :yValue "Fraud and counterfeiting" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "196285" ;
+    :yValue "Property damage incl. arson" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "183103" ;
+    :yValue "Threat and freedom violation crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "121890" ;
+    :yValue "Alcohol and drug-related crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "113489" ;
+    :yValue "Violent crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "101961" ;
+    :yValue "Vehicle crime" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "79460" ;
+    :yValue "Traffic crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "32984" ;
+    :yValue "Economical crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "21074" ;
+    :yValue "Sex crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15475" ;
+    :yValue "Gun crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9960" ;
+    :yValue "Environmental crimes (animals and nature)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "7629" ;
+    :yValue "Criminally negligent manslaughter and negligent homicide" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "5522" ;
+    :yValue "Smuggling and customs crimes" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "48391" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

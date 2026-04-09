@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Russia 's coal production in 2012 , by region (in million tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region" .
+
+:YAxis a :Axis ;
+    :title "Production in million tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Kuzbass" ;
+    :yValue "219.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "East Siberia" ;
+    :yValue "53.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kansk Achinsk" ;
+    :yValue "44.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Far East" ;
+    :yValue "35.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Pechora" ;
+    :yValue "15.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Yakutsk" ;
+    :yValue "13.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Donbass (Rostov)" ;
+    :yValue "6.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Moscow" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Urals fields" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .

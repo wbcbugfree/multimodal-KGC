@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Philadelphia 76ers all-time points leaders from 1949 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Player" .
+
+:YAxis a :Axis ;
+    :title "Points scored" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hal Greer" ;
+    :yValue "21586" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Allen Iverson" ;
+    :yValue "19931" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dolph Schayes" ;
+    :yValue "18438" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Julius Erving" ;
+    :yValue "18364" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Charles Barkley" ;
+    :yValue "14184" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Billy Cunningham" ;
+    :yValue "13626" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Johnny Kerr" ;
+    :yValue "11699" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Maurice Cheeks" ;
+    :yValue "10429" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Andre Iguodala" ;
+    :yValue "9422" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chet Walker" ;
+    :yValue "9043" ;
+    :belongsTo :Chart .

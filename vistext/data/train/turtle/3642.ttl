@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular online dating apps in the United States as of September 2019 , by audience size (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Audience size in millions" .
+
+:YAxis a :Axis ;
+    :title "online dating service" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7.86" ;
+    :yValue "tinder" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.03" ;
+    :yValue "Bumble" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.28" ;
+    :yValue "POF (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.95" ;
+    :yValue "Match.com (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.79" ;
+    :yValue "OkCupid (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.64" ;
+    :yValue "Grindr" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.21" ;
+    :yValue "Hinge" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.91" ;
+    :yValue "Zoosk" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.91" ;
+    :yValue "MeetMe" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.85" ;
+    :yValue "Ashley Madison" ;
+    :belongsTo :Chart .

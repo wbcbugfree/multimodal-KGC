@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fulfillment by Amazon (FBA) usage among top marketplace sellers worldwide as of December 2018 , by country" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "December 2018" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "US" ;
+    :yValue "0.73" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Italy" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Canada" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Japan" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "UK" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Australia" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .

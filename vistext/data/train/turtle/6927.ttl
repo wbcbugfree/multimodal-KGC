@@ -1,0 +1,32 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Length of life and cause of death of United States Presidents from 1799 to November 20 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "United States Presidents" .
+
+:YAxis a :Axis ;
+    :title "Pneumonia/respiratory illness" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ronald Reagan" ;
+    :yValue "93.33" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Martin Van Buren" ;
+    :yValue "79.63" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "James Buchanan" ;
+    :yValue "77.11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Benjamin Harrison" ;
+    :yValue "67.56" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "For each of the following product categories , how many of your purchases have you made online over the last 12 months ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Don't purchase category online" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Consumer electronics" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Household appliances" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Clothing and footwear" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Books, music, movies and video games" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Furniture/homeware" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sports/outdoor equipment" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jewellery/watches" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "DIY/home improvement" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Grocery" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Toys" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Health and beauty" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .

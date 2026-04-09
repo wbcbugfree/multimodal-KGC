@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of the leading national and international beer brands in Italy in 2019 (in 1,000 hectoliters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales volume in thousand hectoliters" .
+
+:YAxis a :Axis ;
+    :title "leading national and international beer brands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6474" ;
+    :yValue "Heineken Italia" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3822" ;
+    :yValue "Peroni - SABMiller" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1964" ;
+    :yValue "AB InBev Italia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1068" ;
+    :yValue "Castello & Pedavena" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1058" ;
+    :yValue "Carlsberg Italia" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "881" ;
+    :yValue "Forst" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "520" ;
+    :yValue "Swinkels F.B. Italia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "420" ;
+    :yValue "Ceres" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "250" ;
+    :yValue "Menabrea" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4404" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

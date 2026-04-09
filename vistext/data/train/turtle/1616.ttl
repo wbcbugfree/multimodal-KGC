@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average number of persons employed at Vodafone in Germany from financial year 2007/08 to 2019/20 (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Employees in thousands" .
+
+:YAxis a :Axis ;
+    :title "Business years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "15.2" ;
+    :yValue "2019/20" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13.41" ;
+    :yValue "2018/19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13.72" ;
+    :yValue "2017/18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14.48" ;
+    :yValue "2016/17" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "14.86" ;
+    :yValue "2015/16" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14.52" ;
+    :yValue "2014/15*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10.62" ;
+    :yValue "2013/14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11.09" ;
+    :yValue "2012/13" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12.12" ;
+    :yValue "2011/12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12.59" ;
+    :yValue "2010/11" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "13.51" ;
+    :yValue "2009/10" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "13.79" ;
+    :yValue "2008/09" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "13.63" ;
+    :yValue "2007/08" ;
+    :belongsTo :Chart .

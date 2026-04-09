@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading European city tourism destinations in 2019 , by number of bednights (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of bednights in millions" .
+
+:YAxis a :Axis ;
+    :title "European city destination" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "85.1" ;
+    :yValue "London*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "52.45" ;
+    :yValue "Paris*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "34.12" ;
+    :yValue "Berlin" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "29.07" ;
+    :yValue "Rome*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "23.93" ;
+    :yValue "Istanbul" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "20.68" ;
+    :yValue "Madrid*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "19.85" ;
+    :yValue "Barcelona*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "18.64" ;
+    :yValue "Vienna*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "18.48" ;
+    :yValue "Prague" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "18.38" ;
+    :yValue "Amsterdam*" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "18.29" ;
+    :yValue "Munich*" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "15.43" ;
+    :yValue "Hamburg" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "15.3" ;
+    :yValue "Stockholm*" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "14.87" ;
+    :yValue "Dublin*" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "13.82" ;
+    :yValue "Lisbon" ;
+    :belongsTo :Chart .

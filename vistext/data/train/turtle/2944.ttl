@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of the top 12 funders for HIV/AIDS research and development in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of total funding" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "U.S. National Institutes of Health" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Aggregate industry" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bill & Melinda Gates Foundation" ;
+    :yValue "0.092" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "U.S. Agency for International Development" ;
+    :yValue "0.037" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Unitaid" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "U.S. Department of Defense" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "European Commission" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "UK Department for International Development" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "German Federal Ministry of Education and Research (BMBF)" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "French National Agency for AIDS Research (ANRS)" ;
+    :yValue "0.006" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "French National Institute of Health and Medical Research (INSERM)" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Dutch Directorate-General for International Cooperation (DGIS)" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .

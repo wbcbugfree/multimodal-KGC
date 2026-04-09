@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of state-led interventions in the internet freedom in Russia in 2019 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type" .
+
+:YAxis a :Axis ;
+    :title "Number of interventions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Information ban by state authorities*" ;
+    :yValue "272785" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Restriction of access to internet sources" ;
+    :yValue "161490" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Administrative pressure" ;
+    :yValue "3917" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "339" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Criminal proceedings" ;
+    :yValue "200" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Civil proceedings" ;
+    :yValue "79" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Controlling offers" ;
+    :yValue "62" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Abuse/threat to safety" ;
+    :yValue "57" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Real imprisonment**" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cyber attacks" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Pressure on IT business and programmers" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "State shutdown" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Murder" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

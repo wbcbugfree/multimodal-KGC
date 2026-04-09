@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of a selection of European football clubs in 2016 , according to the number of jerseys sold worldwide (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "European Football Team" .
+
+:YAxis a :Axis ;
+    :title "Jersey sales in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Manchester United" ;
+    :yValue "2.85" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Real Madrid" ;
+    :yValue "2.29" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Barcelona" ;
+    :yValue "1.98" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chelsea" ;
+    :yValue "1.65" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bayern München (Munich)" ;
+    :yValue "1.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Arsenal" ;
+    :yValue "1.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Juventus" ;
+    :yValue "0.85" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Liverpool" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "PSG" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Milan" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .

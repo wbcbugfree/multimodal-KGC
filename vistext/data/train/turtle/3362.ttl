@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Airports with the longest commute times from the city center in North America as of November 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Commute time in minutes*" .
+
+:YAxis a :Axis ;
+    :title "city center in North America" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "111" ;
+    :yValue "New York John F. Kennedy (JFK)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "78" ;
+    :yValue "Chicago O'Hare (ORD)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "75" ;
+    :yValue "Toronto Pearson (YYZ)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "73" ;
+    :yValue "Los Angeles International (LAX)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "New York LaGuardia (LGA)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "68" ;
+    :yValue "Orlando International (MCO)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "67" ;
+    :yValue "Washington Dulles (IAD)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Neward Liberty International (EWR)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "Ottawa International (YOW)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Chicago Midway (MDW)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Denver International (DEN)" ;
+    :belongsTo :Chart .

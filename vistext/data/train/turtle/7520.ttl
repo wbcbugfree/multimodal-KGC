@@ -1,0 +1,22 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Quarterly revenue of the information technology security market from 2016 to 2019 , by deployment type (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Quarter" .
+
+:YAxis a :Axis ;
+    :title "Virtual appliance/agent" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Q1 '19" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Q1 '18" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Merger and acquisitions (M & A) transaction volume in the United Kingdom (UK) in 2018 and 2019 , by city or region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city or region of United Kingdom" .
+
+:YAxis a :Axis ;
+    :title "2018" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Londo" ;
+    :yValue "3105" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "London South Eas" ;
+    :yValue "1135" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "South East Midland" ;
+    :yValue "1037" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Midlands North Wes" ;
+    :yValue "897" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "North West Yorkshire and Humbe" ;
+    :yValue "624" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Yorkshire and Humber East of Englan" ;
+    :yValue "575" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "East of England Scotlan" ;
+    :yValue "799" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Scotland South Wes" ;
+    :yValue "538" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "South West North Eas" ;
+    :yValue "298" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "North East Northern Irelan" ;
+    :yValue "228" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Northern Ireland Wale" ;
+    :yValue "212" ;
+    :belongsTo :Chart .

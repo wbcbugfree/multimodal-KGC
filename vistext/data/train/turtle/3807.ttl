@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Kit sponsorship revenue of German Bundesliga clubs in 2020/21 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Kit sponsorship revenue in million euros" .
+
+:YAxis a :Axis ;
+    :title "association football club" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "VfL Wolfsburg (Volkswagen)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "45" ;
+    :yValue "FC Bayern Munich (Telekom)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Borussia Dortmund (Evonik)*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "RB Leipzig (Red Bull)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "FC Schalke 04 (Gazprom)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "VfB Stuttgart (Mercedes-Benz-Bank)**" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Borussia Mönchengladbach (Postbank)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "SV Werder Bremen (Wiesenhof)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "1. FC Köln (Rewe)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Eintracht Frankfurt (Indeed)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Bayer 04 Leverkusen (Barmenia)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "5.5" ;
+    :yValue "TSG Hoffenheim (SAP)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "4.2" ;
+    :yValue "FC Augsburg (WWK)***" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "FSV Mainz 05 (Kömmerling)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "SC Freiburg (Schwarzwaldmilch)" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "2.5" ;
+    :yValue "Union Berlin (Aroundtown)" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "2.5" ;
+    :yValue "Arminia Bielefeld (Schüco)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular Google Play app store categories from 1st quarter 2016 to 1st quarter 2020 , by number of downloads (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Photography" .
+
+:YAxis a :Axis ;
+    :title "Quarter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "729" ;
+    :yValue "Q1 '16" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "731" ;
+    :yValue "Q2 '16" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "788" ;
+    :yValue "Q3 '16" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "830" ;
+    :yValue "Q4 '16" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "888" ;
+    :yValue "Q1 '17" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "849" ;
+    :yValue "Q2 '17" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "892" ;
+    :yValue "Q3 '17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "883" ;
+    :yValue "Q4 '17" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "858" ;
+    :yValue "Q2 '18" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "951" ;
+    :yValue "Q3 '18" ;
+    :belongsTo :Chart .

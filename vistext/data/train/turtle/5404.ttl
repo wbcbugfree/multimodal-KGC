@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual cost of caring for a dog in Canada in 2020 , by expense type (in Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "expense type" .
+
+:YAxis a :Axis ;
+    :title "Annual cost in Canadian dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Food" ;
+    :yValue "1083" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Pet insurance*" ;
+    :yValue "979" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Professional dental care" ;
+    :yValue "582" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Heartworm/flea/tick prevention" ;
+    :yValue "235" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Exams with vaccines" ;
+    :yValue "162" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Annual wellness profile" ;
+    :yValue "122" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Annual heartworm/Lyme test" ;
+    :yValue "88" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Toys" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fecal exams" ;
+    :yValue "46" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Collar" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Annual license" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "3417" ;
+    :belongsTo :Chart .

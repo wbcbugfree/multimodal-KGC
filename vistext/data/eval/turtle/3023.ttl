@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading female Italian athletes in the high jump as of December 2020 , by IAAF score" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Athlete" .
+
+:YAxis a :Axis ;
+    :title "IAAF score" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Alessia Trost" ;
+    :yValue "1216" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Elena Vallortigara" ;
+    :yValue "1159" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Idea Pieroni" ;
+    :yValue "1078" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Serena Capponcelli" ;
+    :yValue "1056" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Teresa Maria Rossi" ;
+    :yValue "1035" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Enrica Cipolloni" ;
+    :yValue "1025" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nicole Romani" ;
+    :yValue "1001" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Giada De Martino" ;
+    :yValue "994" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Rebecca Pavan" ;
+    :yValue "971" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Eleonora Schertel" ;
+    :yValue "962" ;
+    :belongsTo :Chart .

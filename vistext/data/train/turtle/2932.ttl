@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of inbound tourists arriving by air to Sint Maarten in 2016 , per month" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of inbound tourists" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "58844" ;
+    :yValue "January 53886 February 58159 March 50441 April 36209 May 36435 June 45910 July 37567 August 23878 September 31232 October 41253 November 54340 December 528154 Total" ;
+    :belongsTo :Chart .

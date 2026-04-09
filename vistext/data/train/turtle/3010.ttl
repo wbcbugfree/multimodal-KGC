@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to merger and acquisition deals in Japan in the first half of 2020 , by deal value (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value of M&A deals in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Financial Advisor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12.27" ;
+    :yValue "Morgan Stanley" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11.99" ;
+    :yValue "Nomura Holdings" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "11.6" ;
+    :yValue "Deloitte" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4.45" ;
+    :yValue "Goldman Sachs & Co" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4.11" ;
+    :yValue "Plutus Consulting" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.72" ;
+    :yValue "Bank of America" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "Daiwa Securities Group / DC Advisory" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "Sumitomo Mitsui Financial Group" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.2" ;
+    :yValue "Mizuho Financial Group" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.52" ;
+    :yValue "JPMorgan" ;
+    :belongsTo :Chart .

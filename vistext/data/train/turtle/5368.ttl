@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading trends in ethnic cuisines on restaurant menus in the United States in 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Ethnic fusion cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Authentic ethnic cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Regional ethnic cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Peruvian cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Southeast Asian cuisine (e.g. Thai, Vietnamese, Malaysian)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Korean cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Native American cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Regional American cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Nordic/Scandinavian cuisine" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "African cuisine" ;
+    :belongsTo :Chart .

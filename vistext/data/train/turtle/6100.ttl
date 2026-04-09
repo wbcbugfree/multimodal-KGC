@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular Brazilian soccer clubs as of June 2020 , by number of social media followers (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Soccer clubs" .
+
+:YAxis a :Axis ;
+    :title "Facebook" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Flamengo" ;
+    :yValue "12084.68" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Corinthians" ;
+    :yValue "11265.87" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "São Paulo" ;
+    :yValue "6668.53" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Palmeiras" ;
+    :yValue "4409.03" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Santos" ;
+    :yValue "3524.58" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Grêmio" ;
+    :yValue "3123.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Vasco" ;
+    :yValue "3093.82" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Atlético Minas Gerais" ;
+    :yValue "3189.19" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cruzeiro" ;
+    :yValue "3075.91" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chapecoense" ;
+    :yValue "3793.44" ;
+    :belongsTo :Chart .

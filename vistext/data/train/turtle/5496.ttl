@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cincinnati Reds all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "player name" .
+
+:YAxis a :Axis ;
+    :title "Number of home runs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Johnny Bench" ;
+    :yValue "1376" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Tony Perez" ;
+    :yValue "1192" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bid McPhee" ;
+    :yValue "1072" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Pete Rose" ;
+    :yValue "1036" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Frank Robinson" ;
+    :yValue "1009" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Joey Votto" ;
+    :yValue "966" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Barry Larkin" ;
+    :yValue "960" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dave Concepcion" ;
+    :yValue "950" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ted Kluszewski" ;
+    :yValue "886" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "George Foster" ;
+    :yValue "861" ;
+    :belongsTo :Chart .

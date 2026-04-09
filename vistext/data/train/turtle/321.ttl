@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of Amazon Dash button sales as of February 2016 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of Amazon Dash Button sales" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tide" ;
+    :yValue "0.216" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cottonelle" ;
+    :yValue "0.203" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bounty" ;
+    :yValue "0.166" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Glad" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gatorade" ;
+    :yValue "0.069" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mrs. Meyer's" ;
+    :yValue "0.056" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gilette" ;
+    :yValue "0.049" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Smartwaiter" ;
+    :yValue "0.046" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ziploc" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Huggies" ;
+    :yValue "0.033" ;
+    :belongsTo :Chart .

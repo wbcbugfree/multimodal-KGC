@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "New York Yankees all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "player name" .
+
+:YAxis a :Axis ;
+    :title "Number of home runs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lou Gehrig" ;
+    :yValue "1995" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Babe Ruth" ;
+    :yValue "1978" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Joe DiMaggio" ;
+    :yValue "1537" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mickey Mantle" ;
+    :yValue "1509" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Yogi Berra" ;
+    :yValue "1430" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Derek Jeter" ;
+    :yValue "1311" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Bernie Williams" ;
+    :yValue "1257" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bill Dickey" ;
+    :yValue "1209" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tony Lazzeri" ;
+    :yValue "1157" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Don Mattingly" ;
+    :yValue "1099" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 15 most frequently visited websites in Sweden as of March 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "website" .
+
+:YAxis a :Axis ;
+    :title "Weekly reach" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "google.se" ;
+    :yValue "0.895" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "facebook.com" ;
+    :yValue "0.692" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "google.com" ;
+    :yValue "0.58" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "youtube.com" ;
+    :yValue "0.524" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "wikipedia.org" ;
+    :yValue "0.356" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "live.com" ;
+    :yValue "0.345" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "aftonbladet.se" ;
+    :yValue "0.311" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "funktionstjanster.se" ;
+    :yValue "0.286" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "skatteverket.se" ;
+    :yValue "0.265" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "expressen.se" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "swedbank.se" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "hitta.se" ;
+    :yValue "0.203" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "netflix.com" ;
+    :yValue "0.178" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "blocket.se" ;
+    :yValue "0.174" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "svt.se" ;
+    :yValue "0.155" ;
+    :belongsTo :Chart .

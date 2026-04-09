@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Audience share of leading television channels in Spain in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Audience share" .
+
+:YAxis a :Axis ;
+    :title "Television channel" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.148" ;
+    :yValue "Telecinco" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.117" ;
+    :yValue "Antena 3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.094" ;
+    :yValue "La1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.082" ;
+    :yValue "Cadenas autonómicas" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Temáticas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "La Sexta" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.053" ;
+    :yValue "Cuatro" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.028" ;
+    :yValue "FDF" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "La2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.024" ;
+    :yValue "Energy" ;
+    :belongsTo :Chart .

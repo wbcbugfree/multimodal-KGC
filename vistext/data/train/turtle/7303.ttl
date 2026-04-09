@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of employees in the hospitality and tourism industry in the United Kingdom (UK) in 2011 , by gender and sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "hospitality and tourism industry" .
+
+:YAxis a :Axis ;
+    :title "Male" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chefs" ;
+    :yValue "80" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Publicans and managers of licensed premises" ;
+    :yValue "60" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Restaurant and catering establishment managers and propietors" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Leisure and theme park attendants" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hotel and accommodation managers and proprietors" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Catering and bar managers" ;
+    :yValue "42" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Bar staff" ;
+    :yValue "41" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kitchen and catering assistants" ;
+    :yValue "33" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Conference and exhibition managers and organisers" ;
+    :yValue "33" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Waiting staff" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Cooks" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Housekeeping and relate occupations" ;
+    :yValue "5" ;
+    :belongsTo :Chart .

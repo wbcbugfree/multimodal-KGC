@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual income of highest-paid female music celebrities in from June 2018 to June 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Income in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "music celebrity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "185" ;
+    :yValue "Taylor Swift" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "81" ;
+    :yValue "Beyoncé" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "62" ;
+    :yValue "Rihanna" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "57.5" ;
+    :yValue "Katy Perry" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "57" ;
+    :yValue "P!nk" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "48" ;
+    :yValue "Ariana Grande" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "Jennifer Lopez" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "39.5" ;
+    :yValue "Lady Gaga" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "37.5" ;
+    :yValue "Celine Dion" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Shakira" ;
+    :belongsTo :Chart .

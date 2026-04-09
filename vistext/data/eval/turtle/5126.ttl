@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of airlines across India in financial year 2019 , by passengers carried" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Domestic market share" .
+
+:YAxis a :Axis ;
+    :title "airline" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "IndiGo" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Jet Airways" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Spicejet" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Air India" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Go Air" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Air Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Vistara" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Jetlite" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.011" ;
+    :yValue "Alliance Air" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.005" ;
+    :yValue "Truejet" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Air India Express" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.0002" ;
+    :yValue "Others" ;
+    :belongsTo :Chart .

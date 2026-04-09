@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of adverse drug event in U.S. hospitals that are attributed to select medications in 2014 , by drug type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of all ADEs" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.216" ;
+    :yValue "Antibiotics and anti-infectives" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.144" ;
+    :yValue "Nonspecific ADE causes (drug type not specified)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.135" ;
+    :yValue "Systemic agents" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.133" ;
+    :yValue "Hormones" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.131" ;
+    :yValue "Analgesics" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Agents affecting blood constituents" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.081" ;
+    :yValue "Psychotropic agents" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "Cardiovascular drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.049" ;
+    :yValue "Water, mineral and uric acid metabolism drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.036" ;
+    :yValue "Sedatives or hypnotics" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.025" ;
+    :yValue "Anticonvulsants and anti-Parkinson drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "CNS depressants and anesthetics" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Smooth muscle and respiratory drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Central nervous system drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.007" ;
+    :yValue "Atonomic nervous system drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "GI system drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "0.003" ;
+    :yValue "Skin, eye and mucous membrane drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Vaccines" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Other specific drugs" ;
+    :belongsTo :Chart .

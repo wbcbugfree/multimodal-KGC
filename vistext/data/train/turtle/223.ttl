@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual incomes of highest-paid film , TV , music and sports celebrities in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Income in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Celebrity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "185" ;
+    :yValue "Taylor Swift" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "170" ;
+    :yValue "Kylie Jenner" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "150" ;
+    :yValue "Kanye West" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "127" ;
+    :yValue "Lionel Messi" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "Ed Sheeran" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "109" ;
+    :yValue "Cristiano Ronaldo" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "105" ;
+    :yValue "Neymar" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "The Eagles" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "95" ;
+    :yValue "Dr. Phil McGraw" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "94" ;
+    :yValue "Canelo Alvarez" ;
+    :belongsTo :Chart .

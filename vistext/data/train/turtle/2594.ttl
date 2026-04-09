@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 European biotech companies based on change in market capitalization between 2012 and 2016 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "company" .
+
+:YAxis a :Axis ;
+    :title "Change in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Shire" ;
+    :yValue "32876" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Actelion" ;
+    :yValue "18427" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Alkermes" ;
+    :yValue "6197" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jazz Pharmaceuticals" ;
+    :yValue "4902" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ipsen" ;
+    :yValue "3481" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Qiagen" ;
+    :yValue "3329" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Galapagos" ;
+    :yValue "2619" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Swedish Orphan Biovitrum" ;
+    :yValue "2576" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cosmo Pharmaceuticals" ;
+    :yValue "1286" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "BTG" ;
+    :yValue "1213" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of Scottish Premiership titles won from as of 2020 , by club" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "association football club" .
+
+:YAxis a :Axis ;
+    :title "Number of titles" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Rangers FC" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Celtic FC" ;
+    :yValue "51" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Aberdeen FC" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Heart of Midlothian FC" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hibernian FC" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dumbarton FC" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dundee United FC" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kilmarnock FC" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dundee FC" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Motherwell FC" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Third Lanark (dis.)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

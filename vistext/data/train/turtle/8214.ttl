@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The most underserved airline routes in U.S. in 2015 , by type of booking" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "main underserved airline routes" .
+
+:YAxis a :Axis ;
+    :title "Non-stop bookings" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Boston (BOS) - Orlando (MCO)" ;
+    :yValue "713189" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Boston (BOS) - Las Vegas (LAS)" ;
+    :yValue "285224" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Orlando (MCO) - Seattle/Tacoma (SEA)" ;
+    :yValue "124628" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Boston (BOS) - San Francisco (SFO)" ;
+    :yValue "1011472" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Boston (BOS) - Los Angeles (LAX)" ;
+    :yValue "928078" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Boston (BOS) - Tampa (TPA)" ;
+    :yValue "325465" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Los Angeles (LAX) - Philadelphia (PHL)" ;
+    :yValue "257174" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Las Vegas (LAS) - Orlando (MCO)" ;
+    :yValue "272746" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Atlanta (ATL) - Los Angeles (LAX)" ;
+    :yValue "784512" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Los Angeles (LAX) - New York La Guardia (LGA)" ;
+    :yValue "11507" ;
+    :belongsTo :Chart .

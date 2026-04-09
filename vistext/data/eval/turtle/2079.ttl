@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly food expenditure among young Italian consumers in 2019 , by category (in euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Spending in euros" .
+
+:YAxis a :Axis ;
+    :title "food category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "49.05" ;
+    :yValue "Meat" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "41.88" ;
+    :yValue "Bread and cereals" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "35.92" ;
+    :yValue "Vegetables" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30.91" ;
+    :yValue "Miilk, cheese and eggs" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "21.2" ;
+    :yValue "Fruit" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "20.41" ;
+    :yValue "Fish and seafood" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "15.09" ;
+    :yValue "Mineral water, soft drinks, fruit and vegetable juices" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11.27" ;
+    :yValue "Sugar, jam, honey, chocolate and confectionery" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10.2" ;
+    :yValue "Coffee, tea and cocoa" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6.66" ;
+    :yValue "Oils and fats" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "9.22" ;
+    :yValue "Food products n.e.c." ;
+    :belongsTo :Chart .

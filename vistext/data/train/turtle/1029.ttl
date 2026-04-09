@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated production volume of spices across India in financial year 2020 , by state (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "state of India" .
+
+:YAxis a :Axis ;
+    :title "Production in thousand metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Madhya Pradesh" ;
+    :yValue "3010.17" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Rajasthan" ;
+    :yValue "930.86" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Gujarat" ;
+    :yValue "837.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Andhra Pradesh" ;
+    :yValue "765.26" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Karnataka" ;
+    :yValue "712.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Telangana" ;
+    :yValue "640.91" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "West Bengal" ;
+    :yValue "341.61" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Orissa" ;
+    :yValue "293.85" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Uttar Pradesh" ;
+    :yValue "285.81" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Maharashtra" ;
+    :yValue "211.49" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Kerala" ;
+    :yValue "191.33" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Tamil Nadu" ;
+    :yValue "172.62" ;
+    :belongsTo :Chart .

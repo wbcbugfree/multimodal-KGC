@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of hate crimes recorded by the police in Italy in 2019 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hate crimes" .
+
+:YAxis a :Axis ;
+    :title "crime types" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "310" ;
+    :yValue "Incitement to violence" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "241" ;
+    :yValue "Physical assault" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "152" ;
+    :yValue "Desecration of graves" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "117" ;
+    :yValue "Threats/ threatening behavior" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "87" ;
+    :yValue "Theft/ robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "75" ;
+    :yValue "Damage to property" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Disturbance of the peace" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "42" ;
+    :yValue "Attacks against places of workship" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Vandalism" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Homicide" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Arson" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Unspecified" ;
+    :belongsTo :Chart .

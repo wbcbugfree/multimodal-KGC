@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "College majors with the highest participation rate of African American students in the U.S. in 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of U.S. students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "School Student Counseling" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Human Services and Community Organization" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Counseling Psychology" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Health and Medical Administrative Services" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Public Administration" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Social Work" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Miscellaneous Social Sciences" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "General Medical and Health Services" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Public Policy" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Community and Public Health" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .

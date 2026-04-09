@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading music television channels in Poland from 2019 to 2020 , by audience share (SHR)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2020" .
+
+:YAxis a :Axis ;
+    :title "Leading music television channels" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.0045" ;
+    :yValue "Polo TV" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.0031" ;
+    :yValue "Eska TV" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.0011" ;
+    :yValue "Disco Polo Music" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.0007" ;
+    :yValue "4FUN DANCE" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0006" ;
+    :yValue "4fun.tv" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.0006" ;
+    :yValue "Stars.tv" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.0006" ;
+    :yValue "Kino Polska Muzyka" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.0005" ;
+    :yValue "Power TV" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.0005" ;
+    :yValue "Vox Music TV" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0005" ;
+    :yValue "Eska TV Extra" ;
+    :belongsTo :Chart .

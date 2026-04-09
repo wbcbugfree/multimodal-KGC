@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Glencore 's sales of metals and minerals from 2014 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2015" .
+
+:YAxis a :Axis ;
+    :title "metal and mineral products" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.1" ;
+    :yValue "Copper metal and concentrates (in million metric tons)*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.1" ;
+    :yValue "Zinc metal and concentrates (in million metric tons)*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.1" ;
+    :yValue "Lead metal and concentrates (in million metric tons)*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.9" ;
+    :yValue "Gold (in million ounces)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "89.3" ;
+    :yValue "Silver (in million ounces)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "231" ;
+    :yValue "Nickel (in thousand metric tons)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Ferroalloys incl. agency (in million metric tons)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13.6" ;
+    :yValue "Alumina/aluminium (in million metric tons)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "41.2" ;
+    :yValue "Iron ore (in million metric tons)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of barriers to exercise among adults in the United Kingdom (UK) in 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "I know I should exercise more but I find it boring/hard work" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "I sometimes tell myself that I am exercising by doing household chores e.g. hoovering, cleaning" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "I find it more difficult to exercise in the winter/darker months" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "I don't always enjoy exercising but I make sure I do it for the health benefits" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "I'm too tired to exercise" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "I don't know how much exercise I should be doing" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "I struggle to find the time to exercise" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "I'm not too bothered about exercising, as look as I look/feel good" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "I sometimes exercise purely so I can eat more/because I've overeaten" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "I really enjoy exercising, it's an important part of my routine" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .

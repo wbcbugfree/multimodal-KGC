@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ten most popular AC Milan players on Instagram as of May 29 , 2020 (in million followers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of followers in millions" .
+
+:YAxis a :Axis ;
+    :title "players" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "42.37" ;
+    :yValue "Zlatan Ibrahimović" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.44" ;
+    :yValue "Lucas Paquetá" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2.06" ;
+    :yValue "Hakan Çalhanoglu" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.68" ;
+    :yValue "Gianluigi Donnarumma" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.57" ;
+    :yValue "Theo Hernández" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.24" ;
+    :yValue "Ismaël Bennacer" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Alessio Romagnoli" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Franck Kessié" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.51" ;
+    :yValue "Davide Calabria" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Andrea Conti" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Léo Duarte" ;
+    :belongsTo :Chart .

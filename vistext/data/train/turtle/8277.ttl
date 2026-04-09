@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which method do you prefer for buying your purchases ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Do not buy this category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Clothing and footwear" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Consumer electronics and computers" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Books, music, movies, video games" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Grocery" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Household appliances" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Furniture and homeware" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Home improvement" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Health and beauty" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jewellery" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sports equipment" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Toys" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .

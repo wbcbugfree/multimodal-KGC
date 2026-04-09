@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Box office revenue of the highest grossing movies in North America in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Box office gross in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "858.37" ;
+    :yValue "Avengers: Endgame" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "543.64" ;
+    :yValue "The Lion King" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "434.04" ;
+    :yValue "Toy Story 4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "426.83" ;
+    :yValue "Captain Marvel" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "390.53" ;
+    :yValue "Spider-Man: Far From Home" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "355.56" ;
+    :yValue "Aladdin (2019)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "343.57" ;
+    :yValue "Frozen 2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "332.37" ;
+    :yValue "Joker" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "211.59" ;
+    :yValue "It: Chapter Two" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "175.01" ;
+    :yValue "Us" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "173.79" ;
+    :yValue "Fast & Furious Presents: Hobbs & Shaw" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "171.02" ;
+    :yValue "John Wick: Chapter 3 - Parabellum" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "160.8" ;
+    :yValue "How To Train Your Dragon: The Hidden World" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "158.26" ;
+    :yValue "The Secret Life of Pets 2" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "144.11" ;
+    :yValue "Pokemon Detective Pikachu" ;
+    :belongsTo :Chart .

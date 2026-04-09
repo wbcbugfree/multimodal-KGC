@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 causes of death in lower-middle income countries worldwide in 2016 (in deaths per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Deaths per 100,000 population" .
+
+:YAxis a :Axis ;
+    :title "causes of death" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "119.4" ;
+    :yValue "Ischaemic heart disease" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "61.6" ;
+    :yValue "Stroke" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "48.1" ;
+    :yValue "Lower respiratory infections" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "39.3" ;
+    :yValue "Chronic obstructive pulmonary disease" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Tuberculosis" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "30.3" ;
+    :yValue "Diarrhoeal diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "22.9" ;
+    :yValue "Diabetes mellitus" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "22.7" ;
+    :yValue "Preterm birth complications" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Cirrhosis of the liver" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "19.9" ;
+    :yValue "Road injury" ;
+    :belongsTo :Chart .

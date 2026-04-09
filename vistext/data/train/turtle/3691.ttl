@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. companies biggest obstacles to changing employees ' behavior related to their health in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lack of employee engagement (i.e., low paticipation or interest in programs)" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Too many other demands on employees" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lack of evidience about which practices work best" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lack of adequate budget to support effective health management programs" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Lack of sufficient financial incentives to encourage participation in programs" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Lack of organizational structure to support it" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Not enought time on the part of the employees" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Lack of adequate internal staff" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lack of senior management support" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lack of appropriate tools to be succesful" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Poor or inadequate communication of health management programs" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Lack of actionable data" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Poor coordination with partners (e.g., vendors, health plan)" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Regulatory limitations and uncertainty surrounding wellness incentives" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .

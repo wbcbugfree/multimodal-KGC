@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "World leaders with the most Twitter followers as of June 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Twitter followers in millions" .
+
+:YAxis a :Axis ;
+    :title "World leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "81.1" ;
+    :yValue "Donald J. Trump, United States @RealDonaldTrump" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "57.9" ;
+    :yValue "Narendra Modi, India @NarendraModi (personal account)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "51.2" ;
+    :yValue "Pope Francis, Vatican @Pontifex*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "35.9" ;
+    :yValue "Narendra Modi, India @PMOIndia (institutional account)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "30.2" ;
+    :yValue "President Trump, United States @POTUS" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "22.8" ;
+    :yValue "The White House, United States @WhiteHouse" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "16.1" ;
+    :yValue "Recep Tayyip Erdoğan, Turkey @RTErdogan" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13.8" ;
+    :yValue "Joko Widodo, Indonesia @Jokowi" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11.8" ;
+    :yValue "Imran Khan, Pakistan @imrankhanpti" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "10.4" ;
+    :yValue "Queen Rania, Jordan @QueenRania" ;
+    :belongsTo :Chart .

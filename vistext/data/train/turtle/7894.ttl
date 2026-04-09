@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How would you rate the product quality of these different sports footwear brands ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Extremely positive" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Merrell" ;
+    :yValue "0.88" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Birkenstock" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "L.L. Bean" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jordan" ;
+    :yValue "0.78" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The North Face" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Timberland" ;
+    :yValue "0.76" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Keen" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nike" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Under Armour" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wolverine" ;
+    :yValue "0.73" ;
+    :belongsTo :Chart .

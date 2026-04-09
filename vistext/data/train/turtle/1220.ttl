@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "St. Louis Cardinals all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Players" .
+
+:YAxis a :Axis ;
+    :title "Number of home runs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Stan Musial" ;
+    :yValue "1951" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Albert Pujols" ;
+    :yValue "1329" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Enos Slaughter" ;
+    :yValue "1148" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jim Bottomley" ;
+    :yValue "1105" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rogers Hornsby" ;
+    :yValue "1072" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ken Boyer" ;
+    :yValue "1001" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Yadier Molina" ;
+    :yValue "932" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ted Simmons" ;
+    :yValue "929" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Joe Medwick" ;
+    :yValue "923" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ray Lankford" ;
+    :yValue "829" ;
+    :belongsTo :Chart .

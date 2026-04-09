@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of people with bleeding disorders in Canada in 2019 , by disorder type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of people" .
+
+:YAxis a :Axis ;
+    :title "Bleeding Disorder Type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3127" ;
+    :yValue "Hemophilia A" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "683" ;
+    :yValue "Hemophilia B" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Hemophilia Type unknown" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4522" ;
+    :yValue "Von Willebrand disease" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "169" ;
+    :yValue "Coagulation factor I" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Coagulation factor II" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "82" ;
+    :yValue "Coagulation factor V" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Coagulation factor V+VIII" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "508" ;
+    :yValue "Coagulation factor VII" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "54" ;
+    :yValue "Coagulation factor X" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "509" ;
+    :yValue "Coagulation factor XI" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "56" ;
+    :yValue "Coagulation factor XIII" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Bleeding disorder: type unknown" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Glanzmanns thrombasthenia" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "68" ;
+    :yValue "Bernard Soulier" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "787" ;
+    :yValue "Platelet disorders: other/unknown" ;
+    :belongsTo :Chart .

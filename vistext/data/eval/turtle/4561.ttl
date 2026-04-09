@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Shortest Academy Awards acceptance speeches of all time as of 2019 (in words)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of words" .
+
+:YAxis a :Axis ;
+    :title "award winner" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Patty Duke (1963)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Louie Psihoyos (2010)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Alfred Newman (1953)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Gloria Graham (1953)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "William Holden (1954)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Alfred Hitchcock (1968)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Joe Pesci (1991)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Dimitri Tiomkin (1953)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Delbert Mann (1956)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Billy Willder (1961)" ;
+    :belongsTo :Chart .

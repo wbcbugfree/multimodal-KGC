@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Value of soft drink sales through convenience channels in the United Kingdom in 2018 , by sub-category (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value of sales in million GBP" .
+
+:YAxis a :Axis ;
+    :title "Soft Drink Sub-category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "577" ;
+    :yValue "Cola" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "462" ;
+    :yValue "Stimulants" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "242" ;
+    :yValue "Fruit carbs" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "232" ;
+    :yValue "Plain water" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "163" ;
+    :yValue "Juice drinks" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "136" ;
+    :yValue "Glucose" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "129" ;
+    :yValue "Cold hot drinks" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "126" ;
+    :yValue "Water plus" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "85" ;
+    :yValue "Sports" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Pure juice" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "61" ;
+    :yValue "Non-fruit carbs" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "41" ;
+    :yValue "Squash" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Lemonade" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Smoothies" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Traditional mixers" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "2288" ;
+    :yValue "Total soft drinks" ;
+    :belongsTo :Chart .

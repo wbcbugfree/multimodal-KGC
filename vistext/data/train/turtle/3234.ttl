@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best-paid Indian celebrities in 2019 , by earnings (in billion Indian rupees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Best-paid Indian celebrities" .
+
+:YAxis a :Axis ;
+    :title "Earnings in billion Indian rupees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Akshay Kumar (actor)" ;
+    :yValue "2.93" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Virat Kohli (cricketer)" ;
+    :yValue "2.53" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Amitabh Bachchan (actor)" ;
+    :yValue "2.39" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Salman Khan (actor)" ;
+    :yValue "2.29" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "M.S. Dhoni (cricketer)" ;
+    :yValue "1.36" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Shah Rukh Khan (actor)" ;
+    :yValue "1.24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ranveer Singh (actor)" ;
+    :yValue "1.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rajinikanth (actor)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pritam (musician)" ;
+    :yValue "0.98" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "A.R. Rahman (musician)" ;
+    :yValue "0.95" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated net worth of the wealthiest media entrepreneurs in the United States in 2013 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Net worth in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Entrepreneur (source of wealth)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Michael Bloomberg(Bloomberg L.P.)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13.5" ;
+    :yValue "Anne Cox Chambers(Cox Enterprises)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13.4" ;
+    :yValue "Rupert Murdoch(News Corp.)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8.9" ;
+    :yValue "Samuel Newhouse, Jr.(Advance Publications)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8.2" ;
+    :yValue "Donald Newhouse(Advance Publications)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6.7" ;
+    :yValue "Jim Kennedy(Cox Enterprises)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6.7" ;
+    :yValue "John Malone(Liberty Media)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6.7" ;
+    :yValue "Blair Parry-Okeden(Cox Enterprises)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "David Geffen(films and music)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5.8" ;
+    :yValue "Sumner Redstone(Viacom/CBS)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "5.1" ;
+    :yValue "Patrick McGovern(International Data Group)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4.2" ;
+    :yValue "George Lucas(films)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "3.4" ;
+    :yValue "Martha Ingram(books)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "3.4" ;
+    :yValue "Haim Saban(TV)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "Charles Dolan(Cablevision)" ;
+    :belongsTo :Chart .

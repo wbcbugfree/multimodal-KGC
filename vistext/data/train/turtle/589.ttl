@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Chicago Bulls all-time assists leaders from 1966 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Chicago Bulls players" .
+
+:YAxis a :Axis ;
+    :title "Assists" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Michael Jordan" ;
+    :yValue "5012" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Scottie Pippen" ;
+    :yValue "4494" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kirk Hinrich" ;
+    :yValue "3811" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Norm Van Lier" ;
+    :yValue "3676" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Derrick Rose" ;
+    :yValue "2516" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Reggie Theus" ;
+    :yValue "2472" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "John Paxson" ;
+    :yValue "2394" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bob Weiss" ;
+    :yValue "2008" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tom Boerwinkle" ;
+    :yValue "2007" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Toni Kukoc" ;
+    :yValue "1840" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Philadelphia Phillies all-time hits leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Philadelphia Phillies all-time hits leaders" .
+
+:YAxis a :Axis ;
+    :title "Number of hits" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jimmy Rollins" ;
+    :yValue "2306" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mike Schmidt" ;
+    :yValue "2234" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Richie Ashburn" ;
+    :yValue "2217" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Ed Delahanty" ;
+    :yValue "2214" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Del Ennis" ;
+    :yValue "1812" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Larry Bowa" ;
+    :yValue "1798" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chuck Klein" ;
+    :yValue "1705" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sherry Magee" ;
+    :yValue "1647" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Chase Utley" ;
+    :yValue "1623" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cy Williams" ;
+    :yValue "1553" ;
+    :belongsTo :Chart .

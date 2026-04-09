@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Golden State Warriors all-time assists leaders from 1946 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Golden State Warrior Player" .
+
+:YAxis a :Axis ;
+    :title "Assists" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Guy Rodgers" ;
+    :yValue "4855" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Stephen Curry" ;
+    :yValue "4621" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Tim Hardaway" ;
+    :yValue "3926" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Rick Barry" ;
+    :yValue "3247" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chris Mullin" ;
+    :yValue "3146" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jeff Mullins" ;
+    :yValue "2913" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Draymond Green" ;
+    :yValue "2855" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sleepy Floyd" ;
+    :yValue "2518" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Alvin Attles" ;
+    :yValue "2483" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nate Thurmond" ;
+    :yValue "2070" ;
+    :belongsTo :Chart .

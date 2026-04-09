@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Projected infrastructure investment funding and needs in the United States between 2016 and 2025 , by sector (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "investment funding and needs for sector" .
+
+:YAxis a :Axis ;
+    :title "Total needs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Surface transportation" ;
+    :yValue "2042" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Water/wastewater infrastructure" ;
+    :yValue "150" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Electricity" ;
+    :yValue "934" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Airports" ;
+    :yValue "157" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Inland waterways & marine ports" ;
+    :yValue "37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dams**" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Hazardous & solid waste***" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Levees" ;
+    :yValue "80" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Public parks & recreation" ;
+    :yValue "114.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Rail" ;
+    :yValue "154.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Schools" ;
+    :yValue "870" ;
+    :belongsTo :Chart .

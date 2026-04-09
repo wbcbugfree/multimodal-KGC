@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Atlanta Braves all-time games played leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Atlanta Braves all-time games played leaders" .
+
+:YAxis a :Axis ;
+    :title "Number of games played" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hank Aaron" ;
+    :yValue "3076" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Chipper Jones" ;
+    :yValue "2499" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Eddie Mathews" ;
+    :yValue "2223" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dale Murphy" ;
+    :yValue "1926" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rabbit Maranville" ;
+    :yValue "1795" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Andruw Jones" ;
+    :yValue "1761" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fred Tenney" ;
+    :yValue "1737" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Herman Long" ;
+    :yValue "1647" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bobby Lowe" ;
+    :yValue "1411" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Freddie Freeman" ;
+    :yValue "1406" ;
+    :belongsTo :Chart .

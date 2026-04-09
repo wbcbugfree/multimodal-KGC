@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average price of property in Spain to October 2020 , by autonomous community (in euros per square meter)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "autonomous community of Spain" .
+
+:YAxis a :Axis ;
+    :title "Price in euros per square meter built" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Community of Madrid" ;
+    :yValue "2630" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Catalonia" ;
+    :yValue "2408" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Basque Country" ;
+    :yValue "2248" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Balearic Islands" ;
+    :yValue "2229" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cantabria" ;
+    :yValue "1492" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Canary Islands" ;
+    :yValue "1435" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Navarre" ;
+    :yValue "1415" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Asturias" ;
+    :yValue "1349" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Andalusia" ;
+    :yValue "1337" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Aragon" ;
+    :yValue "1308" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Region of Valencia" ;
+    :yValue "1270" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Galicia" ;
+    :yValue "1209" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "La Rioja" ;
+    :yValue "1140" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Castile and Leon" ;
+    :yValue "1128" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Murcia" ;
+    :yValue "1079" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Castile-La Mancha" ;
+    :yValue "975" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Extremadura" ;
+    :yValue "897" ;
+    :belongsTo :Chart .

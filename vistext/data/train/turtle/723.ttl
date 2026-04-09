@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cheapest European city destinations ranked by hostel accommodation price 2017 (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "affordable cities in Europe for travel" .
+
+:YAxis a :Axis ;
+    :title "Average price per night in GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Budapest" ;
+    :yValue "4.12" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sofia" ;
+    :yValue "4.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sarajevo" ;
+    :yValue "4.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Belgrade" ;
+    :yValue "5.03" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Kiev" ;
+    :yValue "5.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bucharest" ;
+    :yValue "5.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Krakow" ;
+    :yValue "6.43" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Zagreb" ;
+    :yValue "6.77" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Warsaw" ;
+    :yValue "7.17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Český Krumlov" ;
+    :yValue "7.67" ;
+    :belongsTo :Chart .

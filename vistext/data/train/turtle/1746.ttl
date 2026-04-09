@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How many of each of the following products or devices , in working order , do you have in your household ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Household Device" .
+
+:YAxis a :Axis ;
+    :title "Average number of devices**" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cooking appliances" ;
+    :yValue "3.52" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cleaning appliances" ;
+    :yValue "2.93" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mobile phone" ;
+    :yValue "2.62" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "TV" ;
+    :yValue "2.29" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "PC/laptop" ;
+    :yValue "2.04" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Games console" ;
+    :yValue "1.28" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Video player" ;
+    :yValue "1.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Printer" ;
+    :yValue "1.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Audio/Hi-fi system" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tablet device" ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Camera/camcorder" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .

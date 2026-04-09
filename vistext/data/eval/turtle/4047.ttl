@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of Quibi 's content catalog at launch in North America as of April 2020 , by genre" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of episodes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Documentary" ;
+    :yValue "0.1938" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Entertainment" ;
+    :yValue "0.1395" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Reality" ;
+    :yValue "0.1318" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Comedy" ;
+    :yValue "0.0969" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Lifestyle" ;
+    :yValue "0.0853" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Drama" ;
+    :yValue "0.0659" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Food" ;
+    :yValue "0.0581" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "News and current affairs" ;
+    :yValue "0.0581" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Game shows" ;
+    :yValue "0.0543" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "0.1163" ;
+    :belongsTo :Chart .

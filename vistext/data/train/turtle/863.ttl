@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. states with the highest average peak connection speed as of 1st quarter of 2017 (in Mbps)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Peak connection speed in Mbps" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Delaware" ;
+    :yValue "111" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "District of Columbia" ;
+    :yValue "110.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Massachusetts" ;
+    :yValue "106.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Maryland" ;
+    :yValue "106.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rhode Island" ;
+    :yValue "104.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "New Jersey" ;
+    :yValue "104.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Virginia" ;
+    :yValue "101.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wyoming" ;
+    :yValue "98.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "New York" ;
+    :yValue "98" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Washington" ;
+    :yValue "97" ;
+    :belongsTo :Chart .

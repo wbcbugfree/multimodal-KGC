@@ -1,0 +1,112 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of jobs in Newfoundland and Labrador , Canada in 2019 , by NAICS category" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "NAICS category" .
+
+:YAxis a :Axis ;
+    :title "Number of jobs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Health care and social assistance" ;
+    :yValue "37875" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Retail trade" ;
+    :yValue "28025" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "24190" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Public administration" ;
+    :yValue "20425" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Educational services" ;
+    :yValue "19185" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Accommodation and food services" ;
+    :yValue "15520" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other services (except public administration)" ;
+    :yValue "11090" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Transportation and warehousing" ;
+    :yValue "9515" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "7770" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Finance and insurance" ;
+    :yValue "7765" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Professional, scientific and technical services" ;
+    :yValue "7750" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Administrative and support, waste management and remediation services" ;
+    :yValue "6990" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Mining, quarrying, and oil and gas extraction" ;
+    :yValue "6860" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Wholesale trade" ;
+    :yValue "6450" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Real estate and rental and leasing" ;
+    :yValue "3235" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Utilities" ;
+    :yValue "3070" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Information and cultural industries" ;
+    :yValue "2995" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Agriculture, forestry, fishing and hunting" ;
+    :yValue "2800" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Arts, entertainment and recreation" ;
+    :yValue "2650" ;
+    :belongsTo :Chart .
+
+:DataPoint20 a :DataPoint ;
+    :xValue "Holding companies" ;
+    :yValue "790" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading media publishers in the United States as of July 2016 , based on social media followers (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Million page likes/followers combined" .
+
+:YAxis a :Axis ;
+    :title "Media publishers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "112.3" ;
+    :yValue "National Geographic" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Tasty" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25.4" ;
+    :yValue "E! News" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "20.1" ;
+    :yValue "Tastemade" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "16.8" ;
+    :yValue "National Geographic Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "15.7" ;
+    :yValue "The Huffington Post" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "13.7" ;
+    :yValue "BuzzFeed" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "10.9" ;
+    :yValue "Bleacher Report" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5.5" ;
+    :yValue "Hypebeast" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4.1" ;
+    :yValue "The Dodo" ;
+    :belongsTo :Chart .

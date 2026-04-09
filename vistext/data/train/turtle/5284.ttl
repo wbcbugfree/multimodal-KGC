@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of fans of popular gaming brands on Facebook as of August 2019 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "game" .
+
+:YAxis a :Axis ;
+    :title "Number of fans in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Texas Holdem Poker" ;
+    :yValue "65.31" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "PlayStation" ;
+    :yValue "54.03" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "FarmVille Cows" ;
+    :yValue "33.57" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "FarmVille Sheep" ;
+    :yValue "33.57" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "CityVille" ;
+    :yValue "31.39" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Angry Birds" ;
+    :yValue "25.34" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Call of Duty: World at War" ;
+    :yValue "24.35" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Modern Warfare 2" ;
+    :yValue "24.35" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Call of Duty: Modern Warfare" ;
+    :yValue "24.35" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Call of Duty: Black Ops" ;
+    :yValue "24.35" ;
+    :belongsTo :Chart .

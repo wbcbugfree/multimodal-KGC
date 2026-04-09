@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cities around the world with the highest fatality rates from terrorism in 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Rate per 100,000 population" .
+
+:YAxis a :Axis ;
+    :title "city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "Baghdad" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "Maiduguri" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Mosul" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Peshawar" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Donetsk" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Kabul" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Kano" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Odessa" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Karachi" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Kaduna" ;
+    :belongsTo :Chart .

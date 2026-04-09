@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of prisoners under sentence of death in the United States at year-end 2018 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Years of age" .
+
+:YAxis a :Axis ;
+    :title "Share of death row prisoners" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "18-19" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "20-24" ;
+    :yValue "0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25-29" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30-34" ;
+    :yValue "0.049" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35-39" ;
+    :yValue "0.094" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "40-44" ;
+    :yValue "0.141" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "45-49" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "50-54" ;
+    :yValue "0.158" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "55-59" ;
+    :yValue "0.156" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "60-64" ;
+    :yValue "0.098" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "65 or older" ;
+    :yValue "0.102" ;
+    :belongsTo :Chart .

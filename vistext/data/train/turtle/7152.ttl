@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Neonatal mortality rate worldwide from 1990 to 2018 , by region (per 1,000 live births)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2010" .
+
+:YAxis a :Axis ;
+    :title "geographic region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Northern America" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Europe" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18" ;
+    :yValue "Central Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Southern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Eastern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "South-Eastern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Western Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Northern Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Oceania excluding Australia and New Zealand" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Australia and New Zealand" ;
+    :belongsTo :Chart .

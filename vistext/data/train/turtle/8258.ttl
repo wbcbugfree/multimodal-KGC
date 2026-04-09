@@ -1,0 +1,42 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Android operating system share worldwide by OS version from 2013 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Nougat 7.0" .
+
+:YAxis a :Axis ;
+    :title "Android platform version" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.075" ;
+    :yValue "1H '20" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.114" ;
+    :yValue "1H '19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "2H '18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.229" ;
+    :yValue "1H '18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.142" ;
+    :yValue "2H '17" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "1H '17" ;
+    :belongsTo :Chart .

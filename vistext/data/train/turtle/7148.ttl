@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average weekly work hours of male vs. female physicians in Canada as of 2019 , by activity" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Male" .
+
+:YAxis a :Axis ;
+    :title "activity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26.73" ;
+    :yValue "Direct patient care without a teaching component" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "6.71" ;
+    :yValue "Direct patient care with a teaching component" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.33" ;
+    :yValue "Teaching/educating without direct patient care" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6.15" ;
+    :yValue "Indirect patient care" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.01" ;
+    :yValue "Health facility committees" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.85" ;
+    :yValue "Administration" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.33" ;
+    :yValue "Research" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.54" ;
+    :yValue "Managing practice" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.38" ;
+    :yValue "CME/CPD" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "Other activities" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "50.58" ;
+    :yValue "Total hours" ;
+    :belongsTo :Chart .

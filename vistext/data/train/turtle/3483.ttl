@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Median hourly wages of selected occupations in radio and TV broadcasting as of May 2019 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Median hourly wage in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Occupation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "52.6" ;
+    :yValue "General and operations managers" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "30.78" ;
+    :yValue "Producers and directors" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "29.39" ;
+    :yValue "Radio and telecommunications equipment installers and repairers" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25.68" ;
+    :yValue "News analysts, reporters and journalists" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "25.17" ;
+    :yValue "Camera operators, television, video and film" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "22.66" ;
+    :yValue "Advertising sales agents" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17.95" ;
+    :yValue "Broadcast technicians" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "17.47" ;
+    :yValue "Customer service representatives" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "16.04" ;
+    :yValue "Broadcast announcers and radio disc jockeys" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "15.45" ;
+    :yValue "Office clerks, general" ;
+    :belongsTo :Chart .

@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly retail sales of clothing stores in Canada from 2015 to 2020 (in billion Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Au" ;
+    :yValue "1.98" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Aug Ju" ;
+    :yValue "1.99" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jul Ju" ;
+    :yValue "1.75" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jun Ma" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "May Ap" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Apr Ma" ;
+    :yValue "1.13" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mar Fe" ;
+    :yValue "2.33" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Feb Ja" ;
+    :yValue "2.34" ;
+    :belongsTo :Chart .

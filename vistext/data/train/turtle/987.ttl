@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of most successful film releases of 2020 in Russia as of December 8 , 2020 , by first weekend box office revenue (in million Russian rubles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in million Russian rubles" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "610" ;
+    :yValue "Ice 2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "450" ;
+    :yValue "Invasion" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "422" ;
+    :yValue "Sonic the Hedgehog" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "317" ;
+    :yValue "Bad Boys for Life" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "301" ;
+    :yValue "(Not) A Perfect Man" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "292" ;
+    :yValue "The Gentlemen" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "282" ;
+    :yValue "Dolittle" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "240" ;
+    :yValue "Birds of Prey and the Fantabulous Emancipation of One Harley Quinn" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "233" ;
+    :yValue "Hotel Belgrade" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "226" ;
+    :yValue "Neposredstvenno Kakha" ;
+    :belongsTo :Chart .

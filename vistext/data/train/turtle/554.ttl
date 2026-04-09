@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of respondents owning selected devices in the United Kingdom (UK) in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Laptop (including Mac laptops)" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Desktop PC / Mac" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "A standard mobile phone without internet" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "PVR box (e.g. Sky+) or Freeview box" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Games console with internet" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Android smartphone" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Games console without internet" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "iPhone" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Handheld gaming device e.g. Nintendo DS, PSP/ VITA with internet access" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Handheld gaming device e.g. Nintendo DS, PSP/ VITA without internet access" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "iPad" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Blackberry" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Other smartphone" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Other tablet" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Windows smartphone" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "PDA" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .

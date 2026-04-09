@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Changes in cooking or eating patterns of adults in the United States in 2012 (compared to the previous year)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "I cook more often" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "I experiment more with food" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "I eat more natural or organic foods" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "I eat with friends/family more often" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "I eat more frozen foods" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "I eat more local foods" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "I buy semi-prepared food" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "I order take-out from restaurants more often" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "I eat more processed foods" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .

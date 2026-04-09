@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of Toyota cars across India in 2019 , by model" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of vehicles sold" .
+
+:YAxis a :Axis ;
+    :title "model" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "61743" ;
+    :yValue "Innova Crysta" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "17946" ;
+    :yValue "GLANZA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17236" ;
+    :yValue "Etios" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15488" ;
+    :yValue "Fortuner" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9083" ;
+    :yValue "Liva/Cross" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2943" ;
+    :yValue "YARIS" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1422" ;
+    :yValue "Corolla" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "672" ;
+    :yValue "Camry" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "123" ;
+    :yValue "Landcruiser" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "VELLFIRE" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Prado" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Prius" ;
+    :belongsTo :Chart .

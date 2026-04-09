@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top-grossing PG-13 movies in North America from 1995 to 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total gross in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "film and release year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "936.66" ;
+    :yValue "Star Wars Ep. VII: The Force Awakens (2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "858.37" ;
+    :yValue "Avengers: Endgame (2019)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "760.51" ;
+    :yValue "Avatar (2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "700.06" ;
+    :yValue "Black Panther (2018)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "678.82" ;
+    :yValue "Avengers: Infinity War (2018)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "659.36" ;
+    :yValue "Titanic (1997)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "652.27" ;
+    :yValue "Jurassic World (2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "623.28" ;
+    :yValue "The Avengers (2012)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "620.18" ;
+    :yValue "Star Wars Ep. VIII: The Last Jedi (2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "533.35" ;
+    :yValue "The Dark Knight (2008)" ;
+    :belongsTo :Chart .

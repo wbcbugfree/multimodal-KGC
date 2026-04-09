@@ -1,0 +1,27 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly retail sales of legal cannabis stores in Canada from October 2018 to August 2020 (in million Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2018" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "57.34" ;
+    :yValue "Dec" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "53.73" ;
+    :yValue "Nov" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "41.47" ;
+    :yValue "Oct" ;
+    :belongsTo :Chart .

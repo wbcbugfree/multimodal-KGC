@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 therapeutic categories worldwide by number of R & D products in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Therapeutic category" .
+
+:YAxis a :Axis ;
+    :title "Number of R&D products" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Anticancer, immunological" ;
+    :yValue "3434" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Anticancer, other" ;
+    :yValue "2510" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Gene therapy" ;
+    :yValue "1273" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Monoclonal antibody, other" ;
+    :yValue "1009" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ophthalmological, other" ;
+    :yValue "756" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Prophylactic vaccine, anti-infective" ;
+    :yValue "698" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Neurological" ;
+    :yValue "666" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Antidiabetic" ;
+    :yValue "589" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Immunosuppressant" ;
+    :yValue "544" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Anti-inflammatory" ;
+    :yValue "529" ;
+    :belongsTo :Chart .

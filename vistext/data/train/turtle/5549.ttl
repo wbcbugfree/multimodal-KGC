@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Red Sox all-time games played leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of games played" .
+
+:YAxis a :Axis ;
+    :title "player name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3308" ;
+    :yValue "Carl Yastrzemski" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2505" ;
+    :yValue "Dwight Evans" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2292" ;
+    :yValue "Ted Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2089" ;
+    :yValue "Jim Rice" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1953" ;
+    :yValue "David Ortiz" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1865" ;
+    :yValue "Bobby Doerr" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1647" ;
+    :yValue "Harry Hooper" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1625" ;
+    :yValue "Wade Boggs" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1553" ;
+    :yValue "Rico Petrocelli" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1546" ;
+    :yValue "Jason Varitek" ;
+    :belongsTo :Chart .

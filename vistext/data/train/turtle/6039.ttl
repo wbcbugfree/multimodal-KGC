@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of students enrolled in postsecondary institutions in Canada in 2017/18 , by gender and field of study" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Women" .
+
+:YAxis a :Axis ;
+    :title "Field of study" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "214998" ;
+    :yValue "Business, management and public administration" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "48075" ;
+    :yValue "Architecture, engineering and related technologies" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "165216" ;
+    :yValue "Humanities" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "190701" ;
+    :yValue "Social and behavioural sciences and law" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "96720" ;
+    :yValue "Physical and life sciences and technologies" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "197151" ;
+    :yValue "Health and related fields" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "24126" ;
+    :yValue "Mathematics, computer and information sciences" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "48222" ;
+    :yValue "Visual and performing arts and communications technologies" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "32688" ;
+    :yValue "Other instructional programs" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "20388" ;
+    :yValue "Personal, protective and transportation services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "68142" ;
+    :yValue "Education" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "17562" ;
+    :yValue "Agriculture, natural resources and conservation" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "13272" ;
+    :yValue "Personal improvement and leisure" ;
+    :belongsTo :Chart .

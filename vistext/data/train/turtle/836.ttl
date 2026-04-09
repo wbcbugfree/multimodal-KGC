@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated net worth of the ten richest Hungarians in 2019 (in billion forints)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "ten richest Hungarians" .
+
+:YAxis a :Axis ;
+    :title "Net worth in billion forints" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lőrinc Mészáros" ;
+    :yValue "407.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sándor Csányi" ;
+    :yValue "368" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "György Gattyán" ;
+    :yValue "244.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lászó Szíjj" ;
+    :yValue "207.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Demján's heirs" ;
+    :yValue "206" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tibor Veres" ;
+    :yValue "194" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Zsolt Felcsuti" ;
+    :yValue "166.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gábor Széles" ;
+    :yValue "156.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lajos Kassza" ;
+    :yValue "116.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dániel Jellinek" ;
+    :yValue "107.5" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boeing aircraft orders as of December 31 , 2019 , by major customer" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "airline" .
+
+:YAxis a :Axis ;
+    :title "Number of aircraft orders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Emirates" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Korean Air" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lufthansa" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "British Airways" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "BDS USAF Tanker Program" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bamboo Airways" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "BDS U.S. Navy (P-8A Poseidon)" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "SunExpress Airlines" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Air New Zealand" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "FedEx Express" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Unidentified" ;
+    :yValue "49" ;
+    :belongsTo :Chart .

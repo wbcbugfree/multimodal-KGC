@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top ten cities worldwide with the largest share of billionaires who inherited their wealth in 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of billionaires who inherited" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bielefeld-Detmold" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nice, Monaco" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sao Paulo" ;
+    :yValue "0.74" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Seoul" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Delhi" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Stockholm" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mumbai" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Zurich" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Santiago" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Paris" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .

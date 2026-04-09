@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's leading container ship operators as of October 12 , 2020 , based on TEU capacity" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total TEUs" .
+
+:YAxis a :Axis ;
+    :title "Container ship operator" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4119384" ;
+    :yValue "APM-Maersk" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3842039" ;
+    :yValue "Mediterranean Shg Co" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3024206" ;
+    :yValue "COSCO Group" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2884786" ;
+    :yValue "CMA CGM Group" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1706633" ;
+    :yValue "Hapag-Lloyd" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1558843" ;
+    :yValue "ONE (Ocean Network Express)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1260814" ;
+    :yValue "Evergreen Line" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "710317" ;
+    :yValue "HMM Co Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "623263" ;
+    :yValue "Yang Ming Marine Transport Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "311890" ;
+    :yValue "Wan Hai Lines" ;
+    :belongsTo :Chart .

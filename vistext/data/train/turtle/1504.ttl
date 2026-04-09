@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Variation in the level of nitrogen dioxide registered during the coronavirus crisis in selected Spanish cities between 10 - 14 March and 15 - 20 March 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "NO2 level variation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Barcelona" ;
+    :yValue "-0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Madrid" ;
+    :yValue "-0.73" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Valencia" ;
+    :yValue "-0.64" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Castellón" ;
+    :yValue "-0.76" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Zaragoza" ;
+    :yValue "-0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bilbao" ;
+    :yValue "-0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Alicante" ;
+    :yValue "-0.68" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Málaga" ;
+    :yValue "-0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Gijón" ;
+    :yValue "-0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sevilla" ;
+    :yValue "-0.36" ;
+    :belongsTo :Chart .

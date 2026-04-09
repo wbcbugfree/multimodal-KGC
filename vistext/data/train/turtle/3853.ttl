@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "In what way does the coronavirus (COVID-19) affect your company ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of enterprises" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Decrease in demand (less customers, orders etc.)" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "We need to shut down the company due to the emergency measures" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The ban on public events and shortened opening times hinder our business" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The enterprises we deliver to order less" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Import substitution is necessary" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Foreign factories and customers order less" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "There is a lack of workforce" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Prices in the sector decreased, which caused a decrease in profitability" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "The virus does not have any negative effects" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The foreign parent company reduced its orders" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

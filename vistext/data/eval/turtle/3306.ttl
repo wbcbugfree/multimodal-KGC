@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average number of bedrooms per active Airbnb unit in the leading Airbnb markets as of September 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average number of bedrooms per unit" .
+
+:YAxis a :Axis ;
+    :title "leading Airbnb markets" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.8" ;
+    :yValue "Austin, TX" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.6" ;
+    :yValue "San Diego, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Los Angeles, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "San Francisco, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Miami, FL" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Seattle, WA" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Chicago, IL" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Washington, DC" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Boston, MA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.2" ;
+    :yValue "New York, NY" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1.6" ;
+    :yValue "Overall U.S." ;
+    :belongsTo :Chart .

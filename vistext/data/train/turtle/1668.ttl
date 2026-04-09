@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most visited paid attractions in Yorkshire and Humberside in England in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of visits" .
+
+:YAxis a :Axis ;
+    :title "Attraction Name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "841934" ;
+    :yValue "Yorkshire Wildlife Park" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "706484" ;
+    :yValue "York Minster" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "490000" ;
+    :yValue "Scarborough Cliff Railway" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "447625" ;
+    :yValue "RHS Garden Harlow Carr" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "412435" ;
+    :yValue "Fountains Abbey" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "290835" ;
+    :yValue "Lotherton Hall & Gardens" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "274593" ;
+    :yValue "Castle Howard" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "201694" ;
+    :yValue "Harewood House Trust" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "161461" ;
+    :yValue "Whitby Abbey" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "160815" ;
+    :yValue "Clifford's Tower" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular news publishers on Facebook Live in June 2017 , ranked by user engagement (in million actions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "User actions in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Fox News" ;
+    :yValue "2.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "RT UK" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "ABC 7 Chicago" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "ITV News" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Daily Mail" ;
+    :yValue "0.79" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "BBC News" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "CNN Philippines" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fox 32 Chicago" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10News WTSP" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "FOX 5 Atlanta" ;
+    :yValue "0.62" ;
+    :belongsTo :Chart .

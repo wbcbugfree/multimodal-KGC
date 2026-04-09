@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Budget of London 2012 Summer Olympic Games , by matter of expense (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "matter of expense" .
+
+:YAxis a :Axis ;
+    :title "Costs in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Venues" ;
+    :yValue "4607" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Olympic Village and media centers" ;
+    :yValue "1919" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Counter-terrorism operations" ;
+    :yValue "1776" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other Olympic Park projects" ;
+    :yValue "1421" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Transport projects" ;
+    :yValue "1392" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Other anticipated final costs" ;
+    :yValue "1311" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Legacy projects" ;
+    :yValue "1298" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Purchase of Olympic parkland" ;
+    :yValue "1204" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Police" ;
+    :yValue "943" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Venue security" ;
+    :yValue "869" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Creation of government bodies to oversee Olympics" ;
+    :yValue "696" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Contingency fund" ;
+    :yValue "157" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Ceremonies" ;
+    :yValue "126" ;
+    :belongsTo :Chart .

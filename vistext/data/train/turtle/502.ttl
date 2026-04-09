@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Characteristics of U.S. physicians in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of physicians" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Are employed by hospital or group" ;
+    :yValue "58" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Are in private practice" ;
+    :yValue "31" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Are in solo practice" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "In groups of 11 or more" ;
+    :yValue "44" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Limit/do not see Medicaid patients" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Limit/do not see Medicare patients" ;
+    :yValue "22" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Spend between 11 and 15 hours each week on Non-clinical (paperwork) duties" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Say morale is very or somewhat negative" ;
+    :yValue "55" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Plan to retire in the next three years" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Will switch to concierge" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Workload at capacity or overextended" ;
+    :yValue "80" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Would not recommend medicine as a career" ;
+    :yValue "51" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Average hours per week (hours)" ;
+    :yValue "51" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Average patients seen per day (number)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .

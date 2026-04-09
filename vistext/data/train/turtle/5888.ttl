@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total operating revenue of the major airlines in the United Kingdom (UK) in 2014/2015 (in 1,000 GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in thousand British pounds" .
+
+:YAxis a :Axis ;
+    :title "airline" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10842829" ;
+    :yValue "British Airways Plc" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4569418" ;
+    :yValue "EasyJet Airline Company Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2449279" ;
+    :yValue "Virgin Atlantic Airways Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1920411" ;
+    :yValue "Thomson Airways Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "980670" ;
+    :yValue "Thomas Cook Airlines Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "767332" ;
+    :yValue "Monarch Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "719881" ;
+    :yValue "Jet2.Com Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "574470" ;
+    :yValue "FlyBe Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "175646" ;
+    :yValue "BA CityFlyer Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "39956" ;
+    :yValue "Global Supply Systems Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "68289" ;
+    :yValue "Titan Airways Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "52436" ;
+    :yValue "Atlantic Airlines Ltd" ;
+    :belongsTo :Chart .

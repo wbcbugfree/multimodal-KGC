@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average value of CPC (cost per click) of online advertising campaigns in the real estate sector in Italy in 2018 , by city (in euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "CPC in euros" .
+
+:YAxis a :Axis ;
+    :title "city of Italy" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Milano" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Roma" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "Torino" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Firenze" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Bologna" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Genova" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Napoli" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Palermo" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Venezia" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Bari" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of crimes committed in suburban areas in the United States in 2019 , by known offenses" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of offenses known" .
+
+:YAxis a :Axis ;
+    :title "offense type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2020200" ;
+    :yValue "Property crime" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1507725" ;
+    :yValue "Larceny-theft" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "317024" ;
+    :yValue "Burglary" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "305904" ;
+    :yValue "Violent crime" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "210300" ;
+    :yValue "Aggravated assault" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "185517" ;
+    :yValue "Motor vehicle theft" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "50446" ;
+    :yValue "Robbery" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "41324" ;
+    :yValue "Rape" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9934" ;
+    :yValue "Arson" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3834" ;
+    :yValue "Murder and nonnegligent, manslaughter" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most annoying hotel guest behavior according to fellow travelers in the United States as of September 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hotel guests that are loud neighbors" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "People who are rude to other travelers and hotel guests" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Guests that are rude to hotel staff" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Those that line jump for a taxi or \"steal\" a taxi from another guest" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hotel guests that make a mess in common areas" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Travelers that complain about being disturbed by housekeeping when they do not put up the \"Do Not Disturb\" sign" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Travelers that take things they are not supposed to take from their rooms" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Guests that do not tip the bellmen, porters or housekeeping" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Travelers that have more people stay in their hotel room than allowed" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "People that leave their luggage in the hall" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading telecommunications websites in the United States as of December 2013 , based on market share of visits" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share of visits" .
+
+:YAxis a :Axis ;
+    :title "Telecom website" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.108" ;
+    :yValue "AT&T" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.097" ;
+    :yValue "Verizon Wireless" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.076" ;
+    :yValue "Verizon" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Verizon Wireless - My Account" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.047" ;
+    :yValue "Skype" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.047" ;
+    :yValue "Comcast customerCentral" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.039" ;
+    :yValue "Comcast" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.033" ;
+    :yValue "T-Mobile USA" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.028" ;
+    :yValue "ATTSavings.com" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.024" ;
+    :yValue "Sprint - Shop" ;
+    :belongsTo :Chart .

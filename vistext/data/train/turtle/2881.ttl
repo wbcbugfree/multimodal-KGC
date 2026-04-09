@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular daily newspapers on Facebook in the United States as of October 2017 , by number of likes (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "newspaper" .
+
+:YAxis a :Axis ;
+    :title "Number of likes in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "The New York Times" ;
+    :yValue "14.8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "USA Today" ;
+    :yValue "8.61" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The Washington Post" ;
+    :yValue "6.07" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Wall Street Journal" ;
+    :yValue "6.01" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "New York Post" ;
+    :yValue "4.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "New York Daily News" ;
+    :yValue "2.77" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Los Angeles Times" ;
+    :yValue "2.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Atlanta Journal Constition" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Newsday" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chicago Tribune" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .

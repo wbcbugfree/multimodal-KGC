@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cyber crime with the highest amount of victim losses in 2019 , by type (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type of cyber crime" .
+
+:YAxis a :Axis ;
+    :title "Amount of victim loss in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BEC/EAC" ;
+    :yValue "1776.55" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Confidence Fraud/Romance" ;
+    :yValue "475.01" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Spoofing" ;
+    :yValue "300.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Investment" ;
+    :yValue "222.19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Real Estate/Rental" ;
+    :yValue "221.37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Non-payment/Non-Delivery" ;
+    :yValue "196.56" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Identity Theft" ;
+    :yValue "160.31" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Government Impersonation" ;
+    :yValue "124.29" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Personal Data Breach" ;
+    :yValue "120.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Credit Card Fraud" ;
+    :yValue "111.49" ;
+    :belongsTo :Chart .

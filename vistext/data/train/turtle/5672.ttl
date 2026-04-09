@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the ten largest web shops in Sweden in 2018 , by revenue (in 1,000 SEK)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in thousand SEK" .
+
+:YAxis a :Axis ;
+    :title "web shops" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "8689669" ;
+    :yValue "Dustin / Dustin home" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1721072" ;
+    :yValue "Cdon.com" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1619359" ;
+    :yValue "Ellos" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1449069" ;
+    :yValue "Adlibris" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1407400" ;
+    :yValue "Boozt.com" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1195213" ;
+    :yValue "Nelly.com / NLY Man" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1110272" ;
+    :yValue "Komplett.se" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "967620" ;
+    :yValue "Apotea / Vitaminvaruhuset.se" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "961363" ;
+    :yValue "MatHem" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "927830" ;
+    :yValue "Bygghemma.se" ;
+    :belongsTo :Chart .

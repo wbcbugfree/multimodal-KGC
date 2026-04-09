@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 U.S. states based on production of principal vegetables for processing in 2016 (in tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Production in tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "California" ;
+    :yValue "13571200" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Washington" ;
+    :yValue "1500790" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Wisconsin" ;
+    :yValue "1212223" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Minnesota" ;
+    :yValue "812644" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Oregon" ;
+    :yValue "666403" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Illinois" ;
+    :yValue "401350" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ohio" ;
+    :yValue "193410" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New York" ;
+    :yValue "177700" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Delaware" ;
+    :yValue "89450" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Texas" ;
+    :yValue "81700" ;
+    :belongsTo :Chart .

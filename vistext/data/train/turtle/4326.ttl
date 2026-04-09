@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading video games ranked by sales volume in France in 2019 , by platform (in 1,000 units sold)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "video game" .
+
+:YAxis a :Axis ;
+    :title "Units sold in 1,000s" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "FIFA 20 (PS4)" ;
+    :yValue "892.81" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Call of Duty: Modern Warfare (PS4)" ;
+    :yValue "535.36" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mario Kart 8 Deluxe (Switch)" ;
+    :yValue "517.25" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "New Super Mario Bros. U Deluxe (Switch)" ;
+    :yValue "429.63" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Luigi's Mansion 3 (Switch)" ;
+    :yValue "395.36" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pokémon Sword (Switch)" ;
+    :yValue "376.64" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Super Mario Party (Switch)" ;
+    :yValue "297.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Minecraft: Nintendo Switch Edition (Switch)" ;
+    :yValue "258.86" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pokémon Shield (Switch)" ;
+    :yValue "251.82" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Super Smash Bros. Ultimate (Switch)" ;
+    :yValue "249.79" ;
+    :belongsTo :Chart .

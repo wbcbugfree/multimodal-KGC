@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading shopping and classifieds websites in the United States in August 2014 , based on market share of visits" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "website" .
+
+:YAxis a :Axis ;
+    :title "Market share of visits" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Amazon.com" ;
+    :yValue "0.102" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "eBay" ;
+    :yValue "0.068" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Craigslist" ;
+    :yValue "0.033" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Walmart" ;
+    :yValue "0.023" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Google Play" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Shop at Home" ;
+    :yValue "0.013" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Target" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "BestBuy" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Groupon" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Apple iPod & iTunes" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .

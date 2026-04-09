@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Professional male tennis players with the highest prize money earnings in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Prize money won in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Tennis player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Novak Djokovic" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.11" ;
+    :yValue "Dominic Thiem" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "Rafael Nadal" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.75" ;
+    :yValue "Alexander Zverev" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.8" ;
+    :yValue "Pablo Carreno Busta" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.72" ;
+    :yValue "Stefanos Tsitsipas" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.71" ;
+    :yValue "Daniil Medvedev" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.62" ;
+    :yValue "Andrey Rublev" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.37" ;
+    :yValue "Roberto Bautista Agut" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.33" ;
+    :yValue "Diego Schwartzman" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Formula 1 revenue by team in 2018 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "formula one team" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "451" ;
+    :yValue "Mercedes" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "426" ;
+    :yValue "Ferrari" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "327" ;
+    :yValue "Red Bull Racing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "195" ;
+    :yValue "Renault" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "176" ;
+    :yValue "Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "172" ;
+    :yValue "Toro Rosso" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "McLaren" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "104" ;
+    :yValue "Racing Point" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "95" ;
+    :yValue "Haas F1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "84" ;
+    :yValue "Alfa Romeo" ;
+    :belongsTo :Chart .

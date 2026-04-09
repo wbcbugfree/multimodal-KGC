@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total value of the alternative finance market in Europe (excluding the UK) in 2018 , by type (in million USD)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type" .
+
+:YAxis a :Axis ;
+    :title "Value of transactions in million USD" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Peer-to-Peer consumer lending" ;
+    :yValue "2889.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Peer-to-Peer business lending" ;
+    :yValue "996.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Invoice trading" ;
+    :yValue "803" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Equity-based crowdfunding" ;
+    :yValue "278.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Reward-based crowdfunding" ;
+    :yValue "175.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Real estate crowdfunding" ;
+    :yValue "600.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Peer-to-peer property lending" ;
+    :yValue "144.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Balance sheet business lending" ;
+    :yValue "80.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Donation-based crowdfunding" ;
+    :yValue "62.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Debt-based securities" ;
+    :yValue "167.8" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Balance sheet consumer lending" ;
+    :yValue "99.8" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Mini-Bonds" ;
+    :yValue "42.8" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Revenue Sharing" ;
+    :yValue "3.5" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Balance sheet property lending" ;
+    :yValue "1378.4" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Community shares" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "6.3" ;
+    :belongsTo :Chart .

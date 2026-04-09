@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sports stadiums worldwide ranked by total construction costs as of May 2014 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "stadium" .
+
+:YAxis a :Axis ;
+    :title "Construction costs in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "MetLife Stadium New Jersey, United States" ;
+    :yValue "1600" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Yankees Stadium New York, United States" ;
+    :yValue "1500" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Olympic Stadium Montreal, Canada" ;
+    :yValue "1470" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "AT&T Stadium Dallas, United States" ;
+    :yValue "1400" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Wembley Stadium London, England" ;
+    :yValue "1350" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Madison Square Garden New York, United States" ;
+    :yValue "1100" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nissan Stadium Yokohama, Japan" ;
+    :yValue "990" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Stade de France Saint Denis, France" ;
+    :yValue "974" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Rogers Centre Toronto, Canada" ;
+    :yValue "930" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jamsil Olympic Stadium Seoul, South Korea" ;
+    :yValue "923" ;
+    :belongsTo :Chart .

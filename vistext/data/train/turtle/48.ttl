@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Natural gas production in Italy in 2018 , by region (in standard cubic meters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Production in standard cubic meters" .
+
+:YAxis a :Axis ;
+    :title "region of Italy" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3380762482" ;
+    :yValue "Offshore production" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1572312738" ;
+    :yValue "Basilicata" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "198271433" ;
+    :yValue "Emilia-Romagna" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "186430397" ;
+    :yValue "Sicily" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "84484437" ;
+    :yValue "Apulia" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "72832056" ;
+    :yValue "Molise" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17539855" ;
+    :yValue "Lombardy" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13909598" ;
+    :yValue "Abruzzo" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8741927" ;
+    :yValue "Marche" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7631694" ;
+    :yValue "Piedmont" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "6052898" ;
+    :yValue "Calabria" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2668557" ;
+    :yValue "Tuscany" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1563978" ;
+    :yValue "Veneto" ;
+    :belongsTo :Chart .

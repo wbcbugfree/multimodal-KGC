@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular Facebook games as of October 2020 , based on monthly active users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Monthly active users in millions" .
+
+:YAxis a :Axis ;
+    :title "Facebook game" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Texas Holdem Poker" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "8 Ball Pool" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Candy Crush Saga" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Farm Heroes Saga" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Coin Master" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Subway Surfers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Clash of Clans" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Dragon City" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Hay Day" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Trivia Crack" ;
+    :belongsTo :Chart .

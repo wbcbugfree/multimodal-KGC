@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average number of brands purchased per consumer goods category in the United Kingdom (UK) in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Goods Category" .
+
+:YAxis a :Axis ;
+    :title "Number of brands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chocolate" ;
+    :yValue "5.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Carbonated drinks" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Frozen food" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Breakfast cereals" ;
+    :yValue "3.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Clothes*" ;
+    :yValue "3.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Make-up*" ;
+    :yValue "3.3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Beer" ;
+    :yValue "3.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Cider" ;
+    :yValue "2.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Skin care*" ;
+    :yValue "2.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Spirits*" ;
+    :yValue "2.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Hair care*" ;
+    :yValue "2.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Shoes & bags*" ;
+    :yValue "2.2" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Fragrances*" ;
+    :yValue "2.2" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Laundry detergents" ;
+    :yValue "1.9" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Tobacco" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Jewellery & watches*" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Personal technology*" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .

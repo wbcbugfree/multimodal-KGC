@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sector distribution of merger and acquisitions (M & A) transaction volume in the United Kingdom (UK) in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Volume" .
+
+:YAxis a :Axis ;
+    :title "business sector" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1688" ;
+    :yValue "Financial services" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1533" ;
+    :yValue "Infocomms" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1470" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1254" ;
+    :yValue "Professional Services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1148" ;
+    :yValue "Wholesale and retail" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "666" ;
+    :yValue "Support services" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "476" ;
+    :yValue "Real estate" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "447" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "371" ;
+    :yValue "Health" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "237" ;
+    :yValue "Hospitality" ;
+    :belongsTo :Chart .

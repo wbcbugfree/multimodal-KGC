@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Return on equity (RoE) of Europe 's largest banks as of September 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "bank" .
+
+:YAxis a :Axis ;
+    :title "Return on equity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "ING Group" ;
+    :yValue "0.1017" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "UBS Group AG" ;
+    :yValue "0.095" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "BBVA" ;
+    :yValue "0.0917" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Credit Agricole Group *" ;
+    :yValue "0.0805" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "BNP Paribas SA" ;
+    :yValue "0.0779" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Danske Bank A/S" ;
+    :yValue "0.0767" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Intesa Sanpaolo" ;
+    :yValue "0.075" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Credit Suisse Group" ;
+    :yValue "0.0633" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Banco Santander*" ;
+    :yValue "0.0601" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "HSBC Holdings" ;
+    :yValue "0.0563" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Groupe BPCE" ;
+    :yValue "0.055" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Societe Generale" ;
+    :yValue "0.0543" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Lloyds Banking Group **" ;
+    :yValue "0.0426" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Barclays PLC *" ;
+    :yValue "0.0408" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Nordea Bank AB" ;
+    :yValue "0.0393" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Royal Bank Of Scotland" ;
+    :yValue "0.0358" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Commerzbank AG" ;
+    :yValue "0.0267" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Deutsche Bank*" ;
+    :yValue "-0.095" ;
+    :belongsTo :Chart .

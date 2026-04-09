@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Net profit margin of the leading 10 consumer products companies in the United States in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Net profit margin" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Apple Inc." ;
+    :yValue "0.217" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The Procter & Gamble Company" ;
+    :yValue "0.142" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "PepsiCo, Inc." ;
+    :yValue "0.102" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Coca-Cola Company" ;
+    :yValue "0.184" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mondeléz International" ;
+    :yValue "0.111" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tyson Foods, Inc." ;
+    :yValue "0.023" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mars, Inc.**" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Philip Morris International Inc." ;
+    :yValue "0.283" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "NIKE Inc." ;
+    :yValue "0.097" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kimberly-Clark Corporation" ;
+    :yValue "0.105" ;
+    :belongsTo :Chart .

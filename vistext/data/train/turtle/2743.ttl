@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of female employees in non-agricultural wage employment worldwide in 2015 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of employees" .
+
+:YAxis a :Axis ;
+    :title "Region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Northern Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Southern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Western Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Sub-Saharan Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "Oceania" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "South-Eastern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Eastern Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Latin America & the Caribbean" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Caucasus & Central Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Developed regions" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "World" ;
+    :belongsTo :Chart .

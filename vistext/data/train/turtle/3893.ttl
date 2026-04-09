@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How concerned are you about the following issues ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents concerned" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Unemployment" ;
+    :yValue "0.89" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Protecting people's personal information" ;
+    :yValue "0.88" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Preventing crime" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Improving standards in education" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The National Health Service" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Equal rights for everyone" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Protecting freedom of speech" ;
+    :yValue "0.81" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Environmental issues" ;
+    :yValue "0.79" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "National security" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Access to information held by public authorities" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .

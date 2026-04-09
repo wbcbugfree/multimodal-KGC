@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of single-man households in Denmark 2020 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of single-men households" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "100 years and older" ;
+    :yValue "147" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "90-99 years" ;
+    :yValue "7622" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "80-89 years" ;
+    :yValue "33823" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "70-79 years" ;
+    :yValue "66665" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "60-69 years" ;
+    :yValue "79048" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50-59 years" ;
+    :yValue "98755" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "40-49 years" ;
+    :yValue "84986" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30-39 years" ;
+    :yValue "67813" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "20-29 years" ;
+    :yValue "85470" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Under 20 years" ;
+    :yValue "3421" ;
+    :belongsTo :Chart .

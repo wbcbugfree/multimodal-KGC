@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular iTunes podcast categories worldwide in 2015 , by number of active podcasts (in thousands)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "category" .
+
+:YAxis a :Axis ;
+    :title "Number of podcasts in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Christian" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Music" ;
+    :yValue "33.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Comedy" ;
+    :yValue "14.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "TV and Film" ;
+    :yValue "12.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Literature" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "News and Politics" ;
+    :yValue "10.2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Video Games" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sports" ;
+    :yValue "6.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Management and Marketing" ;
+    :yValue "5.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Personal Journals" ;
+    :yValue "4.3" ;
+    :belongsTo :Chart .

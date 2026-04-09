@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Professional golfers with the most PGA Championship points in the 2020 season (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Golf Player" .
+
+:YAxis a :Axis ;
+    :title "Points in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dustin Johnson" ;
+    :yValue "6.99" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Justin Thomas" ;
+    :yValue "3.71" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jon Rahm" ;
+    :yValue "3.58" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Bryson DeChambeau" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jason Kokrak" ;
+    :yValue "2.67" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Matthew Wolff" ;
+    :yValue "2.63" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Xander Schauffele" ;
+    :yValue "2.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Collin Morikawa" ;
+    :yValue "2.44" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Harris English" ;
+    :yValue "2.19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Patrick Cantlay" ;
+    :yValue "2.17" ;
+    :belongsTo :Chart .

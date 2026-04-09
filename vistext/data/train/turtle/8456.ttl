@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading investment firms ranked by value of global and UK assets under management in the United Kingdom (UK) in 2019 (in billion GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "UK assets" .
+
+:YAxis a :Axis ;
+    :title "Leading investment firms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1289" ;
+    :yValue "BlackRock" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "257" ;
+    :yValue "State Street" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "253" ;
+    :yValue "JP Morgan" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "986" ;
+    :yValue "Legal & General" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "257" ;
+    :yValue "UBS" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "638" ;
+    :yValue "Insight" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "287" ;
+    :yValue "Schroders" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "427" ;
+    :yValue "Aberdeen Standard" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "233" ;
+    :yValue "Aviva" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "270" ;
+    :yValue "M&G" ;
+    :belongsTo :Chart .

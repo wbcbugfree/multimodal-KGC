@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of respondents worldwide who have taken extra measures to protect themselves from coronavirus (COVID-19) in the U.S. , UK , and China" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "United States" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Avoid crowded public places" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Wear a face mask when in public places" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Avoid going to work (e.g., by working from home)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Avoid consumption of raw or uncooked meat" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Stop sending children to child care or school" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "Improve personal hygiene (e.g., washing hands frequently, using hand sanitizer)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.24" ;
+    :yValue "Refrain from touching objects in public (e.g., using objects to press elevator buttons)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Avoid physical contact with tourists" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "None of the above" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Not applicable - I am not aware of the Coronavirus (COVID-19)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most appreciated news broadcasting TV programs of the national public broadcasting company Rai in Italy in the 2nd half of 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Assigned grade*" .
+
+:YAxis a :Axis ;
+    :title "news broadcasting TV programs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7.8" ;
+    :yValue "TG3 12h00" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "7.7" ;
+    :yValue "TG1 - Speciale" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "7.7" ;
+    :yValue "TG1 20h00" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7.6" ;
+    :yValue "TG1 - Diretta" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7.6" ;
+    :yValue "TG2 Giorno 13h00" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7.6" ;
+    :yValue "TG3-Giorno 14h20" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "TG3 Regione 14h00" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "TG3 19h00" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "TG1 8h00" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "TG3 Regione 19h30" ;
+    :belongsTo :Chart .

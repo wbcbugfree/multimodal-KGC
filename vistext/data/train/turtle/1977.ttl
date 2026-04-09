@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Change in contribution of beverages to gross domestic product (GDP) after the introduction of a sugar tax in the United Kingdom (UK) in 2015 , by region (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "UK Region" .
+
+:YAxis a :Axis ;
+    :title "Change in contribution in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "-26" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "-17" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "-13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "-13" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "-12" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "East" ;
+    :yValue "-11" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "-10" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Yorkshire and the Humber" ;
+    :yValue "-10" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "-8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "-5" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "-4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "-4" ;
+    :belongsTo :Chart .

@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of corporate and investment banking (CIB) divisions of banking groups in Europe as of 2013 (in billion euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in billion euros" .
+
+:YAxis a :Axis ;
+    :title "corporate and investment banking (CIB) divisions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "17.7" ;
+    :yValue "Deutsche Bank" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "16.4" ;
+    :yValue "Barclays Capital" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10.5" ;
+    :yValue "Credit Suisse" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "UBS" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8.7" ;
+    :yValue "BNP Paribas" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6.7" ;
+    :yValue "Societe Generale" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Lloyds Banking Group" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.1" ;
+    :yValue "Santander" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "ING" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Rabobank International" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "3.4" ;
+    :yValue "Intesa Sanpaolo" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "3.5" ;
+    :yValue "Credit Agricole" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "BBVA" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "ABN-AMRO" ;
+    :belongsTo :Chart .

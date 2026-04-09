@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of visitors to national parks and sites in the United States from 2010 to 2019 , by type of park (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "national parks and sites" .
+
+:YAxis a :Axis ;
+    :title "2013" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "National Par" ;
+    :yValue "63.51" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "National Park National Recreation Are" ;
+    :yValue "44" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "National Recreation Area National Memoria" ;
+    :yValue "34.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "National Memorial National Historical Par" ;
+    :yValue "28.61" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "National Historical Park National Parkwa" ;
+    :yValue "27.48" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "National Parkway National Monumen" ;
+    :yValue "18.66" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "National Monument National Seashor" ;
+    :yValue "18.66" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "National Seashore National Historic Sit" ;
+    :yValue "9.61" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "National Historic Site National Rive" ;
+    :yValue "4.12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "National River National Military Par" ;
+    :yValue "5.05" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "National Military Park National Preserv" ;
+    :yValue "2.93" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "National Preserve National Battlefield Par" ;
+    :yValue "2.67" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "National Battlefield Park National Lakeshor" ;
+    :yValue "3.75" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "National Lakeshore National Battlefiel" ;
+    :yValue "1.75" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "National Battlefield National Wild & Scenic Rive" ;
+    :yValue "1.05" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "National Wild & Scenic River Park (Other" ;
+    :yValue "7.34" ;
+    :belongsTo :Chart .

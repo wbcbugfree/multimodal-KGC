@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of biotech company Genentech by product sold in the U.S. in 2008 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "biotech company" .
+
+:YAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Avastin" ;
+    :yValue "2686" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Rituxan" ;
+    :yValue "2587" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Herceptin" ;
+    :yValue "1382" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lucentis" ;
+    :yValue "875" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Xolair" ;
+    :yValue "517" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tarceva" ;
+    :yValue "457" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nutropin Products" ;
+    :yValue "358" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Thrombolytics" ;
+    :yValue "275" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pulmozyme" ;
+    :yValue "257" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Raptiva" ;
+    :yValue "108" ;
+    :belongsTo :Chart .

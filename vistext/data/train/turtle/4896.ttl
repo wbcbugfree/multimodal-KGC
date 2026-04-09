@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of doping cases in international sports between 2000 and 2010 , by sport" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of doping cases" .
+
+:YAxis a :Axis ;
+    :title "type of sport" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "971" ;
+    :yValue "Athletics*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "American sports" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "227" ;
+    :yValue "Cycling" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "67" ;
+    :yValue "Combat sports" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "46" ;
+    :yValue "Winter sports" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "42" ;
+    :yValue "Power sports" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Water sports" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Football" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Racquet sports" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Rugby" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "other" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Animal sports" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Motor sports" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Cricket" ;
+    :belongsTo :Chart .

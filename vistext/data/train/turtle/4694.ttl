@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading companies listed on the Milan Stock Exchange in Italy as of August 2020 , by market capitalization (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market capitalization in million euros" .
+
+:YAxis a :Axis ;
+    :title "company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "77477.77" ;
+    :yValue "Enel" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "35031.31" ;
+    :yValue "Intesa Sanpaolo" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "31749.06" ;
+    :yValue "Ferrari" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "28699.35" ;
+    :yValue "ENI" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20644.43" ;
+    :yValue "Generali" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "18761.42" ;
+    :yValue "UniCredit" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14528.71" ;
+    :yValue "FIAT Chrysler Automobiles" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "14492.84" ;
+    :yValue "SNAM" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12238.2" ;
+    :yValue "Terna" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12056.25" ;
+    :yValue "Exor N.V." ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "11139.79" ;
+    :yValue "Atlantia" ;
+    :belongsTo :Chart .

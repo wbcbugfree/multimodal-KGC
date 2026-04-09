@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Car models with lowest depreciation rate in Mexico in 2016 and 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Depreciation rate" .
+
+:YAxis a :Axis ;
+    :title "Car models" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.258" ;
+    :yValue "Suzuki S-Cross" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.261" ;
+    :yValue "Ford Fiesta" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.268" ;
+    :yValue "Nissan Tiida" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.273" ;
+    :yValue "Mazda 3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.276" ;
+    :yValue "Honda Odissey" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.276" ;
+    :yValue "Mitsubishi Lancer" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.279" ;
+    :yValue "Hyundai Grand i10" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.282" ;
+    :yValue "Toyota Yaris" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.285" ;
+    :yValue "Volkswagen Vento" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.286" ;
+    :yValue "Seat León" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 U.S. states based on number of Medicare beneficiaries in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of Medicare beneficiaries" .
+
+:YAxis a :Axis ;
+    :title "State" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6124095" ;
+    :yValue "California" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4412700" ;
+    :yValue "Florida" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4018970" ;
+    :yValue "Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3559173" ;
+    :yValue "New York" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2683395" ;
+    :yValue "Pennsylvania" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2295136" ;
+    :yValue "Ohio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2193624" ;
+    :yValue "Illinois" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2024434" ;
+    :yValue "Michigan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1931885" ;
+    :yValue "North Carolina" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1676019" ;
+    :yValue "Georgia" ;
+    :belongsTo :Chart .

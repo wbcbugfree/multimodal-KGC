@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of employed workers from minority groups in computer occupations in the United States in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "computer occupations" .
+
+:YAxis a :Axis ;
+    :title "Asian" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Computer and mathematical occupations [ALL]" ;
+    :yValue "0.231" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Computer systems analysts" ;
+    :yValue "0.203" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Operations research analysts" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Information security analysts" ;
+    :yValue "0.218" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Computer programmers" ;
+    :yValue "0.377" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Software developers, applications and systems software" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Web developers" ;
+    :yValue "0.127" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Computer support specialists" ;
+    :yValue "0.167" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Database administrators" ;
+    :yValue "0.117" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Network and computer systems administrators" ;
+    :yValue "0.103" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Computer network architects" ;
+    :yValue "0.141" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Computer occupations, all other" ;
+    :yValue "0.127" ;
+    :belongsTo :Chart .

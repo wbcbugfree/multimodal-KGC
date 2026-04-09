@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Health spending distribution of private insurance and out-of-pocket payments in the United States in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "private insurance and out-of-pocket payments" .
+
+:YAxis a :Axis ;
+    :title "Out-of-pocket" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hospital care" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Physician and clinical services" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Prescription drugs" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Net cost of health insurance*" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dental services" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Other professional services" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nursing care facilities" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other health care**" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other medical products***" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Home health services" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .

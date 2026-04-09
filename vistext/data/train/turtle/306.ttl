@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading PC and console video games sales value in France in 2018 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Title (Platform)" .
+
+:YAxis a :Axis ;
+    :title "Sales in million euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "FIFA 19 (PS4)" ;
+    :yValue "54.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Red Dead Redemption 2 (PS4)" ;
+    :yValue "36.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mario Kart 8 Deluxe (Switch)" ;
+    :yValue "27.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Call of Duty: Black Ops 4 (PS4)" ;
+    :yValue "27.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Super Mario Party (Switch)" ;
+    :yValue "19.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Super Smash Bros. Ultimate (Switch)" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Spider-Man (PS4)" ;
+    :yValue "17.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Super Mario Odyssey (Switch)" ;
+    :yValue "16.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "God of War (PS4)" ;
+    :yValue "15.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The Legend of Zelda: Breath of the Wild (Switch)" ;
+    :yValue "15.3" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cardiovascular devices market value in South Korea in 2007 , 2014 and 2021 , by category (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2014" .
+
+:YAxis a :Axis ;
+    :title "category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "257.9" ;
+    :yValue "Interventional Cardiology" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "61.9" ;
+    :yValue "Peripheral Vascular Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "49.5" ;
+    :yValue "Cardiac Rhythm Management Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30.3" ;
+    :yValue "Cardiovascular Surgery Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "27.7" ;
+    :yValue "Electrophysiology Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "18.6" ;
+    :yValue "External Defibrillators" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14.2" ;
+    :yValue "Prosthetic Heart Valves" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.6" ;
+    :yValue "Cardiac Assist Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3.5" ;
+    :yValue "Clot Management Devices" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.1" ;
+    :yValue "Cardiovascular Prosthetic Devices" ;
+    :belongsTo :Chart .

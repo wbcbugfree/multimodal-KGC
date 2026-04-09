@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of registered passenger cars on the road in Finland in 2018 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of registered passenger cars" .
+
+:YAxis a :Axis ;
+    :title "region of Finland" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "710457" ;
+    :yValue "Uusimaa" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "249883" ;
+    :yValue "Pirkanmaa" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "245531" ;
+    :yValue "Southwest Finland" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "197087" ;
+    :yValue "North Ostrobothnia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "137118" ;
+    :yValue "Central Finland" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "123537" ;
+    :yValue "Satakunta" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "123208" ;
+    :yValue "North Savo" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "110550" ;
+    :yValue "South Ostrobothnia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "100461" ;
+    :yValue "Päijät-Häme" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "100336" ;
+    :yValue "Ostrobothnia" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "96826" ;
+    :yValue "Kymenlaakso" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "93805" ;
+    :yValue "Kanta-Häme" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "93223" ;
+    :yValue "Lapland" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "84769" ;
+    :yValue "North Karelia" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "78207" ;
+    :yValue "South Savo" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "70853" ;
+    :yValue "South Karelia" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "38826" ;
+    :yValue "Kainuu" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "36365" ;
+    :yValue "Central Ostrobothnia" ;
+    :belongsTo :Chart .

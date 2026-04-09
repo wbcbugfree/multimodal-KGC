@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable Danish brands in 2020 , by brand value (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lego" ;
+    :yValue "6757" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Maersk" ;
+    :yValue "4456" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Arla" ;
+    :yValue "3423" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Danske Bank" ;
+    :yValue "2952" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Vestas" ;
+    :yValue "2239" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "DSV" ;
+    :yValue "1539" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Pandora" ;
+    :yValue "2639" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Novo Nordisk" ;
+    :yValue "1707" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "ISS" ;
+    :yValue "1813" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carlsberg" ;
+    :yValue "1311" ;
+    :belongsTo :Chart .

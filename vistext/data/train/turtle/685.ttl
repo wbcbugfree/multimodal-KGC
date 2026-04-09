@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "NFL players with the most Twitter followers as of April 2018 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of followers in millions" .
+
+:YAxis a :Axis ;
+    :title "American football player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5.34" ;
+    :yValue "Russell Wilson" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.24" ;
+    :yValue "JJ Watt" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.85" ;
+    :yValue "Tim Tebow" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4.39" ;
+    :yValue "Aaron Rodgers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.65" ;
+    :yValue "Chad Ochocinco" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.46" ;
+    :yValue "Dez Bryant" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.18" ;
+    :yValue "Drew Brees" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.15" ;
+    :yValue "Reggie Bush" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Michael Vick" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.89" ;
+    :yValue "Rob Gronkowski" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Celtics all-time assists leaders from 1946 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Player" .
+
+:YAxis a :Axis ;
+    :title "Assists" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bob Cousy" ;
+    :yValue "6945" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "John Havlicek" ;
+    :yValue "6114" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Larry Bird" ;
+    :yValue "5695" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Rajon Rondo" ;
+    :yValue "4474" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Paul Pierce" ;
+    :yValue "4305" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bill Russell" ;
+    :yValue "4100" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jojo White" ;
+    :yValue "3686" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dennis Johnson" ;
+    :yValue "3486" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "K.C. Jones" ;
+    :yValue "2908" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dave Cowens" ;
+    :yValue "2828" ;
+    :belongsTo :Chart .

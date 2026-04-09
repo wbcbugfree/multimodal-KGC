@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Impact of the coronavirus (COVID-19) outbreak on the main macroeconomic indicators in Romania from October 2019 to September 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "main macroeconomic indicators" .
+
+:YAxis a :Axis ;
+    :title "Feb '20" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Industrial production***" ;
+    :yValue "-0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Non-farming private sector*" ;
+    :yValue "0.089" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Services*" ;
+    :yValue "0.124" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Import**" ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Services rendered mainly to enterprises**" ;
+    :yValue "0.169" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Export**" ;
+    :yValue "0.049" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wholesale trade**" ;
+    :yValue "0.129" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Retail trade***" ;
+    :yValue "0.138" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Trade and repair of motor vehicles***" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Households' consumption*" ;
+    :yValue "0.107" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Services provided to the population***" ;
+    :yValue "0.098" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Construction works***" ;
+    :yValue "0.246" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular online subscription box retailers in the United States as of April 2018 , by number of visitors" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Retailers" .
+
+:YAxis a :Axis ;
+    :title "Monthly visitors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Blue Apron" ;
+    :yValue "935599" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "HelloFresh" ;
+    :yValue "819998" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Stitch Fix" ;
+    :yValue "761430" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Home Chef" ;
+    :yValue "706663" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dollar Shave Club" ;
+    :yValue "702129" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "IPSY" ;
+    :yValue "678118" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "BirchBox" ;
+    :yValue "378426" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Loot Crate" ;
+    :yValue "326473" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Harry's" ;
+    :yValue "305501" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "FabFitFun" ;
+    :yValue "275190" ;
+    :belongsTo :Chart .

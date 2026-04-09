@@ -1,0 +1,37 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Maternal mortality rate in Argentina in 2017 , by cause of death (in number of deaths per 10,000 live births)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "cause of death" .
+
+:YAxis a :Axis ;
+    :title "Indirect obstetric causes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Respiratory disease" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cardiovascular disease" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Digestive disease" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "VIH/AIDS" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Other indirect obstetric causes" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .

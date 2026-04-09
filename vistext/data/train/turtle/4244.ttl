@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of GDP contributed by female workers , as of 2015 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of GDP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Eastern Europe & Central Asia" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "North America & Oceania" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sub-Saharan Africa" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Western Europe" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "World" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "East & South East Asia (excl. China)" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Latin America" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "South Asia (excl. India)" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Middle East & North Africa" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .

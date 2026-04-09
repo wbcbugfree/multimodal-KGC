@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading banks by market capitalization in Italy as of August 2020 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "bank" .
+
+:YAxis a :Axis ;
+    :title "Market capitalization in million euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Intesa Sanpaolo" ;
+    :yValue "35031.31" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "UniCredit" ;
+    :yValue "18761.42" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Fineco Bank" ;
+    :yValue "7777.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mediobanca" ;
+    :yValue "6595.54" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Banca Mediolanum" ;
+    :yValue "4649.55" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Banca Generali" ;
+    :yValue "2996.68" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "UBI Banca" ;
+    :yValue "2947.23" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Banco BPM" ;
+    :yValue "2168.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Banca Monte dei Paschi di Siena" ;
+    :yValue "1662.71" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Credito Emiliano" ;
+    :yValue "1415.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "BPER Banca" ;
+    :yValue "1218.5" ;
+    :belongsTo :Chart .

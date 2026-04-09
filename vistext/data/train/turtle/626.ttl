@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Film studio ranking by number of `` Best Picture '' Academy Awards as of 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of awards" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Columbia Pictures" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Paramount" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20th Century Studios" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Metro-Goldwyn-Mayer" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Universal" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Warner Bros" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Searchlight Pictures" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Miramax" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "DreamWorks" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Orion" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "The Weinstein Company" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Selznick International Pictures" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "RKO Pictures" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Samuel Goldwyn Productions" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "A24" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "J. Arthur Rank-Two Cities Films" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

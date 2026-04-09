@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sponsorship worth of professional tennis players worldwide as of July 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sponsorship worth in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "86" ;
+    :yValue "Roger Federer" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Kei Nishikori" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "Novak Djokovic" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Rafael Nadal" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Serena Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Naomi Osaka" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Stan Wawrinka" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.5" ;
+    :yValue "Sloane Stephens" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Caroline Wozniacki" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Juan Martin Del Potro" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Simona Halep" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Angelique Kerber" ;
+    :belongsTo :Chart .

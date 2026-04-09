@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "What threats and vulnerabilities have most increased your risk exposure over the past 12 months ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "1st priority" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Careless or unaware employees" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cyber attacks to steal financial information" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Outdated information security controls or architecture" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cyber attacks to disrupt or deface the organization" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fraud" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Natural disasters" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Malware" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Cyber attacks to steal intellectual property or data" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Vulnerabilities related to mobile computing use" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Vulnerabilities related to cloud computing use" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Espionage" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Phishing" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Unauthorized access" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Spam" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Internal attacks" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Vulnerabilities related to social media use" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

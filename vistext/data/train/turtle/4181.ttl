@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Professional golfers with the most Ryder Cup points as of November 2020 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Golf player" .
+
+:YAxis a :Axis ;
+    :title "Points in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dustin Johnson" ;
+    :yValue "15.04" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Bryson DeChambeau" ;
+    :yValue "9.87" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Justin Thomas" ;
+    :yValue "8.02" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Brooks Koepka" ;
+    :yValue "7.67" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Collin Morikawa" ;
+    :yValue "7.17" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Xander Schauffele" ;
+    :yValue "7.09" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Webb Simpson" ;
+    :yValue "6.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Patrick Reed" ;
+    :yValue "5.55" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tony Finau" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Matthew Wolff" ;
+    :yValue "4.83" ;
+    :belongsTo :Chart .

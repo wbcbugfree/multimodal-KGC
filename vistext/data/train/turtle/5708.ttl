@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total number of coronavirus (COVID-19) cases in Lebanon from February to November 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Number of cases" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Nov 4" ;
+    :yValue "87097" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oct 1" ;
+    :yValue "40882" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sep 1" ;
+    :yValue "1777" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Aug 1" ;
+    :yValue "4730" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jul 1" ;
+    :yValue "1788" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jun 1" ;
+    :yValue "1233" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "May 1" ;
+    :yValue "739" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Apr 1" ;
+    :yValue "479" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mar 1" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Feb 21" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

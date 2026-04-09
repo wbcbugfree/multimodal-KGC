@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Transport of goods during the coronavirus (COVID-19) epidemic in Poland from January to October 2020 , by type of transport (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "50479" ;
+    :yValue "October 48804 September 45074 August 46257 July 44477 June 43174 May 43379 April 47838 March 45582 February 44483 January" ;
+    :belongsTo :Chart .

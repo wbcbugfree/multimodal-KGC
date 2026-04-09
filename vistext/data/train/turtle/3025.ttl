@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most watched Coppa Italia football matches in Italy in 2020 , by TV audience (in 1,000s viewers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of TV viewers in thousands" .
+
+:YAxis a :Axis ;
+    :title "Match" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10202" ;
+    :yValue "SSC Napoli - Juventus FC(Jun 17, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8277" ;
+    :yValue "Juventus FC - AC Milan(Jun 12, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8095" ;
+    :yValue "AC Milan - Juventus FC(Feb 2, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7119" ;
+    :yValue "SSC Napoli - FC Internazionale(Jun 6, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6859" ;
+    :yValue "FC Internazionale - SSC Napoli(Feb 12, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6577" ;
+    :yValue "Juventus FC - AS Roma(Jan 22, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5679" ;
+    :yValue "SSC Napoli - SS Lazio(Jan 21, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5561" ;
+    :yValue "FC Internazionale - ACF Fiorentina(Jan 29, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5265" ;
+    :yValue "AC Milan - Torino FC(Jan 28, 2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4731" ;
+    :yValue "Juventus FC - Udinese Calcio(Jan 15, 2020)" ;
+    :belongsTo :Chart .

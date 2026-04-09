@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of U.S. suicides that had a known mental health condition as of 2015 , by relationship problems or loss" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "No known mental health condition" .
+
+:YAxis a :Axis ;
+    :title "relationship problems or loss" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.451" ;
+    :yValue "Any relationship problem/loss" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.302" ;
+    :yValue "Intimate partner problem" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Perpetrator of interpersonal violence in past month" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.003" ;
+    :yValue "Victim of interpersonal violence in past month" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.085" ;
+    :yValue "Family relationhip problem" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.021" ;
+    :yValue "Other relationship problem (nonintimate)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.175" ;
+    :yValue "Argument or conflict (not specified)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.072" ;
+    :yValue "Death of a loved one (any)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.057" ;
+    :yValue "Nonsuicide death" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.017" ;
+    :yValue "Suicide of family or friend" ;
+    :belongsTo :Chart .

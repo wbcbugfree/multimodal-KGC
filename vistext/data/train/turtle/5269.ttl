@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Female tennis players with the most Grand Slam tournament titles as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Tennis player" .
+
+:YAxis a :Axis ;
+    :title "Number of Grand Slam victories" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Serena Williams (USA)" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Steffi Graf (GER)" ;
+    :yValue "22" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Martina Navratilova (USA)" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chris Evert (USA)" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Margaret Court (AUS)" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Monica Seles (USA)" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Billie Jean King (USA)" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Venus Williams (USA)" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Evonne Goolagong Cawley (AUS)" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Justine Henin (BEL)" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Maria Scharapova (RUS)" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Martina Hingis (SUI)" ;
+    :yValue "5" ;
+    :belongsTo :Chart .

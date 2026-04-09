@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to M & A in Finland in 2016 , by deal value (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Deal value in billion U.S. dollar" .
+
+:YAxis a :Axis ;
+    :title "Financial Advisory Company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9.22" ;
+    :yValue "Morgan Stanley" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8.6" ;
+    :yValue "Bank of America Merrill Lynch" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8.6" ;
+    :yValue "Mizuho Financial Group" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8.6" ;
+    :yValue "Raine Group" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.58" ;
+    :yValue "SEB" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.37" ;
+    :yValue "Nordea" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.71" ;
+    :yValue "Citi" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Moelis & Company" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.37" ;
+    :yValue "JPMorgan" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.28" ;
+    :yValue "Credit Suisse" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1.28" ;
+    :yValue "Perella Weinberg Partners" ;
+    :belongsTo :Chart .

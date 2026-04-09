@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular luxury hotel review sites worldwide as of April 2014 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Global" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "TripAdvisor" ;
+    :yValue "0.379" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ctrip" ;
+    :yValue "0.089" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dao Dao" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Booking.com" ;
+    :yValue "0.062" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Qunar" ;
+    :yValue "0.031" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "eLong" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Agoda" ;
+    :yValue "0.021" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dian Ping" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "mangocity" ;
+    :yValue "0.016" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.154" ;
+    :belongsTo :Chart .

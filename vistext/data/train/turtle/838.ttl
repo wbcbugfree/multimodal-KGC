@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ten worst terrorist attacks in terms of fatalities in Europe from 1980 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:YAxis a :Axis ;
+    :title "mass murder" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "270" ;
+    :yValue "Lockerbie Bombing (December 21,1988)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "191" ;
+    :yValue "Madrid Train Bombings (March 11, 2004)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "130" ;
+    :yValue "Paris Attacks (November 15, 2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "86" ;
+    :yValue "Nice Truck Attack (July 14, 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "85" ;
+    :yValue "Bologna Massacre (August 2, 1980)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Norway Attacks (July 22, 2011)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "London Bombings (July 7, 2005)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "32" ;
+    :yValue "Brussels Bombings (March 22, 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Omagh Bombing (August 15, 1998)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Manchester Arena Bombing (May 22, 2017)" ;
+    :belongsTo :Chart .

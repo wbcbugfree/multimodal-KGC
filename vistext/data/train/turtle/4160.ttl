@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading health and fitness apps in the Google Play Store worldwide in September 2020 , by revenue (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Health or fitness app" .
+
+:YAxis a :Axis ;
+    :title "Revenue in U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Calorie Counter - MyFitnessPal" ;
+    :yValue "1443752" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Fitbit" ;
+    :yValue "1432091" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Calm - Meditate, Sleep, Relax" ;
+    :yValue "1285105" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Strava: Track Running, Cycling & Swimming" ;
+    :yValue "1153954" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Headspace: Meditation & Sleep" ;
+    :yValue "661976" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Komoot — Cycling, Hiking & Mountain Biking Maps" ;
+    :yValue "578910" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Freeletics Training Coach – Bodyweight & Mindset" ;
+    :yValue "499003" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "YAZIO Calorie Counter, Nutrition Diary & Diet Plan" ;
+    :yValue "498142" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lifesum - Diet Plan, Macro Calculator & Food Diary" ;
+    :yValue "349361" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "AllTrails: Hiking, Running & Mountain Bike Trails" ;
+    :yValue "334930" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of people with COVID-19 in the United States from January 22 to May 30 , 2020 who had select symptoms" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of COVID-19 patients" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Fever, cough, or shortness of breath" ;
+    :yValue "0.697" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Fever**" ;
+    :yValue "0.431" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cough" ;
+    :yValue "0.503" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Shortness of breath" ;
+    :yValue "0.285" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Myalgia" ;
+    :yValue "0.361" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Runny nose" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sore throat" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Headache" ;
+    :yValue "0.344" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nausea/Vomiting" ;
+    :yValue "0.115" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Abdominal pain" ;
+    :yValue "0.076" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Diarrhea" ;
+    :yValue "0.193" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Loss of smell or taste" ;
+    :yValue "0.083" ;
+    :belongsTo :Chart .

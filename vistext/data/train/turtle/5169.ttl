@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Deaths due to the coronavirus (COVID-19) in Austria in 2021 , by federal state" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of deaths" .
+
+:YAxis a :Axis ;
+    :title "state of Austria" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6357" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1329" ;
+    :yValue "Styria" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1264" ;
+    :yValue "Upper Austria" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1138" ;
+    :yValue "Vienna" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "879" ;
+    :yValue "Lower Austria" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "529" ;
+    :yValue "Carinthia" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "480" ;
+    :yValue "Tyrol" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "338" ;
+    :yValue "Salzburg" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "221" ;
+    :yValue "Vorarlberg" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "179" ;
+    :yValue "Burgenland" ;
+    :belongsTo :Chart .

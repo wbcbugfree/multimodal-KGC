@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading radio station groups ranked by weekly reach percent in the United Kingdom (UK) as of 1st quarter 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading radio station groups" .
+
+:YAxis a :Axis ;
+    :title "Reach percent*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "All Radio" ;
+    :yValue "0.89" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "All Commercial Radio" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "All BBC Radio" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "All BBC Network Radio" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tindle Radio Group" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "All Local Commercial Radio (ILR)" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "All Local Commercial (National TSA)" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Total Global Radio (UK)" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "All National Commercial" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bauer Radio - Total" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .

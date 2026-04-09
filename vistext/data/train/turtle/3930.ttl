@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most expensive public sales of .de-domains by Sedo in 2011 , by sales price (in 1,000 euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Price in thousand euros" .
+
+:YAxis a :Axis ;
+    :title "Most expensive public sales of \\.de-domains" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "aktien.de" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "50" ;
+    :yValue "fab.de" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "unterwaesche.de" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "namibia.de" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "frage.de" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "hochzeitskleider.de" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "gps.de" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "market.de" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "29.75" ;
+    :yValue "bitcoin.de" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "2.de" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Driving behaviors most likely to annoy or offend drivers in the U.S. as of May 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Texting*" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Tailgating" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Occupying the passing lane without moving" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Changing lanes without signalling" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Multi-tasking*" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Driving well below the speed limit" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Straddling two lanes or weaving between them" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Speeding" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Honking" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Not letting others merge" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Not giving a gesture of thanks" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Inching closer to the light when red" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

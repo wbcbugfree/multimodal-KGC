@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest electricity generation facilities in the U.S. in 2017 , by summer capacity (in megawatts)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Summer capacity in megawatts" .
+
+:YAxis a :Axis ;
+    :title "Plant (state)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7079" ;
+    :yValue "Grand Coulee (Washington)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3937" ;
+    :yValue "Palo Verde(Arizona)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3695" ;
+    :yValue "Martin(Florida)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3675" ;
+    :yValue "W.A. Parish(Texas)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3669" ;
+    :yValue "Western County Energy Center(Florida)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3392" ;
+    :yValue "Scherer(Georgia)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3309" ;
+    :yValue "Browns Ferry(Tennessee)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3232" ;
+    :yValue "Bowen(Georgia)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3132" ;
+    :yValue "Gibson(Indiana)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3080" ;
+    :yValue "Monroe(Michigan)" ;
+    :belongsTo :Chart .

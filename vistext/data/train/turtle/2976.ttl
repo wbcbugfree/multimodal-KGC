@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following statements apply to your organizationâ€™s business continuity management strategy and program ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of repondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Our BCM program is approved by management" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "We have incident and crisis management procedures in place" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "We have procedures to enable the continuity of the ICT infrastructure" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "We have procedures in place to enable the continuity of critical business processes" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "We have procedures to protect our organization's people" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.53" ;
+    :yValue "Our BCM program covers all critical business processes" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "We continously improve our BCM program" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "We have identified the recovery time for business-critical resources" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Our BCM program is well-documented and robust" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "We continously identify and assess key continuity threats and risks" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "We have established relationships with local emergency response groups" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "We continously monitor and report on BCM related risks" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "We do not have a BCM program" ;
+    :belongsTo :Chart .

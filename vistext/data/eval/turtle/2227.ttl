@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Reasons for internet users in the United States to not use Facebook as of October 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.6239" ;
+    :yValue "Don't want to share anything on Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.5897" ;
+    :yValue "Would rather share or communicate in other ways" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.5726" ;
+    :yValue "Don't trust Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.5043" ;
+    :yValue "Don't want to connect with anyone on Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.4915" ;
+    :yValue "Facebook invades my privacy" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.312" ;
+    :yValue "Facebook makes me give up too much information" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.2991" ;
+    :yValue "Don't like reading updates from others" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.2949" ;
+    :yValue "Don't like Facebook's user experience" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.188" ;
+    :yValue "Don't like ads on Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.1325" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.0513" ;
+    :yValue "Facebook site or app is too slow" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.0256" ;
+    :yValue "Internet access isn't good enough" ;
+    :belongsTo :Chart .

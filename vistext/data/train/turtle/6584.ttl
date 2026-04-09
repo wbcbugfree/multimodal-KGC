@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Thinking about your everyday life , since the COVID-19 / coronavirus pandemic , have you made any changes to your general lifestyle ? (as of May 31 , 2020)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Germany" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.71" ;
+    :yValue "Stayed at home more" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Washed hands more" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.61" ;
+    :yValue "Applied social distancing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Wear protective face masks outside" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Avoided public places like bars and restaurants" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Gone to the shops less" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.51" ;
+    :yValue "Travelled less" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Cancelled plans with family or friends" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Shopped online more" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Cleaned your house more" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Used less cash" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Avoided public transport" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Avoided certain shopping times" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Worked from home" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Reduced exercise regime" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "I have not made any changes to my lifestyle" ;
+    :belongsTo :Chart .

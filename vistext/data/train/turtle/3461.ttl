@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Companies that will lose most in the next 12 months due to the outbreak of coronavirus (COVID-19) in Poland in 2020 , by business sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business sector" .
+
+:YAxis a :Axis ;
+    :title "Share or respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tourism" ;
+    :yValue "0.75" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Gastronomy" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Shopping malls" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Luxury goods" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sport" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Transport and logistics" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Entertainment outside the house" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Automotive" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Marketing and promotion" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage distribution of coronavirus deaths in Spain as of May 18 , 2020 , by age and gender" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Years" .
+
+:YAxis a :Axis ;
+    :title "Woman" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0-9" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10-19" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20-29" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30-39" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40-49" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50-59" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60-69" ;
+    :yValue "0.109" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70-79" ;
+    :yValue "0.289" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80-89" ;
+    :yValue "0.399" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "> 89" ;
+    :yValue "0.145" ;
+    :belongsTo :Chart .

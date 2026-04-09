@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 biggest telecommunication companies in Denmark as of May 2020 , by number of employees" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "telecommunication companies" .
+
+:YAxis a :Axis ;
+    :title "Number of employees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "TDC A/S" ;
+    :yValue "1000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Telenor AS" ;
+    :yValue "1000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kemp & Lauritzen A/S" ;
+    :yValue "1000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "GlobalConnect A/S" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "TDC Telco ApS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Eltel Networks AS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dansk Kabel TV AS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Stofa AS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fibia PS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "HI3G Denmark ApS" ;
+    :yValue "350" ;
+    :belongsTo :Chart .

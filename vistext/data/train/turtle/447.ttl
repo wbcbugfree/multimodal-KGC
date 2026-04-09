@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Economic loss caused by major droughts in the United States from 1900 to 2016 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Period of drought" .
+
+:YAxis a :Axis ;
+    :title "Economic loss in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "June to December 2012(South-West regions, Mid-West)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "January to November 2011(Texas, Oklahoma, New Mexico, Arizona, Kansas, Louisiana)" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "July to August 2002(Midwest)" ;
+    :yValue "3.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "January to December 2014(San Joaquin Valley in California)" ;
+    :yValue "2.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "January to September 2015(California)" ;
+    :yValue "1.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "June 2000 to December 2002(South Carolina, Georgia)" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "July to December 1999(Kentucky, Maryland, Ohio)" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "January to July 1991(California)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "July 1991(Pennsylvania, Maryland)" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "October 2007 to June 2009(California, Georgia, Maryland)" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .

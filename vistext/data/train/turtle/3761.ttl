@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most successful movies at the box office in the United Kingdom (UK) as of November 2020 (in 1,000 GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Most successful movies" .
+
+:YAxis a :Axis ;
+    :title "Revenue in thousand GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "The Secret Garden" ;
+    :yValue "17.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Honest Thief" ;
+    :yValue "16.21" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "War Horse" ;
+    :yValue "13.87" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Two By Two: Overboard" ;
+    :yValue "12.48" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tenet" ;
+    :yValue "10.05" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Elf" ;
+    :yValue "8.61" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Pixie" ;
+    :yValue "8.24" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "A Christmas Gift From Bob" ;
+    :yValue "8.18" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Uncle Vanya" ;
+    :yValue "5.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cats & Dogs: Paws Unite" ;
+    :yValue "5.75" ;
+    :belongsTo :Chart .

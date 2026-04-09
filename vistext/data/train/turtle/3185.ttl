@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of active Airbnb bedrooms in the leading Airbnb markets as of September 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Number of active Airbnb bedrooms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "New York, NY" ;
+    :yValue "27965" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Los Angeles, CA" ;
+    :yValue "17967" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "San Francisco, CA" ;
+    :yValue "8790" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Miami, FL" ;
+    :yValue "7368" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "San Diego, CA" ;
+    :yValue "6290" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Chicago, IL" ;
+    :yValue "6153" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Austin, TX" ;
+    :yValue "6024" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Washington, DC" ;
+    :yValue "5784" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Seattle, WA" ;
+    :yValue "5601" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Boston, MA" ;
+    :yValue "5566" ;
+    :belongsTo :Chart .

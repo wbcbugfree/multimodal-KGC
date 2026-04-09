@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Gender distribution of journalists in print news media in the United States as of November 2017 , by news topic" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "news topic" .
+
+:YAxis a :Axis ;
+    :title "Female" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sports" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Technology and media" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "International news and politics" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Business and economy" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Arts and culture" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "U.S. elections" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "U.S. policy" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Legal" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Weather" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Crime and police" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Science and environment" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Religion" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Social and justice" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Education" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Entertainment" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Lifestyle and leisure" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Health" ;
+    :yValue "0.58" ;
+    :belongsTo :Chart .

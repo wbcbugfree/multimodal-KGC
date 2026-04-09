@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Spain : The largest cities in 2015 (in million residents)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Residents in million" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Madrid" ;
+    :yValue "3.14" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Barcelona" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Valencia" ;
+    :yValue "0.79" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Seville" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Zaragoza" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Málaga" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Murcia" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Palma, Majorca" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Las Palmas" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bilbao" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .

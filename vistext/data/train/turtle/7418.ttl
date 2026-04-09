@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular streaming services worldwide from November 2019 to March 2020 , by number of monthly visits (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Nov '19" .
+
+:YAxis a :Axis ;
+    :title "Platform" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1017.49" ;
+    :yValue "netflix.com" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "628.13" ;
+    :yValue "apple.com" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "141.42" ;
+    :yValue "hulu.com" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "85.78" ;
+    :yValue "cbc.ca" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "59.75" ;
+    :yValue "primevideo.com" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16.68" ;
+    :yValue "hbo.com" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4.72" ;
+    :yValue "crave.ca" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.08" ;
+    :yValue "disneyplus.com" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.43" ;
+    :yValue "kanopy.com" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "135.57" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .

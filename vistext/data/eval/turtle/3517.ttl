@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "TV shows with the most Facebook fans as of June 2020 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "TV show" .
+
+:YAxis a :Axis ;
+    :title "Number of Facebook fans in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "The Simpsons" ;
+    :yValue "62" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Spongebob Squarepants" ;
+    :yValue "51.11" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Family Guy" ;
+    :yValue "46.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "South Park" ;
+    :yValue "42.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tom and Jerry" ;
+    :yValue "41.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "House" ;
+    :yValue "37.39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "The Walking Dead" ;
+    :yValue "34.34" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "The Big Bang Theory" ;
+    :yValue "30.71" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Futurama" ;
+    :yValue "25.57" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Two and a Half Men" ;
+    :yValue "25.53" ;
+    :belongsTo :Chart .

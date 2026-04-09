@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of people self-employed in the United Kingdom in 3rd quarter 2020 , by industry (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of self-employed (in 1,000s)" .
+
+:YAxis a :Axis ;
+    :title "industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "811" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "602" ;
+    :yValue "Professional, scientific & technical activities" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "342" ;
+    :yValue "Human health & social work activities" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "334" ;
+    :yValue "Wholesale, retail & repair of motor vehicles" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "319" ;
+    :yValue "Administrative & support services" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "283" ;
+    :yValue "Education" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "264" ;
+    :yValue "Transport & storage" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "236" ;
+    :yValue "Information & communication" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "199" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "191" ;
+    :yValue "Agriculture, forestry, fishing, mining, energy & water" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "107" ;
+    :yValue "Accommodation and food services" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "101" ;
+    :yValue "Financial & insurance activities" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Real estate activities" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "Public admin & defence; social security" ;
+    :belongsTo :Chart .

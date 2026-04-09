@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Increase of APP daily active users (DAU) during Spring Festival in China in 2020 , under the impact of coronavirus epidemic (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "App Category" .
+
+:YAxis a :Axis ;
+    :title "DAU in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Short video" ;
+    :yValue "81.92" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "News" ;
+    :yValue "55.47" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Online video" ;
+    :yValue "45.55" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Weibo/social media" ;
+    :yValue "39.46" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Flight/shooting" ;
+    :yValue "32.33" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Instant messaging" ;
+    :yValue "27.32" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "MOBA" ;
+    :yValue "26.53" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Browser" ;
+    :yValue "21.39" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Search/download" ;
+    :yValue "16.18" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Leisure" ;
+    :yValue "12.05" ;
+    :belongsTo :Chart .

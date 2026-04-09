@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. share of revenue in the top ten international medical technology companies in 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "U.S. share of business" .
+
+:YAxis a :Axis ;
+    :title "Medical technology company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Medtronic, United States" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Boston Scientific, United States" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "Covidien, United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Johnson & Johnson, United States" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "GE, United States" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Becton Dickinson, United States" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Philips, Netherlands" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "Abbott, United States*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Siemens, Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Roche, Switzerland" ;
+    :belongsTo :Chart .

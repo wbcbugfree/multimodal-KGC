@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of young people contacting Childline in the United Kingdom (UK) in 2018/19 , by main concern" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of young people" .
+
+:YAxis a :Axis ;
+    :title "main concern" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "71283" ;
+    :yValue "Mental/emotional health conditions" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26471" ;
+    :yValue "Family relationships" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "24447" ;
+    :yValue "Suicidal thoughts or feelings" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15851" ;
+    :yValue "Bullying/cyberbullying" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13406" ;
+    :yValue "Self-harm" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12331" ;
+    :yValue "Sex/relationships/puberty/sexual health" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12331" ;
+    :yValue "Friendship issues" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "10029" ;
+    :yValue "Problems in schools/education" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8841" ;
+    :yValue "Sexual abuse/online sexual abuse" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6593" ;
+    :yValue "Physical abuse" ;
+    :belongsTo :Chart .

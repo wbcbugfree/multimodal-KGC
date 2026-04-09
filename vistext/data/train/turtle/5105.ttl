@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's largest hydroelectric dams as of 2019 , based on generating capacity (in gigawatts)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Name (location)" .
+
+:YAxis a :Axis ;
+    :title "Generating capacity in gigawatts" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Three Gorges Dam (Yangtze River, China)" ;
+    :yValue "22.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Itaipu Dam (Paraná River, Brazil/Paraguay)" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Xiluodu (Jinsha River, China)" ;
+    :yValue "13.86" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Guri (Caroní River, Venezuela)" ;
+    :yValue "10.24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tucuruí (Tocantins River, Brazil)" ;
+    :yValue "8.37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Grand Coulee (Columbia River, United States)" ;
+    :yValue "6.81" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Longtan Dam (Hongshui River, China)" ;
+    :yValue "6.43" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Xiangjiaba (Jinsha River, China)" ;
+    :yValue "6.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Krasnoyarsk (Yensei River, Russia)" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Robert-Bourassa (La Grande, Canada)" ;
+    :yValue "5.62" ;
+    :belongsTo :Chart .

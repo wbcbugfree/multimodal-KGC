@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of fatalities caused by natural disasters in the United States from 1900 to 2016 , by disaster type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:YAxis a :Axis ;
+    :title "Disaster type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "16134" ;
+    :yValue "Tropical cyclone" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8458" ;
+    :yValue "General flood" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8185" ;
+    :yValue "Convective storm" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4801" ;
+    :yValue "Heat wave" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2826" ;
+    :yValue "Ground movement" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1249" ;
+    :yValue "Forest fire" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "658" ;
+    :yValue "Landslide" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "650" ;
+    :yValue "Riverine flood" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "381" ;
+    :yValue "Cold wave" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "217" ;
+    :yValue "Viral disease" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "206" ;
+    :yValue "Flash flood" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Parasitic disease" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "90" ;
+    :yValue "Ash fall" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "72" ;
+    :yValue "Coastal flood" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "61" ;
+    :yValue "Tsunami" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "61" ;
+    :yValue "Extra-tropical storm" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Land fire (Brush, Bush, Pastur)" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Severe winter conditions" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Drought" ;
+    :belongsTo :Chart .

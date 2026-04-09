@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest grossing actors worldwide in 2018 , by global box office results (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "actors" .
+
+:YAxis a :Axis ;
+    :title "Annual box office grosses in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chris Hemsworth" ;
+    :yValue "2100" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Robert Downey, Jr." ;
+    :yValue "2000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chris Evans" ;
+    :yValue "2000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Scarlett Johansson" ;
+    :yValue "2000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mark Ruffalo" ;
+    :yValue "2000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Michael B. Jordan" ;
+    :yValue "1500" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chadwick Boseman" ;
+    :yValue "1350" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Chris Pratt" ;
+    :yValue "1350" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bryce Dallas Howard" ;
+    :yValue "1300" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tom Hardy" ;
+    :yValue "855.2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Tom Cruise" ;
+    :yValue "791" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Jason Mamoa" ;
+    :yValue "748.8" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Amber Heard" ;
+    :yValue "748.8" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Ryan Reynolds" ;
+    :yValue "741.5" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Dwayne Johnson" ;
+    :yValue "732.1" ;
+    :belongsTo :Chart .

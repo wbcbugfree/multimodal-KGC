@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Military spending by world region in 2019 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Military spending in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "world region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "754" ;
+    :yValue "North America" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "251" ;
+    :yValue "Western Europe" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "88.1" ;
+    :yValue "South Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Eastern Europe" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "52.8" ;
+    :yValue "South America" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "42.8" ;
+    :yValue "East Asia*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "40.5" ;
+    :yValue "South East Asia**" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "31.5" ;
+    :yValue "Central Europe" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Oceania" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "23.5" ;
+    :yValue "North Africa" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "17.7" ;
+    :yValue "Sub-Saharan Africa***" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "8.7" ;
+    :yValue "Central America and Caribbean*** *" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2.2" ;
+    :yValue "Central Asia* ****" ;
+    :belongsTo :Chart .

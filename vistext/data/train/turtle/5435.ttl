@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "NCAA March Madness basketball tournament TV ratings in 2014 , selected games" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "group name and match" .
+
+:YAxis a :Axis ;
+    :title "TV ratings" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Championship Game - Kentucky vs. Connecticut (Apr. 7)" ;
+    :yValue "12.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Final 4 - Kentucky vs. Wisconsin (Apr. 5)" ;
+    :yValue "9.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Final 4 - Connecticut vs. Florida (Apr. 5)" ;
+    :yValue "6.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Elite 8 - Kentucky vs. Michigan (Mar. 30)" ;
+    :yValue "8.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Elite 8 - Connecticut vs. Michigan St. (Mar. 30)" ;
+    :yValue "6.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Elite 8 - Wisconsin vs. Arizona (Mar. 29)" ;
+    :yValue "5.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Elite 8 - Dayton vs. Florida (Mar. 29)" ;
+    :yValue "4.3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sweet 16 - Kentucky vs. Louisville (Mar. 28)" ;
+    :yValue "5.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sweet 16 - Tennessee vs. Michigan (Mar. 28)" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sweet 16 - UCLA vs. Florida (Mar. 27)" ;
+    :yValue "4.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sweet 16 - Dayton vs. Stanford (Mar. 27)" ;
+    :yValue "4.6" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Sweet 16 - Michigan St. vs. Virginia (Mar. 28)" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Sweet 16 - SDSU vs. Arizona (Mar. 27)" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Sweet 16 - Baylor vs. Wisconsin (Mar. 27)" ;
+    :yValue "1.9" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Sweet 16 - Connecticut vs. Iowa St. (Mar. 28)" ;
+    :yValue "1.8" ;
+    :belongsTo :Chart .

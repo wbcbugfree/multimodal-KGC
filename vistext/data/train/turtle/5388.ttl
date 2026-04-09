@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "France : National debt in relation to gross domestic product (GDP) from 2015 to 2025" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "National debt to GDP ratio" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2025*" ;
+    :yValue "1.2331" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2024*" ;
+    :yValue "1.2227" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2023*" ;
+    :yValue "1.2127" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2022*" ;
+    :yValue "1.1996" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2021*" ;
+    :yValue "1.1857" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2020*" ;
+    :yValue "1.1874" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2019" ;
+    :yValue "0.9812" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2018" ;
+    :yValue "0.9806" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "0.9832" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2016" ;
+    :yValue "0.9796" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2015" ;
+    :yValue "0.9558" ;
+    :belongsTo :Chart .

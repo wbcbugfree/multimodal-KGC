@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The 10 most valuable corporate brands in Europe in 2019 (in billion euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in billion euros" .
+
+:YAxis a :Axis ;
+    :title "Corporate brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "75.96" ;
+    :yValue "LVMH Group" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "39.05" ;
+    :yValue "Nestlé" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "38.15" ;
+    :yValue "AB Inbev" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "28.84" ;
+    :yValue "Unilever" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "25.48" ;
+    :yValue "Deutsche Telekom" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "24.62" ;
+    :yValue "British American Tobacco" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "24.57" ;
+    :yValue "Volkswagen" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "24.08" ;
+    :yValue "Christian Dior" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "23.9" ;
+    :yValue "Heineken" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "23.49" ;
+    :yValue "Novartis" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "22.41" ;
+    :yValue "Daimler" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "19.61" ;
+    :yValue "Diageo" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "19.6" ;
+    :yValue "Vodafone" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "18.05" ;
+    :yValue "BMW" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "17.36" ;
+    :yValue "BASF" ;
+    :belongsTo :Chart .

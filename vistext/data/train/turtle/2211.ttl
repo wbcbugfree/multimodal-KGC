@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of private equity investments in Europe in 2016 , by industry (in 1,000 euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "Investments in 1,000 euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Consumer goods & services" ;
+    :yValue "14271131" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "ICT (communications, computer and electronics)" ;
+    :yValue "10764878" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Business products & services" ;
+    :yValue "10605576" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Biotech and healthcare" ;
+    :yValue "6885113" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Energy & environment" ;
+    :yValue "2976679" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Financial & insurance activities" ;
+    :yValue "2687036" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chemicals & materials" ;
+    :yValue "1649452" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "1061881" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Transportation" ;
+    :yValue "811797" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Real estate" ;
+    :yValue "450953" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Agriculture" ;
+    :yValue "193417" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "1085533" ;
+    :belongsTo :Chart .

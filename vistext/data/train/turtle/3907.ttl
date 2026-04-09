@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The cities and municipalities with the highest population in Belgium in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of residents" .
+
+:YAxis a :Axis ;
+    :title "city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "525935" ;
+    :yValue "Antwerpen" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "262219" ;
+    :yValue "Ghent" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "202267" ;
+    :yValue "Charlerloi" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "197355" ;
+    :yValue "Liège" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "181726" ;
+    :yValue "Brussels City*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "133309" ;
+    :yValue "Schaarbeek*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "119714" ;
+    :yValue "Anderlecht*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "118325" ;
+    :yValue "Bruges" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "110779" ;
+    :yValue "Namur" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "101624" ;
+    :yValue "Leuven" ;
+    :belongsTo :Chart .

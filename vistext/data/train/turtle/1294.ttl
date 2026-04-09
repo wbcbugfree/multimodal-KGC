@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average income tax paid per household in the United Kingdom in 2018/19 by decile group (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Decile group" .
+
+:YAxis a :Axis ;
+    :title "Income tax in GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Top" ;
+    :yValue "45911" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9th" ;
+    :yValue "17619" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8th" ;
+    :yValue "8617" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7th" ;
+    :yValue "5535" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6th" ;
+    :yValue "4761" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5th" ;
+    :yValue "3343" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4th" ;
+    :yValue "2424" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3rd" ;
+    :yValue "1334" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2nd" ;
+    :yValue "838" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bottom" ;
+    :yValue "523" ;
+    :belongsTo :Chart .

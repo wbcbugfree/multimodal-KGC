@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading national soccer team players in Brazil as of November 2020 , by market value (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "player name and position" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "140.8" ;
+    :yValue "Neymar (LW)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "79.2" ;
+    :yValue "Roberto Firmino (CF)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Marquinhos (CB)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "71.5" ;
+    :yValue "Casemiro (DM)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Philippe Coutinho (AM)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Fabinho (DM)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Richarlison (CF)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "61.6" ;
+    :yValue "Ederson (GK)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "55" ;
+    :yValue "Diego Carlos (CB)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "55" ;
+    :yValue "Vinícius Júnior (LW)" ;
+    :belongsTo :Chart .

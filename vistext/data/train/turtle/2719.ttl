@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Net sales of the largest global home improvement products companies in 2010 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Net sales in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Company name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "8.41" ;
+    :yValue "Stanley Black & Decker" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "7.59" ;
+    :yValue "Masco" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "7.14" ;
+    :yValue "Fortune Brands Home & Security" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5.32" ;
+    :yValue "Mohawk Industries" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4.68" ;
+    :yValue "Kohler*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.49" ;
+    :yValue "Husqvarna Group" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.39" ;
+    :yValue "TTI (Techtronic Industries)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.14" ;
+    :yValue "Scotts Miracle-Gro" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "JELD-WEN*" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.77" ;
+    :yValue "Armstrong" ;
+    :belongsTo :Chart .

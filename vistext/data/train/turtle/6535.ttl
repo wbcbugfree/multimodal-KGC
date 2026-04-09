@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Age structure of the population in the largest metropolitan areas in the U.S. 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "45 to 64 years" .
+
+:YAxis a :Axis ;
+    :title "largest metropolitan areas in the US" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5022623" ;
+    :yValue "New York - Northern New Jersey - Long Island, NY-NJ-PA" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3065350" ;
+    :yValue "Los Angeles - Long Beach - Santa Ana, CA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2415975" ;
+    :yValue "Chicago - Naperville - Joliet, IL-IN-WI" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1489928" ;
+    :yValue "Dallas - Fort Worth - Arlington, TX" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1593846" ;
+    :yValue "Philadelphia - Camden - Wilmington, PA-NJ-DE-MD" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1401077" ;
+    :yValue "Houston - Sugar Land - Baytown, TX" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1420578" ;
+    :yValue "Miami - Fort Lauderdale - Pompano Beach, FL" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1436495" ;
+    :yValue "Washington - Arlington - Alexandria, DC-VA-MD-WV" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1342201" ;
+    :yValue "Atlanta - Sandy Springs - Marietta, GA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1245644" ;
+    :yValue "Boston - Cambridge - Quincy, MA-NH" ;
+    :belongsTo :Chart .

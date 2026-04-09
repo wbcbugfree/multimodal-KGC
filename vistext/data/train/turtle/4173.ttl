@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of arson offenses in the United States in 2019 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type of property" .
+
+:YAxis a :Axis ;
+    :title "Number of offenses" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "32358" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Structures (total)" ;
+    :yValue "13969" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Single occupancy residential" ;
+    :yValue "6251" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other residential" ;
+    :yValue "2400" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Storage" ;
+    :yValue "713" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Industrial/manufacturing" ;
+    :yValue "137" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other commercial" ;
+    :yValue "1572" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Community/public" ;
+    :yValue "1229" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other structure" ;
+    :yValue "1667" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mobiles (total)" ;
+    :yValue "7522" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Motor vehicles" ;
+    :yValue "7068" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other mobile" ;
+    :yValue "454" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "10867" ;
+    :belongsTo :Chart .

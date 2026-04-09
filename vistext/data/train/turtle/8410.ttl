@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of executives that said select areas would be most impactful to current and future real-world evidence (RWE) as of 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Current" .
+
+:YAxis a :Axis ;
+    :title "opinion of executives" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Better understanding subpopulations and heterogeneity of treatment effects" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Understanding burdern of disease" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Monitoring patient safety (i.e., pharmacovigilance)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Comparative effectiveness research" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Supporting regulatory submission and or label expansion" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Accelerating the execution of clinical trials using RWD as a control arm for clinical trials" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Optimizing the design of clinical trials" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Identifying new drug targets/areas of unmet needs" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Design of value-based contracting schemes" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Biomarker hypothesis generation/validation" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Supporting patient engagement programs" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Measuring sales performance, targeting, and marketing metrics" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Informing business development and portfolio strategy (therapeutic area assessment)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Informing pricing strategies" ;
+    :belongsTo :Chart .

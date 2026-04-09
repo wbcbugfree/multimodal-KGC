@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Enterprise-value-to-EBITDA (EV/EBITDA) of leading online travel companies worldwide from 2019 to 2021" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Factor" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Despegar.com (Argentina)" ;
+    :yValue "29.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Holidaycheck (Germany)" ;
+    :yValue "28.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Trip.com (China)" ;
+    :yValue "22.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "On The Beach (United Kingdom)" ;
+    :yValue "15.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Booking.com (United States)" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Webjet (Australia)" ;
+    :yValue "12.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Trivago (Germany)" ;
+    :yValue "10.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Travelzoo (United States)" ;
+    :yValue "9.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Expedia (United States)" ;
+    :yValue "8.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Edreams Odigeo (Luxembourg)" ;
+    :yValue "6.5" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Lastminute.com (Netherlands)" ;
+    :yValue "6.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Hostelworld (Ireland)" ;
+    :yValue "5.9" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths caused by alcoholic liver disease in Scotland in 2018 , by gender and age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "age group" .
+
+:YAxis a :Axis ;
+    :title "Men" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "25-29" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "30-34" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "35-39" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "40-44" ;
+    :yValue "31" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "45-49" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50-54" ;
+    :yValue "55" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "55-59" ;
+    :yValue "82" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "60-64" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "65-69" ;
+    :yValue "79" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "70-74" ;
+    :yValue "60" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "75-79" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "80-84" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "85 and over" ;
+    :yValue "2" ;
+    :belongsTo :Chart .

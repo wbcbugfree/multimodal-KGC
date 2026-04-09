@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to German M & A in 2016 , by deal count" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "M&A deal count" .
+
+:YAxis a :Axis ;
+    :title "Financial advisory firms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "42" ;
+    :yValue "Rothschild" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "KPMG" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Deloitte" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "EY" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "PwC" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Globalscope Partners" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Lincoln International" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "23" ;
+    :yValue "JPMorgan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Goldman Sachs" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Deutsche Bank" ;
+    :belongsTo :Chart .

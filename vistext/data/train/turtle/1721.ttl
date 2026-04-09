@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the most successful films at cinemas in Sweden in 2019 , by number of admissions" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of admissions" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1127362" ;
+    :yValue "The Lion King" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "770757" ;
+    :yValue "Avengers: Endgame" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "662691" ;
+    :yValue "Joker" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "513700" ;
+    :yValue "Star Wars: The Rise of Skywalker" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "498528" ;
+    :yValue "Frozen 2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "360422" ;
+    :yValue "How to Train Your Dragon: The Hidden World" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "358708" ;
+    :yValue "Aladdin" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "336549" ;
+    :yValue "Once Upon a Time in Hollywood" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "328868" ;
+    :yValue "Spider-Man: Far From Home" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "328367" ;
+    :yValue "Captain Marvel" ;
+    :belongsTo :Chart .

@@ -23,7 +23,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from common import get_api_key  # noqa: E402
-from common.paths import vistext_dir  # noqa: E402
+from common.paths import vistext_dir, vistext_images_dir, vistext_labels_dir  # noqa: E402
 
 
 DEFAULT_MODEL = "gemini-3-flash-preview"
@@ -43,8 +43,8 @@ EXAMPLE_USER_PROMPT = (
 )
 
 VIS_TEXT_DIR = vistext_dir()
-IMAGES_ROOT = VIS_TEXT_DIR / "data" / "images"
-LABELS_ROOT = VIS_TEXT_DIR / "data" / "labels"
+IMAGES_ROOT = vistext_images_dir("test")
+LABELS_ROOT = vistext_labels_dir("test")
 PROMPT_ROOT = VIS_TEXT_DIR / "prompt_text"
 GROUND_TRUTH_ROOT = PROMPT_ROOT / "ground_truth_val"
 

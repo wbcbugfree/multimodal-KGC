@@ -1,0 +1,47 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Compensation of Snap 's leading executive officers from 2015 to 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Snap\\'s leading executive officers" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Evan Spiegel (CEO)" ;
+    :yValue "1.67" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Derek Andersen (Chief Financial Officer)" ;
+    :yValue "9.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jerry Hunter (SVP Engineering)" ;
+    :yValue "3.38" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Rebecca Morrow (Chief Accounting Officer)" ;
+    :yValue "4.33" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Michael O’Sullivan (General Counsel)" ;
+    :yValue "9.08" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tim Stone (Former Chief Financial Officer)" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lara Sweet (Former interim Chief Financial Officer)" ;
+    :yValue "9.05" ;
+    :belongsTo :Chart .

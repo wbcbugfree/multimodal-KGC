@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of students enrolled in postsecondary institutions in Canada in 2017/18 , by province" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Province" .
+
+:YAxis a :Axis ;
+    :title "Number of students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "864798" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "534054" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "286914" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "194010" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "62829" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "57123" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "53490" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "27057" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "25746" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "6450" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Territories" ;
+    :yValue "3534" ;
+    :belongsTo :Chart .

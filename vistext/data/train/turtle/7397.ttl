@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population of the world in 2020 , by age group and world region (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "World region" .
+
+:YAxis a :Axis ;
+    :title "Northern America" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0-9" ;
+    :yValue "43.71" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10-19" ;
+    :yValue "46.32" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20-29" ;
+    :yValue "51.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30-39" ;
+    :yValue "49.96" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40-49" ;
+    :yValue "45.21" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50-59" ;
+    :yValue "47.32" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60-69" ;
+    :yValue "43.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70-79" ;
+    :yValue "27.11" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80-89" ;
+    :yValue "11.71" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "90-99" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "100 and older" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .

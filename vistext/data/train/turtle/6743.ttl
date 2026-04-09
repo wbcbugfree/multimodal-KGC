@@ -1,0 +1,27 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Canon 's net sales by segment worldwide from 2006 to 2019 (in billion Yen)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Office" .
+
+:YAxis a :Axis ;
+    :title "Medical system" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1702.6" ;
+    :yValue "437.982" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1784.265" ;
+    :yValue "437.034" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1865.93" ;
+    :yValue "435.645" ;
+    :belongsTo :Chart .

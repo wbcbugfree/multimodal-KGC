@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Atlanta Braves all-time wins leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "human" .
+
+:YAxis a :Axis ;
+    :title "Number of games won" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Warren Spahn" ;
+    :yValue "356" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Kid Nichols" ;
+    :yValue "330" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Phil Niekro" ;
+    :yValue "268" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tom Glavine" ;
+    :yValue "244" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "John Smoltz" ;
+    :yValue "210" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Greg Maddux" ;
+    :yValue "194" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lew Burdette" ;
+    :yValue "179" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Vic Willis" ;
+    :yValue "151" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tommy Bond" ;
+    :yValue "149" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "John Clarkson" ;
+    :yValue "149" ;
+    :belongsTo :Chart .

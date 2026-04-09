@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Price for U.S. coffee from Hawaii and Puerto Rico between 2000/2001 and 2018/2019 (in U.S. dollars per pound)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Puerto Rico**" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.99" ;
+    :yValue "2003/2004" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.94" ;
+    :yValue "2004/2005" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2.66" ;
+    :yValue "2005/2006" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.57" ;
+    :yValue "2006/2007" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.67" ;
+    :yValue "2007/2008" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.19" ;
+    :yValue "2008/2009" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.36" ;
+    :yValue "2009/2010" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.37" ;
+    :yValue "2010/2011" ;
+    :belongsTo :Chart .

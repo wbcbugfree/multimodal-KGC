@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of active physicians in Alaska in 2020 , by specialty area" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of physicians" .
+
+:YAxis a :Axis ;
+    :title "Specialty area" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "107" ;
+    :yValue "Psychiatry" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "82" ;
+    :yValue "Surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "82" ;
+    :yValue "Anesthesiologists" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "127" ;
+    :yValue "Emergency medicine" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Radiology" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Cardiology" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Oncology (cancer)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Endocrinology, diabetes, & metabolism" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "309" ;
+    :yValue "All other specialities" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "835" ;
+    :yValue "Total specialty" ;
+    :belongsTo :Chart .

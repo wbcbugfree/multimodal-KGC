@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sony sales by business segment worldwide from 2011 to 2013 (in million U.S. dollars) , by quarter" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Pictures" .
+
+:YAxis a :Axis ;
+    :title "Quarter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2125.15" ;
+    :yValue "Q3 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1689.1" ;
+    :yValue "Q2 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1509.55" ;
+    :yValue "Q1 '13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1970.3" ;
+    :yValue "Q4 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1984.55" ;
+    :yValue "Q3 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1548.5" ;
+    :yValue "Q2 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1457.3" ;
+    :yValue "Q1 '12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1742.66" ;
+    :yValue "Q4 '11" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1525.25" ;
+    :yValue "Q3 '11" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1608.64" ;
+    :yValue "Q2 '11" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1371.79" ;
+    :yValue "Q1 '11" ;
+    :belongsTo :Chart .

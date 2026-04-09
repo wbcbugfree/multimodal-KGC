@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average monthly costs of buying a home in the United Kingdom (UK) in 2019 , by region (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average monthly savings in GBP" .
+
+:YAxis a :Axis ;
+    :title "region of the United Kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1378" ;
+    :yValue "Greater London" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1008" ;
+    :yValue "South East" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "765" ;
+    :yValue "South West" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "736" ;
+    :yValue "East Anglia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "728" ;
+    :yValue "United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "621" ;
+    :yValue "West Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "620" ;
+    :yValue "East Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "568" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "545" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "544" ;
+    :yValue "Yorkshire and the Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "536" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "468" ;
+    :yValue "North of England" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "437" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .

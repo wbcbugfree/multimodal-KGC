@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cheapest airlines in the world as of June 2014 , by average ticket price" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "airline" .
+
+:YAxis a :Axis ;
+    :title "Average price per route in Euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Firefly" ;
+    :yValue "30.49" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "VivaAerobus" ;
+    :yValue "47.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Air Asia" ;
+    :yValue "49.63" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "SpiceJet" ;
+    :yValue "52.24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "FastJet" ;
+    :yValue "52.95" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Onur Air" ;
+    :yValue "55.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Atlasjet" ;
+    :yValue "62.49" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tigerair" ;
+    :yValue "63.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pegasus Airlines" ;
+    :yValue "64.64" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ryanair" ;
+    :yValue "65.67" ;
+    :belongsTo :Chart .

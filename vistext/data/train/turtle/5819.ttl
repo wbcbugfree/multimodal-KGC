@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Activities performed online by individuals in Great Britain in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.85" ;
+    :yValue "Sending/receiving emails" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.81" ;
+    :yValue "Finding information about goods or services" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.76" ;
+    :yValue "Internet banking" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.71" ;
+    :yValue "Using instant messaging services (eg Skype or WhatsApp)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Social networking (eg Facebook or Twitter)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Reading online news, newspapers or magazines" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Listening to or downloading music" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Looking for health-related information (eg injury, disease, nutrition, improving health etc)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Making video or voice calls over the internet (eg via Skype or Facetime)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Selling goods or services over the internet" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Playing or downloading games" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Making a medical appointment" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Using online health services (website/app)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top digital health deals worldwide based on invested funding in 2019 , by receiving company (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (subsector)" .
+
+:YAxis a :Axis ;
+    :title "Received funding in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bright Health" ;
+    :yValue "635" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Babylon Health" ;
+    :yValue "550" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Clover Health" ;
+    :yValue "500" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Gympass" ;
+    :yValue "300" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tencent Trusted Doctor" ;
+    :yValue "250" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "PharmEasy" ;
+    :yValue "220" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Collective Health" ;
+    :yValue "205" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Capsule" ;
+    :yValue "200" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "iFit" ;
+    :yValue "200" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tempus" ;
+    :yValue "200" ;
+    :belongsTo :Chart .

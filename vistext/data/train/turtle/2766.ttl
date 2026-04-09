@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of Ashok Leyland engines from financial year 2010 to 2020 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Sales volume in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "FY 2020" ;
+    :yValue "20.36" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "FY 2019" ;
+    :yValue "21.86" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "FY 2018*" ;
+    :yValue "18.75" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "FY 2017" ;
+    :yValue "16.49" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "FY 2016" ;
+    :yValue "15.55" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "FY 2015" ;
+    :yValue "14.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "FY 2014" ;
+    :yValue "17.44" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "FY 2013" ;
+    :yValue "21.76" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "FY 2012" ;
+    :yValue "16.17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "FY 2011" ;
+    :yValue "17.38" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "FY 2010" ;
+    :yValue "19.05" ;
+    :belongsTo :Chart .

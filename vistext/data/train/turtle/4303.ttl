@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Causes of death in the Netherlands in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of deaths" .
+
+:YAxis a :Axis ;
+    :title "Cause of death" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "46864" ;
+    :yValue "Neoplasms" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "37433" ;
+    :yValue "Diseases of the circulatory system" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12607" ;
+    :yValue "Diseases of the respiratory system" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12725" ;
+    :yValue "Mental and behavioural disorders" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8775" ;
+    :yValue "Diseases of the nervous system" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8671" ;
+    :yValue "External causes of injury and poisoning" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7126" ;
+    :yValue "Symptoms, signs and ill-defined conditions" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4681" ;
+    :yValue "Diseases of the digestive system" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3523" ;
+    :yValue "Endocrine, nutritional and metabolic diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3338" ;
+    :yValue "Diseases of the genitourinary system" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "3296" ;
+    :yValue "Infectious and parasitic diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1089" ;
+    :yValue "Diseases of the musculoskeletal system and connective tissue" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "564" ;
+    :yValue "Blood/bloodforming organs and immune mechanism diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "503" ;
+    :yValue "Congenital anomalies" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "361" ;
+    :yValue "Conditions originating in the perinatal period" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "320" ;
+    :yValue "Diseases of the skin and subcutaneous tissue" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Complications of pregnancy, childbirth and the puerperium" ;
+    :belongsTo :Chart .

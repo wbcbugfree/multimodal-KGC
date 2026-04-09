@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest Salvadoran-American population groups in the United States , by county 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "county of Texas" .
+
+:YAxis a :Axis ;
+    :title "Population number" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Los Angeles County, CA" ;
+    :yValue "358825" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Harris County, TX" ;
+    :yValue "123049" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Montgomery County, MD" ;
+    :yValue "52615" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Suffolk County, NY" ;
+    :yValue "52315" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Prince George's County, MD" ;
+    :yValue "47355" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nassau County, NY" ;
+    :yValue "47180" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fairfax County, VA" ;
+    :yValue "43566" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dallas County, TX" ;
+    :yValue "42345" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Prince William County, VA" ;
+    :yValue "27269" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "San Bernardino County, CA" ;
+    :yValue "25056" ;
+    :belongsTo :Chart .

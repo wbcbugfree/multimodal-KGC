@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of coronavirus (COVID-19) deaths in Canada as of January 5 , 2021 , by province or territory" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "Number of deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Canada (total)" ;
+    :yValue "16233" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "8441" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "4730" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "1168" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "954" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "695" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "165" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Yukon" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

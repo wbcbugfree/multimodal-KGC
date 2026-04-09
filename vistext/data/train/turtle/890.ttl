@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total Household Final Consumption Expenditure at current market prices of Scotland in 2018 (in million GBP) , by purpose" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "HFCE in million GBP" .
+
+:YAxis a :Axis ;
+    :title "purpose" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "24662" ;
+    :yValue "Housing" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14074" ;
+    :yValue "Transport" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12284" ;
+    :yValue "Miscellaneous" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "11469" ;
+    :yValue "Recreation and culture" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10134" ;
+    :yValue "Restaurants and hotels" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8965" ;
+    :yValue "Food and drink" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5884" ;
+    :yValue "Clothing and footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5574" ;
+    :yValue "Household goods and services" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5245" ;
+    :yValue "Alcohol, tobacco and narcotics" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2026" ;
+    :yValue "Communication" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1737" ;
+    :yValue "Health" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "608" ;
+    :yValue "Education" ;
+    :belongsTo :Chart .

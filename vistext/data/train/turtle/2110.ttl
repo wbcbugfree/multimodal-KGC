@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most-followed creators on TikTok worldwide as of May 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "TikTok content creator" .
+
+:YAxis a :Axis ;
+    :title "Number of followers in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Charli d’Amelio" ;
+    :yValue "59.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Zach King" ;
+    :yValue "43.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Loren Gray" ;
+    :yValue "43.63" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Addison Rae" ;
+    :yValue "42.72" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Riyaz" ;
+    :yValue "39.84" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "BabyAriel" ;
+    :yValue "33.26" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Spencer X" ;
+    :yValue "30.99" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Faisal shaikh" ;
+    :yValue "28.47" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Brent Rivera" ;
+    :yValue "28.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "GIL CROES" ;
+    :yValue "27.37" ;
+    :belongsTo :Chart .

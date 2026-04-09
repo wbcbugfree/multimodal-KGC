@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading species groups in global aquaculture production in 2018 (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Production in thousand metric tons" .
+
+:YAxis a :Axis ;
+    :title "species group" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "29225" ;
+    :yValue "Carps, barbels and other cyprinids" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10667" ;
+    :yValue "Miscellaneous freshwater fishes" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6031" ;
+    :yValue "Tilapias and other cichlids" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6004" ;
+    :yValue "Shrimps, prawns" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5995" ;
+    :yValue "Oysters" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5578" ;
+    :yValue "Clams, cockles, arkshells" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3556" ;
+    :yValue "Salmons, trouts, smelts" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2981" ;
+    :yValue "Freshwater crustaceans" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2136" ;
+    :yValue "Scallops, pectens" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2113" ;
+    :yValue "Mussels" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "768" ;
+    :yValue "Marine fishes not identified" ;
+    :belongsTo :Chart .

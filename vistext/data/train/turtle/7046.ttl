@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Rates of reported cases of gonorrhea in the United States in 2018 , by age and gender (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Men" .
+
+:YAxis a :Axis ;
+    :title "Age in years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4.8" ;
+    :yValue "10-14" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "320.5" ;
+    :yValue "15-19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "720.9" ;
+    :yValue "20-24" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "674" ;
+    :yValue "25-29" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "481.2" ;
+    :yValue "30-34" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "316.1" ;
+    :yValue "35-39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "200.5" ;
+    :yValue "40-44" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "120" ;
+    :yValue "45-54" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "51.3" ;
+    :yValue "55-64" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "above 65" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "212.8" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .

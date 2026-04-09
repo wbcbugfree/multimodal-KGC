@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Median full time gross weekly pay of the highest paid occupations in the United Kingdom (UK) as of April 2020 (in British pounds)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Median full time gross weekly pay in GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chief executives and senior officials" ;
+    :yValue "1538.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Marketing and sales directors" ;
+    :yValue "1437.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Legal professionals n.e.c." ;
+    :yValue "1430.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Information technology and telecommunications directors" ;
+    :yValue "1364.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Advertising and public relations directors" ;
+    :yValue "1317.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Financial managers and directors" ;
+    :yValue "1227.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Medical practitioners" ;
+    :yValue "1200.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Senior professionals of educational establishments" ;
+    :yValue "1133.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Senior police officers" ;
+    :yValue "1108.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Train and tram drivers" ;
+    :yValue "1061.9" ;
+    :belongsTo :Chart .

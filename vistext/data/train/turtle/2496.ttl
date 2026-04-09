@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Colorado Rockies all-time games played leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of games played" .
+
+:YAxis a :Axis ;
+    :title "leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2247" ;
+    :yValue "Todd Helton" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1247" ;
+    :yValue "Carlos Gonzalez" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1170" ;
+    :yValue "Larry Walker" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1119" ;
+    :yValue "Charlie Blackmon" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1098" ;
+    :yValue "Vinny Castilla" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1048" ;
+    :yValue "Troy Tulowitzki" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1031" ;
+    :yValue "Nolan Arenado" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1018" ;
+    :yValue "Dante Bichette" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "918" ;
+    :yValue "DJ LeMahieu" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "816" ;
+    :yValue "Brad Hawpe" ;
+    :belongsTo :Chart .

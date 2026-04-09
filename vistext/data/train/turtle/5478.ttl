@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most Grammy Award-nominated individuals of all time as of 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of Grammy Awards nominations" .
+
+:YAxis a :Axis ;
+    :title "Most Grammy Award-winning individuals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "80" ;
+    :yValue "Quincy Jones" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "78" ;
+    :yValue "Paul McCartney*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Jay-Z**" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Georg Solti, Stevie Wonder" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "72" ;
+    :yValue "Henry Mancini" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "71" ;
+    :yValue "John Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "Beyoncé***" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Kanye West" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "67" ;
+    :yValue "Pierre Boulez" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "65" ;
+    :yValue "Chick Corea" ;
+    :belongsTo :Chart .

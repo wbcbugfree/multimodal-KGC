@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of registered players in the Korean Basketball League (KBL) in South Korea for the 20/21 season , by team" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "basketball team" .
+
+:YAxis a :Axis ;
+    :title "Number of registered players" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Seoul SK Knights" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jeonju KCC Egis" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Seoul Samsung Thunders" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Changwon LG Sakers" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Busan KT Sonic Boom" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hyundai Mobis Phoebus" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Incheon Electroland Elephants" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wonju DB Promy" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Anyang KGC" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Goyang Orion Orions" ;
+    :yValue "14" ;
+    :belongsTo :Chart .

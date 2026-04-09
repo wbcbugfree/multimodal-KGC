@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Have you ever bought directly from the manufacturer online ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Product category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.51" ;
+    :yValue "Clothes and footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Consumer electronics and computers" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Books, music, movies and video games" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Household appliances" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Health and beauty (cosmetics)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Toys" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Jewelry/watches" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Furniture and homeware" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Sports equipment/outdoor" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Do-it.yourdelf/home improvement" ;
+    :belongsTo :Chart .

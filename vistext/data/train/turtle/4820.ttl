@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading B2B media and business information companies worldwide in 2016 , by revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "RELX Group" ;
+    :yValue "2280" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Alibaba Group" ;
+    :yValue "1605" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "International Data Group" ;
+    :yValue "1573" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "UBM" ;
+    :yValue "1170" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The Hearst Corporation" ;
+    :yValue "828" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Informa" ;
+    :yValue "808" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Daily Mail and General Trust" ;
+    :yValue "738" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "S&P Global" ;
+    :yValue "725" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "CNET Networks" ;
+    :yValue "630" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nikkei" ;
+    :yValue "480" ;
+    :belongsTo :Chart .

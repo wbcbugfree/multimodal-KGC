@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 retailers of Europe in 2018 , based on worldwide retail sales (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Leading 10 retailers of Europe" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "121.6" ;
+    :yValue "Schwarz Group (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "106.2" ;
+    :yValue "Aldi Einkauf GmbH & Co. oHG (Germany)*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "82.8" ;
+    :yValue "Tesco PLC (UK)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "74.1" ;
+    :yValue "Ahold Delhaize (formerly Koninklijke Ahold N.V.) (Netherlands)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "62.05" ;
+    :yValue "Edeka Group (Germany) **" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "59.3" ;
+    :yValue "Auchan Holding SA (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "56.4" ;
+    :yValue "Rewe Combine (Germany) **" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "44.4" ;
+    :yValue "Centres Distributeurs E. Leclerc (France) *" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "43.2" ;
+    :yValue "Casino Guichard-Perrachon S.A. (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "41.4" ;
+    :yValue "The IKEA Group (INGKA Holding B.V.) (Netherlands)" ;
+    :belongsTo :Chart .

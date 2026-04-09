@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 cities with the largest number of violent crimes per 100,000 residents in the U.S. in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Crimes per 100,000 residents" .
+
+:YAxis a :Axis ;
+    :title "city of the United States" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1965.33" ;
+    :yValue "Detroit" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1927.32" ;
+    :yValue "St. Louis" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1901.42" ;
+    :yValue "Memphis" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1858.72" ;
+    :yValue "Baltimore" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1516.65" ;
+    :yValue "Cleveland" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1431.35" ;
+    :yValue "Kansas City" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1396.67" ;
+    :yValue "Stockton" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1351.79" ;
+    :yValue "Albuquerque" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1332.49" ;
+    :yValue "Milwaukee" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1318.78" ;
+    :yValue "San Bernardino" ;
+    :belongsTo :Chart .

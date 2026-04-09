@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Dollar sales share of prepared food in the United States in 2015 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type of food or dish" .
+
+:YAxis a :Axis ;
+    :title "Dollar sales share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sandwiches" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Hot dogs" ;
+    :yValue "0.167" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Pizza" ;
+    :yValue "0.167" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chicken" ;
+    :yValue "0.124" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bakery" ;
+    :yValue "0.069" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Salads" ;
+    :yValue "0.039" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Hamburgers" ;
+    :yValue "0.035" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Soup" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Frozen treats" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "All other prepared food" ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .

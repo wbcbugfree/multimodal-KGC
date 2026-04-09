@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading external analgesic rubs brands in the United States in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "155.9" ;
+    :yValue "Icy Hot" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "121.3" ;
+    :yValue "Salonpas" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "114.1" ;
+    :yValue "Biofreeze" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "106" ;
+    :yValue "Aspercreme" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "69.2" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "46.1" ;
+    :yValue "Blue Emu" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "34.6" ;
+    :yValue "Theraworx Relief" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "29.8" ;
+    :yValue "Tiger Balm" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "29.3" ;
+    :yValue "Bengay" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "22.5" ;
+    :yValue "Boiron Arnicare" ;
+    :belongsTo :Chart .

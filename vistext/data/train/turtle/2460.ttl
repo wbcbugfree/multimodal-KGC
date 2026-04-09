@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable food brands in the United Kingdom (UK) in 2015 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "food brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tesco" ;
+    :yValue "11052" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sainsbury's" ;
+    :yValue "6694" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Morrisons" ;
+    :yValue "4826" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Waitrose" ;
+    :yValue "2228" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tate & Lyle" ;
+    :yValue "2204" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Primark" ;
+    :yValue "2056" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "John Lewis" ;
+    :yValue "1545" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Magnum" ;
+    :yValue "1273" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Booker Group" ;
+    :yValue "1109" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Twinings" ;
+    :yValue "1048" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Ovaltine" ;
+    :yValue "948" ;
+    :belongsTo :Chart .

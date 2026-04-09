@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of McColl 's stores in the United Kingdom (UK) as of 2019 , by type and region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Convenience store" .
+
+:YAxis a :Axis ;
+    :title "region of the United Kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "169" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "71" ;
+    :yValue "North East" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "207" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "115" ;
+    :yValue "Yorkshire and the Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "64" ;
+    :yValue "East Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "West Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "49" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "115" ;
+    :yValue "East of England" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "180" ;
+    :yValue "South East" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "150" ;
+    :yValue "South West" ;
+    :belongsTo :Chart .

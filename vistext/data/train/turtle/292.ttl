@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Why are you in favor of same-sex marriage ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Equal rights/everyone should have same rights, freedoms" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Personal choice/Love, happiness matters, not sexual orientation" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Not my business/Not government's business to decide" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Have friends/family who are gay/lesbian" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Everyone is equal in God's eyes" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Born that way" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Medical, insurance, financial purposes" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Need to separate state and church" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "No opinion" ;
+    :belongsTo :Chart .

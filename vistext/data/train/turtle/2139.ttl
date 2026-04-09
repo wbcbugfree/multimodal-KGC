@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Gross value added (GVA) of the food and drink manufacturing sector in the United Kingdom (UK) in 2018 , by product type (in billion GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "product type" .
+
+:YAxis a :Axis ;
+    :title "Gross value added in billion GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Beverages" ;
+    :yValue "7.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Other food products" ;
+    :yValue "6.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Meat and meat products" ;
+    :yValue "4.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Bakery" ;
+    :yValue "3.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fruit and vegetables" ;
+    :yValue "2.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dairy products" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Prepared animal feeds" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Grain and starch products" ;
+    :yValue "1.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fish and crustaceans" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Oils and fats" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .

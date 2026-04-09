@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Weekly box office revenue of the top 10 movies in China from November 23 to 29 , 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Movie" .
+
+:YAxis a :Axis ;
+    :title "Box office revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Caught In Time" ;
+    :yValue "27.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The Croods: A New Age" ;
+    :yValue "17.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "One Second" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Sacrifice" ;
+    :yValue "5.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Find Your Voice" ;
+    :yValue "2.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Greenland" ;
+    :yValue "1.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "My People, My Homeland" ;
+    :yValue "1.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Paw Patrol: Mighty Pups" ;
+    :yValue "1.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "The Call of the Wild" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The Wandering Earth: Beyond 2020 Special Edition" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .

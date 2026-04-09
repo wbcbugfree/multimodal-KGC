@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "New York Yankees all-time runs scored leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of runs scored" .
+
+:YAxis a :Axis ;
+    :title "Yankee Player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1959" ;
+    :yValue "Babe Ruth" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1923" ;
+    :yValue "Derek Jeter" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1888" ;
+    :yValue "Lou Gehrig" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1676" ;
+    :yValue "Mickey Mantle" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1390" ;
+    :yValue "Joe DiMaggio" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1366" ;
+    :yValue "Bernie Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1186" ;
+    :yValue "Earle Combs" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1174" ;
+    :yValue "Yogi Berra" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1027" ;
+    :yValue "Willie Randolph" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1012" ;
+    :yValue "Alex Rodriguez" ;
+    :belongsTo :Chart .

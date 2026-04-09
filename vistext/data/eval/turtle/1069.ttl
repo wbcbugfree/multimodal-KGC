@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most influential brands in Canada in 2018 (index score)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Platform" .
+
+:YAxis a :Axis ;
+    :title "Index score" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Google" ;
+    :yValue "449" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Amazon" ;
+    :yValue "311" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Facebook" ;
+    :yValue "311" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Microsoft" ;
+    :yValue "271" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Apple" ;
+    :yValue "267" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "YouTube" ;
+    :yValue "260" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Netflix" ;
+    :yValue "230" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Samsung" ;
+    :yValue "225" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Walmart Canada" ;
+    :yValue "217" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Visa" ;
+    :yValue "214" ;
+    :belongsTo :Chart .

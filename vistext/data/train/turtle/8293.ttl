@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How likely do you think you would be to use or continue using each of the following methods of weight management in the next year ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Not too likely" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Being more active throughout the day" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Spend more time exercising" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Eating smaller portions of what you eat now" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Limiting specific types of food or food types" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Eating snacks less frequently" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Eating smaller, more frequent meals or snacks" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tracking and increasing the amount of time you are physically active" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Limit the number of calories in the food you eat" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Eating more slowly and attentively" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Eating out less often" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .

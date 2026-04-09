@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Prescription and illegal drug sales on the dark web from December 2013 to July 2015 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Dark web sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Prescription and illegal drug" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Illegal drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "7.7" ;
+    :yValue "MDMA & ecstasy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5.7" ;
+    :yValue "Marijuana" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5.2" ;
+    :yValue "Cocaine" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.3" ;
+    :yValue "Speed" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.8" ;
+    :yValue "Heroin" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.5" ;
+    :yValue "LSD" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "Crystal meth" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.8" ;
+    :yValue "Ketamine" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "DMT" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Mushrooms" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4.6" ;
+    :yValue "Precription drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1.1" ;
+    :yValue "Alprazolam" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Xanax" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.8" ;
+    :yValue "Oxycodone" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Valium" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Ritalin" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "0.8" ;
+    :yValue "Non-drugs" ;
+    :belongsTo :Chart .

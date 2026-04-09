@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of committed and reported crimes against underage children in Italy in 2019 , by type of crime" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "crime types" .
+
+:YAxis a :Axis ;
+    :title "Number of crimes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Child abuse within the family" ;
+    :yValue "2101" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Violation of family obligations" ;
+    :yValue "631" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sexual violence" ;
+    :yValue "637" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Child abandonment" ;
+    :yValue "510" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sexual intercourse with a minor" ;
+    :yValue "444" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Aggravated sexual assault" ;
+    :yValue "403" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Abuse of correction and discipline measures" ;
+    :yValue "403" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Abduction of person incapable of consent" ;
+    :yValue "237" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Child pornography" ;
+    :yValue "251" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Corruption of minors" ;
+    :yValue "164" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Possession of pornographic material" ;
+    :yValue "88" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Child prostitution" ;
+    :yValue "56" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Voluntary manslaughter" ;
+    :yValue "14" ;
+    :belongsTo :Chart .

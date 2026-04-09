@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading national oil corporations based on sales revenue in Latin America in 2018 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Petrobras (Brazil)" ;
+    :yValue "90.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Pemex (Mexico)" ;
+    :yValue "85.47" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Petrobras Distribuidora (Brazil)" ;
+    :yValue "25.18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "PDVSA (Venezuela)" ;
+    :yValue "23.32" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "YPF (Argentina)" ;
+    :yValue "22.99" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ecopetrol (Colombia)" ;
+    :yValue "21.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Petroecuador (Ecuador)" ;
+    :yValue "11.65" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "ENAP (Chile)" ;
+    :yValue "8.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "YPFB (Bolivia)" ;
+    :yValue "5.42" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Petroperú (Peru)" ;
+    :yValue "4.97" ;
+    :belongsTo :Chart .

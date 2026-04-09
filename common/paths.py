@@ -23,15 +23,27 @@ def vistext_data_dir() -> Path:
 
 
 def vistext_json2ttl_dir() -> Path:
-    return vistext_data_dir() / "json2ttl"
+    return vistext_turtle_dir("test")
 
 
-def vistext_images_dir() -> Path:
-    return vistext_data_dir() / "images"
+def vistext_split_dir(split: str = "test") -> Path:
+    return vistext_data_dir() / split
 
 
-def vistext_labels_dir() -> Path:
-    return vistext_data_dir() / "labels"
+def vistext_images_dir(split: str = "test") -> Path:
+    return vistext_split_dir(split) / "images"
+
+
+def vistext_labels_dir(split: str = "test") -> Path:
+    return vistext_split_dir(split) / "labels"
+
+
+def vistext_turtle_dir(split: str = "test") -> Path:
+    return vistext_split_dir(split) / "turtle"
+
+
+def vistext_json2ttl_converter_path() -> Path:
+    return vistext_data_dir() / "json2ttl_converter.py"
 
 
 def soil_dataset_dir() -> Path:

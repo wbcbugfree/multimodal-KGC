@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading renters insurance companies in the United States in 2017 , by overall rating" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Rating" .
+
+:YAxis a :Axis ;
+    :title "Leading renters insurance companies" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9.38" ;
+    :yValue "State Farm" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9.32" ;
+    :yValue "AARP" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "9.25" ;
+    :yValue "American Family Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8.9" ;
+    :yValue "USAA" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8.88" ;
+    :yValue "Metlife" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "8.45" ;
+    :yValue "Nationwide" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Allstate" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7.75" ;
+    :yValue "Liberty Mutual" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.63" ;
+    :yValue "Farmers Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "Travelers" ;
+    :belongsTo :Chart .

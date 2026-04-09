@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "What keeps you coming back to use the health club you currently belong to ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "To get in shape/stay in shape/stay healthy" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "For overall health/well-being" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "It's at a convenient location to me" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The variety of equipment, strength and cardiovascular equipment" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "To get my workout in, rather than to socialize" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "To make progress with my personal goals" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Access to group exercise classes" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "To have fun" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "My friends and family work out at the health club" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Access to fitness professionals" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "The social aspects of the health club" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "I feel obligated to go to the health club because of the money I spend on my membership" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .

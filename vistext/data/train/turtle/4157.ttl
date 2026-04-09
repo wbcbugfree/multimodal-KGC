@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most effective advertising campaigns of 2019 , by number of points in the WARC Effective 100" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Campaign/Brand (Agency)" .
+
+:YAxis a :Axis ;
+    :title "Number of points" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "It's a Tide Ad/ Tide (Saatchi & Saatchi New York, Hearts & Science New York, MKTG New York)" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oyster Kanji Dictation/ Hiroshima Tourism (I&S BBDO Tokyo, BBDO J West Hiroshima)" ;
+    :yValue "69.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Prescribed to Death/ National Safety Council (Energy BBDO Chicago, PHD Chicago)" ;
+    :yValue "65.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Vodafone Sakhi/ Vodafone (Ogilvy Mumbai)" ;
+    :yValue "62.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Unforgettable Bag/ Tesco (Grey Kuala Lumpur)" ;
+    :yValue "55.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "The Adaptive Data Lighthouse/ Lifebuoy (Mindshare Mumbai)" ;
+    :yValue "52.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Project 84/ CALM (adam&eveDDB London)" ;
+    :yValue "51.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Black Supermarket/ Carrefour (Marcel Paris)" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Everyone is an Amazing Book/ Amazon Prime (McCann Shanghai, MRM, McCann Shanghai)" ;
+    :yValue "41.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Faces of the City/ Coca-Cola (McCann Shanghai)" ;
+    :yValue "40.2" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly year-over-year retail sales development in the United States from 2019 to 2020 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Sporting goods stores" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Oct20" ;
+    :yValue "0.141" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Aug20" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jun20" ;
+    :yValue "0.224" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Apr20" ;
+    :yValue "-0.487" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Feb20" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec19" ;
+    :yValue "-0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Oct19" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Aug19" ;
+    :yValue "0.038" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jun19" ;
+    :yValue "-0.053" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Apr19" ;
+    :yValue "-0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Feb19" ;
+    :yValue "-0.082" ;
+    :belongsTo :Chart .

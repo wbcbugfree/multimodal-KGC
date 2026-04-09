@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of employees at utilities in the U.S. in Q2 2019 , by energy source" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Energy source" .
+
+:YAxis a :Axis ;
+    :title "Number of employees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Utilities (total)" ;
+    :yValue "188834" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Advanced natural gas" ;
+    :yValue "47224" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nuclear" ;
+    :yValue "46809" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Coal" ;
+    :yValue "45795" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Natural gas" ;
+    :yValue "19276" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Conventional hydro" ;
+    :yValue "17464" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wind" ;
+    :yValue "6360" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Solar**" ;
+    :yValue "3682" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bio" ;
+    :yValue "1897" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Combined Heat and Power" ;
+    :yValue "1608" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Geothermal" ;
+    :yValue "1095" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Oil" ;
+    :yValue "474" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "1961" ;
+    :belongsTo :Chart .

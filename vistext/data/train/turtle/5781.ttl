@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Russia : The largest cities in 2015 (in million residents)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Residents in million" .
+
+:YAxis a :Axis ;
+    :title "Russian city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12.05" ;
+    :yValue "Moscow" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.19" ;
+    :yValue "St. Petersburg" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.57" ;
+    :yValue "Novosibirsk" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.43" ;
+    :yValue "Jekaterinburg" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.27" ;
+    :yValue "Nižnij Novgorod" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.21" ;
+    :yValue "Kazan'" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.18" ;
+    :yValue "Čel'abinsk" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.17" ;
+    :yValue "Samara" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.17" ;
+    :yValue "Omsk" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.11" ;
+    :yValue "Rostov-na-Donu" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Reasons for registered voters not voting in the U.S. presidential election in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of registered voters" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Did not like candidates or campaign issues" ;
+    :yValue "0.248" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Not interested" ;
+    :yValue "0.154" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Too busy, conflicting schedule" ;
+    :yValue "0.143" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Illness or disability" ;
+    :yValue "0.117" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Other reason" ;
+    :yValue "0.111" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Out of town" ;
+    :yValue "0.079" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Registration problems" ;
+    :yValue "0.044" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Forgot to vote" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Don’t know or refused" ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Transportation problems" ;
+    :yValue "0.026" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Inconvenient polling place" ;
+    :yValue "0.021" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Online or in-store shopping preference for selected product categories by consumers worldwide as of 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Online" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Books, music, movies & video games" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Toys" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Consumer electronics & computers" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sports equipment/outdoor" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Health & beauty (cosmetics)" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Clothing & footwear" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jewelery/watches" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Household appliances" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "DIY/home improvement" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Furniture & homeware" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Grocery" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .

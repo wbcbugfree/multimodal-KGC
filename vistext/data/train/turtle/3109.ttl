@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Universities in the United States ranked by billionaire alumni , as of 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of billionaire alumni" .
+
+:YAxis a :Axis ;
+    :title "University" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "Harvard University" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "University of Pennsylvania" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Stanford University" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "New York University" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Columbia University" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Massachusetts Institute of Technology" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Cornell University" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "University of Southern California" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Yale University" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "University of Cambridge" ;
+    :belongsTo :Chart .

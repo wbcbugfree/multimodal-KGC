@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Enterprise-value-to-EBITDA (EV/EBITDA) of leading online marketplaces worldwide from 2020 to 2022" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Factor" .
+
+:YAxis a :Axis ;
+    :title "2022*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Uber (United States)" ;
+    :yValue "56.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Takeaway.com (Netherlands)" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Etsy (United States)" ;
+    :yValue "22.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lyft (United States)" ;
+    :yValue "40.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "GrubHub (United States)" ;
+    :yValue "29.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Kakaku.com (Japan)" ;
+    :yValue "17.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "CarGurus (United States)" ;
+    :yValue "12.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Moneysupermarket.com (United Kingdom)" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Gruppo MutuiOnline (Italy)" ;
+    :yValue "12.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Redbubble (Australia)" ;
+    :yValue "15.9" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "TrueCar (United States)" ;
+    :yValue "22.7" ;
+    :belongsTo :Chart .

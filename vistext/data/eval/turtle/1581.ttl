@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest GDP growth rates among the largest U.S. metro areas in 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "City of United States" .
+
+:YAxis a :Axis ;
+    :title "GDP growth" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Baton Rouge, LA" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oklahoma City, OK" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Huntsville, AL" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "El Paso, TX" ;
+    :yValue "0.006" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Austin - Round Rock, TX" ;
+    :yValue "0.005" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "San Antonio, TX" ;
+    :yValue "0.003" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jackson, MS" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Colorado Springs, CO" ;
+    :yValue "-0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dallas - Fort Worth - Arlington, TX" ;
+    :yValue "-0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Columbia, SC" ;
+    :yValue "-0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Tulsa, OK" ;
+    :yValue "-0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Madison, WI" ;
+    :yValue "-0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Houston - Sugar Land - Baytown, TX" ;
+    :yValue "-0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Syracuse, NY" ;
+    :yValue "-0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Rochester, NY" ;
+    :yValue "-0.005" ;
+    :belongsTo :Chart .

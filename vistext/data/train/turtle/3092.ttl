@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading media publishers of brand content in the United States in 2019 , by video views (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Media Publisher" .
+
+:YAxis a :Axis ;
+    :title "Number of video views in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "WarnerMedia - Turner & Warner Bros." ;
+    :yValue "611" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BuzzFeed Inc." ;
+    :yValue "438" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "First Media - Media" ;
+    :yValue "351" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "National Basketball Association" ;
+    :yValue "264" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "National Football League" ;
+    :yValue "244" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "The Walt Disney Company" ;
+    :yValue "243" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Comcast Corporation" ;
+    :yValue "189" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Discovery, Inc." ;
+    :yValue "180" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Group Nine Media" ;
+    :yValue "173" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "CBS Corporation" ;
+    :yValue "155" ;
+    :belongsTo :Chart .

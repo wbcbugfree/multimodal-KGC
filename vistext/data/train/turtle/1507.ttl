@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following behaviors do you think constitute internet trolling ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Deliberately making inflammatory statements" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.54" ;
+    :yValue "Being abusive to someone because of their opinion" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Picking on another person or small group of people for any reason" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "Deliberately making controversial statements" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Using a comments section or chatroom to further one's own opinion, even if it has nothing to do with the topic of said comments section/chatroom" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Calling someone else (e.g. fellow commentator, article writer, etc.) an offensive name" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Belittling someone for not understanding a concept or previously presented piece of information" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Being stubborn about one's own opinion" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Not applicable - no behavior constitutes internet trolling" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Don't know" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which types of apps did you use in the past 3 months to pay for goods or services through your mobile phone ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Online stores (Amazon, Wal-mart, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Fast food restaurant (Chik-fil-a, McDonald’s, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Entertainment (music, movies, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Coffee shop (Starbucks, Dunkin’ Donuts, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Car service/Taxi (Uber, Lyft, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Games (Clash of Clans, Mobile Strike, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Speciality retail store (Best Buy, Office Depot, Stapes, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Grocery store/supermarket" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Gas (Exxon Mobil, Speedway, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.15" ;
+    :yValue "Transportation (mass transit, parking fees, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Car sharing services (Zipcar, Car2go, RelayRides, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Other, please specify" ;
+    :belongsTo :Chart .

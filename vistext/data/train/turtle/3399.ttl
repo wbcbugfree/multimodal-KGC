@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Chicago White Sox all-time hits leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hits" .
+
+:YAxis a :Axis ;
+    :title "Chicago White Sox all-time hits leaders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2749" ;
+    :yValue "Luke Appling" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2470" ;
+    :yValue "Nellie Fox" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2292" ;
+    :yValue "Paul Konerko" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2136" ;
+    :yValue "Frank Thomas" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2007" ;
+    :yValue "Eddie Collins" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1773" ;
+    :yValue "Harold Baines" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1608" ;
+    :yValue "Ozzie Guillen" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1576" ;
+    :yValue "Luis Aparicio" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1523" ;
+    :yValue "Minnie Minoso" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1345" ;
+    :yValue "Ray Schalk" ;
+    :belongsTo :Chart .

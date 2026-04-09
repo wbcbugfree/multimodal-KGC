@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of respondents worldwide scared of contracting coronavirus (COVID-19) as of March 1 , 2020 , by country" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Not at all scared" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "United States" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "China" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Hong Kong" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Indonesia" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Malaysia" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Philippines" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Singapore" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Taiwan" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Thailand" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .

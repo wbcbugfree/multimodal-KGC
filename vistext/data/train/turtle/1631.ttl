@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular music streaming services in the United States as of March 2018 , by number of smartphone users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of users in millions" .
+
+:YAxis a :Axis ;
+    :title "Music Streaming Service" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "44.6" ;
+    :yValue "Apple Music" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "32.6" ;
+    :yValue "Spotify" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "31.9" ;
+    :yValue "Pandora Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "19.5" ;
+    :yValue "Google Play Music" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "17.6" ;
+    :yValue "SoundCloud" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "13.9" ;
+    :yValue "iHeartRadio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10.6" ;
+    :yValue "Shazam" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9.6" ;
+    :yValue "Amazon Music" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4.6" ;
+    :yValue "SiriusXM" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4.5" ;
+    :yValue "TuneIn Radio" ;
+    :belongsTo :Chart .

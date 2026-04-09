@@ -1,0 +1,27 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Foreign exchange earnings from tourism in India from 2012 to 2016 , with estimates until 2020 , by month (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2020**" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.79" ;
+    :yValue "Mar" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2.54" ;
+    :yValue "Feb" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2.83" ;
+    :yValue "Jan" ;
+    :belongsTo :Chart .

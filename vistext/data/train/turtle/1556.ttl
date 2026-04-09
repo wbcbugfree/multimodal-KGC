@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Current year according to various historical and world calendars , as of January 01 , 2021" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Calendar" .
+
+:YAxis a :Axis ;
+    :title "Current year (as of September 20, 2020)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Assyrian" ;
+    :yValue "6770" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Hebrew" ;
+    :yValue "5781" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chinese" ;
+    :yValue "4718" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Julian*" ;
+    :yValue "2774" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Buddhist" ;
+    :yValue "2563" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Gregorian" ;
+    :yValue "2021" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Hindu**" ;
+    :yValue "1942" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Islamic" ;
+    :yValue "1442" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Iranian***" ;
+    :yValue "1399" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "French Revolutionary" ;
+    :yValue "229" ;
+    :belongsTo :Chart .

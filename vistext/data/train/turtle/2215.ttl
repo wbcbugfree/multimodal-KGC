@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "London West End (UK) office real estate take-up as of the first quarter 2020 , by business sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of West End office space" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Media Tech" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Association" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Serviced Office" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other/Undisclosed" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Professional Services" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Services Sector" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Banking & Finance" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Public Sector" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Retailer & Leisure" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Property & Cosntruction" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

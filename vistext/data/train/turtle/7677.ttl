@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Attitudes towards reading among young people in the United Kingdom (UK) in 2014 and 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2015" .
+
+:YAxis a :Axis ;
+    :title "Attitudes towards reading" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.801" ;
+    :yValue "The more I read, the better I become" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.546" ;
+    :yValue "If I am a good reader it means that I’ll get a better job when I grow up" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.543" ;
+    :yValue "I prefer watching TV to reading" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.424" ;
+    :yValue "Reading is cool" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.308" ;
+    :yValue "I cannot find things to read that interest me" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.293" ;
+    :yValue "I do not read as well as other pupils in my class" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.279" ;
+    :yValue "I only read when I have to" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.253" ;
+    :yValue "My parents don’t care whether I spend any time reading" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.165" ;
+    :yValue "I would be embarrassed if my friends saw me read" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.101" ;
+    :yValue "Reading is more for girls than boys" ;
+    :belongsTo :Chart .

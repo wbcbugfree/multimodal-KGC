@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average annual salaries in the armed forces of the United Kingdom in 2018/19 , by rank (in British pounds)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Salary in GBP" .
+
+:YAxis a :Axis ;
+    :title "military rank" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "120669" ;
+    :yValue "General" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "104202" ;
+    :yValue "Brigadier" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "87441" ;
+    :yValue "Colonel" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "83573" ;
+    :yValue "Lieutenant Colonel" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "58201" ;
+    :yValue "Major" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "48550" ;
+    :yValue "Captain" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "48438" ;
+    :yValue "Warrant Officer l" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "42718" ;
+    :yValue "Warrant Officer ll" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "40768" ;
+    :yValue "Staff Sergeant" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "38301" ;
+    :yValue "Sergeant" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "33619" ;
+    :yValue "Corporal" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "32975" ;
+    :yValue "Lieutenant" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "29296" ;
+    :yValue "Lance Corporal" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "26504" ;
+    :yValue "2nd Lieutenant" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "20227" ;
+    :yValue "Private" ;
+    :belongsTo :Chart .

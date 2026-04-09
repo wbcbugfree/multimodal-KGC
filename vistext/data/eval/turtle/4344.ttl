@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Philadelphia Phillies all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "Home run leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "548" ;
+    :yValue "Mike Schmidt" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "382" ;
+    :yValue "Ryan Howard" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "259" ;
+    :yValue "Del Ennis" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "251" ;
+    :yValue "Pat Burrell" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "243" ;
+    :yValue "Chuck Klein" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "233" ;
+    :yValue "Chase Utley" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "223" ;
+    :yValue "Greg Luzinski" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "217" ;
+    :yValue "Cy Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "216" ;
+    :yValue "Jimmy Rollins" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "204" ;
+    :yValue "Dick Allen" ;
+    :belongsTo :Chart .

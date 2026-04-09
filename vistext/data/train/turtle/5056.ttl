@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading mobile app publishers in the United States as of September 2019 , by share of total app time spent" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of total time spent with apps" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.256" ;
+    :yValue "Alphabet Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Facebook, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.059" ;
+    :yValue "Samsung Group" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Verizon Communications Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.036" ;
+    :yValue "Apple Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.034" ;
+    :yValue "Amazon.com, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.021" ;
+    :yValue "Microsoft Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Twitter, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.011" ;
+    :yValue "Activision Blizzard, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.009" ;
+    :yValue "Nintendo Co., Ltd." ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.352" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

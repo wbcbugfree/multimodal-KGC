@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. manufacturing shipments e-commerce value from 2003 to 2018 , by sector (in millions U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "machinery manufacturing" .
+
+:YAxis a :Axis ;
+    :title "2018" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Food manufacturin" ;
+    :yValue "786991" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Food manufacturing Beverage and tobacco product manufacturin" ;
+    :yValue "156193" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Beverage and tobacco product manufacturing Textile mill" ;
+    :yValue "28158" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Textile mills Textile product mill" ;
+    :yValue "22786" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Textile product mills Apparel manufacturin" ;
+    :yValue "9874" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Apparel manufacturing Leather and allied product manufacturin" ;
+    :yValue "4530" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Leather and allied product manufacturing Wood product manufacturin" ;
+    :yValue "114845" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wood product manufacturing Paper manufacturin" ;
+    :yValue "191119" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Paper manufacturing Primary metals manufacturin" ;
+    :yValue "182929" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Primary metals manufacturing Machinery manufacturin" ;
+    :yValue "250022" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Machinery manufacturing Computer and electronic products manufacturin" ;
+    :yValue "207218" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Computer and electronic products manufacturing Electrical equipment, appliances and component" ;
+    :yValue "88433" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Electrical equipment, appliances and components Transportation equipment manufacturin" ;
+    :yValue "826847" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Transportation equipment manufacturing Furniture and related products manufacturin" ;
+    :yValue "43197" ;
+    :belongsTo :Chart .

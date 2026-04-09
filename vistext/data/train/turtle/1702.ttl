@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest grossing Hollywood movies in India of all time as of August 2020 (in billion Indian rupees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hollywood movie" .
+
+:YAxis a :Axis ;
+    :title "Box office gross in billion Indian rupees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Avengers: Endgame" ;
+    :yValue "3.73" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Avengers: Infinity War" ;
+    :yValue "2.27" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The Jungle Book" ;
+    :yValue "1.88" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Lion King" ;
+    :yValue "1.58" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fast & Furious 7" ;
+    :yValue "1.08" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jurassic World" ;
+    :yValue "1.01" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fast and Furious 8" ;
+    :yValue "0.86" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Spider-Man: Far From Home" ;
+    :yValue "0.86" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Captain Marvel" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jurassic World: Fallen Kingdom" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .

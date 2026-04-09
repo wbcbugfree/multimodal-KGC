@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "United Kingdom (UK) general election results 2010 - seats won , by party" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Seats won" .
+
+:YAxis a :Axis ;
+    :title "political party" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "306" ;
+    :yValue "Conservative" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "258" ;
+    :yValue "Labour" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "57" ;
+    :yValue "Liberal Democrat" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Democratic Unionist" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Scottish National" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Sinn Fein" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Social Democratic & Labour Party" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Plaid Cymru" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Alliance" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Green" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Independent" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Speaker" ;
+    :belongsTo :Chart .

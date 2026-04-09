@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average age of hospitality and tourism sector employees in the United Kingdom (UK) in 2011 , by occupation" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age in years" .
+
+:YAxis a :Axis ;
+    :title "profession" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "49" ;
+    :yValue "Hotel and accommodation managers and propirieters" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "47" ;
+    :yValue "Housekeepers and related occupations" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "45" ;
+    :yValue "Cooks" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "44" ;
+    :yValue "Catering and bar managers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "Restaurant and catering establishment managers and proprieters" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "38" ;
+    :yValue "Publicans and managers of licensed premises" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Conference and exhibition managers" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Chefs" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Kitchen and catering assistants" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Leisure and theme park attendants" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Bar staff" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Waiting staff" ;
+    :belongsTo :Chart .

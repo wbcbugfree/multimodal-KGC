@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Domestic leagues with the most players at the 2018 FIFA World Cup in Russia" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of players" .
+
+:YAxis a :Axis ;
+    :title "association football league" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "108" ;
+    :yValue "Premier League (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "78" ;
+    :yValue "Primera División (Spain)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "62" ;
+    :yValue "1.Bundesliga (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Serie A (Italy)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "47" ;
+    :yValue "Ligue 1 (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Premier Liga (Russia)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "Saudi Professional League (Saudi Arabia)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Süper Lig (Turkey)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Championship (England)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Liga MX Apertura (Mexico)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Liga MX Clausura (Mexico)" ;
+    :belongsTo :Chart .

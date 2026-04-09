@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable goalkeepers from Latin America at the 2018 FIFA World Cup (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market value in million euros" .
+
+:YAxis a :Axis ;
+    :title "player and country name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "Alisson Becker (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "50" ;
+    :yValue "Ederson Santana de Moraes (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18" ;
+    :yValue "Keylor Navas (Costa Rica)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Fernando Muslera (Uruguay)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Martín Campaña (Uruguay)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "David Ospina (Colombia)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Cássio Ramos (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.5" ;
+    :yValue "Franco Armani (Argentina)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Nahuel Guzmán (Argentina)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Guillermo Ochoa (Mexico)" ;
+    :belongsTo :Chart .

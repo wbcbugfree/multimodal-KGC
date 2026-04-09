@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global smartphone shipments by model in the first half of 2019 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "smartphone model" .
+
+:YAxis a :Axis ;
+    :title "Shipments in million units" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Apple iPhone XR" ;
+    :yValue "26.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Samsung Galaxy A10" ;
+    :yValue "13.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Samsung Galaxy A50" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Apple iPhone 8" ;
+    :yValue "10.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Xiaomi Redmi Note 7" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Xiaomi Redmi 6A" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Samsung Galaxy J2 Core" ;
+    :yValue "9.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Oppo A5" ;
+    :yValue "9.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Apple iPhone Xs Max" ;
+    :yValue "9.6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Samsung Galaxy A30" ;
+    :yValue "9.2" ;
+    :belongsTo :Chart .

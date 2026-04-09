@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Favorability ratings of selected late-night TV show hosts in the United States as of March 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Never heard of" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jimmy Fallon" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jimmy Kimmel" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Stephen Colbert" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "James Corden" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Conan O'Brien" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Trevor Noah" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Seth Meyers" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bill Maher" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "John Oliver" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carson Daly" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .

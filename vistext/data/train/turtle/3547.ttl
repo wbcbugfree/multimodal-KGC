@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following would you be likely to do on a European vacation ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "See historical sites/monuments" ;
+    :yValue "0.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Try local cuisine" ;
+    :yValue "0.68" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "See museums and other cultural institutions" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Visit villages or towns outside of the major cities" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Go shopping" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Relax on a beach" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Go on an escorted tour (a multi-day coach tour for example)" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Agrotourism (vineyards, cheese, olive oil, etc.)" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Take a multi-day cruise" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Attend concerts, festivals, or theatre" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Visit friends and family" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .

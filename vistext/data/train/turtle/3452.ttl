@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of non-EU citizens working in Italy in 2019 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "sector" .
+
+:YAxis a :Axis ;
+    :title "Number of individuals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Industry (factories)" ;
+    :yValue "314630" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Trade" ;
+    :yValue "207863" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Hotels and restaurants" ;
+    :yValue "195353" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Constructions" ;
+    :yValue "134416" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Real estate, services for business" ;
+    :yValue "132370" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Agriculture, hunting, fisheries" ;
+    :yValue "104580" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Transport and storage" ;
+    :yValue "78109" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Education, health sector, other social services" ;
+    :yValue "63056" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Information and communication services" ;
+    :yValue "5363" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Finance and insurance" ;
+    :yValue "2249" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "PA, defense, mandatory social insurance" ;
+    :yValue "2145" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other services" ;
+    :yValue "444288" ;
+    :belongsTo :Chart .

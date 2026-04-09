@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Soccer players with the most Facebook fans as of June 2020 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Soccer player" .
+
+:YAxis a :Axis ;
+    :title "Facebook fans in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cristiano Ronaldo" ;
+    :yValue "122.28" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Lionel Messi" ;
+    :yValue "90.16" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Neymar Jr." ;
+    :yValue "59.86" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "David Beckham" ;
+    :yValue "51.69" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ronaldinho Gaúcho" ;
+    :yValue "34.16" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mesut Özil" ;
+    :yValue "31.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Kaká" ;
+    :yValue "30.38" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gareth Bale" ;
+    :yValue "27.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Andrés Iniesta" ;
+    :yValue "26.26" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Zlatan Ibrahimović" ;
+    :yValue "26.14" ;
+    :belongsTo :Chart .

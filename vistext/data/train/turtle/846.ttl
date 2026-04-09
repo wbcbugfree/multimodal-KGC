@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Celtics all-time steals leaders from 1946 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Boston Celtics all-time steals leaders" .
+
+:YAxis a :Axis ;
+    :title "Steals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Paul Pierce" ;
+    :yValue "1583" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Larry Bird" ;
+    :yValue "1556" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Rajon Rondo" ;
+    :yValue "990" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Robert Parish" ;
+    :yValue "873" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Antoine Walker" ;
+    :yValue "828" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dee Brown" ;
+    :yValue "675" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Danny Ainge" ;
+    :yValue "671" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dennis Johnson" ;
+    :yValue "654" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Marcus Smart" ;
+    :yValue "615" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dave Cowens" ;
+    :yValue "569" ;
+    :belongsTo :Chart .

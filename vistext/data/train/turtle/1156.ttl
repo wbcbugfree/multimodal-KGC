@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Potential ticket revenue loss in the NFL due to the coronavirus (COVID-19) pandemic in the United States in 2020 , by team (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "American football team" .
+
+:YAxis a :Axis ;
+    :title "Loss in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "New England Patriots" ;
+    :yValue "376.54" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dallas Cowboys" ;
+    :yValue "337.72" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chicago Bears" ;
+    :yValue "293.58" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Green Bay Packers" ;
+    :yValue "224.19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Seattle Seahawks" ;
+    :yValue "221.15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Philadelphia Eagles" ;
+    :yValue "220.14" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Denver Broncos" ;
+    :yValue "215.59" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Los Angeles Chargers" ;
+    :yValue "205.41" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "New Orleans Saints" ;
+    :yValue "188.22" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "New York Giants" ;
+    :yValue "170.54" ;
+    :belongsTo :Chart .

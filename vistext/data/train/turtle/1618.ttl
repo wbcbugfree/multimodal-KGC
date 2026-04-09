@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. class I railroads locomotive fleet : locomotives build dates , percentage of fleet as of December 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year(s)" .
+
+:YAxis a :Axis ;
+    :title "Percentage of fleet" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Before 1985" ;
+    :yValue "0.293" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1985 to 1989" ;
+    :yValue "0.065" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1990 to 1994" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1995 to 1999" ;
+    :yValue "0.174" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2000 to 2004" ;
+    :yValue "0.193" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2005" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2006" ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2007" ;
+    :yValue "0.038" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2008" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2009" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .

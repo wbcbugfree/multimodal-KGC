@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Consumption of nickel in the United States from 2009 to 2016 by application (in metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Field of application" .
+
+:YAxis a :Axis ;
+    :title "2015**" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cast irons" ;
+    :yValue "205" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Chemicals and chemical uses" ;
+    :yValue "252" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Electric, magnet, expansion alloys" ;
+    :yValue "192" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Electroplating, sales to platers" ;
+    :yValue "7490" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nickel-copper and copper-nickel alloys" ;
+    :yValue "2240" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Stainless and heat resistant steel" ;
+    :yValue "127000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Steel alloys, excluding stainless" ;
+    :yValue "3330" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Superalloys" ;
+    :yValue "26900" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other*" ;
+    :yValue "29000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "197000" ;
+    :belongsTo :Chart .

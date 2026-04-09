@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fastest growing household products online sales growth during the coronavirus (COVID-19) outbreak in Russia from January to March 2020 , by product" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "09.03-15.03" .
+
+:YAxis a :Axis ;
+    :title "household products" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.97" ;
+    :yValue "Bathroom cleaning products" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.85" ;
+    :yValue "Toilet paper" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.71" ;
+    :yValue "Multipurpose cleaning products" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1.52" ;
+    :yValue "Fabric softeners" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.48" ;
+    :yValue "Laundry detergents" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.37" ;
+    :yValue "Kitchen paper" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.36" ;
+    :yValue "Floor cleaning products" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.36" ;
+    :yValue "Pipe cleaners" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.32" ;
+    :yValue "Bleach" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.97" ;
+    :yValue "Hygiene products" ;
+    :belongsTo :Chart .

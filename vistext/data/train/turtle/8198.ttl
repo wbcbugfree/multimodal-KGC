@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Products and services people spend more than usual on due to the COVID-19 / coronavirus pandemic in the United States , United Kingdom and Germany 2020 (as of May 31)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Germany" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Health and hygiene (e.g. medicine, hand sanitizer)" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Household cleaning products" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Food and drinks (e.g. shopping, takeaways, delivery)" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Home entertainment (e.g. video, games, books)" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hobbies" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Housing, energy, maintenance (e.g. electricity, waste disposal, DIY)" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Consumer electronics, household appliances, furniture" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Clothing" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Investments" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Going out (e.g. restaurants, cinemas, pubs / bars)" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Insurance" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Childcare" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Services (e.g. hairdresser)" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Travel (e.g. public transport, vacations)" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

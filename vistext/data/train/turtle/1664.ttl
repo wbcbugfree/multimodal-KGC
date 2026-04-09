@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cities with the largest number of pickleball courts per 20,000 residents in the United States in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "City and State in US" .
+
+:YAxis a :Axis ;
+    :title "Pickleball courts per 20,000 residents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Seattle, WA" ;
+    :yValue "2.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Columbus, OH" ;
+    :yValue "2.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "St. Paul, MN" ;
+    :yValue "2.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chesapeake, VA" ;
+    :yValue "2.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Virginia Beach, VA" ;
+    :yValue "2.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Madison, WI" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "St. Petersburg, FL" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Arlington, VA" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Honolulu, HI" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Henderson, NV" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .

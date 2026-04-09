@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The 10 most significant natural disasters worldwide by death toll from 1980 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Natural disaster" .
+
+:YAxis a :Axis ;
+    :title "Death toll" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Earthquake, tsunami(Thailand*, December 26, 2004)" ;
+    :yValue "220000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Earthquake(Haiti, January 12, 2010)" ;
+    :yValue "159000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cyclone Nargis, storm surge(Myanmar, May 2-5, 2008)" ;
+    :yValue "140000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tropical cyclone, storm surge(Bangladesh, April 29-30, 1991)" ;
+    :yValue "139000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Earthquake(Pakistan**, October 8, 2005)" ;
+    :yValue "88000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Earthquake(China, May 12, 2008)" ;
+    :yValue "84000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Heat wave, drought(Central Europe***, July-August 2003)" ;
+    :yValue "70000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Heat wave(Russia, July-September 2010)" ;
+    :yValue "56000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Earthquake(Iran, June 20, 1990)" ;
+    :yValue "40000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Earthquake(Iran, December 26, 2003)" ;
+    :yValue "26200" ;
+    :belongsTo :Chart .

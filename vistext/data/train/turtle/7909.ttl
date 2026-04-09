@@ -1,0 +1,42 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of Borussia Dortmund 's revenue by segment from 2008/09 to 2019/20" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Retail" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2013/14" ;
+    :yValue "0.0878" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2012/13" ;
+    :yValue "0.0584" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2011/12" ;
+    :yValue "0.081" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2010/11" ;
+    :yValue "0.101" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2009/10" ;
+    :yValue "0.125" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2008/09" ;
+    :yValue "0.1176" ;
+    :belongsTo :Chart .

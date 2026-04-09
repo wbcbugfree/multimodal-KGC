@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Numerical control (NC) software companies ranked by revenue in 2012 - 2013 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Numerical control (NC) software companies" .
+
+:YAxis a :Axis ;
+    :title "2013" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Vero Softwar" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Vero Software Delca" ;
+    :yValue "0.852" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Delcam Tebi" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tebis CGTec" ;
+    :yValue "0.378" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "CGTech SolidCA" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "SolidCAM SPRING Technologie" ;
+    :yValue "0.094" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "SPRING Technologies ICA" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "ICAM NCC" ;
+    :yValue "0.027" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "NCCS SPRUT Technolog" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "SPRUT Technology SmartCAMcn" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .

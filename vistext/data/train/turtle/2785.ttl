@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Worst terrorist attacks in terms of fatalities in the United Kingdom from 1970 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Terrorist attack" .
+
+:YAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lockerbie (1988)" ;
+    :yValue "270" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "London 7/7 attacks (2005)*" ;
+    :yValue "56" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Omagh bombing (1998)" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Manchester Arena bombing (2017)" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Warrenpoint (1979)" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Ballykelly (1982)" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "McGurk's Bar bombing, Belfast (1971)" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "La Mon restaurant bombing (1978)" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "M62 coach bombing, Batley (1974)" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "London Bridge attack (2017)" ;
+    :yValue "11" ;
+    :belongsTo :Chart .

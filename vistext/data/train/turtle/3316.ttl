@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Newly installed capacity of energy storage in the United States in 2018 , by select state (in megawatts)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Capacity in megawatts" .
+
+:YAxis a :Axis ;
+    :title "State" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "146.9" ;
+    :yValue "California" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "36.8" ;
+    :yValue "Hawaii" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "33.4" ;
+    :yValue "Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "20.5" ;
+    :yValue "Illinois" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Arizona" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14.9" ;
+    :yValue "New York" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14.2" ;
+    :yValue "Florida" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9.7" ;
+    :yValue "Massachusetts" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6.1" ;
+    :yValue "Colorado" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Vermont" ;
+    :belongsTo :Chart .

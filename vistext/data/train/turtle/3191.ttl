@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Pollen count in selected cities during spring in Spain in 2017 (in grains of pollen per cubic meter of air)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "in grains of pollen per cubic meter of air*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Caceres" ;
+    :yValue "13000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Badajoz" ;
+    :yValue "11500" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Toledo" ;
+    :yValue "5650" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Madrid" ;
+    :yValue "4700" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Salamanca" ;
+    :yValue "4050" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Seville" ;
+    :yValue "3600" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Saint Sebastian" ;
+    :yValue "2600" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Castellón" ;
+    :yValue "2100" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Alicante" ;
+    :yValue "1800" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Barcelona" ;
+    :yValue "800" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Santander" ;
+    :yValue "650" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Las Palmas" ;
+    :yValue "650" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Santa Cruz of Tenerife" ;
+    :yValue "500" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of leading electric power producers in the United States in 2017 , by fuel source" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Oil" .
+
+:YAxis a :Axis ;
+    :title "leading electric power producers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.002" ;
+    :yValue "Duke" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Exelon" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Southern" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.003" ;
+    :yValue "NextEra Energy" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Tennessee ValleyAuthority" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Entergy" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Dynergy" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.001" ;
+    :yValue "Berkshire HathawayEnergy" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.003" ;
+    :yValue "Dominion" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.002" ;
+    :yValue "AEP" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of businesses using social media in the United Kingdom (UK) from 2013 to 2018 , by industry sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry sector" .
+
+:YAxis a :Axis ;
+    :title "2015" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Information and communicatio" ;
+    :yValue "0.769" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Information and communication Accommodation and food service" ;
+    :yValue "0.75" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Accommodation and food services Other service" ;
+    :yValue "0.584" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other services Retai" ;
+    :yValue "0.562" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Retail Al" ;
+    :yValue "0.565" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "All Wholesal" ;
+    :yValue "0.543" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Wholesale Utilitie" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Utilities Manufacturin" ;
+    :yValue "0.458" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manufacturing Constructio" ;
+    :yValue "0.361" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Construction Transport and storag" ;
+    :yValue "0.354" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading female cyclists in Italy as of November 2020 , by UCI score" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "UCI score" .
+
+:YAxis a :Axis ;
+    :title "Cyclist" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2166.33" ;
+    :yValue "Elisa Longo Borghini" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "619" ;
+    :yValue "Marta Bastianelli" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "535" ;
+    :yValue "Marta Cavalli" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "355" ;
+    :yValue "Katia Ragusa" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "344" ;
+    :yValue "Elisa Balsamo" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "335.33" ;
+    :yValue "Elena Cecchini" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "321" ;
+    :yValue "Chiara Consonni" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "292" ;
+    :yValue "Arianna Fidanza" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "274.5" ;
+    :yValue "Soraya Paladin" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "270.67" ;
+    :yValue "Maria Giulia Confalonieri" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average disposable income per household in the United Kingdom (UK) in 2018/19 , by decile group (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Decile group" .
+
+:YAxis a :Axis ;
+    :title "Disposable income in GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Top" ;
+    :yValue "115329" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9th" ;
+    :yValue "67616" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8th" ;
+    :yValue "55137" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7th" ;
+    :yValue "45435" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6th" ;
+    :yValue "40577" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5th" ;
+    :yValue "35212" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4th" ;
+    :yValue "30521" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3rd" ;
+    :yValue "25152" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2nd" ;
+    :yValue "20961" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Bottom" ;
+    :yValue "12591" ;
+    :belongsTo :Chart .

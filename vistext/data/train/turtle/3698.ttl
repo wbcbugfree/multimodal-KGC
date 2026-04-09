@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Worst airports according to eDreams reviews worldwide in 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Score*" .
+
+:YAxis a :Axis ;
+    :title "Worst airports" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.19" ;
+    :yValue "Mohammed V International Airport (CMN), Morocco" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.19" ;
+    :yValue "LaGuardia Airport (LGA), United States" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.22" ;
+    :yValue "Berlin Schönefeld Airport (SFX), Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.34" ;
+    :yValue "Rome Fiumicino Airport (FCO), Italy" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.38" ;
+    :yValue "Marrakesh Menara Airport (RAK), Morocco" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.44" ;
+    :yValue "Rome Ciampino Airport (CIA), Italy" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.47" ;
+    :yValue "Mexico City International Airport (MEX), Mexico" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.47" ;
+    :yValue "Berlin Tegel Airport (TXL), Germany" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3.52" ;
+    :yValue "London Stansted Airport (STN), United Kingdom" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.54" ;
+    :yValue "Budapest Ferihegy International Airport (BUD), Hungary" ;
+    :belongsTo :Chart .

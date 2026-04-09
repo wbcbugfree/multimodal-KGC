@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of people who died from COVID-19 in the United States from January 22 to May 30 , 2020 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of COVID-19 patients" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9 years and younger" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10 to 19 years" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20 to 29 years" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30 to 39 years" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40 to 49 years" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50 to 59 years" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60 to 69 years" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70 to 79 years" ;
+    :yValue "0.166" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80 years and older" ;
+    :yValue "0.287" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .

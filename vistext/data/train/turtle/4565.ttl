@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. states with the lowest cancer incidence rates in 2016 (per 100,000 population)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cancer incidence per 100,000 population" .
+
+:YAxis a :Axis ;
+    :title "State" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "359.4" ;
+    :yValue "New Mexico" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "376.3" ;
+    :yValue "Arizona" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "378.3" ;
+    :yValue "District of Columbia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "385" ;
+    :yValue "Nevada" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "385.6" ;
+    :yValue "California" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "388.8" ;
+    :yValue "Colorado" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "390.6" ;
+    :yValue "Utah" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "391.8" ;
+    :yValue "Texas" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "402.3" ;
+    :yValue "Wyoming" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "404.2" ;
+    :yValue "Massachusetts" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of Tata cars across India in 2019 , by model" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "car model" .
+
+:YAxis a :Axis ;
+    :title "Number of vehicles sold" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tiago" ;
+    :yValue "63215" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nexon" ;
+    :yValue "49312" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "HARRIER" ;
+    :yValue "15227" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "TIGOR" ;
+    :yValue "13112" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Zest" ;
+    :yValue "5450" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hexa" ;
+    :yValue "2917" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Safari/Storme" ;
+    :yValue "2432" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sumo" ;
+    :yValue "941" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bolt" ;
+    :yValue "337" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nano" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

@@ -1,0 +1,47 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Enterprise-value-to-EBITDA (EV/EBITDA) of leading online car and property classifieds worldwide from 2020 to 2022" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Factor" .
+
+:YAxis a :Axis ;
+    :title "2020*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Adevinta (Norway)" ;
+    :yValue "58.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Autohome (China)" ;
+    :yValue "17.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "REA Group (Australia)" ;
+    :yValue "32.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Scout24 (Germany)" ;
+    :yValue "27.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rightmove (United Kingdom)" ;
+    :yValue "40.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Auto Trader (United Kingdom)" ;
+    :yValue "27.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "carsales.com (Australia)" ;
+    :yValue "23.3" ;
+    :belongsTo :Chart .

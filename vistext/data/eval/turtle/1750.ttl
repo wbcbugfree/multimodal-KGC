@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average total income per retired household in the United Kingdom in 2017/18 , by decile (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total income in GBP" .
+
+:YAxis a :Axis ;
+    :title "Decile" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "53632" ;
+    :yValue "Top" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "27577" ;
+    :yValue "9th" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18406" ;
+    :yValue "8th" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15174" ;
+    :yValue "7th" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10867" ;
+    :yValue "6th" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7815" ;
+    :yValue "5th" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5236" ;
+    :yValue "4th" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4435" ;
+    :yValue "3rd" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3646" ;
+    :yValue "2nd" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2883" ;
+    :yValue "Bottom" ;
+    :belongsTo :Chart .

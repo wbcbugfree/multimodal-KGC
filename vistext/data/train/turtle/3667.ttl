@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of perpetrators in child abuse cases in the United States in 2018 , by relationship to victim" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "relationship to victim" .
+
+:YAxis a :Axis ;
+    :title "Number of perpetrators" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Parent" ;
+    :yValue "417512" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Relative" ;
+    :yValue "34513" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Multiple relationships" ;
+    :yValue "22762" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "20103" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Unmarried partner of parent" ;
+    :yValue "18960" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Unknown" ;
+    :yValue "12200" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Friend and neighbor" ;
+    :yValue "5482" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Child daycare provider" ;
+    :yValue "1659" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Legal guardian" ;
+    :yValue "1640" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Foster parent" ;
+    :yValue "1423" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other professional" ;
+    :yValue "1127" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Group home and residential facility staff" ;
+    :yValue "1001" ;
+    :belongsTo :Chart .

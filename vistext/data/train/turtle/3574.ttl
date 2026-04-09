@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most dangerous health risks worldwide based on number of deaths in 2004 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Deaths in millions" .
+
+:YAxis a :Axis ;
+    :title "Most dangerous health risks" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "Hypertension" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.1" ;
+    :yValue "Tobacco use" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.4" ;
+    :yValue "High blood sugar" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.2" ;
+    :yValue "Lack of exercise" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "Overweight" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.6" ;
+    :yValue "High cholesterol" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.4" ;
+    :yValue "Unprotected Sex" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.3" ;
+    :yValue "Alcohol consumption" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.2" ;
+    :yValue "Underweight children" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Smoke from indoor fires" ;
+    :belongsTo :Chart .

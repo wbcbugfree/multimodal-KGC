@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's largest reservoirs based on storage capacity (in million cubic meters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "reservoir" .
+
+:YAxis a :Axis ;
+    :title "Storage volume (in million cubic meters)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Owen Falls Dam" ;
+    :yValue "204800" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Kariba Dam" ;
+    :yValue "180600" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bratsk Reservoir" ;
+    :yValue "169270" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lake Nasser" ;
+    :yValue "165000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Lake Volta" ;
+    :yValue "163000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Manicouagan Reservoir" ;
+    :yValue "141852" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Guri Dam" ;
+    :yValue "138000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Krasnoyarsk Reservoir" ;
+    :yValue "73300" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wadi Tharthar" ;
+    :yValue "72800" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Williston Lake" ;
+    :yValue "70309" ;
+    :belongsTo :Chart .

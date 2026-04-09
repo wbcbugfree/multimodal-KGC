@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. Millennials : Share of consumers ' food expenditure in 2012 , by store type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of expenditure" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Traditional grocery store" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mass merchandisers" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Club stores" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Specialty stores" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Farmers' markets" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Drug stores" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dollar stores" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Convenience stores" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Online, internet retailers" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

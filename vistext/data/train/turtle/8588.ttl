@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of camping sites in Germany in 2018 and 2019 , by state" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "state of Germany" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "447" ;
+    :yValue "Bavaria" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "393" ;
+    :yValue "Lower Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "371" ;
+    :yValue "Baden-Württemberg" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "318" ;
+    :yValue "North Rhine-Westphalia" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "276" ;
+    :yValue "Rhineland-Palatinate" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "275" ;
+    :yValue "Schleswig-Holstein" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "233" ;
+    :yValue "Hesse" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "212" ;
+    :yValue "Mecklenburg-Western Pomerania" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "172" ;
+    :yValue "Brandenburg" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "102" ;
+    :yValue "Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "80" ;
+    :yValue "Thuringia" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "80" ;
+    :yValue "Saxony-Anhalt" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Saarland" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Berlin" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Hamburg" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Bremen" ;
+    :belongsTo :Chart .

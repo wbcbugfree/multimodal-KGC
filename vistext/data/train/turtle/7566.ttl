@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of leading causes of neonatal deaths and deaths among children aged 1 to 59 months worldwide in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Race" .
+
+:YAxis a :Axis ;
+    :title "Deaths among children aged 1-59 months (53%)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Pneumonia" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Preterm birth complications" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Intrapartum-related events" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sepsis or menigitis" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Congential" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "AIDS" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Diarrhoea" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Malaria" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Injury" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Measles" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

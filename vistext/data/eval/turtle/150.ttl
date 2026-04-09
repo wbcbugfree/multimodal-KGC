@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of McDonald 's restaurants in the United Kingdom (UK) in 2017 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of restaurants" .
+
+:YAxis a :Axis ;
+    :title "region of England" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "181" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "167" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "166" ;
+    :yValue "South East England" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "120" ;
+    :yValue "West Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "116" ;
+    :yValue "East England" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "101" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "99" ;
+    :yValue "Yorkshire and Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "91" ;
+    :yValue "East Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "87" ;
+    :yValue "South West England" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "55" ;
+    :yValue "North East" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .

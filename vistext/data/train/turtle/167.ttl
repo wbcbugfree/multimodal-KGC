@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of most valuable utilities brands worldwide in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "utilities brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "56965" ;
+    :yValue "State Grid(China)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11907" ;
+    :yValue "EDF(France)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "11079" ;
+    :yValue "Engie(France)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "10799" ;
+    :yValue "Enel(Italy)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7469" ;
+    :yValue "Korea Electric Power Corporation(South Korea)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4788" ;
+    :yValue "Iberdrola(Spain)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4456" ;
+    :yValue "Innogy(Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3925" ;
+    :yValue "Duke Energy(United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3759" ;
+    :yValue "Exelon(United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3637" ;
+    :yValue "TEPCO(Japan)" ;
+    :belongsTo :Chart .

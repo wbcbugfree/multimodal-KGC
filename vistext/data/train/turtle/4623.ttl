@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular mobile messaging apps in the United States as of September 2019 , by monthly active users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Platform" .
+
+:YAxis a :Axis ;
+    :title "Number of monthly unique users in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Facebook Messenger" ;
+    :yValue "106.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Snapchat" ;
+    :yValue "45.98" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "WhatsApp" ;
+    :yValue "25.58" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Messenger by Google" ;
+    :yValue "17.46" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Discord - Chat for Games" ;
+    :yValue "15.01" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Google Hangouts (main)" ;
+    :yValue "14.19" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "GroupMe" ;
+    :yValue "10.75" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kik" ;
+    :yValue "7.72" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Skype (main)" ;
+    :yValue "5.53" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Telegram" ;
+    :yValue "3.47" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "LINE" ;
+    :yValue "3.15" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "WeChat" ;
+    :yValue "1.48" ;
+    :belongsTo :Chart .

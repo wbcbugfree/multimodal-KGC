@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most watched MLB World Series games of all time in the United States as of November 2016 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of viewers in millions" .
+
+:YAxis a :Axis ;
+    :title "Year and teams (game number) (network)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "54.86" ;
+    :yValue "1980 - Phillies vs. Royals (Game 6) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "51.56" ;
+    :yValue "1975 - Reds vs. Red Sox (Game 7) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "51.18" ;
+    :yValue "1987 - Twins vs. Cardinals (Game 7) (ABC)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "50.6" ;
+    :yValue "1978 - Yankees vs. Dodgers (Game 6) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "50.34" ;
+    :yValue "1991 - Twins vs. Braves (Game 7) (CBS)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "49.93" ;
+    :yValue "1982 - Cardinals vs. Brewers (Game 7) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "49.89" ;
+    :yValue "1979 - Pirates vs. Orioles (Game 7) (ABC)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "48.99" ;
+    :yValue "1982 - Cardinals vs. Brewers (Game 5) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "45.87" ;
+    :yValue "1978 - Yankees vs. Dodgers (Game 5) (NBC)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "45.46" ;
+    :yValue "1980 - Phillies vs. Royals (Game 5) (NBC)" ;
+    :belongsTo :Chart .

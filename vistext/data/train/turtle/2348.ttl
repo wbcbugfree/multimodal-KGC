@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Out-of-stock rates of selected retailers due to coronavirus (COVID-19) in the United States in March 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "retailers" .
+
+:YAxis a :Axis ;
+    :title "Out-of-stock rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Costco" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Trader Joe's" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sam's Club" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "ALDI" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Publix" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Albertsons/Safeway" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Walmart" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Food Lion" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Whole Foods" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kroger" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Target" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .

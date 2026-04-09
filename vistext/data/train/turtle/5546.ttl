@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "All time box office revenue of the highest grossing Bollywood movies in India as of June 2020 (in billion Indian rupees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Bollywood movie" .
+
+:YAxis a :Axis ;
+    :title "Gross box office revenue in billion Indian rupees" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bahubali 2 - The conclusion" ;
+    :yValue "7.09" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dangal" ;
+    :yValue "4.95" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "PK" ;
+    :yValue "4.49" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tiger Zinda Hai" ;
+    :yValue "4.32" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sanju" ;
+    :yValue "4.31" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bjarangi Bhaijaan" ;
+    :yValue "4.22" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sultan" ;
+    :yValue "4.14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Padmaavat" ;
+    :yValue "3.61" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dhoom 3" ;
+    :yValue "3.49" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "War" ;
+    :yValue "3.45" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "What do you find convenient about LINE ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of LINE users" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Easy to use chat" ;
+    :yValue "0.688" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Free voice calls" ;
+    :yValue "0.563" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Can chat with lots of people" ;
+    :yValue "0.414" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Can see if messages have been read" ;
+    :yValue "0.334" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Stickers are good" ;
+    :yValue "0.304" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Connects with phone's address book" ;
+    :yValue "0.176" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Connects with other apps and games" ;
+    :yValue "0.092" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "High-quality voice calls" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Home timeline is good" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Information (news, weather) has volume, is fast" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.011" ;
+    :belongsTo :Chart .

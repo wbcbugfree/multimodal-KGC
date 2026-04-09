@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest cities in Russia as of January 1 , 2020 , by population (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Population in thousands" .
+
+:YAxis a :Axis ;
+    :title "City in Russia" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12678.08" ;
+    :yValue "Moscow" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5398.06" ;
+    :yValue "Saint Petersburg" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1625.31" ;
+    :yValue "Novosibirsk" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1494.75" ;
+    :yValue "Yekaterinburg" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1252.24" ;
+    :yValue "Nizhny Novgorod" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1257.39" ;
+    :yValue "Kazan" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1196.68" ;
+    :yValue "Chelyabinsk" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1156.66" ;
+    :yValue "Samara" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1154.51" ;
+    :yValue "Omsk" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1137.9" ;
+    :yValue "Rostov-on-Don" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1128.79" ;
+    :yValue "Ufa" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1093.77" ;
+    :yValue "Krasnoyarsk" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1058.26" ;
+    :yValue "Voronezh" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "1055.4" ;
+    :yValue "Perm" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "1009" ;
+    :yValue "Volgograd" ;
+    :belongsTo :Chart .

@@ -1,0 +1,22 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading supplier of steam coal to the United Kingdom (UK) from 2002 to 2019 (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Canada" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2013" ;
+    :yValue "499" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2012" ;
+    :yValue "153" ;
+    :belongsTo :Chart .

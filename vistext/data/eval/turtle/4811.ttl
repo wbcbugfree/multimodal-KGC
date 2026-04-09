@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Length of the average working week of all employees in the United States in November 2020 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hours of work" .
+
+:YAxis a :Axis ;
+    :title "industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "44.5" ;
+    :yValue "Mining and logging" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "43.3" ;
+    :yValue "Utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "40.3" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "38.8" ;
+    :yValue "Transportation and warehousing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "38.9" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "38.6" ;
+    :yValue "Wholesale trade" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "37.8" ;
+    :yValue "Financial activities" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "36.8" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "36.6" ;
+    :yValue "Professional and business services" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "34.8" ;
+    :yValue "Total private" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "34.4" ;
+    :yValue "Trade, transportation, and utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "33.5" ;
+    :yValue "Education and health services" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "32.4" ;
+    :yValue "Other services" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "30.9" ;
+    :yValue "Retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "25.8" ;
+    :yValue "Leisure and hospitality" ;
+    :belongsTo :Chart .

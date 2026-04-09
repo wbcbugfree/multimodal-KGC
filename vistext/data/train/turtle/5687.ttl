@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Nationalities breakdown of confirmed cases of SARS-CoV-19 infections in Singapore as of March 11 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "ethnic group" .
+
+:YAxis a :Axis ;
+    :title "Number of patients" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Singaporean" ;
+    :yValue "121" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Chinese national" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Singapore permanent resident" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Indonesian" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bangladeshi" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Filipino" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Malaysian" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Briton" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Myanmar national" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Japanese" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "French" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Italian" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

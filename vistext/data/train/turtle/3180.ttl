@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of perpetrators in child abuse cases in the United States in 2018 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age" .
+
+:YAxis a :Axis ;
+    :title "Number of perpetrators" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6 - 11 years" ;
+    :yValue "894" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "12 - 17 years" ;
+    :yValue "9448" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18 - 24 years" ;
+    :yValue "84819" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25 - 34 years" ;
+    :yValue "228989" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35 - 44 years" ;
+    :yValue "141251" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "45 - 54 years" ;
+    :yValue "48263" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "55 - 64 years" ;
+    :yValue "16413" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "65 - 74 years" ;
+    :yValue "4818" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "75 and older" ;
+    :yValue "2378" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Unknown" ;
+    :yValue "9092" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of wealthiest individuals in Poland in 2020 (in billion zloty)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Wealthiest individuals" .
+
+:YAxis a :Axis ;
+    :title "Assets in billion zloty" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Michał Sołowow" ;
+    :yValue "15.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Zygmunt Solorz-Żak" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jerzy Starak" ;
+    :yValue "9.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tomasz Biernacki" ;
+    :yValue "8.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dominika Kulczyk" ;
+    :yValue "6.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sebastian Kulczyk" ;
+    :yValue "6.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Zbigniew Juroszek and family" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Maciej and Małgorzata Adamkiewicz" ;
+    :yValue "3.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Marcin Iwiński" ;
+    :yValue "3.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Paweł Marchewka" ;
+    :yValue "3" ;
+    :belongsTo :Chart .

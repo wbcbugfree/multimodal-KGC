@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Digital transformation in enterprise environment worldwide : technology adoption strategy , as of 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Addition (not replacing existing technology)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "IoT devices" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mobile apps" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cloud computing" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Data & analytics" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "IT services" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Security" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Web apps" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Servers/storage" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Enterprise software (SaaS)" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Networking" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Enterprise software (non-SaaS)" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Desktops/laptops" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Telecom" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .

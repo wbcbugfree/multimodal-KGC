@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Awareness of internet security risks according to internet users worldwide as of August 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Concerned and very concerned" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Online account hacking" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.69" ;
+    :yValue "Malicious software that gathers data intercepts passwords on your device" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.65" ;
+    :yValue "Financial cyber-threats targeting customer accounts resulting in monetary losses" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.63" ;
+    :yValue "Phising e-mails/websites that try to collect your details" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Data interception when you use Wi-Fi" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.57" ;
+    :yValue "Software exploits - attempts to compromise your device using vulnerabilities in its software" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Ransomware - malicious programs that encrypts your files and then demands money to unlock them" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Malicious software that tries to access your webcam" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Malware designed - targeted at mobile devices (tablets - smartphones)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Adware - programs that collect information about browing habits and launch ads - pop-up banners" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Pornware - malicious programs that downloads explicit content without the user's consent" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Global online espionage campaigns" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "Denial-of-service (DDoS) attacks on company government sites causing temporary unavailability slowdown of websites" ;
+    :belongsTo :Chart .

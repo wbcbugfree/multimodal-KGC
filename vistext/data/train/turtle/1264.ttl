@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular mobile apps in Russia in the 1st half of 2019 , by time spent daily (in minutes)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Platform" .
+
+:YAxis a :Axis ;
+    :title "Time spent per day in minutes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Gardenscapes" ;
+    :yValue "46" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Homescapes" ;
+    :yValue "41" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "FBReader" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "YouTube" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Vkontakte" ;
+    :yValue "34" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Instagram" ;
+    :yValue "27" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "TikTok" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Yandex.Navigator" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "WhatsApp" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chitai!" ;
+    :yValue "15" ;
+    :belongsTo :Chart .

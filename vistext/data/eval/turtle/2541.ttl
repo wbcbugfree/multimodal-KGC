@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading strongest Chinese brands in 2020 , by Brand Strength Index" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "brand" .
+
+:YAxis a :Axis ;
+    :title "Brand Strength Index" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "WeChat" ;
+    :yValue "92.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Tencent" ;
+    :yValue "89.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Hong Kong International Airport" ;
+    :yValue "88.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Joy City" ;
+    :yValue "88.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "China Mobile" ;
+    :yValue "87" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Rejoice" ;
+    :yValue "86.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "ICBC" ;
+    :yValue "85.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Maotai" ;
+    :yValue "84.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Harbin" ;
+    :yValue "84.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The MTR Corporation" ;
+    :yValue "84.8" ;
+    :belongsTo :Chart .

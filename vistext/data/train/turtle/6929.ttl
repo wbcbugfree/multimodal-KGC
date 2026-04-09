@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Length of life and cause of death of United States Presidents from 1799 to November 20 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "United States Presidents" .
+
+:YAxis a :Axis ;
+    :title "Other***" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "George H. W. Bush" ;
+    :yValue "94.47" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Harry S. Truman" ;
+    :yValue "88.63" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Thomas Jefferson" ;
+    :yValue "83.22" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "James Monroe" ;
+    :yValue "73.18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "William Henry Harrison *" ;
+    :yValue "68.15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "George Washington" ;
+    :yValue "67.81" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Zachary Taylor *" ;
+    :yValue "65.62" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Franklin Pierce" ;
+    :yValue "64.87" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Theodore Roosevelt" ;
+    :yValue "60.19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "James K. Polk" ;
+    :yValue "53.62" ;
+    :belongsTo :Chart .

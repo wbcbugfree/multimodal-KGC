@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of motor engines produced monthly in the United Kingdom (UK) from January 2013 to September 2015 (in units produced)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2015" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "224917" ;
+    :yValue "September 112777 August 184992 July 227624 June 190861 May 202156 April 230634 March 207773 February 206686 January" ;
+    :belongsTo :Chart .

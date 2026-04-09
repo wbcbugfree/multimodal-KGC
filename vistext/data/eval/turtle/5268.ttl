@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading cinema circuits in the United States and in Canada as of February 2020 , by number of screens" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "cinema chain" .
+
+:YAxis a :Axis ;
+    :title "Number of screens" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "AMC Theatres" ;
+    :yValue "8043" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Regal Entertainment Group" ;
+    :yValue "7178" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cinemark USA, Inc." ;
+    :yValue "4630" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cineplex Entertainment LP" ;
+    :yValue "1695" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Marcus Theatres Corp." ;
+    :yValue "1106" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Harkins Theatres" ;
+    :yValue "515" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "B&B Theatres" ;
+    :yValue "418" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "CMX" ;
+    :yValue "410" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Malco Theatres Inc." ;
+    :yValue "363" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "National Amusements, Inc." ;
+    :yValue "362" ;
+    :belongsTo :Chart .

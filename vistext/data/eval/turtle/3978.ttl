@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Synthetic index of the economic situation in enterprises during the coronavirus (COVID-19) epidemic in Poland as of March 2020 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "YoY change" .
+
+:YAxis a :Axis ;
+    :title "sector" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "-0.14" ;
+    :yValue "Industry" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "-0.05" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "-0.08" ;
+    :yValue "Retail" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "-0.15" ;
+    :yValue "Services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "-0.21" ;
+    :yValue "Leather industry" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "-0.16" ;
+    :yValue "Timber industry" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "-0.16" ;
+    :yValue "Maintenance and repair of equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-0.13" ;
+    :yValue "Micro-building companies" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "-0.14" ;
+    :yValue "Car trade" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "-0.22" ;
+    :yValue "Hotels and restaurants" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "-0.21" ;
+    :yValue "Tour Operators" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "-0.19" ;
+    :yValue "Education" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "-0.14" ;
+    :yValue "Transport and logistics" ;
+    :belongsTo :Chart .

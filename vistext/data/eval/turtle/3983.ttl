@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading retail brands in the United States on social media in 2019 , by user engagement (in million actions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading retail brands" .
+
+:YAxis a :Axis ;
+    :title "Number of actions in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Fashion Nova" ;
+    :yValue "315.01" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Victoria's Secret" ;
+    :yValue "211.93" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Calvin Klein" ;
+    :yValue "139.51" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Forever 21" ;
+    :yValue "110.43" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Victoria Beckham" ;
+    :yValue "109.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dior" ;
+    :yValue "101.94" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "H&M" ;
+    :yValue "100.39" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Foot Locker" ;
+    :yValue "93.72" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Urban Outfitters" ;
+    :yValue "84.04" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dolls Kill" ;
+    :yValue "66.67" ;
+    :belongsTo :Chart .

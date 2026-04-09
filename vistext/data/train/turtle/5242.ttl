@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Holiday-related search terms ranked by search volume in the United Kingdom (UK) in January 2016 (in 1,000 searches)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Searches in thousands" .
+
+:YAxis a :Axis ;
+    :title "keywords" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "550" ;
+    :yValue "Cheap holidays" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "450" ;
+    :yValue "Holidays" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "465" ;
+    :yValue "City breaks" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "All inclusive holidays" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "135" ;
+    :yValue "Sun holidays" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "Weekend breaks" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "Last minute holdiays" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "90.5" ;
+    :yValue "Holiday" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Last minute holiday deals" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Ski holdiays" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "5633.69" ;
+    :yValue "Other keywords" ;
+    :belongsTo :Chart .

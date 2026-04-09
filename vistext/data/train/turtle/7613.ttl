@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Regional distribution of BBC network TV programming spending in the United Kingdom (UK) from 2012 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "geographic region" .
+
+:YAxis a :Axis ;
+    :title "2015" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Total nations and region" ;
+    :yValue "0.481" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Total nations and regions Londo" ;
+    :yValue "0.519" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "London Total regions excl. Londo" ;
+    :yValue "0.316" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Total regions excl. London North of Englan" ;
+    :yValue "0.174" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "North of England Total nation" ;
+    :yValue "0.166" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Total nations Scotlan" ;
+    :yValue "0.077" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Scotland South of Englan" ;
+    :yValue "0.093" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "South of England Wale" ;
+    :yValue "0.071" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wales Multi-region*" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Multi-region** Northern Irelan" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Northern Ireland Midland" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .

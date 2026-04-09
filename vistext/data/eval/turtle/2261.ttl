@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most valuable sports athlete brands worldwide in 2017 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sports athlete brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Roger Federer" ;
+    :yValue "37.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "LeBron James" ;
+    :yValue "33.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Usain Bolt" ;
+    :yValue "27" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cristiano Ronaldo" ;
+    :yValue "21.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Phil Mickelson" ;
+    :yValue "19.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tiger Woods" ;
+    :yValue "16.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Virat Kohli" ;
+    :yValue "14.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rory Mcllroy" ;
+    :yValue "13.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lionel Messi" ;
+    :yValue "13.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Stephen Curry" ;
+    :yValue "13.4" ;
+    :belongsTo :Chart .

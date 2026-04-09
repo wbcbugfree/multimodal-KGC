@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total liability insurance gross written premiums for companies in Ireland as of 2018 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Gross written premium in million euros" .
+
+:YAxis a :Axis ;
+    :title "Company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "115.25" ;
+    :yValue "Irish Public Bodies" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "108.27" ;
+    :yValue "AIG" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "91.45" ;
+    :yValue "Allianz" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "73.2" ;
+    :yValue "FBD" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "73.11" ;
+    :yValue "Aviva" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "58.28" ;
+    :yValue "Zurich" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "46.53" ;
+    :yValue "RSA" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "38.9" ;
+    :yValue "Chubb" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "17.15" ;
+    :yValue "Travelers" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9.67" ;
+    :yValue "Liberty Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "7.33" ;
+    :yValue "AXA" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "5.58" ;
+    :yValue "Ecclesiastical" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.68" ;
+    :yValue "Amtrust" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "SureStone" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of small and medium enterprises (SME) with growth plans for the next12 months in the United Kingdom (UK) as of 2nd quarter 2014 to 2019 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "small and medium enterprises" .
+
+:YAxis a :Axis ;
+    :title "Q2 2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Agriculture" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Wholesale/Retail" ;
+    :yValue "0.58" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hotels and Restaurants" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Transport" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Property/Business Services etc." ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Health" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other Community" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "All SMEs" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .

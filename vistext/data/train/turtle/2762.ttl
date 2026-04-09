@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Chicago Bulls all-time steals leaders from 1966 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Steals" .
+
+:YAxis a :Axis ;
+    :title "Player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2306" ;
+    :yValue "Michael Jordan" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1792" ;
+    :yValue "Scottie Pippen" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "857" ;
+    :yValue "Kirk Hinrich" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "724" ;
+    :yValue "Norm Van Lier" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "639" ;
+    :yValue "Luol Deng" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "587" ;
+    :yValue "Horace Grant" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "583" ;
+    :yValue "Jimmy Butler" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "580" ;
+    :yValue "Reggie Theus" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "481" ;
+    :yValue "Joakim Noah" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "476" ;
+    :yValue "Toni Kukoc" ;
+    :belongsTo :Chart .

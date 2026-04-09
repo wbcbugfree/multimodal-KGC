@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Research and development expenses of Moderna Inc. in 2019 , by type (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Expense in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "48.26" ;
+    :yValue "Stock-based compensation" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "59.1" ;
+    :yValue "Shared discovery and development expenses" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "85.3" ;
+    :yValue "Technical development and unallocated manufacturing expenses" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "91.1" ;
+    :yValue "Platform research" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "55.38" ;
+    :yValue "Discovery programs" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "33.36" ;
+    :yValue "Systemic intracellular therapeutics*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11.24" ;
+    :yValue "Systemic secreted and cell surface therapeutics*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "33.26" ;
+    :yValue "Localized regenerative therapeutics*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "17.61" ;
+    :yValue "Intratumoral immuno-oncology*" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "44" ;
+    :yValue "Cancer vaccines*" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "47.65" ;
+    :yValue "Prophylactic vaccines*" ;
+    :belongsTo :Chart .

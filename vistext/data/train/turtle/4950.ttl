@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading female tennis players in Italy as of October 2020 , by WTA score" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "WTA score" .
+
+:YAxis a :Axis ;
+    :title "tennis player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "940" ;
+    :yValue "Camila Giorgi" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "879" ;
+    :yValue "Martina Trevisan" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "785" ;
+    :yValue "Jasmine Paolini" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "568" ;
+    :yValue "Elisabetta Cocciaretto" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "554" ;
+    :yValue "Sara Errani" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "432" ;
+    :yValue "Giulia Gatto-Monticone" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "354" ;
+    :yValue "Martina Di Giuseppe" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "209" ;
+    :yValue "Jessica Pieri" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "195" ;
+    :yValue "Martina Caregaro" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "186" ;
+    :yValue "Stefania Rubini" ;
+    :belongsTo :Chart .

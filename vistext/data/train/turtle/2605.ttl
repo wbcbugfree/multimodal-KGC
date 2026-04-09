@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of threatened wildlife and plant species in the United States as of 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type" .
+
+:YAxis a :Axis ;
+    :title "Number of threatened wildlife and plant species" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Flowering Plants" ;
+    :yValue "166" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Fishes" ;
+    :yValue "73" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Reptiles" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mammals" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Birds" ;
+    :yValue "22" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Clams" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Amphibians" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Insects" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Snails" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Corals" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Crustaceans" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Conifers and Cycads" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Ferns and Allies" ;
+    :yValue "2" ;
+    :belongsTo :Chart .

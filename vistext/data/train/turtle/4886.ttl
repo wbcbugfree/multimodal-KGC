@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading trends in appetizers on restaurant menus in the United States in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Fresh/house-made sausage" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "House-cured meats/charcuterie" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Vegetarian appetizers" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Ethnic/street food-inspired appetizers (e.g. tempura, taquitos, kabobs)" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Seafood charcuterie" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Amuse-bouche/bite-size hors d'oeuvre" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ethnic dips (e.g. hummus, tabbouleh, baba ganoush, tzatziki)" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Poke/ceviche" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bone marrow" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jerky (e.g. beef, fish, turkey, boar, bison)" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Flatbread appetizers" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Oysters" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Sliders/mini-burgers" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .

@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of murder victims in the United States in 2019 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age of victim in years" .
+
+:YAxis a :Axis ;
+    :title "Number of murder victims" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Infant (<1)" ;
+    :yValue "154" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1 to 4" ;
+    :yValue "210" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5 to 8" ;
+    :yValue "116" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9 to 12" ;
+    :yValue "87" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13 to 16" ;
+    :yValue "307" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "17 to 19" ;
+    :yValue "1136" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20 to 24" ;
+    :yValue "2149" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "25 to 29" ;
+    :yValue "2161" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "30 to 34" ;
+    :yValue "1753" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "35 to 39" ;
+    :yValue "1370" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "40 to 44" ;
+    :yValue "1103" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "45 to 49" ;
+    :yValue "797" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "50 to 54" ;
+    :yValue "630" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "55 to 59" ;
+    :yValue "640" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "60 to 64" ;
+    :yValue "463" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "65 to 69" ;
+    :yValue "282" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "70 to 74" ;
+    :yValue "207" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "75+" ;
+    :yValue "278" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "Unknown" ;
+    :yValue "84" ;
+    :belongsTo :Chart .

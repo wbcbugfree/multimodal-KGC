@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of games offered by select cloud gaming services worldwide in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of games available" .
+
+:YAxis a :Axis ;
+    :title "Service name (country)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "300" ;
+    :yValue "OnLive (U.S., U.K. and Belgium)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "SFR (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "160" ;
+    :yValue "Orange (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "105" ;
+    :yValue "G-Cluster (Japan)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Cloud Union (China)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "Bouygues Telecom (France)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "Portugal Telecom (Portugal)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "One2free (China/Hong Kong)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "CJ Hellovision (South Korea)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "GameNow (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "NTT Docomo (Japan)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "NTT Hkari TV (Japan)" ;
+    :belongsTo :Chart .

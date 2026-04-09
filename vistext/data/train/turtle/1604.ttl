@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most translated books in Finland as of 2019 , by number of languages" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of languages" .
+
+:YAxis a :Axis ;
+    :title "Book Name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "55" ;
+    :yValue "Elias Lönnrot - Kalevala" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "Mika Waltari - Sinuhe Egyptiläinen (Sinuhe the Egyptian)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "38" ;
+    :yValue "Sofi Oksanen - Puhdistus (Purge)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Aleksis Kivi -Seitsemän veljestä (Seven Brothers)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Arto Paasilinna - Jäniksen vuosi (The Year of the Hare)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Tove Jansson - Sommarboken (The Summer Book)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Sofi Oksanen - Kun kyyhkyset katosivat (When the Doves Disappeared)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Arto Paasilinna - Ulvova mylläri (The Howling Miller)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Frans Emil Sillanpää - Nuorena nukkunut (Fallen Asleep While Young)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Väinö Linna - Tuntematon sotilas (The Unknown Soldier)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading genres of blockbuster movies from 1975 to 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "genres of blockbuster movies" .
+
+:YAxis a :Axis ;
+    :title "Share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Action" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Adventure" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Thriller" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Comedy" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Drama" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sci-Fi" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fantasy" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Family" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Crime" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Romance" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .

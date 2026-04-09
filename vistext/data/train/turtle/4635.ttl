@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best performing movie at the box office among Italian movies in Italy as of July 2020 (in euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Box office in euros" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "65336749" ;
+    :yValue "Quo Vado? (2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "51936318" ;
+    :yValue "Sole a catinelle (2013)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "46160713" ;
+    :yValue "Tolo Tolo (2020)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "43474047" ;
+    :yValue "Che bella giornata (2011)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "31231984" ;
+    :yValue "La vita è bella (1997)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "29873491" ;
+    :yValue "Benvenuti al Sud (2010)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "28458894" ;
+    :yValue "Chiedimi se sono felice (2000)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "28296128" ;
+    :yValue "Natale sul Nilo (2002)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "28085461" ;
+    :yValue "Il ciclone (1996)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "27178307" ;
+    :yValue "Benvenuti al Nord (2012)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "10 cities in Africa with the largest number of ultra high net worth individuals in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Number of UHNW individuals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Johannesburg (South Africa)" ;
+    :yValue "298" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cairo (Egypt)" ;
+    :yValue "150" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lagos (Nigeria)" ;
+    :yValue "131" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cape Town (South Africa)" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nairobi (Kenya)" ;
+    :yValue "69" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dar es Salaam (Tanzania)" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Abuja (Nigeria)" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Addis Ababa (Ethiopia)" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Marrakesh (Morocco)" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kano (Nigeria)" ;
+    :yValue "10" ;
+    :belongsTo :Chart .

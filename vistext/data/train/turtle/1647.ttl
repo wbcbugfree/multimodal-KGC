@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading financial advisors to M & A in Benelux countries in 2016 , by deal value (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Financial Advisory Company" .
+
+:YAxis a :Axis ;
+    :title "Deal value in billion U.S. dollar" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Goldman Sachs" ;
+    :yValue "68.94" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Barclays" ;
+    :yValue "56.34" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Credit Suisse" ;
+    :yValue "55.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Evercore Partners" ;
+    :yValue "49.33" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Centerview Partners" ;
+    :yValue "45.87" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Qatalyst Group" ;
+    :yValue "45.87" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lazard" ;
+    :yValue "19.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Rothschild" ;
+    :yValue "18.76" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Morgan Stanley" ;
+    :yValue "15.93" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Deutsche Bank" ;
+    :yValue "14.33" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "VTB Capital" ;
+    :yValue "6.33" ;
+    :belongsTo :Chart .

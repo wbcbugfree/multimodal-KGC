@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Main worries or concerns about the COVID-19 / coronavirus pandemic in the United States , United Kingdom and Germany 2020 (as of May 31)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "United Kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "My family’s health" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "My country’s economic stability" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "My physical health" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "My economic situation" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "My parent's / older friends health" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "My country’s political stability" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Food shortages" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "My mental health" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "My job security" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Rioting or looting" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Don’t know" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of Hyundai cars across India in 2019 , by model (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of vehicles sold in thousands" .
+
+:YAxis a :Axis ;
+    :title "automobile model" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "123.2" ;
+    :yValue "i20 Elite" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "102.69" ;
+    :yValue "i10 Grand" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "99.74" ;
+    :yValue "Creta" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "70.44" ;
+    :yValue "VENUE" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "64.73" ;
+    :yValue "SANTRO" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "28.19" ;
+    :yValue "Verna" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "19.22" ;
+    :yValue "Xcent" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.97" ;
+    :yValue "Tucson" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.79" ;
+    :yValue "Elantra" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "KONA" ;
+    :belongsTo :Chart .

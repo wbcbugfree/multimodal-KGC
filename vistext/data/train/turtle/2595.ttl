@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average price for residential real estate for sale in selected areas of the Italian city of Milan as of May 2020 (in euros per square meter)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Area of Milan" .
+
+:YAxis a :Axis ;
+    :title "Price in euros per square meter" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Centro" ;
+    :yValue "10191" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Garibaldi, Moscova, Porta Nuova" ;
+    :yValue "8869" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Quadronno, Palestro, Guastalla" ;
+    :yValue "8463" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Arco della Pace, Arena, Pagano" ;
+    :yValue "8325" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Genova, Ticinese" ;
+    :yValue "7570" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Porta Venezia, Indipendenza" ;
+    :yValue "6659" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Porta Romana, Cadore, Montenero" ;
+    :yValue "6291" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Centrale, Repubblica" ;
+    :yValue "6224" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Solari, Washington" ;
+    :yValue "6202" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Fiera, Sempione, City Life, Portello" ;
+    :yValue "5986" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Navigli" ;
+    :yValue "5872" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Cenisio, Sarpi, Isola" ;
+    :yValue "5652" ;
+    :belongsTo :Chart .

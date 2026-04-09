@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of VAT and/or PAYE based enterprises in the United Kingdom (UK) in 2020 , by turnover size band (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of enterprises in thousand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0 - 49,999 GBP" ;
+    :yValue "411.84" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "50,000 - 99,999 GBP" ;
+    :yValue "622.66" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "100,000 - 249,999 GBP" ;
+    :yValue "901.41" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "250,000 - 499,999 GBP" ;
+    :yValue "351.58" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "500,000 - 999,999 GBP" ;
+    :yValue "203.02" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1 million - 1.999 million GBP" ;
+    :yValue "113.96" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2 million - 4,999 million GBP" ;
+    :yValue "78.99" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5 million - 9,999 million GBP" ;
+    :yValue "30.09" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1 billion - 4.999 billion GBP" ;
+    :yValue "27.29" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5 billion GBP and over" ;
+    :yValue "8.88" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "San Diego Padres all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "Home run leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "163" ;
+    :yValue "Nate Colbert" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "161" ;
+    :yValue "Adrian Gonzalez" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "156" ;
+    :yValue "Phil Nevin" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "154" ;
+    :yValue "Dave Winfield" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "135" ;
+    :yValue "Tony Gwynn" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "133" ;
+    :yValue "Ryan Klesko" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "121" ;
+    :yValue "Ken Caminiti" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "Will Myers" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "89" ;
+    :yValue "Hunter Renfroe" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "87" ;
+    :yValue "Chase Headley" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total number of registered trucks in the Netherlands in 2020 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of vehicles" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "63081" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Younger than 1 year" ;
+    :yValue "4759" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1 to 2 years" ;
+    :yValue "8397" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3 to 4 years" ;
+    :yValue "7224" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5 to 6 years" ;
+    :yValue "5662" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7 to 8 years" ;
+    :yValue "6203" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "9 to 12 years" ;
+    :yValue "9990" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12 to 15 years" ;
+    :yValue "6193" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "15 to 20 years" ;
+    :yValue "5455" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "20 to 25 years" ;
+    :yValue "3095" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "25 years and older" ;
+    :yValue "6103" ;
+    :belongsTo :Chart .

@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total number of new passenger vehicles in the Russian car market in May 2019 and May 2020 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of Russian" .
+
+:YAxis a :Axis ;
+    :title "May 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Moscow city" ;
+    :yValue "6194" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Saint Petersburg" ;
+    :yValue "3381" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Moscow region" ;
+    :yValue "3136" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Republic of Tatarstan" ;
+    :yValue "2816" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Samara Region" ;
+    :yValue "2495" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sverdlovsk region" ;
+    :yValue "2424" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Republic of Bashkortostan" ;
+    :yValue "2307" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Chelyabinsk region" ;
+    :yValue "2009" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Krasnodar region" ;
+    :yValue "1942" ;
+    :belongsTo :Chart .

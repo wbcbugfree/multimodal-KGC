@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading cooking channels on YouTube in Spain as of March 2017 , by number of views" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cooking Channel" .
+
+:YAxis a :Axis ;
+    :title "Number of uploaded video views" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cocina para todos" ;
+    :yValue "109651018" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cosas de Loli" ;
+    :yValue "59623806" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lolita la pastelera" ;
+    :yValue "27229343" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Las Recetas de MJ" ;
+    :yValue "45810304" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cocina con Carmen" ;
+    :yValue "26636125" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tuiwok Estilo" ;
+    :yValue "11921966" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "El cocinero fiel" ;
+    :yValue "34856700" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Lo he cocinado yo" ;
+    :yValue "15000000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "El cocinero universitario" ;
+    :yValue "11000000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Javi Recetas" ;
+    :yValue "4969244" ;
+    :belongsTo :Chart .

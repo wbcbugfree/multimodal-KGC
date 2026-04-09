@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Quantity of all cheese produced in the United States in February 2016 , by type (in million pounds)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Production in million pounds" .
+
+:YAxis a :Axis ;
+    :title "type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "341" ;
+    :yValue "Mozzarella" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "258" ;
+    :yValue "Cheddar" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "Other American types" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "65" ;
+    :yValue "Cream cheese and Neufchatel" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "30" ;
+    :yValue "Parmesan" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Provolone" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Swiss" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Hispanic*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Ricotta" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Brick and Muenster" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Feta" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Blue and Gorgonzola" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Other Italian types" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Gouda" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Romano" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "All other types" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Retail volume of bakery products market forecast in the European Union (EU) in 2015 and 2019 , by country (in 1,000 tonnes)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "German" ;
+    :yValue "6111.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Germany Franc" ;
+    :yValue "4513" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "France Ital" ;
+    :yValue "4169.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Italy United Kingdo" ;
+    :yValue "3876.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "United Kingdom Spai" ;
+    :yValue "2412.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Spain Polan" ;
+    :yValue "2053.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Poland Romani" ;
+    :yValue "1828.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Romania Netherland" ;
+    :yValue "1288.8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Netherlands Belgiu" ;
+    :yValue "956" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Belgium Czech Republi" ;
+    :yValue "854.4" ;
+    :belongsTo :Chart .

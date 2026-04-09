@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular news brands in the United States as of June 2018 , by number of smartphone users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Most popular news brands" .
+
+:YAxis a :Axis ;
+    :title "Smartphone users in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "CNN" ;
+    :yValue "30.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The New York Times" ;
+    :yValue "30.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The Washington Post" ;
+    :yValue "23.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Business Insider" ;
+    :yValue "23.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "The Huffington Post" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "FOX News" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "USA Today" ;
+    :yValue "18.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "CBS News" ;
+    :yValue "17.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Forbes" ;
+    :yValue "9.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "MSN News" ;
+    :yValue "6.8" ;
+    :belongsTo :Chart .

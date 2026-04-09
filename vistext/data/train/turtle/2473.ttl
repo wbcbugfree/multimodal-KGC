@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest foreign chemical companies in the U.S. market 2009 , by revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue (in million U.S. dollars)" .
+
+:YAxis a :Axis ;
+    :title "foreign chemical companies" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12988" ;
+    :yValue "BASF (1)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10530" ;
+    :yValue "LyondellBasell (-)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "7146" ;
+    :yValue "Agrium (3)*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4515" ;
+    :yValue "Total (4)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4412" ;
+    :yValue "AkzoNobel (6)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4271" ;
+    :yValue "Bayer (5)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3169" ;
+    :yValue "Air Liquide (8)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3048" ;
+    :yValue "Shin-Etsu Chemical (12)**" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2644" ;
+    :yValue "Evonik Industries (9)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2567" ;
+    :yValue "Syngenta (11)" ;
+    :belongsTo :Chart .

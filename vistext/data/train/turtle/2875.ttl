@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cities with the highest local purchasing power in Latin America and the Caribbean in 2020 (based on index score)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Index score*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "San Juan (Puerto Rico)" ;
+    :yValue "64.62" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Monterrey (Mexico)" ;
+    :yValue "53.84" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Brasília (Brazil)" ;
+    :yValue "50.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Nassau (Bahamas)" ;
+    :yValue "45.96" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Buenos Aires (Argentina)" ;
+    :yValue "44.58" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Port of Spain (Trinidad & Tobago)" ;
+    :yValue "41.57" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Querétaro (Mexico)" ;
+    :yValue "41.55" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Guadalajara (Mexico)" ;
+    :yValue "39.36" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mexico City (Mexico)" ;
+    :yValue "37.99" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tijuana (Mexico)" ;
+    :yValue "37.89" ;
+    :belongsTo :Chart .

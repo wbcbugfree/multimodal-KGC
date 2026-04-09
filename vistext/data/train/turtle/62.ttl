@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular health and fitness apps in the United States as of May 2018 , by reach" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "business" .
+
+:YAxis a :Axis ;
+    :title "Mobile reach" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Fitbit" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "MyFitnessPal" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "S Health (for Samsung)" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Weight Watchers" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Google Fit" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "My Calendar - Period Tracker" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Garmin Connect Mobile" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sleep Cycle alarm clock" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nike+ Running" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Walk with Map My Walk GPS Walking" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of the 15 leading insurance companies in Belgium from 2015 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "leading insurance companies" .
+
+:YAxis a :Axis ;
+    :title "2016" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "AG Insuranc" ;
+    :yValue "0.224" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "AG Insurance AX" ;
+    :yValue "0.125" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "AXA KB" ;
+    :yValue "0.101" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "KBC Ethia" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ethias Belfiu" ;
+    :yValue "0.056" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Belfius P&" ;
+    :yValue "0.059" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "P&V Allian" ;
+    :yValue "0.045" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Allianz Balois" ;
+    :yValue "0.051" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Baloise N" ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "NN ERGO - DKV - DA" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "ERGO - DKV - DAS Argent" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Argenta Federal" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Federale Fide" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Fidea Integral" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Integrale General" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .

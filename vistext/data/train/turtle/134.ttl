@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Boston Red Sox all-time hits leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hits" .
+
+:YAxis a :Axis ;
+    :title "Boston Red Sox all-time hits leaders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3419" ;
+    :yValue "Carl Yastrzemski" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2654" ;
+    :yValue "Ted Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2452" ;
+    :yValue "Jim Rice" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2373" ;
+    :yValue "Dwight Evans" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2098" ;
+    :yValue "Wade Boggs" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2079" ;
+    :yValue "David Ortiz" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2042" ;
+    :yValue "Bobby Doerr" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1805" ;
+    :yValue "Dustin Pedroia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1707" ;
+    :yValue "Harry Hooper" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1680" ;
+    :yValue "Dom DiMaggio" ;
+    :belongsTo :Chart .

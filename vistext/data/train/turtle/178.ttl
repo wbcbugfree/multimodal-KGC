@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Energy-related industry value added as a percentage of GDP in 2015 , by select country" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of gross domestic product" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Canada*" ;
+    :yValue "0.0715" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Australia" ;
+    :yValue "0.0457" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "United States" ;
+    :yValue "0.0297" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "United Kingdom" ;
+    :yValue "0.0253" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "South Korea*" ;
+    :yValue "0.0183" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mexico*" ;
+    :yValue "0.0174" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Japan" ;
+    :yValue "0.0164" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "France" ;
+    :yValue "0.0149" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "0.0149" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Turkey" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .

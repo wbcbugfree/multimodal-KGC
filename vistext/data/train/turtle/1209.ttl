@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global net sales of the largest consumer goods companies in Asia in 2013 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Consumer goods companies" .
+
+:YAxis a :Axis ;
+    :title "Net sales in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Samsung Electronics Co., Ltd." ;
+    :yValue "210397" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sony Corporation" ;
+    :yValue "66756" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "LG Electronics Inc." ;
+    :yValue "53489" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Lenovo Group Limited" ;
+    :yValue "38707" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bridgestone Corporation" ;
+    :yValue "36609" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Haier Group Company" ;
+    :yValue "29127" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Japan Tobacco Inc." ;
+    :yValue "23974" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Suntory Holdings Limited" ;
+    :yValue "20932" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Kirin Holdings Company, Limited" ;
+    :yValue "19943" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Midea Group Co., Ltd." ;
+    :yValue "19544" ;
+    :belongsTo :Chart .

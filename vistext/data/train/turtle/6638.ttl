@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Would you prefer to buy the following products via online or mail order retail or would you rather buy them in a shop ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Online and mail order retail" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Books" ;
+    :yValue "0.616" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Consumer electronics, media, video and audio recordings" ;
+    :yValue "0.592" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Telecommunications, mobile phones and accessories" ;
+    :yValue "0.584" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Computers and accessories" ;
+    :yValue "0.573" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gift vouchers of various retailers" ;
+    :yValue "0.536" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Toys" ;
+    :yValue "0.451" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Clothing, textiles, shoes" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Pharmaceuticals" ;
+    :yValue "0.321" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jewellery and watches" ;
+    :yValue "0.295" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Furniture and decoration" ;
+    :yValue "0.214" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "DIY and home improvement, garden accessories and flowers" ;
+    :yValue "0.154" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Groceries" ;
+    :yValue "0.068" ;
+    :belongsTo :Chart .

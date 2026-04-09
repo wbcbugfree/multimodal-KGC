@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Needed water for the production of food and consumer goods (in liters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Water footprint in liters" .
+
+:YAxis a :Axis ;
+    :title "production of food and consumer goods" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "20000" ;
+    :yValue "1 Computer" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "16600" ;
+    :yValue "1 Kg Leather" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5000" ;
+    :yValue "1 Kg cheese" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2700" ;
+    :yValue "1 cotton T-shirt" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2400" ;
+    :yValue "1 Hamburger" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1500" ;
+    :yValue "1 Kg of sugar" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1300" ;
+    :yValue "1 Kg of barley" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "1 liter milk" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "184" ;
+    :yValue "1 Kg tomatoes" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "140" ;
+    :yValue "1 cup of coffee" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "1 apple" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "1 slice of wheat bread" ;
+    :belongsTo :Chart .

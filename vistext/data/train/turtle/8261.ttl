@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Key figures for BNP Paribas S.A. in 2018 and 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "Key figures for BNP Paribas S\\.A\\." .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "6.21" ;
+    :yValue "Earnings per share (euros)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Number of customers (millions)**" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "53.88" ;
+    :yValue "Employees (1,000s)*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "71" ;
+    :yValue "Countries of operation*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15.5" ;
+    :yValue "Total capital (%)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "13.5" ;
+    :yValue "Tier 1 capital (%)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12.1" ;
+    :yValue "Common Equity Tier 1 ratio (%)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8.5" ;
+    :yValue "Return on equity (%)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "125" ;
+    :yValue "Liquidity coverage ratio (%)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9.8" ;
+    :yValue "Return on Tangible Equity (RoTE) (%)" ;
+    :belongsTo :Chart .

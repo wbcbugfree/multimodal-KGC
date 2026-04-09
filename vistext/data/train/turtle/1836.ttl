@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. merchandise exports that went to NAFTA countries in 2019 , by industry classification (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Industry" .
+
+:YAxis a :Axis ;
+    :title "Export value in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Transportation equipment" ;
+    :yValue "101.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Computer and electronic products" ;
+    :yValue "68.68" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chemicals" ;
+    :yValue "52.62" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Machinery" ;
+    :yValue "50.55" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Petroleum & coal products" ;
+    :yValue "38.98" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Electrical equipment" ;
+    :yValue "28.72" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Food manufactures" ;
+    :yValue "24.64" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fabricated metal products" ;
+    :yValue "23.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Plastics & rubber products" ;
+    :yValue "20.55" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Primary metal mfg" ;
+    :yValue "20.45" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Oil & gas" ;
+    :yValue "18.67" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Special classification provisions" ;
+    :yValue "17.37" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Agricultural products" ;
+    :yValue "15.74" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Miscellaneous manufactured commodities" ;
+    :yValue "14.41" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Paper" ;
+    :yValue "11.04" ;
+    :belongsTo :Chart .

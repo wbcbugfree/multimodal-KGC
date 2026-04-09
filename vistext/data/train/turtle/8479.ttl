@@ -1,0 +1,42 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Prices of most affordable one-way tickets of Aeroflot for domestic flights in Russia from end of March to June 2020 , by destination (in Russian rubles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "destination of most affordable one-way tickets" .
+
+:YAxis a :Axis ;
+    :title "End of March 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Moscow - Krasnodar" ;
+    :yValue "2800" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Moscow - Mineralnye Vody" ;
+    :yValue "2800" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Moscow - Saint Petersburg" ;
+    :yValue "2400" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Moscow - Volgograd" ;
+    :yValue "3400" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Moscow - Yekaterinburg" ;
+    :yValue "3900" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Moscow - Perm" ;
+    :yValue "3500" ;
+    :belongsTo :Chart .

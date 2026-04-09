@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Trip-related spending of recreational fishing participants in the United States in 2016 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Fishing expenditure (in million U.S. dollars)" .
+
+:YAxis a :Axis ;
+    :title "Expenditure" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4759.4" ;
+    :yValue "Food" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4536.65" ;
+    :yValue "Boating costs*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4505.69" ;
+    :yValue "Private transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3089.59" ;
+    :yValue "Lodging" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1517.91" ;
+    :yValue "Bait" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "924.97" ;
+    :yValue "Guide fees, pack trip or package fees" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "585.38" ;
+    :yValue "Ice" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "542.92" ;
+    :yValue "Public transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "493.95" ;
+    :yValue "Private land use fees" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "308.16" ;
+    :yValue "Equipment rental" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "305.36" ;
+    :yValue "Public land use fees" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "159.79" ;
+    :yValue "Heating and cooking fuel" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual average value of football clubs ' kit supplier deals (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Football Club Kit Suppliers" .
+
+:YAxis a :Axis ;
+    :title "Anual value in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Manchester United (Adidas, 2015-2025)" ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Real Madrid (Adidas, 2012-2020)" ;
+    :yValue "49" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Arsenal (Puma, 2014-2019)" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "FC Barcelona (Nike, 2008-2018)" ;
+    :yValue "43" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Manchester United (Nike, 2002-2015)" ;
+    :yValue "41" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Liverpool (Warrior, 2012-2015)" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chelsea FC (Adidas, 2011-2018)" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Juventus (Adidas, 2016-2022)" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Bayern Munich (Adidas, 2012-2020)" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Manchester City (Nike, 2013-2019)" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "AC Milan (Adidas, 2007-2017)" ;
+    :yValue "19" ;
+    :belongsTo :Chart .

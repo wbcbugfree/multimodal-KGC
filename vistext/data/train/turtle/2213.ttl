@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales share of the leading lip balm and cold sore medication vendors in the United States in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of sales" .
+
+:YAxis a :Axis ;
+    :title "Vendor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.201" ;
+    :yValue "Glaxosmithkline" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.149" ;
+    :yValue "Pfizer" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.102" ;
+    :yValue "Blistex" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.092" ;
+    :yValue "Burt's Bees" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.072" ;
+    :yValue "Carma Laboratories" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.054" ;
+    :yValue "Beiersdorf" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.048" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.033" ;
+    :yValue "Eos Products" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Revlon" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "Maybelline" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of military fatalities in all major wars involving the United States from 1775 to 2021" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "War (and years of U\\.S\\. military involvement)" .
+
+:YAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "merican Civil War (1861-1865)" ;
+    :yValue "620000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "orld War II (1939-1945)" ;
+    :yValue "405399" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "orld War I (1917-1918)" ;
+    :yValue "116516" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "ietnam War (1965-1973)" ;
+    :yValue "58209" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "orean War (1950-1953)" ;
+    :yValue "36516" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "merican Revolutionary War (1775-1783)" ;
+    :yValue "25000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "ar of" ;
+    :yValue "1812" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "(1812-1815)" ;
+    :yValue "20000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "exican-American War (1846-1848)" ;
+    :yValue "13283" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "ar on Terror** (2001-present)" ;
+    :yValue "7054" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "panishAmerican War" ;
+    :yValue "1898" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "ulf War (1990-1991)" ;
+    :yValue "258" ;
+    :belongsTo :Chart .

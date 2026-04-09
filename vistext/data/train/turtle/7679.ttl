@@ -1,0 +1,32 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Attitudes towards reading among young people in the United Kingdom (UK) in 2014 and 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2017/18" .
+
+:YAxis a :Axis ;
+    :title "Attitudes towards reading" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.556" ;
+    :yValue "If I am a good reader it means that I’ll get a better job when I grow up" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.411" ;
+    :yValue "Reading is cool" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.337" ;
+    :yValue "I cannot find things to read that interest me" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.306" ;
+    :yValue "I only read when I have to" ;
+    :belongsTo :Chart .

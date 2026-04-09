@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of dismissals after the coronavirus (COVID-19) outbreak in Sweden from April to September 2020 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "industry" .
+
+:YAxis a :Axis ;
+    :title "July 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "229" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "639" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Motor vehicle" ;
+    :yValue "265" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Activities in law, economy, science and technology" ;
+    :yValue "146" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Leasing, real estate services, travel services etc." ;
+    :yValue "627" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Transportation and storage" ;
+    :yValue "639" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Hotels and restaurants" ;
+    :yValue "392" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Care and social services" ;
+    :yValue "454" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Information and communications" ;
+    :yValue "129" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Education" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Culture, entertainment and leisure" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other services" ;
+    :yValue "10" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "3622" ;
+    :belongsTo :Chart .

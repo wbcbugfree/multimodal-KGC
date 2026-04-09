@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best-selling music albums on digital music platforms in China in 2019 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of units sold in millions" .
+
+:YAxis a :Axis ;
+    :title "human" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.01" ;
+    :yValue "'Going To Powerfully Burst' - R1SE (Chinese)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.84" ;
+    :yValue "'Wa' - Chris Lee (Chinese)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.64" ;
+    :yValue "'Lover' - Taylor Swift (English)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.81" ;
+    :yValue "'MIRRORS' - Jackson Wang (English)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "'The Wind' - Rocket Girls 101 (Chinese)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "'More Than Forever' - NINE PERCENT (Chinese)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.67" ;
+    :yValue "'Kill This Love' - Blackpink (Korean)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "'Map of the Soul: Persona' - BTS (Korean)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.42" ;
+    :yValue "'Thank U, Next' - Ariana Grande (English)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "'Obsession' - EXO (Korean)" ;
+    :belongsTo :Chart .

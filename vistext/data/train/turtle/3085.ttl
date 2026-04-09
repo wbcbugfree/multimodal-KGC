@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Why would you not get a vaccine against COVID-19 ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Feeling no need" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Concerns about effectiveness of vaccine" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "I am not clearly informed about new vaccine" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Vaccination is dangerous" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Impact on the immune system" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "I do not belive in / want to get a vaccine without additional information" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "I do not belive in existence of COVID-19" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Afraid of the consequences" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Contraindications for vaccines" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "I do not believe that COVID-19 is dangerous for me" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "I have a good immune system" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .

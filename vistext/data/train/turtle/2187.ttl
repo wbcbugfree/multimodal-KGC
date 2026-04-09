@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Social media discoveries made by online recruiters that lead to a candidate not getting a job as of May 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.4" ;
+    :yValue "Provocative or inappropriate photographs, videos or information" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.36" ;
+    :yValue "Evidence of candidate drinking or using drugs" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Discriminatory comments related to race, gender, religion" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.3" ;
+    :yValue "Was linked to criminal behavior" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Lied about qualifications" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Had poor communication skills" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Bad-mouthed their previous company or fellow employee" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Screen name was unprofessional" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Shared confidential information from previous employers" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Lied about an absence" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Posted too frequently" ;
+    :belongsTo :Chart .

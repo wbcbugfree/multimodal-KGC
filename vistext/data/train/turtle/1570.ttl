@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading shaving cream brands in the United States in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Edge" ;
+    :yValue "77.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Barbasol" ;
+    :yValue "42.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Private label" ;
+    :yValue "39.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Skintimate Skin Therapy" ;
+    :yValue "37.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gillette Series" ;
+    :yValue "28.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Gillette Foamy" ;
+    :yValue "24" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Skintimate Signature Scents" ;
+    :yValue "20.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gillette Fusion Proglide" ;
+    :yValue "15.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "E.O.S." ;
+    :yValue "15.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Gillette Satin Care" ;
+    :yValue "15" ;
+    :belongsTo :Chart .

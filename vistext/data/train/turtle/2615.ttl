@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading recording artists worldwide in 2014 , by net worth (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading recording artists" .
+
+:YAxis a :Axis ;
+    :title "Net worth in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Madonna Cicone" ;
+    :yValue "800" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Paul McCartney" ;
+    :yValue "660" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Andre Romelle Young (Dr. Dre)" ;
+    :yValue "650" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sean John Combs (Diddy, Puffy, Puff Daddy)" ;
+    :yValue "640" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Celine Dion" ;
+    :yValue "630" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Paul David Hewson (Bono)" ;
+    :yValue "590" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mariah Carey" ;
+    :yValue "520" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Shawn Corey Carter (Jay-Z, Hova, Jigga)" ;
+    :yValue "510" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sir Elton Hercules John" ;
+    :yValue "450" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Beyoncé Knowles-Carter" ;
+    :yValue "440" ;
+    :belongsTo :Chart .

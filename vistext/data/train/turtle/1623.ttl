@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Project value of upcoming stadium/arena construction in the U.S. as of July 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Project value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Project title (city, state)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2000" ;
+    :yValue "Jacksonville Jaguars Lot(Jacksonville, FL)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1900" ;
+    :yValue "North Carolina Football Club MLS Soccer Stadium Complex (Buffalo, NY)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1400" ;
+    :yValue "Greater Buffalo Sports and Entertainment Complex(Buffalo, NY)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "Baltimore Street Arena(Baltimore, MD)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "National Western Center(Denver, CO)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "Beckham's Miami Freedom Park - United MLS Stadium(Miami, FL)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1000" ;
+    :yValue "Ronkonkoma Sports Arena (Ronkonkoma, NY)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "850" ;
+    :yValue "Keyarena Renovation (Seattle, WA)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "700" ;
+    :yValue "TEGA Gymnastics Facility/TEGA's Kid's Superplex (Lubbock, TX)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "623" ;
+    :yValue "Oakland A's Waterfront Ballpark at Howard Terminal (Oakland, CA)" ;
+    :belongsTo :Chart .

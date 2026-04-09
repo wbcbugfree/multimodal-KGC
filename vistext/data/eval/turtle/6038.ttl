@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of students enrolled in postsecondary institutions in Canada in 2017/18 , by gender and field of study" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Field of study" .
+
+:YAxis a :Axis ;
+    :title "Men" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Business, management and public administration" ;
+    :yValue "190347" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Architecture, engineering and related technologies" ;
+    :yValue "182469" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Humanities" ;
+    :yValue "110904" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Social and behavioural sciences and law" ;
+    :yValue "84351" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Physical and life sciences and technologies" ;
+    :yValue "74748" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Health and related fields" ;
+    :yValue "68106" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mathematics, computer and information sciences" ;
+    :yValue "63783" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Visual and performing arts and communications technologies" ;
+    :yValue "31563" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Other instructional programs" ;
+    :yValue "25584" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Personal, protective and transportation services" ;
+    :yValue "23955" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Education" ;
+    :yValue "20733" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Agriculture, natural resources and conservation" ;
+    :yValue "14769" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Personal improvement and leisure" ;
+    :yValue "9363" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cannes Lions : ranking of the most successful participating advertising agencies in Germany in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Points" .
+
+:YAxis a :Axis ;
+    :title "Agency" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "46" ;
+    :yValue "Scholz & Friends" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Ogilvy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "DDB" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Anorak / Antoni" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Heimat" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Serviceplan" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "BBDO" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Publicis Pixelpark" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Mutabor" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Iconoclast / Antoni" ;
+    :belongsTo :Chart .

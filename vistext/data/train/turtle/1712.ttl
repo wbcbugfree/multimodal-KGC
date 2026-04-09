@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading players of the national football team of Norway as of 2020 , by market value (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Norway Football Player" .
+
+:YAxis a :Axis ;
+    :title "Market value in million euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sander Berge" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Joshua King" ;
+    :yValue "16" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Alexander Sørloth" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Omar Elabdellaoui" ;
+    :yValue "4.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Markus Henriksen" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jonas Svensson" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ole Selnæs" ;
+    :yValue "2.8" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kristoffer Ajer" ;
+    :yValue "2.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mats Möller Daehli" ;
+    :yValue "2.4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Morten Thorsby" ;
+    :yValue "2" ;
+    :belongsTo :Chart .

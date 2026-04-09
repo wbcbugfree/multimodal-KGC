@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of film distributors in France in 2019 , according to their market share" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "distributors of films" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "The Walt Disney Company" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Warner Bros." ;
+    :yValue "0.103" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Universal Pictures International" ;
+    :yValue "0.079" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sony Pictures Home Entertainment" ;
+    :yValue "0.068" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Pathé Films" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "UGC Distribution" ;
+    :yValue "0.049" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "SND" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gaumont" ;
+    :yValue "0.041" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Twentieth Century Fox" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Metropolitan FilmExport" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .

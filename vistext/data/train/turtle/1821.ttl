@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 specialty therapy drugs in the U.S. by per-member-per-year (PMPY) spending in 2016 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Therapy Drug Type" .
+
+:YAxis a :Axis ;
+    :title "PMPY spending in U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Humira Pen (adalimumab)" ;
+    :yValue "45.11" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Enbrel (etanercept)" ;
+    :yValue "26.82" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Tecfidera (dimethyl fumarate)" ;
+    :yValue "13.49" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Copaxone (glatiramer)" ;
+    :yValue "12.42" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Harvoni (ledipasvir/sofosbuvir)" ;
+    :yValue "9.86" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Revlimid (lenalidomide)" ;
+    :yValue "9.78" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gilenya (fingolimod)" ;
+    :yValue "8.48" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Truvada (emtricitabine/tenofovir disoproxil fumarate)" ;
+    :yValue "8.44" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Humira (adalimumab)" ;
+    :yValue "8.15" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Stelara (ustekinumab)" ;
+    :yValue "8.13" ;
+    :belongsTo :Chart .

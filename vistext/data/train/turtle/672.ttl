@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of the leading smartwatch companies worldwide in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Samsung" ;
+    :yValue "0.338" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nike" ;
+    :yValue "0.084" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Garmin" ;
+    :yValue "0.084" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Fitbit" ;
+    :yValue "0.082" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sony" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pebble" ;
+    :yValue "0.063" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Shanda/Geak" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Mio Alpha" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Yinqu Technology" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Casio" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other 30 companies" ;
+    :yValue "0.176" ;
+    :belongsTo :Chart .

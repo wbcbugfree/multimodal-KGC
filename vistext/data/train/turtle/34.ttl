@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Occupations with high fatal work injury rates in the U.S. in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "profession" .
+
+:YAxis a :Axis ;
+    :title "Rate per 100,000 full-time equivalent workers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Logging workers" ;
+    :yValue "68.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Fishers and related fishing workers" ;
+    :yValue "145" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Aircraft pilots and flight engineers" ;
+    :yValue "61.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Roofers" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Refuse and recyclable material collectors" ;
+    :yValue "35.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Driver/sales workers and truck drivers" ;
+    :yValue "26.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Farmers, ranchers, and other agricultural managers" ;
+    :yValue "23.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Structural iron and steel workers" ;
+    :yValue "26.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Helpers, construction trades" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Grounds maintenance workers" ;
+    :yValue "19.8" ;
+    :belongsTo :Chart .

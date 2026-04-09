@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Private fortune of the wealthiest women in Europe as of July 2014 (in billion euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "woman" .
+
+:YAxis a :Axis ;
+    :title "Value of wealth in billion euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Liliane Bettencourt (L’Oréal, France)" ;
+    :yValue "25.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Susanne Klatten (BMW, Germany)" ;
+    :yValue "13.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Johanna Quandt (BMW, Germany)" ;
+    :yValue "10.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Charlene Carvalho Heineken (Heineken, Netherlands)" ;
+    :yValue "8.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Margarita Louis Dreyfus (Louis Dreyfus, Switzerland)" ;
+    :yValue "5.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Antonia Axson Johnson (Axel Johnson Group, Sweden)" ;
+    :yValue "5.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sandra Ortega Mera (Inditex, Spain)" ;
+    :yValue "5.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Daniela Herz (Mayfair, Germany)" ;
+    :yValue "4.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Kirsten Rausing (Tetra, Sweden)" ;
+    :yValue "4.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Elisabeth Mohn (Bertelsmann, Germany)" ;
+    :yValue "4.3" ;
+    :belongsTo :Chart .

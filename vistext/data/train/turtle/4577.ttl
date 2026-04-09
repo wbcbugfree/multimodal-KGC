@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of the global luggage market in 2015 , by company" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "Company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.173" ;
+    :yValue "Samsonite International SA" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "LVMH Moët Hennessy Louis Vuitton SA" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Delsey SA" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Rimowa GmbH" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "VF Corp" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.013" ;
+    :yValue "Tumi Holdings Inc" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.012" ;
+    :yValue "VIP Industries Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Kering SA" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.009" ;
+    :yValue "Hermès International SCA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Shanghai Taifeng Cases Co Ltd" ;
+    :belongsTo :Chart .

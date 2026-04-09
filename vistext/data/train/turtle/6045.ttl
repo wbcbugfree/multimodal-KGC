@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Construction costs of buildings in Alberta , Canada in 2019 , by select building type (in Canadian dollars per square meter)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Minimum" .
+
+:YAxis a :Axis ;
+    :title "building type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2670" ;
+    :yValue "Health care - residential care" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4780" ;
+    :yValue "Health care - ambulatory care" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2530" ;
+    :yValue "High-rise residential - market units**" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1720" ;
+    :yValue "Low- & mid-rise apartments - market units**" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1500" ;
+    :yValue "Townhouses (wood frame) - market units**" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2420" ;
+    :yValue "Enclosed mall" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1790" ;
+    :yValue "Supermarket" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2250" ;
+    :yValue "Office - 5-10 stories" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2330" ;
+    :yValue "Office - 10-20 stories" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2340" ;
+    :yValue "Secondary schools" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2760" ;
+    :yValue "Higher education" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1090" ;
+    :yValue "Warehouse" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2090" ;
+    :yValue "Hotels - low rise" ;
+    :belongsTo :Chart .

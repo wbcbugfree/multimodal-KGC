@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Pro tennis players with the highest winning percentage in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Winning percentage" .
+
+:YAxis a :Axis ;
+    :title "tennis player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.897" ;
+    :yValue "Andy Murray" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.878" ;
+    :yValue "Novak Djokovic" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.754" ;
+    :yValue "Milos Raonic" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.75" ;
+    :yValue "Roger Federer" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.736" ;
+    :yValue "Rafael Nadal" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.734" ;
+    :yValue "Kei Nishikori" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.727" ;
+    :yValue "Juan Martin del Potro" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.722" ;
+    :yValue "Nick Kyrgios" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.721" ;
+    :yValue "Gael Monfils" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.719" ;
+    :yValue "Stan Wawrinka" ;
+    :belongsTo :Chart .

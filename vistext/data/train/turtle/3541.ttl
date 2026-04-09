@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of flights arriving on time for major United Kingdom (UK) airlines in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of flights on time" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BMI Regional" ;
+    :yValue "0.92" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BA Cityflyer" ;
+    :yValue "0.904" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Flybe.com" ;
+    :yValue "0.848" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "EasyJet" ;
+    :yValue "0.845" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ryanair" ;
+    :yValue "0.842" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Aer Lingus" ;
+    :yValue "0.836" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Virgin Atlantic" ;
+    :yValue "0.828" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Thomson Airways" ;
+    :yValue "0.797" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Thomas Cook Airlines" ;
+    :yValue "0.776" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jet2.com" ;
+    :yValue "0.748" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "British Airways" ;
+    :yValue "0.737" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Monarch (scheduled flights)" ;
+    :yValue "0.725" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Monarch (charter flights)" ;
+    :yValue "0.609" ;
+    :belongsTo :Chart .

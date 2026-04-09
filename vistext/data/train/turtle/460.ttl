@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of child abuse victims in the United States in 2018 , by perpetrator relationship" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Relationship to child" .
+
+:YAxis a :Axis ;
+    :title "Number of victims" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mother" ;
+    :yValue "263370" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Father" ;
+    :yValue "143703" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mother and father" ;
+    :yValue "142329" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mother and Nonparent(s)" ;
+    :yValue "47343" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Relative" ;
+    :yValue "31456" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Unmarried partner of parent" ;
+    :yValue "18787" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "18546" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Father and Nonparent(s)" ;
+    :yValue "8556" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "More than one nonparental perpetrator" ;
+    :yValue "7711" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mother, Father, and Nonparent" ;
+    :yValue "7229" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Friend and neighbor" ;
+    :yValue "5547" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Child daycare provider" ;
+    :yValue "2019" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Foster parent" ;
+    :yValue "1659" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Legal guardian" ;
+    :yValue "1623" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Other professional" ;
+    :yValue "1356" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Group home and residential facility staff" ;
+    :yValue "926" ;
+    :belongsTo :Chart .

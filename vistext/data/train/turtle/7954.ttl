@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Are you worried about the spread of the COVID-19 coronavirus in France ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Rather worried" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jan 29-30" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Feb 27-28" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mar 5" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mar 15" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mar 19-20" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mar 24-25" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mar 26-27" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Apr 1-2" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Apr 15-16" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Apr 28-29" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "May 12-13" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .

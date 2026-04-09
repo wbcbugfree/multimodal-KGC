@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage distribution of people hospitalized due to complications from coronavirus (COVID-19) in Spain as of April 29 , 2020 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of cases" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0 to 9 years old" ;
+    :yValue "0.003" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10 to 19 years old" ;
+    :yValue "0.003" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20 to 29 years old" ;
+    :yValue "0.016" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30 to 39 years old" ;
+    :yValue "0.041" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40 to 49 years old" ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50 to 59 years old" ;
+    :yValue "0.156" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60 to 69 years old" ;
+    :yValue "0.194" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70 to 79 years old" ;
+    :yValue "0.232" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80 to 89 years old" ;
+    :yValue "0.198" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Over 90 years old" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .

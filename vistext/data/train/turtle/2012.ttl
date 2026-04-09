@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading mining companies in Africa based on market capitalization in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (headquarters)" .
+
+:YAxis a :Axis ;
+    :title "Market capitalization in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "AngloGold Ashanti (South Africa)" ;
+    :yValue "12.28" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Gold Fields (South Africa)" ;
+    :yValue "8.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sibanye Gold (South Africa)" ;
+    :yValue "6.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Impala Platinum Holdings (South Africa)" ;
+    :yValue "6.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Northam Platinum (South Africa)" ;
+    :yValue "3.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Exxaro Resources (South Africa)" ;
+    :yValue "2.89" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Harmony Gold Mining Company (South Africa)" ;
+    :yValue "2.87" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "African Rainbow Minerals (South Africa)" ;
+    :yValue "2.28" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "DRDGOLD (South Africa)" ;
+    :yValue "1.36" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Managem (Morocco)" ;
+    :yValue "0.73" ;
+    :belongsTo :Chart .

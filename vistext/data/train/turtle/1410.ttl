@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest all-time transfer fees of Dutch football players as of September 2019 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Transfer fee in million euros" .
+
+:YAxis a :Axis ;
+    :title "Player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "85.5" ;
+    :yValue "Matthijs de Ligt (19/20)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "84.65" ;
+    :yValue "Virgil van Dijk (17/18)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "75" ;
+    :yValue "Frenkie de Jong (19/20)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "Marc Overmars (00/01)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Jasper Cillessen (19/20)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "Arjen Robben (07/08)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Memphis Depay (15/16)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30.7" ;
+    :yValue "Robin van Persie (12/13)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "28.5" ;
+    :yValue "Ruud van Nistelrooy (01/02)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "27.5" ;
+    :yValue "Georginio Wijnaldum (16/17)" ;
+    :belongsTo :Chart .

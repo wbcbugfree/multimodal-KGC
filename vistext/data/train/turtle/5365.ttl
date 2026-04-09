@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated gross domestic product (GDP) loss from removal of all illegal immigrant workers from the United States as of September 2016 , by industry (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "economic sector" .
+
+:YAxis a :Axis ;
+    :title "GDP loss in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Wholesale and retail trade" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Leisure and hospitality" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Financial activities" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "48" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Professional and business services" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other services" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Agriculture, forestry, fishing, and hunting" ;
+    :yValue "19" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Information" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Transportation and utilities" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Educational and health services" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Mining" ;
+    :yValue "12" ;
+    :belongsTo :Chart .

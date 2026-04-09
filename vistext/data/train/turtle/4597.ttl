@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most viewed YouTube channels worldwide as of October 2020 , by monthly views (in billions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Monthly views in billions" .
+
+:YAxis a :Axis ;
+    :title "YouTube channel" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.92" ;
+    :yValue "T-Series" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3.47" ;
+    :yValue "Cocomelon - Nursery Rhymes" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.14" ;
+    :yValue "SET India" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.98" ;
+    :yValue "Vlad and Niki" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.88" ;
+    :yValue "✿ Kids Diana Show" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.26" ;
+    :yValue "Like Nastya" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.21" ;
+    :yValue "SAB TV" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.47" ;
+    :yValue "WWE" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.45" ;
+    :yValue "Movieclips" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.35" ;
+    :yValue "shfa" ;
+    :belongsTo :Chart .

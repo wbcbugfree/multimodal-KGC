@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular content categories on TikTok worldwide as of June 2020 , by number of hashtag views (in billions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hashtag views in billions" .
+
+:YAxis a :Axis ;
+    :title "content category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "443.3" ;
+    :yValue "Entertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "150.3" ;
+    :yValue "Dance" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "54" ;
+    :yValue "Pranks" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "43.3" ;
+    :yValue "Fitness/sports" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "28.6" ;
+    :yValue "Home reno/DIY" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "21.8" ;
+    :yValue "Beauty/skincare" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17.5" ;
+    :yValue "Fashion" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12.9" ;
+    :yValue "Recipes/cooking" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8.3" ;
+    :yValue "Life hacks/advice etc." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "Pets" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1.2" ;
+    :yValue "Outdoors" ;
+    :belongsTo :Chart .

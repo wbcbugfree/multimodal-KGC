@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual change in spending on sports and recreation in the United States in 2017 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "No money" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Sports and recreational footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "38" ;
+    :yValue "Sports and recreational clothing" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Outdoor recreational activities" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "60" ;
+    :yValue "Gym memberships and fees" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "49" ;
+    :yValue "Sports and recreational equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "56" ;
+    :yValue "Travel to take part in sports and recreation" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "Individual sporting events" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "71" ;
+    :yValue "Team sports outside of school" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "74" ;
+    :yValue "Sports and recreation lessons and camps" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "Team sports at school" ;
+    :belongsTo :Chart .

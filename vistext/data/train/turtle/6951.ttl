@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales share of the leading sauces , dressings and condiments brands in the United States from 2007 to 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2009" .
+
+:YAxis a :Axis ;
+    :title "leading sauces, dressings and condiments brands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "McCormick" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.054" ;
+    :yValue "Kraft" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.036" ;
+    :yValue "Heinz" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.035" ;
+    :yValue "Ragu" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.031" ;
+    :yValue "Hellmann's" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.028" ;
+    :yValue "Tostitos" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.024" ;
+    :yValue "Kikkoman" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Hidden Valley" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.009" ;
+    :yValue "Sabra" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "Hunt's" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.132" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .

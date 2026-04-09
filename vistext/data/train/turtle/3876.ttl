@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular mobile music and video apps in the United States as of September 2019 , by monthly users (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Monthly users in millions" .
+
+:YAxis a :Axis ;
+    :title "App" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "163.76" ;
+    :yValue "YouTube (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "51.01" ;
+    :yValue "IMDb (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "46.55" ;
+    :yValue "Netflix (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "44.5" ;
+    :yValue "Apple Music" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "44.21" ;
+    :yValue "Spotify" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "31.47" ;
+    :yValue "Pandora Radio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "26.49" ;
+    :yValue "Hulu" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "25.9" ;
+    :yValue "iHeartRadio" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "21.78" ;
+    :yValue "Google Play Music" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "19.64" ;
+    :yValue "Amazon Prime Video" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "16.46" ;
+    :yValue "Amazon Music" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "15.32" ;
+    :yValue "SoundCloud" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "15.06" ;
+    :yValue "Vimeo (main)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "13.12" ;
+    :yValue "Shazam" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "12.72" ;
+    :yValue "Redbox" ;
+    :belongsTo :Chart .

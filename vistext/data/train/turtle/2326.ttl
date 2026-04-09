@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top ten PACs advocating for Hillary Clinton 's 2016 U.S. presidential campaign as of August , 2016 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Amount spent in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "PACs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5780293" ;
+    :yValue "Priorities USA Action" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1958690" ;
+    :yValue "United We Can" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1657326" ;
+    :yValue "Service Employees International Union" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1519936" ;
+    :yValue "Planned Parenthood Votes" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1440896" ;
+    :yValue "Immigrant Voters Win" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1331657" ;
+    :yValue "National Education Assn" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1271569" ;
+    :yValue "Women Vote!" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "879426" ;
+    :yValue "American Federation of Teachers" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "859259" ;
+    :yValue "American Fedn of St/Cnty/Munic Employees" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "652559" ;
+    :yValue "For Our Future" ;
+    :belongsTo :Chart .

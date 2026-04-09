@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Consumer spending expectations for the following six months on consumer products due to the coronavirus in the United States as of March 9 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "A lot less" .
+
+:YAxis a :Axis ;
+    :title "consumer products" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Fresh and organic goods" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Vitamins, minerals, herbs, or supplements" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Home furniture and décor" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Nonmobile consumer electronics and appliances" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Cars/automobiles" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Mobile electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Toys and games" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Luxury/fashion" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Tobacco and smoking products" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Outerwear/jackets/coats" ;
+    :belongsTo :Chart .

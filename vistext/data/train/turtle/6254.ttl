@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of participants in U.S. high school softball (fast pitch) from 2009/10 to 2018/19" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Boys" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2018/19" ;
+    :yValue "2183" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2017/18" ;
+    :yValue "1589" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2016/17" ;
+    :yValue "1329" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2015/16" ;
+    :yValue "1468" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2014/15" ;
+    :yValue "1425" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2013/14" ;
+    :yValue "1414" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2012/13" ;
+    :yValue "1456" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2011/12" ;
+    :yValue "1376" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2010/11" ;
+    :yValue "1522" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2009/10" ;
+    :yValue "1802" ;
+    :belongsTo :Chart .

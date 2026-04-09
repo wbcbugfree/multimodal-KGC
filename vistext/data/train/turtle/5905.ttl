@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "United Kingdom : The largest cities in 2011 (in million residents)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city" .
+
+:YAxis a :Axis ;
+    :title "Residents in million" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "8.25" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Birmingham" ;
+    :yValue "1.09" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Glasgow" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Liverpool" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bristol" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sheffield" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Manchester" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Leeds" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Edinburgh" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Leicester" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .

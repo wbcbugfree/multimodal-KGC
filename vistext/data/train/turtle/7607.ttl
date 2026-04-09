@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average spending per consumer on selected music activities in the United States as of July 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "$10 to $19.99" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Tickets for music concerts/gigs" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Tickets for festivals" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Music merchandise items" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Vinyl albums" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Pre-paid music voucher" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Music streaming subscription gift cards" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "CD albums/singles" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Music DVDs" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "MP3/download albums" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Vinyl singles" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "MP3/download singles/tracks" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .

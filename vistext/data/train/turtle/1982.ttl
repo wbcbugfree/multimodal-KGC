@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Police stop and search arrest rate in England and Wales in 2018/19 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Region of England or Wales" .
+
+:YAxis a :Axis ;
+    :title "Arrests as a percentage of all stop and searches" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "England" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "England and Wales" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Yorkshire and the Humber" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "0.15" ;
+    :belongsTo :Chart .

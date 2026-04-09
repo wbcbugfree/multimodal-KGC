@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Impact of coronavirus (COVID-19) on monthly retail sales development in the United States 2020 , by retail sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "retail sector" .
+
+:YAxis a :Axis ;
+    :title "September to October" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Motor vehicle & parts dealers" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Furniture & home furniture stores" ;
+    :yValue "-0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Electronics & appliance stores" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Building material & garden equipment & supplies dealers" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Food & beverage stores" ;
+    :yValue "-0.002" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Health & personal care stores" ;
+    :yValue "-0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gasoline stations" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Clothing & clothing accessories stores" ;
+    :yValue "-0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sporting goods, hobby, musical instrument, & book stores" ;
+    :yValue "-0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "General merchandise stores" ;
+    :yValue "-0.011" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Miscellaneous store retailers" ;
+    :yValue "-0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Nonstore retailers" ;
+    :yValue "0.031" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Total retail" ;
+    :yValue "0.003" ;
+    :belongsTo :Chart .

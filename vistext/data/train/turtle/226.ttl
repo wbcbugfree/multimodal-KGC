@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cumulated advertising spending in Sweden from January to November 2020 , by media (in million SEK)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "advertising" .
+
+:YAxis a :Axis ;
+    :title "Advertising spendings in million SEK" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "11498.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "TV" ;
+    :yValue "4152.07" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Online display" ;
+    :yValue "1838.35" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Social media" ;
+    :yValue "1059.51" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Online video" ;
+    :yValue "1029.92" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Outdoor advertising" ;
+    :yValue "1012.55" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Radio" ;
+    :yValue "536.47" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Search" ;
+    :yValue "524.42" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Regional newspapers" ;
+    :yValue "431.26" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "City newspapers" ;
+    :yValue "309.09" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Direct ads/ supplements" ;
+    :yValue "206.31" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Consumer magazines" ;
+    :yValue "110.33" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Trade journals" ;
+    :yValue "43.27" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Evening newspapers" ;
+    :yValue "37.84" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Cinema" ;
+    :yValue "29.01" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Others*" ;
+    :yValue "178.33" ;
+    :belongsTo :Chart .

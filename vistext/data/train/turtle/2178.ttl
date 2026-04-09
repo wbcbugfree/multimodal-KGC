@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best-performing restaurant stocks in the United States in 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year-over-year increase in share price" .
+
+:YAxis a :Axis ;
+    :title "best-performing restaurant stock" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.6165" ;
+    :yValue "BJ's Restaurant Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.5986" ;
+    :yValue "Jack in the Box Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.587" ;
+    :yValue "Nathan's Famous Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.4616" ;
+    :yValue "Popeye's Louisiana Kitchen Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.4355" ;
+    :yValue "Famous Dave's of America Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.4339" ;
+    :yValue "Denny's Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.352" ;
+    :yValue "Domino's Pizza Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.3487" ;
+    :yValue "Sonic Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.2848" ;
+    :yValue "Chipotle Mexican Grill Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.2788" ;
+    :yValue "Cracker Barrel Old Country Store Inc." ;
+    :belongsTo :Chart .

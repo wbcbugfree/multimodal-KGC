@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Veterinary professionals views on issues concerning pet ownership and choosing a pet in the United Kingdom (UK) in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents in agreement" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Pet shops should give species specific advice before and during sale of pets" ;
+    :yValue "0.99" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Anyone breeding puppies should be licensed and regulated to meet certain standards." ;
+    :yValue "0.98" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Online sales of pets should be regulated." ;
+    :yValue "0.96" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Owners should face tougher penalties if their dog attacks another person or animal" ;
+    :yValue "0.95" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Owners should face tougher sentences for animal welfare offences" ;
+    :yValue "0.95" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "The UK is a nation of animal lovers." ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Prospective owners should pass a test before taking on a pet." ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fireworks should be regulated to allow use for licensed events or on certin days only" ;
+    :yValue "0.78" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dog licences should be reintroduced." ;
+    :yValue "0.75" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pet insurance should be compulsory for all owners." ;
+    :yValue "0.62" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "The UK pet owning public's knowledge regarding how to care for their pets has increased in the last five years" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .

@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular social networks of teenagers in the United States from fall 2012 to fall 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Fall 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Snapchat" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "TikTok" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Instagram" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Twitter" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Discord" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Facebook" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Reddit" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pinterest" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Gender parity index for gross enrollment ratios in primary , secondary and tertiary education in developing regions in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Regions" .
+
+:YAxis a :Axis ;
+    :title "Secondary education" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sub-Saharan Africa" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oceania" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Western Asia" ;
+    :yValue "0.92" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Northern Africa" ;
+    :yValue "0.99" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Latin America & the Caribbean" ;
+    :yValue "1.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "South-Eastern Asia" ;
+    :yValue "1.02" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Caucasus & Central Asia" ;
+    :yValue "0.98" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Eastern Asia" ;
+    :yValue "1.02" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Southern Asia" ;
+    :yValue "0.93" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Developing regions" ;
+    :yValue "0.96" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading power toothbrush brands in the United States in 2014 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "38.6" ;
+    :yValue "Sonicare Essence" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "33.7" ;
+    :yValue "Oral B Pulsar" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25.1" ;
+    :yValue "Arm & Hammer Spinbrush Pro Clean" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Sonicare Easy Clean" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "18.2" ;
+    :yValue "Oral B 3D White Action" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12.9" ;
+    :yValue "Colgate 360 Optic White" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12.5" ;
+    :yValue "Arm & Hammer Spinbrush Kids" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12.4" ;
+    :yValue "Oral B CrossAction Power" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12.4" ;
+    :yValue "Arm & Hammer Spinbrush Pro Whitening" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11.2" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .

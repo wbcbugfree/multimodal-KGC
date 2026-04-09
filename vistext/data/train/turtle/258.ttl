@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading Mediterranean cruise ports by passenger numbers in 2019 (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Passenger numbers in thousands" .
+
+:YAxis a :Axis ;
+    :title "Mediterranean cruise port" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3138" ;
+    :yValue "Barcelona" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2658" ;
+    :yValue "Balearic Islands" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2652" ;
+    :yValue "Civitavecchia" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2019" ;
+    :yValue "Genoa/Savona" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1866" ;
+    :yValue "Marseille" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1611" ;
+    :yValue "Venice" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1454" ;
+    :yValue "Naples /Salerno" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1098" ;
+    :yValue "Piraeus" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1067" ;
+    :yValue "Tenerife ports" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "902" ;
+    :yValue "Valletta" ;
+    :belongsTo :Chart .

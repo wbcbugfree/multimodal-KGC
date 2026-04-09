@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular YouTube channels in South Korea as of September 2020 , by total uploaded video views (in billions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total uploaded video views in billions" .
+
+:YAxis a :Axis ;
+    :title "Most popular YouTube channels in South Korea" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "15.81" ;
+    :yValue "SMTOWN" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "15.13" ;
+    :yValue "1theK" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "14.76" ;
+    :yValue "Baby Doli - ToyPudding" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8.35" ;
+    :yValue "Boram Tube Vlog" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "BLACKPINK" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7.87" ;
+    :yValue "jypentertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.81" ;
+    :yValue "KBS World TV" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7.65" ;
+    :yValue "MBCentertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.6" ;
+    :yValue "Mnet K-POP" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.55" ;
+    :yValue "ibighit" ;
+    :belongsTo :Chart .

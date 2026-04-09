@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most common radiology procedures at imaging centers in the U.S. in 2018 , by total charges (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Total charges in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "radiology procedure" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "718.5" ;
+    :yValue "Screening mammography, bilateral, w/ computer-aided detection" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "686.8" ;
+    :yValue "MRI of lumbar spine w/o dye" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "627.6" ;
+    :yValue "MRI joint of lower extremity w/o dye" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "524.9" ;
+    :yValue "MRI of brain stem w/o & w/dye" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "419.3" ;
+    :yValue "CT of abdomen & pelvis w/contrast" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "368.4" ;
+    :yValue "MRI of joint, upper extremity, w/o dye" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "364.9" ;
+    :yValue "PET image w/CT, skull-to-thigh" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "362.2" ;
+    :yValue "MRI of neck, spine w/o dye" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "298.9" ;
+    :yValue "MRI of brain stem w/o dye" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "229.8" ;
+    :yValue "CT of abdomen & pelvis w/o contrast" ;
+    :belongsTo :Chart .

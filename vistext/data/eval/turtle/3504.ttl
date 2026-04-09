@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading solar power consuming companies in the United States as of 2018 , by installed capacity (in megawatts)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Capacity in megawatts" .
+
+:YAxis a :Axis ;
+    :title "Leading solar power consuming companies" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "393.3" ;
+    :yValue "Apple" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "329.8" ;
+    :yValue "Amazon" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "242.4" ;
+    :yValue "Target" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "208.9" ;
+    :yValue "Walmart" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "179" ;
+    :yValue "Switch" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "142.9" ;
+    :yValue "Google" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "140" ;
+    :yValue "Kaiser Permanente" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "126.3" ;
+    :yValue "Prologis" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "81.4" ;
+    :yValue "Solvay" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "80" ;
+    :yValue "Fifth Third Bank" ;
+    :belongsTo :Chart .

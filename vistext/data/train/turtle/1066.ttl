@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest Hispanic population groups in counties in the United States , by country of origin 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Country of origin" .
+
+:YAxis a :Axis ;
+    :title "Population number" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mexicans in Los Angeles County, CA" ;
+    :yValue "3510677" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cubans in Miami-Dade County, FL" ;
+    :yValue "856007" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Salvadorans in Los Angeles County, CA" ;
+    :yValue "358825" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Puerto Ricans in Bronx County, NY" ;
+    :yValue "298921" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dominicans in Bronx County, NY" ;
+    :yValue "240987" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Guatemalans in Los Angeles County, CA" ;
+    :yValue "214939" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Colombians in Miami-Dade County, FL" ;
+    :yValue "114701" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ecuadorians in Queens County, NY" ;
+    :yValue "98512" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Hondurans in Miami-Dade County, FL" ;
+    :yValue "54192" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Peruvians in Miami-Dade County, FL" ;
+    :yValue "40701" ;
+    :belongsTo :Chart .

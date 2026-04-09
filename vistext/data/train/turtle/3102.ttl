@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of persons with migration background in Germany in 2019 , by gender (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of persons in thousands" .
+
+:YAxis a :Axis ;
+    :title "Migration Background" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10855" ;
+    :yValue "Men with a migration background (s. str.)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2438" ;
+    :yValue "Among these: men with own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3073" ;
+    :yValue "Among these: men without own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4490" ;
+    :yValue "Among these: foreign men with own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "854" ;
+    :yValue "Among these: foreign men without own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "10391" ;
+    :yValue "Women with a migration background (s. str.)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2687" ;
+    :yValue "Among these: women with own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2927" ;
+    :yValue "Among these: women without own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4066" ;
+    :yValue "Among these: foreign women with own migration experience" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "711" ;
+    :yValue "Among these: foreign women without own migration experience" ;
+    :belongsTo :Chart .

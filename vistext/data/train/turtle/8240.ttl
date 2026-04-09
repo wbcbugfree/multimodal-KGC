@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cardiovascular devices market value in South Korea in 2007 , 2014 and 2021 , by category (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "category" .
+
+:YAxis a :Axis ;
+    :title "2021" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Interventional Cardiolog" ;
+    :yValue "302.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Interventional Cardiology Peripheral Vascular Device" ;
+    :yValue "122.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Peripheral Vascular Devices Cardiac Rhythm Management Device" ;
+    :yValue "101.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cardiac Rhythm Management Devices Cardiovascular Surgery Device" ;
+    :yValue "41.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cardiovascular Surgery Devices Electrophysiology Device" ;
+    :yValue "36.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Electrophysiology Devices External Defibrillator" ;
+    :yValue "23.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "External Defibrillators Prosthetic Heart Valve" ;
+    :yValue "27" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Prosthetic Heart Valves Cardiac Assist Device" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cardiac Assist Devices Clot Management Device" ;
+    :yValue "4.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Clot Management Devices Cardiovascular Prosthetic Device" ;
+    :yValue "4.1" ;
+    :belongsTo :Chart .

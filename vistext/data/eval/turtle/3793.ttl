@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Frequency of car theft by car model in Great Britain (UK) in 2011 and 2012 (in offences per 10,000 registered vehicles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "car model" .
+
+:YAxis a :Axis ;
+    :title "Thefts per 10,000 registered vehicles" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mitsubishi Pajero" ;
+    :yValue "647" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nissan Sunny" ;
+    :yValue "332" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Nissan Bluebird" ;
+    :yValue "316" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "BMW X6" ;
+    :yValue "183" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ford Orion" ;
+    :yValue "176" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Rover Metro" ;
+    :yValue "116" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Vauxhall Nova" ;
+    :yValue "98" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Vauxhall Cavalier" ;
+    :yValue "95" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Toyota Previa" ;
+    :yValue "86" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ford Granada" ;
+    :yValue "83" ;
+    :belongsTo :Chart .

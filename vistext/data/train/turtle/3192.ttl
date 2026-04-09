@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of Foot Locker stores worldwide as of 2020 , by store type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Store Type" .
+
+:YAxis a :Axis ;
+    :title "Number of stores" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Foot Locker U.S." ;
+    :yValue "867" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Foot Locker Europe" ;
+    :yValue "636" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Foot Locker Canada" ;
+    :yValue "105" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Foot Locker Pacific" ;
+    :yValue "91" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Foot Locker Asia" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Kids Foot Locker" ;
+    :yValue "431" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lady Foot Locker" ;
+    :yValue "46" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Champs Sports" ;
+    :yValue "536" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Footaction" ;
+    :yValue "245" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Runners Point" ;
+    :yValue "81" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Sidestep" ;
+    :yValue "77" ;
+    :belongsTo :Chart .

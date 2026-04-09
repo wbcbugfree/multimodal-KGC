@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Toronto Raptors all-time assists leaders from 1995 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Assists" .
+
+:YAxis a :Axis ;
+    :title "player name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3939" ;
+    :yValue "Kyle Lowry" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3770" ;
+    :yValue "Jose Calderon" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2078" ;
+    :yValue "DeMar DeRozan" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1791" ;
+    :yValue "Alvin Williams" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1761" ;
+    :yValue "Damon Stoudamire" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1553" ;
+    :yValue "Vince Carter" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1197" ;
+    :yValue "Doug Christie" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1115" ;
+    :yValue "Chris Bosh" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "965" ;
+    :yValue "Morris Peterson" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "942" ;
+    :yValue "Fred VanVleet" ;
+    :belongsTo :Chart .

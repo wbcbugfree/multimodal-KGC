@@ -1,0 +1,47 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cumulative number of coronavirus-positive (COVID-19) patients confirmed on Diamond Princess cruise ship docked in Japan as of April 16 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Number of conducted examinations" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "March 6" ;
+    :yValue "3618" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "March 2" ;
+    :yValue "4061" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "February 28" ;
+    :yValue "4061" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "February 25" ;
+    :yValue "3894" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "February 21" ;
+    :yValue "3063" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "February 17" ;
+    :yValue "1723" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "February 12" ;
+    :yValue "492" ;
+    :belongsTo :Chart .

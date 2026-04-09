@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading reasons for disliking wrapping Christmas presents in the United Kingdom (UK) in 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Takes too much time" ;
+    :yValue "0.52" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Always forget something i.e. wrapping paper, labels, tape etc." ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Gifts never look as special as want them to" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Paper always rips" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Presents that are difficult to wrap" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Always such a big job" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tape doesn't stick to paper" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wrapping paper is too expensive" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Never have enough paper" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Never have enough labels" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Run out of ribbon" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

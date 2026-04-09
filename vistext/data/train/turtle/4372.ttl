@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Detroit Tigers all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "Home run leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "399" ;
+    :yValue "Al Kaline" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "373" ;
+    :yValue "Norm Cash" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "349" ;
+    :yValue "Miguel Cabrera" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "306" ;
+    :yValue "Hank Greenberg" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "262" ;
+    :yValue "Willie Horton" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "245" ;
+    :yValue "Cecil Fielder" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "244" ;
+    :yValue "Lou Whitaker" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "239" ;
+    :yValue "Rudy York" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "212" ;
+    :yValue "Lance Parrish" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "200" ;
+    :yValue "Bill Freehan" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 causes of most disabling U.S. workplace injuries in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of all causes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Overexertion involving outside sources" ;
+    :yValue "0.235" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Falls on same level" ;
+    :yValue "0.182" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Struck by object or equipment" ;
+    :yValue "0.103" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Falls on lower level" ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Other exertions or bodily reactions" ;
+    :yValue "0.079" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Roadway incidents involving motorized land vehicle" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Slip or trip without fall" ;
+    :yValue "0.035" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Repetitive motions involving micro-tasks" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Struck against object or equipment" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Caught in/compressed by equipment or objects" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Production costs and global box office revenue of Star Wars movies from 1977 to 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Star Wars movies" .
+
+:YAxis a :Axis ;
+    :title "Production costs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Star Wars: The Force Awakens" ;
+    :yValue "245" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Star Wars: The Last Jedi*" ;
+    :yValue "317" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Star Wars: Episode IX - The Rise of Skywalker" ;
+    :yValue "275" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Rogue One: A Star Wars Story" ;
+    :yValue "200" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Star Wars Episode I: The Phantom Menace" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Star Wars Episode III: Revenge of the Sith" ;
+    :yValue "113" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Star Wars Episode IV: A New Hope" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Star Wars Episode II: Attack of the Clones" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Star Wars Episode V: The Empire Strikes Back" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Star Wars Episode VI: Return of the Jedi" ;
+    :yValue "32.5" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Solo: A Star Wars Story*" ;
+    :yValue "275" ;
+    :belongsTo :Chart .

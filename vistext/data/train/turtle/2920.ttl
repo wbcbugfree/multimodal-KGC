@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Covarieties among U.S. men enrolled in the testosterone therapy prescription as of 2014 , by prior prescription" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of men enrolled in TT prescription" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hypolipidemics" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "SSRIs" ;
+    :yValue "0.207" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ace inhibitors" ;
+    :yValue "0.181" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "NSAIDs" ;
+    :yValue "0.163" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Beta blockers" ;
+    :yValue "0.155" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Anti-diabetes drugs" ;
+    :yValue "0.152" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Other cardiac drugs" ;
+    :yValue "0.138" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Corticosteroids" ;
+    :yValue "0.127" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Calcium channel blockers" ;
+    :yValue "0.117" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Diuretics" ;
+    :yValue "0.104" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Insulin" ;
+    :yValue "0.039" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Antiplatelets" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Anti-hypertensive NOS" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Anticoagulant" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Vasodialators" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

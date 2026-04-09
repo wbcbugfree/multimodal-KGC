@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "In your country , what do you think should happen in the aftermath of the pandemic , even if for a short time ? (as of May 31 , 2020)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "United States" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Better preparation for global crises" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Wear protective face masks outside" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Improve health system" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "No mass gatherings (e.g. sporting or music events)" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Work from home more" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Better working conditions/pay for low paid workers (e.g. cleaners)" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Better welfare, for those with lower income or unemployed" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Stronger punishments for people who don’t follow the rules" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wear protective gloves outside" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Larger police presence on the streets" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Things should go back to the exactly the way they were" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Curfews" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Government should track people’s movements" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "None of these" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .

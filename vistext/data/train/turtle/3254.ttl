@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Soccer players with the most appearances at the FIFA World Cup from 1930 to 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of appearances" .
+
+:YAxis a :Axis ;
+    :title "Soccer player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Lothar Matthäus (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Miroslav Klose (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "23" ;
+    :yValue "Paolo Maldini (Italy)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Uwe Seeler (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Diege Maradona (Argentina)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Władysław Żmuda (Poland)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Cafu (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Bastian Schweinsteiger (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Philipp Lahm (Germany)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Grzegorz Lato (Poland)" ;
+    :belongsTo :Chart .

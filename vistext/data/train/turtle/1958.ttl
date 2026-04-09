@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of e-mail antivirus activations as of 1st quarter 2020 , by country" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of spam mails worldwide" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Spain" ;
+    :yValue "0.0966" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Germany" ;
+    :yValue "0.0853" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "0.0626" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Vietnam" ;
+    :yValue "0.0547" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Italy" ;
+    :yValue "0.0469" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "UAE" ;
+    :yValue "0.0461" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Brazil" ;
+    :yValue "0.0346" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "India" ;
+    :yValue "0.0271" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Turkey" ;
+    :yValue "0.0262" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Malaysia" ;
+    :yValue "0.0246" ;
+    :belongsTo :Chart .

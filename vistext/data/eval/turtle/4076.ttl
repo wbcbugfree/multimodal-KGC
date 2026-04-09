@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading tin producing companies worldwide in 2017 , based on production output (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Tin producing company" .
+
+:YAxis a :Axis ;
+    :title "Production output in thousand metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Yunnan Tin (China)" ;
+    :yValue "74.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "PT Timah (Indonesia)" ;
+    :yValue "30.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Malaysia Smelting Corporation (Malaysia)" ;
+    :yValue "27.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Yunnan Chengfeng (China)" ;
+    :yValue "26.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Minsur (Peru)" ;
+    :yValue "18" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "EM Vinto (Bolivia)" ;
+    :yValue "12.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Guangxi China Tin (China)" ;
+    :yValue "11.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Thaisarco (Thailand)" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Metallo Chimique (Belgium)" ;
+    :yValue "9.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Gejiu Zi-Li (China)" ;
+    :yValue "8.7" ;
+    :belongsTo :Chart .

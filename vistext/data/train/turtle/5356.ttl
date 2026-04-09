@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "TV viewership of selected sporting events worldwide from 2009 to 2010 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Viewership in millions" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "121" ;
+    :yValue "Super Bowl XLIV (American football) *" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "109" ;
+    :yValue "UEFA Champions league final (football)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "54" ;
+    :yValue "Bahrain Grand Prix (Formula 1)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "100-meter final Eder men (athletics)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "Men's final wimbledon (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Japan-South Korea baseball finals (baseball)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "NBA Finals LA Lakers-Orlando Magic (Basketball)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Final day U.S. Masters (Golf)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Sudirman finals South Korea-China (badminton)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Motor GP World Cup (motorcycle racing)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "18" ;
+    :yValue "Tour de France 20 Leg (cycling)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Canada-Russia World Cup finals (hockey)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "World Cup final France-Croatia (handball)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "NASCAR Daytona 500 (Motor Sports)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "World Cup Final Pakistan-Sri Lanka (Cricket)" ;
+    :belongsTo :Chart .

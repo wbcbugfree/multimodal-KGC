@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of leading health insurance companies in the United States in 2019 , by direct premiums written" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "Health insurance company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.141" ;
+    :yValue "UnitedHealth Group Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.096" ;
+    :yValue "Anthem Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.084" ;
+    :yValue "Humana Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.083" ;
+    :yValue "Centene Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.052" ;
+    :yValue "HealthCare ServicesCorp." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.034" ;
+    :yValue "CVS Health Corp" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.026" ;
+    :yValue "Kaiser Permanente" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.025" ;
+    :yValue "GuideWell MutualHolding Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.023" ;
+    :yValue "IndependenceHealth Group Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "Blue Cross BlueShield of Michigan" ;
+    :belongsTo :Chart .

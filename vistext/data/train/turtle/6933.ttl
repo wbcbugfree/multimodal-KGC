@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest-paid (salaries & endorsements) soccer players worldwide in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Highest-paid soccer players" .
+
+:YAxis a :Axis ;
+    :title "Salary & bonuses" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lionel Messi (FC Barcelona)" ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cristiano Ronaldo (Juventus)" ;
+    :yValue "70" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Neymar (Paris Saint-Germain)" ;
+    :yValue "78" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Kylian Mbappe (Paris St. Germain)" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mohamed Salah (Liverpool)" ;
+    :yValue "24" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Paul Pogba (Manchester United)" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Antoine Griezmann (Barcelona)" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gareth Bale (Real Madrid)" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Robert Lewandowski (Bayern Munich)" ;
+    :yValue "24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "David de Gea (Manchester United)" ;
+    :yValue "24" ;
+    :belongsTo :Chart .

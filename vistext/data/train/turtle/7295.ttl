@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "King 's gross bookings from 1st quarter 2012 to 4th quarter 2015 , by channel (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Quarter" .
+
+:YAxis a :Axis ;
+    :title "Other" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Q4 '15" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Q3 '15" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Q2 '15" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Q4 '14" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Q2 '13" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Q1 '13" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Q4 '12" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Q3 '12" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Q2 '12" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Q1 '12" ;
+    :yValue "3" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top-selling physical music albums in South Korea in 2019 , based on unit sales (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of units sold in millions" .
+
+:YAxis a :Axis ;
+    :title "Album/Artist" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3.72" ;
+    :yValue "MAP OF THE SOUL: Persona / BTS" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.86" ;
+    :yValue "3RD ALBUM 'An Ode' / SEVENTEEN" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "OBSESSION - The 6th Album / EXO" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.58" ;
+    :yValue "Soaring: QUANTUM LEAP / X1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "BTS WORLD OST / BTS" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.53" ;
+    :yValue "City Lights - The 1st Mini Album / Baekhyun" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "color on me / Kang Daniel" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.48" ;
+    :yValue "6TH MINI ALBUM 'YOU MADE MY DAWN' / SEVENTEEN" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.43" ;
+    :yValue "Time_Slip - The 9th Album / Super Junior" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.41" ;
+    :yValue "Feel Special / TWICE" ;
+    :belongsTo :Chart .

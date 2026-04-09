@@ -1,0 +1,17 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Android operating system share worldwide by OS version from 2013 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Android platform version" .
+
+:YAxis a :Axis ;
+    :title "Android 10" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1H '20" ;
+    :yValue "0.083" ;
+    :belongsTo :Chart .

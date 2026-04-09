@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of households owning pets by type and region in the United Kingdom (UK) from 2016 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Indoor birds" .
+
+:YAxis a :Axis ;
+    :title "region in the United Kingdom" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "North East" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "North West" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Yorks&Humber" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "East Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "West Midlands" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "East of England" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "London" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "South East" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "South West" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Wales" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Scotland" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Northern Ireland" ;
+    :belongsTo :Chart .

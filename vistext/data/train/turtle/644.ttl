@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated year-on-year revenue growth rate of selected major public apparel retailers in the United Kingdom (UK) in the fiscal year 2017 (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue growth rate" .
+
+:YAxis a :Axis ;
+    :title "major public apparel retailers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.348" ;
+    :yValue "Boohoo.com" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.241" ;
+    :yValue "ASOS" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.147" ;
+    :yValue "Ted Baker" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.144" ;
+    :yValue "SuperGroup" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.137" ;
+    :yValue "JD Sports" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.121" ;
+    :yValue "Primark UK" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.083" ;
+    :yValue "Sports Direct" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.008" ;
+    :yValue "Bonmarche" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Debenhams" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Next" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "-0.03" ;
+    :yValue "M&S Clothing and Home" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "-0.056" ;
+    :yValue "French Connection" ;
+    :belongsTo :Chart .

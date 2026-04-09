@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market shares of olive oil brands in Italy as of 2015 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Olive Oil Brand" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Private label" ;
+    :yValue "0.208" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Monini" ;
+    :yValue "0.102" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bertolli" ;
+    :yValue "0.084" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Olio Carli" ;
+    :yValue "0.082" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Carapelli" ;
+    :yValue "0.073" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dante" ;
+    :yValue "0.042" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "De Cecco" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Farchioni" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sasso" ;
+    :yValue "0.035" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sagra" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Desantis" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Filippo Berio" ;
+    :yValue "0.001" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "0.238" ;
+    :belongsTo :Chart .

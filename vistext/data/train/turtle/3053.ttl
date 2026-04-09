@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of employment in the private sector in Canada in 2018 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Industry" .
+
+:YAxis a :Axis ;
+    :title "Share of employment" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Retail trade" ;
+    :yValue "0.158" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.131" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Accommodation and food services" ;
+    :yValue "0.104" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Construction" ;
+    :yValue "0.084" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Professional, scientific and technical services" ;
+    :yValue "0.077" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Transportation and warehousing" ;
+    :yValue "0.067" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Administrative and support, waste management and remediation services" ;
+    :yValue "0.065" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Wholesale trade" ;
+    :yValue "0.064" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Finance and insurance" ;
+    :yValue "0.061" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other services (except public administration)" ;
+    :yValue "0.049" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Information and cultural industries" ;
+    :yValue "0.029" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Arts, entertainment and recreation" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Real estate and rental and leasing" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Mining, quarrying, and oil and gas extraction" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Agriculture, forestry, fishing and hunting" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Utilities" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Unclassified businesses" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Management of companies and enterprises" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .

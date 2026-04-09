@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of U.S. high schools with athletics programs for girls from 2009/10 to 2018/19 , by sport" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Basketball" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2009/10" ;
+    :yValue "17711" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2010/11" ;
+    :yValue "17767" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2011/12" ;
+    :yValue "17768" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2012/13" ;
+    :yValue "17493" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2013/14" ;
+    :yValue "17754" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2014/15" ;
+    :yValue "17653" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2015/16" ;
+    :yValue "17890" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2016/17" ;
+    :yValue "17934" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2017/18" ;
+    :yValue "18171" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2018/19" ;
+    :yValue "18210" ;
+    :belongsTo :Chart .

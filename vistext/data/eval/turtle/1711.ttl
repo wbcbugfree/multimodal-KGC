@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most common programs and services regarding engagement and learning barriers provided to U.S. schools in 2016 , by community partners" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "List of activities" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mental health services for students" ;
+    :yValue "0.58" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Before- and/or after-school programs/childcare" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Healthcare services for students" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Food for students outside of the school day" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Programming for families (adult education, career support, etc.)" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Access to technology/the Internet outside of school" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Supports tailored to families from different cultural or language backgrounds" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Print or ebooks to create or grow home libraries" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Supports for students transitioning from elementary to middle school" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Supports to help students who have relocated adjust to their new school" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .

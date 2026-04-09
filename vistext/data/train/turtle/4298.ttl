@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Japan 's largest chemical companies 2009 , by revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Chemical company" .
+
+:YAxis a :Axis ;
+    :title "Revenue (in million U.S. dollars)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mitsubishi" ;
+    :yValue "26928" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sumitomo" ;
+    :yValue "17355" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Asahi Kasei" ;
+    :yValue "15349" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Toray" ;
+    :yValue "14557" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mitsui" ;
+    :yValue "12930" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Shin-Etsu" ;
+    :yValue "9816" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Teijin" ;
+    :yValue "8200" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "DIC" ;
+    :yValue "8114" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Kaneka" ;
+    :yValue "4416" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "JSR" ;
+    :yValue "3321" ;
+    :belongsTo :Chart .

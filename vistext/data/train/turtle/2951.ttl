@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten analgesic drugs dispensed in England in 2019 , by number of items (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Analgesic Drug" .
+
+:YAxis a :Axis ;
+    :title "Items in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Paracetamol" ;
+    :yValue "17378" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Co-codamol (Codeine phosphate/paracetamol)" ;
+    :yValue "15063" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Tramadol hydrochloride" ;
+    :yValue "6078" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Morphine sulfate" ;
+    :yValue "5091" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Codeine phosphate" ;
+    :yValue "4988" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Buprenorphine" ;
+    :yValue "2396" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sumatriptan succinate" ;
+    :yValue "1822" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Oxycodone hydrochloride" ;
+    :yValue "1791" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Co-dydramol (Dihydrocodeine/paracetamol)" ;
+    :yValue "1770" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dihydrocodeine tartrate" ;
+    :yValue "1580" ;
+    :belongsTo :Chart .

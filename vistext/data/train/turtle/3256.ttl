@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenues of the Nova Scotia provincial government in 2019 , by source (in million Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "source of revenue" .
+
+:YAxis a :Axis ;
+    :title "Revenues in million Canadian dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Grants from general government units" ;
+    :yValue "4024" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Taxes on income, profits and capital gains" ;
+    :yValue "3459" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Taxes on goods and services" ;
+    :yValue "3238" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sales of goods and services" ;
+    :yValue "593" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Social security contributions" ;
+    :yValue "320" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Property income" ;
+    :yValue "277" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Taxes on property" ;
+    :yValue "63" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Miscellaneous revenue" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fines, penalties and forfeits" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Voluntary transfers other than grants" ;
+    :yValue "2" ;
+    :belongsTo :Chart .

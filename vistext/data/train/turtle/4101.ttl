@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Club World Cup : number of titles won by club from 2000 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Club World Cup titles" .
+
+:YAxis a :Axis ;
+    :title "association football club" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Real Madrid (2014, 2016, 2017 & 2018)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "FC Barcelona (2009, 2011 & 2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Sport Club Corinthians Paulista (2000 & 2012)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "São Paulo FC (2005)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Sport Club Internacional (2006)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Manchester United FC (2008)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "FC Internazionale Milano (2010)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "A.C. Milan (2007)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "FC Bayern Munich (2013)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Liverpool FC (2019)" ;
+    :belongsTo :Chart .

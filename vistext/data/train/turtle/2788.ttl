@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Main industry sectors of small and medium enterprises (SME) in the United Kingdom (UK) in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of responding businesses" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Personal services (e.g. beauty and wellness, repair of household goods)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Professional services (e.g., financial services, consulting, travel agents, business services)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Retail or wholesale (incl. online shops)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Arts, entertainment or recreation (e.g., museum, creative arts, sports club)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Media, communication or information (e.g., broadcasting, telecoms, computer programming)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Restaurant/café or other food services" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Education (e.g., schools, tutoring, driving school)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Construction or home repair" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Non-profit/charity organization" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Healthcare (e.g., dentist, senior care)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Automotive repair or services" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Accommodation (e.g., hotels, camping grounds)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Transportation or storage (e.g., taxi, warehousing)" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Real estate (e.g., brokerage, leasing, management)" ;
+    :belongsTo :Chart .

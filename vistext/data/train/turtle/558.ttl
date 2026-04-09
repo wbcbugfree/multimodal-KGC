@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of total cargo handled across India in financial year 2019 , by major port (in million metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "port" .
+
+:YAxis a :Axis ;
+    :title "Volume in million metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Deendayal" ;
+    :yValue "115.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Paradip" ;
+    :yValue "109.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "J L Nehru" ;
+    :yValue "70.71" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Visakhapatnam" ;
+    :yValue "65.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mumbai" ;
+    :yValue "60.63" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Chennai" ;
+    :yValue "53.01" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Haldia Dock Complex" ;
+    :yValue "45.21" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New Mangalore" ;
+    :yValue "42.51" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Kamarajar" ;
+    :yValue "34.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Chidambaranar" ;
+    :yValue "34.34" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Cochin" ;
+    :yValue "32.02" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Kolkata Dock System" ;
+    :yValue "18.55" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Mormugao" ;
+    :yValue "17.68" ;
+    :belongsTo :Chart .

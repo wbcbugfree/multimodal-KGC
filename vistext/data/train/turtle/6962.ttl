@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading companies in the flavor and fragrance market worldwide from 2010 to 2017 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2013" .
+
+:YAxis a :Axis ;
+    :title "Company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4715.9" ;
+    :yValue "Givaudan" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3186.4" ;
+    :yValue "Firmenich*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2952.9" ;
+    :yValue "IFF" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2431.6" ;
+    :yValue "Symrise" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "960.7" ;
+    :yValue "Mane SA" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "673.7" ;
+    :yValue "Frutarom" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1345" ;
+    :yValue "Takasago*" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "736.1" ;
+    :yValue "Sensient Flavors" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "517.4" ;
+    :yValue "Robertet SA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "462.9" ;
+    :yValue "Hasegawa" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most important supplier support services to travel agents in the United States as of July 2015 , by agency size" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Traditional agencies with $3m to $10m revenue" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Familiarization trips" ;
+    :yValue "0.58" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Educational programs" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Email updates on special offers" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Overrides / incentives" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Agent portion of websites" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Consumer referrals" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Co-op marketing efforts" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Co-op advertising" ;
+    :yValue "0.34" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Trade publication offers" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Mail updates on special offers" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Social media co-op" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .

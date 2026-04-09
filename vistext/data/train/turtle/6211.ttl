@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Growth in weekly sales of FMCG products due to coronavirus (COVID-19) outbreak in Poland between January and March 2020 , by type of products" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type of FMCG products" .
+
+:YAxis a :Axis ;
+    :title "Toilet paper" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "W01" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "W02" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "W03" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "W04" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "W05" ;
+    :yValue "-0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "W06" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "W07" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "W08" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "W09" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "W10" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .

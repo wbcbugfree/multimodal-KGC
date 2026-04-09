@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Club teams with the most players at the 2018 FIFA World Cup in Russia" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of players" .
+
+:YAxis a :Axis ;
+    :title "association football club" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Manchester City" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Real Madrid" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "FC Barcelona" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Tottenham Hotspur" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "FC Paris Saint-Germain" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Chelsea FC" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "FC Bayern München" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Manchester United" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Juventus" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Atlético Madrid" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Al-Hilal Riad" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Al-Ahli Dschidda" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 U.S. states based on alcohol consumption per capita from wine in 2018 (in gallons of ethanol)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Consumption per capita in gallons of ethanol" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Idaho" ;
+    :yValue "1.21" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "District of Columbia" ;
+    :yValue "1.02" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "New Hampshire" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Vermont" ;
+    :yValue "0.78" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Delaware" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Massachusetts" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "California" ;
+    :yValue "0.62" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nevada" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Connecticut" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hawaii" ;
+    :yValue "0.59" ;
+    :belongsTo :Chart .

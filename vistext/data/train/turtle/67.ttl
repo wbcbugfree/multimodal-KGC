@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the strongest Indonesian brands in 2020 , by brand strength index" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "state-owned enterprise" .
+
+:YAxis a :Axis ;
+    :title "Brand strength index" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BCA" ;
+    :yValue "91.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Telkom Indonesia" ;
+    :yValue "87.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "BNI" ;
+    :yValue "85.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mandiri" ;
+    :yValue "85.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Bank BRI" ;
+    :yValue "84.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Pertamina" ;
+    :yValue "81.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Semen Indonesia" ;
+    :yValue "78.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jasa Marga" ;
+    :yValue "78.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "XL" ;
+    :yValue "76.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Umild" ;
+    :yValue "76" ;
+    :belongsTo :Chart .

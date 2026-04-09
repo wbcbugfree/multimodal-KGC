@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "If and when did you purchase airline ancillary services ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Did not purchase" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Checked bagge" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Advance seat selection" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "In-flight meals/snacks" ;
+    :yValue "0.72" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "In-flight movies/entertainment" ;
+    :yValue "0.85" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Additional frequent flyer program miles" ;
+    :yValue "0.86" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Preferred seating/extra legroom" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Priority boarding" ;
+    :yValue "0.87" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "In-flight wireless Internet access" ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Airport lounge access" ;
+    :yValue "0.91" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Discounted flight change fee" ;
+    :yValue "0.92" ;
+    :belongsTo :Chart .

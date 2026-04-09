@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Net worth of wealthiest Hollywood and Bollywood actors worldwide as of May 2014 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Richest Actors" .
+
+:YAxis a :Axis ;
+    :title "Net worth in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jerry Seinfeld" ;
+    :yValue "820" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Shahrukh Khan" ;
+    :yValue "600" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Tom Cruise" ;
+    :yValue "480" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tyler Perry" ;
+    :yValue "450" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Johnny Depp" ;
+    :yValue "450" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jack Nicholson" ;
+    :yValue "400" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tom Hanks" ;
+    :yValue "390" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bill Cosby" ;
+    :yValue "380" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Clint Eastwood" ;
+    :yValue "370" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Adam Sandler" ;
+    :yValue "340" ;
+    :belongsTo :Chart .

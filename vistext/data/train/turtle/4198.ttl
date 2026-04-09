@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Languages spoken (at home) other than English in the United States by number of speakers in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of speakers" .
+
+:YAxis a :Axis ;
+    :title "Language" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "41757391" ;
+    :yValue "Spanish" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3494544" ;
+    :yValue "Chinese (incl. Mandarin, Cantonese)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1763585" ;
+    :yValue "Tagalog (incl. Filipino)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1570526" ;
+    :yValue "Vietnamese" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1260437" ;
+    :yValue "Arabic" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1171775" ;
+    :yValue "French (incl. Cajun)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1075247" ;
+    :yValue "Korean" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "941454" ;
+    :yValue "Russian" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "924817" ;
+    :yValue "Haitian" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "895309" ;
+    :yValue "German" ;
+    :belongsTo :Chart .

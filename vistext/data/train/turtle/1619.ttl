@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly average earnings per hour of all employees in the United States in November 2020 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hourly earnings in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Industry Type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "44.59" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "44.6" ;
+    :yValue "Utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "38.9" ;
+    :yValue "Financial activities" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "35.33" ;
+    :yValue "Professional and business services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "34.86" ;
+    :yValue "Mining and logging" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "32.72" ;
+    :yValue "Wholesale trade" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "31.94" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "29.58" ;
+    :yValue "Total private" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "28.94" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "28.74" ;
+    :yValue "Education and health services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "26.47" ;
+    :yValue "Other services" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "25.61" ;
+    :yValue "Transportation and warehousing" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "21.09" ;
+    :yValue "Retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "17.05" ;
+    :yValue "Leisure and hospitality" ;
+    :belongsTo :Chart .

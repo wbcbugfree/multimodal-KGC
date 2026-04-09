@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most viewed movie trailers on YouTube in 2014 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of YouTube views in millions" .
+
+:YAxis a :Axis ;
+    :title "film" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "67" ;
+    :yValue "Fifty Shades Of Grey - Official Trailer (Universal Pictures) HD" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "64" ;
+    :yValue "Marvel's \"Avengers: Age of Ultron\" - Teaser Trailer (OFFICIAL)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "Star Wars: Episode VII - The Force Awakens Official Teaser Trailer #1 (2015) - J.J. Abrams Movie HD" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "44" ;
+    :yValue "Jurassic World - Official Trailer (HD)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "TEENAGE MUTANT NINJA TURTLES - Official Trailer (2014) [HD]" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Furious 7 - Official Trailer (HD)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Godzilla - Official Main Trailer [HD]" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "36" ;
+    :yValue "Lucy TRAILER 1 (2014) - Luc Besson, Scarlett Johansson Movie HD" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "The Fault In Our Stars | Official Trailer [HD] | 20th Century FOX" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Official Call of Duty: Advanced Warfare Reveal Trailer" ;
+    :belongsTo :Chart .

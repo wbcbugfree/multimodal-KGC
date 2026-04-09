@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of the main causes of skills gaps in the United Kingdom (UK) in 2015 (as a percentage of all skills gaps)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Proportion of all skills gaps" .
+
+:YAxis a :Axis ;
+    :title "main causes of skills gaps" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.73" ;
+    :yValue "New to role and/or training incomplete" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Staff are new to the role" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Their training is currently only partially completed" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Staff lack motivation" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "They have been on training but their performance has not improved sufficiently" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "The introduction of new working practices" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Unable to recruit staff with the required skills" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Staff have not received the appropriate training" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "The introduction of new technology" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "The development of new products and services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Problems retaining staff" ;
+    :belongsTo :Chart .

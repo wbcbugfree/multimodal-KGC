@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Houston Astros all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "449" ;
+    :yValue "Jeff Bagwell" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "326" ;
+    :yValue "Lance Berkman" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "291" ;
+    :yValue "Craig Biggio" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "223" ;
+    :yValue "Jim Wynn" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "174" ;
+    :yValue "George Springer" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "166" ;
+    :yValue "Glenn Davis" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "163" ;
+    :yValue "Cesar Cedeno" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "139" ;
+    :yValue "Bob Watson" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "138" ;
+    :yValue "Jose Cruz" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "134" ;
+    :yValue "Richard Hidalgo" ;
+    :belongsTo :Chart .

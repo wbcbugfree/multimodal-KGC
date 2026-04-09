@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of new coronavirus (COVID-19) cases confirmed in Czechia in 2020 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of the Czech Republic" .
+
+:YAxis a :Axis ;
+    :title "Number of people" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hlavní město Praha" ;
+    :yValue "2309" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Moravskoslezský kraj" ;
+    :yValue "1838" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Středočeský kraj" ;
+    :yValue "1130" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Olomoucký kraj" ;
+    :yValue "842" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Plzeňský kraj" ;
+    :yValue "666" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jihomoravský kraj" ;
+    :yValue "603" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ústecký kraj" ;
+    :yValue "569" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Karlovarský kraj" ;
+    :yValue "487" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Zlínský kraj" ;
+    :yValue "374" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pardubický kraj" ;
+    :yValue "289" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Královéhradecký kraj" ;
+    :yValue "203" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Liberecký kraj" ;
+    :yValue "202" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Jihočeský kraj" ;
+    :yValue "192" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Kraj Vysočina" ;
+    :yValue "187" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Not identified" ;
+    :yValue "108" ;
+    :belongsTo :Chart .

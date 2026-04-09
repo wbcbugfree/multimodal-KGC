@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "U.S. limited-service hotel chains by average revenue per available room in 2009 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average RevPAR (in U.S. dollars)" .
+
+:YAxis a :Axis ;
+    :title "hotel chain" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "58.42" ;
+    :yValue "Holiday Inn Express" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "56.71" ;
+    :yValue "Wingate by Wyndham" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "52.38" ;
+    :yValue "TownePlace Suites by Marriott" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "51.97" ;
+    :yValue "Fairfield Inn by Marriott" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "46.5" ;
+    :yValue "Comfort Suites" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "43.78" ;
+    :yValue "Candlewood Suites" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "42.36" ;
+    :yValue "Comfort Inn" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "41.65" ;
+    :yValue "MainStay Suites" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "39" ;
+    :yValue "InnSuites Hotels" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "38.06" ;
+    :yValue "Travelodge" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "35.5" ;
+    :yValue "Baymont" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "34.7" ;
+    :yValue "Days Inn" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "33.97" ;
+    :yValue "Super 8" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "32.93" ;
+    :yValue "Microtel Inns & Suites" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "24.15" ;
+    :yValue "Econo Lodge" ;
+    :belongsTo :Chart .

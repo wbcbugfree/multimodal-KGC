@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average usual weekly hours worked at the main job in Canada in 2020 , by occupation" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Occupation" .
+
+:YAxis a :Axis ;
+    :title "Average usual weekly hours" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Natural resources, agriculture and related production occupations" ;
+    :yValue "40.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Management occupations" ;
+    :yValue "40.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Trades, transport and equipment operators and related occupations" ;
+    :yValue "40.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Occupations in manufacturing and utilities" ;
+    :yValue "39.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Natural and applied sciences and related occupations" ;
+    :yValue "38.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Total, all occupations" ;
+    :yValue "35.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Business, finance and administration occupations" ;
+    :yValue "35.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Health occupations" ;
+    :yValue "34.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Occupations in education, law and social, community and government services" ;
+    :yValue "34.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sales and service occupations" ;
+    :yValue "31.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Occupations in art, culture, recreation and sport" ;
+    :yValue "30.3" ;
+    :belongsTo :Chart .

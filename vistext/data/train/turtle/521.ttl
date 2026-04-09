@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most read newspapers in Italy in 2nd quarter of 2019 , by readership (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of readers in thousands" .
+
+:YAxis a :Axis ;
+    :title "daily newspaper" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3318" ;
+    :yValue "Gazzetta dello Sport" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2044" ;
+    :yValue "Corriere della Sera" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1883" ;
+    :yValue "La Repubblica" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1442" ;
+    :yValue "Corriere dello Sport" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1133" ;
+    :yValue "La Stampa" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1123" ;
+    :yValue "Resto del Carlino" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "998" ;
+    :yValue "Il Messaggero" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "885" ;
+    :yValue "TuttoSport" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "713" ;
+    :yValue "Il Sole 24 Ore" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "599" ;
+    :yValue "La Nazione" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "545" ;
+    :yValue "Il Mattino" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "535" ;
+    :yValue "Il Gazzettino" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "497" ;
+    :yValue "La Gazzetta del Mezzogiorno" ;
+    :belongsTo :Chart .

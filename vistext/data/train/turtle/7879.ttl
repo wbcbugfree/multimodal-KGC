@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global underserved international airline routes in 2015 , by type of booking" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "One-stop bookings" .
+
+:YAxis a :Axis ;
+    :title "Global underserved* international airline routes" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "279733" ;
+    :yValue "Jakarta (CGK) - Jeddah (JED)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "238995" ;
+    :yValue "New York (JFK) - Tel Aviv" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "238955" ;
+    :yValue "Bangkok (BKK) - Paris De Gaulle (CDG)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "230542" ;
+    :yValue "Bangkok (BKK) - London Heathrow (LHR)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "203359" ;
+    :yValue "Los Angeles ((LAX) - Ho Chi Minh City (SGN)**" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "192504" ;
+    :yValue "Dubai (DXB) - Manila (MNL)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "188229" ;
+    :yValue "Los Angeles (LAX) - Manila (MNL)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "186153" ;
+    :yValue "Bangkok (BKK) - Beijing (PEK)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "180670" ;
+    :yValue "Jeddah (JED) - Manila (MNL)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "179224" ;
+    :yValue "Jeddah (JED) - Karachi (KHI)" ;
+    :belongsTo :Chart .

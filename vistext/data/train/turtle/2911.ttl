@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Representative retail prices of high-end mass market personal care and cosmetic products in China in 2015 , by category (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Price in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Category" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "Perfume" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Eyeshadow" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "Bronzer/Blush" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Sunscreen" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Mascara" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Shampoo/Conditioner" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Skin cream" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Lipstick" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Nail polish" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Shaving Prep" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "5.5" ;
+    :yValue "Deodorant" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Hair styling product" ;
+    :belongsTo :Chart .

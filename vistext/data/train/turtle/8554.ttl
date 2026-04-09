@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Trade weighted average of applied import tarrifs in the EU and U.S. , by sector in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Race" .
+
+:YAxis a :Axis ;
+    :title "EU import tariffs applied to U.S. goods" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Processed foods" ;
+    :yValue "0.064" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Manufacturing" ;
+    :yValue "0.0413" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Transport" ;
+    :yValue "0.0351" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Agri-forestry-fishing" ;
+    :yValue "0.0284" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chemicals" ;
+    :yValue "0.0235" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Metals" ;
+    :yValue "0.0189" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Electric machinery and equipment" ;
+    :yValue "0.0168" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Minerals" ;
+    :yValue "0.0109" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Machinery" ;
+    :yValue "0.0106" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.0066" ;
+    :belongsTo :Chart .

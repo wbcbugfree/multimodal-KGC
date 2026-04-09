@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cleveland Cavaliers all-time points leaders from 1970 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "player name" .
+
+:YAxis a :Axis ;
+    :title "Points scored" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "LeBron James" ;
+    :yValue "23119" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Zydrunas Ilgauskas" ;
+    :yValue "10616" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Brad Daugherty" ;
+    :yValue "10389" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Austin Carr" ;
+    :yValue "10265" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mark Price" ;
+    :yValue "9543" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Bingo Smith" ;
+    :yValue "9513" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Hot Rod Williams" ;
+    :yValue "8504" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kyrie Irving" ;
+    :yValue "8232" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Larry Nance" ;
+    :yValue "7257" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Campy Russell" ;
+    :yValue "6588" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Highest paid players in Major League Baseball in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Baseball player" .
+
+:YAxis a :Axis ;
+    :title "Earnings in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mike Trout" ;
+    :yValue "37.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Gerrit Cole" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Max Scherzer" ;
+    :yValue "35.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Zack Greinke" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Stephen Strasburg" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nolan Arenado" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Justin Verlander" ;
+    :yValue "33" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "David Price" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manny Machado" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Clayton Kershaw" ;
+    :yValue "31" ;
+    :belongsTo :Chart .

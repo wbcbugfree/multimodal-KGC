@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths globally due to major dry disasters - landslides , avalanches or rockfalls - between 1900 and 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of deaths" .
+
+:YAxis a :Axis ;
+    :title "major dry disasters" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2000" ;
+    :yValue "Landslide in Peru (January 10, 1962)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "300" ;
+    :yValue "Landslide in the Philippines (October 21, 1985)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "277" ;
+    :yValue "Landslide in China (March 7, 1983)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "261" ;
+    :yValue "Rockslide in Turkey (January 1, 1992)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "160" ;
+    :yValue "Rockfall in Colombia (July 28, 1983)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "150" ;
+    :yValue "Landslide in Nepal (August 10, 1963)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "131" ;
+    :yValue "Landslide in Indonesia (May 4, 1987)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Rockslide in Afghanistan (March 1993)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "98" ;
+    :yValue "Rockfall in Egypt (September 6, 2008)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "76" ;
+    :yValue "Rockfall in Canada (April 29, 1903)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of products sold through vending machines in the U.S. from 2009 to 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2010" .
+
+:YAxis a :Axis ;
+    :title "products sold through vending machines" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.561" ;
+    :yValue "Packaged cold beverages*" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Snacks, confections, pastry**" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.068" ;
+    :yValue "Hot drinks" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.065" ;
+    :yValue "Vended food***" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.021" ;
+    :yValue "Ice cream" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Milk" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Bulk vending" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Cold drinks (cup)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Cigarettes & Cigars" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.015" ;
+    :yValue "All other" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of retail spending Germany in 2013 and 2018 , by key product sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2018*" .
+
+:YAxis a :Axis ;
+    :title "retail spending in Germany by product sector" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.425" ;
+    :yValue "Food and grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.122" ;
+    :yValue "Home and garden products" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.122" ;
+    :yValue "Clothing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.121" ;
+    :yValue "Electricals and electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.064" ;
+    :yValue "Furniture and floor coverings" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.044" ;
+    :yValue "Personal care" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.035" ;
+    :yValue "Books, news and stationery" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Others" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.019" ;
+    :yValue "Footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.017" ;
+    :yValue "Jewellery, watches and accessories" ;
+    :belongsTo :Chart .

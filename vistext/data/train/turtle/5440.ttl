@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Economic loss due to major droughts worldwide from 1900 to 2016 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Economic loss in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Drought" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "United States, June 2012" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13.8" ;
+    :yValue "China P Rep, January 1994" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "United States, January 2011" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Australia, 1981" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Brazil, January 2014" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4.5" ;
+    :yValue "Spain, September 1990" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3.6" ;
+    :yValue "China P Rep, October 2009" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "United States, July 2002" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "Iran Islam Rep, April 1999" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3.2" ;
+    :yValue "Spain, April 1999" ;
+    :belongsTo :Chart .

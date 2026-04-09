@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading banks in Italy as of 2018 , by brand value (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "bank" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5127" ;
+    :yValue "Intesa Sanpaolo" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1829" ;
+    :yValue "UniCredit" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1802" ;
+    :yValue "UBI Banca" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "992" ;
+    :yValue "Mediobanca" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "491" ;
+    :yValue "Monte dei Paschi di Siena" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "439" ;
+    :yValue "Banca Popolare dell'Emilia Romagna" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "408" ;
+    :yValue "Banco BPM" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "347" ;
+    :yValue "Credito Emiliano" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "313" ;
+    :yValue "Banca Mediolanum" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "205" ;
+    :yValue "Banca Generali" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "187" ;
+    :yValue "Banca Popolare di Sondrio" ;
+    :belongsTo :Chart .

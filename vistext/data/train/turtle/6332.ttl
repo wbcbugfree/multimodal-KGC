@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global net revenue of Amazon.com as of 3rd quarter 2020 , by product group (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Quarter" .
+
+:YAxis a :Axis ;
+    :title "Other" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Q4 '17" ;
+    :yValue "1735" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Q1 '18" ;
+    :yValue "2031" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Q2 '18" ;
+    :yValue "2194" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Q3 '18" ;
+    :yValue "2495" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Q4 '18" ;
+    :yValue "3388" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Q1 '19" ;
+    :yValue "2716" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Q2 '19" ;
+    :yValue "3002" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Q3 '19" ;
+    :yValue "3586" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Q4 '19" ;
+    :yValue "4782" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Q1 '20" ;
+    :yValue "3906" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Q2 '20" ;
+    :yValue "4221" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Q3 '20" ;
+    :yValue "5398" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total expenditure in grocery stores in Great Britain in 1st quarter 2015 to 1st quarter 2017 , by grocer (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "12 weeks to March 29, 2015" .
+
+:YAxis a :Axis ;
+    :title "Grocers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7189" ;
+    :yValue "Tesco" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4143" ;
+    :yValue "Sainsbury's" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4318" ;
+    :yValue "Asda" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2764" ;
+    :yValue "Morrisons" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1341" ;
+    :yValue "Aldi" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1507" ;
+    :yValue "The Co-operative" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1286" ;
+    :yValue "Waitrose" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "947" ;
+    :yValue "Lidl" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "740" ;
+    :yValue "Other multiples" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "534" ;
+    :yValue "Iceland" ;
+    :belongsTo :Chart .

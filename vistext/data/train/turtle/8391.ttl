@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Five-year survival rates in children with diagnosed cancer in periods between 1990 and 2006 , by country and type of cancer" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "type of cancer" .
+
+:YAxis a :Axis ;
+    :title "Shanghai, China (2002-2005)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "All cancers" ;
+    :yValue "0.557" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Leukaemias" ;
+    :yValue "0.522" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lymphomas" ;
+    :yValue "0.588" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Central nervous system tumours" ;
+    :yValue "0.412" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Retinoblastoma" ;
+    :yValue "0.75" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Renal cancers" ;
+    :yValue "0.867" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Malignant bone tumours" ;
+    :yValue "0.526" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Soft tissue sacromas" ;
+    :yValue "0.541" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Germ cell tumours" ;
+    :yValue "0.784" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carcinomas and melanoma**" ;
+    :yValue "0.889" ;
+    :belongsTo :Chart .

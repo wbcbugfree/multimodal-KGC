@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading copper miners worldwide in 2018 , by production output (in million metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Copper miner" .
+
+:YAxis a :Axis ;
+    :title "Production in thousand metric tons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Freeport-McMoRan*" ;
+    :yValue "1.9" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Codelco" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "BHP Billiton" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Glencore" ;
+    :yValue "1.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Southern Copper" ;
+    :yValue "0.88" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Antofagasta" ;
+    :yValue "0.73" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Rio Tinto" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "KGHM" ;
+    :yValue "0.63" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "First Quantum" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Vale" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .

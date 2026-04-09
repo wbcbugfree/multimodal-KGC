@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percent approval for NDA/BLA filings for new drugs in select disease areas in the U.S. between 2006 and 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Ultimately approved" .
+
+:YAxis a :Axis ;
+    :title "disease areas" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.89" ;
+    :yValue "Oncology" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.93" ;
+    :yValue "Allergy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.94" ;
+    :yValue "Respiratory" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.85" ;
+    :yValue "Cardiovascular" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.92" ;
+    :yValue "Infectious disease" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.82" ;
+    :yValue "Urology" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.86" ;
+    :yValue "Autoimmune" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.83" ;
+    :yValue "Metabolic" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.73" ;
+    :yValue "Ophthalmology" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.86" ;
+    :yValue "All diseases" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.9" ;
+    :yValue "Hematology" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.92" ;
+    :yValue "Gastroenterology" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.83" ;
+    :yValue "Endocrine" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.81" ;
+    :yValue "Neurology" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.91" ;
+    :yValue "Psychiatry" ;
+    :belongsTo :Chart .

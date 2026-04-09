@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated net worth of the 10 richest people in the global tech industry in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "person" .
+
+:YAxis a :Axis ;
+    :title "Net worth in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jeff Bezos Amazon" ;
+    :yValue "113" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Bill GatesMicrosoft" ;
+    :yValue "98" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Larry EllisonOracle" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mark ZuckerbergFacebook" ;
+    :yValue "54.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Steve BallmerMicrosoft" ;
+    :yValue "52.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Larry PageGoogle" ;
+    :yValue "50.9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sergey BrinGoogle" ;
+    :yValue "49.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jack MaAlibaba" ;
+    :yValue "38.8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ma HuatengTencent" ;
+    :yValue "38.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "MacKenzie Bezos Amazon" ;
+    :yValue "36" ;
+    :belongsTo :Chart .

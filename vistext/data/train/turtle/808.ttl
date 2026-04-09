@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Denver Nuggets all-time points leaders from 1976 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Points scored" .
+
+:YAxis a :Axis ;
+    :title "all-time points leaders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "21645" ;
+    :yValue "Alex English" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14659" ;
+    :yValue "Dan Issel" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13970" ;
+    :yValue "Carmelo Anthony" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9834" ;
+    :yValue "David Thompson" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "8081" ;
+    :yValue "Lafayette Lever" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7029" ;
+    :yValue "Mahmoud Abdul-Rauf" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6868" ;
+    :yValue "Nene" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6829" ;
+    :yValue "Kiki Vandeweghe" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6555" ;
+    :yValue "Antonio McDyess" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6462" ;
+    :yValue "Nikola Jokic" ;
+    :belongsTo :Chart .

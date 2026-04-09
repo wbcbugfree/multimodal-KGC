@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "King 's net income from 1st quarter 2012 to 4th quarter 2015 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Quarter" .
+
+:YAxis a :Axis ;
+    :title "Net profit/loss in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Q4 '15" ;
+    :yValue "90.67" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Q3 '15" ;
+    :yValue "142.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Q2 '15" ;
+    :yValue "119.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Q1 '15" ;
+    :yValue "164.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Q4 '14" ;
+    :yValue "140.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Q3 '14" ;
+    :yValue "141.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Q2 '14" ;
+    :yValue "165.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Q1 '14" ;
+    :yValue "127.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Q4 '13" ;
+    :yValue "159.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Q3 '13" ;
+    :yValue "229.8" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Q2 '13" ;
+    :yValue "125.9" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Q1 '13" ;
+    :yValue "52.7" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Q4 '12" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Q3 '12" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Q2 '12" ;
+    :yValue "-2" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Q1 '12" ;
+    :yValue "-1" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most visited paid attractions in London in 2019 (in 1,000 visits)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of visits in thousands" .
+
+:YAxis a :Axis ;
+    :title "tourist attraction" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2984" ;
+    :yValue "Tower of London" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2317" ;
+    :yValue "Royal Botanic Gardens, Kew Gardens" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1716" ;
+    :yValue "St Paul's Cathedral" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1574" ;
+    :yValue "Westminster Abbey" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1265" ;
+    :yValue "Old Royal Naval College" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1249" ;
+    :yValue "Royal Academy of Arts" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1157" ;
+    :yValue "ZSL London Zoo" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1073" ;
+    :yValue "Hampton Court Palace" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1064" ;
+    :yValue "Houses of Parliament" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "889" ;
+    :yValue "Tower Bridge Exhibition" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following people , if any , do you consider to be picky eaters ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Unnamed: 1" .
+
+:YAxis a :Axis ;
+    :title "type of person" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Myself" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "23" ;
+    :yValue "A child in my household" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Another adult I know, not in my household" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Another child I know, not in my household" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "My spouse or partner" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Another adult in my household" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "One or more of my parents" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "One or more of my in-laws" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Someone else" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "28" ;
+    :yValue "I don't know anyone who I consider to be a picky eater" ;
+    :belongsTo :Chart .

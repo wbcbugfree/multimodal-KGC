@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 most valuable National Basketball Association club brands in 2012 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "National Basketball Association teams" .
+
+:YAxis a :Axis ;
+    :title "Brand value (in million U.S. dollars)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Los Angeles Lakers" ;
+    :yValue "205" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "New York Knicks" ;
+    :yValue "178" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Miami Heat" ;
+    :yValue "157" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chicago Bulls" ;
+    :yValue "143" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dallas Mavericks" ;
+    :yValue "137" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Boston Celtics" ;
+    :yValue "119" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "San Antonio Spurs" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Orlando Magic" ;
+    :yValue "104" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Toronto Raptors" ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Houston Rockets" ;
+    :yValue "94" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of sponsorship deals of professional tennis players worldwide as of July 2019 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of sponsorship deals" .
+
+:YAxis a :Axis ;
+    :title "sector" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Clothing & Accessories" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "40" ;
+    :yValue "Sports Equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Automotive" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Financial Services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Consumer Goods & Services" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Beverages" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Food" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Telecommunications" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Industrial Goods & Services" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Media" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Retail" ;
+    :belongsTo :Chart .

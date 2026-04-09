@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of Canadian students who reported that they felt their body was too thin , about the right size or too fat in 2014 , by grade and gender" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "grade and gender" .
+
+:YAxis a :Axis ;
+    :title "Too thin" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Boys grade 6" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Boys grade 7" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Boys grade 8" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Boys grade 9" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Boys grade 10" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Girls grade 6" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Girls grade 7" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Girls grade 8" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Girls grade" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Girls grade 10" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated revenue of platinum tier VR games sold on Steam in 2017 (in 1,000 U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in thousand U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Title (release date)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4731.12" ;
+    :yValue "Fallout 4 VR (December 2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4721.4" ;
+    :yValue "Arizona Sunshine (December 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4283.32" ;
+    :yValue "Raw Data (October 2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4025.36" ;
+    :yValue "Tilt Brush (April 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3416.94" ;
+    :yValue "Job Simulator (October 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2803.64" ;
+    :yValue "Audioshield (April 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2561.48" ;
+    :yValue "SUPERHOT VR (July 2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2409.38" ;
+    :yValue "Onward (August 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2372.87" ;
+    :yValue "Space Pirate Trainer (October 2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1839.9" ;
+    :yValue "Rick and Morty: Virtual Rick-ality (April 2017)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1557.58" ;
+    :yValue "Hot Dogs, Horsehoes, & Hand Grenades (April 2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1392.08" ;
+    :yValue "Gorn (July 2017)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Employment in U.S. hospitals in 2016 , by occupation type (in 1,000)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "occupation type" .
+
+:YAxis a :Axis ;
+    :title "Number of employees in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Health care practitioner and technical" ;
+    :yValue "3251.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Office and administrative support" ;
+    :yValue "743.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Health care support" ;
+    :yValue "735.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other occupations" ;
+    :yValue "300.4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Management" ;
+    :yValue "209.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Building and grounds cleaning and maintenance" ;
+    :yValue "188.5" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Food preparation and serving" ;
+    :yValue "138" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Business and financial operations" ;
+    :yValue "126.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Community and social services" ;
+    :yValue "153.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Installation, maintenance, and repair" ;
+    :yValue "55.4" ;
+    :belongsTo :Chart .

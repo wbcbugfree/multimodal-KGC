@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of substance abuse treatment facilities in the U.S. as of 2019 , by operation type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of facilities" .
+
+:YAxis a :Axis ;
+    :title "operation type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "8043" ;
+    :yValue "Private non-profit" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "6327" ;
+    :yValue "Private for-profit" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "694" ;
+    :yValue "Local, county, or community government" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "310" ;
+    :yValue "State government" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "333" ;
+    :yValue "Federal government" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "222" ;
+    :yValue "Department of Veterans Affairs" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "69" ;
+    :yValue "Department of Defense" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Indian Health Service" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Other federal government" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "254" ;
+    :yValue "Tribal government" ;
+    :belongsTo :Chart .

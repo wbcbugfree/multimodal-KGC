@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Revenue of the Manitoba provincial government in 2019 , by source (in million Canadian dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "source" .
+
+:YAxis a :Axis ;
+    :title "Revenue in million Canadian dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Grants from general government units" ;
+    :yValue "4717" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Taxes on income, profits and capital gains" ;
+    :yValue "4634" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Taxes on goods and services" ;
+    :yValue "3999" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Property income" ;
+    :yValue "1377" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sales of goods and services" ;
+    :yValue "570" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Taxes on payroll and workforce" ;
+    :yValue "517" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Taxes on property" ;
+    :yValue "470" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Social security contributions" ;
+    :yValue "214" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fines, penalties and forfeits" ;
+    :yValue "33" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Voluntary transfers other than grants" ;
+    :yValue "8" ;
+    :belongsTo :Chart .

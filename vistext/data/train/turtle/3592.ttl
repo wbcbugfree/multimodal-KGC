@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of tourist arrivals from the United Kingdom (UK) in Lanzarote in 2014 , by region of origin" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of England" .
+
+:YAxis a :Axis ;
+    :title "Number of arrivals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "North-West" ;
+    :yValue "147634" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "South-East" ;
+    :yValue "121398" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "117838" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Yorkshire and the Humber" ;
+    :yValue "112578" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "105042" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "103724" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "97227" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "86605" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "South-West" ;
+    :yValue "67188" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "43283" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North-East" ;
+    :yValue "27099" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Northern Ireland" ;
+    :yValue "21451" ;
+    :belongsTo :Chart .

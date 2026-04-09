@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Wi-Fi speed in selected hotels in Las Vegas as of August 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "hotel" .
+
+:YAxis a :Axis ;
+    :title "Expected Wi-Fi speed in Mbps*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Plaza Hotel & Casino" ;
+    :yValue "38.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The LINQ Hotel & Casino" ;
+    :yValue "29.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "SLS Las Vegas Hotel & Casino" ;
+    :yValue "24.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Grandview at Las Vegas" ;
+    :yValue "24.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tahiti Village" ;
+    :yValue "23.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Four Seasons Hotel Las Vegas" ;
+    :yValue "22.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Golden Nugget Hotel" ;
+    :yValue "16.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Treasure Island - TI Hotel & Casino" ;
+    :yValue "15.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wynn Las Vegas" ;
+    :yValue "11.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Luxor Las Vegas" ;
+    :yValue "11.2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Trump International Hotel Las Vegas" ;
+    :yValue "9.6" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "The Carriage House" ;
+    :yValue "9.3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Encore At Wynn Las Vegas" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "ARIA Resort & Casino" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Hilton Grand Vacations Suites on the Las Vegas Strip" ;
+    :yValue "8" ;
+    :belongsTo :Chart .

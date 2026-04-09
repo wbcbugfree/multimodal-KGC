@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of registered vehicles in Norway in 2019 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of registrered vehicles" .
+
+:YAxis a :Axis ;
+    :title "Type of vehicles" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5623196" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2801208" ;
+    :yValue "Passenger cars" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1481816" ;
+    :yValue "Trailers" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "489417" ;
+    :yValue "Vans" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "291841" ;
+    :yValue "Tractors*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "170249" ;
+    :yValue "Heavy motor cycles" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "159273" ;
+    :yValue "Mopeds" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "91931" ;
+    :yValue "Snow scooters" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "72078" ;
+    :yValue "Trucks**" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "28223" ;
+    :yValue "Light motor cycles" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15867" ;
+    :yValue "Buses" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "14830" ;
+    :yValue "Combined vehicles" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "6463" ;
+    :yValue "Special purpose vehicles" ;
+    :belongsTo :Chart .

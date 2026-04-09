@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly growth in online searches regarding leading streaming service subscriptions worldwide as of March 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "streaming service" .
+
+:YAxis a :Axis ;
+    :title "Month-over-month search volume growth" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "\"amazon prime subscription \"" ;
+    :yValue "1.23" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "\"netflix subscription \"" ;
+    :yValue "1.23" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Average" ;
+    :yValue "1.018" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "\"disney plus subscription\"" ;
+    :yValue "0.835" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "\"hbo go subscription \"" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "\"crave tv subscription \"" ;
+    :yValue "0.492" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "\"hulu subscription \"" ;
+    :yValue "0.491" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "\"cbc gem subscription \"" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "\"apple tv subscription \"" ;
+    :yValue "0.221" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "\"kanopy subscription\"" ;
+    :yValue "0.214" ;
+    :belongsTo :Chart .

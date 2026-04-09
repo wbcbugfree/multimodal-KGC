@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Threshold value range for free delivery among leading online retailers in the United Kingdom (UK) in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of retailers" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Free delivery anyway" ;
+    :yValue "0.145" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "£19 or less" ;
+    :yValue "0.048" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "£20 - £35" ;
+    :yValue "0.081" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "£40 - £49.99" ;
+    :yValue "0.081" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "£50 - £149" ;
+    :yValue "0.403" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "£150 - £200" ;
+    :yValue "0.016" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "£300- £2500" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dependent on products bought" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "No free delivery" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "No information" ;
+    :yValue "0.016" ;
+    :belongsTo :Chart .

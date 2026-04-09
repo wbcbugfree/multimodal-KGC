@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of completed qualifications and degrees at universities in Finland for the academic year 2019 , by gender" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Women" .
+
+:YAxis a :Axis ;
+    :title "university" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4259" ;
+    :yValue "University of Helsinki" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2278" ;
+    :yValue "University of Turku" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2135" ;
+    :yValue "University of Eastern Finland" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2009" ;
+    :yValue "Tampere University" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1918" ;
+    :yValue "University of Jyväskylä" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1449" ;
+    :yValue "University of Oulu" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1294" ;
+    :yValue "Aalto University" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "680" ;
+    :yValue "Åbo Akademi University" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "678" ;
+    :yValue "University of Lapland" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "567" ;
+    :yValue "University of Vaasa" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "405" ;
+    :yValue "Lappeenranta University of Technology" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "310" ;
+    :yValue "Hanken school of Economics" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "306" ;
+    :yValue "University of the Arts Helsinki" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "National Defence University" ;
+    :belongsTo :Chart .

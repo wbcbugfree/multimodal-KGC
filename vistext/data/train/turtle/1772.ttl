@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading new generic top level domains (gTLD) as of October 2020 , by number of domains (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Website Domain" .
+
+:YAxis a :Axis ;
+    :title "Number of domains in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue ".icu" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue ".xyz" ;
+    :yValue "3.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue ".top" ;
+    :yValue "2.94" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue ".site" ;
+    :yValue "1.75" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue ".online" ;
+    :yValue "1.74" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue ".wang" ;
+    :yValue "1.38" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue ".club" ;
+    :yValue "1.31" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue ".vip" ;
+    :yValue "1.14" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue ".shop" ;
+    :yValue "0.76" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue ".app" ;
+    :yValue "0.71" ;
+    :belongsTo :Chart .

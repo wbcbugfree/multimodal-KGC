@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Online sales growth of fast-moving consumer goods (FMCG) in the view of the coronavirus (COVID-19) in Russia from February 3 to April 12 , 2020 , by product category" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Porridge/cereals" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.28" ;
+    :yValue "Apr 6-12" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.77" ;
+    :yValue "Mar 30-Apr 5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Mar 23-29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.36" ;
+    :yValue "Mar 16-22" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.51" ;
+    :yValue "Mar 9-15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1.5" ;
+    :yValue "Mar 2-8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.64" ;
+    :yValue "Feb 24-Mar 1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Feb 17-23" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.63" ;
+    :yValue "Feb 10-16" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Feb 3-9" ;
+    :belongsTo :Chart .

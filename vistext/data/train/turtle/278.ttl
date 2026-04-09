@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of coronavirus cases in Italy as of December 29 , 2020 , by age group" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of infected individuals over total cases" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0-9 years" ;
+    :yValue "0.038" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10-19 years" ;
+    :yValue "0.083" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20-29 years" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30-39 years" ;
+    :yValue "0.123" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40-49 years" ;
+    :yValue "0.159" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "50-59 years" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "60-69 years" ;
+    :yValue "0.112" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70-79 years" ;
+    :yValue "0.084" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "80-89 years" ;
+    :yValue "0.073" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "90 years or older" ;
+    :yValue "0.028" ;
+    :belongsTo :Chart .

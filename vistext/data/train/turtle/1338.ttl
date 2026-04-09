@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most-followed food influencers on Instagram worldwide as of June 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of followers in millions" .
+
+:YAxis a :Axis ;
+    :title "Food influencer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9.2" ;
+    :yValue "Gordon Ramsay" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8.2" ;
+    :yValue "Jamie Oliver" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.4" ;
+    :yValue "Ree Drummond - Pioneer Woman" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.1" ;
+    :yValue "Martha Stewart" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "Yolanda Gampp" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.7" ;
+    :yValue "Antonino Cannavacciuolo" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.3" ;
+    :yValue "MARIAM | Cookin' with Mima" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.2" ;
+    :yValue "CESAR GONZALEZ Cocinero" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.1" ;
+    :yValue "Nigella" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.6" ;
+    :yValue "J o s e" ;
+    :belongsTo :Chart .

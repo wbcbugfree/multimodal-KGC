@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Indian states with the highest number of horses and ponies in 2019 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Horse and pony population in thousands" .
+
+:YAxis a :Axis ;
+    :title "state of India" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "76" ;
+    :yValue "Uttar Pradesh" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Jammu & Kashmir" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Rajasthan" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "32" ;
+    :yValue "Bihar" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Gujarat" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Maharashtra" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Punjab" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Madhya Pradesh" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Assam" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Haryana" ;
+    :belongsTo :Chart .

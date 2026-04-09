@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which goods or services have you ordered online in the previous 12 months ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "65 years and older" .
+
+:YAxis a :Axis ;
+    :title "Age" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.114" ;
+    :yValue "Food products, cosmetics, cleaning products" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.067" ;
+    :yValue "Medication" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.223" ;
+    :yValue "Clothes and sports articles" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Digital study or teaching material" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.043" ;
+    :yValue "Film, music" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.169" ;
+    :yValue "Books, magazines, newspapers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Telecommunication services" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.101" ;
+    :yValue "Soft-/Hardware and electrical appliances" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.178" ;
+    :yValue "Household goods and appliances" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.262" ;
+    :yValue "Travel and accommodation" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.187" ;
+    :yValue "Financial products or services***" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.185" ;
+    :yValue "Tickets for events" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.115" ;
+    :yValue "Other purchases" ;
+    :belongsTo :Chart .

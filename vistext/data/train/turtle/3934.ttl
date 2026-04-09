@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Australia : Ethnic groups as of 2011" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Ethnic group" .
+
+:YAxis a :Axis ;
+    :title "Share in total population" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "English" ;
+    :yValue "0.259" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Australian" ;
+    :yValue "0.254" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Irish" ;
+    :yValue "0.075" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Scottish" ;
+    :yValue "0.064" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Italian" ;
+    :yValue "0.033" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "German" ;
+    :yValue "0.032" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Chinese" ;
+    :yValue "0.031" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Indian" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Greek" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dutch" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other (incl. Australian aboriginal 5 percent)" ;
+    :yValue "0.158" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Unspecified" ;
+    :yValue "0.054" ;
+    :belongsTo :Chart .

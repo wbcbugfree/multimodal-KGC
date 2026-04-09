@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Confirmed cases and deaths of major virus outbreaks worldwide in the last 50 years as of 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Virus (year identified)" .
+
+:YAxis a :Axis ;
+    :title "Deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Marberg (1967)" ;
+    :yValue "373" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ebola* (1976)" ;
+    :yValue "13562" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Hendra (1994)" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "H5N1 Bird Flu (1997)" ;
+    :yValue "455" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nipah (1998)" ;
+    :yValue "398" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "SARS (2002)" ;
+    :yValue "774" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "H1N1** (2009)" ;
+    :yValue "284500" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "MERS***(2012)" ;
+    :yValue "858" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "H7N9 Bird Flu (2013)" ;
+    :yValue "616" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2019-nCoV* (2020)" ;
+    :yValue "259" ;
+    :belongsTo :Chart .

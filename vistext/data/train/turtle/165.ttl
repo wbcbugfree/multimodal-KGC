@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The largest car recalls from 1971 to 2010 , by manufacturer (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type of product" .
+
+:YAxis a :Axis ;
+    :title "Number of recalls in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ford (1981)" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ford (1999-2009)" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ford (1996)" ;
+    :yValue "7.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "General Motors (1971)" ;
+    :yValue "6.7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "General Motors (1981)" ;
+    :yValue "5.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Toyota (2007-2010)" ;
+    :yValue "5.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ford (1972)" ;
+    :yValue "4.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Honda (1995)" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Volkswagen (1972)" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "General Motors (1973)" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .

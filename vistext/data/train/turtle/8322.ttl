@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of charter flights in Canada in 2017 and 2018 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of Canada" .
+
+:YAxis a :Axis ;
+    :title "2017" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Prince Edward Islan" ;
+    :yValue "328" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Prince Edward Island Yukon Territorie" ;
+    :yValue "1886" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Yukon Territories NW Territorie" ;
+    :yValue "1613" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "NW Territories Nova Scoti" ;
+    :yValue "2554" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nova Scotia Nunavu" ;
+    :yValue "2644" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nunavut Newfoundlan" ;
+    :yValue "5719" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Newfoundland New Brunswic" ;
+    :yValue "6636" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "New Brunswick Manitob" ;
+    :yValue "13416" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Manitoba Saskatchewa" ;
+    :yValue "10777" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Saskatchewan British Columbi" ;
+    :yValue "26524" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "British Columbia Albert" ;
+    :yValue "34770" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Alberta Quebe" ;
+    :yValue "47469" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Quebec Ontari" ;
+    :yValue "51997" ;
+    :belongsTo :Chart .

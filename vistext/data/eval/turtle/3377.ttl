@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Installed wind power capacity in Spain in 2019 , by autonomous community (in megawatts)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "autonomous community of Spain" .
+
+:YAxis a :Axis ;
+    :title "Installed power in MW" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Castile and Leon" ;
+    :yValue "6051" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Castile La-Mancha" ;
+    :yValue "3813" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Galicia" ;
+    :yValue "3805" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Andalusia" ;
+    :yValue "3451" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Aragon" ;
+    :yValue "3213" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Catalonia" ;
+    :yValue "1271" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Region of Valencia" ;
+    :yValue "1205" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Navarra" ;
+    :yValue "1098" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Asturias" ;
+    :yValue "518" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "La Rioja" ;
+    :yValue "448" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Canary Islands" ;
+    :yValue "430" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Murcia" ;
+    :yValue "263" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Basque Country" ;
+    :yValue "153" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Extremadura" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Cantabria" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Balearic Islands" ;
+    :yValue "4" ;
+    :belongsTo :Chart .

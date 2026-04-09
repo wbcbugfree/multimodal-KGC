@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of NCAA college basketball tournament appearances by team from 1939 to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "College basketball program" .
+
+:YAxis a :Axis ;
+    :title "Tournament appearances" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Kentucky (1942-2019)*" ;
+    :yValue "58" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "North Carolina (1941-2019)" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Kansas (1940-2019)" ;
+    :yValue "48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "UCLA (1950-2018)*" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Duke (1955-2019)" ;
+    :yValue "43" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Indiana (1940-2016)" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Louisville (1951-2019)*" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Syracuse (1957-2019)*" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Villanova (1942-2019)" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Notre Dame (1953-2017)" ;
+    :yValue "36" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Behaviors adopted in response to the coronavirus (COVID-19) concern in the Netherlands as of March 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "I cough or sneeze in my elbow" ;
+    :yValue "0.67" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "I wash my hands carefully and frequently" ;
+    :yValue "0.66" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Keeping a distance from coughing or sneezing people" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "I avoid crowds" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "I don't shake hands" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "I try to avoid touching my face" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "I avoid public transports" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "I have bought a facemask" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "I bought extra food and drinks" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "I postponed my vacation" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "I have antibacterial gel for my hands" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .

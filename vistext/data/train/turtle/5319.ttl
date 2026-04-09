@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading kidney transplant centers in the U.S. in 2017 , by number of transplants" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "hospital" .
+
+:YAxis a :Axis ;
+    :title "Number of transplants" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "UCLA Medical Center" ;
+    :yValue "366" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jackson Memorial Hospital (FL)" ;
+    :yValue "366" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "University of CA San Francisco Medical Center" ;
+    :yValue "353" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "St. Barnabas Medical Center (NJ)" ;
+    :yValue "340" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mayo Clinic Hospital (AZ)" ;
+    :yValue "327" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "University of Wisconsin Hospital and Clinics" ;
+    :yValue "319" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Methodist Specialty & Transplant Hospital" ;
+    :yValue "289" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "University of Alabama Hospital" ;
+    :yValue "286" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "UC Davis Medical Center" ;
+    :yValue "277" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Medical University of South Carolina" ;
+    :yValue "276" ;
+    :belongsTo :Chart .

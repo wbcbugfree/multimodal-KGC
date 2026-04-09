@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Comparison between alternative and traditional finance providers according to small and medium enterprises (SMEs) in the United Kingdom (UK) in 2014 , by factor" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "small and medium enterprises (SMEs)" .
+
+:YAxis a :Axis ;
+    :title "Better" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lending/Investment standards" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Keeping information and money safe" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Know-how of own industry workings" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Moral standards" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cost of capital" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Generating social returns on investment" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Generating financial returns on investments" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Accessibility" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Speed" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Flexibility" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Willingness to take risks" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .

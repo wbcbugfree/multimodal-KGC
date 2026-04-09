@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Memphis Grizzlies all-time points leaders from 1995 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Memphis Grizzly Player" .
+
+:YAxis a :Axis ;
+    :title "Points scored" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mike Conley" ;
+    :yValue "11733" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Marc Gasol" ;
+    :yValue "11684" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Zach Randolph" ;
+    :yValue "9261" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Pau Gasol" ;
+    :yValue "8966" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rudy Gay" ;
+    :yValue "8562" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Shareef Abdur-Rahim" ;
+    :yValue "7801" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mike Miller" ;
+    :yValue "5982" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Bryant Reeves" ;
+    :yValue "4945" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "O.J. Mayo" ;
+    :yValue "4584" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Shane Battier" ;
+    :yValue "4275" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 telecommunication companies in the Nordic countries as of June 2020 , by turnover" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "telecommunication company" .
+
+:YAxis a :Axis ;
+    :title "Turnover in billion EUR" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Telenor ASA" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Telia Company AB" ;
+    :yValue "8.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Telia Sverige AB" ;
+    :yValue "3.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Telenor Norge AS" ;
+    :yValue "2.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Tele2 AB" ;
+    :yValue "2.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Elisa Oyj" ;
+    :yValue "1.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tele2 Sverige AB" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Telenor Sverige AB" ;
+    :yValue "1.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Eltel AB" ;
+    :yValue "1.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Telia Norge AS" ;
+    :yValue "1" ;
+    :belongsTo :Chart .

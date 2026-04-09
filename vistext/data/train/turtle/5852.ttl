@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The leading logistics companies in the United States in 2019 , based on North American net revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Logistics company" .
+
+:YAxis a :Axis ;
+    :title "Net revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "XPO Logistics**" ;
+    :yValue "6157" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "UPS Supply Chain Solutions **" ;
+    :yValue "4690" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "DHL Supply Chain**" ;
+    :yValue "4315" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "J.B. Hunt Transport Services**" ;
+    :yValue "3410" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Ryder Supply Chain Solutions" ;
+    :yValue "2853" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "C.H. Robinson Worldwide" ;
+    :yValue "2705" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Expeditors International of Washington" ;
+    :yValue "2636" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Penske Logistics**" ;
+    :yValue "2040" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lineage Logistics" ;
+    :yValue "1830" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kuehne `Nagel Americas" ;
+    :yValue "1798" ;
+    :belongsTo :Chart .

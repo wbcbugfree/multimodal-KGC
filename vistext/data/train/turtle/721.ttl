@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly number of unemployed persons in the United States from November 2019 to November 2020 (in millions , unadjusted)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Unemployed in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Nov '20" ;
+    :yValue "10.26" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oct '20" ;
+    :yValue "10.62" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sep '20" ;
+    :yValue "12.28" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Aug '20" ;
+    :yValue "13.74" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jul '20" ;
+    :yValue "16.88" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jun '20" ;
+    :yValue "18.07" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "May '20" ;
+    :yValue "20.51" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Apr '20" ;
+    :yValue "22.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Mar '20" ;
+    :yValue "7.37" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Feb '20" ;
+    :yValue "6.22" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Jan '20" ;
+    :yValue "6.5" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Dec '19" ;
+    :yValue "5.5" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Nov '19" ;
+    :yValue "5.44" ;
+    :belongsTo :Chart .

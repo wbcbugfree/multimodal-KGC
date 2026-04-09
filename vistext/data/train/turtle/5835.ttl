@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Technology brands with the most Facebook fans as of April 2018 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of fans in millions" .
+
+:YAxis a :Axis ;
+    :title "Platform" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "208.14" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "208.14" ;
+    :yValue "Facebook for Every Phone" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "156.25" ;
+    :yValue "Samsung Mobile USA" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "54.31" ;
+    :yValue "Instagram" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "47.15" ;
+    :yValue "Microsoft Windows" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "44.57" ;
+    :yValue "Netflix" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "43.48" ;
+    :yValue "Samsung Mobile" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "38.88" ;
+    :yValue "Intel" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "38.57" ;
+    :yValue "PlayStation" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "30.46" ;
+    :yValue "iTunes" ;
+    :belongsTo :Chart .

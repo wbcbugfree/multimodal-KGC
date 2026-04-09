@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Value of goods exported from Sweden in 2019 , by commodity (in million SEK)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Export value in million SEK" .
+
+:YAxis a :Axis ;
+    :title "commodity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "615356" ;
+    :yValue "Machinery and transport equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "255317" ;
+    :yValue "Manufactured goods" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "204859" ;
+    :yValue "Chemicals and related products" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "134212" ;
+    :yValue "Miscellaneous manufactured articles" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "103725" ;
+    :yValue "Mineral fuels, lubric, and related materials" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "100250" ;
+    :yValue "Crude materials (inedible, except fuels)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "82064" ;
+    :yValue "Food and live animals" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11891" ;
+    :yValue "Beverages and tobacco" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2859" ;
+    :yValue "Animal and vegetable oils, fats, and waxes" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7829" ;
+    :yValue "Goods not classified elsewhere" ;
+    :belongsTo :Chart .

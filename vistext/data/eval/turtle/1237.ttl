@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global box office revenue of DC comics movies from 2004 to 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Amount in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "DC comics movie" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1147.7" ;
+    :yValue "Aquaman" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1084.9" ;
+    :yValue "The Dark Knight Rises" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1003" ;
+    :yValue "The Dark Knight" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "873.6" ;
+    :yValue "Batman v Superman: Dawn of Justice" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "821.8" ;
+    :yValue "Wonder Woman" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "746.8" ;
+    :yValue "Suicide Squad" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "668" ;
+    :yValue "Man of Steel" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "657.9" ;
+    :yValue "Justice League" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "411.3" ;
+    :yValue "Batman" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "391.1" ;
+    :yValue "Superman Returns" ;
+    :belongsTo :Chart .

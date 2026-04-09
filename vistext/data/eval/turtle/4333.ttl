@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Miami Heat all-time points leaders from 1988 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Basketball player" .
+
+:YAxis a :Axis ;
+    :title "Points scored" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dwyane Wade" ;
+    :yValue "21556" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Alonzo Mourning" ;
+    :yValue "9459" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Glen Rice" ;
+    :yValue "9248" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "LeBron James" ;
+    :yValue "7919" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Chris Bosh" ;
+    :yValue "6914" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Rony Seikaly" ;
+    :yValue "6742" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Udonis Haslem" ;
+    :yValue "6523" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tim Hardaway" ;
+    :yValue "6335" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Eddie Jones" ;
+    :yValue "6194" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Goran Dragic" ;
+    :yValue "5676" ;
+    :belongsTo :Chart .

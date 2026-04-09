@@ -1,0 +1,22 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Length of life and cause of death of United States Presidents from 1799 to November 20 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cancer" .
+
+:YAxis a :Axis ;
+    :title "United States Presidents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "90.19" ;
+    :yValue "Herbert Hoover" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "63.24" ;
+    :yValue "Ulysses S. Grant" ;
+    :belongsTo :Chart .

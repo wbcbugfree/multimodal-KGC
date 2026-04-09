@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most visited direct-to-consumer (D2C) brands in the United States as of October 2019 , by average unique monthly visitors (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Unique monthly visitors in millions" .
+
+:YAxis a :Axis ;
+    :title "Pet Supply Retailer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "14.3" ;
+    :yValue "Chewy" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "6.8" ;
+    :yValue "SmileDirectClub" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.1" ;
+    :yValue "Stitch Fix" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.6" ;
+    :yValue "Dollar Shave Club" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.3" ;
+    :yValue "23andMe" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.5" ;
+    :yValue "BarkBox" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.6" ;
+    :yValue "Purple" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.5" ;
+    :yValue "Harry's" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1.4" ;
+    :yValue "ThirdLove" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.3" ;
+    :yValue "Warby Parker" ;
+    :belongsTo :Chart .

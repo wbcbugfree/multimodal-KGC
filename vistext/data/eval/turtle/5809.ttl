@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of households with a dishwasher in the United Kingdom (UK) in 2018 , by household composition" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Household composition" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "One adult, retired mainly dependent on state pensions*" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "One adult, other retired" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "One adult, non-retired" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "One adult, one child" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "One adult, two or more children" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Two adults, retired mainly dependent on state pensions*" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Two adults, other retired" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Two adults, non-retired" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Two adults, one child" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Two adults, two children" ;
+    :yValue "0.64" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Two adults, three children" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Two adults, four or more children" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Three adults" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Three adults, one or more children" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "All other households without children" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "All other households with children" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .

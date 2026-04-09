@@ -23,9 +23,12 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 
-DEFAULT_GOLD_DIR = Path("vistext/data/json2ttl/ground_truth_ttl")
+from common.paths import vistext_labels_dir, vistext_turtle_dir  # noqa: E402
+
+
+DEFAULT_GOLD_DIR = vistext_turtle_dir("test")
 DEFAULT_EXTRACT_ROOT = Path("vistext/extract_rdf_ttl")
-DEFAULT_LABELS_DIR = Path("vistext/data/labels")
+DEFAULT_LABELS_DIR = vistext_labels_dir("test")
 DEFAULT_OUTPUT = Path("vistext/evaluation/vistext_llm_evaluation_results.json")
 GED_CHECK_INTERVAL = 10.0
 GED_STABLE_THRESHOLD = 5

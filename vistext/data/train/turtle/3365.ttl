@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most commonly requested types of permissions by apps from the Google Play Store as of September 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of apps" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Full network access" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "View network connections" ;
+    :yValue "0.69" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Test access to protected storage" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Modify or delete the content of your USB storage" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Read phone status and identity" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Prevent device from sleeping" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Precise location (GPS and network-based)" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "View WiFi connections" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Control vibration" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Approximate location (network-based)" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .

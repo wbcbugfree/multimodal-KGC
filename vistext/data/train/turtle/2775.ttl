@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of enterprises for manufacturing ice cream in the United Kingdom (UK) in 2020 , by turnover size band" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Turnover in GBP" .
+
+:YAxis a :Axis ;
+    :title "Number of enterprises*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "£0 - £49,999" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "£50,000 - £99,999" ;
+    :yValue "45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "£100,000 - £249,999" ;
+    :yValue "115" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "£250,000 - £499,999" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "£500,000 - £999,999" ;
+    :yValue "40" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "£1 million - £1.999 million" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "£2 million - £4.999 million" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "£5 million - £9.999 million" ;
+    :yValue "5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "£10 million - £49.999 million" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "£50 million+" ;
+    :yValue "0" ;
+    :belongsTo :Chart .

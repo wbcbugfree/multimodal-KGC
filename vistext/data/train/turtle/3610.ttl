@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular funded gaming projects on Kickstarter as of November 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "game" .
+
+:YAxis a :Axis ;
+    :title "Raised funding in 1,000 U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Frosthaven" ;
+    :yValue "12969.61" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Kingdom Death: Monster 1.5" ;
+    :yValue "12393.14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "The Wyrmwood Modular Gaming Table: Coffee & Dining Models" ;
+    :yValue "8808.14" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Exploding Kittens (2015)" ;
+    :yValue "8782.57" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "OUYA: A New Kind of Video Game Console" ;
+    :yValue "8596.47" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "THE 7th CONTINENT – What Goes Up, Must Come Down (2017)" ;
+    :yValue "7072.76" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nemesis Lockdown*" ;
+    :yValue "6829.88" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tainted Grail: The Fall of Avalon*" ;
+    :yValue "6520.84" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Shenmue 3" ;
+    :yValue "6333.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Darkest Dungeon: The Board Game" ;
+    :yValue "5657.48" ;
+    :belongsTo :Chart .

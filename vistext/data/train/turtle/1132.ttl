@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "For which of the following reasons do you use your mobile device while you are traveling ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.87" ;
+    :yValue "Getting directions/GPS Navigation" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.78" ;
+    :yValue "Taking photographs" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.63" ;
+    :yValue "Discovering local restaurants and bars" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.61" ;
+    :yValue "Finding local stores/sites to visit" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.56" ;
+    :yValue "Finding out about events going on in the city" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Reading reviews of local establishments" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Looking up or storing schedules for public transportation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Buying tickets to an event or attraction (concert, museum, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.31" ;
+    :yValue "Making restaurant reservations" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Translating foreign languages" ;
+    :belongsTo :Chart .

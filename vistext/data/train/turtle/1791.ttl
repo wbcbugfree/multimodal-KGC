@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The leading law firms in China in 2019 , by gross revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Gross revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "law firm" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2899.6" ;
+    :yValue "Dentons" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1079" ;
+    :yValue "King & Wood Mallesons" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "762.87" ;
+    :yValue "Yingke" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "535.31" ;
+    :yValue "Zhong Lun Law Firm" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "506.65" ;
+    :yValue "Allbright" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "434.27" ;
+    :yValue "Grandall Law Firm" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "434.27" ;
+    :yValue "DeHeng Law Offices" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "267.56" ;
+    :yValue "JunHe" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "243.97" ;
+    :yValue "Jingsh Law Firm" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "243.19" ;
+    :yValue "Fangda Partners" ;
+    :belongsTo :Chart .

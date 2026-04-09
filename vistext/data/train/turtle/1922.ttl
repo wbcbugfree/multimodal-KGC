@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading writers of homeowners insurance in the United States in 2019 , by market share" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "Writer Of HomeOwner Insurance" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "State Farm Mutual Automobile Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.084" ;
+    :yValue "Allstate Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "USAA Insurance Group" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.065" ;
+    :yValue "Liberty Mutual" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.057" ;
+    :yValue "Farmers Insurance Group of Companies" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.041" ;
+    :yValue "Travelers Companies Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.039" ;
+    :yValue "American Family Insurance Group" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.031" ;
+    :yValue "Nationwide Mutual Group" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.029" ;
+    :yValue "Chubb Ltd." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.017" ;
+    :yValue "Erie Insurance Group" ;
+    :belongsTo :Chart .

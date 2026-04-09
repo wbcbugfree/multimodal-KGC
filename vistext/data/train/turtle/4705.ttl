@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage change in the proposed 2018 federal budget of the United States from 2017 edition , by department or service" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "department or service" .
+
+:YAxis a :Axis ;
+    :title "Percentage change from 2017" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Environmental Protection Agency" ;
+    :yValue "-0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "State Department" ;
+    :yValue "-0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Agriculture Department" ;
+    :yValue "-0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Labor Department" ;
+    :yValue "-0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Department of Health and Human Services" ;
+    :yValue "-0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Commerce Department" ;
+    :yValue "-0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Education Department" ;
+    :yValue "-0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Department of Housing and Urban Development" ;
+    :yValue "-0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Transportation Department" ;
+    :yValue "-0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Interior Department" ;
+    :yValue "-0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Energy Department" ;
+    :yValue "-0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Small Business Administration" ;
+    :yValue "-0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Treasury Department" ;
+    :yValue "-0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Justice Department" ;
+    :yValue "-0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "NASA" ;
+    :yValue "-0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Department of Veterans Affairs" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Department of Homeland Security" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "Defense Department" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .

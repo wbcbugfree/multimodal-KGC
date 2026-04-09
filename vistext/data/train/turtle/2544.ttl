@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Latin American ATP tennis players with the highest prize money earnings from January to November 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "player" .
+
+:YAxis a :Axis ;
+    :title "Prize money earned in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Diego Schwartzman (Argentina)" ;
+    :yValue "1.42" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cristian Garín (Chile)" ;
+    :yValue "1.06" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Guido Pella (Argentina)" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Pablo Cuevas (Uruguay)" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Federico Coria (Argentina)" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Juan Ignacio Lóndero (Argentina)" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Bruno Soares (Brazil)" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Thiago Monteiro (Brazil)" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Federico Delbonis (Argentina)" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hugo Dellien (Bolivia)" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .

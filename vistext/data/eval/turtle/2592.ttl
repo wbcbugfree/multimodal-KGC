@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten dispensed anticoagulants and protamine in England in 2019 , by number of items (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Items in thousands" .
+
+:YAxis a :Axis ;
+    :title "dispensed anticoagulants and protamine" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7049" ;
+    :yValue "Warfarin sodium" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5876" ;
+    :yValue "Apixaban" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4320" ;
+    :yValue "Rivaroxaban" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "766" ;
+    :yValue "Edoxaban" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "468" ;
+    :yValue "Dabigatran etexilate" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "156" ;
+    :yValue "Enoxaparin" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "104" ;
+    :yValue "Dalteparin sodium" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "Tinzaparin sodium" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "27" ;
+    :yValue "INR blood testing reagents" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "22" ;
+    :yValue "Acenocoumarol" ;
+    :belongsTo :Chart .

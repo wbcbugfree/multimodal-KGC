@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest cities in Finland in 2019 , by number of inhabitants" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of inhabitants" .
+
+:YAxis a :Axis ;
+    :title "city" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "653835" ;
+    :yValue "Helsinki" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "289731" ;
+    :yValue "Espoo" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "238140" ;
+    :yValue "Tampere" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "233775" ;
+    :yValue "Vantaa" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "205489" ;
+    :yValue "Oulu" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "192962" ;
+    :yValue "Turku" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "142400" ;
+    :yValue "Jyväskylä" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "119823" ;
+    :yValue "Lahti" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "119282" ;
+    :yValue "Kuopio" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "83934" ;
+    :yValue "Pori" ;
+    :belongsTo :Chart .

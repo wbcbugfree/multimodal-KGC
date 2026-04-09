@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest export commodities of the United Kingdom (UK) in 2019 (in billion GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value of exports in billion GBP" .
+
+:YAxis a :Axis ;
+    :title "Export commodity" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "142.87" ;
+    :yValue "Machinery and transport equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "57.64" ;
+    :yValue "Chemicals" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "55.14" ;
+    :yValue "Miscellanueous manufactures" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "36.32" ;
+    :yValue "Fuels" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "32.99" ;
+    :yValue "Material Manufactures" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16.05" ;
+    :yValue "Food and live animals" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "15.54" ;
+    :yValue "Unspecified goods" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8.23" ;
+    :yValue "Beverages and tobacco" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.18" ;
+    :yValue "Crude Materials" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.52" ;
+    :yValue "Animal, vegetable oils and fats" ;
+    :belongsTo :Chart .

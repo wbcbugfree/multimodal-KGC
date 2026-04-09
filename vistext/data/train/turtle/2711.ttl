@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage of executives in Canada who felt select measures of burnout at least once a week as of 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of executives" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "I feel used up at the end of the workday" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "I feel emotionally drained from my work" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "I feel tired when I get up in the morning and have to face another day…" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "I have become less enthusiastic about my work" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "I feel burnt out from my work" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "I just want to do my job and not be bothered" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "I have become less interested in my work" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "I have become more cynical about whether my work contributes to…" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "I doubt the significance of my work" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Working all day is really a strain for me" ;
+    :belongsTo :Chart .

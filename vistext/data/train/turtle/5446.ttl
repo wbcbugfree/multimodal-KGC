@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of refugees arriving in the United States in 2019 , by age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Age in years" .
+
+:YAxis a :Axis ;
+    :title "Number of persons" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Under" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "year" ;
+    :yValue "72" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1 to 4 years" ;
+    :yValue "3406" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5 to 9 years" ;
+    :yValue "4105" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10 to 14 years" ;
+    :yValue "3499" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "15 to 19 years" ;
+    :yValue "3106" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20 to 24 years" ;
+    :yValue "3036" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "25 to 29 years" ;
+    :yValue "3109" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "30 to 34 years" ;
+    :yValue "2710" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "35 to 39 years" ;
+    :yValue "1988" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "40 to 44 years" ;
+    :yValue "1289" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "45 to 49 years" ;
+    :yValue "1002" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "50 to 54 years" ;
+    :yValue "724" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "55 to 59 years" ;
+    :yValue "626" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "60 to 64 years" ;
+    :yValue "512" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "65 to 74 years" ;
+    :yValue "549" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "75 years and over" ;
+    :yValue "183" ;
+    :belongsTo :Chart .

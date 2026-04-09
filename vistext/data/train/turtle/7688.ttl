@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading reasons for following brands on social media according to Millennials in the United States in 2014 , by platform" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Twitter" .
+
+:YAxis a :Axis ;
+    :title "Race" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.78" ;
+    :yValue "To support the brand" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "To receive regular updates from brands" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.85" ;
+    :yValue "To get a coupon or discount" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "To research brands when I was looking for specific products/services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Seeing my friends are already fans, followers or have a board" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "To share my interest/lifestyle with others" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "To participate in contests" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "A brand ad on TV, online or print led me to like the brand" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Someone recommended me to like, follow or pin the brand" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "To share my personal experiences" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

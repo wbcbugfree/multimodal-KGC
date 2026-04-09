@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "States with the highest femicide rate in Mexico in 2019 (number of femicides per 100,000 women)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "States with the highest femicide rate in Mexico" .
+
+:YAxis a :Axis ;
+    :title "Femicide rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Morelos" ;
+    :yValue "3.74" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Veracruz" ;
+    :yValue "3.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Colima" ;
+    :yValue "2.83" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sonora" ;
+    :yValue "2.42" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Nuevo León" ;
+    :yValue "2.42" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sinaloa" ;
+    :yValue "2.35" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tabasco" ;
+    :yValue "2.09" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "San Luis Potosí" ;
+    :yValue "1.92" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Quintana Roo" ;
+    :yValue "1.92" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Puebla" ;
+    :yValue "1.71" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Chihuahua" ;
+    :yValue "1.53" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Coahuila" ;
+    :yValue "1.51" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Mexico City" ;
+    :yValue "1.44" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "State of Mexico" ;
+    :yValue "1.38" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Zacatecas" ;
+    :yValue "1.31" ;
+    :belongsTo :Chart .

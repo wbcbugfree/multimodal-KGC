@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Beauty-related websites ranked by natural search voice share in the United Kingdom (UK) in February 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of natural search voice**" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "boots.com" ;
+    :yValue "50" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "amazon.co.uk" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "superdrug.com" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "debenhams.com" ;
+    :yValue "24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "fragnancedirect.co.uk" ;
+    :yValue "17" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "ebay.co.uk" ;
+    :yValue "15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "youtube.com" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "johnlewis.com" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "houseoffraser.co.uk" ;
+    :yValue "14" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "feelunique.com" ;
+    :yValue "13" ;
+    :belongsTo :Chart .

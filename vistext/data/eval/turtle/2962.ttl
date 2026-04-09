@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest Peruvian-American population groups in the United States , by county 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "County of United States" .
+
+:YAxis a :Axis ;
+    :title "Population number" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Miami-Dade County, FL" ;
+    :yValue "40701" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Los Angeles County, CA" ;
+    :yValue "34135" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Broward County, FL" ;
+    :yValue "23600" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Queens County, NY" ;
+    :yValue "22886" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Passaic County, NJ" ;
+    :yValue "19696" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hudson County, NJ" ;
+    :yValue "13533" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fairfax County, VA" ;
+    :yValue "12922" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Montgomery County, MD" ;
+    :yValue "12005" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Westchester County, NY" ;
+    :yValue "9774" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Union County, NJ" ;
+    :yValue "9446" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cost structure for the production of ice cream in Germany in 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "economic components" .
+
+:YAxis a :Axis ;
+    :title "Share in gross production value" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Material use (w/o energy)" ;
+    :yValue "0.333" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Use of commodities" ;
+    :yValue "0.146" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Other costs/temporary worker wages" ;
+    :yValue "0.126" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Sum of gross wages and salaries" ;
+    :yValue "0.115" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Costs for commissioned work" ;
+    :yValue "0.085" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Social costs" ;
+    :yValue "0.022" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Energy costs" ;
+    :yValue "0.021" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Amortizations" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Rents and leases" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Costs for other industrial and manual services" ;
+    :yValue "0.014" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Borrowing costs" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Taxes chargeable as expenses" ;
+    :yValue "0.002" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average annual first-team player salary in the Scottish Premiership in Scotland in 2019/2020 , by football club (in 1,000 GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average salary in thousand GBP" .
+
+:YAxis a :Axis ;
+    :title "association football club" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "895.56" ;
+    :yValue "Celtic" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "649.77" ;
+    :yValue "Rangers" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "140.46" ;
+    :yValue "Aberdeen" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "137.94" ;
+    :yValue "Hearts" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "119.7" ;
+    :yValue "Hibernian" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "68.41" ;
+    :yValue "Kilmarnock" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "62.69" ;
+    :yValue "St Johnstone" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "59.3" ;
+    :yValue "Motherwell" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "55.57" ;
+    :yValue "Ross County" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "48.62" ;
+    :yValue "St Mirren" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "43.11" ;
+    :yValue "Livingston" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "41.15" ;
+    :yValue "Hamilton" ;
+    :belongsTo :Chart .

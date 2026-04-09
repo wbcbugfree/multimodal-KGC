@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total attendance in the Football League Championship in the United Kingdom (UK) from season 2010/2011 to season 2019/2020 (in million visitors)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "sports season" .
+
+:YAxis a :Axis ;
+    :title "Aggregate attendance in million visitors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Season 2019/20" ;
+    :yValue "8.25" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Season 2018/19" ;
+    :yValue "11.12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Season 2017/18" ;
+    :yValue "11.31" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Season 2016/17" ;
+    :yValue "11.11" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Season 2015/16" ;
+    :yValue "9.71" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Season 2014/15" ;
+    :yValue "9.84" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Season 2013/14" ;
+    :yValue "9.19" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Season 2012/13" ;
+    :yValue "9.68" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Season 2011/12" ;
+    :yValue "9.85" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Season 2010/11" ;
+    :yValue "9.64" ;
+    :belongsTo :Chart .

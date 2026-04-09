@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Best-paid TV actors of 2017/2018 in the United States , by annual income (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Annual income in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "actors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26.5" ;
+    :yValue "Jim Parsons" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Johnny Galecki" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "23.5" ;
+    :yValue "Kunal Nayyar" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "23.5" ;
+    :yValue "Simon Helberg" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Mark Harmon" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Ed O'Neill" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "13.5" ;
+    :yValue "Eric Stonestreet" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "13" ;
+    :yValue "Jesse Tyler Ferguson" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Ty Burrell" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Andrew Lincoln" ;
+    :belongsTo :Chart .

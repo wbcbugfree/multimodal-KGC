@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales volume of Mahindra cars across India in 2019 , by model" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "automobile model" .
+
+:YAxis a :Axis ;
+    :title "Number of vehicles sold" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bolero" ;
+    :yValue "69656" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Scorpio" ;
+    :yValue "46725" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "XUV 300" ;
+    :yValue "40197" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "MARAZZO" ;
+    :yValue "19303" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "XUV 500" ;
+    :yValue "17175" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "TUV 300" ;
+    :yValue "13592" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Thar" ;
+    :yValue "3605" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Xylo" ;
+    :yValue "3156" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "KUV 100" ;
+    :yValue "3107" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "ALTURAS G4" ;
+    :yValue "2042" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Verito" ;
+    :yValue "1105" ;
+    :belongsTo :Chart .

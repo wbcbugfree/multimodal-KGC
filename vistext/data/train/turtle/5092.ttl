@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most overpaid actors in Hollywood in 2018 , ranked by box office revenue per dollar of their pay (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "name of actor or actress" .
+
+:YAxis a :Axis ;
+    :title "Box office revenue per dollar of pay" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Matthew McConaughey" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Christian Bale" ;
+    :yValue "1.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Matt Damon" ;
+    :yValue "3.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Melissa McCarthy" ;
+    :yValue "4.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Reese Witherspoon" ;
+    :yValue "5.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jennifer Lawrence" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Charlize Theron" ;
+    :yValue "7.9" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Tom Cruise" ;
+    :yValue "10.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tom Hanks" ;
+    :yValue "12.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ben Affleck" ;
+    :yValue "12.2" ;
+    :belongsTo :Chart .

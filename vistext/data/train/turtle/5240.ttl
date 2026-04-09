@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "College majors with the highest participation rate of Asian students in the U.S. in 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of U.S. students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Computer Engineering" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Statistics and Decision Science" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Neuroscience" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Biomedical Engineering" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Other Foreign Languages" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Electrical Engineering" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Military Technologies" ;
+    :yValue "0.22" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Biochemical Sciences" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Applied Mathematics" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pharmacy, Pharmaceutical Sciences and Administration" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .

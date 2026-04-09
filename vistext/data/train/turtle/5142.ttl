@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading iPhone apps in the Apple App Store worldwide in September 2020 , by revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "name of the app" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "33.86" ;
+    :yValue "Tinder" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "28.92" ;
+    :yValue "Monster Strike" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25.68" ;
+    :yValue "King of Glory" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "23.97" ;
+    :yValue "Disney+" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "19.22" ;
+    :yValue "Dragon Quest Walk" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "19.13" ;
+    :yValue "Jedi Survival (PUBG)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "17.02" ;
+    :yValue "Pokémon Go" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "16.28" ;
+    :yValue "PUBG MOBILE" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "16.1" ;
+    :yValue "ROBLOX" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Three Kingdoms" ;
+    :belongsTo :Chart .

@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population in Germany as of December 2019 , by federal state (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Population in thousands" .
+
+:YAxis a :Axis ;
+    :title "state of Germany" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "17947" ;
+    :yValue "North Rhine-Westphalia" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "13125" ;
+    :yValue "Bavaria" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "11100" ;
+    :yValue "Baden-Württemberg" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7994" ;
+    :yValue "Lower Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6288" ;
+    :yValue "Hesse" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4094" ;
+    :yValue "Rhineland-Palatinate" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4072" ;
+    :yValue "Saxony" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3669" ;
+    :yValue "Berlin" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2904" ;
+    :yValue "Schleswig-Holstein" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2522" ;
+    :yValue "Brandenburg" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2195" ;
+    :yValue "Saxony-Anhalt" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2133" ;
+    :yValue "Thuringia" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1847" ;
+    :yValue "Hamburg" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "1608" ;
+    :yValue "Mecklenburg-Western Pomerania" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "987" ;
+    :yValue "Saarland" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "681" ;
+    :yValue "Bremen" ;
+    :belongsTo :Chart .

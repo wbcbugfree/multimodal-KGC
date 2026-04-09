@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "What are you most concerned about regarding independent delivery robots ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Robot and/or its contents could be stolen" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Might lead to less jobs for people" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Robot might malfunction & injure someone" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Robot and/or contents might be damaged by others" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Robot might malfunction & damage items being delivered" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Might not be able to interact with a delivery person when needed" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Robot might navigate to the wrong address" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Robot might malfunction & damage property" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Use might lead to too much traffic on sidewalks" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Interacting with the robot might be too complicated or confusing" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Might be used in a way that does not respect my privacy" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "What rules do your parents set for you for when you 're using a smartphone or tablet ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Race" .
+
+:YAxis a :Axis ;
+    :title "Tablet" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Never arrange to meet someone that I have only met online" ;
+    :yValue "0.84" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Not allowed to talk to strangers" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Not allowed to share personal information" ;
+    :yValue "0.83" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Tell my parents if something worries me" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Not allowed to spend any money" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Be respectful to others online" ;
+    :yValue "0.65" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Only allowed on for a certain amount of time" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Only allowed to use certain apps" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Ask my parent's permission first" ;
+    :yValue "0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Not allowed to download apps" ;
+    :yValue "0.26" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Not allowed to use it on my own" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

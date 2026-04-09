@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total circulation of community newspapers in Canada from 2013 to 2019 , by province and territory (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "2016" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ontari" ;
+    :yValue "8469.22" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ontario Quebe" ;
+    :yValue "5070.35" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Quebec British Columbi" ;
+    :yValue "3062.77" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "British Columbia Albert" ;
+    :yValue "1007.99" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Alberta Saskatchewa" ;
+    :yValue "469.99" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Saskatchewan Nova Scoti" ;
+    :yValue "599.59" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nova Scotia Manitob" ;
+    :yValue "437.51" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Manitoba New Brunswic" ;
+    :yValue "250.76" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "New Brunswick Newfoundland/Labrado" ;
+    :yValue "49.39" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Newfoundland/Labrador Northwest Territor" ;
+    :yValue "29.4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Northwest Territory Prince Edward Islan" ;
+    :yValue "14.42" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Prince Edward Island Nunavut Territor" ;
+    :yValue "15.17" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Nunavut Territory Yukon Territor" ;
+    :yValue "10.56" ;
+    :belongsTo :Chart .

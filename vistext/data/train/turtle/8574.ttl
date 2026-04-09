@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Change in the number of users of leading news and information websites due to coronavirus (COVID-19) in Poland in March 2020 (in million users)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Feb 3 - Mar 1" .
+
+:YAxis a :Axis ;
+    :title "leading news and information websites" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5.01" ;
+    :yValue "onet.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "5.03" ;
+    :yValue "wp.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.34" ;
+    :yValue "tvn24.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2.8" ;
+    :yValue "gazeta.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3.99" ;
+    :yValue "fakt.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.66" ;
+    :yValue "interia.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1.75" ;
+    :yValue "rmf24.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.21" ;
+    :yValue "wyborcza.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.67" ;
+    :yValue "radiozet.pl" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.07" ;
+    :yValue "natemat.pl" ;
+    :belongsTo :Chart .

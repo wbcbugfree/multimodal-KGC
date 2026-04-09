@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of leading ten corporate brands in France in 2017 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Brand value in million euros" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "LVMH Group" ;
+    :yValue "49.98" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dior" ;
+    :yValue "16.35" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "L'Oréal" ;
+    :yValue "16.34" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "BNP Paribas" ;
+    :yValue "13.31" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Sanofi Aventis" ;
+    :yValue "13.27" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Danone" ;
+    :yValue "12.2" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Total" ;
+    :yValue "11.65" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Axa" ;
+    :yValue "9.83" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "PPR" ;
+    :yValue "7.94" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hermes" ;
+    :yValue "7.76" ;
+    :belongsTo :Chart .

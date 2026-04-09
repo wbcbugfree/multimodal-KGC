@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading television programs by target audience share in the Netherlands in November 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "television program" .
+
+:YAxis a :Axis ;
+    :title "Target audience share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Journaal Extra (November 3)" ;
+    :yValue "0.281" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Masked Singer (November 13)" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Journaal 20 Uur (November 15)" ;
+    :yValue "0.179" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Voetbal NL NLD BIH (November 15)" ;
+    :yValue "0.174" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Zondag met Lubach (November 8)" ;
+    :yValue "0.165" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Voice of Holland - The Blind Auditions (November 20)" ;
+    :yValue "0.155" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Intocht Sinterklaas (November 14)" ;
+    :yValue "0.144" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "M (November 3)" ;
+    :yValue "0.142" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Studio Sport (November 22)" ;
+    :yValue "0.134" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Voetbal NL POL NLD (November 18)" ;
+    :yValue "0.133" ;
+    :belongsTo :Chart .

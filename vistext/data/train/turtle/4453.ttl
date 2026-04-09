@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cultural institutions in the U.S. ranked by size of endowments in 2011 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cultural institution" .
+
+:YAxis a :Axis ;
+    :title "Endowment (in million U.S. dollars)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Metropolitan Museum of Art, New York" ;
+    :yValue "2696.75" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Museum of Fine Arts, Houston" ;
+    :yValue "1011.09" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Smithsonian Institution, Washington D.C." ;
+    :yValue "971.2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Art Institute of Chicago" ;
+    :yValue "837.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Colonial Williamsburg Foundation, Williamsburg" ;
+    :yValue "709.07" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Huntington Library, Art Collections and Botanical Gardens, San Marino" ;
+    :yValue "414.73" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Boston Symphony Orchestra" ;
+    :yValue "387.37" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Philadelphia Museum of Art" ;
+    :yValue "363.01" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Indianapolis Museum of Art" ;
+    :yValue "350.7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nelson-Atkins Museum of Art, Kansas City" ;
+    :yValue "292.97" ;
+    :belongsTo :Chart .

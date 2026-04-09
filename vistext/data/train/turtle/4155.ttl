@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular brands on Facebook in Hong Kong as of September 2020 , ranked by number of fans" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of fans on Facebook" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1391753" ;
+    :yValue "Blackview" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "969045" ;
+    :yValue "Bliss Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "731820" ;
+    :yValue "Flyday.hk" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "700072" ;
+    :yValue "I want to Travel" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "666766" ;
+    :yValue "Swiss-Belhotel International Hotels & Resorts" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "640307" ;
+    :yValue "Kids Logic" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "617924" ;
+    :yValue "Flyagain.la" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "572920" ;
+    :yValue "IngDan" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "555054" ;
+    :yValue "7-Eleven Hong Kong" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "493780" ;
+    :yValue "Group Buyer" ;
+    :belongsTo :Chart .

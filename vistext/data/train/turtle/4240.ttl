@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The ten richest Latin Americans in 2019 , by wealth (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Wealth in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Richest Latin Americans" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "64" ;
+    :yValue "Carlos Slim (Mexico)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "25.2" ;
+    :yValue "Joseph Safra (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "22.8" ;
+    :yValue "Jorge Paulo Lemann & family (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15.4" ;
+    :yValue "Iris Fontbona & family (Chile)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13.3" ;
+    :yValue "German Larrea Mota Velasco & family (Mexico)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "11.1" ;
+    :yValue "Ricardo Salinas Pliego & family (Mexico)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "10.8" ;
+    :yValue "Luis Carlos Sarmiento (Colombia)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9.9" ;
+    :yValue "Marcel Herrmann Telles (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9.7" ;
+    :yValue "Eduardo Luiz Saverin (Brazil)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "8.9" ;
+    :yValue "Carlos Alberto Sicupira & family (Brazil)" ;
+    :belongsTo :Chart .

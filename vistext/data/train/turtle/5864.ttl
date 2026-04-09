@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Home and garden-related keywords ranked by search volume in the United Kingdom (UK) in March 2016 (in 1,000 searches)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Searches in thousands" .
+
+:YAxis a :Axis ;
+    :title "Home and garden-related keywords" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "368" ;
+    :yValue "wallpaper" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "201" ;
+    :yValue "diy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "201" ;
+    :yValue "garden furniture" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "beds" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "135" ;
+    :yValue "oak furniture" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "135" ;
+    :yValue "curtains" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "135" ;
+    :yValue "fence panels" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "sofas" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "blinds" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "110" ;
+    :yValue "sofa bed" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "22886.34" ;
+    :yValue "other keywords" ;
+    :belongsTo :Chart .

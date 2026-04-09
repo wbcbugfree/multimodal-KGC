@@ -1,0 +1,32 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Daily loss of businesses during the coronavirus (COVID-19) in Moscow , Russia as of March 2020 , by store type and weekday/weekend (in million Russian rubles)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Weekend" .
+
+:YAxis a :Axis ;
+    :title "store type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "155" ;
+    :yValue "Shopping mall in the Moscow region with around 180k sq.m." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Cafe in the city center" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Flower shop**" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Apparel chain store of 150 sq.m. in the shopping mall" ;
+    :belongsTo :Chart .

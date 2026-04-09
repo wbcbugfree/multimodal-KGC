@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "European football clubs with the highest average annual shirt sales from 2009/10 to 2013/14 (in thousands)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Shirt sales (in thousands)" .
+
+:YAxis a :Axis ;
+    :title "association football club" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1580" ;
+    :yValue "Real Madrid" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1490" ;
+    :yValue "Manchester United" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1190" ;
+    :yValue "FC Barcelona" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "945" ;
+    :yValue "Bayern Munich" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "875" ;
+    :yValue "Chelsea FC" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "825" ;
+    :yValue "Arsenal London" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "805" ;
+    :yValue "Liverpool" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "385" ;
+    :yValue "Olympique Marseille" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "375" ;
+    :yValue "Juventus Turin" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "335" ;
+    :yValue "Paris St. Germain" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "325" ;
+    :yValue "Fenerbahce Istanbul" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "300" ;
+    :yValue "Inter Milan" ;
+    :belongsTo :Chart .

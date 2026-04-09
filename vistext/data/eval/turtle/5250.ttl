@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Car hire or rental-related search terms ranked by search volume in the United Kingdom (UK) in January 2016 (in 1,000 searches)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Searches in thousands" .
+
+:YAxis a :Axis ;
+    :title "keywords" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "90.5" ;
+    :yValue "car hire" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "40.5" ;
+    :yValue "car rental" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "33.1" ;
+    :yValue "rent a car" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "27.1" ;
+    :yValue "rental cars" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "27.1" ;
+    :yValue "car hire uk" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "18.1" ;
+    :yValue "cheap car hire" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12.1" ;
+    :yValue "car hire usa" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12.1" ;
+    :yValue "car hire spain" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9.9" ;
+    :yValue "car hire orlando" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "9.9" ;
+    :yValue "car hire comparison" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "933.1" ;
+    :yValue "Other keywords" ;
+    :belongsTo :Chart .

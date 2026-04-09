@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total motorcycle sales in Belgium in 2019 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Motorcycle brand" .
+
+:YAxis a :Axis ;
+    :title "Motorcycle sales" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BMW" ;
+    :yValue "3303" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Yamaha" ;
+    :yValue "3081" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Honda" ;
+    :yValue "2961" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Kawasaki" ;
+    :yValue "2191" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Piaggio**" ;
+    :yValue "1824" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "KTM" ;
+    :yValue "1541" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Harley-Davidson" ;
+    :yValue "1445" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "SYM" ;
+    :yValue "976" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Triumph" ;
+    :yValue "846" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Suzuki" ;
+    :yValue "657" ;
+    :belongsTo :Chart .

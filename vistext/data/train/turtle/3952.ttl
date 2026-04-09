@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading holidays for vehicle thefts in the United States in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of thefts" .
+
+:YAxis a :Axis ;
+    :title "Leading holidays for vehicle thefts" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2320" ;
+    :yValue "New Year’s Day" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2222" ;
+    :yValue "Labor Day" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2204" ;
+    :yValue "President’s Day" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2201" ;
+    :yValue "New Year’s Eve" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2191" ;
+    :yValue "Halloween" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2174" ;
+    :yValue "Valentine’s Day" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2162" ;
+    :yValue "Memorial Day" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2011" ;
+    :yValue "Christmas Eve" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1995" ;
+    :yValue "Independence Day" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1683" ;
+    :yValue "Thanksgiving" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1580" ;
+    :yValue "Christmas Day" ;
+    :belongsTo :Chart .

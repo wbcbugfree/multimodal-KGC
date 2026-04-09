@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading Android apps with the lowest uninstall rate worldwide as of August 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Platform" .
+
+:YAxis a :Axis ;
+    :title "Uninstall rate" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "WhatsApp" ;
+    :yValue "0.062" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Yandex Search" ;
+    :yValue "0.077" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Melon" ;
+    :yValue "0.087" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "BBM" ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "VK" ;
+    :yValue "0.103" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mnet" ;
+    :yValue "0.104" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Naver Cloud" ;
+    :yValue "0.112" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Yahoo Mail" ;
+    :yValue "0.114" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Xender" ;
+    :yValue "0.117" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pandora Radio" ;
+    :yValue "0.131" ;
+    :belongsTo :Chart .

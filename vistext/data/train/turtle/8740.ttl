@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Tottenham Hotspur Football Club revenue by stream from 2008/09 to 2018/19 (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Season" .
+
+:YAxis a :Axis ;
+    :title "Broadcasting" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2018/19" ;
+    :yValue "276.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2017/18" ;
+    :yValue "226.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2016/17" ;
+    :yValue "219" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2015/16" ;
+    :yValue "147.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2014/15" ;
+    :yValue "125.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2013/14" ;
+    :yValue "113.3" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2012/13" ;
+    :yValue "72.7" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2011/12" ;
+    :yValue "76.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2010/11" ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2009/10" ;
+    :yValue "62.9" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2008/09" ;
+    :yValue "52.6" ;
+    :belongsTo :Chart .

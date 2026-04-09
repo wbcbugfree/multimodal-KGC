@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Index of most water-efficient U.S. and Canadian cities in 2010" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "City" .
+
+:YAxis a :Axis ;
+    :title "Score" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Calgary" ;
+    :yValue "94.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Boston" ;
+    :yValue "91.8" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "New York City" ;
+    :yValue "88.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Minneapolis" ;
+    :yValue "88.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "San Francisco" ;
+    :yValue "87.4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Vancouver" ;
+    :yValue "86.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Denver" ;
+    :yValue "85.6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ottawa" ;
+    :yValue "84.9" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Charlotte" ;
+    :yValue "84.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Toronto" ;
+    :yValue "83.5" ;
+    :belongsTo :Chart .

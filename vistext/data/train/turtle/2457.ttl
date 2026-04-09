@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading chain restaurants in systemwide sales growth in the United States in 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "chain restaurants" .
+
+:YAxis a :Axis ;
+    :title "Year-over-year sales growth" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jersey Mike's Subs" ;
+    :yValue "0.212" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Yard House" ;
+    :yValue "0.201" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Wingstop" ;
+    :yValue "0.198" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chipotle Mexican Grill" ;
+    :yValue "0.173" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Casey's General Stores" ;
+    :yValue "0.161" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jimmy John’s Gourmet Sandwiches" ;
+    :yValue "0.161" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Noodles & Company" ;
+    :yValue "0.151" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Firehouse Subs" ;
+    :yValue "0.148" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Buffalo Wild Wings Grill & Bar" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cheddar's" ;
+    :yValue "0.124" ;
+    :belongsTo :Chart .

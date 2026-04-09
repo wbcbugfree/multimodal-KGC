@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Compound annual growth rate (CAGR) of the retail sector in Germany between 2013 and 2016 , by key product sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Compound annual growth rate (CAGR)" .
+
+:YAxis a :Axis ;
+    :title "Key product sectors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.0507" ;
+    :yValue "Electrical and electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.0363" ;
+    :yValue "Furniture and floor coverings" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.0335" ;
+    :yValue "Clothing" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.0333" ;
+    :yValue "Sports and leisure equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0239" ;
+    :yValue "Footwear" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.0238" ;
+    :yValue "Personal care" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.0233" ;
+    :yValue "Total retail" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.0172" ;
+    :yValue "Food and grocery" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.0155" ;
+    :yValue "Jewellery, watches and accessories" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0148" ;
+    :yValue "Luggage and leather goods" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.0128" ;
+    :yValue "Music, video and games" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.0108" ;
+    :yValue "Home and garden products" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.0039" ;
+    :yValue "Books, news and stationery" ;
+    :belongsTo :Chart .

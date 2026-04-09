@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of enterprises providing residential care activities for the elderly and disabled in the United Kingdom (UK) from 2019 to 2020 , by turnover size band" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "Turnover in GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "85" ;
+    :yValue "£0 - £49,999" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "245" ;
+    :yValue "£50,000 - £99,999" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "335" ;
+    :yValue "£100,000 - £249,999" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "285" ;
+    :yValue "£250,000 - £499,999" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "510" ;
+    :yValue "£500,000 - £999,999" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1020" ;
+    :yValue "£1 million - £1.999 million" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "770" ;
+    :yValue "£2 million - £4.999 million" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "£5 million - £9.999 million" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "115" ;
+    :yValue "£10 million - £49.999 million" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "£50 million+" ;
+    :belongsTo :Chart .

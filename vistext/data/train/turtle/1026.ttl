@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of IT services companies worldwide by brand value in 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "25.3" ;
+    :yValue "Accenture" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "21.2" ;
+    :yValue "IBM (IT services)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "13.5" ;
+    :yValue "TCS" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8.6" ;
+    :yValue "Cognizant" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7.1" ;
+    :yValue "Infosys" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6.6" ;
+    :yValue "Capgemini" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5.8" ;
+    :yValue "DXC Technology" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5.1" ;
+    :yValue "NTT Data" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4.9" ;
+    :yValue "HCL" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4.3" ;
+    :yValue "Wipro" ;
+    :belongsTo :Chart .

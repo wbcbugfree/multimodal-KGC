@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Retail revenue of the leading retailers in North America in 2018 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Retail sales in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Company (Country of origin)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "514.41" ;
+    :yValue "Walmart (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "141.58" ;
+    :yValue "Costco (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "140.21" ;
+    :yValue "Amazon.com, Inc. (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "117.53" ;
+    :yValue "Kroger (United States)*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "110.67" ;
+    :yValue "Walgreens Boots Alliance, Inc. (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "108.2" ;
+    :yValue "Home Depot (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "83.99" ;
+    :yValue "CVS Health Corporation (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "74.43" ;
+    :yValue "Target Corporation (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "71.31" ;
+    :yValue "Lowe's Companies, Inc. (United States)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "60.54" ;
+    :yValue "Albertsons Companies, Inc. (United States)" ;
+    :belongsTo :Chart .

@@ -1,0 +1,32 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average annual sponsorship revenue of top football teams in 2015/16 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "top football teams" .
+
+:YAxis a :Axis ;
+    :title "Stadium" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Real Madrid" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Manchester United" ;
+    :yValue "22" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bayern Munich" ;
+    :yValue "9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Juventus" ;
+    :yValue "7" ;
+    :belongsTo :Chart .

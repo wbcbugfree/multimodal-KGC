@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of families in the United States in 2019 , by income level and race or origin (in thousands)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "All Races" .
+
+:YAxis a :Axis ;
+    :title "Annual family income in U\\.S\\. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2798" ;
+    :yValue "Under 10,000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3212" ;
+    :yValue "10,000 to 19,999" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4933" ;
+    :yValue "20,000 to 29,999" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5733" ;
+    :yValue "30,000 to 39,999" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6025" ;
+    :yValue "40,000 to 49,999" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5869" ;
+    :yValue "50,000 to 59,999" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5304" ;
+    :yValue "60,000 to 69,999" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5089" ;
+    :yValue "70,000 to 79,999" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4564" ;
+    :yValue "80,000 to 89,999" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4271" ;
+    :yValue "90,000 to 99,999" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15728" ;
+    :yValue "100,000 to 149,999" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "8780" ;
+    :yValue "150,000 to 199,999" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "4561" ;
+    :yValue "200,000 to 249,999" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "6831" ;
+    :yValue "250,000 and above" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "83698" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .

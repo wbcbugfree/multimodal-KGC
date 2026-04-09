@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular words in Academy Awards acceptance speeches for best acting categories between 1988 and 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Word" .
+
+:YAxis a :Axis ;
+    :title "Actor in a Supporting Role" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Thank you/Thanks" ;
+    :yValue "108" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Academy" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "God" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mom/Mother" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dad/Father" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Parent(s)" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Family(ies)" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Friend(s)" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cast" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Crew" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Husband" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Wife" ;
+    :yValue "13" ;
+    :belongsTo :Chart .

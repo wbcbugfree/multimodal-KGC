@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of arrests for property crimes in the United States in 2019 , by type and age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type of crime" .
+
+:YAxis a :Axis ;
+    :title "Property crime (total)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Under 18" ;
+    :yValue "87710" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "18-24" ;
+    :yValue "159426" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25-29" ;
+    :yValue "125086" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "30-34" ;
+    :yValue "116944" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "35-39" ;
+    :yValue "96414" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "40-44" ;
+    :yValue "64968" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "45-49" ;
+    :yValue "48508" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "50-54" ;
+    :yValue "39155" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "55-59" ;
+    :yValue "28068" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "60-64" ;
+    :yValue "13774" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "65 and older" ;
+    :yValue "8583" ;
+    :belongsTo :Chart .

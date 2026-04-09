@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's leading container ship operators as of October 12 , 2020 , based on number of owned and chartered ships" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Owned" .
+
+:YAxis a :Axis ;
+    :title "Container ship operator" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "308" ;
+    :yValue "APM-Maersk" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "139" ;
+    :yValue "Mediterranean Shg Co" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "116" ;
+    :yValue "CMA CGM Group" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "173" ;
+    :yValue "COSCO Group" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "112" ;
+    :yValue "Hapag-Lloyd" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "71" ;
+    :yValue "ONE (Ocean Network Express)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "106" ;
+    :yValue "Evergreen Line" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Zhonggu Logistics Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Antong Holdings (QASC)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "67" ;
+    :yValue "Wan Hai Lines" ;
+    :belongsTo :Chart .

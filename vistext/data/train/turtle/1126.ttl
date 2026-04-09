@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of the leading personal care brands worldwide in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in Million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand (Company)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "29468" ;
+    :yValue "L'Oréal Paris" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "17429" ;
+    :yValue "Colgate (Colgate-Palmolive)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "15116" ;
+    :yValue "Gillette (Procter & Gamble Co.)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "13617" ;
+    :yValue "Lancome (L'Oréal)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7232" ;
+    :yValue "Garnier (L'Oréal)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7048" ;
+    :yValue "Estée Lauder" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6673" ;
+    :yValue "Nivea (Beiersdorf)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6558" ;
+    :yValue "Clinique (Estée Lauder)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "6355" ;
+    :yValue "Dove (Unilever)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "6210" ;
+    :yValue "Shiseido" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "4466" ;
+    :yValue "Pantene Pro-V" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "3846" ;
+    :yValue "Olay (Procter & Gamble Co.)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "3185" ;
+    :yValue "Crest (Procter & Gamble Co.)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "2925" ;
+    :yValue "Oral-B (Procter & Gamble Co.)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "2709" ;
+    :yValue "Head & Shoulders" ;
+    :belongsTo :Chart .

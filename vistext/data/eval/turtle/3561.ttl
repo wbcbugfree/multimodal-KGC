@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most instagrammed tourist attractions within Europe as of May 2017 , by number of tags" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of tags" .
+
+:YAxis a :Axis ;
+    :title "Most instagrammed tourist attractions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "7253011" ;
+    :yValue "Eiffel Tower (Paris)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4595501" ;
+    :yValue "Berlin Wall (Berlin)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2561617" ;
+    :yValue "Big Ben (London)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2517129" ;
+    :yValue "Notre Dame (Paris)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2262885" ;
+    :yValue "Oktoberfest (Munich)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1752045" ;
+    :yValue "Colosseum (Rome)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "981897" ;
+    :yValue "Acropolis of Athens (Athens)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "911984" ;
+    :yValue "La Sagrada Familia (Barcelona)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "733602" ;
+    :yValue "Alhambra (Granada)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "586990" ;
+    :yValue "Buckingham Palace (London)" ;
+    :belongsTo :Chart .

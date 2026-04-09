@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How much does your family enjoy doing the following activities together ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Not at all" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cooking and eatign meals together" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Doing things outside together like playing, takign a walk or going to the park" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Reading together" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Doing indoor activities together, like playing with toys, games or art projects (not TV or video games)" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Watching TV or movies together at home" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Singing songs or making music together" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Participating in clubs or other groups together" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Playing or attending sports events together" ;
+    :yValue "0.19" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Doing things on a computer, tablet or smartphone together" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Playing video games together" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .

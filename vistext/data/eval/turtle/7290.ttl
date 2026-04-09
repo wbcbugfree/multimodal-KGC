@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average penetration rate of soft drink brands in Russia in 2012 and 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "2012" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Coca-Col" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Coca-Cola Pepsi-Col" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Pepsi-Cola Chernogolo" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Chernogolov Mirind" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Mirinda Sprit" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Sprite Fant" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Fanta Fruktim" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fruktime Schweppe" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Schweppes 7-U" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7-Up Mountain De" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Mountain Dew Radug" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Raduga Dr Peppe" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Dr Pepper Niagar" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

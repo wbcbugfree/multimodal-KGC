@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of electricity providers in the United States in 2019 , by ownership type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of utilities" .
+
+:YAxis a :Axis ;
+    :title "ownership type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "950" ;
+    :yValue "Municipal" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "853" ;
+    :yValue "Cooperative" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "266" ;
+    :yValue "Retail power marketer" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "178" ;
+    :yValue "Investor owned" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "131" ;
+    :yValue "Political subdivision" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "32" ;
+    :yValue "Wholesale power marketer" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "20" ;
+    :yValue "Transmission" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Community choice aggregator" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "State" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Municipal marketing authority" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Behind the meter" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Federal" ;
+    :belongsTo :Chart .

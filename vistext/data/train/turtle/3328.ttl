@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of ships in the world 's leading container ship operators ' order books as of October 12 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of orderbook ships" .
+
+:YAxis a :Axis ;
+    :title "Container ship operator" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "66" ;
+    :yValue "Evergreen Line" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "CMA CGM Group" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Sinokor Merchant Marine" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Wan Hai Lines" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Yang Ming Marine Transport Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "APM-Maersk" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Grimaldi (Napoli)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "SITC" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "HMM Co Ltd" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Mediterranean Shg Co" ;
+    :belongsTo :Chart .

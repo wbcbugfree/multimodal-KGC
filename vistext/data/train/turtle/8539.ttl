@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of medical malpractice payments made in the U.S. from 2010 to 2013 , by injury type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2010" .
+
+:YAxis a :Axis ;
+    :title "injury type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3404" ;
+    :yValue "Death" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1475" ;
+    :yValue "Significant permanent injury" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1192" ;
+    :yValue "Minor permanent injury" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1117" ;
+    :yValue "Major temporary injury" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1062" ;
+    :yValue "Major permanent injury" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "919" ;
+    :yValue "Minor temporary injury" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "562" ;
+    :yValue "Quadriplegic, brain damage, lifelong care" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Emotional injury only" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "201" ;
+    :yValue "Insignificant injury" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "92" ;
+    :yValue "Cannot be determined *" ;
+    :belongsTo :Chart .

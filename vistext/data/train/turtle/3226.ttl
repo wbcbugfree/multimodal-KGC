@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ranking of the most frequently visited webshops in Norway in 2016 (in million visits)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of webshop visits" .
+
+:YAxis a :Axis ;
+    :title "most frequently visited webshops" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "33.69" ;
+    :yValue "eBay.com" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "22.49" ;
+    :yValue "Amazon.com" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18.99" ;
+    :yValue "Komplett.no" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15.22" ;
+    :yValue "Elkjøp.no" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13.75" ;
+    :yValue "Apple.com" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "10.92" ;
+    :yValue "Norwegian.no" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "9.42" ;
+    :yValue "Viaplay.no" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8.24" ;
+    :yValue "Ikea.com" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.96" ;
+    :yValue "Amazon.co.uk" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.34" ;
+    :yValue "Aliexpress.com" ;
+    :belongsTo :Chart .

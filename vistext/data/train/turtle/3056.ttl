@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Criminal use of explosives in Canada in 2014 , by incident" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of incidents involving explosives" .
+
+:YAxis a :Axis ;
+    :title "Incident" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Recovery of commercial & military explosives" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26" ;
+    :yValue "Recovery of IED & HME" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "15" ;
+    :yValue "Hoax device" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Recovery of inert military ordnance" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Bombing" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Attempted bombing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "CBRN incidents" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Theft of explosives" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Accidental explosion" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Injured" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Death" ;
+    :belongsTo :Chart .

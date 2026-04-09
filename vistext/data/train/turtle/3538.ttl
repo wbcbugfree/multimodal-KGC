@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Thinking about how you discover , consume and interact with music which of the following do you do at least once a month ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Listen to the radio" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.38" ;
+    :yValue "Watch music videos e.g. YouTube, Vimeo" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.35" ;
+    :yValue "Buy CDs online (e.g. Amazon) or in the high street (e.g. HMV)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.32" ;
+    :yValue "Watch music TV shows e.g. XFactor, Later With Jools Holland" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Watch music TV channels e.g. VH1, Clubland TV" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Listen to streaming music for free e.g. Spotity Free, Soundcloud" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.16" ;
+    :yValue "Go to see bands, singers, or DJs play live" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Pay to download single tracks e.g. iTunes Store" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Pay to download albums e.g. iTunes Store" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Download music for free from file sharing networks e.g. Pirate Bay, uTorrents" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "I use a music cloud locker service for free e.g. Amazon Cloud Player, Apple iCloud, Google Play Music" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "None of the above" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "I trade music with my friends (swap music between phones, hard drives, online with Dropbox etc." ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Pay for a music subscription e.g. Spotify Premium, Deezer" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "I pay to use a music cloud locker service e.g. Amazon Cloud Player, Apple iTunes Match, Google Play Music" ;
+    :belongsTo :Chart .

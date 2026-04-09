@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global employee numbers of the United Kingdom (UK) banks as of 2014" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "bank" .
+
+:YAxis a :Axis ;
+    :title "Number of employees worldwide" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Barclays Bank Plc (headquarters: London)" ;
+    :yValue "140300" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "The Royal Bank of Scotland Group (hq: Edinburgh)" ;
+    :yValue "106100" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lloyds Banking Group Plc (hq: London)" ;
+    :yValue "97869" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "HSBC Bank Plc (hq: London)" ;
+    :yValue "69824" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Santander UK Plc (hq: London)" ;
+    :yValue "19643" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nationwide Building Society (hq: Swindon)" ;
+    :yValue "17268" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Co-operative bank (hq: Manchester)" ;
+    :yValue "7526" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "TSB Bank Plc (hq: Edinburgh)" ;
+    :yValue "4721" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Virgin Money (hq: Newcastle)" ;
+    :yValue "2637" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Metro Bank Plc (hq: London)" ;
+    :yValue "1031" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Shawbrook Bank Ltd (hq: Brentwood)" ;
+    :yValue "400" ;
+    :belongsTo :Chart .

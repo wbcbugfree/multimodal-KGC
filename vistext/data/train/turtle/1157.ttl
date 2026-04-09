@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 medical specialties in the U.S. based on average compensation after 6 years of national practice in 2013 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average compensation in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Specialty" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "628000" ;
+    :yValue "Orthopedic surgery - spine" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "593500" ;
+    :yValue "Neurological surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "525000" ;
+    :yValue "Cardiac & thoracic surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "488500" ;
+    :yValue "Orthopedic surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "472800" ;
+    :yValue "Diagnostic radiology (interventional)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "447850" ;
+    :yValue "Diagnostic radiology (non-interventional)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "408000" ;
+    :yValue "Vascular surgery" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "406000" ;
+    :yValue "Cardiology" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "405000" ;
+    :yValue "Gynecological oncology" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "405000" ;
+    :yValue "Trauma surgery" ;
+    :belongsTo :Chart .

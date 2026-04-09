@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average temperature recorded in Italy from 1971 to 1980 and from 2011 to 2018 , by city (in degrees Celsius)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2011-2018" .
+
+:YAxis a :Axis ;
+    :title "city of Italy" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "19" ;
+    :yValue "Palermo" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "18.3" ;
+    :yValue "Catania" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17.4" ;
+    :yValue "Bari" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "17.6" ;
+    :yValue "Naples" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "16.8" ;
+    :yValue "Genoa" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "16.7" ;
+    :yValue "Rome" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "16" ;
+    :yValue "Florence" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "15.2" ;
+    :yValue "Bologna" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "14.4" ;
+    :yValue "Milan" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "13.4" ;
+    :yValue "Turin" ;
+    :belongsTo :Chart .

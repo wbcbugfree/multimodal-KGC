@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top U.S. pharmacies ranked by prescription drugs market share in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "U\\.S\\. pharmacy" .
+
+:YAxis a :Axis ;
+    :title "Market share" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "CVS health Corporation*" ;
+    :yValue "0.245" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Walgreens Boots Alliance (Retail Pharmacy USA)" ;
+    :yValue "0.189" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cigna/Express Scripts, Inc.**" ;
+    :yValue "0.103" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "UnitedHealth Group (OptumRx)" ;
+    :yValue "0.058" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Walmart Stores, Inc." ;
+    :yValue "0.047" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "The Kroger Company" ;
+    :yValue "0.031" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Rite Aid Corporation" ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Humana Pharmacy Solutions" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Albertsons Companies" ;
+    :yValue "0.012" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Diplomat Pharmacy" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Publix" ;
+    :yValue "0.009" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "BrightSpring Health Services" ;
+    :yValue "0.007" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Costco Wholesale Corporation" ;
+    :yValue "0.006" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Ahold Delhaize" ;
+    :yValue "0.005" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "H-E-B" ;
+    :yValue "0.004" ;
+    :belongsTo :Chart .

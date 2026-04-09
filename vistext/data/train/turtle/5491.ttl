@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brazil : Business climate index from November 2018 to November 2019 (50 = neutral)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Index points (50 = neutral)" .
+
+:YAxis a :Axis ;
+    :title "Months from November 2018 to November 2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "62.5" ;
+    :yValue "Nov '19" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "59.3" ;
+    :yValue "Oct '19" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "59.4" ;
+    :yValue "Sep '19" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "59.4" ;
+    :yValue "Aug '19" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "57.4" ;
+    :yValue "Jul '19" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "56.9" ;
+    :yValue "Jun '19" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "56.5" ;
+    :yValue "May '19" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "58.4" ;
+    :yValue "Apr '19" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "61.9" ;
+    :yValue "Mar '19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "64.5" ;
+    :yValue "Feb '19" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "64.7" ;
+    :yValue "Jan '19" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "63.8" ;
+    :yValue "Dec '18" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "63.2" ;
+    :yValue "Nov '18" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of votes in the Danish Parliament election in 2015 and 2019 , by party" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "political party" .
+
+:YAxis a :Axis ;
+    :title "2019" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Socialdemokratie" ;
+    :yValue "0.259" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Socialdemokratiet Venstre, Danmarks Liberale Part" ;
+    :yValue "0.234" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Venstre, Danmarks Liberale Parti Dansk Folkepart" ;
+    :yValue "0.087" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dansk Folkeparti Radikale Venstr" ;
+    :yValue "0.086" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Radikale Venstre SF - Socialistisk Folkepart" ;
+    :yValue "0.077" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "SF - Socialistisk Folkeparti Enhedslisten - De Rød-Grønn" ;
+    :yValue "0.069" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Enhedslisten - De Rød-Grønne Det Konservative Folkepart" ;
+    :yValue "0.066" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Det Konservative Folkeparti Alternative" ;
+    :yValue "0.03" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Alternativet Nye Borgerlig" ;
+    :yValue "0.024" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Nye Borgerlige Liberal Allianc" ;
+    :yValue "0.023" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Liberal Alliance Stram Kur" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Stram Kurs Kristendemokratern" ;
+    :yValue "0.017" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Kristendemokraterne Klaus Riskær Pederse" ;
+    :yValue "0.008" ;
+    :belongsTo :Chart .

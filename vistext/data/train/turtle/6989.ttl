@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly market capitalization of Europe 's largest banks since the Coronavirus from December 2019 to October 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Lloyds Banking Group (UK)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Oct '20" ;
+    :yValue "24.96" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Sep '20" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Aug '20" ;
+    :yValue "25.13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jul '20" ;
+    :yValue "25.62" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jun '20" ;
+    :yValue "26.54" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "May '20" ;
+    :yValue "24.76" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Apr '20" ;
+    :yValue "28.18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Mar '20" ;
+    :yValue "26.59" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Feb '20" ;
+    :yValue "44.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jan '20" ;
+    :yValue "52.01" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Dec '19" ;
+    :yValue "57.97" ;
+    :belongsTo :Chart .

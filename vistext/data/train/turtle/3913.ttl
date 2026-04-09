@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading private grocery freight carriers in the United States in 2020 , by tractor units" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading private grocery freight carriers" .
+
+:YAxis a :Axis ;
+    :title "Number of tractors" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "McLane Grocery" ;
+    :yValue "1600" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "United Natural Foods" ;
+    :yValue "1414" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ahold Delhaize Group" ;
+    :yValue "1149" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Albertsons" ;
+    :yValue "1020" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Kroger Co." ;
+    :yValue "942" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Publix Super Markets" ;
+    :yValue "668" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "H-E-B Grocery Co." ;
+    :yValue "567" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "SpartanNash" ;
+    :yValue "489" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "C & S Wholesale Grocers" ;
+    :yValue "451" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hy-Vee Inc." ;
+    :yValue "250" ;
+    :belongsTo :Chart .

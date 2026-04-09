@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Weekend box office revenue of the leading movies in Germany in January 2020 (in 1,000 U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in thousand U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "13898.6" ;
+    :yValue "Star Wars: Episode IX - The Rise of Skywalker" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8013.3" ;
+    :yValue "Bad Boys for Life" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "7181" ;
+    :yValue "Jumanji: The Next Level" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6908.9" ;
+    :yValue "Knives Out" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "6029.4" ;
+    :yValue "Frozen II" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2972.9" ;
+    :yValue "Das perfekte Geheimnis" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2656.8" ;
+    :yValue "Lindenberg! Mach dein Ding" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2416.2" ;
+    :yValue "When Hitler Stole Pink Rabbit" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2321.8" ;
+    :yValue "Spies in Disguise" ;
+    :belongsTo :Chart .

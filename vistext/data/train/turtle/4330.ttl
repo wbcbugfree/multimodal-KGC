@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How do you typically use your mobile phone to find inspiration or ideas on where to travel ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Search engine for general web search" ;
+    :yValue "0.698" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Search engine for images or photos" ;
+    :yValue "0.394" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Social media websites" ;
+    :yValue "0.365" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Online travel agency websites" ;
+    :yValue "0.286" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Airbnb.com" ;
+    :yValue "0.247" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Online video (YouTube.com, etc)" ;
+    :yValue "0.203" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ask friends on social media" ;
+    :yValue "0.171" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Official tourism office website" ;
+    :yValue "0.162" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Travel-related podcasts" ;
+    :yValue "0.126" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Map websites or mapping apps" ;
+    :yValue "0.111" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Email travel newsletters" ;
+    :yValue "0.099" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Digital assistant (Siri, Google Now, etc)" ;
+    :yValue "0.093" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "User review websites" ;
+    :yValue "0.086" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Blogs, articles or stories" ;
+    :yValue "0.072" ;
+    :belongsTo :Chart .

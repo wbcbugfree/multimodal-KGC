@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Index score of investor-owned utilities with the highest U.S. customer satisfaction in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "investor-owned utility" .
+
+:YAxis a :Axis ;
+    :title "Index score" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Average investor-owned utilities" ;
+    :yValue "72" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Atmos Energy" ;
+    :yValue "78" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "CenterPoint Energy" ;
+    :yValue "77" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "NextEra Energy" ;
+    :yValue "76" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Consolidated Edison" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "NiSource" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sempra Energy" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Southern Company" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dominion Energy" ;
+    :yValue "74" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "WEC Energy" ;
+    :yValue "74" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Edison International" ;
+    :yValue "74" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Ameren" ;
+    :yValue "73" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Entergy" ;
+    :yValue "72" ;
+    :belongsTo :Chart .

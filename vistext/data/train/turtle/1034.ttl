@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Manchester United revenue from jersey sponsorship from 2009/10 to 2020/21 (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Kit sponsorship in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2020/21 (Chevrolet)*" ;
+    :yValue "64" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2019/20 (Chevrolet)*" ;
+    :yValue "64" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2018/19 (Chevrolet)" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2017/18 (Chevrolet)" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2016/17 (Chevrolet)" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2015/16 (Chevrolet)" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2014/15 (Chevrolet)" ;
+    :yValue "47" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2013/14 (Aon)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2012/13 (Aon)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2011/12 (Aon)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2010/11 (Aon)" ;
+    :yValue "20" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2009/10 (AIG)" ;
+    :yValue "14" ;
+    :belongsTo :Chart .

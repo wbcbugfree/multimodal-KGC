@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Estimated percentage of workers who were undocumented immigrants in the United States in 2017 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of workers" .
+
+:YAxis a :Axis ;
+    :title "Industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.142" ;
+    :yValue "Agriculture" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.123" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.075" ;
+    :yValue "Leisure and hospitality" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "Personal / other services" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.057" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.056" ;
+    :yValue "Business Services" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.046" ;
+    :yValue "Total" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.037" ;
+    :yValue "Wholesale / retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.036" ;
+    :yValue "Transportation and utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.034" ;
+    :yValue "Mining" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.028" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.025" ;
+    :yValue "Financial activities" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.016" ;
+    :yValue "Educational and health services" ;
+    :belongsTo :Chart .

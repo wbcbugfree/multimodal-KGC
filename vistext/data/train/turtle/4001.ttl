@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of paid employees in electric power generation in the U.S. in 2019 , by technology" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of employees" .
+
+:YAxis a :Axis ;
+    :title "technology" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "248034" ;
+    :yValue "Solar" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "114774" ;
+    :yValue "Wind" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "79711" ;
+    :yValue "Coal" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "75661" ;
+    :yValue "Advanced natural gas" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "60916" ;
+    :yValue "Nuclear" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "55468" ;
+    :yValue "Traditional hydro" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "46151" ;
+    :yValue "Natural gas" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "43520" ;
+    :yValue "Bioenery/CHP" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12722" ;
+    :yValue "Oil" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12304" ;
+    :yValue "Low impact hydro" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "8794" ;
+    :yValue "Geothermal" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "41117" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .

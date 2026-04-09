@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading music apps in the Apple App Store in the Netherlands in September 2020 , by number of downloads (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of downloads in thousands" .
+
+:YAxis a :Axis ;
+    :title "Music Apps" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "38.03" ;
+    :yValue "Spotify - Muziek en podcasts" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "35.05" ;
+    :yValue "Sonos" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "20.58" ;
+    :yValue "TuneTrack" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "15.48" ;
+    :yValue "Shazam" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "13.05" ;
+    :yValue "Tuunes-beltonen voor iPhone" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "11.72" ;
+    :yValue "SoundCloud - Muziek & Audio" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11.43" ;
+    :yValue "Qmusic" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "10.03" ;
+    :yValue "YouTube Music" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "9.61" ;
+    :yValue "Karaoke - Zing Liedjes" ;
+    :belongsTo :Chart .

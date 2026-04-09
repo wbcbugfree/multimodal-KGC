@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of new bus and coach registrations in the United Kingdom (UK) in 2020 , by bus manufacturer" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "manufacturer" .
+
+:YAxis a :Axis ;
+    :title "Number of new vehicle registrations" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ford" ;
+    :yValue "480" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mercedes" ;
+    :yValue "393" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Alexander Dennis" ;
+    :yValue "183" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Peugeot" ;
+    :yValue "181" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Scania" ;
+    :yValue "98" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Citroen" ;
+    :yValue "79" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Volvo" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Caetano" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Fiat" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Yutong" ;
+    :yValue "26" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Wrightbus" ;
+    :yValue "23" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Iveco" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Volkswagen" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Optare" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "MAN" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "63" ;
+    :belongsTo :Chart .

@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of nominations per motion picture distributor for the 2020 Golden Globe Awards" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of nominations" .
+
+:YAxis a :Axis ;
+    :title "film distributor" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "17" ;
+    :yValue "Netflix" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10" ;
+    :yValue "Sony Pictures Entertainment" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Walt Disney Studio Motion Pictures" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "6" ;
+    :yValue "Warner Bros. Pictures" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5" ;
+    :yValue "Lionsgate" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Paramount Pictures" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "United Artists Releasing" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Amazon Studios" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Focus Features" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "A24" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Fox Searchlight Pictures" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "LD Entertainment/Roadside Attractions" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "STXfilms" ;
+    :belongsTo :Chart .

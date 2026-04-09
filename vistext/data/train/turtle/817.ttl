@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading mobile game publishers in the United States as of October 2016 , by number of daily downloads (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "video game developer" .
+
+:YAxis a :Axis ;
+    :title "Number of downloads in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Electronic Arts" ;
+    :yValue "214.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cheetah Technology Corp. Ltd." ;
+    :yValue "182.9" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Miniclip.com" ;
+    :yValue "155.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Zynga" ;
+    :yValue "108.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Gameloft" ;
+    :yValue "106.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "King" ;
+    :yValue "91.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Rovio Entertainment" ;
+    :yValue "90.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ketchapp" ;
+    :yValue "79.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Supercell" ;
+    :yValue "74.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Lowtech Studios" ;
+    :yValue "70.6" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Universities in the United States ranked by number of Fortune 500 CEO alumni in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "University" .
+
+:YAxis a :Axis ;
+    :title "Number of Fortune 500 CEO alumni" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Harvard University" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Stanford University" ;
+    :yValue "11" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "University of Pennsylvania" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Massachusetts Institute of Technology" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Yale University" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "University of Chicago" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Columbia University" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Northwestern University" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Cornell University" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "University of Southern California" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "New York University" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Southern Methodist University" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Princeton University" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Texas A&M University" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "University of Notre Dame" ;
+    :yValue "3" ;
+    :belongsTo :Chart .

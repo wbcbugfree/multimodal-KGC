@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular e-commerce properties in the United States as of September 2018 , by desktop visitors (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Most popular e-commerce properties" .
+
+:YAxis a :Axis ;
+    :title "Number of desktop visitors in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Amazon" ;
+    :yValue "122" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Walmart" ;
+    :yValue "59" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "eBay" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "The Home Depot" ;
+    :yValue "36" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Groupon" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Target" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Coupons.com" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Best Buy" ;
+    :yValue "26" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Etsy" ;
+    :yValue "21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kohl's" ;
+    :yValue "18" ;
+    :belongsTo :Chart .

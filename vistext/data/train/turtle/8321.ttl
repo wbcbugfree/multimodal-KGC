@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most important online safety topics according online teens and parents in the United States as of June 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Online teens" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Preventing identity theft" ;
+    :yValue "0.55" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Keeping my devices secure" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "How to identify fake emails, social posts, and texts" ;
+    :yValue "0.39" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "How to determine if a website is secure" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "How to report serious problems I encounter online" ;
+    :yValue "0.25" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "How young people are lured, groomed, or recruited online" ;
+    :yValue "0.27" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "How to manage my privacy online" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dealing with a bully" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Blocking people" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Risks of sexting" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Adjusting settings on social networks" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "How to begin a conversation with (kids/my parents) about staying safe online" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .

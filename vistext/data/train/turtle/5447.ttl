@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global top 10 pharmaceutical companies based on projected R & D spending in 2026 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "R&D spending in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12.9" ;
+    :yValue "Roche" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "Merck & Co" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10.7" ;
+    :yValue "Johnson & Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9.7" ;
+    :yValue "Novartis" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9.7" ;
+    :yValue "Pfizer" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "9.4" ;
+    :yValue "Bristol-Myers Squibb" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "7.6" ;
+    :yValue "GlaxoSmithKline" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7.5" ;
+    :yValue "AstraZeneca" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.3" ;
+    :yValue "AbbVie" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7" ;
+    :yValue "Eli Lilly" ;
+    :belongsTo :Chart .

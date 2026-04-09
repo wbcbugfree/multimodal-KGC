@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's most punctual airlines in 2019 , ranked by on-time arrival" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Proportion of punctual flights" .
+
+:YAxis a :Axis ;
+    :title "airline" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.9501" ;
+    :yValue "Garuda Indonesia" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.9201" ;
+    :yValue "Copa Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.9012" ;
+    :yValue "Skymark Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.874" ;
+    :yValue "Hawaiian Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.8641" ;
+    :yValue "LATAM Airlines Group" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.863" ;
+    :yValue "Aeroflot" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.8592" ;
+    :yValue "All Nippon Airways" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.8548" ;
+    :yValue "Jetstar Asia" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.8532" ;
+    :yValue "Singapore Airlines" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.8449" ;
+    :yValue "Thai AirAsia" ;
+    :belongsTo :Chart .

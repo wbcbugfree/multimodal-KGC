@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top ten dark money spenders in the 2016 U.S. election cycle as of August 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Money spent in U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "dark money spenders" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "20355534" ;
+    :yValue "US Chamber of Commerce" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9787426" ;
+    :yValue "American Future Fund" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3553259" ;
+    :yValue "Club for Growth" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2744592" ;
+    :yValue "Majority Forward" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2610288" ;
+    :yValue "League of Conservation Voters" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2274448" ;
+    :yValue "Americans for Prosperity" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1618138" ;
+    :yValue "Ending Spending" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1325248" ;
+    :yValue "Environmental Defense Action Fund" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1291152" ;
+    :yValue "VoteVets.org" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1002330" ;
+    :yValue "Planned Parenthood Action Fund" ;
+    :belongsTo :Chart .

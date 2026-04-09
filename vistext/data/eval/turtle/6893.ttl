@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The world 's highest-paid tennis players in 2019/20 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "highest-paid tennis players" .
+
+:YAxis a :Axis ;
+    :title "Endorsements" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Roger Federer" ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Novak Djokovic" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Rafael Nadal" ;
+    :yValue "26" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Naomi Osaka" ;
+    :yValue "34" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Serena Williams" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Kei Nishikori" ;
+    :yValue "31" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ashleigh Barty" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Daniil Medveded" ;
+    :yValue "4.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dominic Thiem" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Simona Halep" ;
+    :yValue "4" ;
+    :belongsTo :Chart .

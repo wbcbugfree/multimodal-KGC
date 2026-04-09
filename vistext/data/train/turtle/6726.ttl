@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Box office revenue of the X-Men movie series in North America and worldwide as of 2020 , by movie (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "the X-Men movie series" .
+
+:YAxis a :Axis ;
+    :title "Worldwide" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Deadpool" ;
+    :yValue "783.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Deadpool 2" ;
+    :yValue "734.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "X-Men: The Last Stand" ;
+    :yValue "459.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "X-Men: Days of Future Past" ;
+    :yValue "747.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Logan" ;
+    :yValue "616.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "X2: X-Men United" ;
+    :yValue "407.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "X-Men Origins: Wolverine" ;
+    :yValue "373.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "X-Men" ;
+    :yValue "296.3" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "X-Men: Apocalypse" ;
+    :yValue "543.9" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "X-Men: First Class" ;
+    :yValue "353.6" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "The Wolverine" ;
+    :yValue "414.8" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Dark Phoenix" ;
+    :yValue "252.4" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "The New Mutants" ;
+    :yValue "44.61" ;
+    :belongsTo :Chart .

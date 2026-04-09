@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of coronavirus (COVID-19) clinical trials for drugs and vaccines worldwide as of January 7 , 2021 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Type" .
+
+:YAxis a :Axis ;
+    :title "Number of trials" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Treatment" ;
+    :yValue "1787" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "COVID-19 complication support" ;
+    :yValue "1057" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "COVID-19 pneumonia" ;
+    :yValue "951" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Severe COVID-19" ;
+    :yValue "904" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Moderate COVID-19" ;
+    :yValue "810" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Mild COVID-19" ;
+    :yValue "635" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Exposure prophylaxis (PEP/PrEP)" ;
+    :yValue "361" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Critical COVID-19" ;
+    :yValue "352" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "COVID-19 vaccines" ;
+    :yValue "331" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Healthy subjects" ;
+    :yValue "281" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Asymptomatic COVID-19" ;
+    :yValue "136" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Post-COVID syndrome" ;
+    :yValue "28" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Unspecified" ;
+    :yValue "107" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Population by membership in religious and life stance organizations in Iceland in 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of inhabitants" .
+
+:YAxis a :Axis ;
+    :title "Organization" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "231112" ;
+    :yValue "The Evangelical Lutheran Church of Iceland" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14632" ;
+    :yValue "The Roman Catholic Church" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10003" ;
+    :yValue "The Independent Congregation of Reykjavík" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "7216" ;
+    :yValue "The Independent Congregation of Hafnarfjörður" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4764" ;
+    :yValue "Pagan Worship" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3507" ;
+    :yValue "The Icelandic Ethical Humanist Association" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3241" ;
+    :yValue "The Independent Congregation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2099" ;
+    :yValue "The Pentecostal Church of Iceland" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1213" ;
+    :yValue "Zuism" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1115" ;
+    :yValue "The Icelandic Buddhist Society" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "742" ;
+    :yValue "The Russian Orthodox Church" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "628" ;
+    :yValue "The Seventh Day Adventist Church" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "623" ;
+    :yValue "The Icelandic Muslim Association" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "608" ;
+    :yValue "Jehova Witnesses" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "498" ;
+    :yValue "The Christian Way, a Church for You" ;
+    :belongsTo :Chart .

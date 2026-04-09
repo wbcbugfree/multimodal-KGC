@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Ten most popular A.S. Roma players on Instagram as of May 29 , 2020 (in 1,000 followers)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of followers in thousands" .
+
+:YAxis a :Axis ;
+    :title "players" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1450" ;
+    :yValue "Edin Dzeko" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "989" ;
+    :yValue "Javier Pastore" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "936.7" ;
+    :yValue "Cengiz Ünder" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "680.8" ;
+    :yValue "Nicolò Zaniolo" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "507.7" ;
+    :yValue "Leonardo Spinazzola" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "489" ;
+    :yValue "Davide Zappacosta" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "441.8" ;
+    :yValue "Juan Jesus" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "434.3" ;
+    :yValue "Diego Perotti" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "351.2" ;
+    :yValue "Federico Fazio" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "346.1" ;
+    :yValue "Lorenzo Pellegrini" ;
+    :belongsTo :Chart .

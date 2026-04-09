@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Occupational roles of women and men in the U.S. military in 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Women" .
+
+:YAxis a :Axis ;
+    :title "Occupational roles of women and men in military" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.0435" ;
+    :yValue "Infantry, gun crews and seamanship" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.0672" ;
+    :yValue "Electronics" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.0787" ;
+    :yValue "Communications" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.1402" ;
+    :yValue "Medical" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.0191" ;
+    :yValue "Other technical" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.2953" ;
+    :yValue "Administrators" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.1341" ;
+    :yValue "Electrical" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.0245" ;
+    :yValue "Craftsman" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.1416" ;
+    :yValue "Supply" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.0558" ;
+    :yValue "Non-occupational" ;
+    :belongsTo :Chart .

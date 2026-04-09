@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Degree of internet freedom in Eurasia according to the Freedom House Index in 2020 , by country (index points)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Index points" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Georgia" ;
+    :yValue "76" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Armenia" ;
+    :yValue "75" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ukraine" ;
+    :yValue "61" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Kyrgyzstan" ;
+    :yValue "56" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Azerbaijan" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Belarus" ;
+    :yValue "38" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Turkey" ;
+    :yValue "35" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kazakhstan" ;
+    :yValue "32" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Russia" ;
+    :yValue "30" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Uzbekistan" ;
+    :yValue "27" ;
+    :belongsTo :Chart .

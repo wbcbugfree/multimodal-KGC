@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Mean age of mothers at first birth in the United States in 2018 , by Hispanic origin" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "ethnic group" .
+
+:YAxis a :Axis ;
+    :title "Mean age" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Asian, non-Hispanic" ;
+    :yValue "30.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "White, non-Hispanics" ;
+    :yValue "27.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cuban-Hispanics" ;
+    :yValue "27.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "All origins" ;
+    :yValue "26.9" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Central and South American-Hispanics" ;
+    :yValue "26.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dominican-Hispanic" ;
+    :yValue "25.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Black, non-Hispanics" ;
+    :yValue "25.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "All Hispanic" ;
+    :yValue "25" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Puerto Rican-Hispanics" ;
+    :yValue "24.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Native Hawaiian or Pacific Islander, non-Hispanic" ;
+    :yValue "24.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Other and unknown Hispanics" ;
+    :yValue "24.7" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Mexican-Hispanics" ;
+    :yValue "24.4" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "American Indian or Alaska Native, non-Hispanic" ;
+    :yValue "23.5" ;
+    :belongsTo :Chart .

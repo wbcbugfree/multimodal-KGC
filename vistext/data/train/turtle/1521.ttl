@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular brand pages on Facebook in the United Kingdom (UK) as of March 2020 (in million local fans)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Local fans in millions" .
+
+:YAxis a :Axis ;
+    :title "Brand page" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "5.73" ;
+    :yValue "Amazon UK" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4.86" ;
+    :yValue "UNREEL" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "3.84" ;
+    :yValue "The Body Coach" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3.23" ;
+    :yValue "British Airways" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2.66" ;
+    :yValue "Next" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2.64" ;
+    :yValue "Tesco" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2.57" ;
+    :yValue "SportsDirect.com" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.37" ;
+    :yValue "Cadbury Creme Egg" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.25" ;
+    :yValue "AutoCAD" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2.2" ;
+    :yValue "eBay.co.uk" ;
+    :belongsTo :Chart .

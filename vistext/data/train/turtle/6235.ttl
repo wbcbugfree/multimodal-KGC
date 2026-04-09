@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Products and services people spend less than usual on due to the COVID-19 / coronavirus pandemic in the United States , United Kingdom and Germany 2020 (as of May 31)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "United States" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.77" ;
+    :yValue "Going out (e.g. restaurants, cinemas, pubs / bars)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.7" ;
+    :yValue "Travel (e.g. public transport, vacations)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.69" ;
+    :yValue "Services (e.g. hairdresser)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.49" ;
+    :yValue "Clothing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.34" ;
+    :yValue "Consumer electronics, household appliances, furniture" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Hobbies" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.26" ;
+    :yValue "Investments" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.23" ;
+    :yValue "Food and drinks (e.g. shopping, takeaways, delivery)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Childcare" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Home entertainment (e.g. video, games, books)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "Housing, energy, maintenance (e.g. electricity, waste disposal, DIY)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Health and hygiene (e.g. medicine, hand sanitizer)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Household cleaning products" ;
+    :belongsTo :Chart .

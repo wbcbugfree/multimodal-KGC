@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top U.S. health systems based on number of hospitals as of 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Operator (City, State)" .
+
+:YAxis a :Axis ;
+    :title "Number of hospitals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Hospital Corporation of America (Nashville, Tenn.)" ;
+    :yValue "185" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ascension Health (St. Louis)" ;
+    :yValue "151" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "CommonSpirit Health (Chicago, Ill.)" ;
+    :yValue "142" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Community Health Systems (Franklin, Tenn.)" ;
+    :yValue "105" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Trinity Health (Livonia, Mich.)" ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "LifePoint Hospitals (Brentwood, Tenn.)" ;
+    :yValue "86" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tenet Healthcare Corp. (Dallas, Tex.)" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Vibra Healthcare (Mechanicsburg, Pa.)" ;
+    :yValue "65" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Providence Health & Services (Renton, Wash.)" ;
+    :yValue "51" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Atrium Health (Charlotte, N.C.)" ;
+    :yValue "50" ;
+    :belongsTo :Chart .

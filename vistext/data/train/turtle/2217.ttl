@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most important challenges for SME in France face as of April 2018" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of responding businesses" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Attracting customers" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Increasing revenue" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Maintaining profitability" ;
+    :yValue "0.35" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Developing new products/innovation" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Uncertainty over economic conditions" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Tax laws and rules" ;
+    :yValue "0.28" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Securing financing for expansion" ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Other government regulations (e.g., compliance, technical regulation, patents, reporting)" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Finding/working with suppliers" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Securing financing for business as usual" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Retaining/recruiting skilled employees" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Selling to foreign markets" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .

@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular brands on Facebook in Nepal as of October 2020 , by number of fans (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand" .
+
+:YAxis a :Axis ;
+    :title "Number of fans on Facebook in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ncell" ;
+    :yValue "3.95" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Asian Paints Nepal" ;
+    :yValue "1.45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Ghar Jagga Nepal" ;
+    :yValue "1.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "World Bank Nepal" ;
+    :yValue "1.33" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fenesta Windows" ;
+    :yValue "1.24" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "NIC ASIA Bank" ;
+    :yValue "1.04" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Gazabko Deal" ;
+    :yValue "0.97" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ruslan Vodka" ;
+    :yValue "0.82" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pulsar Nepal" ;
+    :yValue "0.81" ;
+    :belongsTo :Chart .

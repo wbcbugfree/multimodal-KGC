@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths caused by majors droughts worldwide from 1900 to 2016" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of deaths" .
+
+:YAxis a :Axis ;
+    :title "Major drought" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3000000" ;
+    :yValue "China (1928)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1900000" ;
+    :yValue "Bangladesh (1943)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1500000" ;
+    :yValue "India (1942)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1500000" ;
+    :yValue "India (1965)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1250000" ;
+    :yValue "India (1900)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1200000" ;
+    :yValue "Soviet Union (1921)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "500000" ;
+    :yValue "China (1920)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "300000" ;
+    :yValue "Ethiopia (May 1983)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "150000" ;
+    :yValue "Sudan, (April 1983)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "100000" ;
+    :yValue "Ethiopia (December 1973)" ;
+    :belongsTo :Chart .

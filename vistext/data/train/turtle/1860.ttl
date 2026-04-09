@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top preferences for health apps in the United States in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Percentage of respondents" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Healthy eating apps" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Firtness/training apps" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Calorie counter apps" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Nutrition apps" ;
+    :yValue "0.46" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "General health and lifestyle information apps" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Apps to access health magazines, blogs, Facebook pages, etc." ;
+    :yValue "0.23" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Apps that provide advice/support on long-term medical conditions such as diabetes, asthma, IBS, etc." ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sleep aids/sleep monitoring apps" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Medication reminder apps" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Apps to help educate children on health" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Private medical provider apps" ;
+    :yValue "0.07" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Other health and lifestyle information apps (e.g. alcohol intake monitoring)" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Apps that provide smoking cessation support tools" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .

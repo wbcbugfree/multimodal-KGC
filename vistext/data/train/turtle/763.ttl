@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average compensation offered to select top recruited U.S. physician specialties in 2019 - 2020 (in U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Specialty" .
+
+:YAxis a :Axis ;
+    :title "Average compensation in U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Cardiology (invasive)" ;
+    :yValue "640000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Orthopedic surgery" ;
+    :yValue "626000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Gastroenterology" ;
+    :yValue "457000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Urology" ;
+    :yValue "477000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Cardiology (non-invasive)" ;
+    :yValue "409000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dermatology" ;
+    :yValue "419000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Radiology" ;
+    :yValue "423000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Gynecology/OB" ;
+    :yValue "327000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Neurology" ;
+    :yValue "295000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Pediatrics" ;
+    :yValue "221000" ;
+    :belongsTo :Chart .

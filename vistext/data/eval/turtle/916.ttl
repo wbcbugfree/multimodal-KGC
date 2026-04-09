@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Global big data revenue by segment in 2014 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "software framework" .
+
+:YAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Professional Services" ;
+    :yValue "10459" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Compute" ;
+    :yValue "5125" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Storage" ;
+    :yValue "4450" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Apps & Analytics" ;
+    :yValue "2075" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "SQL" ;
+    :yValue "1950" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Cloud Services" ;
+    :yValue "1324" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Data Management" ;
+    :yValue "933" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Networking" ;
+    :yValue "635" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "NoSQL" ;
+    :yValue "223" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Hadoop" ;
+    :yValue "187" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Seattle Mariners all-time RBI (runs batted in) leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "RBI Leader" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1261" ;
+    :yValue "Edgar Martinez" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1216" ;
+    :yValue "Ken Griffey Jr." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "951" ;
+    :yValue "Jay Buhner" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "706" ;
+    :yValue "Kyle Seager" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "667" ;
+    :yValue "Alvin Davis" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "633" ;
+    :yValue "Ichiro Suzuki" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "612" ;
+    :yValue "Raul Ibanez" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "595" ;
+    :yValue "Alex Rodriguez" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "535" ;
+    :yValue "Bret Boone" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "508" ;
+    :yValue "Dan Wilson" ;
+    :belongsTo :Chart .

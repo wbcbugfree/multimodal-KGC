@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading suntan lotion and oil brands in the United States in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "177.3" ;
+    :yValue "Private label" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "116.5" ;
+    :yValue "Neutrogena Ultra Sheer" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "87.2" ;
+    :yValue "Coppertone Sport" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "45.8" ;
+    :yValue "Neutrogena Beach Defense" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "37.1" ;
+    :yValue "Coppertone" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "34.9" ;
+    :yValue "Banana Boat Ultra Mist Sport Performance" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "33.8" ;
+    :yValue "Banana Boat Sport Performance" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "32.3" ;
+    :yValue "Sun Bum" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "25.9" ;
+    :yValue "Banana Boat Ultra Sport" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "24.5" ;
+    :yValue "Hawaiian Tropic" ;
+    :belongsTo :Chart .

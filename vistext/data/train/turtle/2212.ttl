@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "College sports telecasts with the highest TV-rating in the 2012/13 academic year" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "TV rating" .
+
+:YAxis a :Axis ;
+    :title "College sports telecasts" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "15.1" ;
+    :yValue "Alabama vs. Notre Dame 1/7/13 (Footbal - Championship Game)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Louisville vs. Michigan 4/8/13 (Basketball - Championship Game)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "10.2" ;
+    :yValue "Michigan vs. Syracuse 4/6/13 (Basketball - Final Four)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9.8" ;
+    :yValue "Alabama vs. Georgia 12/1/12 (Football - SEC Championship)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9.4" ;
+    :yValue "Stanford vs. Wisconsin 1/1/13 (Football - Rose Bowl)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "9.4" ;
+    :yValue "Notre Dame vs. Southern Cal 11/24/12 (Football - reg. season)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "8.8" ;
+    :yValue "Louisville vs. Duke 3/31/13 (Basketball - Elite Eight)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8.7" ;
+    :yValue "Louisville vs. Wichita State 4/6/13 (Basketball - Final Four)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "7.4" ;
+    :yValue "Oregon vs. Kansas St. 1/3/13 (Football - Fiesta Bowl)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.2" ;
+    :yValue "Texas A&M vs. Oklahoma 1/4/13 (Football - Cotton Bowl)" ;
+    :belongsTo :Chart .

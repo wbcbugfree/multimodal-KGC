@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sporting events with highest prize money pool worldwide in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Prize money pool in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Sporting event" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1300" ;
+    :yValue "UEFA Champions League" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "797.5" ;
+    :yValue "Formula 1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "576" ;
+    :yValue "FIFA World Cup" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "245" ;
+    :yValue "European Championship*" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "237" ;
+    :yValue "UEFA Europa League" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "66.5" ;
+    :yValue "World Series (MLB)*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "62" ;
+    :yValue "World Series Poker" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "47" ;
+    :yValue "US Open" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "45" ;
+    :yValue "Wimbledon" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "35" ;
+    :yValue "FedEx Cup" ;
+    :belongsTo :Chart .

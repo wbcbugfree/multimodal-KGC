@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Percentage added to the Gross Domestic Product (GDP) of the United States of America in 2019 , by industry (as a percentage of GDP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Percentage of GDP" .
+
+:YAxis a :Axis ;
+    :title "Industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.21" ;
+    :yValue "Finance, insurance, real estate, rental, and leasing" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.128" ;
+    :yValue "Professional and business services" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.123" ;
+    :yValue "Government" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.088" ;
+    :yValue "Educational services, health care, and social assistance" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.06" ;
+    :yValue "Wholesale trade" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.055" ;
+    :yValue "Retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.052" ;
+    :yValue "Information" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.042" ;
+    :yValue "Arts, entertainment, recreation, accommodation, and food services" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.041" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.032" ;
+    :yValue "Transportation and warehousing" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.021" ;
+    :yValue "Other services, except government" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.016" ;
+    :yValue "Utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.015" ;
+    :yValue "Mining" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.008" ;
+    :yValue "Agriculture, forestry, fishing, and hunting" ;
+    :belongsTo :Chart .

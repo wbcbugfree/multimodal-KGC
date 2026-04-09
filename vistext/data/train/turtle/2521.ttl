@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of hospitals in Chile as of March 2020 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hospitals" .
+
+:YAxis a :Axis ;
+    :title "region" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "772" ;
+    :yValue "Metropolitana Santiago" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "383" ;
+    :yValue "Los Lagos" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "372" ;
+    :yValue "La Araucanía" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "370" ;
+    :yValue "Bíobío" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "330" ;
+    :yValue "Maule" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "321" ;
+    :yValue "Valparaíso" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "217" ;
+    :yValue "Libertador Gral. B. O'Higgins" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "211" ;
+    :yValue "Coquimbo" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "161" ;
+    :yValue "Los Ríos" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "132" ;
+    :yValue "Ñuble" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "129" ;
+    :yValue "Antofagasta" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "85" ;
+    :yValue "Atacama" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "80" ;
+    :yValue "Tarapacá" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "58" ;
+    :yValue "Aysén del General Carlos Ibañez del Campo" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "56" ;
+    :yValue "Magallanes y la Antártica Chilena" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "54" ;
+    :yValue "Arica Parinacota" ;
+    :belongsTo :Chart .

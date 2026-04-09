@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which , if any , of the following measures have you taken in the past 2 weeks specifically to protect yourself from the Coronavirus (COVID-19) ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Mar 19 to Mar 20" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Avoid crowded public places" ;
+    :yValue "0.57" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Improve personal hygiene (e.g. washing hands more frequently, using hand sanitizer)" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Avoid travelling" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Avoid public transport" ;
+    :yValue "0.37" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Refrain from touching objects in public" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Avoid contact with people who have/seem to have flu" ;
+    :yValue "0.41" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Avoid going to work" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Avoid physical contact with tourists" ;
+    :yValue "0.21" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Avoid consumption of raw or uncooked meat" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wear a face mask in public places" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "No measures taken" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Ask doctor for advice" ;
+    :yValue "0.04" ;
+    :belongsTo :Chart .

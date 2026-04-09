@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading hair conditioner/creme rinse brands in the United States in 2018 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "133.7" ;
+    :yValue "Organix" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "77.1" ;
+    :yValue "Shea Moisture" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "63" ;
+    :yValue "Garnier Whole Blends" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "59.8" ;
+    :yValue "It's A 10 Miracle" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "52" ;
+    :yValue "Garnier Fructis Sleek And Shine" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "TRESemmé Moisture Rich" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "36.9" ;
+    :yValue "Dove Nutritive Solutions" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "35.6" ;
+    :yValue "Suave Professionals" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "34.6" ;
+    :yValue "Herbal Essences Bio Renew" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "29" ;
+    :yValue "L'Oréal EverPure" ;
+    :belongsTo :Chart .

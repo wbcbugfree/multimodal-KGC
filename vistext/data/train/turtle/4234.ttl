@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The most valuable Super Bowls based on advertising revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Super Bowl" .
+
+:YAxis a :Axis ;
+    :title "Advertising revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Super Bowl XLVI (2012)" ;
+    :yValue "245" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Super Bowl XLIII (2009)" ;
+    :yValue "204" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Super Bowl XLV (2011)" ;
+    :yValue "195" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Super Bowl XLII (2008)" ;
+    :yValue "186" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Super Bowl XL (2006)" ;
+    :yValue "163" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Super Bowl XXXIX (2005)" ;
+    :yValue "158" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Super Bowl XLI (2007)" ;
+    :yValue "152" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Super Bowl XLIV (2010)" ;
+    :yValue "151" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Super Bowl XXXVIII (2004)" ;
+    :yValue "150" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Super Bowl XXXVI (2002)" ;
+    :yValue "134" ;
+    :belongsTo :Chart .

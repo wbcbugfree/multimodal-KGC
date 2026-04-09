@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 diversified retailers worldwide in 2010 , based on retail sales (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Company (Country of origin)" .
+
+:YAxis a :Axis ;
+    :title "Billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Metro (Germany)" ;
+    :yValue "88.93" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Target (United States)" ;
+    :yValue "65.79" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Sears Holdings (United States)" ;
+    :yValue "43.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Migros (Switzerland)" ;
+    :yValue "20.94" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "El Corte Inglés (Spain)" ;
+    :yValue "17.34" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Marks & Spencer (United Kingdom)" ;
+    :yValue "15.16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Otto Group (Germany)" ;
+    :yValue "13.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Lotte Shopping (South Korea)" ;
+    :yValue "11.49" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "S Group (Finland)" ;
+    :yValue "11.01" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Kesko (Finland)" ;
+    :yValue "10.36" ;
+    :belongsTo :Chart .

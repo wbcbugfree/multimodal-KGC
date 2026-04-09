@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly average temperature deviation from the long term mean in the United Kingdom (UK) from January 2015 to February 2020 (in degrees Celsius)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "2017" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Ja" ;
+    :yValue "-0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jan Fe" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Feb Ma" ;
+    :yValue "2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Mar Ap" ;
+    :yValue "0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Apr Ma" ;
+    :yValue "1.6" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "May Ju" ;
+    :yValue "1.8" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jun Ju" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jul Au" ;
+    :yValue "-0.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Aug Se" ;
+    :yValue "-0.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sep Oc" ;
+    :yValue "1.7" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Oct No" ;
+    :yValue "-0.3" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Nov De" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .

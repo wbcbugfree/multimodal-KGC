@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total number of stores of Luxottica worldwide in 2019 , by brand" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of stores" .
+
+:YAxis a :Axis ;
+    :title "brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3403" ;
+    :yValue "Sunglass Hut" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1356" ;
+    :yValue "Óticas Carol" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1156" ;
+    :yValue "LensCrafters" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "540" ;
+    :yValue "Pearle Vision" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "524" ;
+    :yValue "Target Optical" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "458" ;
+    :yValue "GMO" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "408" ;
+    :yValue "Salmoiraghi & Viganò" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "388" ;
+    :yValue "Oakley retail locations" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "375" ;
+    :yValue "OPSM" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "256" ;
+    :yValue "Ray-Ban" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "122" ;
+    :yValue "David Clulow Opticians" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "115" ;
+    :yValue "Sears Optical" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "57" ;
+    :yValue "Luxury House Brands" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "77" ;
+    :yValue "All Others" ;
+    :belongsTo :Chart .

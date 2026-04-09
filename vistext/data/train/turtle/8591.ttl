@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of heavy commercial vehicles (HCV) in Russia from May 2019 to May 2020 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region of Russia" .
+
+:YAxis a :Axis ;
+    :title "May 2020" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Moscow" ;
+    :yValue "445" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Nizhny Novgorod Region" ;
+    :yValue "291" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Khanty-Mansi Autonomous Okrug" ;
+    :yValue "265" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Moscow region" ;
+    :yValue "241" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Republic of Tatarstan" ;
+    :yValue "177" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Irkutsk region" ;
+    :yValue "152" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Saint Petersburg" ;
+    :yValue "151" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Smara region" ;
+    :yValue "129" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Rostov oblast" ;
+    :yValue "120" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Krasnodar Krai" ;
+    :yValue "116" ;
+    :belongsTo :Chart .

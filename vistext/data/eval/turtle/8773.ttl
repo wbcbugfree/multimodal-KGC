@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Distribution of World of Warcraft Alliance characters in U.S. and EU realms as of December 2019 , by class" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "EU realms" .
+
+:YAxis a :Axis ;
+    :title "World of Warcraft Alliance characters" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.108" ;
+    :yValue "Hunter" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.104" ;
+    :yValue "Paladin" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.103" ;
+    :yValue "Druid" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.097" ;
+    :yValue "Warrior" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Mage" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.088" ;
+    :yValue "Priest" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.081" ;
+    :yValue "Death Knight" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.079" ;
+    :yValue "Rogue" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.072" ;
+    :yValue "Warlock" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.066" ;
+    :yValue "Shaman" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.063" ;
+    :yValue "Monk" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.049" ;
+    :yValue "Demon Hunter" ;
+    :belongsTo :Chart .

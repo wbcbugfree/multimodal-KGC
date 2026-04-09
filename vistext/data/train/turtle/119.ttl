@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Major U.S. cities with the highest average wind speeds (in MPH) , data through 2011" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "city of the United States" .
+
+:YAxis a :Axis ;
+    :title "Average wind speed (MPH)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Boston, Massachusetts" ;
+    :yValue "12.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Oklahoma City, Oklahoma" ;
+    :yValue "12.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Buffalo, New York" ;
+    :yValue "11.8" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Milwaukee, Wisconsin" ;
+    :yValue "11.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dallas, Texas" ;
+    :yValue "10.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "San Francisco, California" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Kansas City, Missouri" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Virginia Beach, Virginia" ;
+    :yValue "10.5" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Minneapolis, Minnesota" ;
+    :yValue "10.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Cleveland, Ohio" ;
+    :yValue "10.5" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Providence, Rhode Island" ;
+    :yValue "10.4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Chicago, Illinois" ;
+    :yValue "10.3" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Detroit, Michigan" ;
+    :yValue "10.2" ;
+    :belongsTo :Chart .

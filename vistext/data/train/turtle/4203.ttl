@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular YouTube beauty and style channels as of October 2020 , ranked by number of subscribers (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "YouTube channel" .
+
+:YAxis a :Axis ;
+    :title "Number of subscribers in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Yuya" ;
+    :yValue "24.6" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "jeffreestar" ;
+    :yValue "17.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Musas" ;
+    :yValue "14.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "NikkieTutorials" ;
+    :yValue "13.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Zoella" ;
+    :yValue "11.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "SaraBeautyCorner" ;
+    :yValue "10.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Tati Westbrook" ;
+    :yValue "9.15" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Michelle Phan" ;
+    :yValue "8.87" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "grav3yardgirl" ;
+    :yValue "8.3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Carli Bybel" ;
+    :yValue "6.17" ;
+    :belongsTo :Chart .

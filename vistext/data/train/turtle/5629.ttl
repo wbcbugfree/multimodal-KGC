@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Houston Rockets all-time points leaders from 1967 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Points scored" .
+
+:YAxis a :Axis ;
+    :title "player name" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26511" ;
+    :yValue "Hakeem Olajuwon" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "18167" ;
+    :yValue "James Harden" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17949" ;
+    :yValue "Calvin Murphy" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "13383" ;
+    :yValue "Rudy Tomjanovich" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "11762" ;
+    :yValue "Elvin Hayes" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "11119" ;
+    :yValue "Moses Malone" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "9247" ;
+    :yValue "Yao Ming" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8823" ;
+    :yValue "Robert Reid" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "8480" ;
+    :yValue "Mike Newlin" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "8177" ;
+    :yValue "Otis Thorpe" ;
+    :belongsTo :Chart .

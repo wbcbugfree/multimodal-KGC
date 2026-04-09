@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of complaints to the Financial Ombudsman regarding the United Kingdom (UK) leading banks as of the second half of 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of complaints" .
+
+:YAxis a :Axis ;
+    :title "United Kingdom (UK) leading banks" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10813" ;
+    :yValue "Lloyds Bank Plc (headquarters: London)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10578" ;
+    :yValue "Barclays Bank UK Plc (hq: London)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6083" ;
+    :yValue "Santander UK Plc (hq: London)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5602" ;
+    :yValue "HSBC Bank Plc (hq: London)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4305" ;
+    :yValue "Nationwide Building Society (hq: Swindon)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2194" ;
+    :yValue "The Royal Bank of Scotland (hq: Edinburgh)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1295" ;
+    :yValue "TSB Bank Plc (hq: Edinburgh)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "752" ;
+    :yValue "The Co-operative bank (hq: Manchester)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "465" ;
+    :yValue "Shawbrook Bank Ltd (hq: Brentwood)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "257" ;
+    :yValue "Virgin Money (hq: Newcastle)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "316" ;
+    :yValue "Metro Bank Plc (hq: London)" ;
+    :belongsTo :Chart .

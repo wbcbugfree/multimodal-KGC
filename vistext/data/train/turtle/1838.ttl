@@ -1,0 +1,97 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Seat capacity in the airline industry in the week of May 06 , 2019 , by region (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "geographic region" .
+
+:YAxis a :Axis ;
+    :title "Number of seats in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "North America" ;
+    :yValue "24.36" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "North East Asia" ;
+    :yValue "23.04" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Western Europe" ;
+    :yValue "21.01" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "South East Asia" ;
+    :yValue "9.6" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Eastern/ Central Europe" ;
+    :yValue "7.93" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Middle East" ;
+    :yValue "4.57" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "South Asia" ;
+    :yValue "4.55" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Upper South America" ;
+    :yValue "4.04" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Southwest Pacific" ;
+    :yValue "2.66" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Central America" ;
+    :yValue "2.26" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "North Africa" ;
+    :yValue "1.01" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Lower South America" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Southern Africa" ;
+    :yValue "0.85" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "Caribbean" ;
+    :yValue "0.7" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "Eastern Africa" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "Central/ Western Africa" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "Central Asia" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .

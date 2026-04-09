@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 surgical cosmetic procedures worldwide in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Top 10 surgical cosmetic procedures" .
+
+:YAxis a :Axis ;
+    :title "Number of procedures" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Breast augmentation" ;
+    :yValue "1795551" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Liposuction" ;
+    :yValue "1704786" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Eyelid surgery" ;
+    :yValue "1259839" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Abdominoplasty" ;
+    :yValue "924031" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Rhinoplasty" ;
+    :yValue "821890" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Breast lift" ;
+    :yValue "741284" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Breast reduction" ;
+    :yValue "600219" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Fat grafting - face" ;
+    :yValue "598823" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Buttock augmentation - fat transfer" ;
+    :yValue "479451" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Facelift" ;
+    :yValue "448485" ;
+    :belongsTo :Chart .

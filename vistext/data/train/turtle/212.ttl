@@ -1,0 +1,92 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "E-commerce as percentage of total electronic shopping sales in the United States in 2018 , by merchandise line" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of e-commerce sales" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.96" ;
+    :yValue "Computer software (includes video game software)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.944" ;
+    :yValue "Furniture and home furnishings" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.938" ;
+    :yValue "Toys, hobby goods, and games" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.93" ;
+    :yValue "Electronics and appliances" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.93" ;
+    :yValue "Audio and video recordings (includes purchased downloads)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.908" ;
+    :yValue "Books (includes audio books and e-books)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.905" ;
+    :yValue "Clothing and clothing accessories (includes footwear)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.9" ;
+    :yValue "Computer and peripheral equipment, communications equipment, and related products (includes cellular phones)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.879" ;
+    :yValue "Food, beer, and wine" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.875" ;
+    :yValue "Sporting goods" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.865" ;
+    :yValue "Office equipment and supplies" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.823" ;
+    :yValue "Other merchandise*" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.819" ;
+    :yValue "Nonmerchandise receipts**" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0.791" ;
+    :yValue "Jewelry" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "0.738" ;
+    :yValue "Total Electronic Shopping and Mail-Order Houses (NAICS 4541)" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "0.257" ;
+    :yValue "Drugs, health aids, and beauty aids" ;
+    :belongsTo :Chart .

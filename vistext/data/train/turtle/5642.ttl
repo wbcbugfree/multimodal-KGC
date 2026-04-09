@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Delay rate of the ten most punctual European trains in 2016 , by destination and railway" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "destination and railway" .
+
+:YAxis a :Axis ;
+    :title "Rate of delay" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Lille Europe (Eurostar)" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Ashford International (Eurostar)" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Reims (SNCF)" ;
+    :yValue "0.0089" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Limoges (SNCF)" ;
+    :yValue "0.0109" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Brest (SNCF)" ;
+    :yValue "0.0114" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dijon (SNCF)" ;
+    :yValue "0.0116" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Lille (SNCF)" ;
+    :yValue "0.0121" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Anger Saint-Laud (SNCF)" ;
+    :yValue "0.0126" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Laval (SNCF)" ;
+    :yValue "0.0129" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Ebbsfleet (Eurostar)" ;
+    :yValue "0.0132" ;
+    :belongsTo :Chart .

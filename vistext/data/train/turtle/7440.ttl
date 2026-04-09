@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Female athletes with the highest income from prize money and endorsements in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Endorsements" .
+
+:YAxis a :Axis ;
+    :title "Female athletes with the highest income" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Naomi Osaka (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "32" ;
+    :yValue "Serena Williams (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4.5" ;
+    :yValue "Garbine Muguruza (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "4.2" ;
+    :yValue "Alex Morgan (soccer)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Bianca Andreescu (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Angelique Kerber (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Simona Halep (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "Ashleigh Barty (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Elina Svitolina (tennis)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Sofia Kenin (tennis)" ;
+    :belongsTo :Chart .

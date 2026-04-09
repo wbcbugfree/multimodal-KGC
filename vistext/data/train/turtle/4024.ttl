@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading songs in Canada in 2017 , by number of streams (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Leading songs in Canada" .
+
+:YAxis a :Axis ;
+    :title "Number of streams in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Shape of You - Ed Sheeran" ;
+    :yValue "178.54" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Despacito - Luis Fonsi, Daddy Yankee" ;
+    :yValue "140.47" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Unforgettable - French Montana" ;
+    :yValue "87.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "HUMBLE. - Kendrick Lamar" ;
+    :yValue "76.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "I'm the One - DJ Khaled" ;
+    :yValue "74.49" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Congratulations - Post Malone" ;
+    :yValue "68.83" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "XO Tour Llif3 - Lil Uzi Vert" ;
+    :yValue "68.72" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Mask Off - Future" ;
+    :yValue "68.63" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Something Just Like This - The Chainsmokers & Coldplay" ;
+    :yValue "65.23" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Rockabye - Clean Bandit" ;
+    :yValue "64.37" ;
+    :belongsTo :Chart .

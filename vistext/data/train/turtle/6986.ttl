@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "For which reasons are n't you reading more books at the moment ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Yes, absolutely" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "You do not have time" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "You prefer to spend more time doing other leisure activities" ;
+    :yValue "0.32" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "You read other things than books (press, blogs, multimedia content)" ;
+    :yValue "0.36" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "You are not interested in reading more books" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Books are too expensive" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "You do not feel the need to read" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "You have difficulties finding books that you like" ;
+    :yValue "0.11" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "You do not really enjoy reading" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "You have been disappointed by previous readings" ;
+    :yValue "0.06" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The people around you do not read" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "You do not have easy access to books (you live far from a library or a bookstore)" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "You feel out of place in bookstores or libraries" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "You are afraid of reading. You feel that you will not succeed." ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .

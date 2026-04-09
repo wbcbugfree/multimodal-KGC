@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Price of selected acquisitions by Microsoft as of July 2017 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Price in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "name and year of acquired company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "26200" ;
+    :yValue "LinkedIn (2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8500" ;
+    :yValue "Skype (2011)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "6400" ;
+    :yValue "aQuantive (2007)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2500" ;
+    :yValue "Mojang (2014)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1200" ;
+    :yValue "Fast Search & Transfer (2008)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1200" ;
+    :yValue "Yammer (2012)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "800" ;
+    :yValue "Tellme (2007)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "500" ;
+    :yValue "Danger (2008)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "486" ;
+    :yValue "Greenfield Online (2009)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "337" ;
+    :yValue "Rare, Inc. (2002)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "320" ;
+    :yValue "Adallom (2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "250" ;
+    :yValue "VoloMetrix (2015)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "250" ;
+    :yValue "SwiftKey (2016)" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "200" ;
+    :yValue "Equivio (2014)" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "200" ;
+    :yValue "Massive (2006)" ;
+    :belongsTo :Chart .

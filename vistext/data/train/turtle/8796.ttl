@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Which of the following genres of reality TV shows do you typically watch ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "55+" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Documentaries / docu-series (e.g., The Real World, Keeping up with the Kardashians, The Hills, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Competition / elimination (e.g., Dancing with the Stars, America's Got Talent, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Makeover / renovation (e.g., Extreme Makeover, What Not to Wear, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Dating (e.g., The Bachelor / Bachelorette, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.12" ;
+    :yValue "Hidden camera / amateur content (e.g., Impractical Jokers, America's Funniest Home Videos, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.08" ;
+    :yValue "Supernatural (e.g., Ghost Hunters, Paranormal State, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.07" ;
+    :yValue "Travel / aspirational (e.g., Lifestyles of the Rich and Famous, MTV Cribs, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Cooking (e.g., MasterChef, Chopped, etc.)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Don't know" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.39" ;
+    :yValue "Not applicable - I do not typically watch reality TV" ;
+    :belongsTo :Chart .

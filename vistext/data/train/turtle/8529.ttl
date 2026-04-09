@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of freight on board reported by airports in Poland from 2017 to 2019 (in 1,000 kg)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2017" .
+
+:YAxis a :Axis ;
+    :title "airports in Poland" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "84389.44" ;
+    :yValue "Warsaw Chopin Airport" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "15233.86" ;
+    :yValue "Katowice-Pyrzowice*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5118.05" ;
+    :yValue "Gdańsk Lech Wałęsa Airport" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "392.78" ;
+    :yValue "Rzeszów-Jasionka" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "944.06" ;
+    :yValue "Wrocław-Strachowice" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "466.4" ;
+    :yValue "Poznań-Ławica" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "129.64" ;
+    :yValue "Szczecin-Goleniów" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "23.55" ;
+    :yValue "Bydgoszcz-Szwederowo" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Kraków-Balice" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Łódź-Lublinek" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Port Lotniczy Lublin" ;
+    :belongsTo :Chart .

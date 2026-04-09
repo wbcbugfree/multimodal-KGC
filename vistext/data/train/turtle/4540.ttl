@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading songs of the Spotify Weekly Chart in Italy from October 29 to November 5 , 2020 , by total number of streams" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of streams" .
+
+:YAxis a :Axis ;
+    :title "song" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "3933369" ;
+    :yValue "Sfera Ebbasta - Bottiglie Privè" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1941301" ;
+    :yValue "Bloody Vinyl. Slait, tha Supreme - Altalene (feat. Mara Sattei & Coez)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1936241" ;
+    :yValue "Gazzelle - Destri" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1747739" ;
+    :yValue "Ernia - Superclassico" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1746004" ;
+    :yValue "Rondodasosa - Slatt (feat. Capo Plaza)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1569827" ;
+    :yValue "Blind - Cuore Nero (prod. Frenetik&Orang3)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1431839" ;
+    :yValue "24kGoldn - Mood (feat. iann dior)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1301285" ;
+    :yValue "Guè Pequeno - Chico (feat. Rose Villain & Luchè)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1245062" ;
+    :yValue "Shablo - M' Manc (with Geolier & Sfera Ebbasta)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1232238" ;
+    :yValue "Fedez - Bella Storia" ;
+    :belongsTo :Chart .

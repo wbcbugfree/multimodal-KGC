@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "How much do you agree with the following statements about consumers ' shopping attitudes ?" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "consumers on certain shopping attitudes" .
+
+:YAxis a :Axis ;
+    :title "Agree" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "I´m careful about avoiding waste nowadays" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "I prefer to buy ingredients to make meals from scratch rather than ready meals" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "I would like to feel that the money I spend goes on the product, and not on the marketing" ;
+    :yValue "0.54" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "I buy fresh food when I actually need it, so it really is fresh" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "I try to avoid being tempted to buy things I don´t need" ;
+    :yValue "0.53" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "I make things go further nowadays" ;
+    :yValue "0.47" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "I try to carefully plan what I buy before I go to the shops" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "I´m more focused on price than ethical or environmental considerations nowadays" ;
+    :yValue "0.4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "I prefer it if the money I spend benefits British businesses" ;
+    :yValue "0.44" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "I believe that cutting back and being more careful has made me a more environmentally friendly shopper" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "I prefer it if the money I spend benefits local businesses" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The most popular college majors in the U.S. by gender in 2009" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "The most popular college majors" .
+
+:YAxis a :Axis ;
+    :title "Male students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Business Management and Administration" ;
+    :yValue "0.56" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "General Business" ;
+    :yValue "0.61" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Accounting" ;
+    :yValue "0.48" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Nursing" ;
+    :yValue "0.08" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Psychology" ;
+    :yValue "0.29" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Elementary Education" ;
+    :yValue "0.09" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Marketing and Market Research" ;
+    :yValue "0.49" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "General Education" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "English Language and Literature" ;
+    :yValue "0.33" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Communications" ;
+    :yValue "0.42" ;
+    :belongsTo :Chart .

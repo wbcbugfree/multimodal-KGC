@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Accuracy figures for selected COVID-19 antibody tests sold in the U.S. as of June 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "NPV" .
+
+:YAxis a :Axis ;
+    :title "COVID-19 antibody tests" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Abbott - Alinity i Sars-CoV-2 IgG" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Abbott - Architect Sars-CoV-2 IgG" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "99.9" ;
+    :yValue "Autobio - Anti-Sars-CoV-2" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "99.6" ;
+    :yValue "Bio-Rad - Platelia Sars-CoV-2 total Ab" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "99.7" ;
+    :yValue "Cellex - qSars-CoV-2 IgG/IgM" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "99.9" ;
+    :yValue "Diasorin - Liaison Sars-CoV-2 S1/S2 IgG" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "99.9" ;
+    :yValue "Inbios - SCoV-2 Detect IgG Elisa" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "99.5" ;
+    :yValue "Ortho-Clinical Diagnostics - Vitros anti-Sars-CoV-2 IgG" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Ortho-Clinical Diagnostics - Vitros anti-Sars-CoV-2 Total" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Roche - Elecsys anti-Sars-CoV-2" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Siemens Healthineers - Advia Centaur COV2T" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "Siemens Healthineers - Atellica COV2T" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "99.9" ;
+    :yValue "Vibrant America - Vibrant Covid-19 Ab" ;
+    :belongsTo :Chart .

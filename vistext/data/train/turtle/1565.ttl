@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading players of the national football team of Finland as of July 2020 , by market value (in 1,000 euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market value in thousand euros" .
+
+:YAxis a :Axis ;
+    :title "Football Player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "8000" ;
+    :yValue "Teemu Pukki" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8000" ;
+    :yValue "Lukas Hradecky" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4000" ;
+    :yValue "Jesse Joronen" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2000" ;
+    :yValue "Simon Skrabb" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2000" ;
+    :yValue "Fredrik Jensen" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1200" ;
+    :yValue "Glen Kamara" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "950" ;
+    :yValue "Robin Lod" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "800" ;
+    :yValue "Thomas Lam" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "675" ;
+    :yValue "Sauli Väisänen" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "650" ;
+    :yValue "Joona Toivio" ;
+    :belongsTo :Chart .

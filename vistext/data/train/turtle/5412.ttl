@@ -1,0 +1,107 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average usual weekly hours worked at the main job in Canada in 2019 , by industry" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average usual weekly hours" .
+
+:YAxis a :Axis ;
+    :title "Industry" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "45" ;
+    :yValue "Forestry, fishing, mining, quarrying, oil and gas" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "43.5" ;
+    :yValue "Agriculture" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "40.4" ;
+    :yValue "Goods-producing sector" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "40.3" ;
+    :yValue "Construction" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "40.2" ;
+    :yValue "Transportation and warehousing" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "39.3" ;
+    :yValue "Manufacturing" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "38.6" ;
+    :yValue "Utilities" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "37" ;
+    :yValue "Professional, scientific and technical services" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "36.7" ;
+    :yValue "Public administration" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "36.7" ;
+    :yValue "Finance, insurance, real estate, rental and leasing" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "35.7" ;
+    :yValue "Total employed, all industries" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "34.9" ;
+    :yValue "Other services (except public administration)" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "34.5" ;
+    :yValue "Services-producing sector" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "34.2" ;
+    :yValue "Health care and social assistance" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "33.8" ;
+    :yValue "Business, building and other support services" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "33.5" ;
+    :yValue "Wholesale and retail trade" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "32.5" ;
+    :yValue "Information, culture and recreation" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "31.8" ;
+    :yValue "Educational services" ;
+    :belongsTo :Chart .
+
+:DataPoint19 a :DataPoint ;
+    :xValue "29.8" ;
+    :yValue "Accommodation and food services" ;
+    :belongsTo :Chart .

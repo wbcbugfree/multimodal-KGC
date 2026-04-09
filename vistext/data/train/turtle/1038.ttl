@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Value of lending or funding in the alternative finance market in the United Kingdom (UK) in 2018 , by platform (in million USD)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "In million USD" .
+
+:YAxis a :Axis ;
+    :title "Platforms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2541.9" ;
+    :yValue "P2P business lending" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2057.4" ;
+    :yValue "P2P consumer lending" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1759.2" ;
+    :yValue "P2P property lending" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "855.17" ;
+    :yValue "Balance sheet business lending" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "854.5" ;
+    :yValue "Invoice trading" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "642.2" ;
+    :yValue "Balance sheet consumer lending" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "529.8" ;
+    :yValue "Debt-based securities" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "484.7" ;
+    :yValue "Equity based crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "264.9" ;
+    :yValue "Real estate crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "102.2" ;
+    :yValue "Revenue sharing" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "72.8" ;
+    :yValue "Balance sheet property lending" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "64.1" ;
+    :yValue "Reward based crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "12.5" ;
+    :yValue "Donation based crowdfunding" ;
+    :belongsTo :Chart .

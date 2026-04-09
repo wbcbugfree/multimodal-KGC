@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading cigarette brands in the United Kingdom (UK) in 2016 , by sales value (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Cigarette brand" .
+
+:YAxis a :Axis ;
+    :title "Sales value in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Sterling" ;
+    :yValue "1511.3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Mayfair" ;
+    :yValue "1046.1" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Lambert and Butler" ;
+    :yValue "787.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Marlboro" ;
+    :yValue "782.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Richmond" ;
+    :yValue "724.3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Players" ;
+    :yValue "718.9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "John Player Special" ;
+    :yValue "677.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Carlton" ;
+    :yValue "540.6" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Silk Cut" ;
+    :yValue "503.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Windsor" ;
+    :yValue "461.9" ;
+    :belongsTo :Chart .

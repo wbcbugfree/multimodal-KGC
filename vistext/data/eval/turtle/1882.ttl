@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Forbes ranking of the richest people in India in 2018 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Net worth in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Richest people" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "47.3" ;
+    :yValue "Mukesh Ambani" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "21" ;
+    :yValue "Azim Premji" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "18.3" ;
+    :yValue "Lakshmi Mittal" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "18" ;
+    :yValue "Hinduja family" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15.7" ;
+    :yValue "Pallonji Mistry" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14.6" ;
+    :yValue "Shiv Nadar" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "14" ;
+    :yValue "Godrej family" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "12.6" ;
+    :yValue "Dilip Shanghvi" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "12.5" ;
+    :yValue "Kumar Birla" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "11.9" ;
+    :yValue "Gautam Adani" ;
+    :belongsTo :Chart .

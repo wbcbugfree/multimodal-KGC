@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of births (per 1,000 women) by occupation of mother in the United States in 2012" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of births (per 1,000 women)" .
+
+:YAxis a :Axis ;
+    :title "Type of occupation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1167" ;
+    :yValue "Management, business & financial" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1149" ;
+    :yValue "Professional & related occupations" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1168" ;
+    :yValue "Service occupations" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "942" ;
+    :yValue "Sales & related occupations" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1228" ;
+    :yValue "Office & admin. support" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1404" ;
+    :yValue "Farming, fishing and forestry" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1551" ;
+    :yValue "Construction and extraction" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1858" ;
+    :yValue "Installation, maintenance and repair" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "1655" ;
+    :yValue "Production occupations" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1282" ;
+    :yValue "Transportation and material moving" ;
+    :belongsTo :Chart .

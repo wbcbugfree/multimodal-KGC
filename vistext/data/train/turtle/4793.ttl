@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Oakland Athletics all-time home run leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of home runs" .
+
+:YAxis a :Axis ;
+    :title "player" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "363" ;
+    :yValue "Mark McGwire" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "302" ;
+    :yValue "Jimmie Foxx" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "269" ;
+    :yValue "Reggie Jackson" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "254" ;
+    :yValue "Jose Canseco" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "252" ;
+    :yValue "Bob Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "230" ;
+    :yValue "Eric Chavez" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "209" ;
+    :yValue "Al Simmons" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "198" ;
+    :yValue "Jason Giambi" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "192" ;
+    :yValue "Sal Bando" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "191" ;
+    :yValue "Gus Zernial" ;
+    :belongsTo :Chart .

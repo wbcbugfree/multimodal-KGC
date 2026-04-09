@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Sales of the leading 15 optical retailers in the United States in 2019 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Optical retailer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2883.3" ;
+    :yValue "Vision Source" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2510" ;
+    :yValue "Luxottica retail*" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2510" ;
+    :yValue "Walmart stores*" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1724" ;
+    :yValue "National Vision" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1256.7" ;
+    :yValue "Costco Wholesale" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "980.7" ;
+    :yValue "Visionworks of America" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "772" ;
+    :yValue "MyEyeDr/Capital Vision Services, LLC" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "757" ;
+    :yValue "Eyecare Partners" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "410" ;
+    :yValue "Warby Parker*" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "295" ;
+    :yValue "Eyemart Express" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "203" ;
+    :yValue "Keplr Vision" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "196" ;
+    :yValue "AEG Vision" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Now Optics LLC" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "171.8" ;
+    :yValue "Refac Optical Group" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "153" ;
+    :yValue "Cohen's Fashion Optical" ;
+    :belongsTo :Chart .

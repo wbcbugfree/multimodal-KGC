@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Brand value of the 10 most valuable quick service restaurant brands worldwide in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Brand value in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Restaurant brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "129321" ;
+    :yValue "McDonald's" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "47753" ;
+    :yValue "Starbucks" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "16584" ;
+    :yValue "KFC" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "13768" ;
+    :yValue "Subway" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10743" ;
+    :yValue "Domino's Pizza" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "7341" ;
+    :yValue "Pizza Hut" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "6603" ;
+    :yValue "Chipotle" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "6368" ;
+    :yValue "Burger King" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "5928" ;
+    :yValue "Taco Bell" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "5353" ;
+    :yValue "Tim Hortons" ;
+    :belongsTo :Chart .

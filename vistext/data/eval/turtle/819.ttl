@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 FMCG brands ranked by consumer reach in the United Kingdom (UK) in 2019 (in million Consumer Reach Points )" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Consumer Reach Points* in millions" .
+
+:YAxis a :Axis ;
+    :title "FMCG brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "533" ;
+    :yValue "Warburtons" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "359" ;
+    :yValue "Heinz" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "286" ;
+    :yValue "Mc Vitie's" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "256" ;
+    :yValue "Hovis" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "248" ;
+    :yValue "Coca-Cola" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "247" ;
+    :yValue "Walkers" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "205" ;
+    :yValue "Muller" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "198" ;
+    :yValue "Cadbury's Dairy Milk" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Birds Eye" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "174" ;
+    :yValue "Kingsmill" ;
+    :belongsTo :Chart .

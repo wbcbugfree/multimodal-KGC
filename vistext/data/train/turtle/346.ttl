@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Make-up related keywords ranked by search volume in the United Kingdom (UK) in February 2016 (in 1,000 searches)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Make-up related keyword" .
+
+:YAxis a :Axis ;
+    :title "Searches in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "mac makeup" ;
+    :yValue "135" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "makeup" ;
+    :yValue "60.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "make up" ;
+    :yValue "49.5" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "makeup brushes" ;
+    :yValue "33.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "eos lip balm" ;
+    :yValue "22.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "foundation" ;
+    :yValue "27.1" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "benefit makeup" ;
+    :yValue "27.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "matte lipstick" ;
+    :yValue "18.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "lipstick" ;
+    :yValue "18.1" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "eye makeup" ;
+    :yValue "18.1" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "other keywords" ;
+    :yValue "1356.83" ;
+    :belongsTo :Chart .

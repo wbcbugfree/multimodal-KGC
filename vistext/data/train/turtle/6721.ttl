@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Property stolen and recovered in the United States in 2019 , by type and value (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Recovered" .
+
+:YAxis a :Axis ;
+    :title "Type of property" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "36.98" ;
+    :yValue "Currency, notes, etc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "36.89" ;
+    :yValue "Jewelry and precious metals" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "31.17" ;
+    :yValue "Clothing and furs" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "3228.87" ;
+    :yValue "Locally stolen motor vehicles" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "23.24" ;
+    :yValue "Office equipment" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "14.01" ;
+    :yValue "Televisions, radios, stereos, etc." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "13.5" ;
+    :yValue "Firearms" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "8.18" ;
+    :yValue "Household goods" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "13.38" ;
+    :yValue "Consumable goods" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.57" ;
+    :yValue "Livestock" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "453.4" ;
+    :yValue "Miscellaneous" ;
+    :belongsTo :Chart .

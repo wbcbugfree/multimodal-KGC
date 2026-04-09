@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Radio stations ranked by weekly reach in the United Kingdom (UK) as of 1st quarter 2020 (in 1,000 listeners)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "radio station" .
+
+:YAxis a :Axis ;
+    :title "Listeners reached in thousands*" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BBC Radio 2" ;
+    :yValue "14362" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BBC Radio 4" ;
+    :yValue "10754" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "BBC Radio 1" ;
+    :yValue "8915" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Classic FM" ;
+    :yValue "5484" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "BBC Radio 5 live sports extra" ;
+    :yValue "5330" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "BBC Radio 5 live" ;
+    :yValue "5219" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Magic Network" ;
+    :yValue "4088" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Kiss" ;
+    :yValue "3593" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Magic" ;
+    :yValue "3329" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "talkSPORT" ;
+    :yValue "2985" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "BBC 6 Music" ;
+    :yValue "2556" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Absolute Radio" ;
+    :yValue "2416" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Kisstory" ;
+    :yValue "2066" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "BBC Radio 4 Extra" ;
+    :yValue "1983" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "BBC Radio 3" ;
+    :yValue "1980" ;
+    :belongsTo :Chart .
