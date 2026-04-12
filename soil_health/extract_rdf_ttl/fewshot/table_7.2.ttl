@@ -1,0 +1,97 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilLossRatesFromErosionOnArableLandInEurope a skos:Concept ;
+    skos:narrower she:GullyErosionEntry,
+        she:SoilErosionByWaterEntry1,
+        she:SoilErosionByWaterEntry2,
+        she:SoilErosionByWindEntry,
+        she:SoilLossByCropHarvestingEntry,
+        she:TillageErosionEntry ;
+    skos:prefLabel "soil loss rates from different types of erosion on arable land in europe taken from studies at a continental scale" .
+
+she:EmpiricalGISBasedModel a skos:Concept ;
+    skos:prefLabel "empirical gis-based model" .
+
+she:EmpiricalModelGISRWEQ a skos:Concept ;
+    skos:prefLabel "empirical model (gis-rweq)" .
+
+she:EmpiricalModelRUSLE2015 a skos:Concept ;
+    skos:prefLabel "empirical model (rusle2015)" .
+
+she:GullyErosion a skos:Concept ;
+    skos:prefLabel "gully erosion" .
+
+she:GullyErosionEntry a skos:Concept ;
+    skos:prefLabel "gully erosion" ;
+    she:hasApproach she:ObservationsAndScreenInterpretation ;
+    she:hasErosionType she:GullyErosion ;
+    she:hasMeanSoilLossRate "unknown" ;
+    she:hasReference "Borelli et al. (2022)" ;
+    she:hasReferencePeriod "2018-" .
+
+she:NoteForSoilLossByCropHarvesting a skos:Concept ;
+    skos:definition "due to potato and sugar beet harvesting; recalculated for the total arable land area" ;
+    skos:prefLabel "note for soil loss by crop harvesting" .
+
+she:ObservationsAndScreenInterpretation a skos:Concept ;
+    skos:prefLabel "observations and screen interpretation" .
+
+she:SoilErosionByWaterEntry1 a skos:Concept ;
+    skos:prefLabel "soil erosion by water (entry 1)" ;
+    she:hasApproach she:EmpiricalModelRUSLE2015 ;
+    she:hasErosionType she:SoilErosionByWater ;
+    she:hasMeanSoilLossRate "2.65 t/ha/year" ;
+    she:hasReference "Panagos et al. (2020a)" ;
+    she:hasReferencePeriod "2016" .
+
+she:SoilErosionByWaterEntry2 a skos:Concept ;
+    skos:prefLabel "soil erosion by water (entry 2)" ;
+    she:hasApproach she:UpscalingPlotData ;
+    she:hasErosionType she:SoilErosionByWater ;
+    she:hasMeanSoilLossRate "3.6 t/ha/year" ;
+    she:hasReference "Cerdan et al. (2010)" .
+
+she:SoilErosionByWind a skos:Concept ;
+    skos:prefLabel "soil erosion by wind" .
+
+she:SoilErosionByWindEntry a skos:Concept ;
+    skos:prefLabel "soil erosion by wind" ;
+    she:hasApproach she:EmpiricalModelGISRWEQ ;
+    she:hasErosionType she:SoilErosionByWind ;
+    she:hasMeanSoilLossRate "0.53 t/ha/year" ;
+    she:hasReference "Borelli et al. (2017)" ;
+    she:hasReferencePeriod "2001-2010" .
+
+she:SoilLossByCropHarvesting a skos:Concept ;
+    skos:prefLabel "soil loss by crop harvesting" .
+
+she:SoilLossByCropHarvestingEntry a skos:Concept ;
+    skos:prefLabel "soil loss by crop harvesting" ;
+    she:hasApproach she:UpscalingStudyResults ;
+    she:hasErosionType she:SoilLossByCropHarvesting ;
+    she:hasMeanSoilLossRate "0.134 t/ha/year" ;
+    she:hasNote she:NoteForSoilLossByCropHarvesting ;
+    she:hasReference "Panagos et al. (2019)" ;
+    she:hasReferencePeriod "2000-2016" .
+
+she:TillageErosion a skos:Concept ;
+    skos:prefLabel "tillage erosion" .
+
+she:TillageErosionEntry a skos:Concept ;
+    skos:prefLabel "tillage erosion" ;
+    she:hasApproach she:EmpiricalGISBasedModel ;
+    she:hasErosionType she:TillageErosion ;
+    she:hasMeanSoilLossRate "3.3 t/ha/year" ;
+    she:hasReference "Van Oost (2009)" ;
+    she:hasReferencePeriod "2000" .
+
+she:UpscalingPlotData a skos:Concept ;
+    skos:prefLabel "upscaling plot data" .
+
+she:UpscalingStudyResults a skos:Concept ;
+    skos:prefLabel "upscaling study results" .
+
+she:SoilErosionByWater a skos:Concept ;
+    skos:prefLabel "soil erosion by water" .
+

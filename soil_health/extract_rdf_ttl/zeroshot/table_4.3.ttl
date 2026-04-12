@@ -1,0 +1,52 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table43 a skos:Concept ;
+    skos:narrower she:Crop,
+        she:PHAt95Yield ;
+    skos:prefLabel "table 4.3" ;
+    she:hasSourceInformation "Compiled from Zhu et al. (2020)." ;
+    she:hasTitle she:SummarisedCriticalPHValuesForWheatMaizeAndRiceDerivedFromShortTermManipulationExperimentsSTEAndLongTermObservationsLTE .
+
+she:Crop a skos:Concept ;
+    skos:narrower she:Maize,
+        she:Rice,
+        she:Wheat ;
+    skos:prefLabel "crop" .
+
+she:LTE a skos:Concept ;
+    skos:prefLabel "lte" .
+
+she:Maize a skos:Concept ;
+    skos:prefLabel "maize" ;
+    she:hasLTEValue "5.1" ;
+    she:hasSTELTEValue "4.8" ;
+    she:hasSTEValue "4.6" .
+
+she:PHAt95Yield a skos:Concept ;
+    skos:narrower she:LTE,
+        she:STE,
+        she:STELTE ;
+    skos:prefLabel "ph at 95% yield" .
+
+she:Rice a skos:Concept ;
+    skos:prefLabel "rice" ;
+    she:hasLTEValue "5.0" ;
+    she:hasSTELTEValue "4.7" ;
+    she:hasSTEValue "4.7" .
+
+she:STE a skos:Concept ;
+    skos:prefLabel "ste" .
+
+she:STELTE a skos:Concept ;
+    skos:prefLabel "ste+lte" .
+
+she:SummarisedCriticalPHValuesForWheatMaizeAndRiceDerivedFromShortTermManipulationExperimentsSTEAndLongTermObservationsLTE a skos:Concept ;
+    skos:prefLabel "summarised critical ph values for wheat, maize and rice derived from short-term manipulation experiments (ste) and long-term observations (lte)" .
+
+she:Wheat a skos:Concept ;
+    skos:prefLabel "wheat" ;
+    she:hasLTEValue "5.9" ;
+    she:hasSTELTEValue "5.3" ;
+    she:hasSTEValue "4.5" .
+

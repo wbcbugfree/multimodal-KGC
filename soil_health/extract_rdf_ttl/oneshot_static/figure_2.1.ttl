@@ -1,0 +1,96 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ConceptualOverviewOfSOCThresholdsAndCarbonSequestration a skos:Concept ;
+    skos:narrower she:BaselineDepletedSOCPool,
+        she:EcologicalTargets,
+        she:ImprovementsOfFertilisation,
+        she:IncentivesForSustainableSoilManagement,
+        she:MaximumSOCPool,
+        she:OptimalSOCToFulfilSoilFunctions,
+        she:SOCAtBusinessAsUsual,
+        she:SOCAtBusinessAsUsualPlusClimateChange,
+        she:SOCNeededForOptimalYield ;
+    skos:prefLabel "conceptual overview of soc thresholds and carbon sequestration" ;
+    she:hasSource she:EEA ;
+    she:hasXAxis she:Time ;
+    she:hasYAxis she:SoilOrganicCarbon .
+
+she:BaselineDepletedSOCPool a skos:Concept ;
+    skos:prefLabel "baseline depleted soc pool" ;
+    she:isStartingPointForTrend she:ImprovementsOfFertilisation,
+        she:IncentivesForSustainableSoilManagement,
+        she:SOCAtBusinessAsUsual,
+        she:SOCAtBusinessAsUsualPlusClimateChange .
+
+she:EEA a skos:Concept ;
+    skos:prefLabel "eea" .
+
+she:EcologicalTargets a skos:Concept ;
+    skos:narrower she:EcologicallyNeededSequestration,
+        she:EconomicalAchievableSOCSequestration,
+        she:FarmersPerceivedSOCDeficiency,
+        she:HealthySoils,
+        she:TechnicalAchievableSOCSequestration ;
+    skos:prefLabel "ecological targets" .
+
+she:EcologicallyNeededSequestration a skos:Concept ;
+    skos:prefLabel "ecologically needed sequestration" ;
+    she:isAssociatedWithSOCLevel she:OptimalSOCToFulfilSoilFunctions .
+
+she:EconomicalAchievableSOCSequestration a skos:Concept ;
+    skos:prefLabel "economical achievable soc sequestration" ;
+    she:isAssociatedWithSOCLevel she:SOCAtBusinessAsUsual .
+
+she:FarmersPerceivedSOCDeficiency a skos:Concept ;
+    skos:prefLabel "farmers perceived soc deficiency" ;
+    she:isAssociatedWithSOCLevel she:SOCNeededForOptimalYield .
+
+she:HealthySoils a skos:Concept ;
+    skos:prefLabel "healthy soils" ;
+    she:isAssociatedWithSOCLevel she:OptimalSOCToFulfilSoilFunctions .
+
+she:TechnicalAchievableSOCSequestration a skos:Concept ;
+    skos:prefLabel "technical achievable soc sequestration" ;
+    she:isAssociatedWithSOCLevel she:MaximumSOCPool .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" .
+
+she:ImprovementsOfFertilisation a skos:Concept ;
+    skos:prefLabel "improvements of fertilisation" ;
+    she:aimsForLevel she:SOCNeededForOptimalYield ;
+    she:influences she:SoilOrganicCarbon .
+
+she:IncentivesForSustainableSoilManagement a skos:Concept ;
+    skos:prefLabel "incentives for sustainable soil management" ;
+    she:aimsForLevel she:OptimalSOCToFulfilSoilFunctions ;
+    she:influences she:SoilOrganicCarbon .
+
+she:MaximumSOCPool a skos:Concept ;
+    skos:definition "under current climatic condition, no management" ;
+    skos:prefLabel "maximum soc pool" ;
+    she:isThresholdLevelOf she:SoilOrganicCarbon .
+
+she:SOCAtBusinessAsUsualPlusClimateChange a skos:Concept ;
+    skos:definition "technically minimal soc pool" ;
+    skos:prefLabel "soc at business-as-usual + climate change" ;
+    she:isThresholdLevelOf she:SoilOrganicCarbon ;
+    she:representsTrend "decreasing" .
+
+she:SOCAtBusinessAsUsual a skos:Concept ;
+    skos:prefLabel "soc at business as usual" ;
+    she:isThresholdLevelOf she:SoilOrganicCarbon ;
+    she:representsTrend "no change" .
+
+she:SOCNeededForOptimalYield a skos:Concept ;
+    skos:prefLabel "soc needed for optimal yield" ;
+    she:isThresholdLevelOf she:SoilOrganicCarbon .
+
+she:OptimalSOCToFulfilSoilFunctions a skos:Concept ;
+    skos:prefLabel "optimal soc to fulfil soil functions" ;
+    she:isThresholdLevelOf she:SoilOrganicCarbon .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon (soc)" .
+

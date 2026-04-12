@@ -1,0 +1,106 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table29AggregationOfSOCThresholdsForSoilGroups a skos:Concept ;
+    skos:narrower she:BMLFUW2017MinimumSOCThreshold,
+        she:ClayFineSilt,
+        she:KorschensEtAl1998,
+        she:SOCClayRatio,
+        she:SoilGroup ;
+    skos:prefLabel "table 2.9 aggregation of soc thresholds for soil groups" .
+
+she:BMLFUW2017MinimumSOCThreshold a skos:Concept ;
+    skos:prefLabel "bmlfuw (2017) minimum soc threshold" .
+
+she:ClayFineSilt a skos:Concept ;
+    skos:prefLabel "clay/fine silt (%)" .
+
+she:ClayFineSilt1522 a skos:Concept ;
+    skos:prefLabel "15-22" ;
+    she:hasLoamySoilsThreshold "1.0-1.3" ;
+    she:hasSandySoilsThreshold "0.9-1.2" .
+
+she:ClayFineSilt2325 a skos:Concept ;
+    skos:prefLabel "23-25" ;
+    she:hasLoamySoilsThreshold "1.3-1.5" ;
+    she:hasSandySoilsThreshold "1.3-1.6" .
+
+she:ClayFineSilt2532 a skos:Concept ;
+    skos:prefLabel "25-32" ;
+    she:hasLoamySoilsThreshold "1.5-1.7" .
+
+she:ClayFineSilt47 a skos:Concept ;
+    skos:prefLabel "4-7" ;
+    she:hasSandySoilsThreshold "<0.6" .
+
+she:ClayFineSilt814 a skos:Concept ;
+    skos:prefLabel "8-14" ;
+    she:hasLoamySoilsThreshold "0.8-0.9" ;
+    she:hasSandySoilsThreshold "0.6-0.9" .
+
+she:ClayFineSiltGreater32 a skos:Concept ;
+    skos:prefLabel ">32" ;
+    she:hasLoamySoilsThreshold "1.7-2.0" .
+
+she:HeavyGreater25Clay a skos:Concept ;
+    skos:narrower she:ClayFineSilt2532,
+        she:ClayFineSiltGreater32 ;
+    skos:prefLabel "heavy (>25% clay)" ;
+    she:hasBMLFUWMinimumSOCThreshold "1.7" ;
+    she:hasMinimumDesiredSOCLevelForFarmersRatio ">2.5" ;
+    she:hasOptimumStructuralQualityRatio ">3.1" ;
+    she:hasUnacceptableStructuralQualityRatio ">1.9" .
+
+she:KorschensEtAl1998 a skos:Concept ;
+    skos:narrower she:LoamySoils,
+        she:SandySoils ;
+    skos:prefLabel "körschens et al. (1998)" .
+
+she:LightLess15Clay a skos:Concept ;
+    skos:narrower she:ClayFineSilt47,
+        she:ClayFineSilt814 ;
+    skos:prefLabel "light (<15% clay)" ;
+    she:hasBMLFUWMinimumSOCThreshold "1.2" ;
+    she:hasMinimumDesiredSOCLevelForFarmersRatio "<1.5" ;
+    she:hasOptimumStructuralQualityRatio "<1.9" ;
+    she:hasUnacceptableStructuralQualityRatio "<1.2" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:Medium1525Clay a skos:Concept ;
+    skos:narrower she:ClayFineSilt1522,
+        she:ClayFineSilt2325 ;
+    skos:prefLabel "medium (15-25% clay)" ;
+    she:hasBMLFUWMinimumSOCThreshold "1.5" ;
+    she:hasMinimumDesiredSOCLevelForFarmersRatio "1.5-2.5" ;
+    she:hasOptimumStructuralQualityRatio "1.9-3.1" ;
+    she:hasUnacceptableStructuralQualityRatio "1.2-1.9" .
+
+she:OneEightOptimumForGoodStructuralQuality a skos:Concept ;
+    skos:definition "optimum for good structural quality" ;
+    skos:prefLabel "1/8 (optimum for good structural quality)" .
+
+she:OneTenthMinimumDesiredSOCLevelForFarmers a skos:Concept ;
+    skos:definition "minimum desired soc level for farmers" ;
+    skos:prefLabel "1/10 (minimum desired soc level for farmers)" .
+
+she:OneThirteenthStructuralSoilQualityIsUnacceptable a skos:Concept ;
+    skos:definition "structural soil quality is unacceptable" ;
+    skos:prefLabel "1/13 (structural soil quality is unacceptable)" .
+
+she:SOCClayRatio a skos:Concept ;
+    skos:narrower she:OneEightOptimumForGoodStructuralQuality,
+        she:OneTenthMinimumDesiredSOCLevelForFarmers,
+        she:OneThirteenthStructuralSoilQualityIsUnacceptable ;
+    skos:prefLabel "soc/clay ratio" .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:SoilGroup a skos:Concept ;
+    skos:narrower she:HeavyGreater25Clay,
+        she:LightLess15Clay,
+        she:Medium1525Clay ;
+    skos:prefLabel "soil group" .
+

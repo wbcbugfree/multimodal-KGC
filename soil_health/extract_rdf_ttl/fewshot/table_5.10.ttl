@@ -1,0 +1,104 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:EuropeanToolboxForRiskBasedLandManagement a skos:Concept ;
+    skos:prefLabel "design of a european toolbox for stimulating convergence in risk-based land management in the eu member states" .
+
+she:RiskAssessmentTool a skos:Concept ;
+    skos:narrower she:ConsiderationOfCountryAndSiteSpecificConditions,
+        she:EcologicalRiskAssessment,
+        she:EndpointSpecificRiskAssessmentTools,
+        she:HumanHealthRiskAssessment ;
+    skos:prefLabel "risk assessment tool" .
+
+she:CompoundSpecificBioavailableFractions a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "determination of compound-specific bioavailable fractions (e.g. correction factors for the difference between intake and uptake of metals in the human body)" .
+
+she:ConsiderationOfCountryAndSiteSpecificConditions a skos:Concept ;
+    skos:prefLabel "consideration of country- and site-specific conditions" ;
+    she:usesComponent she:GeographicalConditions,
+        she:HistoryOfLandManagement,
+        she:LocalManagement,
+        she:NationalLegalConditions .
+
+she:DailyInhalationRates a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "daily inhalation rates" .
+
+she:DermalUptakeFromSoilMaterialModelsExample a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "dermal uptake from soil material models" .
+
+she:EUWideCriticalLimits a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "relevant eu-wide critical limits used in specific endpoints considered (e.g. critical limits in food, surface water or soil pore water concentrations)" .
+
+she:EcologicalRiskAssessment a skos:Concept ;
+    skos:prefLabel "ecological risk assessment" ;
+    she:usesComponent she:CompoundSpecificBioavailableFractions,
+        she:PollutantCompoundCharacteristicsDatabase,
+        she:SpeciesSensitivityDistribution .
+
+she:EndpointSpecificRiskAssessmentTools a skos:Concept ;
+    skos:prefLabel "endpoint-specific risk assessment tools" ;
+    she:usesComponent she:EUWideCriticalLimits,
+        she:PathwayAndModelsDescription .
+
+she:GeographicalConditions a skos:Concept ;
+    skos:broader she:FlexibleTools ;
+    skos:prefLabel "geographical conditions, e.g. for vapour intrusion models, which are dependent on soil type and groundwater depth" .
+
+she:HistoryOfLandManagement a skos:Concept ;
+    skos:broader she:FlexibleTools ;
+    skos:prefLabel "history of land management" .
+
+she:HumanHealthRiskAssessment a skos:Concept ;
+    skos:prefLabel "human health risk assessment" ;
+    she:usesComponent she:DailyInhalationRates,
+        she:DermalUptakeFromSoilMaterialModelsExample,
+        she:SoilIngestionByChildrenExample,
+        she:TolerableExposure .
+
+she:LocalManagement a skos:Concept ;
+    skos:broader she:FlexibleTools ;
+    skos:prefLabel "local management, e.g. home-grown vegetable consumption, food consumption data" .
+
+she:NationalLegalConditions a skos:Concept ;
+    skos:broader she:FlexibleTools ;
+    skos:prefLabel "national legal conditions" .
+
+she:PathwayAndModelsDescription a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "description of relevant pathway and models needed to describe these to predict flows of pollutants to endpoints considered" .
+
+she:PollutantCompoundCharacteristicsDatabase a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "database with pollutant/compound characteristics (e.g. water solubility, vapour pressure, water-octanol partition coefficients)" .
+
+she:SoilIngestionByChildrenExample a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "average amount of soil ingested daily by children (bierkens et al., 2011)" .
+
+she:SpeciesSensitivityDistribution a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:definition "the species sensitivity distribution (ssd) is the empirical relation between soil concentration and fraction of species affected. the ssd gives the corresponding risk limit that can be used as an ecologically based soil health standard (swartjes et al., 2009)." ;
+    skos:prefLabel "species sensitivity distribution" .
+
+she:TolerableExposure a skos:Concept ;
+    skos:broader she:StandardisedTools ;
+    skos:prefLabel "tolerable exposure (reference dose or tolerable daily intake, which can be similar for a defined sensitive group of people); risk per unit of exposure" .
+
+she:ComponentToBeInternationallyStandardisedAgreed a skos:Concept ;
+    skos:narrower she:FlexibleTools,
+        she:StandardisedTools ;
+    skos:prefLabel "component to be internationally standardised/agreed" .
+
+she:FlexibleTools a skos:Concept ;
+    skos:broader she:ComponentToBeInternationallyStandardisedAgreed ;
+    skos:prefLabel "flexible tools" .
+
+she:StandardisedTools a skos:Concept ;
+    skos:broader she:ComponentToBeInternationallyStandardisedAgreed ;
+    skos:prefLabel "standardised tools" .
+

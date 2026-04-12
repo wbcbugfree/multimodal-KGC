@@ -1,0 +1,99 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CarbonStorage a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "carbon storage" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:ClimateNeed .
+
+she:FilteringOfContaminantsWaterQuality a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "filtering of contaminants: water quality" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:WaterNeed .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "growth of crops" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:BiomassNeed .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:BiodiversityNeed .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpactFromPollution she:IndifferentImpactA ;
+    she:supportsSocietalNeed she:InfrastructureNeed .
+
+she:RelationshipBetweenSoilPollutionAndSocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:narrower she:ImpactCategory,
+        she:SocietalNeedCategory,
+        she:SoilServiceCategory ;
+    skos:prefLabel "relationship between soil pollution and key societal needs and soil functions" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
+    she:hasImpactFromPollution she:IndifferentImpact ;
+    she:supportsSocietalNeed she:InfrastructureNeed .
+
+she:WaterStorage a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "water storage" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:WaterNeed .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:broader she:SoilServiceCategory ;
+    skos:prefLabel "wood and fibre production" ;
+    she:hasImpactFromPollution she:NegativeImpact ;
+    she:supportsSocietalNeed she:BiomassNeed .
+
+she:BiodiversityNeed a skos:Concept ;
+    skos:broader she:SocietalNeedCategory ;
+    skos:prefLabel "biodiversity" .
+
+she:ClimateNeed a skos:Concept ;
+    skos:broader she:SocietalNeedCategory ;
+    skos:prefLabel "climate" .
+
+she:IndifferentImpact a skos:Concept ;
+    skos:broader she:ImpactCategory ;
+    skos:prefLabel "indifferent" .
+
+she:IndifferentImpactA a skos:Concept ;
+    skos:broader she:ImpactCategory ;
+    skos:definition "land prices are lower if the soil is polluted, as remediation costs will be incurred." ;
+    skos:prefLabel "indifferent (a)" .
+
+she:BiomassNeed a skos:Concept ;
+    skos:broader she:SocietalNeedCategory ;
+    skos:prefLabel "biomass" .
+
+she:InfrastructureNeed a skos:Concept ;
+    skos:broader she:SocietalNeedCategory ;
+    skos:prefLabel "infrastructure" .
+
+she:WaterNeed a skos:Concept ;
+    skos:broader she:SocietalNeedCategory ;
+    skos:prefLabel "water" .
+
+she:ImpactCategory a skos:Concept ;
+    skos:prefLabel "impact" .
+
+she:NegativeImpact a skos:Concept ;
+    skos:broader she:ImpactCategory ;
+    skos:prefLabel "negative impact" .
+
+she:SocietalNeedCategory a skos:Concept ;
+    skos:prefLabel "societal need" .
+
+she:SoilServiceCategory a skos:Concept ;
+    skos:prefLabel "soil service" .
+

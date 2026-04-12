@@ -1,0 +1,89 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Biodiversity a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biodiversity" ;
+    she:isAssociatedWithService she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Biomass a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biomass" ;
+    she:isAssociatedWithService she:GrowthOfCrops,
+        she:WoodAndFibreProduction .
+
+she:Climate a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "climate" ;
+    she:isAssociatedWithService she:CarbonStorage .
+
+she:Infrastructure a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "infrastructure" ;
+    she:isAssociatedWithService she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:Water a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "water" ;
+    she:isAssociatedWithService she:FilteringOfContaminantsWaterQuality,
+        she:WaterStorage .
+
+she:CarbonStorage a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "carbon storage" ;
+    she:hasImpact "-" .
+
+she:FilteringOfContaminantsWaterQuality a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "filtering of contaminants: water quality" ;
+    she:hasImpact "-" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "growth of crops" ;
+    she:hasImpact "-" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    she:hasImpact "-" .
+
+she:Indifferent a skos:Concept ;
+    skos:broader she:Impact ;
+    skos:prefLabel "indifferent" .
+
+she:IndifferentA a skos:Concept ;
+    skos:broader she:Impact ;
+    skos:definition "land prices are lower if the soil is polluted, as remediation costs will be incurred." ;
+    skos:prefLabel "indifferent (a)" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpact she:IndifferentA .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
+    she:hasImpact she:Indifferent .
+
+she:WaterStorage a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "water storage" ;
+    she:hasImpact "-" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "wood and fibre production" ;
+    she:hasImpact "-" .
+
+she:Impact a skos:Concept ;
+    skos:prefLabel "impact" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" .
+

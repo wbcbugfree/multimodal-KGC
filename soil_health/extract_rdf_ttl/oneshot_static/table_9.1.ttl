@@ -1,0 +1,91 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CarbonStorage a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "carbon storage" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Climate .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "filtering of contaminants" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Water .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "growth of crops" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Biomass .
+
+she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi and any microfauna" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Biodiversity .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpactFromSoilSealing she:PositiveImpact ;
+    she:supportsSocietalNeed she:Infrastructure .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
+    she:hasImpactFromSoilSealing she:PositiveImpact ;
+    she:supportsSocietalNeed she:Infrastructure .
+
+she:WaterStorage a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "water storage" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Water .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:narrower she:SoilService ;
+    skos:prefLabel "wood and fibre production" ;
+    she:hasImpactFromSoilSealing she:NegativeImpact ;
+    she:supportsSocietalNeed she:Biomass .
+
+she:Biodiversity a skos:Concept ;
+    skos:narrower she:SocietalNeed ;
+    skos:prefLabel "biodiversity" .
+
+she:Climate a skos:Concept ;
+    skos:narrower she:SocietalNeed ;
+    skos:prefLabel "climate" .
+
+she:Biomass a skos:Concept ;
+    skos:narrower she:SocietalNeed ;
+    skos:prefLabel "biomass" .
+
+she:Impact a skos:Concept ;
+    skos:prefLabel "impact" .
+
+she:Infrastructure a skos:Concept ;
+    skos:narrower she:SocietalNeed ;
+    skos:prefLabel "infrastructure" .
+
+she:PositiveImpact a skos:Concept ;
+    skos:narrower she:Impact ;
+    skos:prefLabel "positive impact" .
+
+she:Water a skos:Concept ;
+    skos:narrower she:SocietalNeed ;
+    skos:prefLabel "water" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" .
+
+she:NegativeImpact a skos:Concept ;
+    skos:narrower she:Impact ;
+    skos:prefLabel "negative impact" .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" .
+

@@ -1,0 +1,89 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Air a skos:Concept ;
+    skos:prefLabel "air" ;
+    she:hasService she:CompositionAndExchangeOfSoilGasWithTheAtmosphere .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    she:hasService she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    she:hasService she:GrowthAndQualityOfCrops,
+        she:WoodAndFibreProduction .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    she:hasService she:CarbonStorageAndTurnoverAvoidanceOfGreenhouseGasReleasesEgNitrousOxideMethane .
+
+she:CulturalHeritage a skos:Concept ;
+    skos:prefLabel "cultural heritage" ;
+    she:hasService she:DocumentationOfHistoricalHumanCultureAndLandManagement .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    she:hasService she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:Table81RelationshipOfSoilCompactionToKeySocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:narrower she:Impact,
+        she:SocietalNeed,
+        she:SoilService ;
+    skos:prefLabel "table 8.1 relationship of soil compaction to key societal needs and soil functions" .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    she:hasService she:FilteringAndBufferingOfContaminantsIncludingSupplyOfDrinkingWater,
+        she:WaterStorageAndAvailabilityGroundwaterRechargeSurfaceRunOffAndInterflow .
+
+she:CarbonStorageAndTurnoverAvoidanceOfGreenhouseGasReleasesEgNitrousOxideMethane a skos:Concept ;
+    skos:prefLabel "carbon storage and turnover, avoidance of greenhouse gas releases (e.g. nitrous oxide, methane)" ;
+    she:hasImpactValue "-" .
+
+she:CompositionAndExchangeOfSoilGasWithTheAtmosphere a skos:Concept ;
+    skos:prefLabel "composition and exchange of soil gas with the atmosphere" ;
+    she:hasImpactValue "-" .
+
+she:DocumentationOfHistoricalHumanCultureAndLandManagement a skos:Concept ;
+    skos:prefLabel "documentation of historical human culture and land management" ;
+    she:hasImpactValue "-" .
+
+she:FilteringAndBufferingOfContaminantsIncludingSupplyOfDrinkingWater a skos:Concept ;
+    skos:prefLabel "filtering and buffering of contaminants, including supply of drinking water" ;
+    she:hasImpactValue "-" .
+
+she:GrowthAndQualityOfCrops a skos:Concept ;
+    skos:prefLabel "growth and quality of crops" ;
+    she:hasImpactValue "-" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    she:hasImpactValue "-" .
+
+she:Impact a skos:Concept ;
+    skos:prefLabel "impact" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpactValue "indifferent" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" ;
+    she:hasImpactValue "indifferent" .
+
+she:WaterStorageAndAvailabilityGroundwaterRechargeSurfaceRunOffAndInterflow a skos:Concept ;
+    skos:prefLabel "water storage and availability, groundwater recharge, surface run-off and interflow" ;
+    she:hasImpactValue "-" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" ;
+    she:hasImpactValue "-" .
+

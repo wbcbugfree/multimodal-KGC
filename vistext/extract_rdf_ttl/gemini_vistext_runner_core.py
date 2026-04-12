@@ -29,6 +29,7 @@ from common.paths import vistext_dir, vistext_images_dir, vistext_labels_dir  # 
 DEFAULT_MODEL = "gemini-3-flash-preview"
 REQUEST_DELAY = 2.0
 PARALLEL_WORKERS = 1
+MAX_ATTEMPTS = 3
 SAMPLE_MODE = "random"
 SAMPLE_COUNT = 5
 RANDOM_SEED = 42
@@ -45,7 +46,7 @@ EXAMPLE_USER_PROMPT = (
 VIS_TEXT_DIR = vistext_dir()
 IMAGES_ROOT = vistext_images_dir("test")
 LABELS_ROOT = vistext_labels_dir("test")
-PROMPT_ROOT = VIS_TEXT_DIR / "prompt_text"
+PROMPT_ROOT = VIS_TEXT_DIR / "prompt_engineering"
 GROUND_TRUTH_ROOT = PROMPT_ROOT / "ground_truth_val"
 
 
@@ -60,7 +61,7 @@ class PromptExample:
 class PromptPackage:
     system_prompt: str
     examples: list[PromptExample]
-    metadata: dict[str, str] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -410,6 +411,46 @@ def validate_turtle(text: str) -> str | None:
     return None
 
 
+def sleep_if_needed(delay_seconds: float) -> None:
+    if delay_seconds > 0:
+        time.sleep(delay_seconds)
+
+
+def build_attempt_failure(
+    attempt: int,
+    status: str,
+    error: str,
+    stage: str,
+) -> dict[str, Any]:
+    return {
+        "attempt": attempt,
+        "status": status,
+        "stage": stage,
+        "error": error,
+    }
+
+
+def finalize_attempt_metadata(
+    prompt_package: PromptPackage | None,
+    attempt_count: int,
+    attempt_failures: list[dict[str, Any]],
+) -> dict[str, Any] | None:
+    metadata = dict(prompt_package.metadata) if prompt_package is not None else {}
+    metadata["attempt_count"] = attempt_count
+    if attempt_failures:
+        metadata["attempt_failures"] = attempt_failures
+    return metadata or None
+
+
+def exhausted_retry_status(attempt_failures: list[dict[str, Any]]) -> str:
+    statuses = {str(failure.get("status", "")) for failure in attempt_failures}
+    if statuses == {"invalid_ttl"}:
+        return "invalid_ttl"
+    if statuses == {"api_error"}:
+        return "api_error"
+    return "retry_exhausted"
+
+
 def load_existing_manifest(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {"items": []}
@@ -461,7 +502,7 @@ def build_manifest_item(
     model: str,
     status: str,
     error: str | None = None,
-    extra_metadata: dict[str, str] | None = None,
+    extra_metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     item: dict[str, Any] = {
         "img_id": image_path.stem,
@@ -494,6 +535,8 @@ def process_image(
     ttl_path = config.output_dir / f"{image_id}.ttl"
     label_path = config.labels_root / f"{image_id}.json"
     prompt_package: PromptPackage | None = None
+    contents: list[types.Content] | None = None
+    attempt_failures: list[dict[str, Any]] = []
 
     if config.skip_existing and ttl_path.exists():
         return build_manifest_item(
@@ -504,57 +547,96 @@ def process_image(
             status="skipped_existing",
         )
 
-    try:
-        effective_client = client or create_gemini_client()
-        prompt_package = prompt_builder(
-            image_path,
-            PromptBuilderContext(model=config.model, client=effective_client),
-        )
-        contents = build_request_contents(
-            user_prompt=build_user_prompt(image_id),
-            image_path=image_path,
-            examples=prompt_package.examples,
-        )
-        raw_output = call_gemini(
-            client=effective_client,
-            model=config.model,
-            system_prompt=prompt_package.system_prompt,
-            contents=contents,
-        )
+    effective_client = client or create_gemini_client()
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        if prompt_package is None or contents is None:
+            try:
+                prompt_package = prompt_builder(
+                    image_path,
+                    PromptBuilderContext(model=config.model, client=effective_client),
+                )
+                contents = build_request_contents(
+                    user_prompt=build_user_prompt(image_id),
+                    image_path=image_path,
+                    examples=prompt_package.examples,
+                )
+            except Exception as exc:  # pragma: no cover
+                attempt_failures.append(
+                    build_attempt_failure(
+                        attempt=attempt,
+                        status="api_error",
+                        stage="prompt_builder",
+                        error=str(exc),
+                    )
+                )
+                if attempt < MAX_ATTEMPTS:
+                    sleep_if_needed(config.request_delay)
+                continue
+
+        try:
+            raw_output = call_gemini(
+                client=effective_client,
+                model=config.model,
+                system_prompt=prompt_package.system_prompt,
+                contents=contents,
+            )
+        except Exception as exc:  # pragma: no cover
+            attempt_failures.append(
+                build_attempt_failure(
+                    attempt=attempt,
+                    status="api_error",
+                    stage="generation",
+                    error=str(exc),
+                )
+            )
+            if attempt < MAX_ATTEMPTS:
+                sleep_if_needed(config.request_delay)
+            continue
+
         turtle_text = strip_code_fences(raw_output)
         parse_error = validate_turtle(turtle_text)
         if parse_error is not None:
-            return build_manifest_item(
-                image_path=image_path,
-                label_path=label_path,
-                ttl_path=ttl_path,
-                model=config.model,
-                status="invalid_ttl",
-                error=parse_error,
-                extra_metadata=prompt_package.metadata,
+            attempt_failures.append(
+                build_attempt_failure(
+                    attempt=attempt,
+                    status="invalid_ttl",
+                    stage="validation",
+                    error=parse_error,
+                )
             )
+            if attempt < MAX_ATTEMPTS:
+                sleep_if_needed(config.request_delay)
+            continue
 
         write_ttl(ttl_path, turtle_text)
-        if config.request_delay > 0:
-            time.sleep(config.request_delay)
+        sleep_if_needed(config.request_delay)
         return build_manifest_item(
             image_path=image_path,
             label_path=label_path,
             ttl_path=ttl_path,
             model=config.model,
             status="saved",
-            extra_metadata=prompt_package.metadata,
+            extra_metadata=finalize_attempt_metadata(
+                prompt_package=prompt_package,
+                attempt_count=attempt,
+                attempt_failures=attempt_failures,
+            ),
         )
-    except Exception as exc:  # pragma: no cover
-        return build_manifest_item(
-            image_path=image_path,
-            label_path=label_path,
-            ttl_path=ttl_path,
-            model=config.model,
-            status="api_error",
-            error=str(exc),
-            extra_metadata=prompt_package.metadata if prompt_package is not None else None,
-        )
+
+    final_error = attempt_failures[-1]["error"] if attempt_failures else "Unknown error"
+    return build_manifest_item(
+        image_path=image_path,
+        label_path=label_path,
+        ttl_path=ttl_path,
+        model=config.model,
+        status=exhausted_retry_status(attempt_failures),
+        error=final_error,
+        extra_metadata=finalize_attempt_metadata(
+            prompt_package=prompt_package,
+            attempt_count=MAX_ATTEMPTS,
+            attempt_failures=attempt_failures,
+        ),
+    )
 
 
 def process_image_in_worker(

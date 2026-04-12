@@ -1,0 +1,95 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AggregateTypeAndEstimatedBulkDensity a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:definition "the visual assessment of the soil as loose or dense based on aggregate size and strength, pore size and continuity, root density and distribution" ;
+    skos:prefLabel "aggregate type and estimated bulk density" .
+
+she:AirCapacityAirFilledPoreVolume a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:definition "a low air capacity impairs root growth, reduces oxygen pressure in soil air and increases the formation of greenhouse gases." ;
+    skos:prefLabel "air capacity: air-filled pore volume" ;
+    she:hasExplanation "with decreasing particle size, the pore volume increases, and soil aggregation and soil organic matter content increases." ;
+    she:hasSoilSensitivity "soils originating from clay > loam > silt and sandy loam > sandy loess" ;
+    she:hasThreshold "below 5% air capacity at a soil matric potential of -6kpa, aeration or gas diffusion are mostly insufficient.",
+        "values around 45% total pore volume are at least acceptable while those below 35% are generally defined as very critical irrespective of texture effects)." .
+
+she:AirPermeabilityAndOxygenDiffusion a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "low air fluxes coincide with retarded gas exchange and the formation of anoxic conditions through ch₄ or n₂o formation." ;
+    skos:prefLabel "air permeability and oxygen diffusion" ;
+    she:hasCriticalValueForAirPermeability "<1µm²" ;
+    she:hasCriticalValueForDiffusionCoefficient "diffusion coefficient (ds) <1.5×10⁻⁸m²/s (bakker et al., 1987) or relative diffusion <0.005 for loamy soils and 0.02 for sandy soils." ;
+    she:hasSoilSensitivity "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation due to tillage or soil management" .
+
+she:BulkDensity a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:prefLabel "bulk density" ;
+    she:basedOnSource "dvwk 1997, 1998; see also keller et al. 2019" ;
+    she:hasSoilSensitivity "soils originating from clay > silt > sand; higher values are due to geological pre-stressing or anthropogenic impacts" ;
+    she:hasThresholdDescription "1.2g/cm³ and 1.6g/cm³ = normal",
+        "1.6g/cm³ and >1.9g/cm³ = dense",
+        "<1.2g/cm³ = very loose",
+        ">1.9g/cm³ = very impermeable" .
+
+she:PrecompressionStress a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "low precompression stress includes 'very low' (<30kpa) or 'low' (30-60kpa) internal soil strength, e.g. because of weak aggregation or wet soil conditions; soils are very sensitive to further deformation and decline in physical, biological and physico-chemical functions. at medium (60-90kpa) or high (90-120kpa) stress levels, sustainable soil management practices are especially necessary and effective." ;
+    skos:prefLabel "precompression stress (= internal soil strength)" ;
+    she:hasSoilSensitivity "all soils, but especially loamy, silty and clayey soils" .
+
+she:RatioOfPrecompressionStressToActualStressApplied a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "values >1.2 define rigid soil structure conditions with no risk to compaction processes, while values ≤0.8 define structure as irreversibly deformed. values in between classify soil properties and functions as very susceptible to further soil deformation." ;
+    skos:prefLabel "ratio of precompression stress to actual stress applied" ;
+    she:hasSoilSensitivity "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" .
+
+she:RootGrowthPenetrometer a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:prefLabel "root growth/penetrometer" .
+
+she:SaturatedUnsaturatedHydraulicConductivity a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "low conductivity is typical for stagnic soil conditions: delayed percolation reduces soil aeration and groundwater accumulation and increases surface run-off (critical values are defined as below 10cm/day)." ;
+    skos:prefLabel "saturated/unsaturated hydraulic conductivity" .
+
+she:ShearStrength a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "shear forces due to wheeling result in smearing: the shear strength is lower for less aggregated soils and decreases with increasing water content. shearing is more pronounced at higher levels of wheel spin, especially when soils are moist." ;
+    skos:prefLabel "shear strength" ;
+    she:hasSoilSensitivity "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" .
+
+she:SpadeDiagnosis a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:prefLabel "spade diagnosis" .
+
+she:ThresholdsForSoilPhysicalParameters a skos:Concept ;
+    skos:narrower she:ParameterSetI,
+        she:ParameterSetII ;
+    skos:prefLabel "thresholds for soil physical parameters for detecting harmful subsoil compaction" .
+
+she:ParameterSetI a skos:Concept ;
+    skos:broader she:ThresholdsForSoilPhysicalParameters ;
+    skos:narrower she:AirCapacityAirFilledPoreVolume,
+        she:BulkDensity,
+        she:VisualSoilEvaluations ;
+    skos:prefLabel "parameter set i" .
+
+she:VisualSoilEvaluations a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:narrower she:AggregateTypeAndEstimatedBulkDensity,
+        she:RootGrowthPenetrometer,
+        she:SpadeDiagnosis ;
+    skos:prefLabel "visual soil evaluations" ;
+    she:hasSoilSensitivity "additional assessment for all soils" .
+
+she:ParameterSetII a skos:Concept ;
+    skos:broader she:ThresholdsForSoilPhysicalParameters ;
+    skos:narrower she:AirPermeabilityAndOxygenDiffusion,
+        she:PrecompressionStress,
+        she:RatioOfPrecompressionStressToActualStressApplied,
+        she:SaturatedUnsaturatedHydraulicConductivity,
+        she:ShearStrength ;
+    skos:prefLabel "parameter set ii" .
+

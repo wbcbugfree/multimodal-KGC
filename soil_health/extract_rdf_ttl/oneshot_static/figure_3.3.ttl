@@ -1,0 +1,108 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:PrincipleOfSoilPStatusAndEnvironmentalRisk a skos:Concept ;
+    skos:narrower she:Approach,
+        she:CropProductionRiskZone,
+        she:EnvironmentalRiskZone,
+        she:OptimumLevelForCropProduction,
+        she:PRecommendation,
+        she:SoilPLevel,
+        she:SoilPStatus,
+        she:Time ;
+    skos:prefLabel "principle of soil p status and environmental risk" .
+
+she:Approach a skos:Concept ;
+    skos:narrower she:BuildingUp,
+        she:Maintenance,
+        she:Mining ;
+    skos:prefLabel "approach" .
+
+she:BuildingUp a skos:Concept ;
+    skos:prefLabel "building up" ;
+    she:hasPRecommendation she:InputGreaterThanOutput,
+        she:InputMuchGreaterThanOutput .
+
+she:CropProductionRiskZone a skos:Concept ;
+    skos:prefLabel "crop production risk zone" ;
+    she:correspondsToSoilPStatus she:Low,
+        she:VeryLow ;
+    she:isBelow she:OptimumLevelForCropProduction .
+
+she:EnvironmentalRiskZone a skos:Concept ;
+    skos:prefLabel "environmental risk zone" ;
+    she:correspondsToSoilPStatus she:High,
+        she:VeryHigh ;
+    she:isAbove she:OptimumLevelForCropProduction .
+
+she:Maintenance a skos:Concept ;
+    skos:prefLabel "maintenance" ;
+    she:hasPRecommendation she:InputEqualsOutput .
+
+she:Mining a skos:Concept ;
+    skos:prefLabel "mining" ;
+    she:hasPRecommendation she:InputLessThanOutput,
+        she:NoFertiliser .
+
+she:PRecommendation a skos:Concept ;
+    skos:narrower she:InputEqualsOutput,
+        she:InputGreaterThanOutput,
+        she:InputLessThanOutput,
+        she:InputMuchGreaterThanOutput,
+        she:NoFertiliser ;
+    skos:prefLabel "p recommendation" .
+
+she:SoilPLevel a skos:Concept ;
+    skos:prefLabel "soil p" ;
+    she:isMeasuredAgainst she:Time .
+
+she:SoilPStatus a skos:Concept ;
+    skos:narrower she:High,
+        she:Low,
+        she:Medium,
+        she:VeryHigh,
+        she:VeryLow ;
+    skos:prefLabel "soil p" .
+
+she:InputEqualsOutput a skos:Concept ;
+    skos:prefLabel "input = output" ;
+    she:resultsInSoilPStatus she:Medium .
+
+she:InputGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input > output" ;
+    she:resultsInSoilPStatus she:Low .
+
+she:InputLessThanOutput a skos:Concept ;
+    skos:prefLabel "input < output" ;
+    she:resultsInSoilPStatus she:High .
+
+she:InputMuchGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input >> output" ;
+    she:resultsInSoilPStatus she:VeryLow .
+
+she:NoFertiliser a skos:Concept ;
+    skos:prefLabel "no fertiliser" ;
+    she:resultsInSoilPStatus she:VeryHigh .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" .
+
+she:High a skos:Concept ;
+    skos:prefLabel "high" .
+
+she:Low a skos:Concept ;
+    skos:prefLabel "low" .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" .
+
+she:OptimumLevelForCropProduction a skos:Concept ;
+    skos:prefLabel "optimum level for crop production" ;
+    she:correspondsToSoilPStatus she:Medium .
+
+she:VeryHigh a skos:Concept ;
+    skos:prefLabel "very high" .
+
+she:VeryLow a skos:Concept ;
+    skos:prefLabel "very low" .
+

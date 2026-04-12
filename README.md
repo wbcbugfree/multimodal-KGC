@@ -67,7 +67,7 @@ Current canonical input counts in this checkout:
   - `vistext/data/json2ttl_converter.py`
   - `vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py`
 - Reusable prompt assets:
-  - `vistext/prompt_text/`
+  - `vistext/prompt_engineering/`
 - Preserved historical outputs:
   - `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/`
   - `vistext/extract_rdf_ttl/vistext_oneshot_static_outputs/`

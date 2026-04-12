@@ -1,0 +1,72 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Figure61 a skos:Concept ;
+    skos:prefLabel "figure 6.1" ;
+    she:describes she:BaselineAndThresholdApproachForSoilBiodiversityMonitoring .
+
+she:Sources a skos:Concept ;
+    skos:prefLabel "sources" ;
+    she:cites "Römbke et al. (2012, 2016)" .
+
+she:BaselineAndThresholdApproachForSoilBiodiversityMonitoring a skos:Concept ;
+    skos:narrower she:ReferenceState,
+        she:TransitionalStages,
+        she:UnacceptableStress ;
+    skos:prefLabel "baseline and threshold approach for soil biodiversity monitoring" ;
+    she:hasXAxis she:StressLevel ;
+    she:hasYAxis she:SoilBiologicalCondition .
+
+she:Damage a skos:Concept ;
+    skos:prefLabel "damage" ;
+    she:isAStateOf she:SoilBiologicalCondition ;
+    she:occursBeyond she:Threshold .
+
+she:Decline a skos:Concept ;
+    skos:prefLabel "decline" ;
+    she:causesDecreaseIn she:SoilBiologicalCondition .
+
+she:DesiredValueRange a skos:Concept ;
+    skos:prefLabel "desired value (range)" .
+
+she:EcosystemSpecific a skos:Concept ;
+    skos:prefLabel "ecosystem-specific" .
+
+she:EmergencyPush a skos:Concept ;
+    skos:prefLabel "emergency push" ;
+    she:causesIncreaseIn she:SoilBiologicalCondition .
+
+she:ReferenceState a skos:Concept ;
+    skos:prefLabel "reference state" ;
+    she:hasValue she:DesiredValueRange ;
+    she:isDescribedAs she:EcosystemSpecific ;
+    she:leadsTo she:TransitionalStages .
+
+she:StressResponse a skos:Concept ;
+    skos:prefLabel "stress response" ;
+    she:isAChangeIn she:SoilBiologicalCondition ;
+    she:isInfluencedBy she:StressLevel .
+
+she:StressLevel a skos:Concept ;
+    skos:prefLabel "stress level" .
+
+she:Threshold a skos:Concept ;
+    skos:prefLabel "threshold" ;
+    she:isAReferencePointFor she:SoilBiologicalCondition ;
+    she:marksBoundaryOf she:UnacceptableStress .
+
+she:TransitionalStages a skos:Concept ;
+    skos:narrower she:Decline,
+        she:EmergencyPush,
+        she:StressResponse ;
+    skos:prefLabel "transitional stages" ;
+    she:leadsTo she:UnacceptableStress .
+
+she:UnacceptableStress a skos:Concept ;
+    skos:narrower she:Damage,
+        she:Threshold ;
+    skos:prefLabel "unacceptable stress" .
+
+she:SoilBiologicalCondition a skos:Concept ;
+    skos:prefLabel "soil biological condition" .
+

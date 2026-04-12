@@ -1,0 +1,81 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table9_3 a skos:Concept ;
+    skos:narrower she:AvailableNationalSoilSealingDataComparedWithCopernicusData2015 ;
+    skos:prefLabel "table 9.3" .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" ;
+    she:hasCountrySize "83,882km²" ;
+    she:hasEEACopernicusSoilSealingArea "1,475km²" ;
+    she:hasEEACopernicusSoilSealingPercentage "1.8%" ;
+    she:hasNationalMethodSoilSealingArea "2,298km²" ;
+    she:hasNationalMethodSoilSealingPercentage "2.7%" .
+
+she:AvailableNationalSoilSealingDataComparedWithCopernicusData2015 a skos:Concept ;
+    skos:narrower she:Country,
+        she:CountrySize,
+        she:SoilSealingData ;
+    skos:prefLabel "available national soil sealing data compared with copernicus data, 2015" .
+
+she:BelgiumFlanders a skos:Concept ;
+    skos:prefLabel "belgium (flanders)" ;
+    she:hasCountrySize "13,625km²" ;
+    she:hasEEACopernicusSoilSealingArea "1,212km²" ;
+    she:hasEEACopernicusSoilSealingPercentage "8.9%" ;
+    she:hasNationalMethodSoilSealingArea "1,935km²" ;
+    she:hasNationalMethodSoilSealingPercentage "14.2%" .
+
+she:Country a skos:Concept ;
+    skos:narrower she:Austria,
+        she:BelgiumFlanders,
+        she:Luxembourg ;
+    skos:prefLabel "country" .
+
+she:CountrySize a skos:Concept ;
+    skos:prefLabel "country size" .
+
+she:EEACopernicusArea a skos:Concept ;
+    skos:prefLabel "eea/copernicus area" .
+
+she:EEACopernicusData a skos:Concept ;
+    skos:narrower she:EEACopernicusArea,
+        she:EEACopernicusPercentage ;
+    skos:prefLabel "eea/copernicus" .
+
+she:EEACopernicusPercentage a skos:Concept ;
+    skos:prefLabel "eea/copernicus percentage" .
+
+she:Luxembourg a skos:Concept ;
+    skos:prefLabel "luxembourg" ;
+    she:hasCountrySize "2,593km²" ;
+    she:hasDataForYear she:Year2018 ;
+    she:hasEEACopernicusSoilSealingArea "49km²" ;
+    she:hasEEACopernicusSoilSealingPercentage "1.9%" ;
+    she:hasNationalMethodSoilSealingArea "176km²" ;
+    she:hasNationalMethodSoilSealingPercentage "6.8%" ;
+    she:hasNoDataForYear she:Year2015 .
+
+she:NationalMethodArea a skos:Concept ;
+    skos:prefLabel "national method area" .
+
+she:NationalMethodData a skos:Concept ;
+    skos:narrower she:NationalMethodArea,
+        she:NationalMethodPercentage ;
+    skos:prefLabel "national method" .
+
+she:NationalMethodPercentage a skos:Concept ;
+    skos:prefLabel "national method percentage" .
+
+she:SoilSealingData a skos:Concept ;
+    skos:narrower she:EEACopernicusData,
+        she:NationalMethodData ;
+    skos:prefLabel "soil sealing (area, %)" .
+
+she:Year2015 a skos:Concept ;
+    skos:prefLabel "year 2015" .
+
+she:Year2018 a skos:Concept ;
+    skos:prefLabel "year 2018" .
+

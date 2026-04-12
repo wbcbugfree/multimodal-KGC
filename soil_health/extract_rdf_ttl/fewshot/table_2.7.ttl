@@ -1,0 +1,85 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SOCClayRatioAsAnIndex a skos:Concept ;
+    skos:narrower she:SOCClayRatio,
+        she:SoilStructure ;
+    skos:prefLabel "soc/clay ratio as an index of good soil structure" .
+
+she:VESS a skos:Concept ;
+    skos:definition "visual evaluation of soil structure; the score ranges from 1 (good structure) to 5 (poor structure)" ;
+    skos:narrower she:VESSGreaterThan3,
+        she:VESSLessThan3 ;
+    skos:prefLabel "vess" .
+
+she:AcceptableOrGoodSoilStructure a skos:Concept ;
+    skos:prefLabel "acceptable or good soil structure" .
+
+she:DegradedSoilStructure a skos:Concept ;
+    skos:prefLabel "degraded soil structure" .
+
+she:FieldLevelOptimumForGoodStructuralQuality a skos:Concept ;
+    skos:prefLabel "field-level optimum for good structural quality" ;
+    she:isAssociatedWith she:SOCEnriched .
+
+she:GoalForFarmersAsMinimumDesiredSOCLevel a skos:Concept ;
+    skos:prefLabel "goal for farmers as minimum desired soc level" .
+
+she:SOCClayRatio a skos:Concept ;
+    skos:narrower she:SOCClayRatio0_1,
+        she:SOCClayRatioGreaterThan0_125,
+        she:SOCClayRatioLessThan0_07 ;
+    skos:prefLabel "soc/clay ratio" .
+
+she:SOCClayRatio0_1 a skos:Concept ;
+    skos:prefLabel "0.1 (1/10) (1/8-1/13)" ;
+    she:hasExplanation she:GoalForFarmersAsMinimumDesiredSOCLevel .
+
+she:SOCClayRatioGreaterThan0_125 a skos:Concept ;
+    skos:prefLabel ">0.125 (1/8)" ;
+    she:hasExplanation she:FieldLevelOptimumForGoodStructuralQuality ;
+    she:indicatesSoilStructure she:SoilStructureGreaterThan1_10 .
+
+she:SOCClayRatioLessThan0_07 a skos:Concept ;
+    skos:prefLabel "<0.07 (1/13)" ;
+    she:hasExplanation she:StructuralSoilQualityLikelyUnacceptable ;
+    she:indicatesSoilStructure she:SoilStructureLessThan1_10 .
+
+she:SOCDepleted a skos:Concept ;
+    skos:definition "soc depleted relative to the clay content" ;
+    skos:prefLabel "soc depleted" ;
+    she:isRelativeTo she:ClayContent .
+
+she:SOCEnriched a skos:Concept ;
+    skos:definition "soc enriched relative to the clay content" ;
+    skos:prefLabel "soc enriched" ;
+    she:isRelativeTo she:ClayContent .
+
+she:SoilStructure a skos:Concept ;
+    skos:narrower she:SoilStructureGreaterThan1_10,
+        she:SoilStructureLessThan1_10 ;
+    skos:prefLabel "soil structure" .
+
+she:StructuralSoilQualityLikelyUnacceptable a skos:Concept ;
+    skos:prefLabel "structural soil quality is likely to be unacceptable" ;
+    she:isAssociatedWith she:SOCDepleted .
+
+she:ClayContent a skos:Concept ;
+    skos:prefLabel "clay content" .
+
+she:SoilStructureGreaterThan1_10 a skos:Concept ;
+    skos:prefLabel ">1/10 (vess <3)" ;
+    she:hasExplanation she:AcceptableOrGoodSoilStructure ;
+    she:hasVESSScore she:VESSLessThan3 .
+
+she:SoilStructureLessThan1_10 a skos:Concept ;
+    skos:prefLabel "<1/10 (vess >3)" ;
+    she:hasExplanation she:DegradedSoilStructure ;
+    she:hasVESSScore she:VESSGreaterThan3 .
+
+she:VESSGreaterThan3 a skos:Concept ;
+    skos:prefLabel "vess >3" .
+
+she:VESSLessThan3 a skos:Concept ;
+    skos:prefLabel "vess <3" .
+

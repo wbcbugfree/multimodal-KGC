@@ -1,0 +1,120 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AffectedSoilServices a skos:Concept ;
+    skos:narrower she:CarbonStorage,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesEtc,
+        she:StorageOfGeologicalMaterial,
+        she:SubstanceFiltering,
+        she:SupportForBuildingsOrTransportNetwork,
+        she:WaterStorage,
+        she:WoodAndFibreProduction ;
+    skos:prefLabel "affected soil services" .
+
+she:ImpactOfThreats a skos:Concept ;
+    skos:narrower she:AccumulationOfContaminantsAndNutrientsInSoil,
+        she:Acidification,
+        she:DeclineInSoilOrganicMatterAndOrCarbon,
+        she:Landslides,
+        she:ReducedHumusFormationAndReducedMetabolismOfContaminants,
+        she:Salinisation,
+        she:Sealing,
+        she:SoilErosion,
+        she:SubsoilCompaction ;
+    skos:prefLabel "impact of threats" .
+
+she:SoilDegradationType a skos:Concept ;
+    skos:narrower she:SoilBiologicalDegradation,
+        she:SoilChemicalDegradation,
+        she:SoilPhysicalDegradation ;
+    skos:prefLabel "soil degradation type" .
+
+she:SoilBiologicalDegradation a skos:Concept ;
+    skos:prefLabel "soil biological degradation" ;
+    she:affectsService she:CarbonStorage,
+        she:HabitatForPlantsInsectsMicrobesEtc,
+        she:SubstanceFiltering,
+        she:WaterStorage ;
+    she:hasImpact she:AccumulationOfContaminantsAndNutrientsInSoil,
+        she:DeclineInSoilOrganicMatterAndOrCarbon,
+        she:ReducedHumusFormationAndReducedMetabolismOfContaminants .
+
+she:SoilChemicalDegradation a skos:Concept ;
+    skos:prefLabel "soil chemical degradation" ;
+    she:affectsService she:CarbonStorage,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesEtc,
+        she:SubstanceFiltering,
+        she:WaterStorage,
+        she:WoodAndFibreProduction ;
+    she:hasImpact she:AccumulationOfContaminantsAndNutrientsInSoil,
+        she:Acidification,
+        she:Salinisation .
+
+she:SoilPhysicalDegradation a skos:Concept ;
+    skos:prefLabel "soil physical degradation" ;
+    she:affectsService she:CarbonStorage,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesEtc,
+        she:StorageOfGeologicalMaterial,
+        she:SubstanceFiltering,
+        she:SupportForBuildingsOrTransportNetwork,
+        she:WaterStorage,
+        she:WoodAndFibreProduction ;
+    she:hasImpact she:Landslides,
+        she:Sealing,
+        she:SoilErosion,
+        she:SubsoilCompaction .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification" .
+
+she:DeclineInSoilOrganicMatterAndOrCarbon a skos:Concept ;
+    skos:prefLabel "decline in soil organic matter and/or carbon" .
+
+she:Landslides a skos:Concept ;
+    skos:prefLabel "landslides" .
+
+she:ReducedHumusFormationAndReducedMetabolismOfContaminants a skos:Concept ;
+    skos:prefLabel "reduced humus formation and reduced metabolism of contaminants" .
+
+she:Salinisation a skos:Concept ;
+    skos:prefLabel "salinisation" .
+
+she:Sealing a skos:Concept ;
+    skos:prefLabel "sealing" .
+
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" .
+
+she:SubsoilCompaction a skos:Concept ;
+    skos:prefLabel "subsoil compaction" .
+
+she:SupportForBuildingsOrTransportNetwork a skos:Concept ;
+    skos:prefLabel "support for buildings or transport network" .
+
+she:AccumulationOfContaminantsAndNutrientsInSoil a skos:Concept ;
+    skos:prefLabel "accumulation of contaminants and nutrients in soil" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" .
+
+she:HabitatForPlantsInsectsMicrobesEtc a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, etc." .
+
+she:SubstanceFiltering a skos:Concept ;
+    skos:prefLabel "substance filtering" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+

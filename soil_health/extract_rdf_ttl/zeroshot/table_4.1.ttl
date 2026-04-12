@@ -1,0 +1,89 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Biodiversity a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biodiversity" ;
+    she:hasService she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Biomass a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biomass" ;
+    she:hasService she:GrowthOfCrops,
+        she:WoodAndFibreProduction .
+
+she:Climate a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "climate" ;
+    she:hasService she:CarbonStorage .
+
+she:Infrastructure a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "infrastructure" ;
+    she:hasService she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:Water a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "water" ;
+    she:hasService she:FilteringOfContaminants,
+        she:WaterStorage .
+
+she:CarbonStorage a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "carbon storage" ;
+    she:hasImpactOfSoilAcidification "+/-" .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "filtering of contaminants" ;
+    she:hasImpactOfSoilAcidification "-" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "growth of crops" ;
+    she:hasImpactOfSoilAcidification "-" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    she:hasImpactOfSoilAcidification "-" .
+
+she:Impact a skos:Concept ;
+    skos:broader she:Table41RelationshipOfSoilAcidificationToKeySocietalNeedsAndSoilFunctions ;
+    skos:prefLabel "impact" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpactOfSoilAcidification "Indifferent" .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "storage of geological material" ;
+    she:hasImpactOfSoilAcidification "Indifferent" .
+
+she:WaterStorage a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "water storage" ;
+    she:hasImpactOfSoilAcidification "-" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "wood and fibre production" ;
+    she:hasImpactOfSoilAcidification "-" .
+
+she:Table41RelationshipOfSoilAcidificationToKeySocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:narrower she:Impact,
+        she:SocietalNeed,
+        she:SoilService ;
+    skos:prefLabel "table 4.1 relationship of soil acidification to key societal needs and soil functions" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:broader she:Table41RelationshipOfSoilAcidificationToKeySocietalNeedsAndSoilFunctions ;
+    skos:prefLabel "societal need" .
+
+she:SoilService a skos:Concept ;
+    skos:broader she:Table41RelationshipOfSoilAcidificationToKeySocietalNeedsAndSoilFunctions ;
+    skos:prefLabel "soil service" .
+

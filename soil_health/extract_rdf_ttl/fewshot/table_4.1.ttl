@@ -1,0 +1,98 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Impact a skos:Concept ;
+    skos:narrower she:IndifferentImpact,
+        she:MixedImpact,
+        she:NegativeImpact ;
+    skos:prefLabel "impact" .
+
+she:RelationshipOfSoilAcidificationToSocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:prefLabel "relationship of soil acidification to key societal needs and soil functions" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:narrower she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Infrastructure,
+        she:Water ;
+    skos:prefLabel "societal need" .
+
+she:SoilAcidification a skos:Concept ;
+    skos:prefLabel "soil acidification" .
+
+she:SoilService a skos:Concept ;
+    skos:narrower she:CarbonStorage,
+        she:FilteringOfContaminants,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesFungi,
+        she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial,
+        she:WaterStorage,
+        she:WoodAndFibreProduction ;
+    skos:prefLabel "soil service" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    she:addressesSocietalNeed she:Climate ;
+    she:hasImpactDueToAcidification she:MixedImpact .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" ;
+    she:addressesSocietalNeed she:Water ;
+    she:hasImpactDueToAcidification she:NegativeImpact .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" ;
+    she:addressesSocietalNeed she:Biomass ;
+    she:hasImpactDueToAcidification she:NegativeImpact .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    she:addressesSocietalNeed she:Biodiversity ;
+    she:hasImpactDueToAcidification she:NegativeImpact .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:addressesSocietalNeed she:Infrastructure ;
+    she:hasImpactDueToAcidification she:IndifferentImpact .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" ;
+    she:addressesSocietalNeed she:Infrastructure ;
+    she:hasImpactDueToAcidification she:IndifferentImpact .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" ;
+    she:addressesSocietalNeed she:Water ;
+    she:hasImpactDueToAcidification she:NegativeImpact .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" ;
+    she:addressesSocietalNeed she:Biomass ;
+    she:hasImpactDueToAcidification she:NegativeImpact .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" .
+
+she:MixedImpact a skos:Concept ;
+    skos:prefLabel "+/-" .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" .
+
+she:IndifferentImpact a skos:Concept ;
+    skos:prefLabel "indifferent" .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" .
+
+she:NegativeImpact a skos:Concept ;
+    skos:prefLabel "-" .
+

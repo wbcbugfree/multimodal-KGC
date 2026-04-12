@@ -1,0 +1,50 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:NRetentionNLeachingRiskCNRatioTable a skos:Concept ;
+    skos:narrower she:CNRatioInOrganicLayers,
+        she:Indication ;
+    skos:prefLabel "n retention and related n leaching risk versus c/n ratio in the organic layer of forest soils" .
+
+she:CNRatioInOrganicLayers a skos:Concept ;
+    skos:narrower she:CNRatio20To25,
+        she:CNRatio25To30,
+        she:CNRatioGreaterThan30,
+        she:CNRatioLessThan20 ;
+    skos:prefLabel "c/n ratio in organic layers" .
+
+she:HighNRetentionLowNLeachingPotential a skos:Concept ;
+    skos:prefLabel "high n retention and thus low n leaching potential" ;
+    she:hasAssociatedCNRatioRange she:CNRatioGreaterThan30 .
+
+she:Indication a skos:Concept ;
+    skos:narrower she:HighNRetentionLowNLeachingPotential,
+        she:LowNRetentionHighNLeachingPotential,
+        she:LowToModerateNRetentionModerateToHighNLeachingPotential,
+        she:ModerateToHighNRetentionLowToModerateNLeachingPotential ;
+    skos:prefLabel "indication" .
+
+she:LowNRetentionHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low n retention and thus high n leaching potential" ;
+    she:hasAssociatedCNRatioRange she:CNRatioLessThan20 .
+
+she:LowToModerateNRetentionModerateToHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low to moderate n retention and thus moderate to high n leaching potential" ;
+    she:hasAssociatedCNRatioRange she:CNRatio20To25 .
+
+she:ModerateToHighNRetentionLowToModerateNLeachingPotential a skos:Concept ;
+    skos:prefLabel "moderate to high n retention and thus low to moderate n leaching potential" ;
+    she:hasAssociatedCNRatioRange she:CNRatio25To30 .
+
+she:CNRatio20To25 a skos:Concept ;
+    skos:prefLabel "20-25" .
+
+she:CNRatio25To30 a skos:Concept ;
+    skos:prefLabel "25-30" .
+
+she:CNRatioGreaterThan30 a skos:Concept ;
+    skos:prefLabel ">30" .
+
+she:CNRatioLessThan20 a skos:Concept ;
+    skos:prefLabel "<20" .
+

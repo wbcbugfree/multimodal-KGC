@@ -1,0 +1,78 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DesignForTwoStageErosionMonitoringInEurope a skos:Concept ;
+    skos:narrower she:Level1,
+        she:Level2 ;
+    skos:prefLabel "design for two-stage erosion monitoring in europe" .
+
+she:CreateGroundTruthDataOnSoilErosionByWaterUsingStandardisedFieldMappingMethods a skos:Concept ;
+    skos:prefLabel "create ground-truth data on soil erosion by water using standardised field mapping methods" .
+
+she:DevelopDynamicProcessBasedModelsSimulatingTheFieldToFarmScaleErosionProcesses a skos:Concept ;
+    skos:prefLabel "develop dynamic process-based models simulating the field- to farm-scale erosion processes" .
+
+she:EstimatedImpactOfManagementOnSoilErosionCAndPFactorOfRusle2015 a skos:Concept ;
+    skos:prefLabel "estimated impact of management on soil erosion (c- and p-factor of rusle2015)" .
+
+she:EstimatedSoilLossRateByWaterErosionOnArableLandTHaYear a skos:Concept ;
+    skos:prefLabel "estimated soil loss rate by water erosion on arable land (t/ha/year)" .
+
+she:FocusedOnSoilErosionHotSpotsIdentifiedInLevel1 a skos:Concept ;
+    skos:prefLabel "(focused on soil erosion hot spots identified in level 1)" .
+
+she:FrequencyOfSoilErosionByWater a skos:Concept ;
+    skos:prefLabel "frequency of soil erosion by water" .
+
+she:IdentificationOfSoilErosionHotSpotsRelevantToBeMonitoredLevel2 a skos:Concept ;
+    skos:prefLabel "identification of soil erosion hot spots relevant to be monitored (level 2)" .
+
+she:LargeScaleModelling a skos:Concept ;
+    skos:prefLabel "large-scale modelling" .
+
+she:Level1 a skos:Concept ;
+    skos:prefLabel "level 1" ;
+    she:hasAim she:IdentificationOfSoilErosionHotSpotsRelevantToBeMonitoredLevel2,
+        she:PanEuropeanInformationOnSoilLossRatesByWaterErosionUsingAHarmonisedMethodology ;
+    she:hasMethod she:Rusle2015 ;
+    she:hasMonitoringLevelDescription she:LargeScaleModelling ;
+    she:hasResult she:EstimatedImpactOfManagementOnSoilErosionCAndPFactorOfRusle2015,
+        she:EstimatedSoilLossRateByWaterErosionOnArableLandTHaYear .
+
+she:Level2 a skos:Concept ;
+    skos:prefLabel "level 2" ;
+    she:hasAim she:CreateGroundTruthDataOnSoilErosionByWaterUsingStandardisedFieldMappingMethods,
+        she:DevelopDynamicProcessBasedModelsSimulatingTheFieldToFarmScaleErosionProcesses ;
+    she:hasMethod she:MonitoringTheAppearanceOfSoilErosion,
+        she:StandardisedVisualClassificationOfTheSeverityOfEachSoilErosionEvent,
+        she:StandardisedVolumetricMeasurementOfRillErosion ;
+    she:hasMonitoringLevelDescription she:MonitoringAtFieldToLandscapeScale ;
+    she:hasResult she:FrequencyOfSoilErosionByWater,
+        she:SeverityOfSoilErosion,
+        she:SoilLossRateByRillErosion .
+
+she:MonitoringAtFieldToLandscapeScale a skos:Concept ;
+    skos:narrower she:FocusedOnSoilErosionHotSpotsIdentifiedInLevel1 ;
+    skos:prefLabel "monitoring at field to landscape scale" .
+
+she:MonitoringTheAppearanceOfSoilErosion a skos:Concept ;
+    skos:prefLabel "monitoring the appearance of soil erosion" .
+
+she:PanEuropeanInformationOnSoilLossRatesByWaterErosionUsingAHarmonisedMethodology a skos:Concept ;
+    skos:prefLabel "pan-european information on soil loss rates by water erosion using a harmonised methodology;" .
+
+she:Rusle2015 a skos:Concept ;
+    skos:prefLabel "rusle2015" .
+
+she:SeverityOfSoilErosion a skos:Concept ;
+    skos:prefLabel "severity of soil erosion" .
+
+she:SoilLossRateByRillErosion a skos:Concept ;
+    skos:prefLabel "soil loss rate by rill erosion" .
+
+she:StandardisedVisualClassificationOfTheSeverityOfEachSoilErosionEvent a skos:Concept ;
+    skos:prefLabel "standardised visual classification of the severity of each soil erosion event" .
+
+she:StandardisedVolumetricMeasurementOfRillErosion a skos:Concept ;
+    skos:prefLabel "standardised volumetric measurement of rill erosion" .
+

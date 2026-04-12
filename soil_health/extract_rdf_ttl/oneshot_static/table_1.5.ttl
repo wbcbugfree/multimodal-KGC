@@ -1,0 +1,261 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ProposedMaesSoilIndicators a skos:Concept ;
+    skos:narrower she:EcoSystemType,
+        she:SoilBiodiversity,
+        she:SoilEcosystem,
+        she:SoilPressures,
+        she:SoilState ;
+    skos:prefLabel "proposed maes soil indicators" .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification (kmol h⁺ ha⁻¹)" ;
+    she:appliesToEcosystemType she:HeathlandAndShrub,
+        she:WoodlandAndForest .
+
+she:AvailableWaterCapacity a skos:Concept ;
+    skos:prefLabel "available water capacity" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:BulkDensity a skos:Concept ;
+    skos:prefLabel "bulk density" ;
+    she:appliesToEcosystemType she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:ClimateChange a skos:Concept ;
+    skos:prefLabel "climate change" ;
+    she:appliesToEcosystemType she:SparselyVegetatedLand,
+        she:Wetland .
+
+she:Compaction a skos:Concept ;
+    skos:prefLabel "compaction (kg/m³)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:EarthwormsDiversityAbundance a skos:Concept ;
+    skos:prefLabel "earthworms diversity/ abundance" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:EcoSystemType a skos:Concept ;
+    skos:prefLabel "eco-system type" .
+
+she:GrossNutrientBalance a skos:Concept ;
+    skos:prefLabel "gross nutrient balance" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:Imperviousness a skos:Concept ;
+    skos:prefLabel "imperviousness (%)" ;
+    she:appliesToEcosystemType she:Urban .
+
+she:IntensiveManagement a skos:Concept ;
+    skos:prefLabel "intensive management (e.h. tillage)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:LandUseChange a skos:Concept ;
+    skos:prefLabel "land use change (i.e. land use intensification)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Urban,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:Landslides a skos:Concept ;
+    skos:prefLabel "landslides (number)" ;
+    she:appliesToEcosystemType she:HeathlandAndShrub,
+        she:WoodlandAndForest .
+
+she:LossOfOrganicMatter a skos:Concept ;
+    skos:prefLabel "loss of organic matter (%per year)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:MicrobialBiodiversity a skos:Concept ;
+    skos:prefLabel "microbial biodiversity. (fungi and bacteria)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:Salinity a skos:Concept ;
+    skos:prefLabel "salinity" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilBiodiversity a skos:Concept ;
+    skos:narrower she:EarthwormsDiversityAbundance,
+        she:MicrobialBiodiversity,
+        she:SoilBiodiversityPotential,
+        she:SoilPHAndCarbon ;
+    skos:prefLabel "soil biodiversity" .
+
+she:SoilBiodiversityPotential a skos:Concept ;
+    skos:prefLabel "soil biodiversity potential" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilCarbonStock a skos:Concept ;
+    skos:prefLabel "soil carbon stock (%)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilContamination a skos:Concept ;
+    skos:prefLabel "soil contamination (from point or diffuse sources, nutrient deposition)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Urban,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilEcosystem a skos:Concept ;
+    skos:narrower she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Urban,
+        she:Wetland,
+        she:WoodlandAndForest ;
+    skos:prefLabel "soil ecosystem" .
+
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion (kg/ha/year)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Urban,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilErosionSusceptibility a skos:Concept ;
+    skos:prefLabel "soil erosion susceptibility" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:SoilMoisture a skos:Concept ;
+    skos:prefLabel "soil moisture" ;
+    she:appliesToEcosystemType she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilNutrientAvailability a skos:Concept ;
+    skos:prefLabel "soil nutrient availability" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilPHAndCarbon a skos:Concept ;
+    skos:prefLabel "soil ph and carbon" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilPressures a skos:Concept ;
+    skos:narrower she:Acidification,
+        she:ClimateChange,
+        she:Compaction,
+        she:GrossNutrientBalance,
+        she:Imperviousness,
+        she:IntensiveManagement,
+        she:LandUseChange,
+        she:Landslides,
+        she:LossOfOrganicMatter,
+        she:Salinity,
+        she:SoilContamination,
+        she:SoilErosion,
+        she:SoilSealing ;
+    skos:prefLabel "soil pressures" .
+
+she:SoilProductivity a skos:Concept ;
+    skos:prefLabel "soil productivity" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing (% area)" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Urban,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:SoilState a skos:Concept ;
+    skos:narrower she:AvailableWaterCapacity,
+        she:BulkDensity,
+        she:SoilCarbonStock,
+        she:SoilErosionSusceptibility,
+        she:SoilMoisture,
+        she:SoilNutrientAvailability,
+        she:SoilProductivity,
+        she:VegetationCoverage ;
+    skos:prefLabel "soil state" .
+
+she:VegetationCoverage a skos:Concept ;
+    skos:prefLabel "vegetation coverage" ;
+    she:appliesToEcosystemType she:Cropland,
+        she:Grassland,
+        she:HeathlandAndShrub,
+        she:SparselyVegetatedLand,
+        she:Wetland,
+        she:WoodlandAndForest .
+
+she:Urban a skos:Concept ;
+    skos:prefLabel "urban" .
+
+she:SparselyVegetatedLand a skos:Concept ;
+    skos:prefLabel "sparsely vegetated land" .
+
+she:Wetland a skos:Concept ;
+    skos:prefLabel "wetland" .
+
+she:HeathlandAndShrub a skos:Concept ;
+    skos:prefLabel "heathland and shrub" .
+
+she:WoodlandAndForest a skos:Concept ;
+    skos:prefLabel "woodland and forest" .
+
+she:Grassland a skos:Concept ;
+    skos:prefLabel "grassland" .
+
+she:Cropland a skos:Concept ;
+    skos:prefLabel "cropland" .
+

@@ -1,0 +1,32 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CNRatioInOrganicLayers a skos:Concept ;
+    skos:prefLabel "c/n ratio in organic layers" .
+
+she:Indication a skos:Concept ;
+    skos:prefLabel "indication" .
+
+she:Table32NRetentionAndRelatedNLeachingRiskVersusCNRatioInTheOrganicLayerOfForestSoils a skos:Concept ;
+    skos:narrower she:HighNRetentionAndThusLowNLeachingPotential,
+        she:LowNRetentionAndThusHighNLeachingPotential,
+        she:LowToModerateNRetentionAndThusModerateToHighNLeachingPotential,
+        she:ModerateToHighNRetentionAndThusLowToModerateNLeachingPotential ;
+    skos:prefLabel "table 3.2 n retention and related n leaching risk versus c/n ratio in the organic layer of forest soils" .
+
+she:HighNRetentionAndThusLowNLeachingPotential a skos:Concept ;
+    skos:prefLabel "high n retention and thus low n leaching potential" ;
+    she:hasCNRatioInOrganicLayers ">30" .
+
+she:LowNRetentionAndThusHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low n retention and thus high n leaching potential" ;
+    she:hasCNRatioInOrganicLayers "<20" .
+
+she:LowToModerateNRetentionAndThusModerateToHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low to moderate n retention and thus moderate to high n leaching potential" ;
+    she:hasCNRatioInOrganicLayers "20-25" .
+
+she:ModerateToHighNRetentionAndThusLowToModerateNLeachingPotential a skos:Concept ;
+    skos:prefLabel "moderate to high n retention and thus low to moderate n leaching potential" ;
+    she:hasCNRatioInOrganicLayers "25-30" .
+

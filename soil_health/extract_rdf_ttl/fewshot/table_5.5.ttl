@@ -1,0 +1,171 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AEI a skos:Concept ;
+    skos:definition "agri-environmental indicator" ;
+    skos:prefLabel "aei" .
+
+she:CAPRI a skos:Concept ;
+    skos:definition "common agricultural policy regional impact model" ;
+    skos:prefLabel "capri" .
+
+she:CurrentSetOfIndicatorsOnDiffuseAndPointSourcePollution a skos:Concept ;
+    skos:narrower she:ImpactIndicators,
+        she:PressureIndicators,
+        she:StateIndicators ;
+    skos:prefLabel "current set of indicators on diffuse and point source pollution" .
+
+she:DPSIR a skos:Concept ;
+    skos:definition "drivers, pressures, state, impact and response model" ;
+    skos:prefLabel "dpsir" .
+
+she:ETCHE a skos:Concept ;
+    skos:definition "european topic centre on human health and the environment" ;
+    skos:prefLabel "etc/he" .
+
+she:AmountOfMineralFertilisers a skos:Concept ;
+    skos:prefLabel "amount of mineral fertilisers (sub-indicators distinguish different qualities/product type)" ;
+    she:coveredInReportOrElsewhere "aei: mineral fertiliser consumption" .
+
+she:AmountOfOrganicFertilisers a skos:Concept ;
+    skos:prefLabel "amount of organic fertilisers (sub-indicators: sludges, compost, digestates, manure; if available, distinguish different qualities by chemical composition)" ;
+    she:coveredInReportOrElsewhere "capri database",
+        "de vries et al. (2022)" .
+
+she:AreaUnderOrganicFarming a skos:Concept ;
+    skos:prefLabel "area under organic farming" ;
+    she:coveredInReportOrElsewhere "aei: organic farming statistics" .
+
+she:ConcentrationOfPersistentOrganicPollutants a skos:Concept ;
+    skos:prefLabel "concentration of persistent organic pollutants" ;
+    she:coveredInReportOrElsewhere "principles of chapter 5 apply" .
+
+she:ConcentrationOfSelectedPesticides a skos:Concept ;
+    skos:prefLabel "concentration of selected pesticides" ;
+    she:coveredInReportOrElsewhere "chapter 5 and ongoing research" .
+
+she:CriticalLoadExceedanceByHeavyMetals a skos:Concept ;
+    skos:prefLabel "critical load exceedance by heavy metals" ;
+    she:coveredInReportOrElsewhere "not covered here" .
+
+she:CriticalLoadExceedancesBySulphurAndNitrogen a skos:Concept ;
+    skos:prefLabel "critical load exceedances by sulphur and nitrogen" ;
+    she:coveredInReportOrElsewhere "critical n limits (chapter 3)" ;
+    she:hasReference she:PayaPerezAndRodriguezEugenio2018 .
+
+she:Ecosystems a skos:Concept ;
+    skos:narrower she:ImpactOfSoilPollutionOnEcosystems ;
+    skos:prefLabel "ecosystems" .
+
+she:EmergingSubstances a skos:Concept ;
+    skos:narrower she:PresenceAmountOfAntimicrobialsAndPlasticsInTheTopsoil ;
+    skos:prefLabel "emerging substances" .
+
+she:GrossNutrientBalance a skos:Concept ;
+    skos:prefLabel "gross nutrient balance" ;
+    she:coveredInReportOrElsewhere "critical n and p limits (chapter 3)" ;
+    she:hasReference she:PayaPerezAndRodriguezEugenio2018 .
+
+she:HeavyMetalContentsInExcessOfThresholds a skos:Concept ;
+    skos:prefLabel "heavy metal contents in excess of thresholds" ;
+    she:coveredInReportOrElsewhere "chapter 5 (here)" .
+
+she:HumanHealth a skos:Concept ;
+    skos:narrower she:ImpactOfSoilPollutionOnHumanHealth ;
+    skos:prefLabel "human health" .
+
+she:ImpactIndicators a skos:Concept ;
+    skos:narrower she:Ecosystems,
+        she:HumanHealth ;
+    skos:prefLabel "impact indicators" .
+
+she:ImpactOfSoilPollutionOnEcosystems a skos:Concept ;
+    skos:prefLabel "impact of soil pollution on ecosystems (above- and below-ground biodiversity and ecological processes) and on surface water, wildlife and crops)" ;
+    she:coveredInReportOrElsewhere "ongoing eionet projects (etc/he)" .
+
+she:ImpactOfSoilPollutionOnHumanHealth a skos:Concept ;
+    skos:prefLabel "impact of soil pollution on human health" .
+
+she:InorganicPollutants a skos:Concept ;
+    skos:narrower she:CriticalLoadExceedanceByHeavyMetals,
+        she:HeavyMetalContentsInExcessOfThresholds ;
+    skos:prefLabel "inorganic pollutants" ;
+    she:hasNote "indicator fully discussed in this chapter" .
+
+she:LocationOfInstallations a skos:Concept ;
+    skos:prefLabel "location of installations (industrial facilities, mining, landfills)" ;
+    she:coveredInReportOrElsewhere "corine land cover" .
+
+she:NewSettlementAreaEstablishedOnPreviouslyDevelopedLand a skos:Concept ;
+    skos:prefLabel "new settlement area (urban fabric) established on previously developed land" ;
+    she:coveredInReportOrElsewhere "corine land cover" .
+
+she:NonSoilIndicatorsRelatedToLandUseIntensityAndPollutantInputs a skos:Concept ;
+    skos:narrower she:AmountOfMineralFertilisers,
+        she:AmountOfOrganicFertilisers,
+        she:AreaUnderOrganicFarming,
+        she:LocationOfInstallations,
+        she:NewSettlementAreaEstablishedOnPreviouslyDevelopedLand,
+        she:PesticideApplications,
+        she:RecycledLandArea,
+        she:ToBeDefinedInputsOfPlasticsAndAntimicrobials ;
+    skos:prefLabel "non-soil indicators related to land use intensity and pollutant inputs" .
+
+she:Nutrients a skos:Concept ;
+    skos:narrower she:GrossNutrientBalance ;
+    skos:prefLabel "nutrients" .
+
+she:PersistentOrganicPollutants a skos:Concept ;
+    skos:narrower she:ConcentrationOfPersistentOrganicPollutants,
+        she:ConcentrationOfSelectedPesticides ;
+    skos:prefLabel "persistent organic pollutants" .
+
+she:PesticideApplications a skos:Concept ;
+    skos:prefLabel "pesticide applications (sub-indicators specify different groups/substances/compounds)" ;
+    she:coveredInReportOrElsewhere "aei: consumption of pesticide; trends in use and risk of pesticide" .
+
+she:PollutionByPointSources a skos:Concept ;
+    skos:narrower she:ProgressInManagementOfContaminatedSites ;
+    skos:prefLabel "pollution by point sources" .
+
+she:PresenceAmountOfAntimicrobialsAndPlasticsInTheTopsoil a skos:Concept ;
+    skos:prefLabel "presence/amount of antimicrobials and plastics in the topsoil" ;
+    she:coveredInReportOrElsewhere "research ongoing" .
+
+she:PressureIndicators a skos:Concept ;
+    skos:narrower she:NonSoilIndicatorsRelatedToLandUseIntensityAndPollutantInputs,
+        she:PollutionByPointSources ;
+    skos:prefLabel "pressure indicators" .
+
+she:ProgressInManagementOfContaminatedSites a skos:Concept ;
+    skos:definition "future refinements of this indicator may include other sub-indicators: polluting activity, (group of) polluting substance, spatial reference (nuts 3 and/or functional urban area) of the copernicus urban atlas" ;
+    skos:prefLabel "progress in management of contaminated sites (sub-indicators specify six site statuses)" ;
+    she:coveredInReportOrElsewhere "eionet land and soil indicator set" .
+
+she:RecycledLandArea a skos:Concept ;
+    skos:prefLabel "recycled land area" ;
+    she:coveredInReportOrElsewhere "copernicus land monitoring service" .
+
+she:SoilAcidifyingSubstances a skos:Concept ;
+    skos:narrower she:CriticalLoadExceedancesBySulphurAndNitrogen,
+        she:TopsoilPH ;
+    skos:prefLabel "soil acidifying substances" .
+
+she:StateIndicators a skos:Concept ;
+    skos:narrower she:EmergingSubstances,
+        she:InorganicPollutants,
+        she:Nutrients,
+        she:PersistentOrganicPollutants,
+        she:SoilAcidifyingSubstances ;
+    skos:prefLabel "state indicators" .
+
+she:ToBeDefinedInputsOfPlasticsAndAntimicrobials a skos:Concept ;
+    skos:prefLabel "to be defined: inputs of plastics and antimicrobials" .
+
+she:TopsoilPH a skos:Concept ;
+    skos:prefLabel "topsoil ph" ;
+    she:coveredInReportOrElsewhere "chapter 4" .
+
+she:PayaPerezAndRodriguezEugenio2018 a skos:Concept ;
+    skos:prefLabel "payá pérez and rodriguez eugenio (2018)" .
+

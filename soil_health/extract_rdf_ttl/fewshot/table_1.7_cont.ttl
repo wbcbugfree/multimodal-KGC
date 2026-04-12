@@ -1,0 +1,74 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Notes a skos:Concept ;
+    skos:narrower she:NoteA,
+        she:NoteB ;
+    skos:prefLabel "notes" .
+
+she:Table1_7 a skos:Concept ;
+    skos:prefLabel "table 1.7" ;
+    she:hasColumn she:PolicyDocument,
+        she:RelevantPolicyObjectivesOrTargets ;
+    she:hasTitle she:SoilRelatedPolicyObjectivesAndTargets .
+
+she:AchieveProgressInManagementOfContaminatedSites a skos:Concept ;
+    skos:prefLabel "to achieve progress in the management of contaminated sites" .
+
+she:AllEUSoilEcosystemsHealthyAndResilientBy2050 a skos:Concept ;
+    skos:prefLabel "by 2050, all eu soil ecosystems are in healthy condition and are thus more resilient" .
+
+she:BetterMonitorReportPreventAndRemedyPollution a skos:Concept ;
+    skos:prefLabel "to better monitor, report, prevent and remedy pollution from air, water, soil and consumer products to levels that are no longer harmful to human health and the environment" .
+
+she:CombatDesertificationAndAchieveNoNetLandTake a skos:Concept ;
+    skos:prefLabel "to combat desertification and to achieve no net land take, to restore degraded ecosystems including soils," .
+
+she:ContributeToLandBasedClimateNeutralityAndReduceSoilPollutionImpact a skos:Concept ;
+    skos:prefLabel "to contribute to (1) land-based climate neutrality by 2035, and (2) reducing the impact of soil pollution (on ecosystems, waters, human health)" .
+
+she:FacilitateRemediationOfSoilPollution a skos:Concept ;
+    skos:prefLabel "to facilitate remediation of soil pollution via (1) a monitoring framework on the state of pollution and (2) an outlook report, including a specific assessment of the evolution of human health and environmental impacts" .
+
+she:NoteA a skos:Concept ;
+    skos:definition "ecosystem monitoring under article 9 and annex v of the nec directive. the extent of the impacts of air pollution on ecosystems in the eu is based on the exceedance of critical loads and levels for sulphur, nitrogen and ozone. the definition of thresholds is largely based on the working group on effects under the gothenburg protocol to the convention on long-range transboundary air pollution, including international cooperative programmes on forests, vegetation and integrated monitoring." ;
+    skos:prefLabel "note (a)" ;
+    she:isRelevantTo she:ZeroPollutionActionPlanForAirSoilAndWater .
+
+she:NoteB a skos:Concept ;
+    skos:definition "including (1) 'a clean planet for all' (ec, 2018), followed by the long-term low greenhouse gas emission development strategy (ec, 2020k), (2) the circular economy action plan for a clean and competitive europe (ec, 2020l), and (3) new strategies under the european green deal (biodiversity strategy 2030, farm to fork strategy, zero pollution action plan)." ;
+    skos:prefLabel "note (b)" ;
+    she:providesContextFor she:EUSoilStrategy2030,
+        she:ZeroPollutionActionPlanForAirSoilAndWater .
+
+she:PolicyDocument a skos:Concept ;
+    skos:narrower she:EUSoilStrategy2030,
+        she:ZeroPollutionActionPlanForAirSoilAndWater ;
+    skos:prefLabel "policy document" .
+
+she:ProposeNewLegislationCoveringSignificantPollutionSources a skos:Concept ;
+    skos:prefLabel "to propose new legislation covering significant pollution sources, which are not yet addressed by other policies, strategies and protocols" .
+
+she:RelevantPolicyObjectivesOrTargets a skos:Concept ;
+    skos:prefLabel "relevant policy objectives or targets" .
+
+she:SoilRelatedPolicyObjectivesAndTargets a skos:Concept ;
+    skos:prefLabel "soil-related policy objectives and targets at eu and global levels (binding and incentive-based non-binding policies and measures) (cont.)" .
+
+she:ZeroPollutionAmbitionForAToxinFreeEnvironment a skos:Concept ;
+    skos:prefLabel "a zero pollution ambition for a toxin-free environment, including for air, water and soil" .
+
+she:EUSoilStrategy2030 a skos:Concept ;
+    skos:prefLabel "eu soil strategy 2030 (ec, 2021e)" ;
+    she:hasObjectiveOrTarget she:AchieveProgressInManagementOfContaminatedSites,
+        she:AllEUSoilEcosystemsHealthyAndResilientBy2050,
+        she:CombatDesertificationAndAchieveNoNetLandTake,
+        she:ContributeToLandBasedClimateNeutralityAndReduceSoilPollutionImpact .
+
+she:ZeroPollutionActionPlanForAirSoilAndWater a skos:Concept ;
+    skos:prefLabel "zero pollution action plan for air, soil and water (ec, 2021c)" ;
+    she:hasObjectiveOrTarget she:BetterMonitorReportPreventAndRemedyPollution,
+        she:FacilitateRemediationOfSoilPollution,
+        she:ProposeNewLegislationCoveringSignificantPollutionSources,
+        she:ZeroPollutionAmbitionForAToxinFreeEnvironment .
+

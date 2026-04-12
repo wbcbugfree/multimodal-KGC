@@ -1,0 +1,77 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CriticalPLevelAtNinetyPercentRelativeYield a skos:Concept ;
+    skos:definition "the soil olsen-p content at which 90% of the maximum relative yield is achieved" ;
+    skos:prefLabel "critical p level at 90% relative yield" ;
+    she:indicatesOlsenPValue she:OlsenPValueAtCriticalLevel ;
+    she:indicatesRelativeYieldValue she:NinetyPercentRelativeYieldValue .
+
+she:ExperimentalTreatment a skos:Concept ;
+    skos:narrower she:CKTreatment,
+        she:NKTreatment,
+        she:NPKMTreatment,
+        she:NPKSTreatment,
+        she:NPKTreatment,
+        she:OnePointFiveNPKMTreatment ;
+    skos:prefLabel "experimental treatment" .
+
+she:Figure3_4 a skos:Concept ;
+    skos:definition "the relationship between soil olsen-p contents and relative yield of wheat in long-term experiments in china" ;
+    skos:prefLabel "figure 3.4" ;
+    she:conductedIn she:LongTermExperimentsInChina ;
+    she:depictsRelationshipBetween she:RelativeYieldOfWheat,
+        she:SoilOlsenPContent .
+
+she:RegressionCurve a skos:Concept ;
+    skos:definition "a curve representing the statistical relationship between soil olsen-p contents and relative yield of wheat" ;
+    skos:prefLabel "regression" ;
+    she:modelsRelationshipBetween she:RelativeYieldOfWheat,
+        she:SoilOlsenPContent .
+
+she:CKTreatment a skos:Concept ;
+    skos:definition "control plot without nutrient additions" ;
+    skos:prefLabel "ck" .
+
+she:LongTermExperimentsInChina a skos:Concept ;
+    skos:prefLabel "long-term experiments in china" .
+
+she:NKTreatment a skos:Concept ;
+    skos:definition "additions of nitrogen and potassium" ;
+    skos:prefLabel "nk" .
+
+she:NPKSTreatment a skos:Concept ;
+    skos:definition "additions of nitrogen, phosphorus, potassium, and sulphur" ;
+    skos:prefLabel "npks" .
+
+she:NPKTreatment a skos:Concept ;
+    skos:definition "additions of nitrogen, phosphorus, and potassium" ;
+    skos:prefLabel "npk" .
+
+she:NinetyPercentRelativeYieldValue a skos:Concept ;
+    skos:prefLabel "90% relative yield value" ;
+    she:hasNumericalValue "90" ;
+    she:hasUnit "percentage" .
+
+she:OlsenPValueAtCriticalLevel a skos:Concept ;
+    skos:prefLabel "olsen-p value at critical level" ;
+    she:hasNumericalValue "18" ;
+    she:hasUnit "mg/kg" .
+
+she:OnePointFiveNPKMTreatment a skos:Concept ;
+    skos:definition "50% higher addition of nitrogen, phosphorus, potassium and manure than in the standard treatment" ;
+    skos:prefLabel "1.5npkm" ;
+    she:isHigherDosageOf she:NPKMTreatment .
+
+she:NPKMTreatment a skos:Concept ;
+    skos:definition "additions of nitrogen, phosphorus, potassium, and animal manure" ;
+    skos:prefLabel "npkm" .
+
+she:RelativeYieldOfWheat a skos:Concept ;
+    skos:altLabel "relative yield (percentage)" ;
+    skos:prefLabel "relative yield of wheat" .
+
+she:SoilOlsenPContent a skos:Concept ;
+    skos:altLabel "olsen-p (mg/kg)" ;
+    skos:prefLabel "soil olsen-p contents" .
+

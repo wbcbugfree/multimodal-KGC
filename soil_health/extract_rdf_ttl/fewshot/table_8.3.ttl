@@ -1,0 +1,204 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DesignOfLargeScaleSoilCompactionMonitoring a skos:Concept ;
+    skos:narrower she:Compartment,
+        she:MeasurementAndEstimationParameters ;
+    skos:prefLabel "design of large-scale soil compaction monitoring" .
+
+she:AllBasicSoilPhysicalParametersForPTFAreMeasured a skos:Concept ;
+    skos:prefLabel "all basic soil physical parameters for ptf are measured" .
+
+she:BasicSoilChemicalParameters a skos:Concept ;
+    skos:prefLabel "basic soil chemical parameters" ;
+    she:hasLevelIIParameter she:SoilTextureCoarseFragmentsCaCO3MeasuredSoilProfiles ;
+    she:hasLevelIParameter she:SoilOrganicMatterMeasured,
+        she:SoilTextureCoarseFragmentsCaCO3EstimatedSoilAuger .
+
+she:BasicSoilPhysicalParameters a skos:Concept ;
+    skos:prefLabel "basic soil physical parameters" ;
+    she:hasLevelIIIParameter she:StressDependentChangesInTheParametersAreMeasuredUnderInFieldAndUnderLabConditions,
+        she:TensiometerSensorsActualSoilSamplingAtDefinedDepths ;
+    she:hasLevelIIParameter she:AllBasicSoilPhysicalParametersForPTFAreMeasured,
+        she:BulkDensityMeasured ;
+    she:hasLevelIParameter she:BulkDensityEstimatedOrMeasured,
+        she:SaturatedHydraulicConductivityAirCapacityPlantAvailableWaterCapacity .
+
+she:BiologicalActivityBioturbation a skos:Concept ;
+    skos:prefLabel "biological activity (bioturbation)" .
+
+she:BiologicalParameters a skos:Concept ;
+    skos:prefLabel "biological parameters" ;
+    she:hasLevelIIParameter she:DiversityAndCommunityStructureOfSoilMicroorganisms,
+        she:RootDensityMeasured ;
+    she:hasLevelIParameter she:BiologicalActivityBioturbation,
+        she:RootingEstimated .
+
+she:BulkDensityEstimatedOrMeasured a skos:Concept ;
+    skos:prefLabel "bulk density (estimated or measured)" .
+
+she:BulkDensityMeasured a skos:Concept ;
+    skos:prefLabel "bulk density (measured)" .
+
+she:Compartment a skos:Concept ;
+    skos:narrower she:BasicSoilChemicalParameters,
+        she:BasicSoilPhysicalParameters,
+        she:BiologicalParameters,
+        she:Depth,
+        she:DirectAndIndirectMonitoringOfSoilCompaction,
+        she:LocationOfSampling,
+        she:Operations,
+        she:Repetitions,
+        she:SeasonalityOfMonitoring ;
+    skos:prefLabel "compartment" .
+
+she:ContactAreaPressureOfTheMachinesAndTheActualContactAreaAreDetermined a skos:Concept ;
+    skos:prefLabel "contact area pressure of the machines and the actual contact area are determined" .
+
+she:Depth a skos:Concept ;
+    skos:prefLabel "depth" ;
+    she:hasLevelIIIParameter she:DepthsOf4045cmAnd60100cm ;
+    she:hasLevelIIParameter she:RefinedDepthClassesByGeneticHorizon ;
+    she:hasLevelIParameter she:SoilSurfaceUpperBoundaryOfLowerSoilHorizonsOrSimplyTopsoilAndSubsoil .
+
+she:DepthsOf4045cmAnd60100cm a skos:Concept ;
+    skos:prefLabel "depths of 40-45cm and 60-100cm" .
+
+she:DirectAndIndirectMonitoringOfSoilCompaction a skos:Concept ;
+    skos:prefLabel "direct and indirect monitoring of soil compaction" ;
+    she:hasLevelIIIParameter she:ContactAreaPressureOfTheMachinesAndTheActualContactAreaAreDetermined,
+        she:MeasurementsOfDepthDependentPRAtAGivenMatricPotential,
+        she:SamplesAreMeasuredAtDefinedMatricPotential ;
+    she:hasLevelIParameter she:PenetrationResistancePR,
+        she:PrecompressionStressEstimated,
+        she:SoilRigidityRatio .
+
+she:DiversityAndCommunityStructureOfSoilMicroorganisms a skos:Concept ;
+    skos:prefLabel "diversity and community structure of soil microorganisms" .
+
+she:EstablishReferenceSitesFromUndisturbedUncultivatedSites a skos:Concept ;
+    skos:prefLabel "establish reference sites from undisturbed, uncultivated sites" .
+
+she:FieldTrafficPercentageOfTheWheeledAreaNumberOfWheelToWheelPassages a skos:Concept ;
+    skos:prefLabel "field traffic: percentage of the wheeled area, number of wheel-to-wheel passages" .
+
+she:FourToEightSamplesPerDepth a skos:Concept ;
+    skos:prefLabel "4-8 samples per depth" .
+
+she:InTheFieldHotSpotsWithVisibleMarksOfCompaction a skos:Concept ;
+    skos:narrower she:MorphologicalFeatures,
+        she:ReducedVegetationCoverOrGrowthPuddles ;
+    skos:prefLabel "in the field: hot spots with visible marks of compaction" .
+
+she:LevelI a skos:Concept ;
+    skos:prefLabel "level i" .
+
+she:LevelII a skos:Concept ;
+    skos:prefLabel "level ii" .
+
+she:LevelIII a skos:Concept ;
+    skos:prefLabel "level iii: wheeling plots and unloaded reference plots" .
+
+she:LocationOfSampling a skos:Concept ;
+    skos:prefLabel "location of sampling" ;
+    she:hasLevelIIIParameter she:RepresentativeSubPlotsThroughoutAGivenFieldSurroundingThePlotCentre ;
+    she:hasLevelIIParameter she:ProportionOfAffectedArea ;
+    she:hasLevelIParameter she:InTheFieldHotSpotsWithVisibleMarksOfCompaction .
+
+she:MeasurementAndEstimationParameters a skos:Concept ;
+    skos:narrower she:LevelI,
+        she:LevelII,
+        she:LevelIII ;
+    skos:prefLabel "measurement and estimation parameters" .
+
+she:MeasurementsOfDepthDependentPRAtAGivenMatricPotential a skos:Concept ;
+    skos:prefLabel "measurements of depth-dependent pr at a given matric potential" .
+
+she:MorphologicalFeatures a skos:Concept ;
+    skos:prefLabel "morphological features (waterlogging, (platy) soil structure, rooting)" .
+
+she:Operations a skos:Concept ;
+    skos:prefLabel "operations" ;
+    she:hasLevelIIIParameter she:WeightAirPressureWheelTypeAxleAndTyreWidthsOfEveryVehicleContactArea ;
+    she:hasLevelIParameter she:FieldTrafficPercentageOfTheWheeledAreaNumberOfWheelToWheelPassages .
+
+she:PedotransferFunctionsPTFs a skos:Concept ;
+    skos:prefLabel "(estimated with pedotransfer functions, ptfs)" .
+
+she:PenetrationResistancePR a skos:Concept ;
+    skos:prefLabel "penetration resistance (pr) (c)" ;
+    she:isEstimatedWith she:PedotransferFunctionsPTFs ;
+    she:requires she:EstablishReferenceSitesFromUndisturbedUncultivatedSites .
+
+she:PrecompressionStressEstimated a skos:Concept ;
+    skos:definition "precompression stress derived from ptfs for a given texture and aggregation, according to horn and fleige (2003): requires pore size distribution, hydraulic conductivity, and soil chemical soil properties. in areas where this approach is not calibrated, horizon-specific stress strain measurements of undisturbed soil samples at a given matric potential and confined shear tests are needed to determine both the internal mechanical strength and the shear strength of a given structured soil." ;
+    skos:prefLabel "precompression stress (estimated) (a)" .
+
+she:ProportionOfAffectedArea a skos:Concept ;
+    skos:prefLabel "proportion of affected area, e.g. per field, or per area around a representative observation point" .
+
+she:ReducedVegetationCoverOrGrowthPuddles a skos:Concept ;
+    skos:prefLabel "e.g. reduced vegetation cover or growth, puddles" .
+
+she:RefinedDepthClassesByGeneticHorizon a skos:Concept ;
+    skos:prefLabel "refined depth classes/by genetic horizon" .
+
+she:Repetitions a skos:Concept ;
+    skos:prefLabel "repetitions" ;
+    she:hasLevelIIIParameter she:TenToTwentySamplesPerParameterAndDepth ;
+    she:hasLevelIParameter she:FourToEightSamplesPerDepth .
+
+she:RepresentativeSubPlotsThroughoutAGivenFieldSurroundingThePlotCentre a skos:Concept ;
+    skos:prefLabel "representative sub-plots throughout a given field surrounding the plot centre" .
+
+she:RootDensityMeasured a skos:Concept ;
+    skos:prefLabel "root density (measured)" .
+
+she:RootingEstimated a skos:Concept ;
+    skos:prefLabel "rooting estimated" .
+
+she:SamplesAreMeasuredAtDefinedMatricPotential a skos:Concept ;
+    skos:prefLabel "samples are measured at defined matric potential" .
+
+she:SamplingAtRequestedTimesThroughoutTheYear a skos:Concept ;
+    skos:prefLabel "sampling at requested times throughout the year" .
+
+she:SaturatedHydraulicConductivityAirCapacityPlantAvailableWaterCapacity a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity, air capacity, plant available water capacity (estimated with ptfs, e.g. wösten et al. (1999), schroeder et al. (2022b))" .
+
+she:SeasonalityOfMonitoring a skos:Concept ;
+    skos:prefLabel "seasonality of monitoring" ;
+    she:hasLevelIIIParameter she:SamplingAtRequestedTimesThroughoutTheYear ;
+    she:hasLevelIParameter she:SpringSamplingSoilAtFieldCapacity .
+
+she:SoilOrganicMatterMeasured a skos:Concept ;
+    skos:prefLabel "soil organic matter (measured)" .
+
+she:SoilRigidityRatio a skos:Concept ;
+    skos:definition "ratio precompression stress/actual stress imposed by field traffic (see also duttmann et al. 2014, 2022)." ;
+    skos:prefLabel "soil rigidity ratio (b)" .
+
+she:SoilSurfaceUpperBoundaryOfLowerSoilHorizonsOrSimplyTopsoilAndSubsoil a skos:Concept ;
+    skos:prefLabel "soil surface, upper boundary of lower soil horizons (or simply topsoil and subsoil)" .
+
+she:SoilTextureCoarseFragmentsCaCO3EstimatedSoilAuger a skos:Concept ;
+    skos:prefLabel "soil texture/coarse fragments/caco3 (estimated — soil auger)" .
+
+she:SoilTextureCoarseFragmentsCaCO3MeasuredSoilProfiles a skos:Concept ;
+    skos:prefLabel "soil texture/coarse fragments/caco3 (measured — soil profiles)" .
+
+she:SpringSamplingSoilAtFieldCapacity a skos:Concept ;
+    skos:prefLabel "spring sampling (soil at field capacity)" .
+
+she:StressDependentChangesInTheParametersAreMeasuredUnderInFieldAndUnderLabConditions a skos:Concept ;
+    skos:prefLabel "stress-dependent changes in the parameters are measured under in-field and under lab conditions" .
+
+she:TenToTwentySamplesPerParameterAndDepth a skos:Concept ;
+    skos:prefLabel "10-20 samples per parameter and depth" .
+
+she:TensiometerSensorsActualSoilSamplingAtDefinedDepths a skos:Concept ;
+    skos:prefLabel "tensiometer, sensors, actual soil sampling at defined depths" .
+
+she:WeightAirPressureWheelTypeAxleAndTyreWidthsOfEveryVehicleContactArea a skos:Concept ;
+    skos:prefLabel "weight, air pressure, wheel type, axle and tyre widths of every vehicle, contact area" .
+

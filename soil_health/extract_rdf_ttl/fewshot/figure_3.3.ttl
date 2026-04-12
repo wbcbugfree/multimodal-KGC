@@ -1,0 +1,107 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:PrincipleOfSoilPStatusAndEnvironmentalRisk a skos:Concept ;
+    skos:narrower she:Approach,
+        she:PRecommendation,
+        she:RiskZone,
+        she:SoilPStatus,
+        she:Time ;
+    skos:prefLabel "principle of soil p status and environmental risk" ;
+    she:illustratesDynamicRelationshipBetween she:SoilPStatus,
+        she:Time .
+
+she:Approach a skos:Concept ;
+    skos:narrower she:BuildingUp,
+        she:Maintenance,
+        she:Mining ;
+    skos:prefLabel "approach" .
+
+she:BuildingUp a skos:Concept ;
+    skos:prefLabel "building up" ;
+    she:hasPRecommendation she:InputGreaterThanOutput,
+        she:InputMuchGreaterThanOutput .
+
+she:Maintenance a skos:Concept ;
+    skos:prefLabel "maintenance" ;
+    she:hasPRecommendation she:InputEqualsOutput .
+
+she:Mining a skos:Concept ;
+    skos:prefLabel "mining" ;
+    she:hasPRecommendation she:InputLessThanOutput,
+        she:NoFertiliser .
+
+she:PRecommendation a skos:Concept ;
+    skos:narrower she:InputEqualsOutput,
+        she:InputGreaterThanOutput,
+        she:InputLessThanOutput,
+        she:InputMuchGreaterThanOutput,
+        she:NoFertiliser ;
+    skos:prefLabel "p recommendation" .
+
+she:RiskZone a skos:Concept ;
+    skos:narrower she:CropProductionRiskZone,
+        she:EnvironmentalRiskZone,
+        she:OptimumLevelForCropProduction ;
+    skos:prefLabel "risk zone" .
+
+she:HighSoilP a skos:Concept ;
+    skos:prefLabel "high" ;
+    she:isAssociatedWithRiskZone she:EnvironmentalRiskZone .
+
+she:InputEqualsOutput a skos:Concept ;
+    skos:prefLabel "input = output" ;
+    she:resultsInSoilPStatus she:MediumSoilP .
+
+she:InputGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input > output" ;
+    she:resultsInSoilPStatus she:LowSoilP .
+
+she:InputLessThanOutput a skos:Concept ;
+    skos:prefLabel "input < output" ;
+    she:resultsInSoilPStatus she:HighSoilP .
+
+she:InputMuchGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input >> output" ;
+    she:resultsInSoilPStatus she:VeryLowSoilP .
+
+she:LowSoilP a skos:Concept ;
+    skos:prefLabel "low" ;
+    she:isAssociatedWithRiskZone she:CropProductionRiskZone .
+
+she:MediumSoilP a skos:Concept ;
+    skos:prefLabel "medium" ;
+    she:isAssociatedWithRiskZone she:OptimumLevelForCropProduction .
+
+she:NoFertiliser a skos:Concept ;
+    skos:prefLabel "no fertiliser" ;
+    she:resultsInSoilPStatus she:VeryHighSoilP .
+
+she:OptimumLevelForCropProduction a skos:Concept ;
+    skos:prefLabel "optimum level for crop production" .
+
+she:SoilPStatus a skos:Concept ;
+    skos:narrower she:HighSoilP,
+        she:LowSoilP,
+        she:MediumSoilP,
+        she:VeryHighSoilP,
+        she:VeryLowSoilP ;
+    skos:prefLabel "soil p" .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" .
+
+she:VeryHighSoilP a skos:Concept ;
+    skos:prefLabel "very high" ;
+    she:isAssociatedWithRiskZone she:EnvironmentalRiskZone .
+
+she:VeryLowSoilP a skos:Concept ;
+    skos:prefLabel "very low" ;
+    she:isAssociatedWithRiskZone she:CropProductionRiskZone .
+
+she:CropProductionRiskZone a skos:Concept ;
+    skos:prefLabel "crop production risk zone" .
+
+she:EnvironmentalRiskZone a skos:Concept ;
+    skos:prefLabel "environmental risk zone" .
+

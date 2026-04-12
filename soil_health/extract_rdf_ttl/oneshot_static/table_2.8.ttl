@@ -1,0 +1,49 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:GuidelineRangesForSOCContent a skos:Concept ;
+    skos:definition "Guideline ranges for SOC content of sandy and loamy soils without groundwater influence (% SOC in plough layer) depending on fine silt (<6.3µm) and clay content (Pipette method)" ;
+    skos:narrower she:SOCContentInLoamySoils,
+        she:SOCContentInSandySoils ;
+    skos:prefLabel "guideline ranges for soc content" ;
+    she:appliesToLayer she:PloughLayer ;
+    she:excludesInfluenceOf she:GroundwaterInfluence ;
+    she:isDependentOn she:ClayAndFineSiltContent ;
+    she:usesMethod she:PipetteMethod .
+
+she:ClayAndFineSiltContent a skos:Concept ;
+    skos:prefLabel "clay + fine silt (%)" .
+
+she:GroundwaterInfluence a skos:Concept ;
+    skos:prefLabel "groundwater influence" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:PipetteMethod a skos:Concept ;
+    skos:prefLabel "pipette method" .
+
+she:PloughLayer a skos:Concept ;
+    skos:prefLabel "plough layer" .
+
+she:SOCContentInLoamySoils a skos:Concept ;
+    skos:prefLabel "soc in loamy soils (%)" ;
+    she:hasLowerLimit she:LowerValueConcept ;
+    she:hasUpperLimit she:UpperValueConcept ;
+    she:isCharacteristicOf she:LoamySoils .
+
+she:SOCContentInSandySoils a skos:Concept ;
+    skos:prefLabel "soc in sandy soils (%)" ;
+    she:hasLowerLimit she:LowerValueConcept ;
+    she:hasUpperLimit she:UpperValueConcept ;
+    she:isCharacteristicOf she:SandySoils .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:LowerValueConcept a skos:Concept ;
+    skos:prefLabel "lower value" .
+
+she:UpperValueConcept a skos:Concept ;
+    skos:prefLabel "upper value" .
+

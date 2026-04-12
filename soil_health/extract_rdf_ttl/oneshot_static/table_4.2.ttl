@@ -1,0 +1,71 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:BeetBeansPeasAndOilseeds a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "beet, beans, peas and oilseeds" ;
+    she:hasOptimumPH she:PH7_0 .
+
+she:CerealsAndMaize a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "cereals and maize" ;
+    she:hasOptimumPH she:PH6_5 .
+
+she:Grassland a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "grassland" ;
+    she:hasOptimumPH she:PH6_3 .
+
+she:GrasslandHighMolybdenum a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "grassland (high molybdenum)" ;
+    she:hasOptimumPH she:PHLessThan6_2 .
+
+she:Potatoes a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "potatoes" ;
+    she:hasOptimumPH she:PH6_0 .
+
+she:OptimalPHValuesForCrops a skos:Concept ;
+    skos:narrower she:Crop,
+        she:OptimumPH ;
+    skos:prefLabel "example of optimal ph values for different crops as given in the literature" .
+
+she:PH6_0 a skos:Concept ;
+    skos:broader she:OptimumPH ;
+    skos:prefLabel "6.0" .
+
+she:PH6_3 a skos:Concept ;
+    skos:broader she:OptimumPH ;
+    skos:prefLabel "6.3" .
+
+she:PH6_5 a skos:Concept ;
+    skos:broader she:OptimumPH ;
+    skos:prefLabel "6.5" .
+
+she:PH7_0 a skos:Concept ;
+    skos:broader she:OptimumPH ;
+    skos:prefLabel "7.0" .
+
+she:PHLessThan6_2 a skos:Concept ;
+    skos:broader she:OptimumPH ;
+    skos:prefLabel "<6.2" .
+
+she:Crop a skos:Concept ;
+    skos:broader she:OptimalPHValuesForCrops ;
+    skos:narrower she:BeetBeansPeasAndOilseeds,
+        she:CerealsAndMaize,
+        she:Grassland,
+        she:GrasslandHighMolybdenum,
+        she:Potatoes ;
+    skos:prefLabel "crop" .
+
+she:OptimumPH a skos:Concept ;
+    skos:broader she:OptimalPHValuesForCrops ;
+    skos:narrower she:PH6_0,
+        she:PH6_3,
+        she:PH6_5,
+        she:PH7_0,
+        she:PHLessThan6_2 ;
+    skos:prefLabel "optimum ph" .
+

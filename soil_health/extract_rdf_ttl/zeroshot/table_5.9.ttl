@@ -1,0 +1,103 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ComplementaritiesWithOtherExistingLaws a skos:Concept ;
+    skos:narrower she:RegulatoryAndPoliticalFactors ;
+    skos:prefLabel "complementarities with other existing laws" ;
+    she:hasRiskAssessmentRole "definition of attributes in risk assessment" .
+
+she:DepthOfGroundwaterTable a skos:Concept ;
+    skos:narrower she:GeographicalFactors ;
+    skos:prefLabel "depth of groundwater table" ;
+    she:hasRiskAssessmentRole "vapour intrusion and, hence, human exposure through inhalation. it also affects the potential impact of soil quality on water quality, since contact time between soil and surface water is shorter in areas with high water tables" .
+
+she:DrinkingWaterFromPrivateWells a skos:Concept ;
+    skos:narrower she:CulturalFactors ;
+    skos:prefLabel "drinking water from private wells" ;
+    she:hasRiskAssessmentRole "exposure through the consumption of groundwater as drinking water" .
+
+she:FundingRegime a skos:Concept ;
+    skos:narrower she:ScientificFactors ;
+    skos:prefLabel "funding regime" ;
+    she:hasRiskAssessmentRole "acceptable exposure, exposure time, aggregate exposure",
+        "mixtures and non-soil sources" .
+
+she:Governance a skos:Concept ;
+    skos:narrower she:RegulatoryAndPoliticalFactors ;
+    skos:prefLabel "governance" ;
+    she:hasRiskAssessmentRole "authorities involved and responsible",
+        "definition of acceptable risk (e.g. level of excess lifetime cancer risk)",
+        "land reclamation policies, spatial planning, drinking water protection" .
+
+she:NetAnnualWaterSurplus a skos:Concept ;
+    skos:narrower she:ClimaticFactors ;
+    skos:prefLabel "net annual water surplus" ;
+    she:hasRiskAssessmentRole "leaching/accumulation is controlled largely by water flux (in combination with soil properties)" .
+
+she:PrioritisationOfEconomicAndEnvironmentalValues a skos:Concept ;
+    skos:narrower she:RegulatoryAndPoliticalFactors ;
+    skos:prefLabel "prioritisation of economic and environmental values" ;
+    she:hasRiskAssessmentRole "role and use of background values" .
+
+she:ScientificAndAnalyticalExperienceAndCooperation a skos:Concept ;
+    skos:narrower she:ScientificFactors ;
+    skos:prefLabel "scientific and analytical experience and cooperation" ;
+    she:hasRiskAssessmentRole "method and use of background concentrations",
+        "selection of protection targets and exposure pathways",
+        "toxicological data sources" .
+
+she:SelfSupplyGardeningSubsistenceFarming a skos:Concept ;
+    skos:narrower she:CulturalFactors ;
+    skos:prefLabel "self-supply gardening, subsistence farming" ;
+    she:hasRiskAssessmentRole "exposure through the consumption of vegetables grown in kitchen gardens" .
+
+she:SoilProperties a skos:Concept ;
+    skos:narrower she:GeographicalFactors ;
+    skos:prefLabel "soil properties" ;
+    she:hasRiskAssessmentRole "(bio)availability affecting ecology as well as filtering function" .
+
+she:Table59FactorsContributingToDifferencesInRiskAssessmentToolsAndApproachesAndToDifferencesInSsvsAmongEuMemberStates a skos:Concept ;
+    skos:narrower she:ConditioningFactor,
+        she:RoleInRiskAssessment ;
+    skos:prefLabel "table 5.9 factors contributing to differences in risk assessment tools and approaches, and to differences in ssvs among eu member states" .
+
+she:TemperatureRainfall a skos:Concept ;
+    skos:narrower she:ClimaticFactors ;
+    skos:prefLabel "temperature/rainfall" ;
+    she:hasRiskAssessmentRole "climate controls crop types used by farmers and hence potential uptake of pollutants from soil" .
+
+she:TimeSpentOutdoors a skos:Concept ;
+    skos:narrower she:ClimaticFactors ;
+    skos:prefLabel "time spent outdoors" ;
+    she:hasRiskAssessmentRole "potential contact with soil and, hence, exposure through soil ingestion" .
+
+she:UrbanRecreation a skos:Concept ;
+    skos:narrower she:CulturalFactors ;
+    skos:prefLabel "urban recreation" .
+
+she:RoleInRiskAssessment a skos:Concept ;
+    skos:prefLabel "role in risk assessment" .
+
+she:GeographicalFactors a skos:Concept ;
+    skos:narrower she:ConditioningFactor ;
+    skos:prefLabel "geographical factors" .
+
+she:ScientificFactors a skos:Concept ;
+    skos:narrower she:ConditioningFactor ;
+    skos:prefLabel "scientific factors" .
+
+she:ClimaticFactors a skos:Concept ;
+    skos:narrower she:ConditioningFactor ;
+    skos:prefLabel "climatic factors" .
+
+she:CulturalFactors a skos:Concept ;
+    skos:narrower she:ConditioningFactor ;
+    skos:prefLabel "cultural factors" .
+
+she:RegulatoryAndPoliticalFactors a skos:Concept ;
+    skos:narrower she:ConditioningFactor ;
+    skos:prefLabel "regulatory and political factors" .
+
+she:ConditioningFactor a skos:Concept ;
+    skos:prefLabel "conditioning factor" .
+

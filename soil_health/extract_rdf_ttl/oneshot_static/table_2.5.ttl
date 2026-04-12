@@ -1,0 +1,69 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SocThresholdsForCroplandSoils a skos:Concept ;
+    skos:narrower she:ClimaticWaterBalanceSummer,
+        she:SoilTextureClass ;
+    skos:prefLabel "table 2.5 matrix of mean soc minimum and maximum thresholds for cropland soils (% soil mass)" ;
+    she:compiledFrom she:WessolekEtAl2008 .
+
+she:ClimaticWaterBalanceSummer a skos:Concept ;
+    skos:narrower she:WaterBalanceLessThanMinus100,
+        she:WaterBalanceMinus100To0,
+        she:WaterBalanceMoreThan0 ;
+    skos:prefLabel "climatic water balance (mm) summer" .
+
+she:LoamAndClaySoil a skos:Concept ;
+    skos:prefLabel "loam and clay" ;
+    she:hasSocThresholdsForWaterBalance [ she:maximumThreshold "1.47" ;
+            she:minimumThreshold "0.6" ;
+            she:waterBalanceRange she:WaterBalanceLessThanMinus100 ],
+        [ she:maximumThreshold "1.92" ;
+            she:minimumThreshold "0.9" ;
+            she:waterBalanceRange she:WaterBalanceMinus100To0 ],
+        [ she:maximumThreshold "3.23" ;
+            she:minimumThreshold "1.9" ;
+            she:waterBalanceRange she:WaterBalanceMoreThan0 ] .
+
+she:SandSoil a skos:Concept ;
+    skos:prefLabel "sand" ;
+    she:hasSocThresholdsForWaterBalance [ she:maximumThreshold "1.23" ;
+            she:minimumThreshold "0.5" ;
+            she:waterBalanceRange she:WaterBalanceLessThanMinus100 ],
+        [ she:maximumThreshold "1.73" ;
+            she:minimumThreshold "0.9" ;
+            she:waterBalanceRange she:WaterBalanceMinus100To0 ],
+        [ she:maximumThreshold "2.23" ;
+            she:minimumThreshold "1.2" ;
+            she:waterBalanceRange she:WaterBalanceMoreThan0 ] .
+
+she:SiltSoil a skos:Concept ;
+    skos:prefLabel "silt" ;
+    she:hasSocThresholdsForWaterBalance [ she:maximumThreshold "2.53" ;
+            she:minimumThreshold "1.5" ;
+            she:waterBalanceRange she:WaterBalanceLessThanMinus100 ],
+        [ she:maximumThreshold "2.07" ;
+            she:minimumThreshold "1.0" ;
+            she:waterBalanceRange she:WaterBalanceMinus100To0 ],
+        [ she:maximumThreshold "1.59" ;
+            she:minimumThreshold "0.8" ;
+            she:waterBalanceRange she:WaterBalanceMoreThan0 ] .
+
+she:SoilTextureClass a skos:Concept ;
+    skos:narrower she:LoamAndClaySoil,
+        she:SandSoil,
+        she:SiltSoil ;
+    skos:prefLabel "soil texture class" .
+
+she:WessolekEtAl2008 a skos:Concept ;
+    skos:prefLabel "wessolek et al. (2008)" .
+
+she:WaterBalanceLessThanMinus100 a skos:Concept ;
+    skos:prefLabel "less than -100" .
+
+she:WaterBalanceMinus100To0 a skos:Concept ;
+    skos:prefLabel "-100 to 0" .
+
+she:WaterBalanceMoreThan0 a skos:Concept ;
+    skos:prefLabel "more than 0" .
+

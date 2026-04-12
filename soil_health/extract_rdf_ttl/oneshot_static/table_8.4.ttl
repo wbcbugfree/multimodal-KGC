@@ -1,0 +1,126 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AggregateTypeAndEstimatedBulkDensity a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:definition "The visual assessment of the soil as loose or dense based on aggregate size and strength, pore size and continuity, root density and distribution" ;
+    skos:prefLabel "aggregate type and estimated bulk density" .
+
+she:AirCapacityAirFilledPoreVolume a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:definition "A low air capacity impairs root growth, reduces oxygen pressure in soil air and increases the formation of greenhouse gases." ;
+    skos:prefLabel "air capacity: air-filled pore volume" ;
+    she:effectOn "pore volume increase" ;
+    she:hasAcceptableValue "around 45% total pore volume" ;
+    she:hasCriticalValue "below 35% total pore volume",
+        "below 5% air capacity at a soil matric potential of -6kPa" ;
+    she:indicates "insufficient aeration or gas diffusion" ;
+    she:influencedBy "decreasing particle size, soil aggregation, soil organic matter content" ;
+    she:isSensitiveToSoilType "soils originating from clay > loam > silt and sandy loam > sandy loess" ;
+    she:notesCriticality "irrespective of texture effects" .
+
+she:AirPermeabilityAndOxygenDiffusion a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "Low air fluxes coincide with retarded gas exchange and the formation of anoxic conditions through CH₄ or N₂O formation." ;
+    skos:prefLabel "air permeability and oxygen diffusion" ;
+    she:hasCriticalValue "air permeability less than 1µm²",
+        "diffusion coefficient (Ds) less than 1.5×10⁻⁸m²/s (Bakker et al., 1987)",
+        "relative diffusion less than 0.005 for loamy soils",
+        "relative diffusion less than 0.02 for sandy soils" ;
+    she:isSensitiveToSoilType "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation due to tillage or soil management" .
+
+she:BulkDensity a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:prefLabel "bulk density" ;
+    she:basedOnSource "DVWK 1997, 1998; see also Keller et al. 2019" ;
+    she:hasThresholdValue "1.2g/cm³ and 1.6g/cm³",
+        "1.6g/cm³ to 1.9g/cm³",
+        "greater than 1.9g/cm³",
+        "less than 1.2g/cm³" ;
+    she:indicates "dense",
+        "normal",
+        "very impermeable",
+        "very loose" ;
+    she:isSensitiveToSoilType "soils originating from clay > silt > sand" ;
+    she:notesSensitivityFactor "higher values are due to geological pre-stressing or anthropogenic impacts" .
+
+she:PrecompressionStress a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:prefLabel "precompression stress (= internal soil strength)" ;
+    she:hasThresholdValue "30-60kPa",
+        "60-90kPa",
+        "90-120kPa",
+        "less than 30kPa" ;
+    she:indicates "high stress level",
+        "low internal soil strength",
+        "medium stress level",
+        "very low internal soil strength" ;
+    she:isSensitiveToSoilType "all soils, but especially loamy, silty and clayey soils" ;
+    she:notesCondition "e.g. because of weak aggregation or wet soil conditions" ;
+    she:notesEffect "soils are very sensitive to further deformation and decline in physical, biological and physical-chemical functions" ;
+    she:notesManagement "sustainable soil management practices are especially necessary and effective" .
+
+she:RatioOfPrecompressionStressToActualStressApplied a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:prefLabel "ratio of precompression stress to actual stress applied" ;
+    she:hasThresholdValue "between 0.8 and 1.2",
+        "greater than 1.2",
+        "less than or equal to 0.8" ;
+    she:indicates "irreversibly deformed structure",
+        "rigid soil structure conditions with no risk to compaction processes",
+        "very susceptible to further soil deformation" ;
+    she:isSensitiveToSoilType "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" .
+
+she:RootGrowthPenetrometer a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:definition "The visual assessment of the soil as loose or dense based on aggregate size and strength, pore size and continuity, root density and distribution" ;
+    skos:prefLabel "root growth/penetrometer" .
+
+she:SaturatedUnsaturatedHydraulicConductivity a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "Low conductivity is typical for stagnic soil conditions: delayed percolation reduces soil aeration and groundwater accumulation and increases surface run-off (critical values are defined as below 10cm/day)." ;
+    skos:prefLabel "saturated/unsaturated hydraulic conductivity" ;
+    she:hasCriticalValue "below 10cm/day" .
+
+she:ShearStrength a skos:Concept ;
+    skos:broader she:ParameterSetII ;
+    skos:definition "Shear forces due to wheeling result in smearing: the shear strength is lower for less aggregated soils and decreases with increasing water content." ;
+    skos:prefLabel "shear strength" ;
+    she:isSensitiveToSoilType "all soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" ;
+    she:notesCondition "shearing is more pronounced at higher levels of wheel spin, especially when soils are moist" .
+
+she:SpadeDiagnosis a skos:Concept ;
+    skos:broader she:VisualSoilEvaluations ;
+    skos:definition "The visual assessment of the soil as loose or dense based on aggregate size and strength, pore size and continuity, root density and distribution" ;
+    skos:prefLabel "spade diagnosis" .
+
+she:ThresholdsForSoilPhysicalParametersForDetectingHarmfulSubsoilCompaction a skos:Concept ;
+    skos:narrower she:ParameterSetI,
+        she:ParameterSetII ;
+    skos:note "Sources: Arah and Ball (1994), Babel et al. (1995), Ball et al. (1988), Frey et al. (2011), Huber et al. (2008), Lebert et al. (2007), Stepniewski (1980, 1981), Schjønning et al. (2003, 2016); supplemented with additional information from the review in this report." ;
+    skos:prefLabel "thresholds for soil physical parameters for detecting harmful subsoil compaction" .
+
+she:ParameterSetI a skos:Concept ;
+    skos:broader she:ThresholdsForSoilPhysicalParametersForDetectingHarmfulSubsoilCompaction ;
+    skos:narrower she:AirCapacityAirFilledPoreVolume,
+        she:BulkDensity,
+        she:VisualSoilEvaluations ;
+    skos:prefLabel "parameter set i" .
+
+she:VisualSoilEvaluations a skos:Concept ;
+    skos:broader she:ParameterSetI ;
+    skos:narrower she:AggregateTypeAndEstimatedBulkDensity,
+        she:RootGrowthPenetrometer,
+        she:SpadeDiagnosis ;
+    skos:prefLabel "visual soil evaluations" ;
+    she:isSensitiveToSoilType "additional assessment for all soils" .
+
+she:ParameterSetII a skos:Concept ;
+    skos:broader she:ThresholdsForSoilPhysicalParametersForDetectingHarmfulSubsoilCompaction ;
+    skos:narrower she:AirPermeabilityAndOxygenDiffusion,
+        she:PrecompressionStress,
+        she:RatioOfPrecompressionStressToActualStressApplied,
+        she:SaturatedUnsaturatedHydraulicConductivity,
+        she:ShearStrength ;
+    skos:prefLabel "parameter set ii" .
+

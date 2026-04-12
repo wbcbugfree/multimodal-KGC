@@ -1,0 +1,115 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AggregationOfSOCThresholdsForSoilGroups a skos:Concept ;
+    skos:narrower she:BMLFUW2017,
+        she:KorschensEtAl1998,
+        she:SOCClayRatioCategory,
+        she:SoilGroup ;
+    skos:prefLabel "aggregation of soc thresholds for soil groups" .
+
+she:ClayFineSiltPercentageRange a skos:Concept ;
+    skos:narrower she:ClayFineSilt15To22Percent,
+        she:ClayFineSilt23To25Percent,
+        she:ClayFineSilt25To32Percent,
+        she:ClayFineSilt4To7Percent,
+        she:ClayFineSilt8To14Percent,
+        she:ClayFineSiltOver32Percent ;
+    skos:prefLabel "clay fine silt percentage range" .
+
+she:BMLFUW2017 a skos:Concept ;
+    skos:narrower she:MinimumSOCThreshold ;
+    skos:prefLabel "bmlfuw (2017)" .
+
+she:HeavySoilGroup a skos:Concept ;
+    skos:definition "soil group with >25% clay" ;
+    skos:prefLabel "heavy soil group" ;
+    she:hasAssociatedClayFineSiltRange she:ClayFineSilt25To32Percent,
+        she:ClayFineSiltOver32Percent ;
+    she:hasBMLFUWMinimumSOCThreshold "1.7" ;
+    she:hasMinimumDesiredSOCClayRatio ">2.5" ;
+    she:hasOptimumSOCClayRatio ">3.1" ;
+    she:hasUnacceptableSOCClayRatio ">1.9" .
+
+she:KorschensEtAl1998 a skos:Concept ;
+    skos:narrower she:LoamySoils,
+        she:SandySoils ;
+    skos:prefLabel "körschens et al. (1998)" .
+
+she:LightSoilGroup a skos:Concept ;
+    skos:definition "soil group with <15% clay" ;
+    skos:prefLabel "light soil group" ;
+    she:hasAssociatedClayFineSiltRange she:ClayFineSilt4To7Percent,
+        she:ClayFineSilt8To14Percent ;
+    she:hasBMLFUWMinimumSOCThreshold "1.2" ;
+    she:hasMinimumDesiredSOCClayRatio "<1.5" ;
+    she:hasOptimumSOCClayRatio "<1.9" ;
+    she:hasUnacceptableSOCClayRatio "<1.2" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:MediumSoilGroup a skos:Concept ;
+    skos:definition "soil group with 15-25% clay" ;
+    skos:prefLabel "medium soil group" ;
+    she:hasAssociatedClayFineSiltRange she:ClayFineSilt15To22Percent,
+        she:ClayFineSilt23To25Percent ;
+    she:hasBMLFUWMinimumSOCThreshold "1.5" ;
+    she:hasMinimumDesiredSOCClayRatio "1.5-2.5" ;
+    she:hasOptimumSOCClayRatio "1.9-3.1" ;
+    she:hasUnacceptableSOCClayRatio "1.2-1.9" .
+
+she:MinimumDesiredSOCLevelForFarmers a skos:Concept ;
+    skos:prefLabel "1/10 (minimum desired soc level for farmers)" .
+
+she:MinimumSOCThreshold a skos:Concept ;
+    skos:prefLabel "minimum soc threshold" .
+
+she:OptimumForGoodStructuralQuality a skos:Concept ;
+    skos:prefLabel "1/8 (optimum for good structural quality)" .
+
+she:SOCClayRatioCategory a skos:Concept ;
+    skos:narrower she:MinimumDesiredSOCLevelForFarmers,
+        she:OptimumForGoodStructuralQuality,
+        she:StructuralSoilQualityUnacceptable ;
+    skos:prefLabel "soc/clay ratio" .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:SoilGroup a skos:Concept ;
+    skos:narrower she:HeavySoilGroup,
+        she:LightSoilGroup,
+        she:MediumSoilGroup ;
+    skos:prefLabel "soil group" .
+
+she:StructuralSoilQualityUnacceptable a skos:Concept ;
+    skos:prefLabel "1/13 (structural soil quality is unacceptable)" .
+
+she:ClayFineSilt15To22Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt 15-22 percent" ;
+    she:hasKorschensLoamySoilsThreshold "1.0-1.3" ;
+    she:hasKorschensSandySoilsThreshold "0.9-1.2" .
+
+she:ClayFineSilt23To25Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt 23-25 percent" ;
+    she:hasKorschensLoamySoilsThreshold "1.3-1.5" ;
+    she:hasKorschensSandySoilsThreshold "1.3-1.6" .
+
+she:ClayFineSilt25To32Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt 25-32 percent" ;
+    she:hasKorschensLoamySoilsThreshold "1.5-1.7" .
+
+she:ClayFineSilt4To7Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt 4-7 percent" ;
+    she:hasKorschensSandySoilsThreshold "<0.6" .
+
+she:ClayFineSilt8To14Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt 8-14 percent" ;
+    she:hasKorschensLoamySoilsThreshold "0.8-0.9" ;
+    she:hasKorschensSandySoilsThreshold "0.6-0.9" .
+
+she:ClayFineSiltOver32Percent a skos:Concept ;
+    skos:prefLabel "clay fine silt over 32 percent" ;
+    she:hasKorschensLoamySoilsThreshold "1.7-2.0" .
+

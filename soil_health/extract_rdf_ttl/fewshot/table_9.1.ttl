@@ -1,0 +1,69 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:RelationshipOfSoilSealingToSocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:narrower she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Infrastructure,
+        she:Water ;
+    skos:prefLabel "relationship of soil sealing to key societal needs and soil functions" .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    she:negativelyImpacts she:CarbonStorage,
+        she:FilteringOfContaminants,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna,
+        she:WaterStorage,
+        she:WoodAndFibreProduction ;
+    she:positivelyImpacts she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:Biodiversity a skos:Concept ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna ;
+    skos:prefLabel "biodiversity" .
+
+she:Biomass a skos:Concept ;
+    skos:narrower she:GrowthOfCrops,
+        she:WoodAndFibreProduction ;
+    skos:prefLabel "biomass" .
+
+she:Climate a skos:Concept ;
+    skos:narrower she:CarbonStorage ;
+    skos:prefLabel "climate" .
+
+she:Infrastructure a skos:Concept ;
+    skos:narrower she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts ;
+    skos:prefLabel "infrastructure" .
+
+she:Water a skos:Concept ;
+    skos:narrower she:FilteringOfContaminants,
+        she:WaterStorage ;
+    skos:prefLabel "water" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" .
+
+she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi and any microfauna" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" .
+

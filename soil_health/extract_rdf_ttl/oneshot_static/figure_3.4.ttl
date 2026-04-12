@@ -1,0 +1,129 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CK a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "control plot without nutrient additions" ;
+    skos:prefLabel "ck" .
+
+she:CriticalPLevelAt90PercentRelativeYield a skos:Concept ;
+    skos:prefLabel "critical p level at 90% relative yield" ;
+    she:associatedWithRelativeYield she:NinetyPercentRelativeYield ;
+    she:hasValue "18 mg/kg" ;
+    she:indicatesValueFor she:SoilOlsenPContents .
+
+she:NK a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "additions of nitrogen and potassium" ;
+    skos:prefLabel "nk" ;
+    she:includesAdditionOf she:NitrogenAddition,
+        she:PotassiumAddition .
+
+she:NPK a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "additions of nitrogen, phosphorus, and potassium" ;
+    skos:prefLabel "npk" ;
+    she:includesAdditionOf she:NitrogenAddition,
+        she:PhosphorusAddition,
+        she:PotassiumAddition .
+
+she:NPKM a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "additions of nitrogen, phosphorus, potassium, and animal manure" ;
+    skos:prefLabel "npkm" ;
+    she:includesAdditionOf she:AnimalManureAddition,
+        she:NitrogenAddition,
+        she:PhosphorusAddition,
+        she:PotassiumAddition .
+
+she:NPKS a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "additions of nitrogen, phosphorus, potassium, and sulphur" ;
+    skos:prefLabel "npks" ;
+    she:includesAdditionOf she:NitrogenAddition,
+        she:PhosphorusAddition,
+        she:PotassiumAddition,
+        she:SulphurAddition .
+
+she:OnePointFiveNPKM a skos:Concept ;
+    skos:broader she:ExperimentalTreatment ;
+    skos:definition "50% higher addition of n, p, k and manure than in the standard treatment" ;
+    skos:prefLabel "1.5npkm" ;
+    she:includesAdditionOf she:AnimalManureAddition,
+        she:FiftyPercentHigherAddition,
+        she:NitrogenAddition,
+        she:PhosphorusAddition,
+        she:PotassiumAddition .
+
+she:RegressionLine a skos:Concept ;
+    skos:prefLabel "regression" ;
+    she:representsRelationshipBetween she:RelativeYieldOfWheat,
+        she:SoilOlsenPContents .
+
+she:RelationshipBetweenSoilOlsenPContentsAndRelativeYieldOfWheatInLongTermExperimentsInChina a skos:Concept ;
+    skos:prefLabel "the relationship between soil olsen-p contents and relative yield of wheat in long-term experiments in china" ;
+    she:describesContext she:LongTermExperimentsInChina ;
+    she:describesRelationshipBetween she:RelativeYieldOfWheat,
+        she:SoilOlsenPContents .
+
+she:SourceOfData a skos:Concept ;
+    skos:definition "chen, x. et al., unpublished data" ;
+    skos:prefLabel "source" .
+
+she:FiftyPercentHigherAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "50% higher addition of n, p, k and manure than in the standard treatment" ;
+    skos:prefLabel "50% higher addition" .
+
+she:LongTermExperimentsInChina a skos:Concept ;
+    skos:prefLabel "long-term experiments in china" .
+
+she:MilligramsPerKilogram a skos:Concept ;
+    skos:prefLabel "mg/kg" .
+
+she:NinetyPercentRelativeYield a skos:Concept ;
+    skos:prefLabel "90% relative yield" ;
+    she:hasValue "90%" .
+
+she:Percentage a skos:Concept ;
+    skos:prefLabel "percentage" .
+
+she:SulphurAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "s for sulphur" ;
+    skos:prefLabel "sulphur addition" .
+
+she:AnimalManureAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "m: addition of animal manure" ;
+    skos:prefLabel "animal manure addition" .
+
+she:RelativeYieldOfWheat a skos:Concept ;
+    skos:prefLabel "relative yield (percentage)" ;
+    she:measuredIn she:Percentage .
+
+she:SoilOlsenPContents a skos:Concept ;
+    skos:prefLabel "olsen-p (mg/kg)" ;
+    she:measuredIn she:MilligramsPerKilogram .
+
+she:PhosphorusAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "p for phosphorus" ;
+    skos:prefLabel "phosphorus addition" .
+
+she:NitrogenAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "n additions of nitrogen" ;
+    skos:prefLabel "nitrogen addition" .
+
+she:PotassiumAddition a skos:Concept ;
+    skos:broader she:NutrientAdditionType ;
+    skos:definition "k for potassium" ;
+    skos:prefLabel "potassium addition" .
+
+she:ExperimentalTreatment a skos:Concept ;
+    skos:prefLabel "experimental treatment" .
+
+she:NutrientAdditionType a skos:Concept ;
+    skos:prefLabel "nutrient addition type" .
+

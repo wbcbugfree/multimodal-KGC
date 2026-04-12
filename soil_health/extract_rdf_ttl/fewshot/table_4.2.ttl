@@ -1,0 +1,31 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:OptimalPHValuesForDifferentCrops a skos:Concept ;
+    skos:narrower she:BeetBeansPeasAndOilseeds,
+        she:CerealsAndMaize,
+        she:Grassland,
+        she:GrasslandHighMolybdenum,
+        she:Potatoes ;
+    skos:prefLabel "table 4.2 example of optimal ph values for different crops as given in the literature" .
+
+she:BeetBeansPeasAndOilseeds a skos:Concept ;
+    skos:prefLabel "beet, beans, peas and oilseeds" ;
+    she:hasOptimalPH "7.0" .
+
+she:CerealsAndMaize a skos:Concept ;
+    skos:prefLabel "cereals and maize" ;
+    she:hasOptimalPH "6.5" .
+
+she:Grassland a skos:Concept ;
+    skos:prefLabel "grassland" ;
+    she:hasOptimalPH "6.3" .
+
+she:GrasslandHighMolybdenum a skos:Concept ;
+    skos:prefLabel "grassland (high molybdenum)" ;
+    she:hasOptimalPH "<6.2" .
+
+she:Potatoes a skos:Concept ;
+    skos:prefLabel "potatoes" ;
+    she:hasOptimalPH "6.0" .
+

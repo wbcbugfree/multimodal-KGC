@@ -1,0 +1,105 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:HighMAP a skos:Concept ;
+    skos:prefLabel "high map" .
+
+she:LowMAP a skos:Concept ;
+    skos:prefLabel "low map" .
+
+she:LowerBenchmark a skos:Concept ;
+    skos:prefLabel "lower benchmark" .
+
+she:MAP a skos:Concept ;
+    skos:definition "mean annual precipitation (mm)" ;
+    skos:prefLabel "map" .
+
+she:NoteA a skos:Concept ;
+    skos:prefLabel "note (a)" .
+
+she:Source a skos:Concept ;
+    skos:narrower she:CompiledFromDrexlerEtAl2002 ;
+    skos:prefLabel "source" .
+
+she:Table26SiteSpecificLowerSocBenchmarksForGermanAgriculturalSoilsAcrossDifferentStrata a skos:Concept ;
+    skos:narrower she:ArableSoil,
+        she:PermanentGrassland ;
+    skos:prefLabel "table 2.6 site-specific lower soc benchmarks for german agricultural soils across different strata" .
+
+she:TextureA a skos:Concept ;
+    skos:narrower she:HeavyI,
+        she:HeavyII,
+        she:Light,
+        she:Medium,
+        she:MediumII ;
+    skos:prefLabel "texture (a)" .
+
+she:ArableSoil a skos:Concept ;
+    skos:prefLabel "arable soil" .
+
+she:CompiledFromDrexlerEtAl2002 a skos:Concept ;
+    skos:prefLabel "compiled from drexler et al. (2002)" .
+
+she:HeavyI a skos:Concept ;
+    skos:definition "heavy i 25-35% clay" ;
+    skos:prefLabel "heavy i" ;
+    she:hasArableSoilHighMAPThreshold ">900" ;
+    she:hasArableSoilLowMAPThreshold "<900" ;
+    she:hasArableSoilLowerBenchmarkForHighMAP "1.4" ;
+    she:hasArableSoilLowerBenchmarkForLowMAP "1.2" ;
+    she:hasPermanentGrasslandHighMAPThreshold ">750" ;
+    she:hasPermanentGrasslandLowMAPThreshold "<750" ;
+    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.7" ;
+    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "3.3" .
+
+she:HeavyII a skos:Concept ;
+    skos:definition "heavy ii >35% clay" ;
+    skos:prefLabel "heavy ii" ;
+    she:hasArableSoilHighMAPThreshold ">900" ;
+    she:hasArableSoilLowMAPThreshold "<900" ;
+    she:hasArableSoilLowerBenchmarkForHighMAP "2.0" ;
+    she:hasArableSoilLowerBenchmarkForLowMAP "1.5" ;
+    she:hasPermanentGrasslandHighMAPThreshold ">750" ;
+    she:hasPermanentGrasslandLowMAPThreshold "<750" ;
+    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "4.3" ;
+    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "3.7" .
+
+she:Light a skos:Concept ;
+    skos:definition "light <12% clay, <50% silt" ;
+    skos:prefLabel "light" ;
+    she:hasArableSoilHighMAPThreshold ">700" ;
+    she:hasArableSoilLowMAPThreshold "<700" ;
+    she:hasArableSoilLowerBenchmarkForHighMAP "0.9" ;
+    she:hasArableSoilLowerBenchmarkForLowMAP "0.7" ;
+    she:hasPermanentGrasslandHighMAPThreshold ">650" ;
+    she:hasPermanentGrasslandLowMAPThreshold "<650" ;
+    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "2.0" ;
+    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "1.4" .
+
+she:Medium a skos:Concept ;
+    skos:definition "medium i 12-17% clay, <50% silt" ;
+    skos:prefLabel "medium" ;
+    she:hasArableSoilHighMAPThreshold ">850" ;
+    she:hasArableSoilLowMAPThreshold "<850" ;
+    she:hasArableSoilLowerBenchmarkForHighMAP "1.1" ;
+    she:hasArableSoilLowerBenchmarkForLowMAP "1.0" ;
+    she:hasPermanentGrasslandHighMAPThreshold "<950" ;
+    she:hasPermanentGrasslandLowMAPThreshold "<950" ;
+    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.0" ;
+    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "2.3" .
+
+she:MediumII a skos:Concept ;
+    skos:definition "medium ii 17-25% clay" ;
+    skos:prefLabel "medium ii" ;
+    she:hasArableSoilHighMAPThreshold ">1,000" ;
+    she:hasArableSoilLowMAPThreshold "<1,000" ;
+    she:hasArableSoilLowerBenchmarkForHighMAP "1.4" ;
+    she:hasArableSoilLowerBenchmarkForLowMAP "1.1" ;
+    she:hasPermanentGrasslandHighMAPThreshold ">1,250" ;
+    she:hasPermanentGrasslandLowMAPThreshold "<1,250" ;
+    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.1" ;
+    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "2.7" .
+
+she:PermanentGrassland a skos:Concept ;
+    skos:prefLabel "permanent grassland" .
+

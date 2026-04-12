@@ -1,0 +1,83 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SocClayRatioAsIndex a skos:Concept ;
+    skos:narrower she:SocClayRatio,
+        she:SoilStructure ;
+    skos:prefLabel "soc/clay ratio as an index of good soil structure" ;
+    she:hasSource "compiled from johannes et al. (2017)" .
+
+she:AcceptableOrGoodSoilStructure a skos:Concept ;
+    skos:prefLabel "acceptable or good soil structure" .
+
+she:DegradedSoilStructure a skos:Concept ;
+    skos:prefLabel "degraded soil structure" .
+
+she:FieldLevelOptimum a skos:Concept ;
+    skos:prefLabel "field-level optimum for good structural quality" ;
+    she:isCharacterizedBy she:SocEnriched .
+
+she:MinimumDesiredSocLevel a skos:Concept ;
+    skos:prefLabel "goal for farmers as minimum desired soc level" .
+
+she:SocClayRatio a skos:Concept ;
+    skos:narrower she:SocClayRatio0_1,
+        she:SocClayRatioGreaterThan0_125,
+        she:SocClayRatioLessThan0_07 ;
+    skos:prefLabel "soc/clay ratio" .
+
+she:SocClayRatio0_1 a skos:Concept ;
+    skos:prefLabel "0.1 (1/10)" ;
+    she:hasAssociatedRange she:SocClayRatioRange1_8To1_13 ;
+    she:hasExplanation she:MinimumDesiredSocLevel .
+
+she:SocClayRatioGreaterThan0_125 a skos:Concept ;
+    skos:prefLabel ">0.125 (1/8)" ;
+    she:correspondsToSoilStructure she:SoilStructureGreaterThan1_10 ;
+    she:hasExplanation she:FieldLevelOptimum .
+
+she:SocClayRatioLessThan0_07 a skos:Concept ;
+    skos:prefLabel "<0.07 (1/13)" ;
+    she:correspondsToSoilStructure she:SoilStructureLessThan1_10 ;
+    she:hasExplanation she:UnacceptableStructuralSoilQuality .
+
+she:SocClayRatioRange1_8To1_13 a skos:Concept ;
+    skos:prefLabel "(1/8-1/13)" .
+
+she:SocDepleted a skos:Concept ;
+    skos:definition "soc depleted relative to the clay content" ;
+    skos:prefLabel "soc depleted" .
+
+she:SocEnriched a skos:Concept ;
+    skos:definition "soc enriched relative to the clay content" ;
+    skos:prefLabel "soc enriched" .
+
+she:SoilStructure a skos:Concept ;
+    skos:narrower she:SoilStructureGreaterThan1_10,
+        she:SoilStructureLessThan1_10 ;
+    skos:prefLabel "soil structure" ;
+    she:isEvaluatedBy she:VESS .
+
+she:UnacceptableStructuralSoilQuality a skos:Concept ;
+    skos:prefLabel "structural soil quality is likely to be unacceptable" ;
+    she:isCharacterizedBy she:SocDepleted .
+
+she:VESS a skos:Concept ;
+    skos:definition "visual evaluation of soil structure (15) (ball et al., 2017; see also chapter 8)" ;
+    skos:prefLabel "vess" ;
+    she:definesScoreRange she:VESSScoreRange .
+
+she:VESSScoreRange a skos:Concept ;
+    skos:definition "the score ranges from 1 (good structure) to 5 (poor structure)" ;
+    skos:prefLabel "vess score range" .
+
+she:SoilStructureGreaterThan1_10 a skos:Concept ;
+    skos:prefLabel ">1/10 (vess <3)" ;
+    she:hasExplanation she:AcceptableOrGoodSoilStructure ;
+    she:hasVESSScore "<3" .
+
+she:SoilStructureLessThan1_10 a skos:Concept ;
+    skos:prefLabel "<1/10 (vess >3)" ;
+    she:hasExplanation she:DegradedSoilStructure ;
+    she:hasVESSScore ">3" .
+

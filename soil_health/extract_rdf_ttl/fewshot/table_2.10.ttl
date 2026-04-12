@@ -1,0 +1,27 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SOMThresholdsDerivedFromFarmerQuestionnaire a skos:Concept ;
+    skos:narrower she:Threshold1,
+        she:Threshold2 ;
+    skos:prefLabel "definition of som thresholds derived from a farmer questionnaire" ;
+    she:isElaboratedBasedOn she:HijbeekEtAl2017b .
+
+she:HijbeekEtAl2017b a skos:Concept ;
+    skos:prefLabel "hijbeek et al. (2017b)" .
+
+she:Threshold1 a skos:Concept ;
+    skos:definition "lower end of som value range (10th percentile) at which farmers judge their current som content sufficient. below this threshold value, no farmers are expected to be satisfied with their som content." ;
+    skos:prefLabel "threshold 1" ;
+    she:concernsCroplandArea "1.1% of the european cropland area (in particular northern france)" ;
+    she:hasSOCDataSource she:DeBrogniezEtAl2015 .
+
+she:Threshold2 a skos:Concept ;
+    skos:definition "upper end of the range of values (90th percentile) at which farmers perceive a high or very high deficiency of som content. above this threshold, no farmers are expected to be dissatisfied with their som content." ;
+    skos:prefLabel "threshold 2" ;
+    she:concernsCroplandArea "14.3% of the cropland area (mostly central/eastern europe and southern europe)" ;
+    she:hasSOCDataSource she:DeBrogniezEtAl2015 .
+
+she:DeBrogniezEtAl2015 a skos:Concept ;
+    skos:prefLabel "de brogniez et al. (2015)" .
+

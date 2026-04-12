@@ -1,0 +1,309 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AcidicSoils a skos:Concept ;
+    skos:prefLabel "acidic soils" ;
+    she:negativelyRegulates she:Decomposition .
+
+she:FulvicAcid a skos:Concept ;
+    skos:prefLabel "fulvic acid" ;
+    she:from she:AcidifiedForestFloors ;
+    she:positivelyRegulates she:Bleaching,
+        she:DissolvedOrganicCarbonLoss,
+        she:NutrientLoss .
+
+she:SocietalNeeds a skos:Concept ;
+    skos:narrower she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Infrastructure,
+        she:Water ;
+    skos:prefLabel "societal needs" .
+
+she:SoilFilteringCapacity a skos:Concept ;
+    skos:prefLabel "soil filtering capacity" ;
+    she:prevents she:Acidification,
+        she:Eutrophication .
+
+she:SoilServices a skos:Concept ;
+    skos:narrower she:CarbonStorage,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:GeologicalMaterialStorage,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:PlatformForInfrastructure,
+        she:WaterStorage,
+        she:WoodProduction ;
+    skos:prefLabel "soil services" .
+
+she:SoilThreatIndicators a skos:Concept ;
+    skos:narrower she:SoilAcidification,
+        she:SoilBiodiversity,
+        she:SoilCompaction,
+        she:SoilErosion,
+        she:SoilNutrientStatus,
+        she:SoilOrganicCarbon,
+        she:SoilPollution,
+        she:SoilSealing ;
+    skos:prefLabel "soil threat indicators" .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification" .
+
+she:AcidifiedForestFloors a skos:Concept ;
+    skos:prefLabel "acidified forest floors" .
+
+she:Bleaching a skos:Concept ;
+    skos:prefLabel "bleaching" .
+
+she:DeadBiomass a skos:Concept ;
+    skos:prefLabel "dead biomass" .
+
+she:Decomposition a skos:Concept ;
+    skos:prefLabel "decomposition" .
+
+she:DissolvedOrganicCarbonLoss a skos:Concept ;
+    skos:prefLabel "dissolved organic carbon loss" .
+
+she:Eutrophication a skos:Concept ;
+    skos:prefLabel "eutrophication" .
+
+she:LowerBiologicalActivity a skos:Concept ;
+    skos:prefLabel "lower biological activity" .
+
+she:NutrientLoss a skos:Concept ;
+    skos:prefLabel "nutrient loss" .
+
+she:SoilAcidification a skos:Concept ;
+    skos:prefLabel "Soil acidification" ;
+    she:causes she:LowerBiologicalActivity ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction ;
+    she:hasNeutralImpactOn she:CarbonStorage,
+        she:Climate,
+        she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure ;
+    she:isBeneficialFor [ she:hasCondition she:Climate ;
+            she:object she:CarbonStorage ] ;
+    she:positivelyRegulates she:DeadBiomass .
+
+she:SoilBiodiversity a skos:Concept ;
+    skos:prefLabel "soil biodiversity" ;
+    she:hasNeutralImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction .
+
+she:SoilCompaction a skos:Concept ;
+    skos:prefLabel "soil compaction" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction ;
+    she:hasNeutralImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure .
+
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction ;
+    she:hasNeutralImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure .
+
+she:SoilNutrientStatus a skos:Concept ;
+    skos:prefLabel "soil nutrient status" ;
+    she:hasNegativeImpactOn she:ContaminantFiltering,
+        she:Water,
+        she:WaterStorage ;
+    she:hasNeutralImpactOn she:CarbonStorage,
+        she:Climate,
+        she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:WoodProduction .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:note "Organic soils are unstable as platform for infrastructure." ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasNeutralImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction .
+
+she:SoilPollution a skos:Concept ;
+    skos:note "Land prices are lower if the soil is polluted, as remediation costs are incurred." ;
+    skos:prefLabel "soil pollution" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction ;
+    she:hasNeutralImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:CarbonStorage,
+        she:Climate,
+        she:ContaminantFiltering,
+        she:CropGrowth,
+        she:FibreProduction,
+        she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants,
+        she:Water,
+        she:WaterStorage,
+        she:WoodProduction ;
+    she:hasPositiveImpactOn she:GeologicalMaterialStorage,
+        she:Infrastructure,
+        she:PlatformForInfrastructure .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:related she:HabitatForFungi,
+        she:HabitatForInsects,
+        she:HabitatForMicrobes,
+        she:HabitatForPlants .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:related she:CropGrowth,
+        she:FibreProduction,
+        she:WoodProduction .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:related she:GeologicalMaterialStorage,
+        she:PlatformForInfrastructure .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:related she:ContaminantFiltering,
+        she:WaterStorage .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:related she:CarbonStorage .
+
+she:ContaminantFiltering a skos:Concept ;
+    skos:prefLabel "contaminant filtering" .
+
+she:CropGrowth a skos:Concept ;
+    skos:prefLabel "crop growth" .
+
+she:FibreProduction a skos:Concept ;
+    skos:prefLabel "fibre production" .
+
+she:GeologicalMaterialStorage a skos:Concept ;
+    skos:prefLabel "geological material storage" .
+
+she:HabitatForFungi a skos:Concept ;
+    skos:prefLabel "habitat for fungi" .
+
+she:HabitatForInsects a skos:Concept ;
+    skos:prefLabel "habitat for insects" .
+
+she:HabitatForMicrobes a skos:Concept ;
+    skos:prefLabel "habitat for microbes" .
+
+she:HabitatForPlants a skos:Concept ;
+    skos:prefLabel "habitat for plants" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+
+she:WoodProduction a skos:Concept ;
+    skos:prefLabel "wood production" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" .
+

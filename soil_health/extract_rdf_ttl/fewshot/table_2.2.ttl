@@ -1,0 +1,36 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SOMFractionsPoolsInSoils a skos:Concept ;
+    skos:narrower she:InertOrganicMatter,
+        she:MAOM,
+        she:MicrobialBiomassC,
+        she:POM ;
+    skos:prefLabel "som fractions/pools in soils" .
+
+she:BlackCarbon a skos:Concept ;
+    skos:prefLabel "black carbon" .
+
+she:InertOrganicMatter a skos:Concept ;
+    skos:prefLabel "inert organic matter" ;
+    she:alsoKnownAs she:BlackCarbon ;
+    she:hasApproximateShareOfTotalSOM "5-20% or more" ;
+    she:hasCharacteristics "constant, passive" .
+
+she:MAOM a skos:Concept ;
+    skos:definition "largely consisting of microbial necromass and other adsorbed organic soil constituents" ;
+    skos:prefLabel "maom" ;
+    she:hasApproximateShareOfTotalSOM "50-75%" ;
+    she:hasCharacteristics "stable, activity level depends on degree of organo-mineral complexation" .
+
+she:MicrobialBiomassC a skos:Concept ;
+    skos:prefLabel "microbial biomass c (bacteria, fungi)" ;
+    she:hasApproximateShareOfTotalSOM "1-5%" ;
+    she:hasCharacteristics "labile, active" .
+
+she:POM a skos:Concept ;
+    skos:definition "it can be further subdivided into freshly added plant and animal residues, usually coarse pom with a low degree of decomposition (e.g. >250µm), and partially decomposed residues, frequently finer sized" ;
+    skos:prefLabel "pom" ;
+    she:hasApproximateShareOfTotalSOM "5-25%" ;
+    she:hasCharacteristics "labile, active" .
+

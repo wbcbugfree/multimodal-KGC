@@ -1,0 +1,49 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table22 a skos:Concept ;
+    skos:narrower she:SomFractionsPoolsInSoils ;
+    skos:prefLabel "table 2.2" .
+
+she:ApproximateShareOfTotalSom a skos:Concept ;
+    skos:prefLabel "approximate share of total som" .
+
+she:CharacteristicsOfPool a skos:Concept ;
+    skos:prefLabel "characteristics of pool" .
+
+she:InertOrganicMatter a skos:Concept ;
+    skos:prefLabel "inert organic matter" ;
+    she:alsoKnownAs "black carbon" ;
+    she:hasApproximateShareOfTotalSom "5-20% or more" ;
+    she:hasCharacteristicsOfPool "constant, passive" .
+
+she:Maom a skos:Concept ;
+    skos:definition "largely consisting of microbial necromass and other adsorbed organic soil constituents" ;
+    skos:prefLabel "maom" ;
+    she:hasApproximateShareOfTotalSom "50-75%" ;
+    she:hasCharacteristicsOfPool "stable, activity level depends on degree of organo-mineral complexation" .
+
+she:MicrobialBiomassC a skos:Concept ;
+    skos:prefLabel "microbial biomass c (bacteria, fungi)" ;
+    she:hasApproximateShareOfTotalSom "1-5%" ;
+    she:hasCharacteristicsOfPool "labile, active" .
+
+she:OrganicMatterFractionPool a skos:Concept ;
+    skos:prefLabel "organic matter fraction/pool" .
+
+she:Pom a skos:Concept ;
+    skos:definition "it can be further subdivided into freshly added plant and animal residues, usually coarse pom with a low degree of decomposition (e.g. >250µm), and partially decomposed residues, frequently finer sized" ;
+    skos:prefLabel "pom" ;
+    she:hasApproximateShareOfTotalSom "5-25%" ;
+    she:hasCharacteristicsOfPool "labile, active" .
+
+she:SomFractionsPoolsInSoils a skos:Concept ;
+    skos:narrower she:InertOrganicMatter,
+        she:Maom,
+        she:MicrobialBiomassC,
+        she:Pom ;
+    skos:prefLabel "som fractions/pools in soils" ;
+    she:hasColumn she:ApproximateShareOfTotalSom,
+        she:CharacteristicsOfPool,
+        she:OrganicMatterFractionPool .
+

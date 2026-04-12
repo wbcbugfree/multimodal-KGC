@@ -18,7 +18,7 @@ from gemini_vistext_runner_core import (  # noqa: E402
 
 
 OUTPUT_DIR = SCRIPT_DIR / "vistext_fewshot_outputs"
-SYSTEM_PROMPT_PATH = PROMPT_ROOT / "zeroshot.md"
+SYSTEM_PROMPT_PATH = PROMPT_ROOT / "zeroshot_system.md"
 DESCRIPTION = "Call Gemini on vistext chart images with three-example few-shot prompting and save only valid Turtle outputs."
 
 

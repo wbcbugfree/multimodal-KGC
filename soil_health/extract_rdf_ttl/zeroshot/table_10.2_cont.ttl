@@ -1,0 +1,100 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:GHG a skos:Concept ;
+    skos:definition "greenhouse gas" ;
+    skos:prefLabel "ghg" .
+
+she:PTF a skos:Concept ;
+    skos:definition "pedotransfer function" ;
+    skos:prefLabel "ptf" .
+
+she:Table102ParametersForSoilMonitoringAtDifferentSamplingIntensityLevelsCont a skos:Concept ;
+    skos:narrower she:SoilCompaction,
+        she:SoilErosion ;
+    skos:prefLabel "table 10.2 parameters for soil monitoring at different sampling intensity levels (cont.)" .
+
+she:AllBasicSoilParametersForPTFsAreMeasured a skos:Concept ;
+    skos:prefLabel "all basic soil parameters for ptfs are measured" .
+
+she:AsForLevelIIButWithGreatSamplingDepthAndMoreSubsamples a skos:Concept ;
+    skos:prefLabel "as for level ii, but with great sampling depth and more subsamples" .
+
+she:CatchmentScale a skos:Concept ;
+    skos:prefLabel "catchment scale" .
+
+she:DetailsOnLandUse a skos:Concept ;
+    skos:prefLabel "details on land use (e.g. ground cover)" .
+
+she:MappingVisibleSoilErosionFeatures a skos:Concept ;
+    skos:prefLabel "mapping visible soil erosion features" .
+
+she:ModellingUsingDataOnLandCoverLandUseGeomorphologicalDataNationalSoilDataRainfall a skos:Concept ;
+    skos:prefLabel "modelling (using data on land cover/land use, geomorphological data, national soil data, rainfall)" .
+
+she:MonitoringMeasurementsOfSoilErosionSedimentLoads a skos:Concept ;
+    skos:narrower she:CatchmentScale,
+        she:PlotScale,
+        she:SedimentDepositionInPondsLakesOrReservoirs ;
+    skos:prefLabel "monitoring (measurements) of soil erosion (sediment loads):" .
+
+she:MorphologicalFeatures a skos:Concept ;
+    skos:prefLabel "morphological features" .
+
+she:PenetrationResistancePTF a skos:Concept ;
+    skos:prefLabel "penetration resistance (ptf)" .
+
+she:PlotScale a skos:Concept ;
+    skos:prefLabel "plot scale" .
+
+she:PrecompressionStressPTF a skos:Concept ;
+    skos:prefLabel "precompression stress (ptf)" .
+
+she:RootingEstimated a skos:Concept ;
+    skos:prefLabel "rooting (estimated)" .
+
+she:SaturatedHydraulicConductivityAirCapacityPlantAvailableWaterCapacityPTF a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity, air capacity, plant available water capacity (ptf)" .
+
+she:SedimentDepositionInPondsLakesOrReservoirs a skos:Concept ;
+    skos:prefLabel "sediment deposition in ponds, lakes or reservoirs" .
+
+she:SoilCompaction a skos:Concept ;
+    skos:narrower she:AllBasicSoilParametersForPTFsAreMeasured,
+        she:AsForLevelIIButWithGreatSamplingDepthAndMoreSubsamples,
+        she:MorphologicalFeatures,
+        she:PenetrationResistancePTF,
+        she:PrecompressionStressPTF,
+        she:RootingEstimated,
+        she:SaturatedHydraulicConductivityAirCapacityPlantAvailableWaterCapacityPTF,
+        she:SoilOrganicMatterMeasured,
+        she:SoilRigidityRatioPTF,
+        she:SoilTextureCoarseFragmentsCaCO3Estimated,
+        she:StressDependentMeasurements,
+        she:TensiometerSensorsAtRepresentativeSubplots ;
+    skos:prefLabel "soil compaction" ;
+    she:seeAlsoTable "Table 8.3" .
+
+she:SoilErosion a skos:Concept ;
+    skos:narrower she:DetailsOnLandUse,
+        she:MappingVisibleSoilErosionFeatures,
+        she:ModellingUsingDataOnLandCoverLandUseGeomorphologicalDataNationalSoilDataRainfall,
+        she:MonitoringMeasurementsOfSoilErosionSedimentLoads ;
+    skos:prefLabel "soil erosion" ;
+    she:seeAlsoTable "Table 7.4" .
+
+she:SoilOrganicMatterMeasured a skos:Concept ;
+    skos:prefLabel "soil organic matter (measured)" .
+
+she:SoilRigidityRatioPTF a skos:Concept ;
+    skos:prefLabel "soil rigidity ratio (ptf)" .
+
+she:SoilTextureCoarseFragmentsCaCO3Estimated a skos:Concept ;
+    skos:prefLabel "soil texture/coarse fragments/caco3 (estimated)" .
+
+she:StressDependentMeasurements a skos:Concept ;
+    skos:prefLabel "stress-dependent measurements" .
+
+she:TensiometerSensorsAtRepresentativeSubplots a skos:Concept ;
+    skos:prefLabel "tensiometer, sensors at representative subplots" .
+

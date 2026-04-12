@@ -1,0 +1,94 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Air a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "air" ;
+    she:isSupportedBySoilService she:CompositionAndExchangeOfSoilGasWithTheAtmosphere .
+
+she:Biodiversity a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biodiversity" ;
+    she:isSupportedBySoilService she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Biomass a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "biomass" ;
+    she:isSupportedBySoilService she:GrowthAndQualityOfCrops,
+        she:WoodAndFibreProduction .
+
+she:Climate a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "climate" ;
+    she:isSupportedBySoilService she:CarbonStorageAndTurnoverAvoidanceOfGreenhouseGasReleases .
+
+she:CulturalHeritage a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "cultural heritage" ;
+    she:isSupportedBySoilService she:DocumentationOfHistoricalHumanCultureAndLandManagement .
+
+she:Infrastructure a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "infrastructure" ;
+    she:isSupportedBySoilService she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:RelationshipOfSoilCompactionToKeySocietalNeedsAndSoilFunctions a skos:Concept ;
+    skos:narrower she:SocietalNeed,
+        she:SoilService ;
+    skos:prefLabel "relationship of soil compaction to key societal needs and soil functions" .
+
+she:Water a skos:Concept ;
+    skos:broader she:SocietalNeed ;
+    skos:prefLabel "water" ;
+    she:isSupportedBySoilService she:FilteringAndBufferingOfContaminantsIncludingSupplyOfDrinkingWater,
+        she:WaterStorageAndAvailabilityGroundwaterRechargeSurfaceRunOffAndInterflow .
+
+she:CarbonStorageAndTurnoverAvoidanceOfGreenhouseGasReleases a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "carbon storage and turnover, avoidance of greenhouse gas releases (e.g. nitrous oxide, methane)" .
+
+she:CompositionAndExchangeOfSoilGasWithTheAtmosphere a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "composition and exchange of soil gas with the atmosphere" .
+
+she:DocumentationOfHistoricalHumanCultureAndLandManagement a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "documentation of historical human culture and land management" .
+
+she:FilteringAndBufferingOfContaminantsIncludingSupplyOfDrinkingWater a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "filtering and buffering of contaminants, including supply of drinking water" .
+
+she:GrowthAndQualityOfCrops a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "growth and quality of crops" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "platform for infrastructure" ;
+    she:hasImpactOfSoilCompaction "indifferent" .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "storage of geological material" ;
+    she:hasImpactOfSoilCompaction "indifferent" .
+
+she:WaterStorageAndAvailabilityGroundwaterRechargeSurfaceRunOffAndInterflow a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "water storage and availability, groundwater recharge, surface run-off and interflow" .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:broader she:SoilService ;
+    skos:prefLabel "wood and fibre production" .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" .
+

@@ -1,0 +1,40 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:BeetBeansPeasAndOilseeds a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "beet, beans, peas and oilseeds" ;
+    she:hasOptimumPh "7.0" .
+
+she:CerealsAndMaize a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "cereals and maize" ;
+    she:hasOptimumPh "6.5" .
+
+she:Grassland a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "grassland" ;
+    she:hasOptimumPh "6.3" .
+
+she:GrasslandHighMolybdenum a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "grassland (high molybdenum)" ;
+    she:hasOptimumPh "<6.2" .
+
+she:OptimumPh a skos:Concept ;
+    skos:broader she:Table42ExampleOfOptimalPhValuesForDifferentCropsAsGivenInTheLiterature ;
+    skos:prefLabel "optimum ph" .
+
+she:Potatoes a skos:Concept ;
+    skos:broader she:Crop ;
+    skos:prefLabel "potatoes" ;
+    she:hasOptimumPh "6.0" .
+
+she:Table42ExampleOfOptimalPhValuesForDifferentCropsAsGivenInTheLiterature a skos:Concept ;
+    skos:prefLabel "table 4.2 example of optimal ph values for different crops as given in the literature" ;
+    she:hasSource "Teagasc (2022)." .
+
+she:Crop a skos:Concept ;
+    skos:broader she:Table42ExampleOfOptimalPhValuesForDifferentCropsAsGivenInTheLiterature ;
+    skos:prefLabel "crop" .
+
