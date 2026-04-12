@@ -54,6 +54,22 @@ def soil_data_dir() -> Path:
     return soil_dataset_dir() / "data"
 
 
+def soil_health_dir() -> Path:
+    return repo_root() / "soil_health"
+
+
+def soil_health_data_dir() -> Path:
+    return soil_health_dir() / "data"
+
+
+def soil_health_figures_dir() -> Path:
+    return soil_health_data_dir() / "figures"
+
+
+def soil_health_tables_dir() -> Path:
+    return soil_health_data_dir() / "tables"
+
+
 def diagram2graph_dataset_dir() -> Path:
     return repo_root() / "diagram2graph_dataset"
 

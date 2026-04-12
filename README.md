@@ -6,7 +6,7 @@ This repository is a notebook-first research artifact. It preserves extraction o
 
 ## What this repository contains
 
-- `soil_dataset/` - soil-health figures and tables, prompt assets, extraction notebooks, KG-building notebooks, executability checks, and evaluation packets.
+- `soil_health/` - soil-health figures and tables, prompt assets, Gemini extraction runners, and preserved RDF/Turtle outputs.
 - `vistext/` - chart dataset inputs, prompt text, JSON-to-TTL converters, preserved TTL outputs, and evaluation utilities.
 - `diagram2graph_dataset/` - diagram images and labels, extraction notebooks, KG outputs, JSON-to-TTL conversion, and F1 or report-generation scripts.
 - `common/` - shared helpers for repo-root discovery and secret loading from environment variables or the ignored top-level `config` file.
@@ -34,7 +34,7 @@ If you are reviewing the repository for paper evaluation, start here:
 
 Current canonical input counts in this checkout:
 
-- soil_dataset: 15 figure images and 56 table images under `soil_dataset/data/`
+- soil_health: 15 figure images and 56 table images under `soil_health/data/`
 - vistext:
   - `vistext/data/train/`: 7057 images, 7057 label JSON files, 7050 Turtle files
   - `vistext/data/eval/`: 883 images, 883 label JSON files, 882 Turtle files
@@ -43,19 +43,20 @@ Current canonical input counts in this checkout:
 
 ## Canonical inputs and reusable entry points
 
-### soil_dataset
+### soil_health
 
 - Canonical raw inputs:
-  - `soil_dataset/data/figures/`
-  - `soil_dataset/data/tables/`
+  - `soil_health/data/figures/`
+  - `soil_health/data/tables/`
 - Canonical extraction outputs:
-  - `soil_dataset/extract_all_rdfs/`
+  - `soil_health/extract_rdf_ttl/`
 - Reusable prompt assets:
-  - `soil_dataset/prompt_engineering/prompt_text/`
-- Legacy or staging areas retained for workflow compatibility:
-  - `soil_dataset/executability/`
-  - `soil_dataset/evaluation/`
-  - `soil_dataset/extract_rdf_method/`
+  - `soil_health/prompt_engineering/`
+- Reusable Gemini runner entry points:
+  - `soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py`
+  - `soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_static.py`
+  - `soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_dynamic.py`
+  - `soil_health/extract_rdf_ttl/gemini_soil_health_fewshot.py`
 
 ### vistext
 
@@ -167,7 +168,7 @@ python "diagram2graph_dataset/json2ttl/script.py" \
 
 - Internal refactor notes live in `docs/refactor_inventory.md`, `docs/repo_map.md`, and `docs/task7-asset-boundaries.md`.
 - dataset-level internal notes live in:
-  - `soil_dataset/readme_internal.md`
+  - `soil_health/readme_internal.md`
   - `vistext/readme_internal.md`
   - `diagram2graph_dataset/readme_internal.md`
 - Prefer canonical paths for new work and treat legacy staging folders as compatibility areas unless you verify references first.
