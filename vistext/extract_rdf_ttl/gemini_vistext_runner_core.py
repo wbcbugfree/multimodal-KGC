@@ -46,6 +46,7 @@ EXAMPLE_USER_PROMPT = (
 VIS_TEXT_DIR = vistext_dir()
 IMAGES_ROOT = vistext_images_dir("test")
 LABELS_ROOT = vistext_labels_dir("test")
+EXCEPTIONS_REPORT_PATH = LABELS_ROOT.parent / "exceptions_report.json"
 PROMPT_ROOT = VIS_TEXT_DIR / "prompt_engineering"
 GROUND_TRUTH_ROOT = PROMPT_ROOT / "ground_truth_val"
 
@@ -75,6 +76,7 @@ class RuntimeConfig:
     model: str
     images_root: Path
     labels_root: Path
+    exceptions_report_path: Path
     output_dir: Path
     manifest_path: Path
     request_delay: float
@@ -192,6 +194,7 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         model=args.model,
         images_root=IMAGES_ROOT.resolve(),
         labels_root=LABELS_ROOT.resolve(),
+        exceptions_report_path=EXCEPTIONS_REPORT_PATH.resolve(),
         output_dir=output_dir,
         manifest_path=manifest_path,
         request_delay=args.request_delay,
@@ -243,6 +246,37 @@ def list_image_paths(images_root: Path) -> list[Path]:
         ),
         key=image_sort_key,
     )
+
+
+def load_excluded_image_ids(report_path: Path) -> set[str]:
+    if not report_path.exists():
+        return set()
+
+    with report_path.open("r", encoding="utf-8") as handle:
+        report = json.load(handle)
+
+    items = report.get("items", [])
+    if not isinstance(items, list):
+        raise ValueError(f"Exception report 'items' must be a list: {report_path}")
+
+    excluded_ids: set[str] = set()
+    excluded_statuses = {"exclude", "suspicious", "error"}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        status = str(item.get("status", "")).strip().lower()
+        include_flag = item.get("include")
+        if status in excluded_statuses or include_flag is False:
+            image_id = str(item.get("img_id", "")).strip()
+            if image_id:
+                excluded_ids.add(image_id)
+    return excluded_ids
+
+
+def filter_excluded_image_paths(image_paths: list[Path], excluded_ids: set[str]) -> list[Path]:
+    if not excluded_ids:
+        return image_paths
+    return [path for path in image_paths if path.stem not in excluded_ids]
 
 
 def select_image_paths(
@@ -662,6 +696,26 @@ def run_strategy(
     config = resolve_runtime_config(args)
 
     image_paths = list_image_paths(config.images_root)
+    excluded_ids = load_excluded_image_ids(config.exceptions_report_path)
+    if excluded_ids:
+        print(
+            f"[FILTER] Excluding {len(excluded_ids)} image(s) listed in "
+            f"{config.exceptions_report_path}"
+        )
+    elif not config.exceptions_report_path.exists():
+        print(f"[FILTER] No exception report found at {config.exceptions_report_path}; no images excluded")
+
+    if config.ids:
+        requested_excluded_ids = [image_id for image_id in config.ids if image_id in excluded_ids]
+        if requested_excluded_ids:
+            print(
+                "Error: Requested image ids are excluded by the VisText exception report: "
+                + ", ".join(requested_excluded_ids),
+                file=sys.stderr,
+            )
+            return 2
+
+    image_paths = filter_excluded_image_paths(image_paths, excluded_ids)
     selected_images = select_image_paths(
         image_paths=image_paths,
         sample_mode=config.sample_mode,

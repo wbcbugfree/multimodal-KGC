@@ -946,7 +946,7 @@ class JSONToTTLConverter:
         os.makedirs(output_dir, exist_ok=True)
 
         json_files = sorted(f for f in os.listdir(input_dir) if f.lower().endswith(".json"))
-        summary = {"clean": 0, "repaired": 0, "suspicious": 0, "error": 0}
+        summary = {"include": 0, "exclude": 0}
         items: List[Dict[str, Any]] = []
         error_details: List[Dict[str, str]] = []
         for json_file in json_files:
@@ -961,20 +961,23 @@ class JSONToTTLConverter:
                 result = self.convert_json_to_result(json_data)
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write(result.ttl)
-                summary[result.status] += 1
-                items.append(
-                    {
-                        "img_id": str(json_data.get("img_id", img_id)),
-                        "status": result.status,
-                        "ttl_file": output_filename,
-                        "reasons": result.reasons,
-                        "repair_actions": result.repair_actions,
-                    }
-                )
+                if result.status in {"clean", "repaired"}:
+                    summary["include"] += 1
+                else:
+                    summary["exclude"] += 1
+                    items.append(
+                        {
+                            "img_id": str(json_data.get("img_id", img_id)),
+                            "status": "exclude",
+                            "ttl_file": output_filename,
+                            "reasons": result.reasons,
+                            "repair_actions": result.repair_actions,
+                        }
+                    )
             except Exception as e:
                 safe_error = str(e).encode("ascii", "backslashreplace").decode()
                 print(f"Error converting {json_file}: {safe_error}")
-                summary["error"] += 1
+                summary["exclude"] += 1
                 if os.path.exists(output_path):
                     os.remove(output_path)
                 error_details.append(
@@ -986,7 +989,7 @@ class JSONToTTLConverter:
                 items.append(
                     {
                         "img_id": img_id,
-                        "status": "error",
+                        "status": "exclude",
                         "ttl_file": None,
                         "reasons": [str(e)],
                         "repair_actions": [],
@@ -997,6 +1000,7 @@ class JSONToTTLConverter:
             "input_dir": input_dir,
             "output_dir": output_dir,
             "summary": summary,
+            "conversion_policy": "include means the converted TTL is treated as usable; exclude means the source was suspicious or failed conversion and should be left out of LLM experiments.",
             "items": items,
             "error_details": error_details,
         }
@@ -1005,10 +1009,9 @@ class JSONToTTLConverter:
         with open(report_path, "w", encoding="utf-8") as handle:
             json.dump(report, handle, ensure_ascii=False, indent=2)
 
-        converted = summary["clean"] + summary["repaired"] + summary["suspicious"]
         print(
-            f"Converted {converted} files ({summary['clean']} clean, {summary['repaired']} repaired, "
-            f"{summary['suspicious']} suspicious), {summary['error']} errors"
+            f"Converted {summary['include']} included files, "
+            f"{summary['exclude']} excluded files"
         )
         print(f"Exception report written to: {report_path}")
         return report
