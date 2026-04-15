@@ -1,177 +1,247 @@
-# multimodal-KGC
+# Multimodal-KGC
 
-Multimodal knowledge-graph construction workflows for three academic datasets: soil-health figures and tables, chart images, and process or flowchart diagrams.
+Multimodal-KGC is a research codebase for constructing RDF/Turtle knowledge graphs from multimodal scientific and chart images. The repository supports three dataset workflows:
 
-This repository is a notebook-first research artifact. It preserves extraction outputs, evaluation notebooks, and generated RDF or Turtle files from prior experiments while making the local layout safer and easier to understand.
+- `vistext`: chart images with JSON labels, converted ground-truth Turtle, Gemini-generated Turtle outputs, and graph-matching evaluation.
+- `diagram2graph`: diagram images with labels and RDF/Turtle conversion or evaluation artifacts.
+- `soil_health`: soil-health figures and tables used as an unlabelled image-to-KG use case.
 
-## What this repository contains
+The codebase is dataset-first rather than package-first. It intentionally preserves generated TTL/JSON/CSV artifacts used in experiments, and most reproducibility entry points are standalone scripts rather than a single application or test suite.
 
-- `soil_health/` - soil-health figures and tables, prompt assets, Gemini extraction runners, and preserved RDF/Turtle outputs.
-- `vistext/` - chart dataset inputs, prompt text, JSON-to-TTL converters, preserved TTL outputs, and evaluation utilities.
-- `diagram2graph_dataset/` - diagram images and labels, extraction notebooks, KG outputs, JSON-to-TTL conversion, and F1 or report-generation scripts.
-- `common/` - shared helpers for repo-root discovery and secret loading from environment variables or the ignored top-level `config` file.
-- `docs/` - refactor notes, repository maps, and internal asset-boundary documentation.
+## Repository Layout
 
-## Current repository status
-
-This checkout has been refactored for publication-friendly naming.
-
-- Top-level dataset folders now use lowercase underscore-separated names.
-- Valuable generated outputs are preserved by default.
-- Confirmed duplicate mirrors have been removed where references were migrated safely.
-- Secret-bearing notebooks were updated to load keys from environment variables or the local ignored `config` file.
-- Legacy folders and historical outputs are still present where they help preserve provenance or notebook compatibility.
-
-## Quick reviewer guide
-
-If you are reviewing the repository for paper evaluation, start here:
-
-- Read this `README.md` for the canonical layout and the validation commands.
-- Check `docs/repo_map.md` for a concise map of the current repository structure.
-- Check `docs/task7-asset-boundaries.md` for the reusable-vs-historical boundary decisions.
-- Inspect one preserved output directory such as `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/` or `diagram2graph_dataset/build_kg/` to see retained research artifacts.
-- Use the smoke-test commands in this README instead of looking for a nonexistent repo-wide `pytest` suite.
-
-Current canonical input counts in this checkout:
-
-- soil_health: 15 figure images and 56 table images under `soil_health/data/`
-- vistext:
-  - `vistext/data/train/`: 7057 images, 7057 label JSON files, 7050 Turtle files
-  - `vistext/data/eval/`: 883 images, 883 label JSON files, 882 Turtle files
-  - `vistext/data/test/`: 882 images, 882 label JSON files, 882 Turtle files
-- diagram2graph_dataset: 219 diagram images and 219 label JSON files under `diagram2graph_dataset/data/`
-
-## Canonical inputs and reusable entry points
-
-### soil_health
-
-- Canonical raw inputs:
-  - `soil_health/data/figures/`
-  - `soil_health/data/tables/`
-- Canonical extraction outputs:
-  - `soil_health/extract_rdf_ttl/`
-- Reusable prompt assets:
-  - `soil_health/prompt_engineering/`
-- Reusable Gemini runner entry points:
-  - `soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py`
-  - `soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_static.py`
-  - `soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_dynamic.py`
-  - `soil_health/extract_rdf_ttl/gemini_soil_health_fewshot.py`
-
-### vistext
-
-- Canonical local inputs:
-  - `vistext/data/train/`
-  - `vistext/data/eval/`
-  - `vistext/data/test/`
-- Reusable converter entry points:
-  - `vistext/data/json2ttl_converter.py`
-  - `vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py`
-- Reusable prompt assets:
-  - `vistext/prompt_engineering/`
-- Preserved historical outputs:
-  - `vistext/extract_rdf_ttl/vistext_zeroshot_outputs/`
-  - `vistext/extract_rdf_ttl/vistext_oneshot_static_outputs/`
-  - `vistext/extract_rdf_ttl/vistext_oneshot_dynamic_outputs/`
-  - `vistext/extract_rdf_ttl/vistext_fewshot_outputs/`
-
-### diagram2graph_dataset
-
-- Canonical inputs:
-  - `diagram2graph_dataset/data/diagram2graph/`
-  - `diagram2graph_dataset/data/labels/`
-- Reusable converter and report scripts:
-  - `diagram2graph_dataset/json2ttl/script.py`
-  - `diagram2graph_dataset/evaluation/report/plot_summaries.py`
-- Reusable prompt assets:
-  - `diagram2graph_dataset/prompt_engineering/prompt_text/`
-- Preserved historical outputs:
-  - `diagram2graph_dataset/extract_rdf_ttl/`
-  - `diagram2graph_dataset/build_kg/`
-  - `diagram2graph_dataset/prompt_engineering/zeroshot_outputs/`
-  - `diagram2graph_dataset/prompt_engineering/oneshot_outputs/`
-  - `diagram2graph_dataset/prompt_engineering/fewshot_outputs/`
-
-## dataset workflow overview
-
-Although each dataset evolved independently, the repository generally follows this pattern:
-
-1. `data/` contains source images, tables, figures, or labels.
-   VisText now uses split-specific subfolders with `images/`, `labels/`, and `turtle/` under `train/`, `eval/`, and `test/`.
-2. `prompt_engineering/` or `prompt_text/` contains prompt variants or notebook-driven prompt workflows.
-3. `Extract RDF .../` stores multimodal model outputs.
-4. `json2ttl/` or `build_kg/` converts outputs into knowledge-graph artifacts.
-5. `evaluation/` stores F1 analysis, RAGAS notebooks, bridge evaluation notebooks, and summary plots.
-
-## Local environment and secrets
-
-- Use `python` in this Windows checkout; on Unix-like environments `python3` is typically equivalent.
-- There is no lockfile, `pyproject.toml`, or centralized test suite.
-- The ignored top-level `config` file is the local place for API keys.
-- Environment variables override values in `config`.
-- Shared secret loading helpers live in `common/config.py`.
-
-Example `config` shape:
-
-```json
-{
-  "gemini_api_key": "..."
-}
+```text
+common/              Shared path and config helpers.
+vistext/             Chart image-to-KG workflow.
+diagram2graph/       Diagram image-to-KG workflow and historical outputs.
+soil_health/         Soil-health figure/table image-to-KG workflow.
+llm-as-a-judge/      Optional LLM-as-a-judge evaluation workflow.
+requirements.txt     Minimal shared Python dependencies.
+config               Local gitignored API-key JSON file, if used.
 ```
 
-## Installation
+## Environment Setup
 
-This repository is notebook-heavy and does not define a reproducible environment yet, but a practical local setup is:
+Use Python 3.10+ if possible. The examples below use `python`, which is the working command in this Windows checkout. On Linux or macOS, `python3` may be the correct executable.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Some notebooks may also require optional heavy packages that are intentionally left commented in `requirements.txt`.
-
-## Representative smoke tests
-
-There is no official repo-wide test command. Use small representative conversions instead.
-
-### vistext converter
+The Gemini and OpenAI SDKs are optional because they are only required for live model calls:
 
 ```bash
-python "vistext/data/json2ttl_converter.py" \
-  "vistext/data/test/labels/1046.json" \
-  -o ".tmp/1046.ttl"
+pip install google-genai openai
 ```
 
-### vistext Gemini runner dry-run
+Some notebooks may require additional packages beyond `requirements.txt`. Those notebooks are retained as research artifacts and are not required for the main script-based reproduction path.
+
+## Secrets
+
+API keys are loaded through `common/config.py`. Environment variables take precedence over a local top-level `config` file.
+
+Recommended environment variables:
 
 ```bash
-python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" \
-  --dry-run --sample-mode ids --ids 1046
+set GEMINI_API_KEY=...
+set OPENAI_API_KEY=...
 ```
 
-### diagram2graph converter
+Equivalent local `config` file:
+
+```json
+{
+  "gemini_api_key": "...",
+  "openai_api_key": "..."
+}
+```
+
+Do not commit `config`.
+
+## VisText: Ground Truth Conversion
+
+VisText data is organized by split:
+
+```text
+vistext/data/train/images/
+vistext/data/train/labels/
+vistext/data/train/turtle/
+vistext/data/eval/images/
+vistext/data/eval/labels/
+vistext/data/eval/turtle/
+vistext/data/test/images/
+vistext/data/test/labels/
+vistext/data/test/turtle/
+```
+
+The reusable converter is:
+
+```text
+vistext/data/json2ttl_converter.py
+```
+
+Single-file smoke conversion:
 
 ```bash
-python "diagram2graph_dataset/json2ttl/script.py" \
-  "diagram2graph_dataset/data/labels/9.json" \
-  ".tmp/d2g-9.ttl"
+python "vistext/data/json2ttl_converter.py" "vistext/data/test/labels/1046.json" -o ".tmp/1046.ttl"
 ```
 
-## Important caveats
+Folder conversion is supported by the same converter. Each split has an `exceptions_report.json` next to the split folder, marking records that should be included or excluded from experiments.
 
-- The canonical repo layout no longer uses spaces in dataset paths.
-- Several notebooks still contain Kaggle or Colab path examples as historical workflow context.
-- `diagram2graph_dataset/evaluation/report/plot_summaries_claude.py` is retained as a legacy script, not a recommended entry point.
+## VisText: Gemini RDF/Turtle Generation
 
-## Repository guidance for contributors and agents
+VisText has four prompting strategies. Each strategy wrapper delegates shared sampling, parallel API calling, retry handling, manifest writing, and Turtle syntax validation to `vistext/extract_rdf_ttl/gemini_vistext_runner_core.py`.
 
-- Internal refactor notes live in `docs/refactor_inventory.md`, `docs/repo_map.md`, and `docs/task7-asset-boundaries.md`.
-- dataset-level internal notes live in:
-  - `soil_health/readme_internal.md`
-  - `vistext/readme_internal.md`
-  - `diagram2graph_dataset/readme_internal.md`
-- Prefer canonical paths for new work and treat legacy staging folders as compatibility areas unless you verify references first.
+```text
+vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py
+vistext/extract_rdf_ttl/gemini_vistext_oneshot_static.py
+vistext/extract_rdf_ttl/gemini_vistext_oneshot_dynamic.py
+vistext/extract_rdf_ttl/gemini_vistext_fewshot.py
+```
+
+Dry-run one image:
+
+```bash
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --dry-run --sample-mode ids --ids 1046
+```
+
+Run a small sample with parallel Gemini calls:
+
+```bash
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --sample-mode random --sample-count 5 --parallel-workers 4
+```
+
+Generated outputs are written to strategy-specific folders under `vistext/extract_rdf_ttl/`, for example `vistext_zeroshot_outputs/`.
+
+## VisText: Traditional Evaluation
+
+The main evaluation handler compares generated TTL files against ground-truth TTL files:
+
+```text
+vistext/evaluation/evaluate_vistext_llm_outputs.py
+```
+
+Evaluate all available strategy outputs in `content_only` mode:
+
+```bash
+python "vistext/evaluation/evaluate_vistext_llm_outputs.py" --graph-modes content_only --ged-workers 1
+```
+
+Parallel GED can be enabled locally:
+
+```bash
+python "vistext/evaluation/evaluate_vistext_llm_outputs.py" --graph-modes content_only --ged-workers 8
+```
+
+The output report is:
+
+```text
+vistext/evaluation/vistext_llm_evaluation_results.json
+```
+
+Metrics include triple matching, ROUGE, BLEU, BERTScore, and normalized graph edit distance. The handler supports numeric tolerance for quantity-like datapoint values.
+
+## LLM-as-a-Judge Evaluation
+
+`llm-as-a-judge/` contains an optional no-gold judge workflow for evaluating image-to-KG outputs when ground-truth labels are unavailable. It is designed for `soil_health`, and can be validated on `vistext` by comparing judge scores against the existing traditional `content_only` metrics.
+
+The judge prompts are adapted from the KGEval prompt pattern:
+
+- XML-like sections such as `<role>`, `<task>`, `<rating_scale>`, `<evaluation_steps>`, and `<output_format>`.
+- KGEval-style criteria adapted to image-to-KG: `relevance`, `factuality`, `informativeness`, `coherence`, and `specificity`.
+- Strict JSON structured outputs through the OpenAI Responses API JSON schema mode, not prompt-only JSON formatting.
+
+Entry points:
+
+```text
+llm-as-a-judge/evaluate_vistext_judge.py
+llm-as-a-judge/evaluate_soil_health_judge.py
+```
+
+Dry-run VisText judge validation:
+
+```bash
+python "llm-as-a-judge/evaluate_vistext_judge.py" --dry-run --modes direct pairwise --sample-mode ids --ids 1248
+```
+
+Dry-run soil-health judge evaluation:
+
+```bash
+python "llm-as-a-judge/evaluate_soil_health_judge.py" --dry-run --modes direct pairwise --sample-mode ids --ids table_1.2
+```
+
+Live OpenAI judge run:
+
+```bash
+python "llm-as-a-judge/evaluate_soil_health_judge.py" --modes direct pairwise --sample-mode random --sample-count 5 --judge-model gpt-4.1-mini
+```
+
+Judge results are written only under:
+
+```text
+llm-as-a-judge/results/
+```
+
+## Soil-Health Use Case
+
+Soil-health has figure and table images but no full ground-truth label set. It is used as the unlabelled use case for image-to-KG generation and LLM-as-a-judge evaluation.
+
+Raw image folders:
+
+```text
+soil_health/data/figures/
+soil_health/data/tables/
+```
+
+Gemini runner entry points:
+
+```text
+soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py
+soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_static.py
+soil_health/extract_rdf_ttl/gemini_soil_health_oneshot_dynamic.py
+soil_health/extract_rdf_ttl/gemini_soil_health_fewshot.py
+```
+
+Dry-run one image:
+
+```bash
+python "soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py" --dry-run --sample-mode ids --ids table_1.2
+```
+
+## Diagram2Graph
+
+`diagram2graph/` preserves the diagram-to-KG workflow and historical generated artifacts. The main reusable converter is:
+
+```text
+diagram2graph/json2ttl/script.py
+```
+
+Single-file smoke conversion:
+
+```bash
+python "diagram2graph/json2ttl/script.py" "diagram2graph/data/labels/9.json" ".tmp/d2g-9.ttl"
+```
+
+The diagram workflow contains notebooks and preserved output folders from earlier experiments. Treat those outputs as research artifacts unless a task explicitly asks to regenerate or prune them.
+
+## Reproducibility Checklist
+
+For reviewers, the smallest script-based reproduction path is:
+
+1. Install the minimal dependencies with `pip install -r requirements.txt`.
+2. Run the VisText converter smoke command to verify JSON-to-Turtle conversion.
+3. Run a VisText Gemini dry-run to verify model-call configuration without spending API calls.
+4. Run `evaluate_vistext_llm_outputs.py` on available generated outputs.
+5. Optionally run `llm-as-a-judge/evaluate_vistext_judge.py --dry-run` to verify judge input discovery.
+6. Run soil-health Gemini or judge dry-runs to verify the unlabelled use-case workflow.
+
+There is no repo-wide `pytest` or CI workflow. Report exact commands and outputs when validating changes.
+
+## Generated Artifacts
+
+This repository intentionally keeps many generated TTL, JSON, CSV, and notebook artifacts because they document the experiments. Do not delete generated outputs unless the task explicitly asks for pruning or regeneration.
 
 ## License
 
