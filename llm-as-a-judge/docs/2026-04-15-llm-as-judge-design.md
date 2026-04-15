@@ -6,7 +6,7 @@ Design a reusable LLM-as-a-judge workflow for evaluating image-to-RDF/Turtle out
 
 The judge must first be validated on `vistext`, where generated TTL outputs can be compared against existing ground-truth-based `content_only` traditional metrics. If the LLM judge aligns with those metrics, the same no-gold judge can be used to evaluate `soil_health` prompting strategies.
 
-## Scope
+## Scope And Isolation
 
 In scope:
 
@@ -15,6 +15,7 @@ In scope:
 - A VisText validation pipeline that compares judge scores/preferences against existing `content_only` traditional metrics.
 - A soil_health evaluation pipeline that reuses the validated judge without requiring ground truth.
 - OpenAI GPT-family models as the intended default judge provider, with provider/model kept configurable.
+- A strict isolation boundary: all LLM-as-a-judge scripts, prompts, intermediate files, and output reports live under `llm-as-a-judge`.
 
 Out of scope:
 
@@ -22,6 +23,7 @@ Out of scope:
 - Diagram2Graph validation in the first implementation, because that dataset has not been reorganized/refactored.
 - Replacing existing traditional VisText metrics.
 - Human annotation UI or manual-review tooling.
+- Adding or modifying files under dataset folders such as `vistext`, `diagram2graph_dataset`, or `soil_health`.
 
 ## Rationale
 
@@ -83,6 +85,8 @@ The validation pipeline uses the existing VisText strategy folders:
 
 The pipeline evaluates whatever TTL files are present. It should work for the current 5-file pilot outputs and automatically scale when the full dataset is generated into the same folders.
 
+The VisText folders are read-only inputs for this workflow. The judge pipeline may read images, generated TTL outputs, ground-truth-derived traditional metric reports, and labels as needed, but it must not write new files under `vistext`.
+
 Validation joins direct judge records with existing traditional metric records from:
 
 - `vistext/evaluation/vistext_llm_evaluation_results.json`
@@ -115,24 +119,33 @@ After VisText validation, the same no-gold judge runs on soil_health strategy fo
 
 Direct assessment produces per-output quality scores. Pairwise comparison produces strategy preferences per image. Since soil_health has no ground truth, only judge results and aggregate strategy summaries are reported.
 
+The soil_health folders are read-only inputs for this workflow. The judge pipeline may read source images and generated TTL outputs, but it must not write new files under `soil_health`.
+
 ## Architecture
 
-Shared judge utilities should live at the project level:
+All implementation files should live under `llm-as-a-judge`. The existing dataset folders remain read-only dependencies.
 
-- `llm_as_judge/prompts/direct_image_to_kg_judge.md`
-- `llm_as_judge/prompts/pairwise_image_to_kg_judge.md`
-- `llm_as_judge/judge_core.py`
+Shared judge utilities:
 
-Dataset-specific handlers should own paths and validation joins:
+- `llm-as-a-judge/llm_as_judge/prompts/direct_image_to_kg_judge.md`
+- `llm-as-a-judge/llm_as_judge/prompts/pairwise_image_to_kg_judge.md`
+- `llm-as-a-judge/llm_as_judge/judge_core.py`
 
-- `vistext/evaluation/evaluate_vistext_llm_judge.py`
-- `soil_health/evaluation/evaluate_soil_health_llm_judge.py`
+Dataset-specific CLIs and path adapters:
+
+- `llm-as-a-judge/evaluate_vistext_judge.py`
+- `llm-as-a-judge/evaluate_soil_health_judge.py`
 
 Expected output artifacts:
 
-- `vistext/evaluation/vistext_llm_judge_results.json`
-- `vistext/evaluation/vistext_llm_judge_validation.json`
-- `soil_health/evaluation/soil_health_llm_judge_results.json`
+- `llm-as-a-judge/results/vistext_llm_judge_results.json`
+- `llm-as-a-judge/results/vistext_llm_judge_validation.json`
+- `llm-as-a-judge/results/soil_health_llm_judge_results.json`
+
+The judge folder can also contain local caches and run manifests, for example:
+
+- `llm-as-a-judge/results/cache/`
+- `llm-as-a-judge/results/manifests/`
 
 ## Configuration
 
