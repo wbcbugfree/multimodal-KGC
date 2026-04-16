@@ -40,54 +40,54 @@
     :label "END" ;
     :shape :EndEvent .
 
-:Edgebeginenter_limit a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodebegin ;
     :target :Nodeenter_limit ;
     :relationshipType :Follows .
 
-:Edgeenter_limitinitialize_number a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodeenter_limit ;
     :target :Nodeinitialize_number ;
     :relationshipType :Follows .
 
-:Edgeinitialize_numberset_sum_to_0 a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodeinitialize_number ;
     :target :Nodeset_sum_to_0 ;
     :relationshipType :Follows .
 
-:Edgeset_sum_to_0do a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeset_sum_to_0 ;
     :target :Nodedo ;
     :relationshipType :Follows .
 
-:Edgedoif_sum_greater_than_limit a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodedo ;
     :target :Nodeif_sum_greater_than_limit ;
     :relationshipType :Follows .
 
-:Edgeif_sum_greater_than_limitupdate_values a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeif_sum_greater_than_limit ;
     :target :Nodeupdate_values ;
     :relationshipType :DependsOn ;
     :relationshipValue "false" .
 
-:Edgeif_sum_greater_than_limitdisplay_number_and_sum a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeif_sum_greater_than_limit ;
     :target :Nodedisplay_number_and_sum ;
     :relationshipType :DependsOn ;
     :relationshipValue "true" .
 
-:Edgeupdate_valuesdecrease_loss a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodeupdate_values ;
     :target :Nodedecrease_loss ;
     :relationshipType :Follows .
 
-:Edgedecrease_lossdo a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodedecrease_loss ;
     :target :Nodedo ;
     :relationshipType :Follows .
 
-:Edgedisplay_number_and_sumend a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodedisplay_number_and_sum ;
     :target :Nodeend ;
     :relationshipType :Follows .

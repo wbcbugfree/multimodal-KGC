@@ -177,7 +177,7 @@ The current Turtle schema uses one lightweight namespace:
 @prefix : <http://example.org/diagram2graph#> .
 ```
 
-Nodes are represented as `:NodeN` resources, edges as `:EdgeST` resources, and edge semantics are encoded with `:source`, `:target`, `:relationshipType`, and optional `:relationshipValue`.
+Nodes are represented as `:NodeN` resources, edges as `:EdgeN` resources, and edge semantics are encoded with `:source`, `:target`, `:relationshipType`, and optional `:relationshipValue`.
 
 ## Diagram2Graph: Gemini RDF/Turtle Generation
 

@@ -44,59 +44,59 @@
     :label "End" ;
     :shape :EndEvent .
 
-:Edgestartdocumentation_work a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Nodedocumentation_work ;
     :relationshipType :Follows .
 
-:Edgedocumentation_workprint_cycle_count_sheets a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodedocumentation_work ;
     :target :Nodeprint_cycle_count_sheets ;
     :relationshipType :Follows .
 
-:Edgeprint_cycle_count_sheetsperform_physical_count_of_stock a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodeprint_cycle_count_sheets ;
     :target :Nodeperform_physical_count_of_stock ;
     :relationshipType :Follows .
 
-:Edgeperform_physical_count_of_stockenter_physical_counts a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeperform_physical_count_of_stock ;
     :target :Nodeenter_physical_counts ;
     :relationshipType :Follows .
 
-:Edgeenter_physical_countsreport_differences a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodeenter_physical_counts ;
     :target :Nodereport_differences ;
     :relationshipType :Follows .
 
-:Edgereport_differencesrecount_inventory a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodereport_differences ;
     :target :Noderecount_inventory ;
     :relationshipType :Follows .
 
-:Edgerecount_inventorypost_inventory_documents a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Noderecount_inventory ;
     :target :Nodepost_inventory_documents ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgerecount_inventorydisplay_documents a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Noderecount_inventory ;
     :target :Nodedisplay_documents ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgedisplay_documentsperform_physical_count_of_stock_1 a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodedisplay_documents ;
     :target :Nodeperform_physical_count_of_stock_1 ;
     :relationshipType :Follows .
 
-:Edgeperform_physical_count_of_stock_1report_differences a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodeperform_physical_count_of_stock_1 ;
     :target :Nodereport_differences ;
     :relationshipType :Follows .
 
-:Edgepost_inventory_documentsend a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodepost_inventory_documents ;
     :target :Nodeend ;
     :relationshipType :Follows .

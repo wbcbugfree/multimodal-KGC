@@ -40,55 +40,55 @@
     :label "ACCEPT NO COMMANDS" ;
     :shape :Task .
 
-:Edgestartgreet a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Nodegreet ;
     :relationshipType :Follows .
 
-:Edgegreetenter_id a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodegreet ;
     :target :Nodeenter_id ;
     :relationshipType :Branches .
 
-:Edgegreetaccept_no_commands a :Dashed, :Edge ;
+:Edge3 a :Dashed, :Edge ;
     :source :Nodegreet ;
     :target :Nodeaccept_no_commands ;
     :relationshipType :Branches ;
     :relationshipValue "FAILURE" .
 
-:Edgeenter_idinput_driver_info a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeenter_id ;
     :target :Nodeinput_driver_info ;
     :relationshipType :Follows .
 
-:Edgeinput_driver_infoverify_finger_scan a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodeinput_driver_info ;
     :target :Nodeverify_finger_scan ;
     :relationshipType :Follows .
 
-:Edgeverify_finger_scanscan_finger_again a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeverify_finger_scan ;
     :target :Nodescan_finger_again ;
     :relationshipType :Follows .
 
-:Edgescan_finger_againscan_match_decision a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodescan_finger_again ;
     :target :Nodescan_match_decision ;
     :relationshipType :Follows .
 
-:Edgescan_match_decisionlogin a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodescan_match_decision ;
     :target :Nodelogin ;
     :relationshipType :Branches ;
     :relationshipValue "YES" .
 
-:Edgescan_match_decisionenter_id a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodescan_match_decision ;
     :target :Nodeenter_id ;
     :relationshipType :Branches ;
     :relationshipValue "NO" .
 
-:Edgeloginstop a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodelogin ;
     :target :Nodestop ;
     :relationshipType :Follows .

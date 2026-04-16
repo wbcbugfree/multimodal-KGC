@@ -40,68 +40,68 @@
     :label "End" ;
     :shape :EndEvent .
 
-:Edgestarthard_work a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Nodehard_work ;
     :relationshipType :Follows .
 
-:Edgehard_workfranchise a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodehard_work ;
     :target :Nodefranchise ;
     :relationshipType :Branches .
 
-:Edgehard_worknew_strategy a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodehard_work ;
     :target :Nodenew_strategy ;
     :relationshipType :Branches .
 
-:Edgefranchisesuccess a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodefranchise ;
     :target :Nodesuccess ;
     :relationshipType :Follows .
 
-:Edgesuccessorder_more a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodesuccess ;
     :target :Nodeorder_more ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgesuccessnew_strategy a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodesuccess ;
     :target :Nodenew_strategy ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeorder_moresold a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeorder_more ;
     :target :Nodesold ;
     :relationshipType :Follows .
 
-:Edgesoldexpandable a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodesold ;
     :target :Nodeexpandable ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgesoldnew_strategy a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodesold ;
     :target :Nodenew_strategy ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeexpandableopen_more_store a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodeexpandable ;
     :target :Nodeopen_more_store ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgeexpandableend a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodeexpandable ;
     :target :Nodeend ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeopen_more_storesuccess a :Solid, :Edge ;
+:Edge12 a :Solid, :Edge ;
     :source :Nodeopen_more_store ;
     :target :Nodesuccess ;
     :relationshipType :Follows .

@@ -40,67 +40,67 @@
     :label "Stop" ;
     :shape :EndEvent .
 
-:Edgestartread_values a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Noderead_values ;
     :relationshipType :Follows .
 
-:Edgeread_valuesnew_trials_available a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Noderead_values ;
     :target :Nodenew_trials_available ;
     :relationshipType :Follows .
 
-:Edgenew_trials_availableread_new_trial a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodenew_trials_available ;
     :target :Noderead_new_trial ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
-:Edgenew_trials_availableread_values a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodenew_trials_available ;
     :target :Noderead_values ;
     :relationshipType :DependsOn ;
     :relationshipValue "no" .
 
-:Edgeread_new_trialaverage_available a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Noderead_new_trial ;
     :target :Nodeaverage_available ;
     :relationshipType :Follows .
 
-:Edgeaverage_availableinitialize a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeaverage_available ;
     :target :Nodeinitialize ;
     :relationshipType :DependsOn ;
     :relationshipValue "no" .
 
-:Edgeaverage_availableadd_data_to_cumulative_sum a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeaverage_available ;
     :target :Nodeadd_data_to_cumulative_sum ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
-:Edgeinitializeadd_data_to_cumulative_sum a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodeinitialize ;
     :target :Nodeadd_data_to_cumulative_sum ;
     :relationshipType :Follows .
 
-:Edgeadd_data_to_cumulative_sumcompute_t_value_and_plot a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodeadd_data_to_cumulative_sum ;
     :target :Nodecompute_t_value_and_plot ;
     :relationshipType :Follows .
 
-:Edgecompute_t_value_and_plotcontinue a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodecompute_t_value_and_plot ;
     :target :Nodecontinue ;
     :relationshipType :Follows .
 
-:Edgecontinueread_values a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodecontinue ;
     :target :Noderead_values ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
-:Edgecontinuestop a :Solid, :Edge ;
+:Edge12 a :Solid, :Edge ;
     :source :Nodecontinue ;
     :target :Nodestop ;
     :relationshipType :DependsOn ;

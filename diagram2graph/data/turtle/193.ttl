@@ -40,55 +40,55 @@
     :label "Authentication" ;
     :shape :Task .
 
-:Edgestartround_1 a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Noderound_1 ;
     :relationshipType :Follows .
 
-:Edgeround_1draw_lots a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Noderound_1 ;
     :target :Nodedraw_lots ;
     :relationshipType :Follows .
 
-:Edgedraw_lotsbinarize_block a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodedraw_lots ;
     :target :Nodebinarize_block ;
     :relationshipType :Follows .
 
-:Edgebinarize_blockpacking_block a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodebinarize_block ;
     :target :Nodepacking_block ;
     :relationshipType :Follows .
 
-:Edgepacking_blockblock_verification a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodepacking_block ;
     :target :Nodeblock_verification ;
     :relationshipType :Follows .
 
-:Edgeblock_verificationfinish a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeblock_verification ;
     :target :Nodefinish ;
     :relationshipType :DependsOn ;
     :relationshipValue "Success" .
 
-:Edgeblock_verificationtimeout_verification a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeblock_verification ;
     :target :Nodetimeout_verification ;
     :relationshipType :DependsOn ;
     :relationshipValue "Verification failed" .
 
-:Edgeauthenticationbinarize_block a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodeauthentication ;
     :target :Nodebinarize_block ;
     :relationshipType :Follows .
 
-:Edgetimeout_verificationnext_round_draw a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodetimeout_verification ;
     :target :Nodenext_round_draw ;
     :relationshipType :DependsOn ;
     :relationshipValue "Timeout" .
 
-:Edgenext_round_drawdraw_lots a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodenext_round_draw ;
     :target :Nodedraw_lots ;
     :relationshipType :Follows .

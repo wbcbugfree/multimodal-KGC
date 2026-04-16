@@ -40,61 +40,61 @@
     :label "End" ;
     :shape :EndEvent .
 
-:Edgestartusername a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Nodeusername ;
     :relationshipType :Follows .
 
-:Edgeusernamepassword a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodeusername ;
     :target :Nodepassword ;
     :relationshipType :Follows .
 
-:Edgepasswordcredentials_check a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodepassword ;
     :target :Nodecredentials_check ;
     :relationshipType :Follows .
 
-:Edgecredentials_checkenter_id_password a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodecredentials_check ;
     :target :Nodeenter_id_password ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgecredentials_checkinvalid_credentials a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodecredentials_check ;
     :target :Nodeinvalid_credentials ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeinvalid_credentialsusername a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeinvalid_credentials ;
     :target :Nodeusername ;
     :relationshipType :Follows .
 
-:Edgeenter_id_passworduser_blocked_check a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeenter_id_password ;
     :target :Nodeuser_blocked_check ;
     :relationshipType :Follows .
 
-:Edgeuser_blocked_checkforbidden a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodeuser_blocked_check ;
     :target :Nodeforbidden ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgeuser_blocked_checklogin_successfully a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodeuser_blocked_check ;
     :target :Nodelogin_successfully ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeforbiddenusername a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodeforbidden ;
     :target :Nodeusername ;
     :relationshipType :Follows .
 
-:Edgelogin_successfullyend a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodelogin_successfully ;
     :target :Nodeend ;
     :relationshipType :Follows .

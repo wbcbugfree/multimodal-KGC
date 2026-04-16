@@ -36,61 +36,61 @@
     :label "End" ;
     :shape :EndEvent .
 
-:Edgefruitsinput_mango_pitaya_durian a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodefruits ;
     :target :Nodeinput_mango_pitaya_durian ;
     :relationshipType :Follows .
 
-:Edgeinput_mango_pitaya_durianprefer_mango_to_pitaya a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodeinput_mango_pitaya_durian ;
     :target :Nodeprefer_mango_to_pitaya ;
     :relationshipType :Follows .
 
-:Edgeprefer_mango_to_pitayaprefer_pitaya_to_durian a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodeprefer_mango_to_pitaya ;
     :target :Nodeprefer_pitaya_to_durian ;
     :relationshipType :Branches .
 
-:Edgeprefer_mango_to_pitayaprefer_mango_durian a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeprefer_mango_to_pitaya ;
     :target :Nodeprefer_mango_durian ;
     :relationshipType :Branches .
 
-:Edgeprefer_pitaya_to_duriango_for_mango a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodeprefer_pitaya_to_durian ;
     :target :Nodego_for_mango ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeprefer_pitaya_to_duriango_for_mango a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeprefer_pitaya_to_durian ;
     :target :Nodego_for_mango ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgeprefer_mango_duriango_for_pitaya a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodeprefer_mango_durian ;
     :target :Nodego_for_pitaya ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeprefer_mango_duriango_for_pitaya_1 a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodeprefer_mango_durian ;
     :target :Nodego_for_pitaya_1 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgego_for_mangoend a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodego_for_mango ;
     :target :Nodeend ;
     :relationshipType :Follows .
 
-:Edgego_for_pitayaend a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodego_for_pitaya ;
     :target :Nodeend ;
     :relationshipType :Follows .
 
-:Edgego_for_pitaya_1end a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodego_for_pitaya_1 ;
     :target :Nodeend ;
     :relationshipType :Follows .

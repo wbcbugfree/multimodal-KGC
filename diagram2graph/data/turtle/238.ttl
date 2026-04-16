@@ -48,71 +48,71 @@
     :label "Stop" ;
     :shape :EndEvent .
 
-:Edgestartlogin a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodestart ;
     :target :Nodelogin ;
     :relationshipType :Follows .
 
-:Edgeloginverified a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodelogin ;
     :target :Nodeverified ;
     :relationshipType :Follows .
 
-:Edgeverifieddashboard a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodeverified ;
     :target :Nodedashboard ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgeverifiedlogin a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeverified ;
     :target :Nodelogin ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgedashboardclick_report_incident a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodedashboard ;
     :target :Nodeclick_report_incident ;
     :relationshipType :Follows .
 
-:Edgeclick_report_incidentfill_form a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodeclick_report_incident ;
     :target :Nodefill_form ;
     :relationshipType :Follows .
 
-:Edgefill_formvalidation_module a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodefill_form ;
     :target :Nodevalidation_module ;
     :relationshipType :Follows .
 
-:Edgevalidation_moduleneed a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodevalidation_module ;
     :target :Nodeneed ;
     :relationshipType :Follows .
 
-:Edgeneedview_comments a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodeneed ;
     :target :Nodeview_comments ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgeneedupdate_form a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodeneed ;
     :target :Nodeupdate_form ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeupdate_formsubmit a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodeupdate_form ;
     :target :Nodesubmit ;
     :relationshipType :Follows .
 
-:Edgesubmitvalidation_module a :Solid, :Edge ;
+:Edge12 a :Solid, :Edge ;
     :source :Nodesubmit ;
     :target :Nodevalidation_module ;
     :relationshipType :Follows .
 
-:Edgeview_commentsstop a :Solid, :Edge ;
+:Edge13 a :Solid, :Edge ;
     :source :Nodeview_comments ;
     :target :Nodestop ;
     :relationshipType :Follows .

@@ -40,61 +40,61 @@
     :label "Stop" ;
     :shape :EndEvent .
 
-:Edgebeginedit_video a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodebegin ;
     :target :Nodeedit_video ;
     :relationshipType :Follows .
 
-:Edgeedit_videosmaller_than_2gb a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodeedit_video ;
     :target :Nodesmaller_than_2gb ;
     :relationshipType :Follows .
 
-:Edgesmaller_than_2gbclick_to_upload a :Solid, :Edge ;
+:Edge3 a :Solid, :Edge ;
     :source :Nodesmaller_than_2gb ;
     :target :Nodeclick_to_upload ;
     :relationshipType :DependsOn ;
     :relationshipValue "YES" .
 
-:Edgesmaller_than_2gbedit_video a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodesmaller_than_2gb ;
     :target :Nodeedit_video ;
     :relationshipType :DependsOn ;
     :relationshipValue "NO" .
 
-:Edgeclick_to_uploadhave_account_already a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodeclick_to_upload ;
     :target :Nodehave_account_already ;
     :relationshipType :Follows .
 
-:Edgehave_account_alreadyregister a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodehave_account_already ;
     :target :Noderegister ;
     :relationshipType :DependsOn ;
     :relationshipValue "NO" .
 
-:Edgehave_account_alreadylogin a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodehave_account_already ;
     :target :Nodelogin ;
     :relationshipType :DependsOn ;
     :relationshipValue "YES" .
 
-:Edgeregisterlogin a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Noderegister ;
     :target :Nodelogin ;
     :relationshipType :Follows .
 
-:Edgeloginfind_on_computer a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodelogin ;
     :target :Nodefind_on_computer ;
     :relationshipType :Follows .
 
-:Edgefind_on_computeradd_description_and_tags a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodefind_on_computer ;
     :target :Nodeadd_description_and_tags ;
     :relationshipType :Follows .
 
-:Edgeadd_description_and_tagsstop a :Solid, :Edge ;
+:Edge11 a :Solid, :Edge ;
     :source :Nodeadd_description_and_tags ;
     :target :Nodestop ;
     :relationshipType :Follows .

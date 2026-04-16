@@ -47,9 +47,10 @@ Edge properties:
 
 ## Resource Naming
 - Name each node as `:NodeN`, where `N` is the node identifier.
-- Name each edge as `:EdgeST`, where `S` is the source node identifier and `T` is the target node identifier.
-- Example: the edge from `:Node1` to `:Node2` must be named `:Edge12`.
+- Name each edge as `:EdgeN`, where `N` is the edge number in visual reading order.
+- Example: the first edge should be named `:Edge1`; the second edge should be named `:Edge2`.
 - Number nodes in visual reading order when the image does not provide explicit identifiers: top-to-bottom, then left-to-right.
+- Number edges in visual reading order when the image does not provide explicit identifiers: top-to-bottom, then left-to-right.
 
 ## Node Triples
 Create one node resource for each readable shape.
@@ -73,14 +74,14 @@ Create one edge resource for each arrow.
 
 For every edge, emit this structure:
 
-:EdgeST a :LineStyle, :Edge ;
+:EdgeN a :LineStyle, :Edge ;
     :source :NodeS ;
     :target :NodeT ;
     :relationshipType :RelationshipType .
 
 If the arrow has a visible label, emit this structure:
 
-:EdgeST a :LineStyle, :Edge ;
+:EdgeN a :LineStyle, :Edge ;
     :source :NodeS ;
     :target :NodeT ;
     :relationshipType :RelationshipType ;
@@ -96,7 +97,7 @@ Use these mappings:
 ## Constraints
 - Do not emit direct node-to-node relationship triples such as `:Node1 :follows :Node2`.
 - Do not use `rdfs:label`; use `:label`.
-- Do not use full URI resources for nodes or edges; use compact resources such as `:Node1` and `:Edge12`.
+- Do not use full URI resources for nodes or edges; use compact resources such as `:Node1` and `:Edge1`.
 - Preserve visible text exactly, including case, symbols, punctuation, and arrow labels.
 - Every edge source and target must reference an emitted node resource.
 - Every Turtle statement must end with a period.

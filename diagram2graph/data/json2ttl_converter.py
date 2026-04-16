@@ -87,8 +87,7 @@ def json_to_ttl_str(data: dict, base_iri: str | None = None, diagram_id: str | N
         edge_type = EDGE_TYPE_MAP.get(etype_key, to_camel_case(etype_key) or "Solid")
         rel_type_cap = REL_TYPE_MAP.get(rel_key, to_camel_case(rel_key) or "Follows")
 
-        edge_id = f"{src}{tgt}" if src and tgt else f"unknown{edge_index}"
-        subj = to_local_name("Edge", edge_id)
+        subj = f":Edge{edge_index}"
         src_uri = to_local_name("Node", src)
         tgt_uri = to_local_name("Node", tgt)
 

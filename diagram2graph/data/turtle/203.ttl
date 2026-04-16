@@ -48,66 +48,66 @@
     :label "Stop" ;
     :shape :EndEvent .
 
-:Edgecustomer_consultingdeal a :Solid, :Edge ;
+:Edge1 a :Solid, :Edge ;
     :source :Nodecustomer_consulting ;
     :target :Nodedeal ;
     :relationshipType :Follows .
 
-:Edgedealinvoice a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Nodedeal ;
     :target :Nodeinvoice ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgedealgo_home a :Dashed, :Edge ;
+:Edge3 a :Dashed, :Edge ;
     :source :Nodedeal ;
     :target :Nodego_home ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgeinvoiceshipping a :Solid, :Edge ;
+:Edge4 a :Solid, :Edge ;
     :source :Nodeinvoice ;
     :target :Nodeshipping ;
     :relationshipType :Follows .
 
-:Edgeshippingcustom_clearance a :Solid, :Edge ;
+:Edge5 a :Solid, :Edge ;
     :source :Nodeshipping ;
     :target :Nodecustom_clearance ;
     :relationshipType :Follows .
 
-:Edgecustom_clearancepayment_mode a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Nodecustom_clearance ;
     :target :Nodepayment_mode ;
     :relationshipType :Follows .
 
-:Edgepayment_modedelivery a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Nodepayment_mode ;
     :target :Nodedelivery ;
     :relationshipType :Follows .
 
-:Edgedeliveryservice_payment a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Nodedelivery ;
     :target :Nodeservice_payment ;
     :relationshipType :Follows .
 
-:Edgeservice_paymentpay_foreign_exchange a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Nodeservice_payment ;
     :target :Nodepay_foreign_exchange ;
     :relationshipType :Follows .
 
-:Edgepay_foreign_exchangepayment a :Solid, :Edge ;
+:Edge10 a :Solid, :Edge ;
     :source :Nodepay_foreign_exchange ;
     :target :Nodepayment ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
-:Edgepay_foreign_exchangestop a :Dashed, :Edge ;
+:Edge11 a :Dashed, :Edge ;
     :source :Nodepay_foreign_exchange ;
     :target :Nodestop ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
-:Edgepaymentstop a :Solid, :Edge ;
+:Edge12 a :Solid, :Edge ;
     :source :Nodepayment ;
     :target :Nodestop ;
     :relationshipType :Follows .
