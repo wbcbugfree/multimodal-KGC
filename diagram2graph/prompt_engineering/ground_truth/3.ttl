@@ -1,0 +1,104 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+# === Nodes ===
+<http://example.org/diagram/diagram/node/1> a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+<http://example.org/diagram/diagram/node/2> a :Process, :Node ;
+    :label "SUM=0" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/3> a :Process, :Node ;
+    :label "Input N" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/4> a :Decision, :Node ;
+    :label "N!=0?" ;
+    :shape :Gateway .
+
+<http://example.org/diagram/diagram/node/5> a :Process, :Node ;
+    :label "Print SUM" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/6> a :Process, :Node ;
+    :label "REM=N%10" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/7> a :Process, :Node ;
+    :label "SUM=SUM+REM" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/8> a :Process, :Node ;
+    :label "N=N/10" ;
+    :shape :Task .
+
+<http://example.org/diagram/diagram/node/9> a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
+
+# === Edges ===
+<http://example.org/diagram/diagram/edge/12> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/1> ;
+    :target <http://example.org/diagram/diagram/node/2> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/1> :follows <http://example.org/diagram/diagram/node/2> .
+
+<http://example.org/diagram/diagram/edge/23> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/2> ;
+    :target <http://example.org/diagram/diagram/node/3> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/2> :follows <http://example.org/diagram/diagram/node/3> .
+
+<http://example.org/diagram/diagram/edge/34> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/3> ;
+    :target <http://example.org/diagram/diagram/node/4> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/3> :follows <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/45> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/4> ;
+    :target <http://example.org/diagram/diagram/node/5> ;
+    :relationshipType :Follows ;
+    :relationshipValue "False" .
+
+<http://example.org/diagram/diagram/node/4> :follows <http://example.org/diagram/diagram/node/5> .
+
+<http://example.org/diagram/diagram/edge/46> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/4> ;
+    :target <http://example.org/diagram/diagram/node/6> ;
+    :relationshipType :Follows ;
+    :relationshipValue "TRUE" .
+
+<http://example.org/diagram/diagram/node/4> :follows <http://example.org/diagram/diagram/node/6> .
+
+<http://example.org/diagram/diagram/edge/67> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/6> ;
+    :target <http://example.org/diagram/diagram/node/7> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/6> :follows <http://example.org/diagram/diagram/node/7> .
+
+<http://example.org/diagram/diagram/edge/78> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/7> ;
+    :target <http://example.org/diagram/diagram/node/8> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/7> :follows <http://example.org/diagram/diagram/node/8> .
+
+<http://example.org/diagram/diagram/edge/84> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/8> ;
+    :target <http://example.org/diagram/diagram/node/4> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/8> :follows <http://example.org/diagram/diagram/node/4> .
+
+<http://example.org/diagram/diagram/edge/59> a :Solid, :Edge ;
+    :source <http://example.org/diagram/diagram/node/5> ;
+    :target <http://example.org/diagram/diagram/node/9> ;
+    :relationshipType :Follows .
+
+<http://example.org/diagram/diagram/node/5> :follows <http://example.org/diagram/diagram/node/9> .
