@@ -1,93 +1,74 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/1> a d2g:Process, d2g:Node ;
-    rdfs:label "New Member" ;
-    d2g:shape d2g:Task .
+:Node1 a :Process, :Node ;
+    :label "New Member" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
-    rdfs:label "Login" ;
-    d2g:shape d2g:Task .
+:Node2 a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
-    rdfs:label "Authentication" ;
-    d2g:shape d2g:Task .
+:Node3 a :Process, :Node ;
+    :label "Authentication" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
-    rdfs:label "D1" ;
-    d2g:shape d2g:Task .
+:Node4 a :Process, :Node ;
+    :label "D1" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/5> a d2g:Process, d2g:Node ;
-    rdfs:label "Print info" ;
-    d2g:shape d2g:Task .
+:Node5 a :Process, :Node ;
+    :label "Print info" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
-    rdfs:label "Validation" ;
-    d2g:shape d2g:Task .
+:Node6 a :Process, :Node ;
+    :label "Validation" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/7> a d2g:Process, d2g:Node ;
-    rdfs:label "D2" ;
-    d2g:shape d2g:Task .
+:Node7 a :Process, :Node ;
+    :label "D2" ;
+    :shape :Task .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/12> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/1> ;
-    d2g:target <http://example.org/diagram/diagram/node/2> ;
-    d2g:relationshipType d2g:Follows ;
-    d2g:relationshipValue "User name\nPassword" .
+:Edge12 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows ;
+    :relationshipValue "User name\nPassword" .
 
-<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+:Edge23 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/23> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/2> ;
-    d2g:target <http://example.org/diagram/diagram/node/3> ;
-    d2g:relationshipType d2g:Follows .
+:Edge34 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+:Edge35 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Follows ;
+    :relationshipValue "If not a member" .
 
-<http://example.org/diagram/diagram/edge/34> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/4> ;
-    d2g:relationshipType d2g:Follows .
+:Edge51 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node1 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/4> .
+:Edge67 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows ;
+    :relationshipValue "ADP Username\nADP Password" .
 
-<http://example.org/diagram/diagram/edge/35> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/5> ;
-    d2g:relationshipType d2g:Follows ;
-    d2g:relationshipValue "If not a member" .
+:Edge36_1 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "If existing member" .
 
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/5> .
-
-<http://example.org/diagram/diagram/edge/36_1> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/6> ;
-    d2g:relationshipType d2g:Follows ;
-    d2g:relationshipValue "If existing member" .
-
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/6> .
-
-<http://example.org/diagram/diagram/edge/36_2> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/6> ;
-    d2g:relationshipType d2g:Follows ;
-    d2g:relationshipValue "ADP Username\nADP Password" .
-
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/6> .
-
-<http://example.org/diagram/diagram/edge/51> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/5> ;
-    d2g:target <http://example.org/diagram/diagram/node/1> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/1> .
-
-<http://example.org/diagram/diagram/edge/67> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/6> ;
-    d2g:target <http://example.org/diagram/diagram/node/7> ;
-    d2g:relationshipType d2g:Follows ;
-    d2g:relationshipValue "ADP Username\nADP Password" .
-
-<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/7> .
+:Edge36_2 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "ADP Username\nADP Password" .

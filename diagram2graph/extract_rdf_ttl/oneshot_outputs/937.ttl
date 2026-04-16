@@ -1,111 +1,98 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
-    rdfs:label "START" ;
-    d2g:shape d2g:StartEvent .
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
-    rdfs:label "Greet" ;
-    d2g:shape d2g:Task .
+:Node2 a :Process, :Node ;
+    :label "Greet" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
-    rdfs:label "Enter ID" ;
-    d2g:shape d2g:Task .
+:Node3 a :Process, :Node ;
+    :label "Enter ID" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
-    rdfs:label "ACCEPT NO COMMANDS" ;
-    d2g:shape d2g:Task .
+:Node4 a :Process, :Node ;
+    :label "ACCEPT NO COMMANDS" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/5> a d2g:Process, d2g:Node ;
-    rdfs:label "INPUT DRIVER INFORMATION" ;
-    d2g:shape d2g:Task .
+:Node5 a :Process, :Node ;
+    :label "INPUT DRIVER INFORMATION" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
-    rdfs:label "Verify finger scan" ;
-    d2g:shape d2g:Task .
+:Node6 a :Process, :Node ;
+    :label "Verify finger scan" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/7> a d2g:Process, d2g:Node ;
-    rdfs:label "SCAN FINGER AGAIN" ;
-    d2g:shape d2g:Task .
+:Node7 a :Process, :Node ;
+    :label "SCAN FINGER AGAIN" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/8> a d2g:Decision, d2g:Node ;
-    rdfs:label "1ST AND 2ND SCAN MATCH?" ;
-    d2g:shape d2g:Gateway .
+:Node8 a :Decision, :Node ;
+    :label "1ST AND 2ND SCAN MATCH?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/9> a d2g:Process, d2g:Node ;
-    rdfs:label "Login" ;
-    d2g:shape d2g:Task .
+:Node9 a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/10> a d2g:Terminator, d2g:Node ;
-    rdfs:label "STOP" ;
-    d2g:shape d2g:EndEvent .
+:Node10 a :Terminator, :Node ;
+    :label "STOP" ;
+    :shape :EndEvent .
 
-<http://example.org/diagram/diagram/edge/12> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/1> ;
-    d2g:target <http://example.org/diagram/diagram/node/2> ;
-    d2g:relationshipType d2g:Follows .
+:Edge12 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/23> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/2> ;
-    d2g:target <http://example.org/diagram/diagram/node/3> ;
-    d2g:relationshipType d2g:Follows .
+:Edge23 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/24> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/2> ;
-    d2g:target <http://example.org/diagram/diagram/node/4> ;
-    d2g:relationshipType d2g:Follows .
+:Edge24 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/35> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/5> ;
-    d2g:relationshipType d2g:Follows .
+:Edge35 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/56> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/5> ;
-    d2g:target <http://example.org/diagram/diagram/node/6> ;
-    d2g:relationshipType d2g:Follows .
+:Edge56 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/63> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/6> ;
-    d2g:target <http://example.org/diagram/diagram/node/3> ;
-    d2g:relationshipType d2g:Follows .
+:Edge63 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/67> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/6> ;
-    d2g:target <http://example.org/diagram/diagram/node/7> ;
-    d2g:relationshipType d2g:Follows .
+:Edge67 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/78> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/7> ;
-    d2g:target <http://example.org/diagram/diagram/node/8> ;
-    d2g:relationshipType d2g:Follows .
+:Edge78 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/87> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/8> ;
-    d2g:target <http://example.org/diagram/diagram/node/7> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "NO" .
+:Edge87 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
 
-<http://example.org/diagram/diagram/edge/89> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/8> ;
-    d2g:target <http://example.org/diagram/diagram/node/9> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "YES" .
+:Edge89 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
 
-<http://example.org/diagram/diagram/edge/910> a d2g:Edge, d2g:Solid ;
-    d2g:source <http://example.org/diagram/diagram/node/9> ;
-    d2g:target <http://example.org/diagram/diagram/node/10> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
-<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
-<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/4> .
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/5> .
-<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/6> .
-<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/3> .
-<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/7> .
-<http://example.org/diagram/diagram/node/7> d2g:follows <http://example.org/diagram/diagram/node/8> .
-<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/7> .
-<http://example.org/diagram/diagram/node/8> d2g:branches <http://example.org/diagram/diagram/node/9> .
-<http://example.org/diagram/diagram/node/9> d2g:follows <http://example.org/diagram/diagram/node/10> .
+:Edge910 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node10 ;
+    :relationshipType :Follows .

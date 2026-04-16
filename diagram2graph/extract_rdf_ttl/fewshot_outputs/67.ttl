@@ -1,112 +1,89 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/1> a d2g:Start, d2g:Node ;
-    rdfs:label "Start" ;
-    d2g:shape d2g:StartEvent .
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/2> a d2g:Process, d2g:Node ;
-    rdfs:label "Entry Users Personal ID" ;
-    d2g:shape d2g:Task .
+:Node2 a :Process, :Node ;
+    :label "Entry Users Personal ID" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/3> a d2g:Process, d2g:Node ;
-    rdfs:label "Login Success" ;
-    d2g:shape d2g:Task .
+:Node3 a :Process, :Node ;
+    :label "Login Success" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/4> a d2g:Process, d2g:Node ;
-    rdfs:label "Read to-n Answer" ;
-    d2g:shape d2g:Task .
+:Node4 a :Process, :Node ;
+    :label "Read to-n Answer" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/5> a d2g:Process, d2g:Node ;
-    rdfs:label "Start Loop" ;
-    d2g:shape d2g:Task .
+:Node5 a :Process, :Node ;
+    :label "Start Loop" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/6> a d2g:Process, d2g:Node ;
-    rdfs:label "Inference Process" ;
-    d2g:shape d2g:Task .
+:Node6 a :Process, :Node ;
+    :label "Inference Process" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/7> a d2g:Decision, d2g:Node ;
-    rdfs:label "Conclusion" ;
-    d2g:shape d2g:Gateway .
+:Node7 a :Decision, :Node ;
+    :label "Conclusion" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/8> a d2g:Process, d2g:Node ;
-    rdfs:label "Positioning Detection for monitoring" ;
-    d2g:shape d2g:Task .
+:Node8 a :Process, :Node ;
+    :label "Positioning Detection for monitoring" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/9> a d2g:Terminator, d2g:Node ;
-    rdfs:label "Stop" ;
-    d2g:shape d2g:EndEvent .
+:Node9 a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/12> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/1> ;
-    d2g:target <http://example.org/diagram/diagram/node/2> ;
-    d2g:relationshipType d2g:Follows .
+:Edge12 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/1> d2g:follows <http://example.org/diagram/diagram/node/2> .
+:Edge23 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/23> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/2> ;
-    d2g:target <http://example.org/diagram/diagram/node/3> ;
-    d2g:relationshipType d2g:Follows .
+:Edge34 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/2> d2g:follows <http://example.org/diagram/diagram/node/3> .
+:Edge45 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/34> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/3> ;
-    d2g:target <http://example.org/diagram/diagram/node/4> ;
-    d2g:relationshipType d2g:Follows .
+:Edge53 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/3> d2g:follows <http://example.org/diagram/diagram/node/4> .
+:Edge56 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/45> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/4> ;
-    d2g:target <http://example.org/diagram/diagram/node/5> ;
-    d2g:relationshipType d2g:Follows .
+:Edge67 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/4> d2g:follows <http://example.org/diagram/diagram/node/5> .
+:Edge78 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/53> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/5> ;
-    d2g:target <http://example.org/diagram/diagram/node/3> ;
-    d2g:relationshipType d2g:Follows .
+:Edge79 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node9 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/3> .
-
-<http://example.org/diagram/diagram/edge/56> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/5> ;
-    d2g:target <http://example.org/diagram/diagram/node/6> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/5> d2g:follows <http://example.org/diagram/diagram/node/6> .
-
-<http://example.org/diagram/diagram/edge/67> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/6> ;
-    d2g:target <http://example.org/diagram/diagram/node/7> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/6> d2g:follows <http://example.org/diagram/diagram/node/7> .
-
-<http://example.org/diagram/diagram/edge/78> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/7> ;
-    d2g:target <http://example.org/diagram/diagram/node/8> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/7> d2g:branches <http://example.org/diagram/diagram/node/8> .
-
-<http://example.org/diagram/diagram/edge/79> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/7> ;
-    d2g:target <http://example.org/diagram/diagram/node/9> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/7> d2g:branches <http://example.org/diagram/diagram/node/9> .
-
-<http://example.org/diagram/diagram/edge/89> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/8> ;
-    d2g:target <http://example.org/diagram/diagram/node/9> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/8> d2g:follows <http://example.org/diagram/diagram/node/9> .
+:Edge89 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
