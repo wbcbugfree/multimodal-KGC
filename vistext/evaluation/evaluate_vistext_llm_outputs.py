@@ -42,6 +42,7 @@ DEFAULT_STRATEGIES = {
     "oneshot_dynamic": "vistext_oneshot_dynamic_outputs",
     "fewshot": "vistext_fewshot_outputs",
 }
+CHART_TYPES = ("area", "line", "bar")
 PURE_NUMERIC_RE = re.compile(r"^-?\d+(?:\.\d+)?$")
 TIME_AXIS_TITLE_RE = re.compile(r"\b(year|years|date|dates|month|months|quarter|quarters|week|weeks|day|days|fy|financial year)\b", re.IGNORECASE)
 
@@ -337,8 +338,30 @@ def _mean(values: Iterable[Any]) -> float:
 
 
 def _confusion_template() -> Dict[str, Dict[str, int]]:
-    chart_types = ("bar", "line", "area")
-    return {gold: {pred: 0 for pred in chart_types} for gold in chart_types}
+    return {gold: {pred: 0 for pred in CHART_TYPES} for gold in CHART_TYPES}
+
+
+def normalize_chart_type(value: Any) -> str:
+    if not isinstance(value, str):
+        return "unknown"
+    normalized = value.strip().lower()
+    return normalized if normalized in CHART_TYPES else "unknown"
+
+
+def load_chart_type(labels_dir: Path, img_id: str) -> str:
+    label_path = labels_dir / f"{img_id}.json"
+    try:
+        label_data = json.loads(label_path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return "unknown"
+    properties = label_data.get("L1_properties", [])
+    if not isinstance(properties, list) or not properties:
+        return "unknown"
+    return normalize_chart_type(properties[0])
+
+
+def load_chart_types(labels_dir: Path, intersection_ids: Sequence[str]) -> Dict[str, str]:
+    return {img_id: load_chart_type(labels_dir, img_id) for img_id in intersection_ids}
 
 
 def compute_dynamic_chart_accuracy(manifest_path: Path, labels_dir: Path, intersection_ids: List[str]) -> Dict[str, Any]:
@@ -350,8 +373,7 @@ def compute_dynamic_chart_accuracy(manifest_path: Path, labels_dir: Path, inters
 
     for img_id in intersection_ids:
         predicted = manifest_by_id.get(img_id, {}).get("chart_type")
-        label_data = json.loads((labels_dir / f"{img_id}.json").read_text(encoding="utf-8"))
-        gold = label_data.get("L1_properties", [None])[0]
+        gold = load_chart_type(labels_dir, img_id)
         is_correct = predicted == gold
         if gold in confusion and predicted in confusion[gold]:
             confusion[gold][predicted] += 1
@@ -436,10 +458,125 @@ def compute_ged_scores_parallel(
     return [float(score) for score in scores]
 
 
+def empty_metric_summary() -> Dict[str, Any]:
+    return {
+        "triple_match_micro": {"precision": 0.0, "recall": 0.0, "f1": 0.0},
+        "triple_match_accuracy_mean": 0.0,
+        "rouge": {"precision": 0.0, "recall": 0.0, "f1": 0.0},
+        "bleu": {"precision": 0.0, "recall": 0.0, "f1": 0.0},
+        "bert_score": {"precision": 0.0, "recall": 0.0, "f1": 0.0},
+        "normalized_ged_mean": 0.0,
+    }
+
+
+def build_metric_summary(
+    *,
+    metrics,
+    structural_gold_graphs: List[List[List[str]]],
+    structural_pred_graphs: List[List[List[str]]],
+    triple_accs: Sequence[float],
+    rouge_p: Sequence[float],
+    rouge_r: Sequence[float],
+    rouge_f: Sequence[float],
+    bleu_p: Sequence[float],
+    bleu_r: Sequence[float],
+    bleu_f: Sequence[float],
+    bert_p: Sequence[float],
+    bert_r: Sequence[float],
+    bert_f: Sequence[float],
+    ged_scores: Sequence[float],
+    indices: Sequence[int],
+) -> Dict[str, Any]:
+    if not indices:
+        return empty_metric_summary()
+
+    subset_gold_graphs = [structural_gold_graphs[index] for index in indices]
+    subset_pred_graphs = [structural_pred_graphs[index] for index in indices]
+    triple_precision, triple_recall, triple_f1 = metrics.get_triple_match_prf(subset_gold_graphs, subset_pred_graphs)
+
+    return {
+        "triple_match_micro": {
+            "precision": _float(triple_precision),
+            "recall": _float(triple_recall),
+            "f1": _float(triple_f1),
+        },
+        "triple_match_accuracy_mean": _mean(triple_accs[index] for index in indices),
+        "rouge": {
+            "precision": _mean(rouge_p[index] for index in indices),
+            "recall": _mean(rouge_r[index] for index in indices),
+            "f1": _mean(rouge_f[index] for index in indices),
+        },
+        "bleu": {
+            "precision": _mean(bleu_p[index] for index in indices),
+            "recall": _mean(bleu_r[index] for index in indices),
+            "f1": _mean(bleu_f[index] for index in indices),
+        },
+        "bert_score": {
+            "precision": _mean(bert_p[index] for index in indices),
+            "recall": _mean(bert_r[index] for index in indices),
+            "f1": _mean(bert_f[index] for index in indices),
+        },
+        "normalized_ged_mean": _mean(ged_scores[index] for index in indices),
+    }
+
+
+def build_chart_type_summaries(
+    *,
+    intersection_ids: Sequence[str],
+    chart_types_by_id: Dict[str, str],
+    metrics,
+    structural_gold_graphs: List[List[List[str]]],
+    structural_pred_graphs: List[List[List[str]]],
+    triple_accs: Sequence[float],
+    rouge_p: Sequence[float],
+    rouge_r: Sequence[float],
+    rouge_f: Sequence[float],
+    bleu_p: Sequence[float],
+    bleu_r: Sequence[float],
+    bleu_f: Sequence[float],
+    bert_p: Sequence[float],
+    bert_r: Sequence[float],
+    bert_f: Sequence[float],
+    ged_scores: Sequence[float],
+) -> Dict[str, Any]:
+    grouped_indices: Dict[str, List[int]] = {chart_type: [] for chart_type in CHART_TYPES}
+    for index, img_id in enumerate(intersection_ids):
+        chart_type = chart_types_by_id.get(img_id, "unknown")
+        grouped_indices.setdefault(chart_type, []).append(index)
+
+    ordered_chart_types = [*CHART_TYPES, *sorted(chart_type for chart_type in grouped_indices if chart_type not in CHART_TYPES)]
+    summaries: Dict[str, Any] = {}
+    for chart_type in ordered_chart_types:
+        indices = grouped_indices[chart_type]
+        summaries[chart_type] = {
+            "intersection_ids": [intersection_ids[index] for index in indices],
+            "intersection_size": len(indices),
+            "summary": build_metric_summary(
+                metrics=metrics,
+                structural_gold_graphs=structural_gold_graphs,
+                structural_pred_graphs=structural_pred_graphs,
+                triple_accs=triple_accs,
+                rouge_p=rouge_p,
+                rouge_r=rouge_r,
+                rouge_f=rouge_f,
+                bleu_p=bleu_p,
+                bleu_r=bleu_r,
+                bleu_f=bleu_f,
+                bert_p=bert_p,
+                bert_r=bert_r,
+                bert_f=bert_f,
+                ged_scores=ged_scores,
+                indices=indices,
+            ),
+        }
+    return summaries
+
+
 def evaluate_strategy(
     strategy_name: str,
     gold_dir: Path,
     pred_dir: Path,
+    labels_dir: Path = DEFAULT_LABELS_DIR,
     graph_mode: str = "full_graph",
     metrics_module=None,
     bert_model_type: Optional[str] = None,
@@ -450,6 +587,7 @@ def evaluate_strategy(
     metrics = metrics_module or load_graph_matching_module(offline_bert=offline_bert)
     intersection_ids = collect_intersection_ids(gold_dir, pred_dir)
     print(f"[{strategy_name}:{graph_mode}] evaluating {len(intersection_ids)} overlapping files")
+    chart_types_by_id = load_chart_types(labels_dir, intersection_ids)
 
     gold_graphs = [ttl_to_webnlg_graph(gold_dir / f"{img_id}.ttl", graph_mode=graph_mode) for img_id in intersection_ids]
     pred_graphs = [ttl_to_webnlg_graph(pred_dir / f"{img_id}.ttl", graph_mode=graph_mode) for img_id in intersection_ids]
@@ -465,7 +603,6 @@ def evaluate_strategy(
     pred_edges = metrics.split_to_edges(pred_graphs)
     gold_tokens, pred_tokens = metrics.get_tokens(gold_edges, pred_edges)
 
-    triple_precision, triple_recall, triple_f1 = metrics.get_triple_match_prf(structural_gold_graphs, structural_pred_graphs)
     print(f"[{strategy_name}:{graph_mode}] BLEU/ROUGE")
     rouge_p, rouge_r, rouge_f, bleu_p, bleu_r, bleu_f = metrics.get_bleu_rouge(
         gold_tokens, pred_tokens, gold_edges, pred_edges
@@ -489,6 +626,7 @@ def evaluate_strategy(
         per_image.append(
             {
                 "img_id": img_id,
+                "chart_type": chart_types_by_id.get(img_id, "unknown"),
                 "triple_match_accuracy": _float(triple_accs[index]),
                 "rouge": {
                     "precision": _float(rouge_p[index]),
@@ -517,30 +655,41 @@ def evaluate_strategy(
         "prediction_dir": str(pred_dir.resolve()),
         "intersection_ids": intersection_ids,
         "intersection_size": len(intersection_ids),
-        "summary": {
-            "triple_match_micro": {
-                "precision": _float(triple_precision),
-                "recall": _float(triple_recall),
-                "f1": _float(triple_f1),
-            },
-            "triple_match_accuracy_mean": _mean(triple_accs),
-            "rouge": {
-                "precision": _mean(rouge_p),
-                "recall": _mean(rouge_r),
-                "f1": _mean(rouge_f),
-            },
-            "bleu": {
-                "precision": _mean(bleu_p),
-                "recall": _mean(bleu_r),
-                "f1": _mean(bleu_f),
-            },
-            "bert_score": {
-                "precision": _mean(bert_p),
-                "recall": _mean(bert_r),
-                "f1": _mean(bert_f),
-            },
-            "normalized_ged_mean": _mean(ged_scores),
-        },
+        "summary": build_metric_summary(
+            metrics=metrics,
+            structural_gold_graphs=structural_gold_graphs,
+            structural_pred_graphs=structural_pred_graphs,
+            triple_accs=triple_accs,
+            rouge_p=rouge_p,
+            rouge_r=rouge_r,
+            rouge_f=rouge_f,
+            bleu_p=bleu_p,
+            bleu_r=bleu_r,
+            bleu_f=bleu_f,
+            bert_p=bert_p,
+            bert_r=bert_r,
+            bert_f=bert_f,
+            ged_scores=ged_scores,
+            indices=list(range(len(intersection_ids))),
+        ),
+        "summary_by_chart_type": build_chart_type_summaries(
+            intersection_ids=intersection_ids,
+            chart_types_by_id=chart_types_by_id,
+            metrics=metrics,
+            structural_gold_graphs=structural_gold_graphs,
+            structural_pred_graphs=structural_pred_graphs,
+            triple_accs=triple_accs,
+            rouge_p=rouge_p,
+            rouge_r=rouge_r,
+            rouge_f=rouge_f,
+            bleu_p=bleu_p,
+            bleu_r=bleu_r,
+            bleu_f=bleu_f,
+            bert_p=bert_p,
+            bert_r=bert_r,
+            bert_f=bert_f,
+            ged_scores=ged_scores,
+        ),
         "tolerance": {
             "enabled": numeric_tolerance > 0,
             "relative_tolerance": numeric_tolerance,
@@ -600,6 +749,11 @@ def build_report(
             "full_graph": "Evaluate all triples in the normalized RDF graph.",
             "content_only": "Evaluate literal-valued triples plus the Chart rdf:type triple only.",
         },
+        "chart_type_aggregation": {
+            "enabled": True,
+            "chart_types": list(CHART_TYPES),
+            "source": "labels_dir/<img_id>.json L1_properties[0]",
+        },
         "graph_modes": {},
     }
 
@@ -612,6 +766,7 @@ def build_report(
                 strategy_name=strategy_name,
                 gold_dir=gold_dir,
                 pred_dir=pred_dir,
+                labels_dir=labels_dir,
                 graph_mode=graph_mode,
                 metrics_module=metrics_module,
                 bert_model_type=bert_model_type,
