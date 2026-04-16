@@ -1,4 +1,4 @@
-"""Shared helpers for scripts and notebooks."""
+"""Shared helpers for repository scripts."""
 
 from .config import get_api_key, load_config
 from .paths import repo_root
