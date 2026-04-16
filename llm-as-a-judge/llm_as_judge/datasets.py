@@ -19,6 +19,11 @@ SOIL_HEALTH_STRATEGIES = {
     "oneshot_dynamic": Path("soil_health/extract_rdf_ttl/oneshot_dynamic"),
     "fewshot": Path("soil_health/extract_rdf_ttl/fewshot"),
 }
+DIAGRAM2GRAPH_STRATEGIES = {
+    "zeroshot": Path("diagram2graph/extract_rdf_ttl/zeroshot_outputs"),
+    "oneshot": Path("diagram2graph/extract_rdf_ttl/oneshot_outputs"),
+    "fewshot": Path("diagram2graph/extract_rdf_ttl/fewshot_outputs"),
+}
 
 
 @dataclass(frozen=True)
@@ -70,6 +75,8 @@ def strategy_dirs(dataset: str) -> dict[str, Path]:
         return dict(VIS_TEXT_STRATEGIES)
     if dataset == "soil_health":
         return dict(SOIL_HEALTH_STRATEGIES)
+    if dataset == "diagram2graph":
+        return dict(DIAGRAM2GRAPH_STRATEGIES)
     raise ValueError(f"Unsupported dataset: {dataset}")
 
 
@@ -84,6 +91,8 @@ def resolve_image(dataset: str, item_id: str, root: Path | None = None) -> Path:
         search_roots = [base / "vistext" / "data" / "test" / "images"]
     elif dataset == "soil_health":
         search_roots = [base / "soil_health" / "data" / "figures", base / "soil_health" / "data" / "tables"]
+    elif dataset == "diagram2graph":
+        search_roots = [base / "diagram2graph" / "data" / "images"]
     else:
         raise ValueError(f"Unsupported dataset: {dataset}")
 

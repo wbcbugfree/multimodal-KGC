@@ -13,10 +13,13 @@ class ContentOnlyMetrics:
     strategy_summary: dict[str, Mapping[str, Any]]
 
 
-def load_content_only_metrics(path: Path) -> ContentOnlyMetrics:
+def load_traditional_metrics(path: Path) -> ContentOnlyMetrics:
     with path.open("r", encoding="utf-8") as handle:
         data = json.load(handle)
-    strategies = data["graph_modes"]["content_only"]["strategies"]
+    if "graph_modes" in data:
+        strategies = data["graph_modes"]["content_only"]["strategies"]
+    else:
+        strategies = data["strategies"]
     per_image: dict[tuple[str, str], Mapping[str, Any]] = {}
     summary: dict[str, Mapping[str, Any]] = {}
     for strategy, strategy_data in strategies.items():
@@ -31,6 +34,10 @@ def load_content_only_metrics(path: Path) -> ContentOnlyMetrics:
             item_id = str(item.get("img_id") or item.get("item_id"))
             per_image[(strategy, item_id)] = item
     return ContentOnlyMetrics(per_image=per_image, strategy_summary=summary)
+
+
+def load_content_only_metrics(path: Path) -> ContentOnlyMetrics:
+    return load_traditional_metrics(path)
 
 
 def _spearman(xs: list[float], ys: list[float]) -> float | None:

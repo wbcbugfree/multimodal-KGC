@@ -9,7 +9,13 @@ from typing import Any
 from .datasets import collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
 from .judge_core import JudgeRunner
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
-from .validation import compare_pairwise_to_metrics, load_content_only_metrics, validate_direct_against_metrics
+from .validation import compare_pairwise_to_metrics, load_traditional_metrics, validate_direct_against_metrics
+
+
+DEFAULT_METRICS_PATHS = {
+    "vistext": Path("vistext/evaluation/vistext_llm_evaluation_results.json"),
+    "diagram2graph": Path("diagram2graph/evaluation/diagram2graph_llm_evaluation_results.json"),
+}
 
 
 def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
@@ -25,7 +31,7 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser.add_argument("--skip-existing", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--output-dir", type=Path, default=result_path(dataset))
-    parser.add_argument("--metrics-path", type=Path, default=Path("vistext/evaluation/vistext_llm_evaluation_results.json"))
+    parser.add_argument("--metrics-path", type=Path, default=DEFAULT_METRICS_PATHS.get(dataset))
     return parser
 
 
@@ -54,6 +60,7 @@ def run_dataset_cli(
     dataset: str,
     argv: list[str] | None = None,
     validate_with_vistext_metrics: bool = False,
+    validate_with_traditional_metrics: bool = False,
 ) -> int:
     parser = build_parser(dataset=dataset, description=f"Run LLM-as-a-judge evaluation for {dataset}.")
     args = parser.parse_args(argv)
@@ -76,7 +83,18 @@ def run_dataset_cli(
         print(f"Direct items: {direct_count}")
         print(f"Pairwise comparisons: {pairwise_count}")
         print(f"Output directory: {args.output_dir}")
+        if validate_with_vistext_metrics or validate_with_traditional_metrics:
+            print(f"Traditional metrics path: {args.metrics_path}")
         return 0
+
+    should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
+    if should_validate and args.metrics_path is None:
+        raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
+    if should_validate and not args.metrics_path.exists():
+        raise FileNotFoundError(
+            f"Traditional metrics report not found: {args.metrics_path}. "
+            "Run the dataset's traditional evaluator first, or pass --metrics-path."
+        )
 
     runner = JudgeRunner(provider=_provider(args), results_root=args.output_dir)
     direct_report: dict[str, Any] | None = None
@@ -95,14 +113,16 @@ def run_dataset_cli(
             skip_existing=args.skip_existing,
         )
 
-    if validate_with_vistext_metrics:
-        metrics = load_content_only_metrics(args.metrics_path)
+    if should_validate:
+        metrics = load_traditional_metrics(args.metrics_path)
         validation: dict[str, Any] = {}
+        direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
+        pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
         if direct_report is not None:
-            validation["direct_vs_content_only_metrics"] = validate_direct_against_metrics(direct_report, metrics)
+            validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
         if pairwise_report is not None:
-            validation["pairwise_vs_content_only_metrics"] = compare_pairwise_to_metrics(pairwise_report, metrics)
-        _write_json(args.output_dir / "vistext_llm_judge_validation.json", validation)
+            validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
+        _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
 
     print(f"Wrote judge results under: {args.output_dir}")
     return 0
