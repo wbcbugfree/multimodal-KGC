@@ -1,134 +1,107 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
-    rdfs:label "Start" ;
-    d2g:shape d2g:StartEvent .
+:Nodestart a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/hard_work> a d2g:Process, d2g:Node ;
-    rdfs:label "Hard work" ;
-    d2g:shape d2g:Task .
+:Nodehard_work a :Process, :Node ;
+    :label "Hard work" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/franchise> a d2g:Process, d2g:Node ;
-    rdfs:label "Franchise" ;
-    d2g:shape d2g:Task .
+:Nodefranchise a :Process, :Node ;
+    :label "Franchise" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/success> a d2g:Decision, d2g:Node ;
-    rdfs:label "Success" ;
-    d2g:shape d2g:Gateway .
+:Nodesuccess a :Decision, :Node ;
+    :label "Success" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/order_more> a d2g:Process, d2g:Node ;
-    rdfs:label "Order more" ;
-    d2g:shape d2g:Task .
+:Nodeorder_more a :Process, :Node ;
+    :label "Order more" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/sold> a d2g:Decision, d2g:Node ;
-    rdfs:label "Sold" ;
-    d2g:shape d2g:Gateway .
+:Nodesold a :Decision, :Node ;
+    :label "Sold" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/expandable> a d2g:Decision, d2g:Node ;
-    rdfs:label "Expandable" ;
-    d2g:shape d2g:Gateway .
+:Nodeexpandable a :Decision, :Node ;
+    :label "Expandable" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/open_more_store> a d2g:Process, d2g:Node ;
-    rdfs:label "Open more store" ;
-    d2g:shape d2g:Task .
+:Nodeopen_more_store a :Process, :Node ;
+    :label "Open more store" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/new_strategy> a d2g:Process, d2g:Node ;
-    rdfs:label "New Strategy" ;
-    d2g:shape d2g:Task .
+:Nodenew_strategy a :Process, :Node ;
+    :label "New Strategy" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/end> a d2g:Terminator, d2g:Node ;
-    rdfs:label "End" ;
-    d2g:shape d2g:EndEvent .
+:Nodeend a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/starthard_work> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/start> ;
-    d2g:target <http://example.org/diagram/diagram/node/hard_work> ;
-    d2g:relationshipType d2g:Follows .
+:Edgestarthard_work a :Solid, :Edge ;
+    :source :Nodestart ;
+    :target :Nodehard_work ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/start> d2g:follows <http://example.org/diagram/diagram/node/hard_work> .
+:Edgehard_workfranchise a :Solid, :Edge ;
+    :source :Nodehard_work ;
+    :target :Nodefranchise ;
+    :relationshipType :Branches .
 
-<http://example.org/diagram/diagram/edge/hard_workfranchise> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/hard_work> ;
-    d2g:target <http://example.org/diagram/diagram/node/franchise> ;
-    d2g:relationshipType d2g:Branches .
+:Edgehard_worknew_strategy a :Solid, :Edge ;
+    :source :Nodehard_work ;
+    :target :Nodenew_strategy ;
+    :relationshipType :Branches .
 
-<http://example.org/diagram/diagram/node/hard_work> d2g:branches <http://example.org/diagram/diagram/node/franchise> .
+:Edgefranchisesuccess a :Solid, :Edge ;
+    :source :Nodefranchise ;
+    :target :Nodesuccess ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/hard_worknew_strategy> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/hard_work> ;
-    d2g:target <http://example.org/diagram/diagram/node/new_strategy> ;
-    d2g:relationshipType d2g:Branches .
+:Edgesuccessorder_more a :Solid, :Edge ;
+    :source :Nodesuccess ;
+    :target :Nodeorder_more ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/node/hard_work> d2g:branches <http://example.org/diagram/diagram/node/new_strategy> .
+:Edgesuccessnew_strategy a :Solid, :Edge ;
+    :source :Nodesuccess ;
+    :target :Nodenew_strategy ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/edge/franchisesuccess> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/franchise> ;
-    d2g:target <http://example.org/diagram/diagram/node/success> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeorder_moresold a :Solid, :Edge ;
+    :source :Nodeorder_more ;
+    :target :Nodesold ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/franchise> d2g:follows <http://example.org/diagram/diagram/node/success> .
+:Edgesoldexpandable a :Solid, :Edge ;
+    :source :Nodesold ;
+    :target :Nodeexpandable ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/successorder_more> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/success> ;
-    d2g:target <http://example.org/diagram/diagram/node/order_more> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
+:Edgesoldnew_strategy a :Solid, :Edge ;
+    :source :Nodesold ;
+    :target :Nodenew_strategy ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/success> d2g:depends_on <http://example.org/diagram/diagram/node/order_more> .
+:Edgeexpandableopen_more_store a :Solid, :Edge ;
+    :source :Nodeexpandable ;
+    :target :Nodeopen_more_store ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/successnew_strategy> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/success> ;
-    d2g:target <http://example.org/diagram/diagram/node/new_strategy> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
+:Edgeexpandableend a :Solid, :Edge ;
+    :source :Nodeexpandable ;
+    :target :Nodeend ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/success> d2g:depends_on <http://example.org/diagram/diagram/node/new_strategy> .
-
-<http://example.org/diagram/diagram/edge/order_moresold> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/order_more> ;
-    d2g:target <http://example.org/diagram/diagram/node/sold> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/order_more> d2g:follows <http://example.org/diagram/diagram/node/sold> .
-
-<http://example.org/diagram/diagram/edge/soldexpandable> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/sold> ;
-    d2g:target <http://example.org/diagram/diagram/node/expandable> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/sold> d2g:depends_on <http://example.org/diagram/diagram/node/expandable> .
-
-<http://example.org/diagram/diagram/edge/soldnew_strategy> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/sold> ;
-    d2g:target <http://example.org/diagram/diagram/node/new_strategy> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/sold> d2g:depends_on <http://example.org/diagram/diagram/node/new_strategy> .
-
-<http://example.org/diagram/diagram/edge/expandableopen_more_store> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/expandable> ;
-    d2g:target <http://example.org/diagram/diagram/node/open_more_store> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/expandable> d2g:depends_on <http://example.org/diagram/diagram/node/open_more_store> .
-
-<http://example.org/diagram/diagram/edge/expandableend> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/expandable> ;
-    d2g:target <http://example.org/diagram/diagram/node/end> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/expandable> d2g:depends_on <http://example.org/diagram/diagram/node/end> .
-
-<http://example.org/diagram/diagram/edge/open_more_storesuccess> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/open_more_store> ;
-    d2g:target <http://example.org/diagram/diagram/node/success> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/open_more_store> d2g:follows <http://example.org/diagram/diagram/node/success> .
+:Edgeopen_more_storesuccess a :Solid, :Edge ;
+    :source :Nodeopen_more_store ;
+    :target :Nodesuccess ;
+    :relationshipType :Follows .

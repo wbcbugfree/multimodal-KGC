@@ -1,125 +1,100 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
-    rdfs:label "Start" ;
-    d2g:shape d2g:StartEvent .
+:Nodestart a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/username> a d2g:Process, d2g:Node ;
-    rdfs:label "Username" ;
-    d2g:shape d2g:Task .
+:Nodeusername a :Process, :Node ;
+    :label "Username" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/password> a d2g:Process, d2g:Node ;
-    rdfs:label "Password" ;
-    d2g:shape d2g:Task .
+:Nodepassword a :Process, :Node ;
+    :label "Password" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/credentials_check> a d2g:Decision, d2g:Node ;
-    rdfs:label "Username && Password correspond to the ones in database?" ;
-    d2g:shape d2g:Gateway .
+:Nodecredentials_check a :Decision, :Node ;
+    :label "Username && Password correspond to the ones in database?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/enter_id_password> a d2g:Process, d2g:Node ;
-    rdfs:label "Enter ID and password" ;
-    d2g:shape d2g:Task .
+:Nodeenter_id_password a :Process, :Node ;
+    :label "Enter ID and password" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/invalid_credentials> a d2g:Process, d2g:Node ;
-    rdfs:label "\"Invalid credentials\"" ;
-    d2g:shape d2g:Task .
+:Nodeinvalid_credentials a :Process, :Node ;
+    :label "\"Invalid credentials\"" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/user_blocked_check> a d2g:Decision, d2g:Node ;
-    rdfs:label "Is User_ID blocked?" ;
-    d2g:shape d2g:Gateway .
+:Nodeuser_blocked_check a :Decision, :Node ;
+    :label "Is User_ID blocked?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/forbidden> a d2g:Process, d2g:Node ;
-    rdfs:label "\"403 Forbidden\"" ;
-    d2g:shape d2g:Task .
+:Nodeforbidden a :Process, :Node ;
+    :label "\"403 Forbidden\"" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/login_successfully> a d2g:Process, d2g:Node ;
-    rdfs:label "Login successfully" ;
-    d2g:shape d2g:Task .
+:Nodelogin_successfully a :Process, :Node ;
+    :label "Login successfully" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/end> a d2g:Terminator, d2g:Node ;
-    rdfs:label "End" ;
-    d2g:shape d2g:EndEvent .
+:Nodeend a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/username> ;
-    d2g:relationshipType d2g:Follows .
+:Edgestartusername a :Solid, :Edge ;
+    :source :Nodestart ;
+    :target :Nodeusername ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
+:Edgeusernamepassword a :Solid, :Edge ;
+    :source :Nodeusername ;
+    :target :Nodepassword ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/e16003> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/password> ;
-    d2g:relationshipType d2g:Follows .
+:Edgepasswordcredentials_check a :Solid, :Edge ;
+    :source :Nodepassword ;
+    :target :Nodecredentials_check ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/password> .
+:Edgecredentials_checkenter_id_password a :Solid, :Edge ;
+    :source :Nodecredentials_check ;
+    :target :Nodeenter_id_password ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/e59436> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/credentials_check> ;
-    d2g:relationshipType d2g:Follows .
+:Edgecredentials_checkinvalid_credentials a :Solid, :Edge ;
+    :source :Nodecredentials_check ;
+    :target :Nodeinvalid_credentials ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/credentials_check> .
+:Edgeinvalid_credentialsusername a :Solid, :Edge ;
+    :source :Nodeinvalid_credentials ;
+    :target :Nodeusername ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/e45779> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/enter_id_password> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
+:Edgeenter_id_passworduser_blocked_check a :Solid, :Edge ;
+    :source :Nodeenter_id_password ;
+    :target :Nodeuser_blocked_check ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/enter_id_password> .
+:Edgeuser_blocked_checkforbidden a :Solid, :Edge ;
+    :source :Nodeuser_blocked_check ;
+    :target :Nodeforbidden ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/e95311> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/invalid_credentials> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
+:Edgeuser_blocked_checklogin_successfully a :Solid, :Edge ;
+    :source :Nodeuser_blocked_check ;
+    :target :Nodelogin_successfully ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/invalid_credentials> .
+:Edgeforbiddenusername a :Solid, :Edge ;
+    :source :Nodeforbidden ;
+    :target :Nodeusername ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/username> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
-
-<http://example.org/diagram/diagram/edge/e92468> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/user_blocked_check> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/user_blocked_check> .
-
-<http://example.org/diagram/diagram/edge/e45612> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/forbidden> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/forbidden> .
-
-<http://example.org/diagram/diagram/edge/e44719> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/login_successfully> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/> d2g:depends_on <http://example.org/diagram/diagram/node/login_successfully> .
-
-<http://example.org/diagram/diagram/edge/e25054> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/username> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/username> .
-
-<http://example.org/diagram/diagram/edge/e95726> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/> ;
-    d2g:target <http://example.org/diagram/diagram/node/end> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/> d2g:follows <http://example.org/diagram/diagram/node/end> .
+:Edgelogin_successfullyend a :Solid, :Edge ;
+    :source :Nodelogin_successfully ;
+    :target :Nodeend ;
+    :relationshipType :Follows .

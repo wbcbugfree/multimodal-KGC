@@ -1,147 +1,118 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
-    rdfs:label "Start" ;
-    d2g:shape d2g:StartEvent .
+:Nodestart a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/login> a d2g:Process, d2g:Node ;
-    rdfs:label "Login" ;
-    d2g:shape d2g:Task .
+:Nodelogin a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/verified> a d2g:Decision, d2g:Node ;
-    rdfs:label "Verified?" ;
-    d2g:shape d2g:Gateway .
+:Nodeverified a :Decision, :Node ;
+    :label "Verified?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/dashboard> a d2g:Process, d2g:Node ;
-    rdfs:label "Dashboard" ;
-    d2g:shape d2g:Task .
+:Nodedashboard a :Process, :Node ;
+    :label "Dashboard" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/click_report_incident> a d2g:Process, d2g:Node ;
-    rdfs:label "Click on the report incident link" ;
-    d2g:shape d2g:Task .
+:Nodeclick_report_incident a :Process, :Node ;
+    :label "Click on the report incident link" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/fill_form> a d2g:Process, d2g:Node ;
-    rdfs:label "Fill the form" ;
-    d2g:shape d2g:Task .
+:Nodefill_form a :Process, :Node ;
+    :label "Fill the form" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/validation_module> a d2g:Process, d2g:Node ;
-    rdfs:label "Validation Module" ;
-    d2g:shape d2g:Task .
+:Nodevalidation_module a :Process, :Node ;
+    :label "Validation Module" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/need> a d2g:Decision, d2g:Node ;
-    rdfs:label "Need?" ;
-    d2g:shape d2g:Gateway .
+:Nodeneed a :Decision, :Node ;
+    :label "Need?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/submit> a d2g:Process, d2g:Node ;
-    rdfs:label "Submit" ;
-    d2g:shape d2g:Task .
+:Nodesubmit a :Process, :Node ;
+    :label "Submit" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/update_form> a d2g:Process, d2g:Node ;
-    rdfs:label "Update form" ;
-    d2g:shape d2g:Task .
+:Nodeupdate_form a :Process, :Node ;
+    :label "Update form" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/view_comments> a d2g:Process, d2g:Node ;
-    rdfs:label "View comments on the post" ;
-    d2g:shape d2g:Task .
+:Nodeview_comments a :Process, :Node ;
+    :label "View comments on the post" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/stop> a d2g:Terminator, d2g:Node ;
-    rdfs:label "Stop" ;
-    d2g:shape d2g:EndEvent .
+:Nodestop a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/startlogin> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/start> ;
-    d2g:target <http://example.org/diagram/diagram/node/login> ;
-    d2g:relationshipType d2g:Follows .
+:Edgestartlogin a :Solid, :Edge ;
+    :source :Nodestart ;
+    :target :Nodelogin ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/start> d2g:follows <http://example.org/diagram/diagram/node/login> .
+:Edgeloginverified a :Solid, :Edge ;
+    :source :Nodelogin ;
+    :target :Nodeverified ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/loginverified> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/login> ;
-    d2g:target <http://example.org/diagram/diagram/node/verified> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeverifieddashboard a :Solid, :Edge ;
+    :source :Nodeverified ;
+    :target :Nodedashboard ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/node/login> d2g:follows <http://example.org/diagram/diagram/node/verified> .
+:Edgeverifiedlogin a :Solid, :Edge ;
+    :source :Nodeverified ;
+    :target :Nodelogin ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/edge/verifieddashboard> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/verified> ;
-    d2g:target <http://example.org/diagram/diagram/node/dashboard> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
+:Edgedashboardclick_report_incident a :Solid, :Edge ;
+    :source :Nodedashboard ;
+    :target :Nodeclick_report_incident ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/verified> d2g:depends_on <http://example.org/diagram/diagram/node/dashboard> .
+:Edgeclick_report_incidentfill_form a :Solid, :Edge ;
+    :source :Nodeclick_report_incident ;
+    :target :Nodefill_form ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/verifiedlogin> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/verified> ;
-    d2g:target <http://example.org/diagram/diagram/node/login> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
+:Edgefill_formvalidation_module a :Solid, :Edge ;
+    :source :Nodefill_form ;
+    :target :Nodevalidation_module ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/verified> d2g:depends_on <http://example.org/diagram/diagram/node/login> .
+:Edgevalidation_moduleneed a :Solid, :Edge ;
+    :source :Nodevalidation_module ;
+    :target :Nodeneed ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/dashboardclick_report_incident> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/dashboard> ;
-    d2g:target <http://example.org/diagram/diagram/node/click_report_incident> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeneedview_comments a :Solid, :Edge ;
+    :source :Nodeneed ;
+    :target :Nodeview_comments ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/node/dashboard> d2g:follows <http://example.org/diagram/diagram/node/click_report_incident> .
+:Edgeneedupdate_form a :Solid, :Edge ;
+    :source :Nodeneed ;
+    :target :Nodeupdate_form ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/edge/click_report_incidentfill_form> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/click_report_incident> ;
-    d2g:target <http://example.org/diagram/diagram/node/fill_form> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeupdate_formsubmit a :Solid, :Edge ;
+    :source :Nodeupdate_form ;
+    :target :Nodesubmit ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/click_report_incident> d2g:follows <http://example.org/diagram/diagram/node/fill_form> .
+:Edgesubmitvalidation_module a :Solid, :Edge ;
+    :source :Nodesubmit ;
+    :target :Nodevalidation_module ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/fill_formvalidation_module> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/fill_form> ;
-    d2g:target <http://example.org/diagram/diagram/node/validation_module> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/fill_form> d2g:follows <http://example.org/diagram/diagram/node/validation_module> .
-
-<http://example.org/diagram/diagram/edge/validation_moduleneed> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/validation_module> ;
-    d2g:target <http://example.org/diagram/diagram/node/need> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/validation_module> d2g:follows <http://example.org/diagram/diagram/node/need> .
-
-<http://example.org/diagram/diagram/edge/needview_comments> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/need> ;
-    d2g:target <http://example.org/diagram/diagram/node/view_comments> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/need> d2g:depends_on <http://example.org/diagram/diagram/node/view_comments> .
-
-<http://example.org/diagram/diagram/edge/needupdate_form> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/need> ;
-    d2g:target <http://example.org/diagram/diagram/node/update_form> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/need> d2g:depends_on <http://example.org/diagram/diagram/node/update_form> .
-
-<http://example.org/diagram/diagram/edge/update_formsubmit> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/update_form> ;
-    d2g:target <http://example.org/diagram/diagram/node/submit> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/update_form> d2g:follows <http://example.org/diagram/diagram/node/submit> .
-
-<http://example.org/diagram/diagram/edge/submitvalidation_module> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/submit> ;
-    d2g:target <http://example.org/diagram/diagram/node/validation_module> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/submit> d2g:follows <http://example.org/diagram/diagram/node/validation_module> .
-
-<http://example.org/diagram/diagram/edge/view_commentsstop> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/view_comments> ;
-    d2g:target <http://example.org/diagram/diagram/node/stop> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/view_comments> d2g:follows <http://example.org/diagram/diagram/node/stop> .
+:Edgeview_commentsstop a :Solid, :Edge ;
+    :source :Nodeview_comments ;
+    :target :Nodestop ;
+    :relationshipType :Follows .

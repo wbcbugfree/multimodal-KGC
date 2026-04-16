@@ -1,117 +1,94 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/start> a d2g:Start, d2g:Node ;
-    rdfs:label "START" ;
-    d2g:shape d2g:StartEvent .
+:Nodestart a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/greet> a d2g:Process, d2g:Node ;
-    rdfs:label "Greet" ;
-    d2g:shape d2g:Task .
+:Nodegreet a :Process, :Node ;
+    :label "Greet" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/enter_id> a d2g:Process, d2g:Node ;
-    rdfs:label "Enter ID" ;
-    d2g:shape d2g:Task .
+:Nodeenter_id a :Process, :Node ;
+    :label "Enter ID" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/input_driver_info> a d2g:Process, d2g:Node ;
-    rdfs:label "INPUT DRIVER INFORMATION" ;
-    d2g:shape d2g:Task .
+:Nodeinput_driver_info a :Process, :Node ;
+    :label "INPUT DRIVER INFORMATION" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/verify_finger_scan> a d2g:Process, d2g:Node ;
-    rdfs:label "Verify finger scan" ;
-    d2g:shape d2g:Task .
+:Nodeverify_finger_scan a :Process, :Node ;
+    :label "Verify finger scan" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/scan_finger_again> a d2g:Process, d2g:Node ;
-    rdfs:label "SCAN FINGER AGAIN" ;
-    d2g:shape d2g:Task .
+:Nodescan_finger_again a :Process, :Node ;
+    :label "SCAN FINGER AGAIN" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/scan_match_decision> a d2g:Decision, d2g:Node ;
-    rdfs:label "1ST AND 2ND SCAN MATCH?" ;
-    d2g:shape d2g:Gateway .
+:Nodescan_match_decision a :Decision, :Node ;
+    :label "1ST AND 2ND SCAN MATCH?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/login> a d2g:Process, d2g:Node ;
-    rdfs:label "Login" ;
-    d2g:shape d2g:Task .
+:Nodelogin a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/stop> a d2g:Terminator, d2g:Node ;
-    rdfs:label "STOP" ;
-    d2g:shape d2g:EndEvent .
+:Nodestop a :Terminator, :Node ;
+    :label "STOP" ;
+    :shape :EndEvent .
 
-<http://example.org/diagram/diagram/node/accept_no_commands> a d2g:Process, d2g:Node ;
-    rdfs:label "ACCEPT NO COMMANDS" ;
-    d2g:shape d2g:Task .
+:Nodeaccept_no_commands a :Process, :Node ;
+    :label "ACCEPT NO COMMANDS" ;
+    :shape :Task .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/startgreet> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/start> ;
-    d2g:target <http://example.org/diagram/diagram/node/greet> ;
-    d2g:relationshipType d2g:Follows .
+:Edgestartgreet a :Solid, :Edge ;
+    :source :Nodestart ;
+    :target :Nodegreet ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/start> d2g:follows <http://example.org/diagram/diagram/node/greet> .
+:Edgegreetenter_id a :Solid, :Edge ;
+    :source :Nodegreet ;
+    :target :Nodeenter_id ;
+    :relationshipType :Branches .
 
-<http://example.org/diagram/diagram/edge/greetenter_id> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/greet> ;
-    d2g:target <http://example.org/diagram/diagram/node/enter_id> ;
-    d2g:relationshipType d2g:Branches .
+:Edgegreetaccept_no_commands a :Dashed, :Edge ;
+    :source :Nodegreet ;
+    :target :Nodeaccept_no_commands ;
+    :relationshipType :Branches ;
+    :relationshipValue "FAILURE" .
 
-<http://example.org/diagram/diagram/node/greet> d2g:branches <http://example.org/diagram/diagram/node/enter_id> .
+:Edgeenter_idinput_driver_info a :Solid, :Edge ;
+    :source :Nodeenter_id ;
+    :target :Nodeinput_driver_info ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/greetaccept_no_commands> a d2g:Dashed, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/greet> ;
-    d2g:target <http://example.org/diagram/diagram/node/accept_no_commands> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "FAILURE" .
+:Edgeinput_driver_infoverify_finger_scan a :Solid, :Edge ;
+    :source :Nodeinput_driver_info ;
+    :target :Nodeverify_finger_scan ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/greet> d2g:branches <http://example.org/diagram/diagram/node/accept_no_commands> .
+:Edgeverify_finger_scanscan_finger_again a :Solid, :Edge ;
+    :source :Nodeverify_finger_scan ;
+    :target :Nodescan_finger_again ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/enter_idinput_driver_info> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/enter_id> ;
-    d2g:target <http://example.org/diagram/diagram/node/input_driver_info> ;
-    d2g:relationshipType d2g:Follows .
+:Edgescan_finger_againscan_match_decision a :Solid, :Edge ;
+    :source :Nodescan_finger_again ;
+    :target :Nodescan_match_decision ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/enter_id> d2g:follows <http://example.org/diagram/diagram/node/input_driver_info> .
+:Edgescan_match_decisionlogin a :Solid, :Edge ;
+    :source :Nodescan_match_decision ;
+    :target :Nodelogin ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
 
-<http://example.org/diagram/diagram/edge/input_driver_infoverify_finger_scan> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/input_driver_info> ;
-    d2g:target <http://example.org/diagram/diagram/node/verify_finger_scan> ;
-    d2g:relationshipType d2g:Follows .
+:Edgescan_match_decisionenter_id a :Solid, :Edge ;
+    :source :Nodescan_match_decision ;
+    :target :Nodeenter_id ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
 
-<http://example.org/diagram/diagram/node/input_driver_info> d2g:follows <http://example.org/diagram/diagram/node/verify_finger_scan> .
-
-<http://example.org/diagram/diagram/edge/verify_finger_scanscan_finger_again> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/verify_finger_scan> ;
-    d2g:target <http://example.org/diagram/diagram/node/scan_finger_again> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/verify_finger_scan> d2g:follows <http://example.org/diagram/diagram/node/scan_finger_again> .
-
-<http://example.org/diagram/diagram/edge/scan_finger_againscan_match_decision> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/scan_finger_again> ;
-    d2g:target <http://example.org/diagram/diagram/node/scan_match_decision> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/scan_finger_again> d2g:follows <http://example.org/diagram/diagram/node/scan_match_decision> .
-
-<http://example.org/diagram/diagram/edge/scan_match_decisionlogin> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/scan_match_decision> ;
-    d2g:target <http://example.org/diagram/diagram/node/login> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "YES" .
-
-<http://example.org/diagram/diagram/node/scan_match_decision> d2g:branches <http://example.org/diagram/diagram/node/login> .
-
-<http://example.org/diagram/diagram/edge/scan_match_decisionenter_id> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/scan_match_decision> ;
-    d2g:target <http://example.org/diagram/diagram/node/enter_id> ;
-    d2g:relationshipType d2g:Branches ;
-    d2g:relationshipValue "NO" .
-
-<http://example.org/diagram/diagram/node/scan_match_decision> d2g:branches <http://example.org/diagram/diagram/node/enter_id> .
-
-<http://example.org/diagram/diagram/edge/loginstop> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/login> ;
-    d2g:target <http://example.org/diagram/diagram/node/stop> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/login> d2g:follows <http://example.org/diagram/diagram/node/stop> .
+:Edgeloginstop a :Solid, :Edge ;
+    :source :Nodelogin ;
+    :target :Nodestop ;
+    :relationshipType :Follows .

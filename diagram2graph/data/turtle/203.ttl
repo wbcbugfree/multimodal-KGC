@@ -1,140 +1,113 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/customer_consulting> a d2g:Process, d2g:Node ;
-    rdfs:label "Customer Consulting and Quotation" ;
-    d2g:shape d2g:Task .
+:Nodecustomer_consulting a :Process, :Node ;
+    :label "Customer Consulting and Quotation" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/deal> a d2g:Decision, d2g:Node ;
-    rdfs:label "Deal?" ;
-    d2g:shape d2g:Gateway .
+:Nodedeal a :Decision, :Node ;
+    :label "Deal?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/go_home> a d2g:Process, d2g:Node ;
-    rdfs:label "Go home" ;
-    d2g:shape d2g:Task .
+:Nodego_home a :Process, :Node ;
+    :label "Go home" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/invoice> a d2g:Process, d2g:Node ;
-    rdfs:label "Invoice" ;
-    d2g:shape d2g:Task .
+:Nodeinvoice a :Process, :Node ;
+    :label "Invoice" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/shipping> a d2g:Process, d2g:Node ;
-    rdfs:label "Shipping" ;
-    d2g:shape d2g:Task .
+:Nodeshipping a :Process, :Node ;
+    :label "Shipping" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/custom_clearance> a d2g:Process, d2g:Node ;
-    rdfs:label "Custom Clearance" ;
-    d2g:shape d2g:Task .
+:Nodecustom_clearance a :Process, :Node ;
+    :label "Custom Clearance" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/payment_mode> a d2g:Process, d2g:Node ;
-    rdfs:label "Payment mode" ;
-    d2g:shape d2g:Task .
+:Nodepayment_mode a :Process, :Node ;
+    :label "Payment mode" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/delivery> a d2g:Process, d2g:Node ;
-    rdfs:label "Delivery" ;
-    d2g:shape d2g:Task .
+:Nodedelivery a :Process, :Node ;
+    :label "Delivery" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/service_payment> a d2g:Process, d2g:Node ;
-    rdfs:label "Service Payment" ;
-    d2g:shape d2g:Task .
+:Nodeservice_payment a :Process, :Node ;
+    :label "Service Payment" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/pay_foreign_exchange> a d2g:Decision, d2g:Node ;
-    rdfs:label "Pay Foreign Exchange?" ;
-    d2g:shape d2g:Gateway .
+:Nodepay_foreign_exchange a :Decision, :Node ;
+    :label "Pay Foreign Exchange?" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/payment> a d2g:Process, d2g:Node ;
-    rdfs:label "Payment" ;
-    d2g:shape d2g:Task .
+:Nodepayment a :Process, :Node ;
+    :label "Payment" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/stop> a d2g:Terminator, d2g:Node ;
-    rdfs:label "Stop" ;
-    d2g:shape d2g:EndEvent .
+:Nodestop a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/customer_consultingdeal> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/customer_consulting> ;
-    d2g:target <http://example.org/diagram/diagram/node/deal> ;
-    d2g:relationshipType d2g:Follows .
+:Edgecustomer_consultingdeal a :Solid, :Edge ;
+    :source :Nodecustomer_consulting ;
+    :target :Nodedeal ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/customer_consulting> d2g:follows <http://example.org/diagram/diagram/node/deal> .
+:Edgedealinvoice a :Solid, :Edge ;
+    :source :Nodedeal ;
+    :target :Nodeinvoice ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/dealinvoice> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/deal> ;
-    d2g:target <http://example.org/diagram/diagram/node/invoice> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
+:Edgedealgo_home a :Dashed, :Edge ;
+    :source :Nodedeal ;
+    :target :Nodego_home ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/deal> d2g:depends_on <http://example.org/diagram/diagram/node/invoice> .
+:Edgeinvoiceshipping a :Solid, :Edge ;
+    :source :Nodeinvoice ;
+    :target :Nodeshipping ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/dealgo_home> a d2g:Dashed, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/deal> ;
-    d2g:target <http://example.org/diagram/diagram/node/go_home> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
+:Edgeshippingcustom_clearance a :Solid, :Edge ;
+    :source :Nodeshipping ;
+    :target :Nodecustom_clearance ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/deal> d2g:depends_on <http://example.org/diagram/diagram/node/go_home> .
+:Edgecustom_clearancepayment_mode a :Solid, :Edge ;
+    :source :Nodecustom_clearance ;
+    :target :Nodepayment_mode ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/invoiceshipping> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/invoice> ;
-    d2g:target <http://example.org/diagram/diagram/node/shipping> ;
-    d2g:relationshipType d2g:Follows .
+:Edgepayment_modedelivery a :Solid, :Edge ;
+    :source :Nodepayment_mode ;
+    :target :Nodedelivery ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/invoice> d2g:follows <http://example.org/diagram/diagram/node/shipping> .
+:Edgedeliveryservice_payment a :Solid, :Edge ;
+    :source :Nodedelivery ;
+    :target :Nodeservice_payment ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/shippingcustom_clearance> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/shipping> ;
-    d2g:target <http://example.org/diagram/diagram/node/custom_clearance> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeservice_paymentpay_foreign_exchange a :Solid, :Edge ;
+    :source :Nodeservice_payment ;
+    :target :Nodepay_foreign_exchange ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/shipping> d2g:follows <http://example.org/diagram/diagram/node/custom_clearance> .
+:Edgepay_foreign_exchangepayment a :Solid, :Edge ;
+    :source :Nodepay_foreign_exchange ;
+    :target :Nodepayment ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "Yes" .
 
-<http://example.org/diagram/diagram/edge/custom_clearancepayment_mode> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/custom_clearance> ;
-    d2g:target <http://example.org/diagram/diagram/node/payment_mode> ;
-    d2g:relationshipType d2g:Follows .
+:Edgepay_foreign_exchangestop a :Dashed, :Edge ;
+    :source :Nodepay_foreign_exchange ;
+    :target :Nodestop ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "No" .
 
-<http://example.org/diagram/diagram/node/custom_clearance> d2g:follows <http://example.org/diagram/diagram/node/payment_mode> .
-
-<http://example.org/diagram/diagram/edge/payment_modedelivery> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/payment_mode> ;
-    d2g:target <http://example.org/diagram/diagram/node/delivery> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/payment_mode> d2g:follows <http://example.org/diagram/diagram/node/delivery> .
-
-<http://example.org/diagram/diagram/edge/deliveryservice_payment> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/delivery> ;
-    d2g:target <http://example.org/diagram/diagram/node/service_payment> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/delivery> d2g:follows <http://example.org/diagram/diagram/node/service_payment> .
-
-<http://example.org/diagram/diagram/edge/service_paymentpay_foreign_exchange> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/service_payment> ;
-    d2g:target <http://example.org/diagram/diagram/node/pay_foreign_exchange> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/service_payment> d2g:follows <http://example.org/diagram/diagram/node/pay_foreign_exchange> .
-
-<http://example.org/diagram/diagram/edge/pay_foreign_exchangepayment> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/pay_foreign_exchange> ;
-    d2g:target <http://example.org/diagram/diagram/node/payment> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "Yes" .
-
-<http://example.org/diagram/diagram/node/pay_foreign_exchange> d2g:depends_on <http://example.org/diagram/diagram/node/payment> .
-
-<http://example.org/diagram/diagram/edge/pay_foreign_exchangestop> a d2g:Dashed, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/pay_foreign_exchange> ;
-    d2g:target <http://example.org/diagram/diagram/node/stop> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "No" .
-
-<http://example.org/diagram/diagram/node/pay_foreign_exchange> d2g:depends_on <http://example.org/diagram/diagram/node/stop> .
-
-<http://example.org/diagram/diagram/edge/paymentstop> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/payment> ;
-    d2g:target <http://example.org/diagram/diagram/node/stop> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/payment> d2g:follows <http://example.org/diagram/diagram/node/stop> .
+:Edgepaymentstop a :Solid, :Edge ;
+    :source :Nodepayment ;
+    :target :Nodestop ;
+    :relationshipType :Follows .

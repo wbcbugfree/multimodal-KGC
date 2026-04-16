@@ -4,10 +4,10 @@ Convert diagram JSON (nodes/edges) to RDF/Turtle.
 
 Usage:
   # Single file -> single file
-  python convert_json_to_ttl.py input.json out.ttl --base http://example.org
+  python convert_json_to_ttl.py input.json out.ttl
 
   # Folder -> folder (outputs mirror names with .ttl extension)
-  python convert_json_to_ttl.py path/to/json_folder path/to/out_folder --base http://example.org
+  python convert_json_to_ttl.py path/to/json_folder path/to/out_folder
 """
 from __future__ import annotations
 import json
@@ -20,7 +20,7 @@ def to_camel_case(s: str) -> str:
     parts = re.split(r"[_\s\-]+", (s or "").strip())
     return "".join(p.capitalize() for p in parts if p)
 
-# Vocabulary mappings to match the correct TTL format
+# Vocabulary mappings to match the lightweight diagram2graph TTL schema.
 NODE_TYPE_MAP = {
     "start": "Start",
     "process": "Process",
@@ -33,84 +33,83 @@ EDGE_TYPE_MAP = {
     "dashed": "Dashed",
 }
 REL_TYPE_MAP = {
-    # value in JSON -> (Class used in d2g:relationshipType, direct property name)
-    "follows": ("Follows", "follows"),
-    "branches": ("Branches", "branches"),
+    "follows": "Follows",
+    "branches": "Branches",
+    "depends_on": "DependsOn",
 }
 
-def json_to_ttl_str(data: dict, base_iri: str, diagram_id: str) -> str:
-    base = f"{base_iri.rstrip('/')}/diagram/{diagram_id}"
+def escape_literal(value: str) -> str:
+    return (
+        value.replace("\\", "\\\\")
+        .replace('"', '\\"')
+        .replace("\r\n", "\\n")
+        .replace("\n", "\\n")
+        .replace("\r", "\\n")
+    )
+
+def to_local_name(prefix: str, value: str) -> str:
+    token = re.sub(r"[^A-Za-z0-9_-]+", "_", (value or "").strip())
+    token = token.strip("_-")
+    return f":{prefix}{token}" if token else f":{prefix}"
+
+def json_to_ttl_str(data: dict, base_iri: str | None = None, diagram_id: str | None = None) -> str:
+    del base_iri, diagram_id
 
     lines: list[str] = []
-    lines.append('@prefix d2g: <http://example.org/diagram2graph#> .')
-    lines.append('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n')
+    lines.append('@prefix : <http://example.org/diagram2graph#> .')
+    lines.append("")
 
-    # === Nodes ===
-    lines.append("# === Nodes ===")
     for node in data.get("nodes", []):
         nid = str(node.get("id", "")).strip()
-        label = (node.get("label") or "").replace('"', '\\"')
+        label = escape_literal(node.get("label") or "")
         type_key = (node.get("type_of_node") or "").lower().strip()
         shape_key = (node.get("shape") or "").lower().strip()
 
         specific_type = NODE_TYPE_MAP.get(type_key, to_camel_case(type_key) or "Node")
         shape_cls = to_camel_case(shape_key) or "Task"
 
-        subj = f"<{base}/node/{nid}>"
+        subj = to_local_name("Node", nid)
         block = [
-            f"{subj} a d2g:{specific_type}, d2g:Node ;",
-            f'    rdfs:label "{label}" ;',
-            f"    d2g:shape d2g:{shape_cls} .",
+            f"{subj} a :{specific_type}, :Node ;",
+            f'    :label "{label}" ;',
+            f"    :shape :{shape_cls} .",
             "",
         ]
         lines.extend(block)
 
-    # === Edges ===
-    lines.append("# === Edges ===")
-    for e in data.get("edges", []):
-        src = str(e.get("source", "")).strip()
+    for edge_index, e in enumerate(data.get("edges", []), start=1):
+        src = str(e.get("source") or e.get("source_") or "").strip()
         tgt = str(e.get("target", "")).strip()
         etype_key = (e.get("type_of_edge") or "").lower().strip()
         rel_key = (e.get("relationship_type") or "").lower().strip()
-        rel_val = (e.get("relationship_value") or "").strip()
+        rel_val = escape_literal((e.get("relationship_value") or "").strip())
 
         edge_type = EDGE_TYPE_MAP.get(etype_key, to_camel_case(etype_key) or "Solid")
-        rel_type_cap, rel_pred = REL_TYPE_MAP.get(
-            rel_key, (to_camel_case(rel_key) or "Follows", rel_key or "follows")
-        )
+        rel_type_cap = REL_TYPE_MAP.get(rel_key, to_camel_case(rel_key) or "Follows")
 
-        # Edge id = "<source><target>" like 12, 23, etc. (fallback to a hash if missing)
-        edge_id = f"{src}{tgt}" if src and tgt else f"e{abs(hash((src,tgt)))%100000}"
-        subj = f"<{base}/edge/{edge_id}>"
-        src_uri = f"<{base}/node/{src}>"
-        tgt_uri = f"<{base}/node/{tgt}>"
+        edge_id = f"{src}{tgt}" if src and tgt else f"unknown{edge_index}"
+        subj = to_local_name("Edge", edge_id)
+        src_uri = to_local_name("Node", src)
+        tgt_uri = to_local_name("Node", tgt)
 
         block = [
-            f"{subj} a d2g:{edge_type}, d2g:Edge ;",
-            f"    d2g:source {src_uri} ;",
-            f"    d2g:target {tgt_uri} ;",
-            f"    d2g:relationshipType d2g:{rel_type_cap}" + (" ;" if rel_val else " ."),
+            f"{subj} a :{edge_type}, :Edge ;",
+            f"    :source {src_uri} ;",
+            f"    :target {tgt_uri} ;",
+            f"    :relationshipType :{rel_type_cap}" + (" ;" if rel_val else " ."),
         ]
         if rel_val:
-            block.append(f'    d2g:relationshipValue "{rel_val}" .')
+            block.append(f'    :relationshipValue "{rel_val}" .')
         block.append("")
         lines.extend(block)
 
-        # Direct convenience triple (mirrors the relationship)
-        lines.append(f"{src_uri} d2g:{rel_pred} {tgt_uri} .")
-        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
 
-    return "\n".join(lines)
-
-def convert_one_file(input_json_path: Path, output_ttl_path: Path, base_iri: str) -> Path:
-    # Infer diagram ID from filename digits; fallback to "diagram"
-    m = re.search(r"(\\d+)", input_json_path.stem)
-    diagram_id = m.group(1) if m else "diagram"
-
+def convert_one_file(input_json_path: Path, output_ttl_path: Path, base_iri: str | None = None) -> Path:
     with input_json_path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
-    ttl_str = json_to_ttl_str(data, base_iri=base_iri, diagram_id=diagram_id)
+    ttl_str = json_to_ttl_str(data, base_iri=base_iri)
     output_ttl_path.parent.mkdir(parents=True, exist_ok=True)
     output_ttl_path.write_text(ttl_str, encoding="utf-8")
     return output_ttl_path
@@ -125,7 +124,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert JSON diagrams to Turtle.")
     parser.add_argument("input_path", help="Input JSON file or folder containing .json files")
     parser.add_argument("output_path", help="Output TTL file (if input is file) OR output folder (if input is folder)")
-    parser.add_argument("--base", default="http://example.org", help="Base IRI before /diagram/{id}")
+    parser.add_argument("--base", default=None, help="Ignored legacy option retained for CLI compatibility")
     parser.add_argument("--recursive", action="store_true", help="Recurse into subfolders when input is a folder")
     parser.add_argument("--pattern", default="*.json", help="Glob pattern for input folder mode (default: *.json)")
 

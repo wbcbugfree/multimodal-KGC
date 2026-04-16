@@ -1,116 +1,93 @@
-@prefix d2g: <http://example.org/diagram2graph#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/diagram2graph#> .
 
-# === Nodes ===
-<http://example.org/diagram/diagram/node/begin> a d2g:Start, d2g:Node ;
-    rdfs:label "BEGIN" ;
-    d2g:shape d2g:StartEvent .
+:Nodebegin a :Start, :Node ;
+    :label "BEGIN" ;
+    :shape :StartEvent .
 
-<http://example.org/diagram/diagram/node/enter_limit> a d2g:Process, d2g:Node ;
-    rdfs:label "Enter Limit" ;
-    d2g:shape d2g:Task .
+:Nodeenter_limit a :Process, :Node ;
+    :label "Enter Limit" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/initialize_number> a d2g:Process, d2g:Node ;
-    rdfs:label "Initialize number" ;
-    d2g:shape d2g:Task .
+:Nodeinitialize_number a :Process, :Node ;
+    :label "Initialize number" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/set_sum_to_0> a d2g:Process, d2g:Node ;
-    rdfs:label "Set Sum equal to 0" ;
-    d2g:shape d2g:Task .
+:Nodeset_sum_to_0 a :Process, :Node ;
+    :label "Set Sum equal to 0" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/do> a d2g:Process, d2g:Node ;
-    rdfs:label "DO" ;
-    d2g:shape d2g:Task .
+:Nodedo a :Process, :Node ;
+    :label "DO" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/if_sum_greater_than_limit> a d2g:Decision, d2g:Node ;
-    rdfs:label "If Sum > Limit" ;
-    d2g:shape d2g:Gateway .
+:Nodeif_sum_greater_than_limit a :Decision, :Node ;
+    :label "If Sum > Limit" ;
+    :shape :Gateway .
 
-<http://example.org/diagram/diagram/node/update_values> a d2g:Process, d2g:Node ;
-    rdfs:label "Update values" ;
-    d2g:shape d2g:Task .
+:Nodeupdate_values a :Process, :Node ;
+    :label "Update values" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/decrease_loss> a d2g:Process, d2g:Node ;
-    rdfs:label "Decrease loss" ;
-    d2g:shape d2g:Task .
+:Nodedecrease_loss a :Process, :Node ;
+    :label "Decrease loss" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/display_number_and_sum> a d2g:Process, d2g:Node ;
-    rdfs:label "Display Number and Sum" ;
-    d2g:shape d2g:Task .
+:Nodedisplay_number_and_sum a :Process, :Node ;
+    :label "Display Number and Sum" ;
+    :shape :Task .
 
-<http://example.org/diagram/diagram/node/end> a d2g:Terminator, d2g:Node ;
-    rdfs:label "END" ;
-    d2g:shape d2g:EndEvent .
+:Nodeend a :Terminator, :Node ;
+    :label "END" ;
+    :shape :EndEvent .
 
-# === Edges ===
-<http://example.org/diagram/diagram/edge/beginenter_limit> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/begin> ;
-    d2g:target <http://example.org/diagram/diagram/node/enter_limit> ;
-    d2g:relationshipType d2g:Follows .
+:Edgebeginenter_limit a :Solid, :Edge ;
+    :source :Nodebegin ;
+    :target :Nodeenter_limit ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/begin> d2g:follows <http://example.org/diagram/diagram/node/enter_limit> .
+:Edgeenter_limitinitialize_number a :Solid, :Edge ;
+    :source :Nodeenter_limit ;
+    :target :Nodeinitialize_number ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/enter_limitinitialize_number> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/enter_limit> ;
-    d2g:target <http://example.org/diagram/diagram/node/initialize_number> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeinitialize_numberset_sum_to_0 a :Solid, :Edge ;
+    :source :Nodeinitialize_number ;
+    :target :Nodeset_sum_to_0 ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/enter_limit> d2g:follows <http://example.org/diagram/diagram/node/initialize_number> .
+:Edgeset_sum_to_0do a :Solid, :Edge ;
+    :source :Nodeset_sum_to_0 ;
+    :target :Nodedo ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/initialize_numberset_sum_to_0> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/initialize_number> ;
-    d2g:target <http://example.org/diagram/diagram/node/set_sum_to_0> ;
-    d2g:relationshipType d2g:Follows .
+:Edgedoif_sum_greater_than_limit a :Solid, :Edge ;
+    :source :Nodedo ;
+    :target :Nodeif_sum_greater_than_limit ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/initialize_number> d2g:follows <http://example.org/diagram/diagram/node/set_sum_to_0> .
+:Edgeif_sum_greater_than_limitupdate_values a :Solid, :Edge ;
+    :source :Nodeif_sum_greater_than_limit ;
+    :target :Nodeupdate_values ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "false" .
 
-<http://example.org/diagram/diagram/edge/set_sum_to_0do> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/set_sum_to_0> ;
-    d2g:target <http://example.org/diagram/diagram/node/do> ;
-    d2g:relationshipType d2g:Follows .
+:Edgeif_sum_greater_than_limitdisplay_number_and_sum a :Solid, :Edge ;
+    :source :Nodeif_sum_greater_than_limit ;
+    :target :Nodedisplay_number_and_sum ;
+    :relationshipType :DependsOn ;
+    :relationshipValue "true" .
 
-<http://example.org/diagram/diagram/node/set_sum_to_0> d2g:follows <http://example.org/diagram/diagram/node/do> .
+:Edgeupdate_valuesdecrease_loss a :Solid, :Edge ;
+    :source :Nodeupdate_values ;
+    :target :Nodedecrease_loss ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/edge/doif_sum_greater_than_limit> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/do> ;
-    d2g:target <http://example.org/diagram/diagram/node/if_sum_greater_than_limit> ;
-    d2g:relationshipType d2g:Follows .
+:Edgedecrease_lossdo a :Solid, :Edge ;
+    :source :Nodedecrease_loss ;
+    :target :Nodedo ;
+    :relationshipType :Follows .
 
-<http://example.org/diagram/diagram/node/do> d2g:follows <http://example.org/diagram/diagram/node/if_sum_greater_than_limit> .
-
-<http://example.org/diagram/diagram/edge/if_sum_greater_than_limitupdate_values> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/if_sum_greater_than_limit> ;
-    d2g:target <http://example.org/diagram/diagram/node/update_values> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "false" .
-
-<http://example.org/diagram/diagram/node/if_sum_greater_than_limit> d2g:depends_on <http://example.org/diagram/diagram/node/update_values> .
-
-<http://example.org/diagram/diagram/edge/if_sum_greater_than_limitdisplay_number_and_sum> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/if_sum_greater_than_limit> ;
-    d2g:target <http://example.org/diagram/diagram/node/display_number_and_sum> ;
-    d2g:relationshipType d2g:DependsOn ;
-    d2g:relationshipValue "true" .
-
-<http://example.org/diagram/diagram/node/if_sum_greater_than_limit> d2g:depends_on <http://example.org/diagram/diagram/node/display_number_and_sum> .
-
-<http://example.org/diagram/diagram/edge/update_valuesdecrease_loss> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/update_values> ;
-    d2g:target <http://example.org/diagram/diagram/node/decrease_loss> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/update_values> d2g:follows <http://example.org/diagram/diagram/node/decrease_loss> .
-
-<http://example.org/diagram/diagram/edge/decrease_lossdo> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/decrease_loss> ;
-    d2g:target <http://example.org/diagram/diagram/node/do> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/decrease_loss> d2g:follows <http://example.org/diagram/diagram/node/do> .
-
-<http://example.org/diagram/diagram/edge/display_number_and_sumend> a d2g:Solid, d2g:Edge ;
-    d2g:source <http://example.org/diagram/diagram/node/display_number_and_sum> ;
-    d2g:target <http://example.org/diagram/diagram/node/end> ;
-    d2g:relationshipType d2g:Follows .
-
-<http://example.org/diagram/diagram/node/display_number_and_sum> d2g:follows <http://example.org/diagram/diagram/node/end> .
+:Edgedisplay_number_and_sumend a :Solid, :Edge ;
+    :source :Nodedisplay_number_and_sum ;
+    :target :Nodeend ;
+    :relationshipType :Follows .
