@@ -310,7 +310,7 @@ The judge prompts are adapted from the KGEval prompt pattern:
 
 - XML-like sections such as `<role>`, `<task>`, `<rating_scale>`, `<evaluation_steps>`, and `<output_format>`.
 - KGEval-style criteria adapted to image-to-KG: `relevance`, `factuality`, `informativeness`, `coherence`, and `specificity`.
-- Strict JSON structured outputs through the OpenAI Responses API JSON schema mode, not prompt-only JSON formatting.
+- Strict JSON structured outputs through the OpenAI Responses API using Pydantic response models, not prompt-only JSON formatting.
 
 Entry points:
 
@@ -341,7 +341,7 @@ python "llm-as-a-judge/evaluate_soil_health_judge.py" --dry-run --modes direct p
 Live OpenAI judge run:
 
 ```bash
-python "llm-as-a-judge/evaluate_soil_health_judge.py" --modes direct pairwise --sample-mode random --sample-count 5 --judge-model gpt-4.1-mini
+python "llm-as-a-judge/evaluate_soil_health_judge.py" --modes direct pairwise --sample-mode random --sample-count 5 --judge-model gpt-5-mini
 ```
 
 Judge results are written only under:

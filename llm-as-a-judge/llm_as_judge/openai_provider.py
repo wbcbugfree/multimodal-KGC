@@ -1,16 +1,18 @@
 from __future__ import annotations
 
 import base64
-import json
 import mimetypes
 import os
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Mapping, TypeVar
 
-from .schemas import DIRECT_JSON_SCHEMA, PAIRWISE_JSON_SCHEMA
+from pydantic import BaseModel
+
+from .schemas import DirectJudgeResult, PairwiseJudgeResult
 
 
-DEFAULT_OPENAI_JUDGE_MODEL = "gpt-4.1-mini"
+DEFAULT_OPENAI_JUDGE_MODEL = "gpt-5-mini"
+JudgeResultT = TypeVar("JudgeResultT", bound=BaseModel)
 
 
 def image_to_data_url(image_path: Path) -> str:
@@ -19,37 +21,35 @@ def image_to_data_url(image_path: Path) -> str:
     return f"data:{mime_type};base64,{encoded}"
 
 
-def _response_text(response: Any) -> str:
-    output_text = getattr(response, "output_text", None)
-    if isinstance(output_text, str) and output_text.strip():
-        return output_text
+def _part_value(part: Any, key: str) -> Any:
+    if isinstance(part, dict):
+        return part.get(key)
+    return getattr(part, key, None)
+
+
+def _parsed_response(response: Any, result_model: type[JudgeResultT]) -> JudgeResultT:
+    output_parsed = getattr(response, "output_parsed", None)
+    if output_parsed is not None:
+        return output_parsed if isinstance(output_parsed, result_model) else result_model.model_validate(output_parsed)
+
     output = getattr(response, "output", None)
     if isinstance(output, list):
-        chunks: list[str] = []
         for item in output:
             if isinstance(item, dict):
                 content = item.get("content", [])
             else:
                 content = getattr(item, "content", [])
             for part in content:
-                if isinstance(part, dict):
-                    text = part.get("text")
-                else:
-                    text = getattr(part, "text", None)
-                if text:
-                    chunks.append(text)
-        if chunks:
-            return "\n".join(chunks)
-    raise ValueError("OpenAI response did not contain output_text.")
+                if _part_value(part, "type") == "refusal":
+                    raise ValueError(f"OpenAI judge refused the request: {_part_value(part, 'refusal')}")
+                parsed = _part_value(part, "parsed")
+                if parsed is not None:
+                    return parsed if isinstance(parsed, result_model) else result_model.model_validate(parsed)
+                text = _part_value(part, "text")
+                if isinstance(text, str) and text.strip():
+                    return result_model.model_validate_json(text)
 
-
-def _json_schema_format(name: str, schema: Mapping[str, Any]) -> dict[str, Any]:
-    return {
-        "type": "json_schema",
-        "name": name,
-        "schema": dict(schema),
-        "strict": True,
-    }
+    raise ValueError("OpenAI structured response did not contain parsed output.")
 
 
 class OpenAIJudgeProvider:
@@ -67,8 +67,8 @@ class OpenAIJudgeProvider:
         self._client = OpenAI(api_key=self._api_key or get_api_key("openai_api_key"))
         return self._client
 
-    def _create(self, *, image_path: Path, text: str, schema_name: str, schema: Mapping[str, Any]) -> Mapping[str, Any]:
-        response = self._client_instance().responses.create(
+    def _create(self, *, image_path: Path, text: str, result_model: type[JudgeResultT]) -> Mapping[str, Any]:
+        response = self._client_instance().responses.parse(
             model=self.model,
             input=[
                 {
@@ -79,20 +79,16 @@ class OpenAIJudgeProvider:
                     ],
                 }
             ],
-            text={"format": _json_schema_format(schema_name, schema)},
+            text_format=result_model,
         )
-        parsed = json.loads(_response_text(response))
-        if not isinstance(parsed, Mapping):
-            raise ValueError("OpenAI structured output must be a JSON object.")
-        return parsed
+        return _parsed_response(response, result_model).model_dump()
 
     def judge_direct(self, *, image_path: Path, ttl_text: str, prompt_text: str) -> Mapping[str, Any]:
         text = f"{prompt_text}\n\nCandidate RDF/Turtle:\n```turtle\n{ttl_text}\n```"
         return self._create(
             image_path=image_path,
             text=text,
-            schema_name="direct_image_to_kg_judge",
-            schema=DIRECT_JSON_SCHEMA,
+            result_model=DirectJudgeResult,
         )
 
     def judge_pairwise(
@@ -113,6 +109,5 @@ class OpenAIJudgeProvider:
         return self._create(
             image_path=image_path,
             text=text,
-            schema_name="pairwise_image_to_kg_judge",
-            schema=PAIRWISE_JSON_SCHEMA,
+            result_model=PairwiseJudgeResult,
         )

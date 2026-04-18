@@ -7,6 +7,7 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any, Protocol
 
+from pydantic import BaseModel
 from rdflib import Graph
 
 from .datasets import CandidateRecord, group_by_item
@@ -14,7 +15,7 @@ from .schemas import DirectJudgeResult, PairwiseJudgeResult
 
 
 class JudgeProvider(Protocol):
-    def judge_direct(self, *, image_path: Path, ttl_text: str, prompt_text: str) -> Mapping[str, Any] | str:
+    def judge_direct(self, *, image_path: Path, ttl_text: str, prompt_text: str) -> Mapping[str, Any] | BaseModel | str:
         ...
 
     def judge_pairwise(
@@ -26,7 +27,7 @@ class JudgeProvider(Protocol):
         prompt_text: str,
         strategy_a: str,
         strategy_b: str,
-    ) -> Mapping[str, Any] | str:
+    ) -> Mapping[str, Any] | BaseModel | str:
         ...
 
 
@@ -64,7 +65,9 @@ def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
         handle.write("\n")
 
 
-def _coerce_mapping(payload: Mapping[str, Any] | str) -> Mapping[str, Any]:
+def _coerce_mapping(payload: Mapping[str, Any] | BaseModel | str) -> Mapping[str, Any]:
+    if isinstance(payload, BaseModel):
+        return payload.model_dump()
     if isinstance(payload, Mapping):
         return payload
     if isinstance(payload, str):

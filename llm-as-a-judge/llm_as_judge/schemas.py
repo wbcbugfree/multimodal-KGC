@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Any, Mapping
+from typing import Any, Literal, Mapping
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 DIRECT_CRITERIA = (
@@ -15,155 +16,80 @@ DIRECT_SCORE_FIELDS = (*DIRECT_CRITERIA, "overall_score")
 PAIRWISE_CHOICES = {"A", "B", "tie"}
 CONFIDENCE_CHOICES = {"low", "medium", "high"}
 
-
-def _require_mapping(payload: Mapping[str, Any] | dict[str, Any]) -> Mapping[str, Any]:
-    if not isinstance(payload, Mapping):
-        raise ValueError("Judge result must be a JSON object.")
-    return payload
+PairwiseChoice = Literal["A", "B", "tie"]
+ConfidenceChoice = Literal["low", "medium", "high"]
 
 
-def _score(payload: Mapping[str, Any], key: str) -> int:
-    if key not in payload:
-        raise ValueError(f"Missing required score field: {key}")
-    value = payload[key]
-    if isinstance(value, bool) or not isinstance(value, int):
-        raise ValueError(f"{key} must be an integer from 1 to 5.")
-    if value < 1 or value > 5:
-        raise ValueError(f"{key} must be an integer from 1 to 5.")
-    return value
+def _payload_to_mapping(payload: Any) -> Mapping[str, Any]:
+    if isinstance(payload, BaseModel):
+        return payload.model_dump()
+    if isinstance(payload, Mapping):
+        return payload
+    raise ValueError("Judge result must be a JSON object.")
 
 
-def _string(payload: Mapping[str, Any], key: str, *, default: str = "") -> str:
-    value = payload.get(key, default)
-    if value is None:
-        return default
-    if not isinstance(value, str):
-        raise ValueError(f"{key} must be a string.")
-    return value.strip()
+class _StrictJudgeModel(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
 
 
-@dataclass(frozen=True)
-class DirectJudgeResult:
-    relevance: int
-    factuality: int
-    informativeness: int
-    coherence: int
-    specificity: int
-    overall_score: int
-    major_errors: list[str] = field(default_factory=list)
-    reasoning_summary: str = ""
+class DirectJudgeResult(_StrictJudgeModel):
+    relevance: int = Field(ge=1, le=5)
+    factuality: int = Field(ge=1, le=5)
+    informativeness: int = Field(ge=1, le=5)
+    coherence: int = Field(ge=1, le=5)
+    specificity: int = Field(ge=1, le=5)
+    overall_score: int = Field(ge=1, le=5)
+    major_errors: list[str]
+    reasoning_summary: str
 
     @property
     def criteria_mean(self) -> float:
         return sum(getattr(self, criterion) for criterion in DIRECT_CRITERIA) / len(DIRECT_CRITERIA)
 
+    @field_validator("major_errors")
     @classmethod
-    def from_mapping(cls, payload: Mapping[str, Any] | dict[str, Any]) -> "DirectJudgeResult":
-        data = _require_mapping(payload)
-        major_errors = data.get("major_errors", [])
-        if major_errors is None:
-            major_errors = []
-        if not isinstance(major_errors, list) or not all(isinstance(item, str) for item in major_errors):
-            raise ValueError("major_errors must be a list of strings.")
-        return cls(
-            relevance=_score(data, "relevance"),
-            factuality=_score(data, "factuality"),
-            informativeness=_score(data, "informativeness"),
-            coherence=_score(data, "coherence"),
-            specificity=_score(data, "specificity"),
-            overall_score=_score(data, "overall_score"),
-            major_errors=[item.strip() for item in major_errors if item.strip()],
-            reasoning_summary=_string(data, "reasoning_summary"),
-        )
+    def _clean_major_errors(cls, value: list[str]) -> list[str]:
+        return [item.strip() for item in value if item.strip()]
 
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "relevance": self.relevance,
-            "factuality": self.factuality,
-            "informativeness": self.informativeness,
-            "coherence": self.coherence,
-            "specificity": self.specificity,
-            "overall_score": self.overall_score,
-            "criteria_mean": self.criteria_mean,
-            "major_errors": list(self.major_errors),
-            "reasoning_summary": self.reasoning_summary,
-        }
-
-
-@dataclass(frozen=True)
-class PairwiseJudgeResult:
-    winner: str
-    criterion_preferences: dict[str, str]
-    confidence: str
-    reasoning_summary: str = ""
+    @field_validator("reasoning_summary")
+    @classmethod
+    def _clean_reasoning_summary(cls, value: str) -> str:
+        return value.strip()
 
     @classmethod
-    def from_mapping(cls, payload: Mapping[str, Any] | dict[str, Any]) -> "PairwiseJudgeResult":
-        data = _require_mapping(payload)
-        winner = _string(data, "winner")
-        if winner not in PAIRWISE_CHOICES:
-            raise ValueError("winner must be one of A, B, or tie.")
-        confidence = _string(data, "confidence", default="medium")
-        if confidence not in CONFIDENCE_CHOICES:
-            raise ValueError("confidence must be one of low, medium, or high.")
-
-        raw_preferences = data.get("criterion_preferences", {})
-        if not isinstance(raw_preferences, Mapping):
-            raise ValueError("criterion_preferences must be an object.")
-        preferences: dict[str, str] = {}
-        for criterion in DIRECT_CRITERIA:
-            value = raw_preferences.get(criterion, "tie")
-            if value not in PAIRWISE_CHOICES:
-                raise ValueError(f"criterion_preferences.{criterion} must be A, B, or tie.")
-            preferences[criterion] = value
-
-        return cls(
-            winner=winner,
-            criterion_preferences=preferences,
-            confidence=confidence,
-            reasoning_summary=_string(data, "reasoning_summary"),
-        )
+    def from_mapping(cls, payload: Mapping[str, Any] | dict[str, Any] | BaseModel) -> "DirectJudgeResult":
+        if isinstance(payload, cls):
+            return payload
+        return cls.model_validate(_payload_to_mapping(payload))
 
     def to_dict(self) -> dict[str, Any]:
-        return {
-            "winner": self.winner,
-            "criterion_preferences": dict(self.criterion_preferences),
-            "confidence": self.confidence,
-            "reasoning_summary": self.reasoning_summary,
-        }
+        return {**self.model_dump(), "criteria_mean": self.criteria_mean}
 
 
-DIRECT_JSON_SCHEMA: dict[str, Any] = {
-    "type": "object",
-    "additionalProperties": False,
-    "properties": {
-        **{
-            field_name: {"type": "integer", "minimum": 1, "maximum": 5}
-            for field_name in DIRECT_SCORE_FIELDS
-        },
-        "major_errors": {"type": "array", "items": {"type": "string"}},
-        "reasoning_summary": {"type": "string"},
-    },
-    "required": [*DIRECT_SCORE_FIELDS, "major_errors", "reasoning_summary"],
-}
+class CriterionPreferences(_StrictJudgeModel):
+    relevance: PairwiseChoice
+    factuality: PairwiseChoice
+    informativeness: PairwiseChoice
+    coherence: PairwiseChoice
+    specificity: PairwiseChoice
 
 
-PAIRWISE_JSON_SCHEMA: dict[str, Any] = {
-    "type": "object",
-    "additionalProperties": False,
-    "properties": {
-        "winner": {"type": "string", "enum": sorted(PAIRWISE_CHOICES)},
-        "criterion_preferences": {
-            "type": "object",
-            "additionalProperties": False,
-            "properties": {
-                criterion: {"type": "string", "enum": sorted(PAIRWISE_CHOICES)}
-                for criterion in DIRECT_CRITERIA
-            },
-            "required": list(DIRECT_CRITERIA),
-        },
-        "confidence": {"type": "string", "enum": sorted(CONFIDENCE_CHOICES)},
-        "reasoning_summary": {"type": "string"},
-    },
-    "required": ["winner", "criterion_preferences", "confidence", "reasoning_summary"],
-}
+class PairwiseJudgeResult(_StrictJudgeModel):
+    winner: PairwiseChoice
+    criterion_preferences: CriterionPreferences
+    confidence: ConfidenceChoice
+    reasoning_summary: str
+
+    @field_validator("reasoning_summary")
+    @classmethod
+    def _clean_reasoning_summary(cls, value: str) -> str:
+        return value.strip()
+
+    @classmethod
+    def from_mapping(cls, payload: Mapping[str, Any] | dict[str, Any] | BaseModel) -> "PairwiseJudgeResult":
+        if isinstance(payload, cls):
+            return payload
+        return cls.model_validate(_payload_to_mapping(payload))
+
+    def to_dict(self) -> dict[str, Any]:
+        return self.model_dump()
