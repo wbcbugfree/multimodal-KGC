@@ -23,6 +23,23 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from common import get_api_key  # noqa: E402
+from common.gemini_batch import (  # noqa: E402
+    TERMINAL_BATCH_STATES,
+    batch_job_snapshot,
+    batch_record_error,
+    create_batch_job,
+    download_result_file,
+    extract_batch_response_text,
+    read_json,
+    read_jsonl,
+    result_file_name,
+    state_name,
+    upload_jsonl_file,
+    utc_now_iso,
+    utc_timestamp_slug,
+    write_json,
+    write_jsonl,
+)
 from common.paths import vistext_dir, vistext_images_dir, vistext_labels_dir  # noqa: E402
 
 
@@ -30,6 +47,7 @@ DEFAULT_MODEL = "gemini-3-flash-preview"
 REQUEST_DELAY = 2.0
 PARALLEL_WORKERS = 1
 MAX_ATTEMPTS = 3
+BATCH_POLL_INTERVAL = 60.0
 SAMPLE_MODE = "random"
 SAMPLE_COUNT = 5
 RANDOM_SEED = 42
@@ -87,6 +105,10 @@ class RuntimeConfig:
     parallel_workers: int
     skip_existing: bool
     dry_run: bool
+    batch_action: str | None
+    batch_manifest_path: Path
+    batch_display_name: str | None
+    batch_poll_interval: float
 
 
 PromptBuilder = Callable[[Path, PromptBuilderContext], PromptPackage]
@@ -102,8 +124,11 @@ def build_parser(
     parser.add_argument(
         "--sample-mode",
         choices=("all", "random", "ids"),
-        default=SAMPLE_MODE,
-        help="Select all images, a deterministic random sample, or explicit ids.",
+        default=None,
+        help=(
+            "Select all images, a deterministic random sample, or explicit ids. "
+            "Defaults to random for interactive runs and all for batch submit."
+        ),
     )
     parser.add_argument(
         "--sample-count",
@@ -156,6 +181,29 @@ def build_parser(
         action="store_true",
         help="Print selected ids without calling Gemini or writing files.",
     )
+    parser.add_argument(
+        "--batch-action",
+        choices=("submit", "status", "collect", "wait"),
+        default=None,
+        help="Use Gemini Batch API instead of the interactive runner.",
+    )
+    parser.add_argument(
+        "--batch-manifest-path",
+        type=Path,
+        default=None,
+        help="Batch job manifest path. Defaults to <output-dir>/batch_jobs/latest_batch_manifest.json.",
+    )
+    parser.add_argument(
+        "--batch-display-name",
+        default=None,
+        help="Optional Gemini Batch API display name.",
+    )
+    parser.add_argument(
+        "--batch-poll-interval",
+        type=float,
+        default=BATCH_POLL_INTERVAL,
+        help="Polling interval in seconds for --batch-action=wait.",
+    )
     return parser
 
 
@@ -179,6 +227,9 @@ def parse_args(
     if args.parallel_workers <= 0:
         parser.error("--parallel-workers must be greater than 0")
 
+    if args.batch_poll_interval <= 0:
+        parser.error("--batch-poll-interval must be greater than 0")
+
     return args
 
 
@@ -189,6 +240,12 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         if args.manifest_path is not None
         else output_dir / "manifest.json"
     )
+    batch_manifest_path = (
+        args.batch_manifest_path.resolve()
+        if args.batch_manifest_path is not None
+        else output_dir / "batch_jobs" / "latest_batch_manifest.json"
+    )
+    sample_mode = args.sample_mode or ("all" if args.batch_action == "submit" else SAMPLE_MODE)
 
     return RuntimeConfig(
         model=args.model,
@@ -198,13 +255,17 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         output_dir=output_dir,
         manifest_path=manifest_path,
         request_delay=args.request_delay,
-        sample_mode=args.sample_mode,
+        sample_mode=sample_mode,
         sample_count=args.sample_count,
         seed=args.seed,
         ids=normalize_ids(args.ids),
         parallel_workers=args.parallel_workers,
         skip_existing=args.skip_existing,
         dry_run=args.dry_run,
+        batch_action=args.batch_action,
+        batch_manifest_path=batch_manifest_path,
+        batch_display_name=args.batch_display_name,
+        batch_poll_interval=args.batch_poll_interval,
     )
 
 
@@ -559,6 +620,369 @@ def write_ttl(path: Path, text: str) -> None:
     path.write_text(text.rstrip() + "\n", encoding="utf-8")
 
 
+def file_data_part(file_ref: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "file_data": {
+            "mime_type": file_ref["mime_type"],
+            "file_uri": file_ref["file_uri"],
+        }
+    }
+
+
+def build_batch_example_contents(
+    examples: list[PromptExample],
+    file_refs: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    contents: list[dict[str, Any]] = []
+    for example in examples:
+        example_ref = file_refs[str(example.image_path.resolve())]
+        contents.append(
+            {
+                "role": "user",
+                "parts": [
+                    {"text": build_example_user_prompt(example.chart_type)},
+                    file_data_part(example_ref),
+                ],
+            }
+        )
+        contents.append(
+            {
+                "role": "model",
+                "parts": [{"text": load_text(example.ttl_path)}],
+            }
+        )
+    return contents
+
+
+def build_batch_request_contents(
+    user_prompt: str,
+    image_path: Path,
+    examples: list[PromptExample],
+    file_refs: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    image_ref = file_refs[str(image_path.resolve())]
+    return [
+        *build_batch_example_contents(examples, file_refs),
+        {
+            "role": "user",
+            "parts": [
+                {"text": user_prompt},
+                file_data_part(image_ref),
+            ],
+        },
+    ]
+
+
+def build_batch_request_line(
+    key: str,
+    system_prompt: str,
+    contents: list[dict[str, Any]],
+) -> dict[str, Any]:
+    return {
+        "key": key,
+        "request": {
+            "contents": contents,
+            "system_instruction": {"parts": [{"text": system_prompt}]},
+        },
+    }
+
+
+def upload_batch_file_ref(client: genai.Client, path: Path) -> dict[str, Any]:
+    uploaded = client.files.upload(
+        file=path,
+        config=types.UploadFileConfig(
+            display_name=path.name,
+            mime_type=get_mime_type(path),
+        ),
+    )
+    return {
+        "path": str(path.resolve()),
+        "file_name": uploaded.name,
+        "file_uri": uploaded.uri,
+        "mime_type": getattr(uploaded, "mime_type", None) or get_mime_type(path),
+    }
+
+
+def selected_image_paths_for_config(config: RuntimeConfig) -> list[Path]:
+    image_paths = list_image_paths(config.images_root)
+    excluded_ids = load_excluded_image_ids(config.exceptions_report_path)
+    if excluded_ids:
+        print(
+            f"[FILTER] Excluding {len(excluded_ids)} image(s) listed in "
+            f"{config.exceptions_report_path}"
+        )
+    elif not config.exceptions_report_path.exists():
+        print(f"[FILTER] No exception report found at {config.exceptions_report_path}; no images excluded")
+
+    if config.ids:
+        requested_excluded_ids = [image_id for image_id in config.ids if image_id in excluded_ids]
+        if requested_excluded_ids:
+            raise ValueError(
+                "Requested image ids are excluded by the VisText exception report: "
+                + ", ".join(requested_excluded_ids)
+            )
+
+    image_paths = filter_excluded_image_paths(image_paths, excluded_ids)
+    return select_image_paths(
+        image_paths=image_paths,
+        sample_mode=config.sample_mode,
+        sample_count=config.sample_count,
+        seed=config.seed,
+        ids=config.ids,
+    )
+
+
+def run_batch_submit(
+    config: RuntimeConfig,
+    prompt_builder: PromptBuilder,
+    selected_images: list[Path],
+) -> int:
+    if config.dry_run:
+        print(f"[BATCH-DRY-RUN] Selected {len(selected_images)} image(s)")
+        for image_path in selected_images:
+            print(image_path.stem)
+        print(f"[BATCH-DRY-RUN] Batch manifest would be written to: {config.batch_manifest_path}")
+        return 0
+
+    client = create_gemini_client()
+    timestamp = utc_timestamp_slug()
+    batch_dir = config.batch_manifest_path.parent / timestamp
+    request_jsonl_path = batch_dir / "requests.jsonl"
+    result_jsonl_path = batch_dir / "results.jsonl"
+    file_refs: dict[str, dict[str, Any]] = {}
+    request_records: list[dict[str, Any]] = []
+    item_records: list[dict[str, Any]] = []
+
+    def ensure_file_ref(path: Path) -> dict[str, Any]:
+        key = str(path.resolve())
+        if key not in file_refs:
+            print(f"[BATCH] Uploading file: {path}")
+            file_refs[key] = upload_batch_file_ref(client, path)
+        return file_refs[key]
+
+    print(f"[BATCH] Preparing {len(selected_images)} request(s)")
+    for index, image_path in enumerate(selected_images, start=1):
+        image_id = image_path.stem
+        ttl_path = config.output_dir / f"{image_id}.ttl"
+        if config.skip_existing and ttl_path.exists():
+            print(f"[{index}/{len(selected_images)}] skipping existing {image_path.name}")
+            continue
+        print(f"[{index}/{len(selected_images)}] staging {image_path.name}")
+        prompt_package = prompt_builder(
+            image_path,
+            PromptBuilderContext(model=config.model, client=client),
+        )
+        ensure_file_ref(image_path)
+        for example in prompt_package.examples:
+            ensure_file_ref(example.image_path)
+        request_records.append(
+            build_batch_request_line(
+                key=image_id,
+                system_prompt=prompt_package.system_prompt,
+                contents=build_batch_request_contents(
+                    user_prompt=build_user_prompt(image_id),
+                    image_path=image_path,
+                    examples=prompt_package.examples,
+                    file_refs=file_refs,
+                ),
+            )
+        )
+        item_records.append(
+            {
+                "key": image_id,
+                "img_id": image_id,
+                "source_image": str(image_path.resolve()),
+                "json_label": str((config.labels_root / f"{image_id}.json").resolve()),
+                "ttl_file": str(ttl_path.resolve()),
+                "model": config.model,
+                "prompt_metadata": dict(prompt_package.metadata),
+            }
+        )
+
+    if not request_records:
+        print("[BATCH] No requests to submit")
+        return 0
+
+    write_jsonl(request_jsonl_path, request_records)
+    uploaded_request_file = upload_jsonl_file(
+        client,
+        request_jsonl_path,
+        display_name=f"{config.batch_display_name or 'vistext-batch'}-requests-{timestamp}",
+    )
+    display_name = config.batch_display_name or f"vistext-{config.output_dir.name}-{timestamp}"
+    batch_job = create_batch_job(
+        client,
+        model=config.model,
+        input_file_name=uploaded_request_file.name,
+        display_name=display_name,
+    )
+    batch_manifest = {
+        "created_at_utc": utc_now_iso(),
+        "dataset": "vistext",
+        "model": config.model,
+        "batch_job_name": batch_job.name,
+        "batch_job_state": state_name(batch_job),
+        "batch_display_name": display_name,
+        "request_count": len(request_records),
+        "request_jsonl_path": str(request_jsonl_path.resolve()),
+        "result_jsonl_path": str(result_jsonl_path.resolve()),
+        "output_dir": str(config.output_dir.resolve()),
+        "manifest_path": str(config.manifest_path.resolve()),
+        "input_file": {
+            "file_name": uploaded_request_file.name,
+            "file_uri": uploaded_request_file.uri,
+        },
+        "uploaded_files": file_refs,
+        "items": item_records,
+        "batch_job": batch_job_snapshot(batch_job),
+    }
+    write_json(config.batch_manifest_path, batch_manifest)
+    print(f"[BATCH] Submitted job: {batch_job.name}")
+    print(f"[BATCH] State: {state_name(batch_job)}")
+    print(f"[BATCH] Manifest: {config.batch_manifest_path}")
+    return 0
+
+
+def refresh_batch_manifest_status(config: RuntimeConfig, client: genai.Client) -> dict[str, Any]:
+    batch_manifest = read_json(config.batch_manifest_path)
+    batch_job_name = str(batch_manifest.get("batch_job_name") or "")
+    if not batch_job_name:
+        raise ValueError(f"Missing batch_job_name in {config.batch_manifest_path}")
+    batch_job = client.batches.get(name=batch_job_name)
+    batch_manifest["checked_at_utc"] = utc_now_iso()
+    batch_manifest["batch_job_state"] = state_name(batch_job)
+    batch_manifest["batch_job"] = batch_job_snapshot(batch_job)
+    result_name = result_file_name(batch_job)
+    if result_name:
+        batch_manifest["result_file_name"] = result_name
+    write_json(config.batch_manifest_path, batch_manifest)
+    return batch_manifest
+
+
+def run_batch_status(config: RuntimeConfig) -> int:
+    client = create_gemini_client()
+    batch_manifest = refresh_batch_manifest_status(config, client)
+    print(f"[BATCH] Job: {batch_manifest['batch_job_name']}")
+    print(f"[BATCH] State: {batch_manifest['batch_job_state']}")
+    if batch_manifest.get("result_file_name"):
+        print(f"[BATCH] Result file: {batch_manifest['result_file_name']}")
+    error = batch_manifest.get("batch_job", {}).get("error")
+    if error:
+        print(f"[BATCH] Error: {error}")
+    return 0
+
+
+def build_batch_collected_manifest_item(
+    config: RuntimeConfig,
+    item_record: dict[str, Any],
+    status: str,
+    error: str | None = None,
+    extra_metadata: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    image_path = Path(item_record["source_image"])
+    ttl_path = Path(item_record["ttl_file"])
+    label_path = Path(item_record.get("json_label", config.labels_root / f"{image_path.stem}.json"))
+    metadata = {
+        "batch_job_name": item_record.get("batch_job_name"),
+        "batch_key": item_record.get("key"),
+        "attempt_count": 1,
+    }
+    if item_record.get("prompt_metadata"):
+        metadata.update(item_record["prompt_metadata"])
+    if extra_metadata:
+        metadata.update(extra_metadata)
+    return build_manifest_item(
+        image_path=image_path,
+        label_path=label_path,
+        ttl_path=ttl_path,
+        model=config.model,
+        status=status,
+        error=error,
+        extra_metadata=metadata,
+    )
+
+
+def run_batch_collect(config: RuntimeConfig) -> int:
+    client = create_gemini_client()
+    batch_manifest = refresh_batch_manifest_status(config, client)
+    state = str(batch_manifest.get("batch_job_state"))
+    if state != "JOB_STATE_SUCCEEDED":
+        print(f"[BATCH] Job is not ready for collection: {state}")
+        return 2
+
+    result_name = str(batch_manifest.get("result_file_name") or "")
+    if not result_name:
+        raise ValueError("Batch job succeeded but no result file was reported")
+
+    result_path = Path(batch_manifest["result_jsonl_path"])
+    download_result_file(client, file_name=result_name, output_path=result_path)
+    result_records = read_jsonl(result_path)
+    items_by_key = {str(item["key"]): item for item in batch_manifest.get("items", [])}
+    manifest = load_existing_manifest(config.manifest_path)
+    run_items: list[dict[str, Any]] = []
+    unknown_keys: list[str] = []
+
+    for record in result_records:
+        key = str(record.get("key", ""))
+        item_record = dict(items_by_key.get(key) or {})
+        if not item_record:
+            unknown_keys.append(key)
+            continue
+        item_record["batch_job_name"] = batch_manifest["batch_job_name"]
+        error = batch_record_error(record)
+        if error:
+            item = build_batch_collected_manifest_item(config, item_record, "api_error", error=error)
+        else:
+            try:
+                turtle_text = strip_code_fences(extract_batch_response_text(record))
+                parse_error = validate_turtle(turtle_text)
+            except Exception as exc:
+                turtle_text = ""
+                parse_error = str(exc)
+            if parse_error is not None:
+                item = build_batch_collected_manifest_item(
+                    config,
+                    item_record,
+                    "invalid_ttl",
+                    error=parse_error,
+                    extra_metadata={"attempt_failures": [build_attempt_failure(1, "invalid_ttl", parse_error, "validation")]},
+                )
+            else:
+                write_ttl(Path(item_record["ttl_file"]), turtle_text)
+                item = build_batch_collected_manifest_item(config, item_record, "saved")
+        run_items.append(item)
+        upsert_manifest_item(manifest, item)
+
+    write_manifest(config.manifest_path, manifest)
+    counts = Counter(item.get("status", "unknown") for item in run_items)
+    batch_manifest["collected_at_utc"] = utc_now_iso()
+    batch_manifest["collect_summary"] = dict(sorted(counts.items()))
+    if unknown_keys:
+        batch_manifest["unknown_result_keys"] = unknown_keys
+    write_json(config.batch_manifest_path, batch_manifest)
+    print("[BATCH] Collection summary")
+    for status, count in sorted(counts.items()):
+        print(f"  {status}: {count}")
+    if unknown_keys:
+        print(f"  unknown result keys: {len(unknown_keys)}")
+    print(f"  manifest: {config.manifest_path}")
+    return 0
+
+
+def run_batch_wait(config: RuntimeConfig) -> int:
+    client = create_gemini_client()
+    while True:
+        batch_manifest = refresh_batch_manifest_status(config, client)
+        state = str(batch_manifest.get("batch_job_state"))
+        print(f"[BATCH] State: {state}")
+        if state in TERMINAL_BATCH_STATES:
+            break
+        sleep_if_needed(config.batch_poll_interval)
+    if state == "JOB_STATE_SUCCEEDED":
+        return run_batch_collect(config)
+    return 2
+
+
 def process_image(
     client: genai.Client | None,
     config: RuntimeConfig,
@@ -695,34 +1119,21 @@ def run_strategy(
     args = parse_args(argv, description=description, default_output_dir=default_output_dir)
     config = resolve_runtime_config(args)
 
-    image_paths = list_image_paths(config.images_root)
-    excluded_ids = load_excluded_image_ids(config.exceptions_report_path)
-    if excluded_ids:
-        print(
-            f"[FILTER] Excluding {len(excluded_ids)} image(s) listed in "
-            f"{config.exceptions_report_path}"
-        )
-    elif not config.exceptions_report_path.exists():
-        print(f"[FILTER] No exception report found at {config.exceptions_report_path}; no images excluded")
+    if config.batch_action == "status":
+        return run_batch_status(config)
+    if config.batch_action == "collect":
+        return run_batch_collect(config)
+    if config.batch_action == "wait":
+        return run_batch_wait(config)
 
-    if config.ids:
-        requested_excluded_ids = [image_id for image_id in config.ids if image_id in excluded_ids]
-        if requested_excluded_ids:
-            print(
-                "Error: Requested image ids are excluded by the VisText exception report: "
-                + ", ".join(requested_excluded_ids),
-                file=sys.stderr,
-            )
-            return 2
+    try:
+        selected_images = selected_image_paths_for_config(config)
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
 
-    image_paths = filter_excluded_image_paths(image_paths, excluded_ids)
-    selected_images = select_image_paths(
-        image_paths=image_paths,
-        sample_mode=config.sample_mode,
-        sample_count=config.sample_count,
-        seed=config.seed,
-        ids=config.ids,
-    )
+    if config.batch_action == "submit":
+        return run_batch_submit(config, prompt_builder, selected_images)
 
     if config.dry_run:
         print(f"[DRY-RUN] Selected {len(selected_images)} image(s)")

@@ -115,6 +115,14 @@ python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --sample-mode random
 
 Generated outputs are written to strategy-specific folders under `vistext/extract_rdf_ttl/`, for example `vistext_zeroshot_outputs/`.
 
+For full-dataset, non-urgent inference, the same strategy scripts can submit Gemini Batch API jobs. Batch submit defaults to all available images for the strategy and exits after writing a local batch manifest:
+
+```bash
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --batch-action submit
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --batch-action status
+python "vistext/extract_rdf_ttl/gemini_vistext_zeroshot.py" --batch-action collect
+```
+
 ## VisText: Traditional Evaluation
 
 The main evaluation handler compares generated TTL files against ground-truth TTL files:
@@ -221,6 +229,14 @@ Generated outputs are written to:
 diagram2graph/extract_rdf_ttl/zeroshot_outputs/
 diagram2graph/extract_rdf_ttl/oneshot_outputs/
 diagram2graph/extract_rdf_ttl/fewshot_outputs/
+```
+
+Batch API mode is also available through each strategy script:
+
+```bash
+python "diagram2graph/extract_rdf_ttl/gemini_diagram2graph_zeroshot.py" --batch-action submit
+python "diagram2graph/extract_rdf_ttl/gemini_diagram2graph_zeroshot.py" --batch-action status
+python "diagram2graph/extract_rdf_ttl/gemini_diagram2graph_zeroshot.py" --batch-action collect
 ```
 
 ## Diagram2Graph: Traditional Evaluation
@@ -374,6 +390,14 @@ Dry-run one image:
 
 ```bash
 python "soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py" --dry-run --sample-mode ids --ids table_1.2
+```
+
+Soil-health runners support the same Gemini Batch API lifecycle:
+
+```bash
+python "soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py" --batch-action submit
+python "soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py" --batch-action status
+python "soil_health/extract_rdf_ttl/gemini_soil_health_zeroshot.py" --batch-action collect
 ```
 
 ## Reproducibility Checklist
