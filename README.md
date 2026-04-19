@@ -360,6 +360,12 @@ Live OpenAI judge run:
 python "llm-as-a-judge/evaluate_soil_health_judge.py" --modes direct pairwise --sample-mode random --sample-count 5 --judge-model gpt-5-mini
 ```
 
+Use parallel judge calls for larger labelled-dataset validation runs:
+
+```bash
+python "llm-as-a-judge/evaluate_vistext_judge.py" --modes direct pairwise --sample-mode all --judge-model gpt-5-mini --parallel-workers 5
+```
+
 Judge results are written only under:
 
 ```text

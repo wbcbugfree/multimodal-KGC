@@ -4,6 +4,7 @@ import base64
 import mimetypes
 import os
 from pathlib import Path
+from threading import Lock
 from typing import Any, Mapping, TypeVar
 
 from pydantic import BaseModel
@@ -57,14 +58,18 @@ class OpenAIJudgeProvider:
         self.model = model or os.getenv("OPENAI_JUDGE_MODEL") or DEFAULT_OPENAI_JUDGE_MODEL
         self._client = client
         self._api_key = api_key
+        self._client_lock = Lock()
 
     def _client_instance(self) -> Any:
         if self._client is not None:
             return self._client
-        from common.config import get_api_key
-        from openai import OpenAI
+        with self._client_lock:
+            if self._client is not None:
+                return self._client
+            from common.config import get_api_key
+            from openai import OpenAI
 
-        self._client = OpenAI(api_key=self._api_key or get_api_key("openai_api_key"))
+            self._client = OpenAI(api_key=self._api_key or get_api_key("openai_api_key"))
         return self._client
 
     def _create(self, *, image_path: Path, text: str, result_model: type[JudgeResultT]) -> Mapping[str, Any]:

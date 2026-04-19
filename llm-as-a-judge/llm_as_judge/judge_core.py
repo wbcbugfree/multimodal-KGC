@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import json
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from itertools import combinations
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any, Protocol, TypeVar
 
 from pydantic import BaseModel
 from rdflib import Graph
 
 from .datasets import CandidateRecord, group_by_item
 from .schemas import DirectJudgeResult, PairwiseJudgeResult
+
+
+JobT = TypeVar("JobT")
 
 
 class JudgeProvider(Protocol):
@@ -95,6 +99,24 @@ def _pairwise_key(record_a: CandidateRecord, record_b: CandidateRecord) -> tuple
     return (record_a.dataset, record_a.item_id, first, second)
 
 
+def _run_jobs_ordered(
+    jobs: list[JobT],
+    worker: Callable[[JobT], dict[str, Any]],
+    *,
+    max_workers: int,
+    thread_name_prefix: str,
+) -> list[dict[str, Any]]:
+    if max_workers == 1 or len(jobs) <= 1:
+        return [worker(job) for job in jobs]
+
+    results: list[dict[str, Any] | None] = [None] * len(jobs)
+    with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix=thread_name_prefix) as executor:
+        future_to_index = {executor.submit(worker, job): index for index, job in enumerate(jobs)}
+        for future in as_completed(future_to_index):
+            results[future_to_index[future]] = future.result()
+    return [result for result in results if result is not None]
+
+
 class JudgeRunner:
     def __init__(
         self,
@@ -102,12 +124,16 @@ class JudgeRunner:
         provider: JudgeProvider,
         results_root: Path,
         max_retries: int = 2,
+        parallel_workers: int = 1,
         direct_prompt: str | None = None,
         pairwise_prompt: str | None = None,
     ) -> None:
+        if parallel_workers <= 0:
+            raise ValueError("parallel_workers must be greater than 0")
         self.provider = provider
         self.results_root = results_root.resolve()
         self.max_retries = max_retries
+        self.parallel_workers = parallel_workers
         self.direct_prompt = direct_prompt or load_prompt("direct_image_to_kg_judge.md")
         self.pairwise_prompt = pairwise_prompt or load_prompt("pairwise_image_to_kg_judge.md")
 
@@ -152,6 +178,49 @@ class JudgeRunner:
                 last_error = exc
         raise RuntimeError(f"Pairwise judge failed after retries: {last_error}")
 
+    def _direct_report_item(self, record: CandidateRecord) -> dict[str, Any]:
+        try:
+            result = self._attempt_direct(record)
+            return {
+                **record.to_dict(),
+                "status": "success",
+                "scores": result.to_dict(),
+            }
+        except Exception as exc:
+            return {
+                **record.to_dict(),
+                "status": "error",
+                "error": str(exc),
+            }
+
+    def _pairwise_report_item(self, job: tuple[str, CandidateRecord, CandidateRecord]) -> dict[str, Any]:
+        item_id, record_a, record_b = job
+        try:
+            result = self._attempt_pairwise(record_a, record_b)
+            return {
+                "dataset": record_a.dataset,
+                "item_id": item_id,
+                "image_path": str(record_a.image_path),
+                "strategy_a": record_a.strategy,
+                "strategy_b": record_b.strategy,
+                "ttl_a_path": str(record_a.ttl_path),
+                "ttl_b_path": str(record_b.ttl_path),
+                "status": "success",
+                "judge": result.to_dict(),
+            }
+        except Exception as exc:
+            return {
+                "dataset": record_a.dataset,
+                "item_id": item_id,
+                "image_path": str(record_a.image_path),
+                "strategy_a": record_a.strategy,
+                "strategy_b": record_b.strategy,
+                "ttl_a_path": str(record_a.ttl_path),
+                "ttl_b_path": str(record_b.ttl_path),
+                "status": "error",
+                "error": str(exc),
+            }
+
     def run_direct(
         self,
         records: list[CandidateRecord],
@@ -166,30 +235,24 @@ class JudgeRunner:
             if isinstance(item, Mapping)
         }
         items = list(report.get("items", []))
+        jobs: list[CandidateRecord] = []
         for record in records:
             key = _direct_key(record)
             if skip_existing and key in existing_keys:
                 continue
-            try:
-                result = self._attempt_direct(record)
-                items.append(
-                    {
-                        **record.to_dict(),
-                        "status": "success",
-                        "scores": result.to_dict(),
-                    }
-                )
-            except Exception as exc:
-                items.append(
-                    {
-                        **record.to_dict(),
-                        "status": "error",
-                        "error": str(exc),
-                    }
-                )
+            jobs.append(record)
+        items.extend(
+            _run_jobs_ordered(
+                jobs,
+                self._direct_report_item,
+                max_workers=self.parallel_workers,
+                thread_name_prefix="llm-judge-direct",
+            )
+        )
         report = {
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
             "mode": "direct",
+            "parallel_workers": self.parallel_workers,
             "items": items,
         }
         _write_json(output_path, report)
@@ -209,6 +272,7 @@ class JudgeRunner:
             if isinstance(item, Mapping)
         }
         items = list(report.get("items", []))
+        jobs: list[tuple[str, CandidateRecord, CandidateRecord]] = []
         for item_id, item_records in group_by_item(records).items():
             for record_a, record_b in combinations(item_records, 2):
                 strategy_a, strategy_b = sorted([record_a.strategy, record_b.strategy])
@@ -217,38 +281,19 @@ class JudgeRunner:
                 key = _pairwise_key(record_a, record_b)
                 if skip_existing and key in existing_keys:
                     continue
-                try:
-                    result = self._attempt_pairwise(record_a, record_b)
-                    items.append(
-                        {
-                            "dataset": record_a.dataset,
-                            "item_id": item_id,
-                            "image_path": str(record_a.image_path),
-                            "strategy_a": record_a.strategy,
-                            "strategy_b": record_b.strategy,
-                            "ttl_a_path": str(record_a.ttl_path),
-                            "ttl_b_path": str(record_b.ttl_path),
-                            "status": "success",
-                            "judge": result.to_dict(),
-                        }
-                    )
-                except Exception as exc:
-                    items.append(
-                        {
-                            "dataset": record_a.dataset,
-                            "item_id": item_id,
-                            "image_path": str(record_a.image_path),
-                            "strategy_a": record_a.strategy,
-                            "strategy_b": record_b.strategy,
-                            "ttl_a_path": str(record_a.ttl_path),
-                            "ttl_b_path": str(record_b.ttl_path),
-                            "status": "error",
-                            "error": str(exc),
-                        }
-                    )
+                jobs.append((item_id, record_a, record_b))
+        items.extend(
+            _run_jobs_ordered(
+                jobs,
+                self._pairwise_report_item,
+                max_workers=self.parallel_workers,
+                thread_name_prefix="llm-judge-pairwise",
+            )
+        )
         report = {
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
             "mode": "pairwise",
+            "parallel_workers": self.parallel_workers,
             "items": items,
         }
         _write_json(output_path, report)

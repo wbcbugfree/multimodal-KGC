@@ -28,6 +28,12 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--judge-provider", choices=["openai"], default="openai")
     parser.add_argument("--judge-model", default=DEFAULT_OPENAI_JUDGE_MODEL)
+    parser.add_argument(
+        "--parallel-workers",
+        type=int,
+        default=1,
+        help="Number of parallel judge API worker threads to use.",
+    )
     parser.add_argument("--skip-existing", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--output-dir", type=Path, default=result_path(dataset))
@@ -64,6 +70,8 @@ def run_dataset_cli(
 ) -> int:
     parser = build_parser(dataset=dataset, description=f"Run LLM-as-a-judge evaluation for {dataset}.")
     args = parser.parse_args(argv)
+    if args.parallel_workers <= 0:
+        parser.error("--parallel-workers must be greater than 0")
     ids = args.ids or None
     records = collect_ttl_records(dataset, strategies=args.strategies, ids=ids)
     records = sample_records(
@@ -82,6 +90,7 @@ def run_dataset_cli(
         print(f"Modes: {', '.join(args.modes)}")
         print(f"Direct items: {direct_count}")
         print(f"Pairwise comparisons: {pairwise_count}")
+        print(f"Parallel workers: {args.parallel_workers}")
         print(f"Output directory: {args.output_dir}")
         if validate_with_vistext_metrics or validate_with_traditional_metrics:
             print(f"Traditional metrics path: {args.metrics_path}")
@@ -96,7 +105,11 @@ def run_dataset_cli(
             "Run the dataset's traditional evaluator first, or pass --metrics-path."
         )
 
-    runner = JudgeRunner(provider=_provider(args), results_root=args.output_dir)
+    runner = JudgeRunner(
+        provider=_provider(args),
+        results_root=args.output_dir,
+        parallel_workers=args.parallel_workers,
+    )
     direct_report: dict[str, Any] | None = None
     pairwise_report: dict[str, Any] | None = None
     args.output_dir.mkdir(parents=True, exist_ok=True)
