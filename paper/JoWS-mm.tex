@@ -146,7 +146,7 @@ Diagram2Graph & Flow/process diagrams & 219 & 219 \\
 \label{tab:dataset_overview}
 \end{table}
 
-\paragraph{VisText-derived chart-to-RDF dataset.}
+\subsubsection{VisText-derived Chart-to-RDF Dataset}
 VisText was originally introduced for semantically rich chart captioning \citep{vistext}. We repurpose it as a chart-to-RDF dataset by defining the expected graph content for each chart image. The target output contains one chart resource typed as a bar, line, or area chart; the visible chart title; x-axis and y-axis resources with their visible titles when present; and one datapoint resource for each observation represented in the plot. A datapoint records its x-value, y-value, and membership in the chart. Thus, the target graph is intended to recover the structured content of the chart rather than to describe the chart in prose.
 
 The VisText RDF schema is shown in Table~\ref{tab:vistext_schema}. The schema is intentionally small so that evaluation focuses on whether the model recovers the chart semantics and data values, rather than on a large external ontology. Not every original VisText item yields a reliable RDF reference graph. Some original labels contain damaged categories, inconsistent tabular annotations, or insufficient information to recover the plotted data. Such items are excluded from labelled evaluation, while the remaining items are released as RDF/Turtle references.
@@ -169,7 +169,7 @@ Data predicates & \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongsTo} & Data
 \label{tab:vistext_schema}
 \end{table}
 
-\paragraph{Diagram2Graph-derived diagram-to-RDF dataset.}
+\subsubsection{Diagram2Graph-derived Diagram-to-RDF Dataset}
 Diagram2Graph provides diagram images and JSON annotations describing nodes, edges, labels, shapes, and relationship types \citep{diagram2graph}. We use the dataset as a diagram-to-RDF benchmark by expressing the same graph information in Turtle. The target output contains one resource for each visible diagram node and one resource for each directed edge. Node resources encode the visible node label, node type, and shape. Edge resources encode source node, target node, edge style, relationship type, and optional visible edge label. This representation preserves the diagram topology while using a compact RDF vocabulary suitable for direct graph matching.
 
 \begin{table}[t]
@@ -195,16 +195,16 @@ Edge predicates & \texttt{:source}, \texttt{:target}, \texttt{:relationshipType}
 
 All generation strategies use a dataset-specific zero-shot system prompt that defines the task, schema, and output constraints. The prompts instruct the model to return RDF/Turtle only, without explanations, Markdown fences, comments, or alternative serialization formats. The complete zero-shot system prompts are provided in Appendix~\ref{app:system_prompts}.
 
-\paragraph{Zero-shot prompting.}
+\subsubsection{Zero-Shot Prompting}
 The model receives only the system prompt, a short user instruction, and the target image. This setting tests whether the model can infer the required graph directly from the task description and schema.
 
-\paragraph{Static one-shot prompting.}
+\subsubsection{Static One-Shot Prompting}
 The model receives one curated image-to-RDF example before the target image. For VisText, the static one-shot example is a bar chart because bar charts are common in the dataset. For Diagram2Graph, the one-shot example is a representative diagram.
 
-\paragraph{Dynamic one-shot prompting.}
+\subsubsection{Dynamic One-Shot Prompting}
 Dynamic one-shot prompting is used for VisText because the dataset contains multiple chart types. A preliminary classification step assigns the input chart to the bar, line, or area category. The extraction prompt then uses the example and chart-specific instructions corresponding to that predicted type. Diagram2Graph does not use dynamic one-shot prompting because all inputs are diagrams.
 
-\paragraph{Few-shot prompting.}
+\subsubsection{Few-Shot Prompting}
 Few-shot prompting provides all curated examples for the dataset. VisText uses one bar chart, one line chart, and one area chart. Diagram2Graph uses three diagram examples.
 
 \subsection{Generation Model and Validity Criterion}
@@ -215,7 +215,7 @@ All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on 
 
 \subsection{Traditional Graph Metrics for Labelled Datasets}
 
-For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. We report a set of complementary metrics rather than a single score because different metrics measure different properties of graph quality.
+For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. Following recent work on LLM-based KG construction evaluation \citep{ghanemcruz2025kgc}, we report a set of complementary metrics rather than a single score because different metrics measure different properties of graph quality.
 
 Triple-match precision, recall, and F1 measure exact overlap between predicted and reference triples. This is the strictest content metric and directly penalizes missing and hallucinated triples. Triple-match accuracy is also reported as a prediction-oriented exact-match rate; it measures the proportion of predicted triples that appear in the reference graph and is therefore most closely related to precision. Normalized graph edit distance (GED) treats the triple set as a labelled directed multigraph and estimates the normalized edit cost required to transform the predicted graph into the reference graph. BLEU and ROUGE compare serialized triples as textual units under one-to-one assignment, providing softer lexical similarity signals. G-BERTScore applies contextual embedding similarity to serialized triples and is intended to capture semantically close but lexically non-identical triples \citep{bleu,rouge,bertscore}. The formal definitions used in the paper are provided in Appendix~\ref{app:metric_definitions}.
 
@@ -608,42 +608,91 @@ Read one soil-health image and output only valid RDF/Turtle triples that encode 
 
 \section{Mathematical Definitions of Evaluation Metrics}\label{app:metric_definitions}
 
-Let $G_i$ be the set of gold triples for image $i$ and $P_i$ the set of predicted triples after parsing and normalization. Let $N$ be the number of evaluated images. Exact triple matching is case-insensitive and strips leading and trailing whitespace.
+This appendix formalizes the graph metrics used in our evaluation implementation. The metric family follows prior LLM-based KG construction evaluation work \citep{ghanemcruz2025kgc}, while the definitions below state the exact variants used in this paper.
 
-\paragraph{Triple-match precision, recall, and F1.}
-Let
+Let $\mathcal{I}=\{1,\ldots,N\}$ be the evaluated image set. For image $i$, let $G_i$ be the set of reference triples and $P_i$ the set of predicted triples after RDF parsing, graph projection, and normalization. A triple is written as $t=(s,p,o)$, and normalization lowercases and strips whitespace from all three terms. When a denominator is zero, the corresponding score is defined as zero.
+
+\subsection{Exact Triple-Match Precision, Recall, and F1}
+Exact triple matching treats $G_i$ and $P_i$ as sets. The micro-averaged true positives, false positives, and false negatives are
 \[
-TP = \sum_{i=1}^{N} |G_i \cap P_i|,\quad
-FP = \sum_{i=1}^{N} |P_i \setminus G_i|,\quad
-FN = \sum_{i=1}^{N} |G_i \setminus P_i|.
+TP=\sum_{i\in\mathcal{I}} |G_i\cap P_i|,\quad
+FP=\sum_{i\in\mathcal{I}} |P_i\setminus G_i|,\quad
+FN=\sum_{i\in\mathcal{I}} |G_i\setminus P_i|.
 \]
-Then
+The reported exact triple-match precision, recall, and F1 are
 \[
-\mathrm{Precision} = \frac{TP}{TP+FP},\quad
-\mathrm{Recall} = \frac{TP}{TP+FN},\quad
-\mathrm{F1} = \frac{2\,\mathrm{Precision}\,\mathrm{Recall}}{\mathrm{Precision}+\mathrm{Recall}}.
+\mathrm{P}_{T}=\frac{TP}{TP+FP},\quad
+\mathrm{R}_{T}=\frac{TP}{TP+FN},\quad
+\mathrm{F1}_{T}=\frac{2\mathrm{P}_{T}\mathrm{R}_{T}}{\mathrm{P}_{T}+\mathrm{R}_{T}}.
 \]
 
-\paragraph{Triple-match accuracy.}
-For each image, triple-match accuracy is
+\subsection{Triple-Match Accuracy}
+Triple-match accuracy is computed per image as the fraction of predicted triples that are present in the reference graph:
 \[
-\mathrm{Acc}_i = \frac{|P_i \cap G_i|}{|P_i|}.
+\mathrm{Acc}_{T,i}=\frac{|P_i\cap G_i|}{|P_i|}.
 \]
-The reported value is the arithmetic mean over images. This metric measures how many predicted triples are exact reference triples and is therefore prediction-oriented.
-
-\paragraph{Normalized graph edit distance.}
-Each triple $(s,p,o)$ is converted into a directed labelled edge from node $s$ to node $o$ with edge label $p$. GED is computed between the predicted and gold labelled multigraphs using node-label and edge-label equality. The returned score is normalized by the total number of nodes and edges in both graphs:
+The reported value is the arithmetic mean
 \[
-\mathrm{nGED}_i = \frac{\mathrm{GED}(G_i,P_i)}
-{|V(G_i)|+|E(G_i)|+|V(P_i)|+|E(P_i)|}.
+\overline{\mathrm{Acc}}_{T}=\frac{1}{N}\sum_{i\in\mathcal{I}}\mathrm{Acc}_{T,i}.
 \]
-Lower normalized GED indicates closer graph structure.
+This metric is prediction-oriented: it rewards predicted triples that exactly match the reference graph and penalizes hallucinated predicted triples, but it does not directly penalize omitted reference triples except through the denominator of other metrics.
 
-\paragraph{BLEU and ROUGE over serialized triples.}
-Each triple is serialized as a textual edge string. Pairwise BLEU and ROUGE scores are computed between predicted and gold edge strings. A maximum-weight bipartite assignment selects the best one-to-one alignment. Precision, recall, and F1 are then computed from the aligned similarity matrix.
+\subsection{Normalized Graph Edit Distance}
+Each triple set $S$ is converted into a labelled directed multigraph $\Phi(S)=(V_S,E_S)$:
+\[
+V_S=\{s\mid (s,p,o)\in S\}\cup \{o\mid (s,p,o)\in S\},
+\]
+\[
+E_S=\{(s,o,p)\mid (s,p,o)\in S\},
+\]
+where node labels are the normalized RDF terms and edge labels are predicates. Let
+\[
+d_i=\mathrm{GED}\bigl(\Phi(G_i),\Phi(P_i)\bigr)
+\]
+denote the graph edit distance under exact node-label and edge-label matching. In implementation, this value is estimated with NetworkX iterative graph-edit optimization. The normalized graph edit distance for image $i$ is
+\[
+\mathrm{nGED}_i=
+\frac{d_i}
+{|V_{G_i}|+|E_{G_i}|+|V_{P_i}|+|E_{P_i}|},
+\]
+and the reported score is
+\[
+\overline{\mathrm{nGED}}=\frac{1}{N}\sum_{i\in\mathcal{I}}\mathrm{nGED}_i.
+\]
+Lower values indicate smaller structural distance between predicted and reference graphs.
 
-\paragraph{G-BERTScore.}
-G-BERTScore follows the same assignment strategy as BLEU and ROUGE, but replaces lexical overlap with BERTScore similarity between serialized triples.
+\subsection{Assignment-Based Textual Graph Similarity}
+BLEU, ROUGE, and G-BERTScore are computed over serialized triples. Let $\sigma(t)$ denote the textual serialization of triple $t$. For a similarity function $m$, define the pairwise score matrix for image $i$ as
+\[
+M^{(m)}_{ab}=m\bigl(\sigma(p_{ia}),\sigma(g_{ib})\bigr),
+\quad p_{ia}\in P_i,\ g_{ib}\in G_i .
+\]
+A one-to-one alignment between predicted and reference triples is selected by maximum-weight bipartite matching:
+\[
+A_i^{(m)}=\arg\max_{A}\sum_{(a,b)\in A}M^{(m)}_{ab}.
+\]
+The per-image precision, recall, and F1 for metric $m$ are then
+\[
+\mathrm{P}^{(m)}_i=
+\frac{\sum_{(a,b)\in A_i^{(m)}}M^{(m)}_{ab}}{|P_i|},\quad
+\mathrm{R}^{(m)}_i=
+\frac{\sum_{(a,b)\in A_i^{(m)}}M^{(m)}_{ab}}{|G_i|},
+\]
+\[
+\mathrm{F1}^{(m)}_i=
+\frac{2\mathrm{P}^{(m)}_i\mathrm{R}^{(m)}_i}
+{\mathrm{P}^{(m)}_i+\mathrm{R}^{(m)}_i}.
+\]
+The paper reports arithmetic means over images for $\mathrm{P}^{(m)}$, $\mathrm{R}^{(m)}$, and $\mathrm{F1}^{(m)}$.
+
+\subsection{BLEU}
+For BLEU, $m_{\mathrm{BLEU}}(\sigma(p),\sigma(g))$ is sentence-level BLEU with the predicted serialized triple as candidate and the reference serialized triple as the single reference \citep{bleu}. The implementation uses NLTK sentence BLEU with smoothing method 1.
+
+\subsection{ROUGE}
+For ROUGE, $m_{\mathrm{ROUGE}}(\sigma(p),\sigma(g))$ is ROUGE-2 precision between the predicted serialized triple and the reference serialized triple \citep{rouge}. This pairwise ROUGE-2 precision is used as the assignment similarity; the reported ROUGE precision, recall, and F1 are then obtained from the assignment equations above.
+
+\subsection{G-BERTScore}
+For G-BERTScore, $m_{\mathrm{GBS}}(\sigma(p),\sigma(g))$ is BERTScore F1 between the predicted and reference serialized triples \citep{bertscore}. The implementation computes pairwise BERTScore without inverse-document-frequency weighting and applies the same maximum-weight assignment procedure used for BLEU and ROUGE.
 
 \section{LLM-as-a-Judge Prompts}\label{app:judge_prompts}
 
