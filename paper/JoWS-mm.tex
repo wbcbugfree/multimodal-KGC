@@ -54,6 +54,21 @@
     showstringspaces=false
 }
 
+\lstdefinestyle{turtlestyle}{
+    basicstyle=\ttfamily\scriptsize,
+    backgroundcolor=\color{mdbackground},
+    frame=single,
+    framerule=0.3pt,
+    rulecolor=\color{black!20},
+    framesep=2pt,
+    aboveskip=0pt,
+    belowskip=0pt,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false
+}
+
 \begin{document}
 
 \begin{frontmatter}
@@ -149,47 +164,121 @@ Diagram2Graph & Flow/process diagrams & 219 & 219 \\
 \subsubsection{VisText-derived Chart-to-RDF Dataset}
 VisText was originally introduced for semantically rich chart captioning \citep{vistext}. We repurpose it as a chart-to-RDF dataset by defining the expected graph content for each chart image. The target output contains one chart resource typed as a bar, line, or area chart; the visible chart title; x-axis and y-axis resources with their visible titles when present; and one datapoint resource for each observation represented in the plot. A datapoint records its x-value, y-value, and membership in the chart. Thus, the target graph is intended to recover the structured content of the chart rather than to describe the chart in prose.
 
-The VisText RDF schema is shown in Table~\ref{tab:vistext_schema}. The schema is intentionally small so that evaluation focuses on whether the model recovers the chart semantics and data values, rather than on a large external ontology. Not every original VisText item yields a reliable RDF reference graph. Some original labels contain damaged categories, inconsistent tabular annotations, or insufficient information to recover the plotted data. Such items are excluded from labelled evaluation, while the remaining items are released as RDF/Turtle references.
+The VisText target schema and a representative chart-to-RDF example are jointly shown in Figure~\ref{fig:vistext_example}. The schema is intentionally small so that evaluation focuses on whether the model recovers the chart semantics and data values, rather than on a large external ontology. Not every original VisText item yields a reliable RDF reference graph. Some original labels contain damaged categories, inconsistent tabular annotations, or insufficient information to recover the plotted data. Such items are excluded from labelled evaluation, while the remaining items are released as RDF/Turtle references.
 
-\begin{table}[t]
+\begin{figure}[H]
 \centering
-\small
-\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0pt}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
 \toprule
-\textbf{Component} & \textbf{Vocabulary} & \textbf{Target information} \\
+\textbf{Component} & \textbf{Vocabulary / target} \\
 \midrule
-Chart type & \texttt{:BarChart}, \texttt{:LineChart}, \texttt{:AreaChart} & Visual chart class \\
-Chart resource & \texttt{:Chart} with \texttt{:title}, \texttt{:xAxis}, \texttt{:yAxis} & Title and axis links \\
-Axis resources & \texttt{:XAxis}, \texttt{:YAxis}, \texttt{:Axis} & Visible axis titles \\
-Data resources & \texttt{:DataPoint} & Individual observations \\
-Data predicates & \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongsTo} & Datapoint coordinates and chart membership \\
+Chart type & \texttt{:BarChart}, \texttt{:LineChart}, \texttt{:AreaChart} \\
+Chart & \texttt{:Chart} with \texttt{:title}, \texttt{:xAxis}, \texttt{:yAxis} \\
+Axis & \texttt{:XAxis}, \texttt{:YAxis}, \texttt{:Axis} \\
+Data & \texttt{:DataPoint}, \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongsTo} \\
 \bottomrule
 \end{tabularx}
-\caption{VisText chart-to-RDF target schema. The namespace is \texttt{http://example.org/vistext\#}.}
-\label{tab:vistext_schema}
-\end{table}
+\vspace{0.7em}
+\centering
+\includegraphics[width=\linewidth]{img/vistext_example.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{0pt}
+\begin{lstlisting}[style=turtlestyle]
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Number of operational nuclear
+            reactors worldwide from 1954
+            to 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ; :title "Year" .
+:YAxis a :Axis ;
+    :title "Number of nuclear power plants" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 1953" ;
+    :yValue "1" ;
+    :belongsTo :Chart .
+
+...
+
+:DataPoint66 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "443" ;
+    :belongsTo :Chart .
+\end{lstlisting}
+\end{minipage}
+\caption{Representative VisText chart-to-RDF example. Upper left: the compact target schema. Lower left: a test-split area chart. Right: an excerpt of the corresponding Turtle graph. The full reference graph contains 66 datapoints, illustrating that chart-to-RDF extraction must recover both numeric values and the intended datapoint sequence.}
+\label{fig:vistext_example}
+\end{figure}
 
 \subsubsection{Diagram2Graph-derived Diagram-to-RDF Dataset}
-Diagram2Graph provides diagram images and JSON annotations describing nodes, edges, labels, shapes, and relationship types \citep{diagram2graph}. We use the dataset as a diagram-to-RDF benchmark by expressing the same graph information in Turtle. The target output contains one resource for each visible diagram node and one resource for each directed edge. Node resources encode the visible node label, node type, and shape. Edge resources encode source node, target node, edge style, relationship type, and optional visible edge label. This representation preserves the diagram topology while using a compact RDF vocabulary suitable for direct graph matching.
+Diagram2Graph provides diagram images and JSON annotations describing nodes, edges, labels, shapes, and relationship types \citep{diagram2graph}. We use the dataset as a diagram-to-RDF benchmark by expressing the same graph information in Turtle. The target output contains one resource for each visible diagram node and one resource for each directed edge. Node resources encode the visible node label, node type, and shape. Edge resources encode source node, target node, edge style, relationship type, and optional visible edge label. This representation preserves the diagram topology while using a compact RDF vocabulary suitable for direct graph matching. The Diagram2Graph target schema and a representative diagram-to-RDF example are jointly shown in Figure~\ref{fig:diagram_example}.
 
-\begin{table}[t]
+\begin{figure}[H]
 \centering
-\small
-\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
 \toprule
-\textbf{Component} & \textbf{Vocabulary} & \textbf{Target information} \\
+\textbf{Component} & \textbf{Vocabulary / target} \\
 \midrule
-Node classes & \texttt{:Node}, \texttt{:Start}, \texttt{:Process}, \texttt{:Decision}, \texttt{:Delay}, \texttt{:Terminator} & Diagram node type \\
-Shape values & \texttt{:StartEvent}, \texttt{:EndEvent}, \texttt{:Task}, \texttt{:Gateway}, \texttt{:DataStore} & Node shape \\
-Edge classes & \texttt{:Edge}, \texttt{:Solid}, \texttt{:Dashed} & Edge and line style \\
-Relation values & \texttt{:Follows}, \texttt{:Branches}, \texttt{:DependsOn} & Edge semantics \\
-Node predicates & \texttt{:label}, \texttt{:shape} & Visible node text and shape \\
-Edge predicates & \texttt{:source}, \texttt{:target}, \texttt{:relationshipType}, \texttt{:relationshipValue} & Edge endpoints and labels \\
+Nodes & \texttt{:Node}, \texttt{:Start}, \texttt{:Process}, \texttt{:Decision}, \texttt{:Delay}, \texttt{:Terminator} \\
+Shapes & \texttt{:StartEvent}, \texttt{:EndEvent}, \texttt{:Task}, \texttt{:Gateway}, \texttt{:DataStore} \\
+Edges & \texttt{:Edge}, \texttt{:Solid}, \texttt{:Dashed}, \texttt{:Follows}, \texttt{:Branches}, \texttt{:DependsOn} \\
+Predicates & \texttt{:label}, \texttt{:shape}, \texttt{:source}, \texttt{:target}, \texttt{:relationshipType}, \texttt{:relationshipValue} \\
 \bottomrule
 \end{tabularx}
-\caption{Diagram2Graph RDF schema. The namespace is \texttt{http://example.org/diagram2graph\#}.}
-\label{tab:diagram_schema}
-\end{table}
+\vspace{0.7em}
+\centering
+\includegraphics[width=\linewidth]{img/diagram2graph_example.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0pt}
+\begin{lstlisting}[style=turtlestyle]
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node5 a :Decision, :Node ;
+    :label "Error<=Error" ;
+    :shape :Gateway .
+
+:Node6 a :Decision, :Node ;
+    :label "Epoch>=Epoch" ;
+    :shape :Gateway .
+
+:Node9 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ; :target :Node9 ;
+    :relationshipType :Follows ;
+    :relationshipValue "Yes" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ; :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "No" .
+\end{lstlisting}
+\end{minipage}
+\caption{Representative Diagram2Graph diagram-to-RDF example. Upper left: the compact target schema. Lower left: a labelled flow/process diagram. Right: an excerpt of the target Turtle graph showing node typing, visible labels, node shapes, directed edges, and labelled edge semantics.}
+\label{fig:diagram_example}
+\end{figure}
 
 \subsection{Prompting Strategies}\label{subsec:prompting}
 
