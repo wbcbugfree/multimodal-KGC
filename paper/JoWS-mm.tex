@@ -14,14 +14,40 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{placeins}
+\usepackage{tabularx}
+\usepackage{xcolor}
 
 \journal{Journal of Web Semantics}
 
 \newcommand{\pending}{\textit{pending}}
 \newcommand{\rdf}[3]{(\texttt{#1}, \texttt{#2}, \texttt{#3})}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\definecolor{mdbackground}{RGB}{248,249,251}
+\definecolor{mdheading}{RGB}{0,92,175}
+\definecolor{mdaccent}{RGB}{127,31,133}
+\definecolor{mdstring}{RGB}{0,110,91}
 
 \lstset{
     basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false
+}
+
+\lstdefinestyle{markdownstyle}{
+    basicstyle=\ttfamily\scriptsize,
+    backgroundcolor=\color{mdbackground},
+    frame=single,
+    framerule=0.3pt,
+    rulecolor=\color{black!20},
+    framesep=2pt,
+    stringstyle=\color{mdstring},
+    emph={Role,Task,Requirements,Schema,Structure,Rules,Ontology,Resource,Naming,Triples,Constraints,Concept,Nodes,Relationships,Tables,Figures,Checklist,Inputs,Evaluation,Judging,Scoring,Return,Output,Model,Judge},
+    emphstyle=\bfseries\color{mdheading},
+    aboveskip=4pt,
+    belowskip=4pt,
     breaklines=true,
     columns=fullflexible,
     keepspaces=true,
@@ -128,7 +154,7 @@ The VisText RDF schema is shown in Table~\ref{tab:vistext_schema}. The schema is
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lll}
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
 \toprule
 \textbf{Component} & \textbf{Vocabulary} & \textbf{Target information} \\
 \midrule
@@ -138,7 +164,7 @@ Axis resources & \texttt{:XAxis}, \texttt{:YAxis}, \texttt{:Axis} & Visible axis
 Data resources & \texttt{:DataPoint} & Individual observations \\
 Data predicates & \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongsTo} & Datapoint coordinates and chart membership \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{VisText chart-to-RDF target schema. The namespace is \texttt{http://example.org/vistext\#}.}
 \label{tab:vistext_schema}
 \end{table}
@@ -149,7 +175,7 @@ Diagram2Graph provides diagram images and JSON annotations describing nodes, edg
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lll}
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
 \toprule
 \textbf{Component} & \textbf{Vocabulary} & \textbf{Target information} \\
 \midrule
@@ -160,7 +186,7 @@ Relation values & \texttt{:Follows}, \texttt{:Branches}, \texttt{:DependsOn} & E
 Node predicates & \texttt{:label}, \texttt{:shape} & Visible node text and shape \\
 Edge predicates & \texttt{:source}, \texttt{:target}, \texttt{:relationshipType}, \texttt{:relationshipValue} & Edge endpoints and labels \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{Diagram2Graph RDF schema. The namespace is \texttt{http://example.org/diagram2graph\#}.}
 \label{tab:diagram_schema}
 \end{table}
@@ -210,7 +236,7 @@ The judge is used in two complementary modes. In direct scoring, the judge recei
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{ll}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
 \toprule
 \textbf{Criterion} & \textbf{Assessment focus} \\
 \midrule
@@ -220,7 +246,7 @@ Informativeness & Whether the graph captures the major useful content of the ima
 Coherence & Whether the RDF graph is internally consistent and structurally meaningful \\
 Specificity & Whether triples are precise rather than vague or generic \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{LLM-as-a-judge rubric adapted from KGEval for image-to-RDF evaluation.}
 \label{tab:judge_rubric}
 \end{table}
@@ -428,9 +454,10 @@ Because no complete gold graph is available, Soil-Health is evaluated only after
 \begin{table}[t]
 \centering
 \small
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Strategy} & \textbf{N} & \textbf{Relevance} & \textbf{Factuality} & \textbf{Informativeness} & \textbf{Coherence} & \textbf{Overall} \\
+\textbf{Strategy} & \textbf{N} & \textbf{Rel.} & \textbf{Fact.} & \textbf{Info.} & \textbf{Coh.} & \textbf{Overall} \\
 \midrule
 Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
 Static one-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
@@ -438,7 +465,7 @@ Dynamic one-shot & \pending & \pending & \pending & \pending & \pending & \pendi
 Few-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}
-\caption{Soil-Health LLM-as-a-judge direct scoring results. Scores use a 1-to-5 rubric.}
+\caption{Soil-Health LLM-as-a-judge direct scoring results. Rel., Fact., Info., and Coh. denote relevance, factuality, informativeness, and coherence; scores use a 1-to-5 rubric.}
 \label{tab:soil_judge_results}
 \end{table}
 
@@ -451,144 +478,131 @@ This paper presents a prompt-based framework for constructing RDF knowledge grap
 \section{Zero-Shot System Prompts}\label{app:system_prompts}
 
 \subsection{VisText Zero-Shot System Prompt}
-\begin{lstlisting}
+\begin{lstlisting}[style=markdownstyle]
+# Role
 You are a multimodal knowledge graph construction system.
-
-Your task is to read a single chart image and generate only valid RDF/Turtle that encodes the chart's semantic content.
-
-Output requirements:
-- Output RDF/Turtle only.
-- Do not output explanations, Markdown fences, comments, JSON, XML, YAML, or natural language.
-- Use exactly this namespace:
-
+# Task
+Read one chart image and output only valid RDF/Turtle encoding the chart's semantic content.
+## Output
+- RDF/Turtle only; no explanations, Markdown fences, comments, JSON, XML, YAML, or prose.
+- Use exactly:
+```turtle
 @prefix : <http://example.org/vistext#> .
-
-Supported chart types:
-- :BarChart
-- :LineChart
-- :AreaChart
-
-Schema:
-- Classes: :BarChart, :LineChart, :AreaChart, :Axis, :DataPoint
-- Properties: :title, :xAxis, :yAxis, :xValue, :yValue, :belongsTo
-
-Required structure:
+```
+## Chart Types
+- `:BarChart`, `:LineChart`, `:AreaChart`
+## Schema
+- Classes: `:BarChart`, `:LineChart`, `:AreaChart`, `:Axis`, `:DataPoint`
+- Properties: `:title`, `:xAxis`, `:yAxis`, `:xValue`, `:yValue`, `:belongsTo`
+## Required Structure
+```turtle
 :Chart a :BarChart / :LineChart / :AreaChart ;
     :title "..." ;
     :xAxis :XAxis ;
     :yAxis :YAxis .
-
 :XAxis a :Axis ;
     :title "..." .
-
 :YAxis a :Axis ;
     :title "..." .
-
 :DataPoint1 a :DataPoint ;
     :xValue "..." ;
     :yValue "..." ;
     :belongsTo :Chart .
-
-Extraction rules:
+```
+## Extraction Rules
 - Extract the chart title exactly as shown.
 - Extract visible x-axis and y-axis titles exactly as shown; omit missing axis-title triples rather than inventing them.
-- For vertical bar charts, xValue is the category and yValue is the numeric bar value.
-- For horizontal bar charts, xValue is the numeric bar value and yValue is the category.
-- For line and area charts, xValue is the x-axis coordinate/category/time value and yValue is the numeric value.
+- For vertical bar charts, `xValue` is the category and `yValue` is the numeric bar value.
+- For horizontal bar charts, `xValue` is the numeric bar value and `yValue` is the category.
+- For line and area charts, `xValue` is the x-axis coordinate/category/time value and `yValue` is the numeric value.
 - Infer the intended number of datapoints from chart semantics, especially title, axis labels, visible ticks, temporal range, and categorical range.
-- For temporal annual line/area charts, normalize annual observations as "Dec 31, YYYY" according to the prompt rules.
+- For temporal annual line/area charts, normalize annual observations as `"Dec 31, YYYY"`.
 - Represent all values as quoted strings without datatype annotations.
 - Prefer exact values when readable; otherwise estimate values from axis ticks and geometry without inventing unsupported facts.
 \end{lstlisting}
 
 \subsection{Diagram2Graph Zero-Shot System Prompt}
-\begin{lstlisting}
-You are a diagram-to-graph extractor. Given one flowchart or diagram image, output only valid RDF/Turtle using the lightweight diagram2graph vocabulary.
-
-Output requirements:
-- Output RDF/Turtle only.
-- Do not output explanations, headings, comments, Markdown fences, JSON, XML, YAML, or extra text.
+\begin{lstlisting}[style=markdownstyle]
+# Role
+You are a diagram-to-graph extractor.
+# Task
+Given one flowchart or diagram image, output only valid RDF/Turtle using the lightweight diagram2graph vocabulary.
+## Output
+- RDF/Turtle only; no explanations, headings, comments, Markdown fences, JSON, XML, YAML, or extra text.
 - Use exactly one prefix:
-
+```turtle
 @prefix : <http://example.org/diagram2graph#> .
-
-Complete ontology schema:
-- Node classes: :Node, :Start, :Process, :Decision, :Delay, :Terminator
-- Node shape values: :StartEvent, :EndEvent, :Task, :Gateway, :DataStore
-- Edge classes: :Edge, :Solid, :Dashed
-- Relationship type values: :Follows, :Branches, :DependsOn
-- Node properties: :label, :shape
-- Edge properties: :source, :target, :relationshipType, :relationshipValue
-
-Resource naming:
-- Name each node as :NodeN.
-- Name each edge as :EdgeN.
+```
+## Ontology
+- Node classes: `:Node`, `:Start`, `:Process`, `:Decision`, `:Delay`, `:Terminator`
+- Shape values: `:StartEvent`, `:EndEvent`, `:Task`, `:Gateway`, `:DataStore`
+- Edge classes: `:Edge`, `:Solid`, `:Dashed`
+- Relationship values: `:Follows`, `:Branches`, `:DependsOn`
+- Node properties: `:label`, `:shape`
+- Edge properties: `:source`, `:target`, `:relationshipType`, `:relationshipValue`
+## Resource Naming
+- Name nodes as `:NodeN` and edges as `:EdgeN`.
 - Number nodes and edges in visual reading order when explicit identifiers are absent.
-
-Node triples:
+## Node Triples
+```turtle
 :NodeN a :NodeType, :Node ;
     :label "exact visible text from the shape" ;
     :shape :ShapeValue .
-
-Edge triples:
+```
+## Edge Triples
+```turtle
 :EdgeN a :LineStyle, :Edge ;
     :source :NodeS ;
     :target :NodeT ;
     :relationshipType :RelationshipType .
-
+```
 If the arrow has a visible label, add:
-    :relationshipValue "exact visible arrow label" .
-
-Constraints:
+```turtle
+:relationshipValue "exact visible arrow label" .
+```
+## Constraints
 - Do not emit direct node-to-node relationship triples.
-- Do not use rdfs:label; use :label.
+- Do not use `rdfs:label`; use `:label`.
 - Preserve visible text exactly.
 - Every edge source and target must reference an emitted node resource.
 - Every Turtle statement must end with a period.
 \end{lstlisting}
 
 \subsection{Soil-Health Zero-Shot System Prompt}
-\begin{lstlisting}
+\begin{lstlisting}[style=markdownstyle]
+# Role
 You are a multimodal knowledge-extraction agent for soil-health figures and tables.
-
-Your task is to read one soil-health image and output only valid RDF/Turtle triples that encode the concepts and relationships explicitly visible in the image.
-
-Output requirements:
-- Output RDF/Turtle only.
-- Do not output explanations, headings, comments, Markdown fences, JSON, XML, or YAML.
-- Emit the two prefixes first and use only these prefixes:
-
+# Task
+Read one soil-health image and output only valid RDF/Turtle triples that encode the concepts and relationships explicitly visible in the image.
+## Output
+- RDF/Turtle only; no explanations, headings, comments, Markdown fences, JSON, XML, or YAML.
+- Emit these two prefixes first and use only these prefixes:
+```turtle
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-Concept nodes:
-- Create a she: URI for each visible concept using PascalCase derived from the visible label text.
-- Declare each concept as a skos:Concept.
-- Add skos:prefLabel using the visible label text in lowercase when it is a normal phrase.
-- Preserve meaningful symbols and abbreviations through skos:altLabel, she:hasAbbreviation, or she:hasSymbol when visible.
-- Use skos:definition or skos:note for visible definitions, notes, legends, or footnotes when they add semantic meaning.
+```
+## Concept Nodes
+- Create a `she:` PascalCase URI for each visible concept and declare it as `skos:Concept`.
+- Add `skos:prefLabel` using the visible label text in lowercase when it is a normal phrase.
+- Preserve meaningful symbols and abbreviations through `skos:altLabel`, `she:hasAbbreviation`, or `she:hasSymbol` when visible.
+- Use `skos:definition` or `skos:note` for visible definitions, notes, legends, or footnotes when they add semantic meaning.
 - Deduplicate repeated labels.
-
-Relationships:
-- Use skos:narrower or skos:broader for containment, grouping, table header hierarchy, bullets, tree levels, and parent-child boxes.
-- Use skos:related for visible associations where no direction or stronger relation is clear.
-- For explicit non-hierarchical semantics, create a clear she: camelCase property such as she:affects, she:measures, she:hasIndicator, she:isBasedOn, she:hasPositiveImpactOn, she:hasNegativeImpactOn, or she:hasNeutralImpactOn.
+## Relationships
+- Use `skos:narrower` or `skos:broader` for containment, grouping, table header hierarchy, bullets, tree levels, and parent-child boxes.
+- Use `skos:related` for visible associations where no direction or stronger relation is clear.
+- For explicit non-hierarchical semantics, create a clear `she:` camelCase property such as `she:affects`, `she:measures`, `she:hasIndicator`, `she:isBasedOn`, `she:hasPositiveImpactOn`, `she:hasNegativeImpactOn`, or `she:hasNeutralImpactOn`.
 - Respect arrow direction and labelled connector direction when visible.
 - Do not invent concepts or relations not visible or directly implied by layout, legend, or labels.
-
-Tables:
+## Tables
 - Extract row headers, column headers, grouped headers, legend labels, and semantically meaningful cell values.
-- For impact matrices, map positive impact or + to she:hasPositiveImpactOn, negative impact or - to she:hasNegativeImpactOn, and neutral/unknown/indifferent/indiff. to she:hasNeutralImpactOn.
-
-Figures:
+- For impact matrices, map positive impact or `+` to `she:hasPositiveImpactOn`, negative impact or `-` to `she:hasNegativeImpactOn`, and neutral/unknown/indifferent/indiff. to `she:hasNeutralImpactOn`.
+## Figures
 - Extract boxes, headings, lists, diagram regions, arrows, captions, legends, and notes when they carry semantic content.
-- Model group boxes and regions with skos:narrower.
-- Model arrows or connectors with the clearest she: camelCase property.
-
-Final checklist:
-- The output starts with exactly the she: and skos: prefixes.
-- Every concept URI is in the she: namespace.
-- Every concept has a skos:Concept declaration and a skos:prefLabel.
+- Model group boxes and regions with `skos:narrower`.
+- Model arrows or connectors with the clearest `she:` camelCase property.
+## Final Checklist
+- The output starts with exactly the `she:` and `skos:` prefixes.
+- Every concept URI is in the `she:` namespace and has `skos:Concept` plus `skos:prefLabel`.
 - Turtle syntax is valid.
 \end{lstlisting}
 
@@ -634,28 +648,24 @@ G-BERTScore follows the same assignment strategy as BLEU and ROUGE, but replaces
 \section{LLM-as-a-Judge Prompts}\label{app:judge_prompts}
 
 \subsection{Direct Judge Prompt}
-\begin{lstlisting}
-Role:
-You are an evaluator assessing the quality of an RDF/Turtle knowledge graph generated from an image. Your task is to judge whether the graph accurately reflects the visible source image and whether it is well constructed as a knowledge graph.
-
-Task:
+\begin{lstlisting}[style=markdownstyle]
+# Role
+You are an evaluator assessing an RDF/Turtle knowledge graph generated from an image. Judge whether the graph reflects the visible source image and is well constructed as a knowledge graph.
+# Task
 Evaluate the candidate RDF/Turtle graph against the source image using five KGEval-style criteria adapted to image-to-KG extraction:
 1. Relevance: Does the graph focus on information that is visible and important in the image?
 2. Factuality: Are entities, labels, values, relationships, and chart or table claims grounded in the image without hallucination?
 3. Informativeness: Does the graph capture the major useful content, such as chart titles, axes, data points, table rows, columns, diagram nodes, and relationships?
 4. Coherence: Is the RDF/Turtle graph internally consistent, parseable in meaning, and structurally suitable for a knowledge graph?
 5. Specificity: Are triples precise enough to recover the key image content rather than using vague or generic placeholders?
-
-Also assign an overall_score from 1 to 5 as a holistic quality score.
-
-Rating scale:
-1 = Very bad: unusable, mostly unrelated, mostly hallucinated, or structurally incoherent.
-2 = Bad: limited correct content with major omissions, hallucinations, or graph-quality problems.
-3 = Moderate: partially correct but incomplete, noisy, or only loosely aligned with the image.
-4 = Good: mostly faithful and useful, with only minor omissions or local errors.
-5 = Excellent: faithful, informative, coherent, specific, and well aligned with the image.
-
-Evaluation steps:
+Also assign an `overall_score` from 1 to 5 as a holistic quality score.
+## Rating Scale
+- `1`: unusable, unrelated, hallucinated, or incoherent.
+- `2`: limited correct content with major omissions, hallucinations, or graph problems.
+- `3`: partially correct but incomplete, noisy, or loosely aligned.
+- `4`: mostly faithful and useful with minor omissions or local errors.
+- `5`: faithful, informative, coherent, specific, and well aligned with the image.
+## Evaluation Steps
 1. Inspect the source image and identify its key visible content.
 2. Review the RDF/Turtle graph and compare its triples against the image.
 3. For each criterion, assess the graph using the rating scale and criterion guidelines.
@@ -664,21 +674,18 @@ Evaluation steps:
 \end{lstlisting}
 
 \subsection{Pairwise Judge Prompt}
-\begin{lstlisting}
-Role:
-You are an evaluator comparing two RDF/Turtle knowledge graphs generated from the same source image. Your goal is to decide which candidate better represents the visible image content as a useful knowledge graph.
-
-Task:
+\begin{lstlisting}[style=markdownstyle]
+# Role
+You are an evaluator comparing two RDF/Turtle knowledge graphs generated from the same source image. Decide which candidate better represents the visible image content as a useful knowledge graph.
+# Task
 Compare Candidate A and Candidate B using five KGEval-style criteria adapted to image-to-KG extraction:
 1. Relevance: Which graph better focuses on visible, task-relevant image information?
 2. Factuality: Which graph has fewer hallucinated or incorrect entities, values, labels, and relationships?
 3. Informativeness: Which graph captures more of the important image content?
 4. Coherence: Which graph is more internally consistent and better structured as RDF/Turtle?
 5. Specificity: Which graph is more precise and less generic?
-
 For each criterion, choose A, B, or tie. Then choose an overall winner. Use tie only when the candidates are meaningfully equivalent or when their errors balance out.
-
-Evaluation steps:
+## Evaluation Steps
 1. Inspect the source image and identify the key visible facts.
 2. Analyze Candidate A and Candidate B independently.
 3. Compare direct overlaps, missing elements, incorrect claims, and RDF/Turtle modelling quality.
