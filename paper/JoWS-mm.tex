@@ -112,6 +112,15 @@ The third contribution is an LLM-as-a-judge evaluation framework for unlabelled 
 
 Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper does not claim that prompting alone solves all visual graph construction problems. Instead, it characterizes the capabilities and limitations of prompt-based RDF generation, provides labelled resources for systematic evaluation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
 
+Figure~\ref{fig:overview} summarizes the overall study design, including the labelled and unlabelled datasets, the prompting-based image-to-RDF workflow, and the complementary evaluation settings used throughout the paper.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{img/overview_figure_main.pdf}
+\caption{Overview of the proposed image-to-RDF framework. Panel A summarizes the two labelled benchmarks used for metric-based evaluation. Panel B shows the extraction workflow, in which scientific images are processed with prompting strategies from zero-shot to few-shot using Gemini 3 Flash, followed by RDF/Turtle validity checking. Panel C shows evaluation on labelled datasets through graph-matching metrics and LLM-as-a-judge validation. Panel D separates the Soil-Health application setting, where no reference RDF graphs are available and prompting strategies are compared through the validated LLM-as-a-judge framework.}
+\label{fig:overview}
+\end{figure}
+
 \section{Related Work}\label{sec:related}
 
 \subsection{Multimodal Understanding of Charts, Tables, and Diagrams}
