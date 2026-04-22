@@ -64,9 +64,8 @@ Specificity:
 1. Inspect the source image and identify its key visible content.
 2. Review the RDF/Turtle graph and compare its triples against the image.
 3. For each criterion, assess the graph using the rating scale and criterion guidelines.
-4. Identify major errors that materially affect graph quality.
-5. Return only the structured JSON object required by the response schema.
+4. Return only the structured JSON object required by the response schema.
 
 ## Output Format
 
-Return scores for relevance, factuality, informativeness, coherence, specificity, and overall_score, all as integers from 1 to 5. Return major_errors as a short list of concrete issues and reasoning_summary as one concise paragraph.
+Return scores for relevance, factuality, informativeness, coherence, specificity, and overall_score, all as integers from 1 to 5.

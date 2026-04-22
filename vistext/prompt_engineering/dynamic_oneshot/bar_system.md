@@ -145,17 +145,6 @@ For categorical, temporal, or otherwise non-numeric bar labels:
 - Data-point numbering only needs to be unique within the output.
 - The numbering itself carries no semantic meaning.
 
-## Syntax constraints
-- Output must be valid Turtle syntax.
-- Include the prefix declaration exactly once at the top:
-  - `@prefix : <http://example.org/vistext#> .`
-- Do not introduce any extra prefixes.
-- Do not create any resources other than:
-  - `:Chart`
-  - `:XAxis`
-  - `:YAxis`
-  - `:DataPoint1 ... :DataPointN`
-
 ## Final validation checklist
 Before producing the answer, ensure that:
 - there is exactly one `:Chart`

@@ -30,9 +30,9 @@ Consider direct matches to visible image content, equivalent modeling choices, m
 2. Analyze Candidate A and Candidate B independently.
 3. Compare direct overlaps, missing elements, incorrect claims, and RDF/Turtle modeling quality.
 4. Select a preference for each criterion.
-5. Select the overall winner and confidence.
+5. Select the overall winner.
 6. Return only the structured JSON object required by the response schema.
 
 ## Output Format
 
-Return winner as A, B, or tie. Return criterion_preferences with relevance, factuality, informativeness, coherence, and specificity, each set to A, B, or tie. Return confidence as low, medium, or high, and reasoning_summary as one concise paragraph.
+Return winner as A, B, or tie. Return criterion_preferences with relevance, factuality, informativeness, coherence, and specificity, each set to A, B, or tie.
