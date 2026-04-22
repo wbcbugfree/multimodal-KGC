@@ -1,0 +1,186 @@
+{
+  "dataset": "vistext",
+  "generated_at_utc": "2026-04-22T21:48:00.747167+00:00",
+  "strategy_selection": {
+    "status": "selected",
+    "candidate_strategies": [
+      "fewshot",
+      "oneshot_dynamic",
+      "oneshot_static",
+      "zeroshot"
+    ],
+    "available_strategies": [
+      "fewshot",
+      "oneshot_dynamic",
+      "oneshot_static",
+      "zeroshot"
+    ],
+    "min_gap": 0.02,
+    "best_pair": {
+      "strategies": [
+        "oneshot_static",
+        "zeroshot"
+      ],
+      "triple_match_accuracy_gap": 0.15894607843137254,
+      "triple_match_micro_f1_gap": 0.29079708322856423,
+      "normalized_ged_gap": 0.15735887236037754,
+      "composite_gap": 0.20236734467343812
+    }
+  },
+  "direct_vs_content_only_metrics": {
+    "matched_items": 10,
+    "spearman": {
+      "overall_vs_triple_match_accuracy": 0.34938562148434216,
+      "criteria_mean_vs_triple_match_accuracy": 0.49371044145328746,
+      "overall_vs_inverse_normalized_ged": 0.34938562148434216
+    },
+    "rows": [
+      {
+        "strategy": "oneshot_static",
+        "item_id": "1248",
+        "overall_score": 3.0,
+        "criteria_mean": 3.2,
+        "triple_match_accuracy": 0.8529411764705882,
+        "inverse_normalized_ged": 0.9529411764705882
+      },
+      {
+        "strategy": "oneshot_static",
+        "item_id": "3107",
+        "overall_score": 5.0,
+        "criteria_mean": 5.0,
+        "triple_match_accuracy": 1.0,
+        "inverse_normalized_ged": 1.0
+      },
+      {
+        "strategy": "oneshot_static",
+        "item_id": "315",
+        "overall_score": 3.0,
+        "criteria_mean": 3.2,
+        "triple_match_accuracy": 0.6911764705882353,
+        "inverse_normalized_ged": 0.8975535168195719
+      },
+      {
+        "strategy": "oneshot_static",
+        "item_id": "6479",
+        "overall_score": 5.0,
+        "criteria_mean": 4.8,
+        "triple_match_accuracy": 0.7307692307692307,
+        "inverse_normalized_ged": 0.946969696969697
+      },
+      {
+        "strategy": "oneshot_static",
+        "item_id": "7416",
+        "overall_score": 3.0,
+        "criteria_mean": 3.6,
+        "triple_match_accuracy": 1.0,
+        "inverse_normalized_ged": 1.0
+      },
+      {
+        "strategy": "zeroshot",
+        "item_id": "1248",
+        "overall_score": 3.0,
+        "criteria_mean": 3.4,
+        "triple_match_accuracy": 0.6764705882352942,
+        "inverse_normalized_ged": 0.8313253012048193
+      },
+      {
+        "strategy": "zeroshot",
+        "item_id": "3107",
+        "overall_score": 4.0,
+        "criteria_mean": 4.8,
+        "triple_match_accuracy": 1.0,
+        "inverse_normalized_ged": 1.0
+      },
+      {
+        "strategy": "zeroshot",
+        "item_id": "315",
+        "overall_score": 3.0,
+        "criteria_mean": 3.4,
+        "triple_match_accuracy": 0.15625,
+        "inverse_normalized_ged": 0.24876847290640391
+      },
+      {
+        "strategy": "zeroshot",
+        "item_id": "6479",
+        "overall_score": 4.0,
+        "criteria_mean": 4.8,
+        "triple_match_accuracy": 0.7307692307692307,
+        "inverse_normalized_ged": 0.946969696969697
+      },
+      {
+        "strategy": "zeroshot",
+        "item_id": "7416",
+        "overall_score": 3.0,
+        "criteria_mean": 3.4,
+        "triple_match_accuracy": 0.9166666666666666,
+        "inverse_normalized_ged": 0.9836065573770492
+      }
+    ]
+  },
+  "pairwise_vs_content_only_metrics": {
+    "comparable_items": 5,
+    "agreement_rate": 0.8,
+    "rows": [
+      {
+        "item_id": "1248",
+        "strategy_a": "oneshot_static",
+        "strategy_b": "zeroshot",
+        "judge_winner": "A",
+        "metric_winner": "A",
+        "agreed": true
+      },
+      {
+        "item_id": "3107",
+        "strategy_a": "oneshot_static",
+        "strategy_b": "zeroshot",
+        "judge_winner": "tie",
+        "metric_winner": "tie",
+        "agreed": true
+      },
+      {
+        "item_id": "315",
+        "strategy_a": "oneshot_static",
+        "strategy_b": "zeroshot",
+        "judge_winner": "A",
+        "metric_winner": "A",
+        "agreed": true
+      },
+      {
+        "item_id": "6479",
+        "strategy_a": "oneshot_static",
+        "strategy_b": "zeroshot",
+        "judge_winner": "tie",
+        "metric_winner": "tie",
+        "agreed": true
+      },
+      {
+        "item_id": "7416",
+        "strategy_a": "oneshot_static",
+        "strategy_b": "zeroshot",
+        "judge_winner": "tie",
+        "metric_winner": "A",
+        "agreed": false
+      }
+    ]
+  },
+  "validation_summary": {
+    "direct": {
+      "mode": "direct",
+      "matched_items": 10,
+      "mean_spearman": 0.39749389480732394,
+      "alignment_strength": "weak",
+      "alignment_conclusion": "Direct-judge scores show only weak alignment with the traditional metrics."
+    },
+    "pairwise": {
+      "mode": "pairwise",
+      "comparable_items": 5,
+      "agreement_rate": 0.8,
+      "alignment_strength": "strong",
+      "alignment_conclusion": "Pairwise judge preferences align strongly with the traditional metrics."
+    },
+    "overall": {
+      "alignment_strength": "weak",
+      "alignment_conclusion": "The LLM judge shows partial alignment with the traditional metrics, but the evidence is mixed across validation modes."
+    }
+  }
+}

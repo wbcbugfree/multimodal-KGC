@@ -1,0 +1,232 @@
+{
+  "generated_at_utc": "2026-04-22T21:46:47.835541+00:00",
+  "mode": "direct",
+  "parallel_workers": 1,
+  "items": [
+    {
+      "dataset": "vistext",
+      "strategy": "oneshot_static",
+      "item_id": "1248",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\1248.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\1248.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 2,
+        "informativeness": 3,
+        "coherence": 4,
+        "specificity": 3,
+        "overall_score": 3,
+        "major_errors": [
+          "X-axis dates are shifted: graph claims xValues from Dec 31, 2004 to Dec 31, 2018, but the image title and visible ticks indicate FY 2005–FY 2019 (the KG omits 2019 and appears offset by one year).",
+          "Many precise yValue decimals are given though those exact numeric values are not readable in the image and therefore likely hallucinated.",
+          "The KG is missing the final data point for 2019 shown in the title range, so the series is incomplete."
+        ],
+        "reasoning_summary": "The Turtle graph correctly captures the chart as an area chart and includes the title and axis labels, so it is relevant and structurally coherent. However, the data points are offset one year earlier than the image's stated FY range (2005–2019) and the final 2019 point is missing. In addition, the candidate provides precise decimal y-values that cannot be verified from the image and are likely hallucinated; overall the graph is moderately useful but has important factual and completeness errors.",
+        "criteria_mean": 3.2
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "oneshot_static",
+      "item_id": "3107",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\3107.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\3107.png",
+      "status": "success",
+      "scores": {
+        "relevance": 5,
+        "factuality": 5,
+        "informativeness": 5,
+        "coherence": 5,
+        "specificity": 5,
+        "overall_score": 5,
+        "major_errors": [],
+        "reasoning_summary": "The Turtle graph closely matches the image: it includes the exact chart title, axis labels, all category names and the corresponding share-of-views values (e.g., Gaming 0.51, Music 0.15, Movies and TV 0.12, etc.). The RDF is well-structured and parseable with clear classes and relationships. No substantive hallucinations or missing major content were found. Minor non-critical issues: numeric values are represented as plain strings rather than typed numeric literals and predicate namespace/modeling could be more detailed, but these do not materially affect fidelity to the image.",
+        "criteria_mean": 5.0
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "oneshot_static",
+      "item_id": "315",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\315.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\315.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 2,
+        "informativeness": 3,
+        "coherence": 4,
+        "specificity": 3,
+        "overall_score": 3,
+        "major_errors": [
+          "Provides exact yearly counts that are not readable from the image (hallucinated numeric data).",
+          "Date-range inconsistency: title claims 1954–2019 but datapoints start at 1953 and end at 2018 (2019 missing).",
+          "Overly fine-grained xValue formatting (specific Dec 31 dates) is not supported by the visual; image shows only years, not exact dates."
+        ],
+        "reasoning_summary": "The Turtle graph is focused on the visible area chart (axes, axis titles, and trend) and is structurally well-formed, but it contains many precise yearly values and exact dates that cannot be confirmed from the image and therefore appear hallucinated. There is also a mismatch between the stated chart range and the enumerated datapoints (starts at 1953 and stops in 2018 despite title to 2019). Overall the model captured the chart structure and trend but invented too many specific numeric details.",
+        "criteria_mean": 3.2
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "oneshot_static",
+      "item_id": "6479",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\6479.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\6479.png",
+      "status": "success",
+      "scores": {
+        "relevance": 5,
+        "factuality": 5,
+        "informativeness": 5,
+        "coherence": 4,
+        "specificity": 5,
+        "overall_score": 5,
+        "major_errors": [
+          "yValue literals are plain strings rather than numeric typed literals (no xsd:decimal/xsd:float), which prevents numeric querying/aggregation.",
+          "DataPoints are not linked to an explicit xAxis member (no predicate connecting each DataPoint to a specific xAxis category resource), limiting structural expressiveness.",
+          "Minor formatting/spacing differences in the chart title (extra spaces and punctuation) but not a substantive factual error."
+        ],
+        "reasoning_summary": "The Turtle graph faithfully captures the visible chart title, axis labels, and all eleven sub-category data points with values that match the bar heights and labels seen in the image, including the star annotations and ellipses. It is specific and relevant with no material hallucinations. The model is mostly coherent and usable as a KG, but small modeling issues reduce machine-readability: numeric y-values are represented as plain strings (no numeric datatypes) and datapoints are not explicitly connected to an xAxis category resource, which would improve queryability and structure.",
+        "criteria_mean": 4.8
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "oneshot_static",
+      "item_id": "7416",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\7416.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\7416.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 3,
+        "informativeness": 4,
+        "coherence": 4,
+        "specificity": 3,
+        "overall_score": 3,
+        "major_errors": [
+          "X-axis values are incorrect: the graph uses full dates (e.g. \"Dec 31, 2009\") and is shifted one year earlier (2009–2018) while the image shows years 2010–2019.",
+          "The RDF invents precise day/month dates for x-values that are not present in the image (image shows only year ticks).",
+          "The final data point is mapped to 2018 in the KG while the visible chart's last tick/value corresponds to 2019 (so the year–value alignment is wrong)."
+        ],
+        "reasoning_summary": "The Turtle captures the chart's main elements (title, axis labels, ten numeric y-values and a line chart structure) and is generally well-formed, but it hallucinates exact dates for the x-axis and shifts all years one step earlier (2009–2018 instead of the visible 2010–2019). This misalignment of x-values is a material factual error that prevents accurate recovery of the image data despite otherwise coherent and specific modeling.",
+        "criteria_mean": 3.6
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "zeroshot",
+      "item_id": "1248",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\1248.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\1248.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 2,
+        "informativeness": 3,
+        "coherence": 4,
+        "specificity": 4,
+        "overall_score": 3,
+        "major_errors": [
+          "Data years are shifted/incorrect: graph includes Dec 31, 2004..2018 instead of the image's stated FY2005..FY2019 (missing 2019 and including 2004).",
+          "Exact numeric yValues are presented though the image does not show numeric labels for each point — these appear to be hallucinated.",
+          "xValue format (full dates) does not match the image which shows simple year ticks; semantic alignment of points to visible ticks is unclear."
+        ],
+        "reasoning_summary": "The Turtle encodes the visible artifact (an Audi equity-ratio area chart) with a reasonable RDF structure and specific datapoint triples, so it is relevant and coherent. However, it contains factual issues: the datapoint years are shifted (ends at 2018 and starts at 2004 rather than covering FY2005–FY2019), and precise y-values are provided though the image does not display per-point numeric labels (indicating likely hallucination). The graph is informative and specific in form, but factual errors and the missing 2019 point reduce overall quality.",
+        "criteria_mean": 3.4
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "zeroshot",
+      "item_id": "3107",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\3107.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\3107.png",
+      "status": "success",
+      "scores": {
+        "relevance": 5,
+        "factuality": 4,
+        "informativeness": 5,
+        "coherence": 5,
+        "specificity": 5,
+        "overall_score": 4,
+        "major_errors": [
+          "Minor numeric discrepancy: :DataPoint8 (Other) yValue = \"0.02\" in the graph, but the bar in the image appears closer to 0.01.",
+          "Numeric values are encoded as strings rather than numeric literals (e.g., \"0.51\" instead of 0.51)."
+        ],
+        "reasoning_summary": "The Turtle graph accurately captures the chart title, axes labels, all category labels, and per-category share-of-views values, and is structurally consistent and machine-usable. Only minor issues are present: a small numeric mismatch for the 'Other' category and the use of string literals for numeric y-values; otherwise the triples are relevant, specific, and faithful to the image.",
+        "criteria_mean": 4.8
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "zeroshot",
+      "item_id": "315",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\315.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\315.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 2,
+        "informativeness": 3,
+        "coherence": 5,
+        "specificity": 3,
+        "overall_score": 3,
+        "major_errors": [
+          "Many data point triples give exact dates and numeric counts that are not readable in the image and appear to be hallucinated.",
+          "First datapoint date (Dec 31, 1953) contradicts the stated range (1954–2019) and the final year 2019 is not represented (last point is 2018).",
+          "Exact y-values like 440, 445, 450 are not verifiable from the plotted area and axis ticks and therefore likely incorrect representations."
+        ],
+        "reasoning_summary": "The Turtle graph is well-structured and focuses on the visible area chart (good relevance and excellent RDF coherence), and it captures axis titles and the presence of an area series. However, it includes many precise x/y datapoints and exact dates that cannot be read from the image and appear to be invented; it also omits a datapoint for 2019 despite the title's range. Because of these material factual inaccuracies the KG is informative in form but not reliably factual or fully specific to the image.",
+        "criteria_mean": 3.4
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "zeroshot",
+      "item_id": "6479",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\6479.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\6479.png",
+      "status": "success",
+      "scores": {
+        "relevance": 5,
+        "factuality": 5,
+        "informativeness": 5,
+        "coherence": 4,
+        "specificity": 5,
+        "overall_score": 4,
+        "major_errors": [
+          "Numeric y-values are encoded as plain strings rather than typed numeric literals (e.g., xsd:decimal), which reduces machine-readability for numeric queries.",
+          "Several x-axis labels are truncated with ellipses in the graph (e.g., \"Neutrogena, Aveena & other skin ...\", \"Women's health, wound & oral car...\") — the RDF reproduces these truncated labels rather than full label expansions."
+        ],
+        "reasoning_summary": "The Turtle graph closely and accurately represents the visible bar chart: correct title, axis labels, and all eleven sub-category data points with matching values. It is specific and relevant, capturing the main content. Minor KG-quality issues are present: numeric values are stored as plain strings instead of typed numbers, and some x-axis labels remain truncated (as in the image) rather than expanded, which slightly reduces downstream usability; otherwise the structure is consistent and faithful.",
+        "criteria_mean": 4.8
+      }
+    },
+    {
+      "dataset": "vistext",
+      "strategy": "zeroshot",
+      "item_id": "7416",
+      "ttl_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\7416.ttl",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\7416.png",
+      "status": "success",
+      "scores": {
+        "relevance": 4,
+        "factuality": 3,
+        "informativeness": 3,
+        "coherence": 4,
+        "specificity": 3,
+        "overall_score": 3,
+        "major_errors": [
+          "All data points' x-values are shifted one year earlier than the image: the chart shows 2010–2019 but the triples use Dec 31, 2009 through Dec 31, 2018.",
+          "The 2019 datapoint is effectively missing/incorrectly recorded (final year in image is 2019 but triple list ends at 2018).",
+          "xValue formatting uses full dates (\"Dec 31, YYYY\") instead of the visible year labels (YYYY), introducing a mismatch with the image.",
+          "Minor encoding issue in the title (\"HermÃ¨s\") and no explicit series/region entity for the plotted line (the graph shows a single series labeled 'Other' on the y-axis but the KG doesn't model the series as a distinct named series)."
+        ],
+        "reasoning_summary": "The Turtle graph is generally relevant and well-structured (correctly models a LineChart, axes, and DataPoint nodes with numeric y-values), and it captures most of the visible numeric values. However, a systematic error shifts every x-value one year earlier (2009–2018 instead of the visible 2010–2019), the 2019 point is missing/misplaced, and the xValue format doesn't match the simple year labels shown in the image. These factual mismatches reduce the KG's fidelity despite good structural coherence.",
+        "criteria_mean": 3.4
+      }
+    }
+  ]
+}

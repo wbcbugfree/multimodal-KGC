@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-04-22T21:48:00.745589+00:00",
+  "mode": "pairwise",
+  "parallel_workers": 1,
+  "items": [
+    {
+      "dataset": "vistext",
+      "item_id": "1248",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\1248.png",
+      "strategy_a": "oneshot_static",
+      "strategy_b": "zeroshot",
+      "ttl_a_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\1248.ttl",
+      "ttl_b_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\1248.ttl",
+      "status": "success",
+      "judge": {
+        "winner": "A",
+        "criterion_preferences": {
+          "relevance": "tie",
+          "factuality": "A",
+          "informativeness": "tie",
+          "coherence": "tie",
+          "specificity": "A"
+        },
+        "confidence": "medium",
+        "reasoning_summary": "Both graphs capture the same visible elements (area chart, title, axes, and 15 datapoints) and use equivalent RDF/Turtle structure, but they share the same factual issues (years appear shifted/start at 2004 rather than the chart’s FY2005–FY2019 range and neither includes an explicit 2019 point, and both misrepresent the pronounced mid-period dip). Candidate A is slightly better: its numeric values are more precise and its peaks match the image marginally closer, so it is preferable overall; otherwise the two are largely equivalent in structure and coverage."
+      }
+    },
+    {
+      "dataset": "vistext",
+      "item_id": "3107",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\3107.png",
+      "strategy_a": "oneshot_static",
+      "strategy_b": "zeroshot",
+      "ttl_a_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\3107.ttl",
+      "ttl_b_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\3107.ttl",
+      "status": "success",
+      "judge": {
+        "winner": "tie",
+        "criterion_preferences": {
+          "relevance": "tie",
+          "factuality": "tie",
+          "informativeness": "tie",
+          "coherence": "tie",
+          "specificity": "tie"
+        },
+        "confidence": "high",
+        "reasoning_summary": "Both candidates produce identical RDF/Turtle graphs that accurately encode the visible bar chart title, axis labels, and all 11 category data points with the same values; there are no evident hallucinated facts, and modeling choices are equivalent, so neither candidate is meaningfully better."
+      }
+    },
+    {
+      "dataset": "vistext",
+      "item_id": "315",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\315.png",
+      "strategy_a": "oneshot_static",
+      "strategy_b": "zeroshot",
+      "ttl_a_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\315.ttl",
+      "ttl_b_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\315.ttl",
+      "status": "success",
+      "judge": {
+        "winner": "A",
+        "criterion_preferences": {
+          "relevance": "A",
+          "factuality": "A",
+          "informativeness": "A",
+          "coherence": "tie",
+          "specificity": "A"
+        },
+        "confidence": "high",
+        "reasoning_summary": "Both graphs correctly capture the chart title and axis labels, but Candidate A encodes a much denser, year-by-year series that matches the visible steep rise and plateau around the 400–450 range; Candidate B contains fewer, rounded sample points with several deviations from the plotted curve. A therefore provides greater relevance, factual alignment, informativeness and specificity. Both Turtle serializations are consistently modeled (Axis, DataPoint, belongsTo) so coherence is comparable."
+      }
+    },
+    {
+      "dataset": "vistext",
+      "item_id": "6479",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\6479.png",
+      "strategy_a": "oneshot_static",
+      "strategy_b": "zeroshot",
+      "ttl_a_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\6479.ttl",
+      "ttl_b_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\6479.ttl",
+      "status": "success",
+      "judge": {
+        "winner": "tie",
+        "criterion_preferences": {
+          "relevance": "tie",
+          "factuality": "tie",
+          "informativeness": "tie",
+          "coherence": "tie",
+          "specificity": "tie"
+        },
+        "confidence": "high",
+        "reasoning_summary": "Both candidates are essentially identical: they model the same bar chart, include the same axis titles and 11 datapoints with matching xValue labels, and use equivalent RDF/Turtle structure. The only difference is a single numeric yValue for the 'DePuy orthopedics & spine*' datapoint (0.164 in A vs 0.163 in B), which is too small to favour one candidate meaningfully. Therefore neither graph has a clear advantage across relevance, factuality, informativeness, coherence, or specificity."
+      }
+    },
+    {
+      "dataset": "vistext",
+      "item_id": "7416",
+      "image_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\data\\test\\images\\7416.png",
+      "strategy_a": "oneshot_static",
+      "strategy_b": "zeroshot",
+      "ttl_a_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_oneshot_static_outputs\\7416.ttl",
+      "ttl_b_path": "C:\\Users\\wang479\\Downloads\\multimodal-KGC\\vistext\\extract_rdf_ttl\\vistext_zeroshot_outputs\\7416.ttl",
+      "status": "success",
+      "judge": {
+        "winner": "tie",
+        "criterion_preferences": {
+          "relevance": "tie",
+          "factuality": "tie",
+          "informativeness": "tie",
+          "coherence": "tie",
+          "specificity": "tie"
+        },
+        "confidence": "high",
+        "reasoning_summary": "Both candidates encode essentially the same visible content (chart title, axis labels, ten data points) and use equivalent RDF structure; their differences are only minor numeric variations in y-values (decimals) while sharing the same modeling choices and the same small mismatch between the chart title years and the xValue dates. Neither introduces clear extra hallucinations or missing major elements, so neither meaningfully outperforms the other."
+      }
+    }
+  ]
+}

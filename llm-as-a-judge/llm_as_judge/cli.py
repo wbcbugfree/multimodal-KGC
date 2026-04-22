@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime, timezone
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -9,7 +10,15 @@ from typing import Any
 from .datasets import collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
 from .judge_core import JudgeRunner
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
-from .validation import compare_pairwise_to_metrics, load_traditional_metrics, validate_direct_against_metrics
+from .validation import (
+    compare_pairwise_to_metrics,
+    load_traditional_metrics,
+    select_validation_strategy_pair,
+    summarize_direct_alignment,
+    summarize_overall_alignment,
+    summarize_pairwise_alignment,
+    validate_direct_against_metrics,
+)
 
 
 DEFAULT_METRICS_PATHS = {
@@ -22,6 +31,13 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--modes", nargs="+", choices=["direct", "pairwise"], default=["direct", "pairwise"])
     parser.add_argument("--strategies", nargs="+", default=list(strategy_dirs(dataset).keys()))
+    parser.add_argument("--strategy-selection", choices=["all", "widest_pair"], default="widest_pair")
+    parser.add_argument(
+        "--min-strategy-gap",
+        type=float,
+        default=0.02,
+        help="Skip judge validation if the widest available strategy pair differs by less than this composite gap.",
+    )
     parser.add_argument("--sample-mode", choices=["all", "random", "ids"], default="all")
     parser.add_argument("--sample-count", type=int, default=5)
     parser.add_argument("--ids", nargs="*", default=[])
@@ -61,6 +77,10 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
         handle.write("\n")
 
 
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
 def run_dataset_cli(
     *,
     dataset: str,
@@ -72,6 +92,52 @@ def run_dataset_cli(
     args = parser.parse_args(argv)
     if args.parallel_workers <= 0:
         parser.error("--parallel-workers must be greater than 0")
+
+    should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
+    if should_validate and args.metrics_path is None:
+        raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
+    if should_validate and not args.metrics_path.exists():
+        raise FileNotFoundError(
+            f"Traditional metrics report not found: {args.metrics_path}. "
+            "Run the dataset's traditional evaluator first, or pass --metrics-path."
+        )
+
+    metrics = load_traditional_metrics(args.metrics_path) if should_validate else None
+    effective_strategy_selection = args.strategy_selection if should_validate else "all"
+    selection: dict[str, Any] | None = None
+    if effective_strategy_selection == "widest_pair":
+        if metrics is None:
+            raise ValueError("--strategy-selection widest_pair requires a traditional metrics report.")
+        selection = select_validation_strategy_pair(
+            metrics,
+            candidate_strategies=args.strategies,
+            min_gap=args.min_strategy_gap,
+        )
+        if selection["status"] == "skipped":
+            if args.dry_run:
+                print(f"Dataset: {dataset}")
+                print(f"Strategy selection: {args.strategy_selection}")
+                print(f"Validation skipped: {selection['reason']}")
+                if selection.get("best_pair"):
+                    print(f"Best available pair: {', '.join(selection['best_pair']['strategies'])}")
+                    print(f"Best pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
+                print(f"Traditional metrics path: {args.metrics_path}")
+                return 0
+            args.output_dir.mkdir(parents=True, exist_ok=True)
+            validation = {
+                "dataset": dataset,
+                "generated_at_utc": _utc_now(),
+                "strategy_selection": selection,
+                "validation_summary": {
+                    "alignment_strength": "skipped",
+                    "alignment_conclusion": selection["reason"],
+                },
+            }
+            _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
+            print(f"Skipped judge validation for {dataset}: {selection['reason']}")
+            return 0
+        args.strategies = list(selection["best_pair"]["strategies"])
+
     ids = args.ids or None
     records = collect_ttl_records(dataset, strategies=args.strategies, ids=ids)
     records = sample_records(
@@ -90,20 +156,15 @@ def run_dataset_cli(
         print(f"Modes: {', '.join(args.modes)}")
         print(f"Direct items: {direct_count}")
         print(f"Pairwise comparisons: {pairwise_count}")
+        print(f"Strategy selection: {effective_strategy_selection}")
+        if selection is not None and selection.get("status") == "selected":
+            print(f"Selected strategy pair: {', '.join(selection['best_pair']['strategies'])}")
+            print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
         print(f"Parallel workers: {args.parallel_workers}")
         print(f"Output directory: {args.output_dir}")
-        if validate_with_vistext_metrics or validate_with_traditional_metrics:
+        if should_validate:
             print(f"Traditional metrics path: {args.metrics_path}")
         return 0
-
-    should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
-    if should_validate and args.metrics_path is None:
-        raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
-    if should_validate and not args.metrics_path.exists():
-        raise FileNotFoundError(
-            f"Traditional metrics report not found: {args.metrics_path}. "
-            "Run the dataset's traditional evaluator first, or pass --metrics-path."
-        )
 
     runner = JudgeRunner(
         provider=_provider(args),
@@ -127,14 +188,30 @@ def run_dataset_cli(
         )
 
     if should_validate:
-        metrics = load_traditional_metrics(args.metrics_path)
-        validation: dict[str, Any] = {}
+        assert metrics is not None
+        validation: dict[str, Any] = {
+            "dataset": dataset,
+            "generated_at_utc": _utc_now(),
+            "strategy_selection": selection
+            or {
+                "status": "selected",
+                "best_pair": {"strategies": args.strategies},
+            },
+        }
         direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
         pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
         if direct_report is not None:
             validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
         if pairwise_report is not None:
             validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
+
+        validation_summary: dict[str, Any] = {}
+        if direct_key in validation:
+            validation_summary["direct"] = summarize_direct_alignment(validation[direct_key])
+        if pairwise_key in validation:
+            validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
+        validation_summary["overall"] = summarize_overall_alignment(validation_summary)
+        validation["validation_summary"] = validation_summary
         _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
 
     print(f"Wrote judge results under: {args.output_dir}")
