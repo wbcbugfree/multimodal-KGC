@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Asus quarterly sales share worldwide from 2016 to 2020 , by product type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "quarter" .
+
+:YAxis a :Axis ;
+    :title "Component" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1Q '16" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1Q '17" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1Q '18" ;
+    :yValue "0.24" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2Q '16" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2Q '17" ;
+    :yValue "0.16" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2Q '18" ;
+    :yValue "0.20" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "3Q '16" ;
+    :yValue "0.14" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "3Q '17" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "3Q '18" ;
+    :yValue "0.17" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "4Q '16" ;
+    :yValue "0.13" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "4Q '17" ;
+    :yValue "0.18" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "4Q '18" ;
+    :yValue "0.20" ;
+    :belongsTo :Chart .

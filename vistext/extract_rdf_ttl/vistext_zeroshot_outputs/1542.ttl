@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top 10 U.S. for-profit hospitals based on the number of beds as of 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Hospital (Location)" .
+
+:YAxis a :Axis ;
+    :title "Number of beds" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Chippenham Hospital (Richmond, ..." ;
+    :yValue "766" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Edinburg (Texas) Regional Medical..." ;
+    :yValue "816" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Henrico Doctor's Hospital (Richm..." ;
+    :yValue "700" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Medical City Hospital (Dallas)" ;
+    :yValue "630" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Methodist Hospital (San Antonio, ..." ;
+    :yValue "1500" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "North Shore Medical Center (Mia..." ;
+    :yValue "737" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Oklahoma University Medical Cen..." ;
+    :yValue "664" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Plantation (Fla.) General Hospital" ;
+    :yValue "615" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sunrise Hospital & Medical Center..." ;
+    :yValue "603" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "TriStar Centennial (Nashville, Tenn.)" ;
+    :yValue "617" ;
+    :belongsTo :Chart .

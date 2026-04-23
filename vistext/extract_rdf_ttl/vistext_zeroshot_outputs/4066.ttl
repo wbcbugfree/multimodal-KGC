@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market share of leading mass merchant e-retailers in the United States in 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market share" .
+
+:YAxis a :Axis ;
+    :title "Mass merchant e-retailer" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.163" ;
+    :yValue "Amazon.com, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.011" ;
+    :yValue "Costco Wholesale Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "HSN, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.004" ;
+    :yValue "Hudson's Bay Company" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "J.C. Penney Corporation, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.011" ;
+    :yValue "Kohl's Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.015" ;
+    :yValue "Liberty Interactive Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.006" ;
+    :yValue "Sears Holdings Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.011" ;
+    :yValue "Target Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.043" ;
+    :yValue "Wal-Mart Stores, Inc." ;
+    :belongsTo :Chart .

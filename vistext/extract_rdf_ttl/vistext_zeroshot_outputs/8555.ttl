@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fastest growing convenience food products online sales during the coronavirus (COVID-19) outbreak in Russia from January to March 2020 , by product" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "06.01-01.03" .
+
+:YAxis a :Axis ;
+    :title "food products" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.61" ;
+    :yValue "Chocolate paste" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1.95" ;
+    :yValue "Energy drinks" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.46" ;
+    :yValue "Flakes" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.37" ;
+    :yValue "Instant soups" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Pasta" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Porridge" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.59" ;
+    :yValue "Souces" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Sterilized milk" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.47" ;
+    :yValue "Vegetable oil" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.33" ;
+    :yValue "Water" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of car registrations in Europe in 2019 , by segment (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "New registrations in thousands" .
+
+:YAxis a :Axis ;
+    :title "programming language" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2150" ;
+    :yValue "Compact" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2080" ;
+    :yValue "Compact SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "750" ;
+    :yValue "Compact premium" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "400" ;
+    :yValue "Midsize" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "550" ;
+    :yValue "Midsize premium" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1120" ;
+    :yValue "Minicar" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "640" ;
+    :yValue "Premium compact SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "530" ;
+    :yValue "Premium midsize SUV & crossover" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2670" ;
+    :yValue "Small" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1930" ;
+    :yValue "Small SUV & crossover" ;
+    :belongsTo :Chart .
