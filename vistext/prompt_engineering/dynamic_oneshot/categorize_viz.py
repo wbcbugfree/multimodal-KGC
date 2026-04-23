@@ -20,9 +20,13 @@ from common import get_api_key  # noqa: E402
 DEFAULT_MODEL = "gemini-3-flash-preview"
 ALLOWED_CATEGORIES = ("bar", "area", "line")
 CLASSIFICATION_PROMPT = """
-You are a chart identification assistant. You will be given a visualization of a scientific chart,
-and your task is to identify its category. The possible categories are: bar, area, line.
-Respond with only the category, and no other text. The value must be one of the allowed categories.
+You are a chart identification assistant for a visual knowledge extraction dataset.
+You will be given one chart image. Classify it as exactly one of:
+- bar: a chart that represents values with separate rectangular bars, either vertical or horizontal.
+- area: a chart that represents a quantitative series with a filled region under or between plotted lines.
+- line: a chart that represents a quantitative series with one or more connected lines and no filled area.
+
+Respond with only the category and no other text. The value must be one of: bar, area, line.
 """.strip()
 
 
