@@ -93,6 +93,8 @@ class PromptBuilderContext:
     model: str
     client: genai.Client | None = None
     dry_run: bool = False
+    classification_manifest_path: Path | None = None
+    require_classification_manifest: bool = False
 
 
 @dataclass(frozen=True)
@@ -115,9 +117,13 @@ class RuntimeConfig:
     batch_poll_interval: float
     batch_context_cache: str
     batch_cache_ttl_seconds: int
+    classification_batch_action: str | None
+    classification_manifest_path: Path
+    require_classification_manifest: bool
 
 
 PromptBuilder = Callable[[Path, PromptBuilderContext], PromptPackage]
+ClassificationBatchRunner = Callable[[RuntimeConfig, list[Path]], int]
 _THREAD_LOCAL = threading.local()
 
 
@@ -221,6 +227,32 @@ def build_parser(
         default=BATCH_CACHE_TTL_SECONDS,
         help="TTL in seconds for Gemini explicit context caches created during batch submit.",
     )
+    parser.add_argument(
+        "--classification-batch-action",
+        choices=("submit", "status", "collect", "wait"),
+        default=None,
+        help=(
+            "Dynamic one-shot only: batch the image-type classification step before "
+            "submitting RDF generation."
+        ),
+    )
+    parser.add_argument(
+        "--classification-manifest-path",
+        type=Path,
+        default=None,
+        help=(
+            "Dynamic one-shot classification batch manifest path. Defaults to "
+            "<output-dir>/batch_jobs/classification_manifest.json."
+        ),
+    )
+    parser.add_argument(
+        "--require-classification-manifest",
+        action="store_true",
+        help=(
+            "Dynamic one-shot only: require a collected classification manifest when "
+            "building RDF generation prompts instead of falling back to live classification."
+        ),
+    )
     return parser
 
 
@@ -248,6 +280,9 @@ def parse_args(
     if args.batch_cache_ttl_seconds <= 0:
         parser.error("--batch-cache-ttl-seconds must be greater than 0")
 
+    if args.batch_action and args.classification_batch_action:
+        parser.error("Use either --batch-action or --classification-batch-action, not both")
+
     return args
 
 
@@ -263,7 +298,16 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         if args.batch_manifest_path is not None
         else output_dir / "batch_jobs" / "latest_batch_manifest.json"
     )
-    sample_mode = args.sample_mode or ("all" if args.batch_action == "submit" else SAMPLE_MODE)
+    classification_manifest_path = (
+        args.classification_manifest_path.resolve()
+        if args.classification_manifest_path is not None
+        else output_dir / "batch_jobs" / "classification_manifest.json"
+    )
+    sample_mode = args.sample_mode or (
+        "all"
+        if args.batch_action == "submit" or args.classification_batch_action == "submit"
+        else SAMPLE_MODE
+    )
 
     return RuntimeConfig(
         model=args.model,
@@ -284,6 +328,9 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         batch_poll_interval=args.batch_poll_interval,
         batch_context_cache=args.batch_context_cache,
         batch_cache_ttl_seconds=args.batch_cache_ttl_seconds,
+        classification_batch_action=args.classification_batch_action,
+        classification_manifest_path=classification_manifest_path,
+        require_classification_manifest=args.require_classification_manifest,
     )
 
 
@@ -772,7 +819,13 @@ def print_batch_context_cache_dry_run(
         try:
             prompt_package = prompt_builder(
                 image_path,
-                PromptBuilderContext(model=config.model, client=None, dry_run=True),
+                PromptBuilderContext(
+                    model=config.model,
+                    client=None,
+                    dry_run=True,
+                    classification_manifest_path=config.classification_manifest_path,
+                    require_classification_manifest=config.require_classification_manifest,
+                ),
             )
         except Exception as exc:  # pragma: no cover
             failures.append(f"{image_path.stem}: {exc}")
@@ -887,7 +940,12 @@ def run_batch_submit(
         print(f"[{index}/{len(selected_images)}] staging {image_path.name}")
         prompt_package = prompt_builder(
             image_path,
-            PromptBuilderContext(model=config.model, client=client),
+            PromptBuilderContext(
+                model=config.model,
+                client=client,
+                classification_manifest_path=config.classification_manifest_path,
+                require_classification_manifest=config.require_classification_manifest,
+            ),
         )
         ensure_file_ref(image_path)
         for example in prompt_package.examples:
@@ -1149,7 +1207,12 @@ def process_image(
             try:
                 prompt_package = prompt_builder(
                     image_path,
-                    PromptBuilderContext(model=config.model, client=effective_client),
+                    PromptBuilderContext(
+                        model=config.model,
+                        client=effective_client,
+                        classification_manifest_path=config.classification_manifest_path,
+                        require_classification_manifest=config.require_classification_manifest,
+                    ),
                 )
                 contents = build_request_contents(
                     user_prompt=build_user_prompt(image_id),
@@ -1251,9 +1314,24 @@ def run_strategy(
     description: str,
     default_output_dir: Path,
     prompt_builder: PromptBuilder,
+    classification_batch_runner: ClassificationBatchRunner | None = None,
 ) -> int:
     args = parse_args(argv, description=description, default_output_dir=default_output_dir)
     config = resolve_runtime_config(args)
+
+    if config.classification_batch_action is not None:
+        if classification_batch_runner is None:
+            print(
+                "--classification-batch-action is only supported by dynamic one-shot strategies.",
+                file=sys.stderr,
+            )
+            return 2
+        selected_images = (
+            selected_image_paths_for_config(config)
+            if config.classification_batch_action == "submit"
+            else []
+        )
+        return classification_batch_runner(config, selected_images)
 
     if config.batch_action == "status":
         return run_batch_status(config)
