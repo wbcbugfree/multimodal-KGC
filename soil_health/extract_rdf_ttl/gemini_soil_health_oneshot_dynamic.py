@@ -15,6 +15,7 @@ from gemini_soil_health_runner_core import (  # noqa: E402
     PromptBuilderContext,
     PromptPackage,
     ground_truth_example,
+    infer_image_type_from_path,
     load_text,
     run_strategy,
 )
@@ -41,11 +42,14 @@ def build_prompt_package(
     classifier: Callable[..., str] = classify_image_type,
 ) -> PromptPackage:
     effective_context = context or PromptBuilderContext(model=DEFAULT_MODEL, client=None)
-    image_type = classifier(
-        image_path,
-        model=effective_context.model,
-        client=effective_context.client,
-    )
+    if effective_context.dry_run:
+        image_type = infer_image_type_from_path(image_path)
+    else:
+        image_type = classifier(
+            image_path,
+            model=effective_context.model,
+            client=effective_context.client,
+        )
     if image_type not in SYSTEM_PROMPT_BY_TYPE:
         raise ValueError(f"Unsupported image type: {image_type}")
 

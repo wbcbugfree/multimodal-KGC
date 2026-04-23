@@ -27,12 +27,17 @@ from common.gemini_batch import (  # noqa: E402
     TERMINAL_BATCH_STATES,
     batch_job_snapshot,
     batch_record_error,
+    build_context_cache_key,
+    cached_content_snapshot,
+    create_context_cache,
     create_batch_job,
     download_result_file,
     extract_batch_response_text,
     read_json,
     read_jsonl,
     result_file_name,
+    sha256_file,
+    sha256_text,
     state_name,
     upload_jsonl_file,
     utc_now_iso,
@@ -48,6 +53,8 @@ REQUEST_DELAY = 2.0
 PARALLEL_WORKERS = 1
 MAX_ATTEMPTS = 3
 BATCH_POLL_INTERVAL = 60.0
+BATCH_CONTEXT_CACHE_MODE = "auto"
+BATCH_CACHE_TTL_SECONDS = 86400
 SAMPLE_MODE = "random"
 SAMPLE_COUNT = 5
 RANDOM_SEED = 42
@@ -85,6 +92,7 @@ class PromptPackage:
 class PromptBuilderContext:
     model: str
     client: genai.Client | None = None
+    dry_run: bool = False
 
 
 @dataclass(frozen=True)
@@ -105,6 +113,8 @@ class RuntimeConfig:
     batch_manifest_path: Path
     batch_display_name: str | None
     batch_poll_interval: float
+    batch_context_cache: str
+    batch_cache_ttl_seconds: int
 
 
 PromptBuilder = Callable[[Path, PromptBuilderContext], PromptPackage]
@@ -196,6 +206,21 @@ def build_parser(
         default=BATCH_POLL_INTERVAL,
         help="Polling interval in seconds for --batch-action=wait.",
     )
+    parser.add_argument(
+        "--batch-context-cache",
+        choices=("auto", "off"),
+        default=BATCH_CONTEXT_CACHE_MODE,
+        help=(
+            "Use Gemini explicit context caching for batch prompt packages with examples. "
+            "Zero-shot packages remain uncached. Defaults to auto."
+        ),
+    )
+    parser.add_argument(
+        "--batch-cache-ttl-seconds",
+        type=int,
+        default=BATCH_CACHE_TTL_SECONDS,
+        help="TTL in seconds for Gemini explicit context caches created during batch submit.",
+    )
     return parser
 
 
@@ -220,6 +245,8 @@ def parse_args(
         parser.error("--parallel-workers must be greater than 0")
     if args.batch_poll_interval <= 0:
         parser.error("--batch-poll-interval must be greater than 0")
+    if args.batch_cache_ttl_seconds <= 0:
+        parser.error("--batch-cache-ttl-seconds must be greater than 0")
 
     return args
 
@@ -255,6 +282,8 @@ def resolve_runtime_config(args: argparse.Namespace) -> RuntimeConfig:
         batch_manifest_path=batch_manifest_path,
         batch_display_name=args.batch_display_name,
         batch_poll_interval=args.batch_poll_interval,
+        batch_context_cache=args.batch_context_cache,
+        batch_cache_ttl_seconds=args.batch_cache_ttl_seconds,
     )
 
 
@@ -645,18 +674,62 @@ def build_batch_request_contents(
     ]
 
 
+def build_batch_current_request_contents(
+    user_prompt: str,
+    image_path: Path,
+    file_refs: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    image_ref = file_refs[str(image_path.resolve())]
+    return [
+        {
+            "role": "user",
+            "parts": [
+                {"text": user_prompt},
+                file_data_part(image_ref),
+            ],
+        }
+    ]
+
+
 def build_batch_request_line(
     key: str,
     system_prompt: str,
     contents: list[dict[str, Any]],
+    cached_content_name: str | None = None,
 ) -> dict[str, Any]:
-    return {
-        "key": key,
-        "request": {
-            "contents": contents,
-            "system_instruction": {"parts": [{"text": system_prompt}]},
-        },
-    }
+    request: dict[str, Any] = {"contents": contents}
+    if cached_content_name:
+        request["cachedContent"] = cached_content_name
+    else:
+        request["system_instruction"] = {"parts": [{"text": system_prompt}]}
+    return {"key": key, "request": request}
+
+
+def build_context_cache_example_records(examples: list[PromptExample]) -> list[dict[str, Any]]:
+    return [
+        {
+            "image_type": example.image_type,
+            "example_prompt": build_example_user_prompt(example.image_type),
+            "image_path": str(example.image_path.resolve()),
+            "image_sha256": sha256_file(example.image_path),
+            "ttl_path": str(example.ttl_path.resolve()),
+            "ttl_sha256": sha256_file(example.ttl_path),
+        }
+        for example in examples
+    ]
+
+
+def prompt_package_cache_key(config: RuntimeConfig, prompt_package: PromptPackage) -> str:
+    return build_context_cache_key(
+        dataset="soil_health",
+        model=config.model,
+        system_prompt=prompt_package.system_prompt,
+        examples=build_context_cache_example_records(prompt_package.examples),
+    )
+
+
+def should_use_context_cache(config: RuntimeConfig, prompt_package: PromptPackage) -> bool:
+    return config.batch_context_cache == "auto" and bool(prompt_package.examples)
 
 
 def upload_batch_file_ref(client: genai.Client, path: Path) -> dict[str, Any]:
@@ -685,6 +758,49 @@ def selected_image_paths_for_config(config: RuntimeConfig) -> list[Path]:
     )
 
 
+def print_batch_context_cache_dry_run(
+    config: RuntimeConfig,
+    prompt_builder: PromptBuilder,
+    selected_images: list[Path],
+) -> None:
+    planned_caches: dict[str, dict[str, Any]] = {}
+    failures: list[str] = []
+    for image_path in selected_images:
+        ttl_path = config.output_dir / f"{image_path.stem}.ttl"
+        if config.skip_existing and ttl_path.exists():
+            continue
+        try:
+            prompt_package = prompt_builder(
+                image_path,
+                PromptBuilderContext(model=config.model, client=None, dry_run=True),
+            )
+        except Exception as exc:  # pragma: no cover
+            failures.append(f"{image_path.stem}: {exc}")
+            continue
+        if not should_use_context_cache(config, prompt_package):
+            continue
+        cache_key = prompt_package_cache_key(config, prompt_package)
+        planned_caches.setdefault(
+            cache_key,
+            {
+                "example_count": len(prompt_package.examples),
+                "prompt_metadata": dict(prompt_package.metadata),
+            },
+        )
+
+    print(f"[BATCH-DRY-RUN] Context cache mode: {config.batch_context_cache}")
+    print(f"[BATCH-DRY-RUN] Planned context cache(s): {len(planned_caches)}")
+    for index, cache_info in enumerate(planned_caches.values(), start=1):
+        print(
+            f"  cache {index}: {cache_info['example_count']} example(s), "
+            f"metadata={cache_info['prompt_metadata']}"
+        )
+    if failures:
+        print(f"[BATCH-DRY-RUN] Could not plan cache for {len(failures)} image(s)")
+        for failure in failures[:10]:
+            print(f"  {failure}")
+
+
 def run_batch_submit(
     config: RuntimeConfig,
     prompt_builder: PromptBuilder,
@@ -694,6 +810,7 @@ def run_batch_submit(
         print(f"[BATCH-DRY-RUN] Selected {len(selected_images)} image(s)")
         for image_path in selected_images:
             print(image_path.stem)
+        print_batch_context_cache_dry_run(config, prompt_builder, selected_images)
         print(f"[BATCH-DRY-RUN] Batch manifest would be written to: {config.batch_manifest_path}")
         return 0
 
@@ -705,6 +822,7 @@ def run_batch_submit(
     file_refs: dict[str, dict[str, Any]] = {}
     request_records: list[dict[str, Any]] = []
     item_records: list[dict[str, Any]] = []
+    context_caches: dict[str, dict[str, Any]] = {}
 
     def ensure_file_ref(path: Path) -> dict[str, Any]:
         key = str(path.resolve())
@@ -712,6 +830,52 @@ def run_batch_submit(
             print(f"[BATCH] Uploading file: {path}")
             file_refs[key] = upload_batch_file_ref(client, path)
         return file_refs[key]
+
+    def ensure_context_cache(prompt_package: PromptPackage) -> dict[str, Any] | None:
+        if not should_use_context_cache(config, prompt_package):
+            return None
+
+        cache_key = prompt_package_cache_key(config, prompt_package)
+        if cache_key in context_caches:
+            return context_caches[cache_key]
+
+        display_name = (
+            f"{config.batch_display_name or 'soil-health-batch'}-"
+            f"context-cache-{timestamp}-{len(context_caches) + 1}"
+        )
+        print(
+            f"[BATCH] Creating context cache with {len(prompt_package.examples)} "
+            f"example(s): {display_name}"
+        )
+        try:
+            cache = create_context_cache(
+                client,
+                model=config.model,
+                system_prompt=prompt_package.system_prompt,
+                contents=build_batch_example_contents(prompt_package.examples, file_refs),
+                display_name=display_name,
+                ttl_seconds=config.batch_cache_ttl_seconds,
+            )
+        except Exception as exc:  # pragma: no cover
+            raise RuntimeError(
+                "Failed to create Gemini context cache. "
+                "Retry with --batch-context-cache off to submit without explicit caching. "
+                f"Original error: {exc}"
+            ) from exc
+
+        cache_entry = {
+            "cache_key": cache_key,
+            "cache_name": cache.name,
+            "display_name": display_name,
+            "ttl_seconds": config.batch_cache_ttl_seconds,
+            "system_prompt_sha256": sha256_text(prompt_package.system_prompt),
+            "example_count": len(prompt_package.examples),
+            "examples": build_context_cache_example_records(prompt_package.examples),
+            "prompt_metadata": dict(prompt_package.metadata),
+            "cache": cached_content_snapshot(cache),
+        }
+        context_caches[cache_key] = cache_entry
+        return cache_entry
 
     print(f"[BATCH] Preparing {len(selected_images)} request(s)")
     for index, image_path in enumerate(selected_images, start=1):
@@ -728,16 +892,32 @@ def run_batch_submit(
         ensure_file_ref(image_path)
         for example in prompt_package.examples:
             ensure_file_ref(example.image_path)
+        cache_entry = ensure_context_cache(prompt_package)
+        prompt_metadata = dict(prompt_package.metadata)
+        cached_content_name = None
+        if cache_entry is not None:
+            cached_content_name = str(cache_entry["cache_name"])
+            prompt_metadata["context_cache_key"] = cache_entry["cache_key"]
+            prompt_metadata["context_cache_name"] = cached_content_name
         request_records.append(
             build_batch_request_line(
                 key=image_id,
                 system_prompt=prompt_package.system_prompt,
-                contents=build_batch_request_contents(
-                    user_prompt=build_user_prompt(image_id),
-                    image_path=image_path,
-                    examples=prompt_package.examples,
-                    file_refs=file_refs,
+                contents=(
+                    build_batch_current_request_contents(
+                        user_prompt=build_user_prompt(image_id),
+                        image_path=image_path,
+                        file_refs=file_refs,
+                    )
+                    if cached_content_name
+                    else build_batch_request_contents(
+                        user_prompt=build_user_prompt(image_id),
+                        image_path=image_path,
+                        examples=prompt_package.examples,
+                        file_refs=file_refs,
+                    )
                 ),
+                cached_content_name=cached_content_name,
             )
         )
         item_records.append(
@@ -748,7 +928,9 @@ def run_batch_submit(
                 "source_image": str(image_path.resolve()),
                 "ttl_file": str(ttl_path.resolve()),
                 "model": config.model,
-                "prompt_metadata": dict(prompt_package.metadata),
+                "prompt_metadata": prompt_metadata,
+                "context_cache_key": cache_entry["cache_key"] if cache_entry else None,
+                "context_cache_name": cached_content_name,
             }
         )
 
@@ -784,6 +966,13 @@ def run_batch_submit(
         "input_file": {
             "file_name": uploaded_request_file.name,
             "file_uri": uploaded_request_file.uri,
+        },
+        "context_caching": {
+            "mode": config.batch_context_cache,
+            "enabled": bool(context_caches),
+            "ttl_seconds": config.batch_cache_ttl_seconds,
+            "cache_count": len(context_caches),
+            "caches": list(context_caches.values()),
         },
         "uploaded_files": file_refs,
         "items": item_records,

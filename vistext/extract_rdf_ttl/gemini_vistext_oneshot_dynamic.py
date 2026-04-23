@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 from typing import Callable
@@ -36,17 +37,34 @@ SYSTEM_PROMPT_BY_TYPE = {
 }
 
 
+def chart_type_from_label(image_path: Path) -> str:
+    label_path = image_path.parent.parent / "labels" / f"{image_path.stem}.json"
+    if not label_path.exists():
+        raise FileNotFoundError(f"Cannot infer dry-run chart type without label: {label_path}")
+    payload = json.loads(label_path.read_text(encoding="utf-8"))
+    properties = payload.get("L1_properties")
+    if not isinstance(properties, list) or not properties:
+        raise ValueError(f"Cannot infer chart type from L1_properties: {label_path}")
+    chart_type = str(properties[0]).strip().lower()
+    if chart_type not in SYSTEM_PROMPT_BY_TYPE:
+        raise ValueError(f"Unsupported chart type in label {label_path}: {chart_type}")
+    return chart_type
+
+
 def build_prompt_package(
     image_path: Path,
     context: PromptBuilderContext | None = None,
     classifier: Callable[..., str] = classify_chart_type,
 ) -> PromptPackage:
     effective_context = context or PromptBuilderContext(model=DEFAULT_MODEL, client=None)
-    chart_type = classifier(
-        image_path,
-        model=effective_context.model,
-        client=effective_context.client,
-    )
+    if effective_context.dry_run:
+        chart_type = chart_type_from_label(image_path)
+    else:
+        chart_type = classifier(
+            image_path,
+            model=effective_context.model,
+            client=effective_context.client,
+        )
     if chart_type not in SYSTEM_PROMPT_BY_TYPE:
         raise ValueError(f"Unsupported chart type: {chart_type}")
 

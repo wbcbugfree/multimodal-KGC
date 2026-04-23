@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
@@ -42,6 +43,75 @@ def jsonable(value: Any) -> Any:
     if callable(model_dump):
         return jsonable(model_dump(mode="json", by_alias=True, exclude_none=True))
     return str(value)
+
+
+def sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def build_context_cache_key(
+    *,
+    dataset: str,
+    model: str,
+    system_prompt: str,
+    examples: list[dict[str, Any]],
+) -> str:
+    payload = {
+        "dataset": dataset,
+        "model": model,
+        "system_prompt_sha256": sha256_text(system_prompt),
+        "examples": examples,
+    }
+    encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def cached_content_snapshot(cache: Any) -> dict[str, Any]:
+    return {
+        "name": getattr(cache, "name", None) if not isinstance(cache, dict) else cache.get("name"),
+        "display_name": (
+            getattr(cache, "display_name", None)
+            if not isinstance(cache, dict)
+            else cache.get("displayName") or cache.get("display_name")
+        ),
+        "model": getattr(cache, "model", None) if not isinstance(cache, dict) else cache.get("model"),
+        "expire_time": (
+            getattr(cache, "expire_time", None)
+            if not isinstance(cache, dict)
+            else cache.get("expireTime") or cache.get("expire_time")
+        ),
+        "raw": jsonable(cache),
+    }
+
+
+def create_context_cache(
+    client: Any,
+    *,
+    model: str,
+    system_prompt: str,
+    contents: list[dict[str, Any]],
+    display_name: str,
+    ttl_seconds: int,
+) -> Any:
+    if ttl_seconds <= 0:
+        raise ValueError("Context cache TTL must be greater than 0 seconds")
+    return client.caches.create(
+        model=model,
+        config=types.CreateCachedContentConfig(
+            display_name=display_name,
+            system_instruction=system_prompt,
+            contents=contents,
+            ttl=f"{ttl_seconds}s",
+        ),
+    )
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
