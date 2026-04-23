@@ -36,6 +36,7 @@ GED_MAX_TIME = 300.0
 DEFAULT_GED_WORKERS = 5
 DEFAULT_GRAPH_MODES = ("full_graph", "content_only")
 DEFAULT_NUMERIC_TOLERANCE = 0.0
+DEFAULT_BERT_DEVICE = "auto"
 DEFAULT_STRATEGIES = {
     "zeroshot": "vistext_zeroshot_outputs",
     "oneshot_static": "vistext_oneshot_static_outputs",
@@ -54,6 +55,28 @@ def load_graph_matching_module(offline_bert: bool = True):
     from vistext.evaluation import graph_matching
 
     return graph_matching
+
+
+def resolve_bert_device(device: str) -> str:
+    normalized = device.strip().lower()
+    if normalized == "auto":
+        try:
+            import torch
+
+            return "cuda" if torch.cuda.is_available() else "cpu"
+        except Exception:
+            return "cpu"
+    if normalized == "cuda":
+        try:
+            import torch
+        except Exception as exc:
+            raise SystemExit(f"--bert-device cuda requires PyTorch with CUDA support: {exc}") from exc
+        if not torch.cuda.is_available():
+            raise SystemExit("--bert-device cuda was requested, but torch.cuda.is_available() is False")
+        return "cuda"
+    if normalized == "cpu":
+        return "cpu"
+    raise SystemExit("--bert-device must be one of: auto, cpu, cuda")
 
 
 def normalize_rdf_term(term: Any) -> str:
@@ -580,6 +603,8 @@ def evaluate_strategy(
     graph_mode: str = "full_graph",
     metrics_module=None,
     bert_model_type: Optional[str] = None,
+    bert_device: str = "cpu",
+    bert_batch_size: Optional[int] = None,
     offline_bert: bool = True,
     ged_workers: int = DEFAULT_GED_WORKERS,
     numeric_tolerance: float = DEFAULT_NUMERIC_TOLERANCE,
@@ -608,7 +633,13 @@ def evaluate_strategy(
         gold_tokens, pred_tokens, gold_edges, pred_edges
     )
     print(f"[{strategy_name}:{graph_mode}] BERTScore")
-    bert_p, bert_r, bert_f = metrics.get_bert_score(gold_edges, pred_edges, model_type=bert_model_type)
+    bert_p, bert_r, bert_f = metrics.get_bert_score(
+        gold_edges,
+        pred_edges,
+        model_type=bert_model_type,
+        device=bert_device,
+        batch_size=bert_batch_size,
+    )
     triple_accs = [
         metrics.get_triple_match_accuracy(pred_graph, gold_graph)
         for pred_graph, gold_graph in zip(structural_pred_graphs, structural_gold_graphs)
@@ -708,6 +739,8 @@ def build_report(
     extract_root: Path,
     labels_dir: Path,
     bert_model_type: Optional[str] = None,
+    bert_device: str = "cpu",
+    bert_batch_size: Optional[int] = None,
     offline_bert: bool = True,
     strategy_names: Optional[List[str]] = None,
     graph_modes: Optional[List[str]] = None,
@@ -744,6 +777,11 @@ def build_report(
                 "relative_tolerance": numeric_tolerance,
                 "structural_metrics_only": True,
             },
+            "bert_score": {
+                "model_type": bert_model_type,
+                "device": bert_device,
+                "batch_size": bert_batch_size,
+            },
         },
         "graph_mode_definitions": {
             "full_graph": "Evaluate all triples in the normalized RDF graph.",
@@ -770,6 +808,8 @@ def build_report(
                 graph_mode=graph_mode,
                 metrics_module=metrics_module,
                 bert_model_type=bert_model_type,
+                bert_device=bert_device,
+                bert_batch_size=bert_batch_size,
                 offline_bert=offline_bert,
                 ged_workers=ged_workers,
                 numeric_tolerance=numeric_tolerance,
@@ -797,6 +837,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--labels-dir", default=str(DEFAULT_LABELS_DIR))
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     parser.add_argument("--bert-model-type", default=None)
+    parser.add_argument(
+        "--bert-device",
+        choices=("auto", "cpu", "cuda"),
+        default=DEFAULT_BERT_DEVICE,
+        help="Device for BERTScore inference. Use cuda for GPU acceleration, cpu for CPU, or auto to prefer CUDA when available.",
+    )
+    parser.add_argument(
+        "--bert-batch-size",
+        type=int,
+        default=None,
+        help="Optional BERTScore batch size. Lower this if cuda runs out of memory.",
+    )
     parser.add_argument(
         "--strategies",
         nargs="+",
@@ -837,11 +889,16 @@ def main() -> int:
         raise SystemExit("--ged-workers must be at least 1")
     if args.numeric_tolerance < 0:
         raise SystemExit("--numeric-tolerance must be non-negative")
+    if args.bert_batch_size is not None and args.bert_batch_size < 1:
+        raise SystemExit("--bert-batch-size must be at least 1")
+    bert_device = resolve_bert_device(args.bert_device)
     report = build_report(
         gold_dir=Path(args.gold_dir),
         extract_root=Path(args.extract_root),
         labels_dir=Path(args.labels_dir),
         bert_model_type=args.bert_model_type,
+        bert_device=bert_device,
+        bert_batch_size=args.bert_batch_size,
         offline_bert=not args.allow_online_model_download,
         strategy_names=args.strategies,
         graph_modes=args.graph_modes,

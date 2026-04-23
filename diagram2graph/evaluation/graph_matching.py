@@ -175,7 +175,7 @@ def split_to_edges(graphs):
     return processed_graphs
 
 
-def get_bert_score(all_gold_edges, all_pred_edges, model_type=None):
+def get_bert_score(all_gold_edges, all_pred_edges, model_type=None, device='cpu', batch_size=None):
     """
     Compute BERT score for gold and predicted edges.
     
@@ -183,6 +183,8 @@ def get_bert_score(all_gold_edges, all_pred_edges, model_type=None):
     - all_gold_edges: List of gold edges
     - all_pred_edges: List of predicted edges
     - model_type: BERT model to use (default: roberta-large for English)
+    - device: Device for BERTScore inference, e.g. 'cpu' or 'cuda'
+    - batch_size: Optional BERTScore batch size
     
     Returns:
     - precisions: Precision scores
@@ -200,13 +202,17 @@ def get_bert_score(all_gold_edges, all_pred_edges, model_type=None):
                 candidates.append(pred_edge)
                 ref_cand_index[(gold_edge, pred_edge)] = len(references) - 1
 
+    score_kwargs = {"idf": False, "device": device}
+    if batch_size is not None:
+        score_kwargs["batch_size"] = batch_size
+
     # Pass model_type if specified
     if model_type:
-        _, _, bs_F1 = score_bert(cands=candidates, refs=references, model_type=model_type, idf=False, device='cpu')
+        _, _, bs_F1 = score_bert(cands=candidates, refs=references, model_type=model_type, **score_kwargs)
     else:
-        _, _, bs_F1 = score_bert(cands=candidates, refs=references, lang='en', idf=False, device='cpu')
+        _, _, bs_F1 = score_bert(cands=candidates, refs=references, lang='en', **score_kwargs)
 
-    print("Computed bert scores for all pairs")
+    print(f"Computed bert scores for all pairs on {device}")
 
     precisions, recalls, f1s = [], [], []
     for (gold_edges, pred_edges) in zip(all_gold_edges, all_pred_edges):
