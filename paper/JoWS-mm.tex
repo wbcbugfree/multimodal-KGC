@@ -27,6 +27,12 @@
 \definecolor{mdheading}{RGB}{0,92,175}
 \definecolor{mdaccent}{RGB}{127,31,133}
 \definecolor{mdstring}{RGB}{0,110,91}
+\definecolor{ttlkeyword}{RGB}{0,92,175}
+\definecolor{ttlresource}{RGB}{127,31,133}
+\definecolor{ttlclass}{RGB}{179,92,0}
+\definecolor{ttlproperty}{RGB}{0,110,91}
+\definecolor{ttlstring}{RGB}{150,64,8}
+\definecolor{ttlcomment}{RGB}{105,112,122}
 
 \lstset{
     basicstyle=\ttfamily\footnotesize,
@@ -61,6 +67,20 @@
     framerule=0.3pt,
     rulecolor=\color{black!20},
     framesep=2pt,
+    sensitive=true,
+    alsoletter={:@},
+    morestring=[b]",
+    stringstyle=\color{ttlstring},
+    morecomment=[l]\#,
+    commentstyle=\itshape\color{ttlcomment},
+    morekeywords={@prefix,a},
+    keywordstyle=\bfseries\color{ttlkeyword},
+    morekeywords=[2]{:AreaChart,:Axis,:BarChart,:Branches,:DataPoint,:DataStore,:Dashed,:Decision,:Delay,:DependsOn,:Edge,:EndEvent,:Follows,:Gateway,:LineChart,:Node,:Process,:Solid,:Start,:StartEvent,:Task,:Terminator},
+    keywordstyle=[2]\bfseries\color{ttlclass},
+    morekeywords=[3]{:belongsTo,:label,:relationshipType,:relationshipValue,:shape,:source,:target,:title,:xAxis,:xValue,:yAxis,:yValue},
+    keywordstyle=[3]\color{ttlproperty},
+    morekeywords=[4]{:Chart,:Edge5,:Edge6,:DataPoint1,:DataPoint66,:Node1,:Node5,:Node6,:Node9,:XAxis,:YAxis},
+    keywordstyle=[4]\color{ttlresource},
     aboveskip=0pt,
     belowskip=0pt,
     breaklines=true,
@@ -186,9 +206,11 @@ Diagram2Graph & Flow/process diagrams & 219 & 219 \\
 \end{table}
 
 \subsubsection{VisText-derived Chart-to-RDF Dataset}
-VisText was originally introduced for semantically rich chart captioning \citep{vistext}. We repurpose it as a chart-to-RDF dataset by defining the expected graph content for each chart image. The target output contains one chart resource typed as a bar, line, or area chart; the visible chart title; x-axis and y-axis resources with their visible titles when present; and one datapoint resource for each observation represented in the plot. A datapoint records its x-value, y-value, and membership in the chart. Thus, the target graph is intended to recover the structured content of the chart rather than to describe the chart in prose.
+VisText was originally introduced for semantically rich chart captioning \citep{vistext}. We derive a chart-to-RDF dataset by defining a compact reference graph for each usable chart image. The target graph contains one chart resource typed as a bar, line, or area chart; the visible chart title; x-axis and y-axis resources with their visible titles when present; and one datapoint resource for each observation represented in the plot. Each datapoint records its x-value, y-value, and membership in the chart.
 
-The VisText target schema and a representative chart-to-RDF example are jointly shown in Figure~\ref{fig:vistext_example}. The schema is intentionally small so that evaluation focuses on whether the model recovers the chart semantics and data values, rather than on a large external ontology. Not every original VisText item yields a reliable RDF reference graph. Some original labels contain damaged categories, inconsistent tabular annotations, or insufficient information to recover the plotted data. Such items are excluded from labelled evaluation, while the remaining items are released as RDF/Turtle references.
+The VisText task requires recovery of both explicit textual elements and visually encoded quantitative content. This distinction is especially important for line and area charts. In many such images, individual datapoints are not directly labelled; the model must infer the intended number of observations from the chart title, axis titles, tick marks, temporal range, and plotted marks, and must then estimate the corresponding values from the visual geometry of the plot area. In the case shown in Figure~\ref{fig:vistext_example}, the model must infer from the chart title that the area chart should contain one datapoint for each year in the reported period.
+
+The VisText target schema and a representative chart-to-RDF example are jointly shown in Figure~\ref{fig:vistext_example}. The schema is intentionally small so that evaluation focuses on chart semantics and data values. Not every original VisText item yields a reliable RDF reference graph. Some original labels contain damaged categories, inconsistent tabular annotations, or insufficient information to recover the plotted data. Such items are excluded from labelled evaluation, while the remaining items are released as RDF/Turtle references.
 
 \begin{figure}[H]
 \centering
@@ -206,8 +228,8 @@ Chart & \texttt{:Chart} with \texttt{:title}, \texttt{:xAxis}, \texttt{:yAxis} \
 Axis & \texttt{:XAxis}, \texttt{:YAxis}, \texttt{:Axis} \\
 Data & \texttt{:DataPoint}, \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongsTo} \\
 \bottomrule
+\vspace{1pt}
 \end{tabularx}
-\vspace{0.7em}
 \centering
 \includegraphics[width=\linewidth]{img/vistext_example.png}
 \end{minipage}\hfill
@@ -245,7 +267,7 @@ Data & \texttt{:DataPoint}, \texttt{:xValue}, \texttt{:yValue}, \texttt{:belongs
 \end{figure}
 
 \subsubsection{Diagram2Graph-derived Diagram-to-RDF Dataset}
-Diagram2Graph provides diagram images and JSON annotations describing nodes, edges, labels, shapes, and relationship types \citep{diagram2graph}. We use the dataset as a diagram-to-RDF benchmark by expressing the same graph information in Turtle. The target output contains one resource for each visible diagram node and one resource for each directed edge. Node resources encode the visible node label, node type, and shape. Edge resources encode source node, target node, edge style, relationship type, and optional visible edge label. This representation preserves the diagram topology while using a compact RDF vocabulary suitable for direct graph matching. The Diagram2Graph target schema and a representative diagram-to-RDF example are jointly shown in Figure~\ref{fig:diagram_example}.
+Diagram2Graph provides diagram images and JSON annotations describing nodes, edges, labels, shapes, and relationship types \citep{diagram2graph}. We use the dataset as a diagram-to-RDF benchmark by expressing the same graph information in Turtle. The target output contains one resource for each visible diagram node and one resource for each directed edge. Node resources encode the visible node label, node type, and shape. Edge resources encode source node, target node, edge style, relationship type, and optional visible edge label. The Diagram2Graph target schema and a representative diagram-to-RDF example are jointly shown in Figure~\ref{fig:diagram_example}.
 
 \begin{figure}[H]
 \centering
@@ -263,10 +285,10 @@ Shapes & \texttt{:StartEvent}, \texttt{:EndEvent}, \texttt{:Task}, \texttt{:Gate
 Edges & \texttt{:Edge}, \texttt{:Solid}, \texttt{:Dashed}, \texttt{:Follows}, \texttt{:Branches}, \texttt{:DependsOn} \\
 Predicates & \texttt{:label}, \texttt{:shape}, \texttt{:source}, \texttt{:target}, \texttt{:relationshipType}, \texttt{:relationshipValue} \\
 \bottomrule
+\vspace{1pt}
 \end{tabularx}
-\vspace{0.7em}
 \centering
-\includegraphics[width=\linewidth]{img/diagram2graph_example.png}
+\includegraphics[width=0.8\linewidth]{img/diagram2graph_example.png}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.45\textwidth}
 \vspace{0pt}
@@ -306,7 +328,7 @@ Predicates & \texttt{:label}, \texttt{:shape}, \texttt{:source}, \texttt{:target
 
 \subsection{Prompting Strategies}\label{subsec:prompting}
 
-All generation strategies use a dataset-specific zero-shot system prompt that defines the task, schema, and output constraints. The prompts instruct the model to return RDF/Turtle only, without explanations, Markdown fences, comments, or alternative serialization formats. The complete zero-shot system prompts are provided in~\ref{app:system_prompts}.
+All generation strategies use a dataset-specific zero-shot system prompt that defines the task, schema, and output constraints. The complete zero-shot system prompts are provided in~\ref{app:system_prompts}.
 
 \subsubsection{Zero-Shot Prompting}
 The model receives only the system prompt, a short user instruction, and the target image. This setting tests whether the model can infer the required graph directly from the task description and schema.
@@ -322,7 +344,7 @@ Few-shot prompting provides all curated examples for the dataset. VisText uses o
 
 \subsection{Generation Model and Validity Criterion}
 
-All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on either labelled dataset. A generated output is considered eligible for evaluation only if it can be parsed as RDF/Turtle. This validity requirement is not itself a semantic quality metric, but it is necessary for treating the output as a knowledge graph rather than as unconstrained text.
+All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on either labelled dataset. A generated output is considered eligible for evaluation only if it can be parsed as RDF/Turtle.
 
 \section{Evaluation on Labelled Datasets}\label{sec:evaluation}
 
@@ -332,8 +354,6 @@ For VisText and Diagram2Graph, predicted RDF graphs are compared with reference 
 
 Triple-match precision, recall, and F1 measure exact overlap between predicted and reference triples. This is the strictest content metric and directly penalizes missing and hallucinated triples. Triple-match accuracy is also reported as a prediction-oriented exact-match rate; it measures the proportion of predicted triples that appear in the reference graph and is therefore most closely related to precision. Normalized graph edit distance (GED) treats the triple set as a labelled directed multigraph and estimates the normalized edit cost required to transform the predicted graph into the reference graph. BLEU and ROUGE compare serialized triples as textual units under one-to-one assignment, providing softer lexical similarity signals. G-BERTScore applies contextual embedding similarity to serialized triples and is intended to capture semantically close but lexically non-identical triples \citep{bleu,rouge,bertscore}. The formal definitions used in the paper are provided in~\ref{app:metric_definitions}.
 
-A pure graph-isomorphism accuracy is not reported because topology alone can overestimate performance when literal values or entity labels differ.
-
 \subsection{VisText Evaluation Modes and Numeric Tolerance}
 
 VisText graphs contain both fixed structural triples and content-bearing triples. The full-graph mode evaluates all normalized triples. The content-only mode evaluates literal-valued triples together with the chart-type triple. This projection reduces the influence of fixed structural statements such as axis declarations and datapoint membership, while preserving chart titles, axis titles, data values, and chart type.
@@ -342,7 +362,7 @@ VisText evaluation also supports an optional relative numeric tolerance for quan
 
 \subsection{LLM-as-a-Judge Validation Framework}
 
-The LLM-as-a-judge framework is evaluated on the labelled datasets before being used on unlabelled data. It uses OpenAI GPT-5-mini as the judge model, whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model family for judging reduces the risk that the evaluator systematically favours generations from its own model family. Judge outputs are constrained through structured response schemas, so the evaluation produces typed scores and preferences rather than free-form prose.
+The LLM-as-a-judge framework is evaluated on the labelled datasets before being used on unlabelled data. It uses OpenAI GPT-5-mini as the judge model, whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model family for judging reduces the risk that the evaluator systematically favours generations from its own model family \citep{spiliopoulou2025playfavorites}. Judge outputs are constrained through structured response schemas, so the evaluation produces typed scores and preferences.
 
 The judge is used in two complementary modes. In direct scoring, the judge receives the source image and one candidate RDF/Turtle graph. It assigns five criterion scores and one overall score on a 1-to-5 scale. In pairwise comparison, the judge receives the same source image and two candidate graphs generated by different prompting strategies. It selects the better graph for each criterion and gives an overall preference. Direct scoring supports absolute quality analysis, while pairwise comparison supports strategy ranking without requiring the judge to calibrate scores across unrelated images.
 
@@ -364,11 +384,11 @@ Specificity & Whether triples are precise rather than vague or generic \\
 \label{tab:judge_rubric}
 \end{table}
 
-The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criterion-based KG assessment to the image-to-RDF setting. The judge must consider the source image and the generated graph together: a graph can be syntactically valid but still fail due to hallucinated labels, missing diagram edges, incorrect chart values, or overly generic triples. For labelled datasets, direct judge scores are compared with traditional metric scores, and pairwise judge preferences are compared with metric-derived preferences. VisText judge validation uses content-only traditional metrics, whereas Diagram2Graph judge validation uses full-graph metrics.
+The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criterion-based KG assessment to the image-to-RDF setting. The judge must consider the source image and the generated graph together: a graph can be syntactically valid but still fail due to hallucinated labels, missing diagram edges, incorrect chart values, or overly generic triples. For labelled datasets, direct judge scores are compared with traditional metric scores, and pairwise judge preferences are compared with metric-derived preferences.
 
 \subsection{Evaluation Results}\label{sec:results}
 
-The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. The standard dataset-level evaluation reports whole-graph metrics, while chart-type breakdowns and numeric-tolerance analyses use the VisText content-only mode because it better isolates performance on the core extracted information. At the present stage, the available VisText report contains zero-shot content-only results with a 1\% relative tolerance for eligible numeric datapoint values. Entries for modes or prompting strategies that have not yet been evaluated remain marked as pending.
+The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. The standard dataset-level evaluation reports whole-graph metrics, while chart-type breakdowns and numeric-tolerance analyses use the VisText content-only mode because it better isolates performance on the core extracted information. At the present stage, the available VisText reports contain zero-shot and dynamic one-shot content-only results with a 1\% relative tolerance for eligible numeric datapoint values. Entries for modes or prompting strategies that have not yet been evaluated remain marked as pending.
 
 \subsection{VisText Labelled Evaluation}
 
@@ -389,7 +409,7 @@ Few-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & 
 \addlinespace
 Zero-shot & Content only & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 0.9395 & 0.9418 & 0.9695 \\
 Static one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Content only & 0.7142 & 0.6432 & 0.6769 & 0.7633 & 0.0929 & 0.9414 & 0.9450 & 0.9723 \\
 Few-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
@@ -414,16 +434,16 @@ Zero-shot & Area & 0.6175 & 0.5092 & 0.5581 & 0.7193 & 0.1346 & 0.9001 & 0.9075 
 Static one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 Static one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 Static one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Bar & 0.7785 & 0.7768 & 0.7776 & 0.7854 & 0.0642 & 0.9717 & 0.9699 & 0.9962 \\
+Dynamic one-shot & Line & 0.6902 & 0.6144 & 0.6501 & 0.7703 & 0.1058 & 0.9235 & 0.9316 & 0.9585 \\
+Dynamic one-shot & Area & 0.6428 & 0.5125 & 0.5703 & 0.7185 & 0.1316 & 0.9043 & 0.9135 & 0.9430 \\
 Few-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 Few-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. All chart-type results use content-only mode; the zero-shot results shown here use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
+\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. All chart-type results use content-only mode and the reported completed rows use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
 \label{tab:vistext_chart_type_results}
 \end{table*}
 
@@ -446,7 +466,7 @@ Table~\ref{tab:vistext_tolerance_results} records the effect of numeric toleranc
 \label{tab:vistext_tolerance_results}
 \end{table}
 
-For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 1.0000 accuracy (100\%), so the classification component is reported in text rather than as a separate table.
+For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 100\% accuracy, so the classification component is reported in text rather than as a separate table.
 
 \subsection{Diagram2Graph Labelled Evaluation}
 
