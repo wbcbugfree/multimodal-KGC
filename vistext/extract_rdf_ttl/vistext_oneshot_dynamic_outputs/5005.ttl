@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of passenger cars sold in Pakistan from July 2008 to June 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Month" .
+
+:YAxis a :Axis ;
+    :title "Number of cars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jul 2008- Jun 2009" ;
+    :yValue "68000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Jul 2009- Jun 2010" ;
+    :yValue "103000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Jul 2010- Jun 2011" ;
+    :yValue "110000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jul 2011- Jun 2012" ;
+    :yValue "135000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jul 2012- Jun 2013" ;
+    :yValue "101000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jul 2013- Jun 2014" ;
+    :yValue "98000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jul 2014- Jun 2015" ;
+    :yValue "131000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jul 2015- Jun 2016" ;
+    :yValue "164000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jul 2016- Jun 2017" ;
+    :yValue "170000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Jul 2017- Jun 2018" ;
+    :yValue "198000" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Jul 2018- Jun 2019" ;
+    :yValue "187000" ;
+    :belongsTo :Chart .

@@ -1,0 +1,87 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most successful music tours worldwide in 2020 , based on gross revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Gross revenue in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Music tour" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "25.7" ;
+    :yValue "Andrea Bocelli" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "24.3" ;
+    :yValue "Aventura" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "71.2" ;
+    :yValue "Celine Dion" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "26.6" ;
+    :yValue "Dead & Company" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "Eagles" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "87.4" ;
+    :yValue "Elton John" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "24.4" ;
+    :yValue "George Strait" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Jonas Brothers" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "Madonna" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "Michael Buble" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "40.5" ;
+    :yValue "Post Malone" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "44.8" ;
+    :yValue "Queen + Adam Lambert" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "25.5" ;
+    :yValue "Tool" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "58.5" ;
+    :yValue "Trans-Siberian Orchestra" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "52.1" ;
+    :yValue "U2" ;
+    :belongsTo :Chart .

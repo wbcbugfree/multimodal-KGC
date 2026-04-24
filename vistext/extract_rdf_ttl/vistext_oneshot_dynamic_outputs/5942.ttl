@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of coronavirus (COVID-19) drugs and vaccines in development worldwide as of January 7 , 2021 , by phase" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Phase" .
+
+:YAxis a :Axis ;
+    :title "Number of drugs and vaccines" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Discontinued" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Launched" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "No development reported" ;
+    :yValue "13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Phase I Clinical" ;
+    :yValue "78" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Phase II Clinical" ;
+    :yValue "170" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Phase III Clinical" ;
+    :yValue "78" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Pre-registration" ;
+    :yValue "6" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Preclinical" ;
+    :yValue "672" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Registered" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Suspended" ;
+    :yValue "2" ;
+    :belongsTo :Chart .

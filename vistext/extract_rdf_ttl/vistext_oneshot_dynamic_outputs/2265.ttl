@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Increase in offline retail sales volume of fast-moving consumer goods due to the coronavirus (COVID-19) pandemic in Russia from April 6 to April 12 , 2020 , by type" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Sales increase" .
+
+:YAxis a :Axis ;
+    :title "consumer goods" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "-0.12" ;
+    :yValue "Buckwheat" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "-0.15" ;
+    :yValue "Pasta products" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Pasteurized milk" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Pelmeni / dumplings" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "-0.1" ;
+    :yValue "Rice" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Soap" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "-0.05" ;
+    :yValue "Sugar" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-0.2" ;
+    :yValue "Toilet paper" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Vodka" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.55" ;
+    :yValue "Wet wipes" ;
+    :belongsTo :Chart .

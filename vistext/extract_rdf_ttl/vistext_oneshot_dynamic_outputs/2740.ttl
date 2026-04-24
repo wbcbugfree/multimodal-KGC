@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Total cost of violence to the U.S. economy in 2010 , by static and dynamic indicators (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Economic effect in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Static and dynamic indicators" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "176134" ;
+    :yValue "Assault, lost productivity (d..." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "38542" ;
+    :yValue "Assault, medical costs (stat..." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "48874" ;
+    :yValue "Homicide, lost productivity ..." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "418" ;
+    :yValue "Homicide, medical costs (st..." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "41894" ;
+    :yValue "Incarceration, government ..." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "71059" ;
+    :yValue "Incarceration, lost work (dy..." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "5832" ;
+    :yValue "Legal and judicial, governm..." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "56368" ;
+    :yValue "Police, wages (static)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "20866" ;
+    :yValue "Rape, lost productivity (dy..." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "799" ;
+    :yValue "Robbery, property damage ..." ;
+    :belongsTo :Chart .

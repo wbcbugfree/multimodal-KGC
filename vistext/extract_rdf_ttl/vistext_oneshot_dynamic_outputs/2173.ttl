@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 U.S. states based on number of laying hens in 2019 (in 1,000 heads)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "State" .
+
+:YAxis a :Axis ;
+    :title "Number in thousand heads" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Arkansas" ;
+    :yValue "14900" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "California" ;
+    :yValue "13800" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Georgia" ;
+    :yValue "20000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Indiana" ;
+    :yValue "34700" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Iowa" ;
+    :yValue "58300" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Michigan" ;
+    :yValue "15400" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "North Carolina" ;
+    :yValue "15100" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Ohio" ;
+    :yValue "36400" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Pennsylvania" ;
+    :yValue "30200" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Texas" ;
+    :yValue "22400" ;
+    :belongsTo :Chart .

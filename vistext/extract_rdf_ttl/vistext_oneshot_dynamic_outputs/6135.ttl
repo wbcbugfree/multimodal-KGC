@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Number of confirmed cases and deaths of coronavirus (COVID-19) in Chile from March 4 to December 3 , 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Deaths" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Mar 4, 2020" ;
+    :yValue "0" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Apr 1, 2020" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "May 1, 2020" ;
+    :yValue "227" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jun 1, 2020" ;
+    :yValue "1113" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jul 1, 2020" ;
+    :yValue "5756" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Aug 1, 2020" ;
+    :yValue "9457" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Sep 1, 2020" ;
+    :yValue "11321" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Oct 1, 2020" ;
+    :yValue "12822" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Nov 1, 2020" ;
+    :yValue "14207" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 3, 2020" ;
+    :yValue "15519" ;
+    :belongsTo :Chart .

@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of active enterprises in Canada in 2013 , by enterprise size" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Enterprise size in employees" .
+
+:YAxis a :Axis ;
+    :title "Number of active enterprises" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1-4" ;
+    :yValue "840000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "10-19" ;
+    :yValue "135000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "100-199" ;
+    :yValue "17000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1000 or more" ;
+    :yValue "3000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "20-49" ;
+    :yValue "85000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "200-249" ;
+    :yValue "4000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "250-499" ;
+    :yValue "8000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5-9" ;
+    :yValue "250000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "50-99" ;
+    :yValue "30000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "500-999" ;
+    :yValue "3000" ;
+    :belongsTo :Chart .

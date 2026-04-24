@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fastest growing food and beverage companies in Canada between 2016 and 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year-over-year sales growth" .
+
+:YAxis a :Axis ;
+    :title "business" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Boulangerie Gadoua Ltd." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Campbell Company of Canada" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.25" ;
+    :yValue "Coca-Cola Refreshments Canada ..." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.45" ;
+    :yValue "Cott Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Dare Foods Limited" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "General Mills Canada Corporation" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.29" ;
+    :yValue "Mondelez Canada Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.44" ;
+    :yValue "Pinty's Delicious Foods Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.18" ;
+    :yValue "Premium Brands Holdings Corpor..." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Rogers Sugar Ltd." ;
+    :belongsTo :Chart .

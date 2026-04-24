@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average annual boating days by boat type in the U.S. 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Average annual boating days" .
+
+:YAxis a :Axis ;
+    :title "Type of boat" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "10.2" ;
+    :yValue "Bass Boat" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "8.1" ;
+    :yValue "Bowrider/Run About/Jet Boat" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5.5" ;
+    :yValue "Center Console" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "9.1" ;
+    :yValue "Cruiser" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10.3" ;
+    :yValue "Deck" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5.8" ;
+    :yValue "High Performance" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11.2" ;
+    :yValue "Kayak/Canoe" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "7.9" ;
+    :yValue "Multispecies/Other Fish Boat" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10.7" ;
+    :yValue "Personal Watercraft" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.3" ;
+    :yValue "Pontoon" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "10.7" ;
+    :yValue "Sail Boat" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "9.3" ;
+    :yValue "Sport Fishing Yacht" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "8.5" ;
+    :yValue "Wakeboard/Ski Boat" ;
+    :belongsTo :Chart .

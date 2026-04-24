@@ -1,0 +1,37 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :LineChart ;
+    :title "Number of cumulative cases of coronavirus (COVID-19) worldwide from January 22 , 2020 to January 5 , 2021 , by day" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of cumulative cases" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "January 22 , 2020" ;
+    :yValue "555" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "April" ;
+    :yValue "1000000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "July" ;
+    :yValue "11000000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "October" ;
+    :yValue "35000000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2021" ;
+    :yValue "86000000" ;
+    :belongsTo :Chart .

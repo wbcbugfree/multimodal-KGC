@@ -116,9 +116,10 @@ def create_context_cache(
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2, ensure_ascii=False)
-        handle.write("\n")
+    encoded = json.dumps(jsonable(payload), indent=2, ensure_ascii=False)
+    tmp_path = path.with_name(f"{path.name}.tmp")
+    tmp_path.write_text(f"{encoded}\n", encoding="utf-8")
+    tmp_path.replace(path)
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -131,10 +132,12 @@ def read_json(path: Path) -> dict[str, Any]:
 
 def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
+    tmp_path = path.with_name(f"{path.name}.tmp")
+    with tmp_path.open("w", encoding="utf-8") as handle:
         for record in records:
-            handle.write(json.dumps(record, ensure_ascii=False))
+            handle.write(json.dumps(jsonable(record), ensure_ascii=False))
             handle.write("\n")
+    tmp_path.replace(path)
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:

@@ -1,0 +1,47 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading defense suppliers dependency on Ministry of Defence (MOD) business in the United Kingdom (UK) from 2005/06 to 2019/20" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Ferrovial SA" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2013/14**" ;
+    :yValue "0.01" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2014/15" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2015/16" ;
+    :yValue "0.02" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2016/17" ;
+    :yValue "0.023" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2017/18" ;
+    :yValue "0.053" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2018/19" ;
+    :yValue "0.12" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2019/20" ;
+    :yValue "0.138" ;
+    :belongsTo :Chart .

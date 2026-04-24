@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Employment in the hospitality and tourism workforce in the United Kingdom (UK) in 2014 , by sector" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "sector" .
+
+:YAxis a :Axis ;
+    :title "Workforce number" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Camp sites and other accommoda..." ;
+    :yValue "30000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Food and service management" ;
+    :yValue "300000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Holiday parks and other short-sta..." ;
+    :yValue "85000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Hospitality services" ;
+    :yValue "480000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Hotels" ;
+    :yValue "390000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Museum and cultural attractions" ;
+    :yValue "65000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Organisation of conventions and t..." ;
+    :yValue "32000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Pubs, bars and nightclubs" ;
+    :yValue "450000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Restaurants" ;
+    :yValue "800000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Tourist services" ;
+    :yValue "35000" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Visitor attractions" ;
+    :yValue "400000" ;
+    :belongsTo :Chart .

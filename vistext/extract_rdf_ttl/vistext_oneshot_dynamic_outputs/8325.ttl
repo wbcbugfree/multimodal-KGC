@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of electoral votes from Hawaii designated to each party 's candidate in U.S. presidential elections from 1960 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year and candidate" .
+
+:YAxis a :Axis ;
+    :title "Democrat" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1960: John F. Kennedy*" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1964: Lyndon B. Johnson*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1968: Hubert Humphrey" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "1976: Jimmy Carter*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1980: Jimmy Carter" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1988: Michael Dukakis" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1992: Bill Clinton*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1996: Bill Clinton*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2000: Al Gore" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2004: John Kerry" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2008: Barack Obama*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "2012: Barack Obama*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "2016: Hillary Clinton" ;
+    :yValue "3" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "2020: Joe Biden*" ;
+    :yValue "4" ;
+    :belongsTo :Chart .

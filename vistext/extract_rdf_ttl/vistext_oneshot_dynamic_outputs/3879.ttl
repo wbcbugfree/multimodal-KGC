@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Houston Astros all-time games played leaders as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Houston Astros all-time games played leaders" .
+
+:YAxis a :Axis ;
+    :title "Number of games played" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Bob Watson" ;
+    :yValue "1381" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Brad Ausmus" ;
+    :yValue "1252" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Cesar Cedeno" ;
+    :yValue "1512" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Craig Biggio" ;
+    :yValue "2850" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Jeff Bagwell" ;
+    :yValue "2150" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jim Wynn" ;
+    :yValue "1426" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jose Altuve" ;
+    :yValue "1281" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jose Cruz" ;
+    :yValue "1870" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Lance Berkman" ;
+    :yValue "1592" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Terry Puhl" ;
+    :yValue "1531" ;
+    :belongsTo :Chart .

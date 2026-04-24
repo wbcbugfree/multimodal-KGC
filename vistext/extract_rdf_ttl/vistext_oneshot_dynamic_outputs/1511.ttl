@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Mexico 's IPC stock exchange index from January 2 to October 15 , 2020 (in Mexican pesos)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "IPC in Mexican pesos" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Jan 2, 2020" ;
+    :yValue "44665" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Feb 1, 2020" ;
+    :yValue "44108" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Mar 1, 2020" ;
+    :yValue "41324" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Apr 1, 2020" ;
+    :yValue "33591" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "May 1, 2020" ;
+    :yValue "36423" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Jun 1, 2020" ;
+    :yValue "36122" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Jul 1, 2020" ;
+    :yValue "37716" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Aug 1, 2020" ;
+    :yValue "37020" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Sep 1, 2020" ;
+    :yValue "36840" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Oct 1, 2020" ;
+    :yValue "37459" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Oct 15, 2020" ;
+    :yValue "37820" ;
+    :belongsTo :Chart .

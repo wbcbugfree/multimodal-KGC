@@ -1,0 +1,102 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Reported number of slaves owned by U.S. presidents who served from 1789 to 1877 (throughout their lifetimes)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of slaves" .
+
+:YAxis a :Axis ;
+    :title "U.S. president" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Abraham Lincoln" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "200" ;
+    :yValue "Andrew Jackson *" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Andrew Johnson" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Franklin Pierce" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "123" ;
+    :yValue "George Washington *" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "James Buchanan **" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "25" ;
+    :yValue "James K. Polk" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "100" ;
+    :yValue "James Madison" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "75" ;
+    :yValue "James Monroe" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "John Adams" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "John Quincy Adams" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "70" ;
+    :yValue "John Tyler" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Martin Van Buren" ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "0" ;
+    :yValue "Millard Fillmore" ;
+    :belongsTo :Chart .
+
+:DataPoint15 a :DataPoint ;
+    :xValue "600" ;
+    :yValue "Thomas Jefferson" ;
+    :belongsTo :Chart .
+
+:DataPoint16 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "Ulysses S. Grant" ;
+    :belongsTo :Chart .
+
+:DataPoint17 a :DataPoint ;
+    :xValue "11" ;
+    :yValue "William Henry Harrison" ;
+    :belongsTo :Chart .
+
+:DataPoint18 a :DataPoint ;
+    :xValue "150" ;
+    :yValue "Zachary Taylor" ;
+    :belongsTo :Chart .
