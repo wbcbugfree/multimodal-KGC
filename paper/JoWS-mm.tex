@@ -134,7 +134,7 @@ Knowledge graphs provide a principled way to address this gap by representing en
 
 Existing research addresses important parts of this problem, but not the complete image-to-RDF task. Chart-understanding benchmarks and models focus on chart question answering, chart-to-text generation, or data recovery \citep{chartocr,chartqa,vistext,unichart,chartllama}. Diagram-understanding work can extract graph-like representations, but the target format is usually JSON, Mermaid, or another task-specific serialization rather than RDF \citep{diagram2graph,flowlearn}. Table-understanding systems increasingly process table images directly, but they commonly return reconstructed tables or task-specific answers rather than knowledge graphs \citep{mmtable,tabpedia}. Conversely, Semantic Web table interpretation typically assumes that tabular data are already available in textual or structured form \citep{semtab2022,semtab2024}. These lines of work motivate direct image-to-RDF construction, but they do not provide an end-to-end framework for producing RDF knowledge graphs directly from heterogeneous scientific images.
 
-This paper studies such an end-to-end formulation. We use Gemini 3 Flash as a large vision-language extraction engine and constrain its output to RDF/Turtle under predefined schemas. The framework is prompt-based and does not require task-specific fine-tuning. This design avoids decomposing visual interpretation, graph construction, and RDF serialization into independently optimized stages, a choice that is consistent with evidence from information extraction that pipeline architectures can propagate upstream errors, whereas joint models can reduce this dependency and improve extraction performance \citep{li2017neuraljoint}. We compare zero-shot, one-shot, few-shot, and dynamic one-shot prompting where applicable.
+This paper studies such an end-to-end formulation. We use Gemini 3 Flash \citep{googledeepmind2025gemini3flashcard} as a large vision-language extraction engine and constrain its output to RDF/Turtle under predefined schemas. The framework is prompt-based and does not require task-specific fine-tuning. This design avoids decomposing visual interpretation, graph construction, and RDF serialization into independently optimized stages, a choice that is consistent with evidence from information extraction that pipeline architectures can propagate upstream errors, whereas joint models can reduce this dependency and improve extraction performance \citep{li2017neuraljoint}. We compare zero-shot, one-shot, few-shot, and dynamic one-shot prompting where applicable.
 
 The main contributions are as follows:
 \begin{itemize}
@@ -352,17 +352,26 @@ All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on 
 
 For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. Following recent work on LLM-based KG construction evaluation \citep{ghanemcruz2025kgc}, we report a set of complementary metrics rather than a single score because different metrics measure different properties of graph quality.
 
-Triple-match precision, recall, and F1 measure exact overlap between predicted and reference triples. This is the strictest content metric and directly penalizes missing and hallucinated triples. Triple-match accuracy is also reported as a prediction-oriented exact-match rate; it measures the proportion of predicted triples that appear in the reference graph and is therefore most closely related to precision. Normalized graph edit distance (GED) treats the triple set as a labelled directed multigraph and estimates the normalized edit cost required to transform the predicted graph into the reference graph. BLEU and ROUGE compare serialized triples as textual units under one-to-one assignment, providing softer lexical similarity signals. G-BERTScore applies contextual embedding similarity to serialized triples and is intended to capture semantically close but lexically non-identical triples \citep{bleu,rouge,bertscore}. The formal definitions used in the paper are provided in~\ref{app:metric_definitions}.
+The metric set is organized into four categories:
+
+\begin{itemize}
+    \item \textbf{Exact triple overlap.} Triple-match precision, recall, and F1 measure exact overlap between predicted and reference triples. This is the strictest content-oriented metric family and directly penalizes missing or hallucinated triples. Triple-match accuracy is also reported as a prediction-oriented exact-match rate, measuring the proportion of predicted triples that appear in the reference graph.
+    \item \textbf{Graph edit distance.} Normalized graph edit distance (GED) treats each RDF graph as a labelled directed multigraph and estimates the normalized edit cost required to transform the predicted graph into the reference graph. This metric captures structural differences that may not be visible from aggregate triple counts alone.
+    \item \textbf{Lexical triple similarity.} BLEU and ROUGE compare serialized triples as textual units under one-to-one assignment \citep{bleu,rouge}. These metrics provide softer lexical similarity signals when a predicted triple is close to a reference triple but not exactly identical.
+    \item \textbf{Embedding-based triple similarity.} G-BERTScore applies contextual embedding similarity to serialized triples and is intended to capture semantically close but lexically non-identical triples \citep{bertscore}.
+\end{itemize}
+
+The formal definitions used in the paper are provided in~\ref{app:metric_definitions}.
 
 \subsection{VisText Evaluation Modes and Numeric Tolerance}
 
-VisText graphs contain both fixed structural triples and content-bearing triples. The full-graph mode evaluates all normalized triples. The content-only mode evaluates literal-valued triples together with the chart-type triple. This projection reduces the influence of fixed structural statements such as axis declarations and datapoint membership, while preserving chart titles, axis titles, data values, and chart type.
+The VisText schema is designed to be semantically complete: its full RDF graph can be used directly as a chart knowledge graph because it includes chart type, axis resources, datapoint resources, and membership relations. For evaluation, however, this completeness can overestimate model performance because many triples are fixed by the schema once the model has adopted the expected output pattern. We therefore report both full-graph and content-only modes. Full-graph mode evaluates every normalized triple. Content-only mode retains literal-valued triples and the chart-type triple, while omitting fixed schema-completion triples. In Figure~\ref{fig:vistext_example}, for example, triples such as \texttt{:XAxis a :Axis}, \texttt{:DataPoint1 a :DataPoint}, and \texttt{:DataPoint1 :belongsTo :Chart} are omitted in content-only mode, whereas triples such as \texttt{:Chart :title "..."}, \texttt{:XAxis :title "Year"}, \texttt{:DataPoint1 :xValue "Dec 31, 1953"}, \texttt{:DataPoint1 :yValue "1"}, and \texttt{:Chart a :AreaChart} are retained.
 
-VisText evaluation also supports an optional relative numeric tolerance for quantity-like datapoint values. This tolerance is motivated by the fact that the model observes only the chart image and may estimate a numeric value that is visually plausible but not exactly equal to the reference value. The tolerance is applied only to structural metrics and only under strict guardrails. First, the evaluator determines whether exactly one datapoint coordinate axis is fully numeric, or whether both axes are numeric but one axis title is time-like. The tolerated predicate is then the quantity-like coordinate, not the time-like or label coordinate. Second, a predicted numeric value can be normalized to the gold value only when the opposite coordinate matches exactly and uniquely. This prevents a value from one datapoint being matched to another datapoint solely because their numeric intervals overlap. BLEU, ROUGE, and G-BERTScore are left unchanged under numeric tolerance.
+VisText evaluation also includes an optional relative numeric tolerance for quantity-like datapoint values. This is needed because the model receives only the chart image: for many line and area charts, a visually reasonable estimate may be close to the reference value but not exactly identical. The tolerance is applied only to exact structural metrics, namely triple-match precision, recall, F1, triple-match accuracy, and normalized GED. Lexical and embedding-based metrics, including BLEU, ROUGE, and G-BERTScore, are left unchanged so that tolerance-adjusted exact matching and soft textual similarity remain separate evaluation signals.
 
 \subsection{LLM-as-a-Judge Validation Framework}
 
-The LLM-as-a-judge framework is evaluated on the labelled datasets before being used on unlabelled data. It uses OpenAI GPT-5-mini as the judge model, whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model family for judging reduces the risk that the evaluator systematically favours generations from its own model family \citep{spiliopoulou2025playfavorites}. Judge outputs are constrained through structured response schemas, so the evaluation produces typed scores and preferences.
+The LLM-as-a-judge framework is evaluated on the labelled datasets before being used on unlabelled data. It uses OpenAI GPT-5-mini \citep{openai2025gpt5systemcard} as the judge model, whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model family for judging reduces the risk that the evaluator systematically favours generations from its own model family \citep{spiliopoulou2025playfavorites}. Judge outputs are constrained through structured response schemas, so the evaluation produces typed scores and preferences.
 
 The judge is used in two complementary modes. In direct scoring, the judge receives the source image and one candidate RDF/Turtle graph. It assigns five criterion scores and one overall score on a 1-to-5 scale. In pairwise comparison, the judge receives the same source image and two candidate graphs generated by different prompting strategies. It selects the better graph for each criterion and gives an overall preference. Direct scoring supports absolute quality analysis, while pairwise comparison supports strategy ranking without requiring the judge to calibrate scores across unrelated images.
 
@@ -390,7 +399,7 @@ The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criter
 
 The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. The standard dataset-level evaluation reports whole-graph metrics, while chart-type breakdowns and numeric-tolerance analyses use the VisText content-only mode because it better isolates performance on the core extracted information. At the present stage, the available VisText reports contain zero-shot and dynamic one-shot content-only results with a 1\% relative tolerance for eligible numeric datapoint values. Entries for modes or prompting strategies that have not yet been evaluated remain marked as pending.
 
-\subsection{VisText Labelled Evaluation}
+\subsubsection{VisText Labelled Evaluation}
 
 Table~\ref{tab:vistext_strategy_results} reports the main VisText results by prompting strategy in both whole-graph and content-only modes. Whole-graph evaluation includes both content-bearing triples and schema-completeness triples, such as axis declarations and datapoint membership. Content-only evaluation reports the same metrics after projecting each graph to literal-valued triples and the chart-type triple.
 
@@ -468,7 +477,7 @@ Table~\ref{tab:vistext_tolerance_results} records the effect of numeric toleranc
 
 For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 100\% accuracy, so the classification component is reported in text rather than as a separate table.
 
-\subsection{Diagram2Graph Labelled Evaluation}
+\subsubsection{Diagram2Graph Labelled Evaluation}
 
 Diagram2Graph evaluation uses the full graph because node and edge identities are semantically relevant for diagrams. Unlike VisText, no datapoint ordinal normalization or content-only projection is applied.
 
@@ -490,7 +499,7 @@ Few-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
 \label{tab:diagram_results}
 \end{table*}
 
-\subsection{LLM-as-a-Judge Validation}
+\subsubsection{LLM-as-a-Judge Validation}
 
 Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report judge validation on labelled datasets. Direct validation compares judge scores with traditional metric scores. Pairwise validation compares judge preferences with metric-derived strategy preferences.
 
