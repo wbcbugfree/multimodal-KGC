@@ -368,33 +368,33 @@ The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criter
 
 \subsection{Evaluation Results}\label{sec:results}
 
-The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. Numerical entries are marked as pending until the full experimental reports are generated.
+The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. The standard dataset-level evaluation reports whole-graph metrics, while chart-type breakdowns and numeric-tolerance analyses use the VisText content-only mode because it better isolates performance on the core extracted information. At the present stage, the available VisText report contains zero-shot content-only results with a 1\% relative tolerance for eligible numeric datapoint values. Entries for modes or prompting strategies that have not yet been evaluated remain marked as pending.
 
 \subsection{VisText Labelled Evaluation}
 
-Table~\ref{tab:vistext_strategy_results} reports the main VisText results by prompting strategy. Results are separated into full-graph and content-only modes, with the numeric tolerance setting reported as part of the experimental configuration.
+Table~\ref{tab:vistext_strategy_results} reports the main VisText results by prompting strategy in both whole-graph and content-only modes. Whole-graph evaluation includes both content-bearing triples and schema-completeness triples, such as axis declarations and datapoint membership. Content-only evaluation reports the same metrics after projecting each graph to literal-valued triples and the chart-type triple.
 
 \begin{table*}[t]
 \centering
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{llccccccc}
+\begin{tabular}{llcccccccc}
 \toprule
-\textbf{Strategy} & \textbf{Mode} & \textbf{N} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
+\textbf{Strategy} & \textbf{Mode} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & Full graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & Full graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Full graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Full graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Static one-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \addlinespace
-Zero-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & Content only & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 0.9395 & 0.9418 & 0.9695 \\
+Static one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText evaluation results by prompting strategy. F1 and Acc. denote exact triple-match F1 and triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Lower nGED is better; all other metrics are higher-is-better.}
+\caption{VisText evaluation results by prompting strategy and graph mode. All strategies are evaluated on the same test-set intersection within each mode, so the sample size is omitted from the table body and reported with the experimental configuration. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Lower nGED is better; all other metrics are higher-is-better.}
 \label{tab:vistext_strategy_results}
 \end{table*}
 
@@ -404,26 +404,26 @@ Table~\ref{tab:vistext_chart_type_results} reports VisText performance by chart 
 \centering
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{llccccccc}
+\begin{tabular}{llcccccccc}
 \toprule
-\textbf{Strategy} & \textbf{Chart} & \textbf{N} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
+\textbf{Strategy} & \textbf{Chart} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Zero-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Zero-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & Bar & 0.7875 & 0.7860 & 0.7867 & 0.7943 & 0.0624 & 0.9728 & 0.9705 & 0.9964 \\
+Zero-shot & Line & 0.6468 & 0.5911 & 0.6177 & 0.7473 & 0.1188 & 0.9185 & 0.9238 & 0.9520 \\
+Zero-shot & Area & 0.6175 & 0.5092 & 0.5581 & 0.7193 & 0.1346 & 0.9001 & 0.9075 & 0.9381 \\
+Static one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Static one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Static one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText content-only evaluation by chart type. Abbreviations follow Table~\ref{tab:vistext_strategy_results}; the graph mode and numeric tolerance are reported with the experimental configuration.}
+\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. All chart-type results use content-only mode; the zero-shot results shown here use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
 \label{tab:vistext_chart_type_results}
 \end{table*}
 
@@ -434,36 +434,19 @@ Table~\ref{tab:vistext_tolerance_results} records the effect of numeric toleranc
 \small
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Tolerance} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Affected points} \\
+\textbf{Tolerance} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Normalized literals} \\
 \midrule
 0\% & \pending & \pending & \pending & \pending \\
 0.5\% & \pending & \pending & \pending & \pending \\
-1\% & \pending & \pending & \pending & \pending \\
+1\% & 0.6674 & 0.7622 & 0.0961 & 4633 \\
 2\% & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}
-\caption{VisText numeric tolerance analysis for quantity-like datapoint values. Tolerance is applied only when the opposite datapoint coordinate matches exactly and uniquely.}
+\caption{VisText numeric tolerance analysis for quantity-like datapoint values under zero-shot prompting in content-only mode. Tolerance is applied only when the opposite datapoint coordinate matches exactly and uniquely. The current report contains the 1\% tolerance setting; other tolerance settings remain pending.}
 \label{tab:vistext_tolerance_results}
 \end{table}
 
-For dynamic one-shot prompting, the chart-type classifier is also evaluated against the chart type recorded in the original VisText label file. Table~\ref{tab:vistext_classification} reports this classification component separately from RDF extraction.
-
-\begin{table}[t]
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Chart type} & \textbf{N} & \textbf{Correct} & \textbf{Incorrect} & \textbf{Accuracy} \\
-\midrule
-Bar & \pending & \pending & \pending & \pending \\
-Line & \pending & \pending & \pending & \pending \\
-Area & \pending & \pending & \pending & \pending \\
-Overall & \pending & \pending & \pending & \pending \\
-\bottomrule
-\end{tabular}
-\caption{Chart-type classification accuracy for VisText dynamic one-shot prompting.}
-\label{tab:vistext_classification}
-\end{table}
+For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 1.0000 accuracy (100\%), so the classification component is reported in text rather than as a separate table.
 
 \subsection{Diagram2Graph Labelled Evaluation}
 
@@ -473,17 +456,17 @@ Diagram2Graph evaluation uses the full graph because node and edge identities ar
 \centering
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lccccccc}
+\begin{tabular}{lcccccc}
 \toprule
-\textbf{Strategy} & \textbf{N} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
+\textbf{Strategy} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-One-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
+One-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
 }
-\caption{Diagram2Graph full-graph evaluation by prompting strategy. Abbreviations follow Table~\ref{tab:vistext_strategy_results}.}
+\caption{Diagram2Graph full-graph evaluation by prompting strategy. All strategies are evaluated on the same diagram test-set intersection, so the sample size is omitted from the table body and will be reported with the final experimental configuration. Abbreviations follow Table~\ref{tab:vistext_strategy_results}.}
 \label{tab:diagram_results}
 \end{table*}
 
@@ -533,26 +516,25 @@ The LLM-as-a-judge framework is also interpreted cautiously. Its purpose is not 
 
 \subsection{JSON-versus-RDF Serialization Ablation}
 
-Diagram2Graph also provides an opportunity to examine whether the requested output format affects model performance. The original task is naturally expressed in JSON, while this paper evaluates RDF/Turtle. Because the two serializations can encode the same node-edge graph, differences in performance may reflect the model's ability to follow a particular structured-output format rather than its visual understanding alone. We therefore include a 20-image ablation study that asks Gemini 3 Flash to output JSON with a predefined structured-output schema and compares those results with existing fine-tuned Qwen2.5-VL-3B JSON outputs. This ablation is treated as a secondary analysis: it does not replace the RDF evaluation, but it helps determine whether observed errors are caused by visual interpretation, graph modelling, or serialization constraints.
+Diagram2Graph also provides an opportunity to examine whether the requested output format affects model performance. The original task is naturally expressed in JSON, while this paper evaluates RDF/Turtle. Because the two serializations can encode the same node-edge graph, differences in performance may reflect the model's ability to follow a particular structured-output format rather than its visual understanding alone. We therefore include a 20-image ablation study that asks Gemini 3 Flash to output JSON with a predefined structured-output schema and compares those results with existing fine-tuned Qwen2.5-VL-3B JSON outputs. The Qwen baseline is reported as the average of two inference runs, whereas each Gemini prompting result is reported from a single run. This ablation is treated as a secondary analysis: it does not replace the RDF evaluation, but it helps determine whether observed errors are caused by visual interpretation, graph modelling, or serialization constraints.
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lcccc}
+\begin{tabular}{lccc}
 \toprule
-\textbf{System} & \textbf{Format} & \textbf{N} & \textbf{F1} & \textbf{nGED} \\
+\textbf{System} & \textbf{Format} & \textbf{F1} & \textbf{nGED} \\
 \midrule
-Gemini zero-shot & JSON & \pending & \pending & \pending \\
-Gemini one-shot & JSON & \pending & \pending & \pending \\
-Gemini few-shot & JSON & \pending & \pending & \pending \\
-Qwen run 1 & JSON & \pending & \pending & \pending \\
-Qwen run 2 & JSON & \pending & \pending & \pending \\
-Gemini RDF zero-shot & RDF/Turtle & \pending & \pending & \pending \\
-Gemini RDF one-shot & RDF/Turtle & \pending & \pending & \pending \\
-Gemini RDF few-shot & RDF/Turtle & \pending & \pending & \pending \\
+Gemini zero-shot & JSON & \pending & \pending \\
+Gemini one-shot & JSON & \pending & \pending \\
+Gemini few-shot & JSON & \pending & \pending \\
+Qwen2.5-VL-3B (2-run mean) & JSON & \pending & \pending \\
+Gemini RDF zero-shot & RDF/Turtle & \pending & \pending \\
+Gemini RDF one-shot & RDF/Turtle & \pending & \pending \\
+Gemini RDF few-shot & RDF/Turtle & \pending & \pending \\
 \bottomrule
 \end{tabular}
-\caption{Diagram2Graph JSON-versus-RDF serialization ablation. The JSON and RDF representations encode the same diagram graph schema but impose different output constraints.}
+\caption{Diagram2Graph JSON-versus-RDF serialization ablation. All rows are evaluated on the same 20-image ablation set, so the sample-size column is omitted. The Qwen baseline reports the mean score over two inference runs. The JSON and RDF representations encode the same diagram graph schema but impose different output constraints.}
 \label{tab:json_rdf_ablation}
 \end{table}
 

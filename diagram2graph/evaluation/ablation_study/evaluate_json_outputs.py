@@ -30,8 +30,7 @@ GED_MAX_TIME = 300.0
 DEFAULT_GED_WORKERS = 5
 DEFAULT_BERT_DEVICE = "auto"
 DEFAULT_STRATEGIES = {
-    "qwen_it1_json": "it1_json",
-    "qwen_it2_json": "it2_json",
+    "qwen_json_average": ["it1_json", "it2_json"],
     "gemini_zeroshot_json": "gemini_zeroshot_json",
     "gemini_oneshot_json": "gemini_oneshot_json",
     "gemini_fewshot_json": "gemini_fewshot_json",
@@ -187,6 +186,35 @@ def _mean(values: Iterable[Any]) -> float:
     if not values:
         return 0.0
     return float(mean(float(value) for value in values))
+
+
+def mean_nested_numeric_dict(items: Sequence[dict[str, Any]]) -> dict[str, Any]:
+    if not items:
+        return {}
+
+    averaged: dict[str, Any] = {}
+    for key, first_value in items[0].items():
+        values = [item[key] for item in items if key in item]
+        if not values:
+            continue
+        if isinstance(first_value, dict):
+            averaged[key] = mean_nested_numeric_dict([value for value in values if isinstance(value, dict)])
+        elif isinstance(first_value, (int, float)):
+            averaged[key] = _mean(values)
+    return averaged
+
+
+def common_strategy_ids(
+    gold_dir: Path,
+    outputs_root: Path,
+    directory_names: Sequence[str],
+    requested_ids: Optional[Sequence[str]] = None,
+) -> list[str]:
+    common_ids: Optional[set[str]] = None
+    for directory_name in directory_names:
+        ids = set(collect_intersection_ids(gold_dir, outputs_root / directory_name, requested_ids=requested_ids))
+        common_ids = ids if common_ids is None else common_ids & ids
+    return sorted(common_ids or set(), key=sort_id)
 
 
 def empty_strategy_report(strategy_name: str, pred_dir: Path, intersection_ids: list[str]) -> dict[str, Any]:
@@ -382,6 +410,61 @@ def evaluate_strategy(
     }
 
 
+def average_strategy_reports(strategy_name: str, run_reports: Sequence[dict[str, Any]]) -> dict[str, Any]:
+    if not run_reports:
+        return {
+            "strategy": strategy_name,
+            "status": "no_runs",
+            "intersection_ids": [],
+            "intersection_size": 0,
+            "summary": {},
+            "per_image": [],
+            "runs": [],
+        }
+
+    common_ids = set(run_reports[0].get("intersection_ids", []))
+    for report in run_reports[1:]:
+        common_ids &= set(report.get("intersection_ids", []))
+    intersection_ids = sorted(common_ids, key=sort_id)
+
+    per_image_by_run: list[dict[str, dict[str, Any]]] = []
+    for report in run_reports:
+        per_image_by_run.append({item["img_id"]: item for item in report.get("per_image", [])})
+
+    averaged_per_image = []
+    for img_id in intersection_ids:
+        image_items = [run_items[img_id] for run_items in per_image_by_run if img_id in run_items]
+        averaged_per_image.append(
+            {
+                "img_id": img_id,
+                "triple_match_accuracy": _mean(item["triple_match_accuracy"] for item in image_items),
+                "rouge": mean_nested_numeric_dict([item["rouge"] for item in image_items]),
+                "bleu": mean_nested_numeric_dict([item["bleu"] for item in image_items]),
+                "bert_score": mean_nested_numeric_dict([item["bert_score"] for item in image_items]),
+                "normalized_ged": _mean(item["normalized_ged"] for item in image_items),
+            }
+        )
+
+    return {
+        "strategy": strategy_name,
+        "status": "averaged" if intersection_ids else "no_overlap",
+        "averaged_from": [
+            {
+                "run": report.get("strategy"),
+                "prediction_dir": report.get("prediction_dir"),
+                "intersection_size": report.get("intersection_size"),
+            }
+            for report in run_reports
+        ],
+        "num_runs": len(run_reports),
+        "intersection_ids": intersection_ids,
+        "intersection_size": len(intersection_ids),
+        "summary": mean_nested_numeric_dict([report["summary"] for report in run_reports]),
+        "per_image": averaged_per_image,
+        "runs": list(run_reports),
+    }
+
+
 def build_report(
     gold_dir: Path,
     outputs_root: Path,
@@ -431,24 +514,57 @@ def build_report(
             "ordinal_normalization": False,
             "input_format": "json",
         },
+        "strategy_definitions": {
+            name: {
+                "type": "average" if isinstance(spec, list) else "single_run",
+                "folders": spec if isinstance(spec, list) else [spec],
+            }
+            for name, spec in DEFAULT_STRATEGIES.items()
+            if name in selected_strategies
+        },
         "strategies": {},
     }
 
     for strategy_name in selected_strategies:
-        directory_name = DEFAULT_STRATEGIES[strategy_name]
-        pred_dir = outputs_root / directory_name
-        strategy_report = evaluate_strategy(
-            strategy_name=strategy_name,
-            gold_dir=gold_dir,
-            pred_dir=pred_dir,
-            metrics_module=metrics_module,
-            bert_model_type=bert_model_type,
-            bert_device=bert_device,
-            bert_batch_size=bert_batch_size,
-            offline_bert=offline_bert,
-            ged_workers=ged_workers,
-            requested_ids=requested_ids,
-        )
+        strategy_spec = DEFAULT_STRATEGIES[strategy_name]
+        if isinstance(strategy_spec, str):
+            pred_dir = outputs_root / strategy_spec
+            strategy_report = evaluate_strategy(
+                strategy_name=strategy_name,
+                gold_dir=gold_dir,
+                pred_dir=pred_dir,
+                metrics_module=metrics_module,
+                bert_model_type=bert_model_type,
+                bert_device=bert_device,
+                bert_batch_size=bert_batch_size,
+                offline_bert=offline_bert,
+                ged_workers=ged_workers,
+                requested_ids=requested_ids,
+            )
+        else:
+            averaged_ids = common_strategy_ids(
+                gold_dir=gold_dir,
+                outputs_root=outputs_root,
+                directory_names=strategy_spec,
+                requested_ids=requested_ids,
+            )
+            run_reports = []
+            for run_index, directory_name in enumerate(strategy_spec, start=1):
+                run_reports.append(
+                    evaluate_strategy(
+                        strategy_name=f"{strategy_name}_run{run_index}",
+                        gold_dir=gold_dir,
+                        pred_dir=outputs_root / directory_name,
+                        metrics_module=metrics_module,
+                        bert_model_type=bert_model_type,
+                        bert_device=bert_device,
+                        bert_batch_size=bert_batch_size,
+                        offline_bert=offline_bert,
+                        ged_workers=ged_workers,
+                        requested_ids=averaged_ids,
+                    )
+                )
+            strategy_report = average_strategy_reports(strategy_name, run_reports)
         report["strategies"][strategy_name] = strategy_report
         if output_path is not None:
             output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -482,7 +598,7 @@ def parse_args() -> argparse.Namespace:
         nargs="+",
         choices=sorted(DEFAULT_STRATEGIES.keys()),
         default=None,
-        help="Subset of strategies to evaluate. Defaults to Qwen and Gemini JSON folders.",
+        help="Subset of strategies to evaluate. Defaults to the averaged Qwen baseline and Gemini JSON folders.",
     )
     parser.add_argument(
         "--ids",
