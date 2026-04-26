@@ -462,19 +462,19 @@ Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pendin
 \centering
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lccccccc}
+\begin{tabular}{lcccccc}
 \toprule
-\textbf{Tolerance} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Norm.} & \textbf{Norm./Cand.} \\
+\textbf{Tolerance} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Matched/Cand.} \\
 \midrule
-0\% & 0.5599 & 0.5131 & 0.5355 & 0.6103 & 0.1378 & 0 & 0 / 11{,}582 (0.0\%) \\
-0.5\% & 0.6470 & 0.5928 & 0.6187 & 0.7076 & 0.1111 & 2{,}956 & 2{,}956 / 11{,}582 (25.5\%) \\
-1\% & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 4{,}633 & 4{,}633 / 11{,}582 (40.0\%) \\
-1.5\% & 0.7236 & 0.6631 & 0.6920 & 0.7892 & 0.0891 & 5{,}488 & 5{,}488 / 11{,}582 (47.4\%) \\
-2\% & 0.7368 & 0.6752 & 0.7047 & 0.8028 & 0.0854 & 5{,}952 & 5{,}952 / 11{,}582 (51.4\%) \\
+0\% & 0.5599 & 0.5131 & 0.5355 & 0.6103 & 0.1378 & 3{,}200 / 11{,}582 (27.6\%) \\
+0.5\% & 0.6470 & 0.5928 & 0.6187 & 0.7076 & 0.1111 & 6{,}156 / 11{,}582 (53.2\%) \\
+1\% & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 7{,}833 / 11{,}582 (67.6\%) \\
+1.5\% & 0.7236 & 0.6631 & 0.6920 & 0.7892 & 0.0891 & 8{,}688 / 11{,}582 (75.0\%) \\
+2\% & 0.7368 & 0.6752 & 0.7047 & 0.8028 & 0.0854 & 9{,}152 / 11{,}582 (79.0\%) \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText numeric tolerance analysis for quantity-like datapoint values under zero-shot prompting in content-only mode. Tolerance affects only structural metrics, so BLEU, ROUGE, and G-BERTScore are excluded from this analysis. Candidate literals are numeric datapoint values that pass the tolerance guardrails; normalized literals are candidate literals whose predicted values are replaced by the corresponding gold values because they fall within the specified tolerance. Lower nGED is better; all other metrics are higher-is-better.}
+\caption{VisText numeric tolerance analysis for quantity-like datapoint values under zero-shot prompting in content-only mode. Tolerance affects only structural metrics, so BLEU, ROUGE, and G-BERTScore are excluded from this analysis. Candidate literals are numeric datapoint values that pass the tolerance guardrails; matched literals are candidates that either match exactly at 0\% tolerance or fall within the specified tolerance interval. Lower nGED is better; all other metrics are higher-is-better.}
 \label{tab:vistext_tolerance_results}
 \end{table*}
 
