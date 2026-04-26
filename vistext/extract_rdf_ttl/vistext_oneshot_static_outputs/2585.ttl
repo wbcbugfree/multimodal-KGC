@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Fields of study with the most international students in the United States in the academic year 2019/20" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Fields of study" .
+
+:YAxis a :Axis ;
+    :title "Number of students" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Agriculture" ;
+    :yValue "13000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Business and Management" ;
+    :yValue "174000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Communications and Journali..." ;
+    :yValue "24000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Education" ;
+    :yValue "15000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Engineering" ;
+    :yValue "221000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Fine and Applied Arts" ;
+    :yValue "64000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Health Professions" ;
+    :yValue "35000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Humanities" ;
+    :yValue "16000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Intensive English" ;
+    :yValue "21000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Legal Studies and Law Enforc..." ;
+    :yValue "16000" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Math and Computer Science" ;
+    :yValue "206000" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "Physical and Life Sciences" ;
+    :yValue "82000" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "Social Sciences" ;
+    :yValue "84000" ;
+    :belongsTo :Chart .

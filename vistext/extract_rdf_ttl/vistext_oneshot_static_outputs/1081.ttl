@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Share of voice on sportsbooks among leading websites in the United States from July to September 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Response" .
+
+:YAxis a :Axis ;
+    :title "Share of voice" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "BET (bet.com)" ;
+    :yValue "0.044" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BetOnline (betonline.ag)" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "CardsChat (cardschat.com)" ;
+    :yValue "0.036" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Casino.Org (casino.org)" ;
+    :yValue "0.045" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "ESPN (espn.com)" ;
+    :yValue "0.026" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Facebook (facebook.com)" ;
+    :yValue "0.015" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "MyBookie (mybookie.ag)" ;
+    :yValue "0.034" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Odds Shark (oddsshark.com)" ;
+    :yValue "0.046" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "PlayUSA (playusa.com)" ;
+    :yValue "0.019" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "VegasInsider.com (vegasinsider.co..." ;
+    :yValue "0.025" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Wikipedia (wikipedia.org)" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "YouTube (youtube.com)" ;
+    :yValue "0.018" ;
+    :belongsTo :Chart .

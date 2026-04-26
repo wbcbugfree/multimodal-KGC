@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Pandora 's net income / loss in the fiscal years 2007 to 2017 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Net income / loss in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "-9.2" ;
+    :yValue "Feb 2006 to Jan 2007" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "-18.9" ;
+    :yValue "Feb 2007 to Jan 2008" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "-38.2" ;
+    :yValue "Feb 2008 to Jan 2009" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "-16.8" ;
+    :yValue "Feb 2009 to Jan 2010" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "-1.8" ;
+    :yValue "Feb 2010 to Jan 2011" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "-16.1" ;
+    :yValue "Feb 2011 to Jan 2012" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "-38.1" ;
+    :yValue "Feb 2012 to Jan 2013" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "-26.9" ;
+    :yValue "Feb to Dec 2013*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "-30.4" ;
+    :yValue "Jan to Dec 2014" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "-169.7" ;
+    :yValue "Jan to Dec 2015" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "-343" ;
+    :yValue "Jan to Dec 2016" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "-559.2" ;
+    :yValue "Jan to Dec 2017" ;
+    :belongsTo :Chart .

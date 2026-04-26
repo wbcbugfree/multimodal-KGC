@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Philadelphia 76ers all-time steals leaders from 1949 to 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Philadelphia 76ers all-time steals leaders" .
+
+:YAxis a :Axis ;
+    :title "Steals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Allen Iverson" ;
+    :yValue "1644" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Andre Iguodala" ;
+    :yValue "1076" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bobby Jones" ;
+    :yValue "733" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Charles Barkley" ;
+    :yValue "1007" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Eric Snow" ;
+    :yValue "708" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hersey Hawkins" ;
+    :yValue "724" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Julius Erving" ;
+    :yValue "1508" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Maurice Cheeks" ;
+    :yValue "1942" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Steve Mix" ;
+    :yValue "852" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Thaddeus Young" ;
+    :yValue "713" ;
+    :belongsTo :Chart .

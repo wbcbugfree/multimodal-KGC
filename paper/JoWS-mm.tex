@@ -458,22 +458,25 @@ Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pendin
 
 % Table~\ref{tab:vistext_tolerance_results} records the effect of numeric tolerance. Because tolerance affects only structural metrics, BLEU, ROUGE, and G-BERTScore are interpreted separately from this table.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \small
-\begin{tabular}{lcccc}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccc}
 \toprule
-\textbf{Tolerance} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Normalized literals} \\
+\textbf{Tolerance} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{Norm.} & \textbf{Norm./Cand.} \\
 \midrule
-0\% & \pending & \pending & \pending & \pending \\
-0.5\% & \pending & \pending & \pending & \pending \\
-1\% & 0.6674 & 0.7622 & 0.0961 & 4633 \\
-2\% & \pending & \pending & \pending & \pending \\
+0\% & 0.5599 & 0.5131 & 0.5355 & 0.6103 & 0.1378 & 0 & 0 / 11{,}582 (0.0\%) \\
+0.5\% & 0.6470 & 0.5928 & 0.6187 & 0.7076 & 0.1111 & 2{,}956 & 2{,}956 / 11{,}582 (25.5\%) \\
+1\% & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 4{,}633 & 4{,}633 / 11{,}582 (40.0\%) \\
+1.5\% & 0.7236 & 0.6631 & 0.6920 & 0.7892 & 0.0891 & 5{,}488 & 5{,}488 / 11{,}582 (47.4\%) \\
+2\% & 0.7368 & 0.6752 & 0.7047 & 0.8028 & 0.0854 & 5{,}952 & 5{,}952 / 11{,}582 (51.4\%) \\
 \bottomrule
-\end{tabular}
-\caption{VisText numeric tolerance analysis for quantity-like datapoint values under zero-shot prompting in content-only mode. Tolerance is applied only when the opposite datapoint coordinate matches exactly and uniquely. The current report contains the 1\% tolerance setting; other tolerance settings remain pending.}
+\end{tabular}%
+}
+\caption{VisText numeric tolerance analysis for quantity-like datapoint values under zero-shot prompting in content-only mode. Tolerance affects only structural metrics, so BLEU, ROUGE, and G-BERTScore are excluded from this analysis. Candidate literals are numeric datapoint values that pass the tolerance guardrails; normalized literals are candidate literals whose predicted values are replaced by the corresponding gold values because they fall within the specified tolerance. Lower nGED is better; all other metrics are higher-is-better.}
 \label{tab:vistext_tolerance_results}
-\end{table}
+\end{table*}
 
 % For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 100\% accuracy, so the classification component is reported in text rather than as a separate table.
 

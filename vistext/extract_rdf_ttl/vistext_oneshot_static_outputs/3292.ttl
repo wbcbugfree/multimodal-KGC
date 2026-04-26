@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Seat distribution for the political groups in the European Parliament of 2019 , by number of MEPs" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "political group" .
+
+:YAxis a :Axis ;
+    :title "Number of MEPs" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Center-left (S&D)" ;
+    :yValue "146" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Center-right (EPP)" ;
+    :yValue "182" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Conservatives (ECR)" ;
+    :yValue "62" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Greens (EFA)" ;
+    :yValue "69" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Independent" ;
+    :yValue "8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Left (GUE/NGL)" ;
+    :yValue "39" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Liberals (ALDE)" ;
+    :yValue "108" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Others" ;
+    :yValue "29" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Populists (EFDD)" ;
+    :yValue "54" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Right-wing nationalists (ENF)" ;
+    :yValue "58" ;
+    :belongsTo :Chart .

@@ -1,0 +1,82 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Budget of the Department of Homeland Security in the fiscal year of 2021 , by organization (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Budget authority in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Organization" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "300" ;
+    :yValue "Analysis and Operations" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "420" ;
+    :yValue "Countering Weapons of Mas..." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2020" ;
+    :yValue "Cybersecurity and Infrastru..." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14510" ;
+    :yValue "Federal Emergency Manage..." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "330" ;
+    :yValue "Federal Law Enforcement T..." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3440" ;
+    :yValue "Management Directorate" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "190" ;
+    :yValue "Office of Inspector General" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "160" ;
+    :yValue "Office of the Secretary and..." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "760" ;
+    :yValue "Science and Technology Dir..." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "8220" ;
+    :yValue "Transportation Security Ad..." ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "4190" ;
+    :yValue "U.S. Citizenship and Immig..." ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "12150" ;
+    :yValue "U.S. Coast Guard" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "18320" ;
+    :yValue "U.S. Customs and Border P..." ;
+    :belongsTo :Chart .
+
+:DataPoint14 a :DataPoint ;
+    :xValue "10420" ;
+    :yValue "U.S. Immigration and Cust..." ;
+    :belongsTo :Chart .

@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Annual net revenue of Jumia Technologies AG from 2017 to 2019 , by segment (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2019" .
+
+:YAxis a :Axis ;
+    :title "Jumia Technologies AG marketplace segment" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "79.3" ;
+    :yValue "1P sales of goods" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "24.2" ;
+    :yValue "Commissions" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "26.3" ;
+    :yValue "Fulfillment" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "5.4" ;
+    :yValue "Marketing & Advertising" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.2" ;
+    :yValue "Other services – non-platform rev..." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "22.0" ;
+    :yValue "Other services – value-added serv..." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "158.4" ;
+    :yValue "Platform revenue (1P + 3P)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "79.1" ;
+    :yValue "Total revenue related to third-part..." ;
+    :belongsTo :Chart .

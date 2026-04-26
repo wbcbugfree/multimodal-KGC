@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Cheapest European city destinations ranked by daily public transport expenses in 2017 (in GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Daily cost in GBP*" .
+
+:YAxis a :Axis ;
+    :title "Cheapest European city destinations" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1.25" ;
+    :yValue "Belgrade" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.93" ;
+    :yValue "Bucharest" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "1.86" ;
+    :yValue "Budapest" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.22" ;
+    :yValue "Kiev" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "1.05" ;
+    :yValue "Krakow" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "3.0" ;
+    :yValue "Sarajevo" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.86" ;
+    :yValue "Sofia" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "1.28" ;
+    :yValue "Warsaw" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2.22" ;
+    :yValue "Zagreb" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1.48" ;
+    :yValue "Český Krumlov" ;
+    :belongsTo :Chart .

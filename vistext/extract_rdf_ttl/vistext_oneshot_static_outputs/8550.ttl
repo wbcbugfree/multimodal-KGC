@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading ten Italian wineries in Italy from 2014 to 2018 , by turnover (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2015" .
+
+:YAxis a :Axis ;
+    :title "Leading ten Italian wineries" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "205" ;
+    :yValue "Antinori" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "150" ;
+    :yValue "Botter" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "555" ;
+    :yValue "Cantineriunite/CIV" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "195" ;
+    :yValue "Caviro" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "300" ;
+    :yValue "Cavit" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "165" ;
+    :yValue "GIV" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "355" ;
+    :yValue "Martini" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "155" ;
+    :yValue "Mezzacorona" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "175" ;
+    :yValue "Zonin" ;
+    :belongsTo :Chart .

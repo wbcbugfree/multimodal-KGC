@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "The highest average annual salary per player in Spain 's La Liga in the season 2019/20 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "association football club" .
+
+:YAxis a :Axis ;
+    :title "Average player salary in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Athletic Bilbao" ;
+    :yValue "2.13" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Atletico de Madrid" ;
+    :yValue "7.04" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Celta Vigo" ;
+    :yValue "1.61" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "FC Barcelona" ;
+    :yValue "12.28" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Real Betis" ;
+    :yValue "1.52" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Real Madrid" ;
+    :yValue "11.15" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Real Sociedad" ;
+    :yValue "1.62" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Sevilla" ;
+    :yValue "2.51" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Valencia" ;
+    :yValue "3.13" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Villarreal" ;
+    :yValue "1.75" ;
+    :belongsTo :Chart .

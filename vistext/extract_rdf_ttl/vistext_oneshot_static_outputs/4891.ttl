@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading fashion brands with the most Facebook fans as of October 2020 (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "brand" .
+
+:YAxis a :Axis ;
+    :title "Number of fans in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Amore Mio" ;
+    :yValue "6.4" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "BOSS" ;
+    :yValue "8.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Chalany High Heels" ;
+    :yValue "14.6" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dior" ;
+    :yValue "17.3" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Fastrack" ;
+    :yValue "8.9" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Louis Vuitton" ;
+    :yValue "23.9" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Mango" ;
+    :yValue "11.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Pit Bull Jeans" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Prada" ;
+    :yValue "7" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "ROLEX" ;
+    :yValue "7.5" ;
+    :belongsTo :Chart .

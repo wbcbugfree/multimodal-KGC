@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "German 1 . Bundesliga staff / employees in 2018/19 , by employee status" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of staff" .
+
+:YAxis a :Axis ;
+    :title "employee status" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9436" ;
+    :yValue "Caterers (Contractors)" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3844" ;
+    :yValue "Full-time staff (Licensees)" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "88" ;
+    :yValue "Full-time staff (Subsidiaries)" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "986" ;
+    :yValue "Medical services (Contractors)" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "3437" ;
+    :yValue "Other (Contractors)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "1032" ;
+    :yValue "Part-time staff (Licensees)" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "448" ;
+    :yValue "Part-time staff (Subsidiaries)" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "9153" ;
+    :yValue "Security companies (Contractors)" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4770" ;
+    :yValue "Temporary workers (Licensees)" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3097" ;
+    :yValue "Temporary workers (Subsidiaries)" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "42" ;
+    :yValue "Trainees (Licensees)" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "33" ;
+    :yValue "Trainees (Subsidiaries)" ;
+    :belongsTo :Chart .

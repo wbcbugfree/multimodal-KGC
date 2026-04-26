@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Alternative finance market value in France in 2017 , by selected platforms (in million euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Market size in million euros" .
+
+:YAxis a :Axis ;
+    :title "selected platforms" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "27.2" ;
+    :yValue "Balance sheet business lending" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "37.1" ;
+    :yValue "Debt based securities" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "5.6" ;
+    :yValue "Donation-based crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "47.3" ;
+    :yValue "Equity-based crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "27.5" ;
+    :yValue "Invoice trading" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "5.6" ;
+    :yValue "Mini bonds" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "86.8" ;
+    :yValue "P2P Business lending" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "301" ;
+    :yValue "P2P Consumer Lending" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.5" ;
+    :yValue "Profit sharing" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "67.1" ;
+    :yValue "Real estate crowdfunding" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "44.7" ;
+    :yValue "Reward-based crowdfunding" ;
+    :belongsTo :Chart .
