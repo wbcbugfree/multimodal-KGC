@@ -37,6 +37,8 @@ DEFAULT_GED_WORKERS = 5
 DEFAULT_GRAPH_MODES = ("full_graph", "content_only")
 DEFAULT_NUMERIC_TOLERANCE = 0.0
 DEFAULT_BERT_DEVICE = "auto"
+DEFAULT_METRIC_SET = "all"
+METRIC_SETS = ("all", "structural")
 DEFAULT_STRATEGIES = {
     "zeroshot": "vistext_zeroshot_outputs",
     "oneshot_static": "vistext_oneshot_static_outputs",
@@ -492,55 +494,100 @@ def empty_metric_summary() -> Dict[str, Any]:
     }
 
 
+def structural_metric_summary() -> Dict[str, Any]:
+    return {
+        "triple_match_micro": {"precision": 0.0, "recall": 0.0, "f1": 0.0},
+        "triple_match_accuracy_mean": 0.0,
+        "normalized_ged_mean": 0.0,
+    }
+
+
+def metrics_used_for(metric_set: str) -> List[str]:
+    structural_metrics = [
+        "triple_match_micro_prf",
+        "triple_match_accuracy",
+        "normalized_ged",
+    ]
+    if metric_set == "structural":
+        return structural_metrics
+    return [
+        "triple_match_micro_prf",
+        "triple_match_accuracy",
+        "rouge",
+        "bleu",
+        "bert_score",
+        "normalized_ged",
+    ]
+
+
+def excluded_metrics_for(metric_set: str) -> List[str]:
+    excluded = ["optimal_edit_path", "hallucination", "omission"]
+    if metric_set == "structural":
+        excluded.extend(["rouge", "bleu", "bert_score"])
+    return excluded
+
+
 def build_metric_summary(
     *,
     metrics,
     structural_gold_graphs: List[List[List[str]]],
     structural_pred_graphs: List[List[List[str]]],
     triple_accs: Sequence[float],
-    rouge_p: Sequence[float],
-    rouge_r: Sequence[float],
-    rouge_f: Sequence[float],
-    bleu_p: Sequence[float],
-    bleu_r: Sequence[float],
-    bleu_f: Sequence[float],
-    bert_p: Sequence[float],
-    bert_r: Sequence[float],
-    bert_f: Sequence[float],
+    rouge_p: Optional[Sequence[float]],
+    rouge_r: Optional[Sequence[float]],
+    rouge_f: Optional[Sequence[float]],
+    bleu_p: Optional[Sequence[float]],
+    bleu_r: Optional[Sequence[float]],
+    bleu_f: Optional[Sequence[float]],
+    bert_p: Optional[Sequence[float]],
+    bert_r: Optional[Sequence[float]],
+    bert_f: Optional[Sequence[float]],
     ged_scores: Sequence[float],
     indices: Sequence[int],
+    metric_set: str = DEFAULT_METRIC_SET,
 ) -> Dict[str, Any]:
     if not indices:
-        return empty_metric_summary()
+        return structural_metric_summary() if metric_set == "structural" else empty_metric_summary()
 
     subset_gold_graphs = [structural_gold_graphs[index] for index in indices]
     subset_pred_graphs = [structural_pred_graphs[index] for index in indices]
     triple_precision, triple_recall, triple_f1 = metrics.get_triple_match_prf(subset_gold_graphs, subset_pred_graphs)
 
-    return {
+    summary = {
         "triple_match_micro": {
             "precision": _float(triple_precision),
             "recall": _float(triple_recall),
             "f1": _float(triple_f1),
         },
         "triple_match_accuracy_mean": _mean(triple_accs[index] for index in indices),
-        "rouge": {
-            "precision": _mean(rouge_p[index] for index in indices),
-            "recall": _mean(rouge_r[index] for index in indices),
-            "f1": _mean(rouge_f[index] for index in indices),
-        },
-        "bleu": {
-            "precision": _mean(bleu_p[index] for index in indices),
-            "recall": _mean(bleu_r[index] for index in indices),
-            "f1": _mean(bleu_f[index] for index in indices),
-        },
-        "bert_score": {
-            "precision": _mean(bert_p[index] for index in indices),
-            "recall": _mean(bert_r[index] for index in indices),
-            "f1": _mean(bert_f[index] for index in indices),
-        },
         "normalized_ged_mean": _mean(ged_scores[index] for index in indices),
     }
+    if metric_set == "structural":
+        return summary
+
+    if any(value is None for value in (rouge_p, rouge_r, rouge_f, bleu_p, bleu_r, bleu_f, bert_p, bert_r, bert_f)):
+        raise ValueError("Text metric arrays are required when metric_set='all'")
+
+    summary.update(
+        {
+            "rouge": {
+                "precision": _mean(rouge_p[index] for index in indices),
+                "recall": _mean(rouge_r[index] for index in indices),
+                "f1": _mean(rouge_f[index] for index in indices),
+            },
+            "bleu": {
+                "precision": _mean(bleu_p[index] for index in indices),
+                "recall": _mean(bleu_r[index] for index in indices),
+                "f1": _mean(bleu_f[index] for index in indices),
+            },
+            "bert_score": {
+                "precision": _mean(bert_p[index] for index in indices),
+                "recall": _mean(bert_r[index] for index in indices),
+                "f1": _mean(bert_f[index] for index in indices),
+            },
+        }
+    )
+    return summary
 
 
 def build_chart_type_summaries(
@@ -551,16 +598,17 @@ def build_chart_type_summaries(
     structural_gold_graphs: List[List[List[str]]],
     structural_pred_graphs: List[List[List[str]]],
     triple_accs: Sequence[float],
-    rouge_p: Sequence[float],
-    rouge_r: Sequence[float],
-    rouge_f: Sequence[float],
-    bleu_p: Sequence[float],
-    bleu_r: Sequence[float],
-    bleu_f: Sequence[float],
-    bert_p: Sequence[float],
-    bert_r: Sequence[float],
-    bert_f: Sequence[float],
+    rouge_p: Optional[Sequence[float]],
+    rouge_r: Optional[Sequence[float]],
+    rouge_f: Optional[Sequence[float]],
+    bleu_p: Optional[Sequence[float]],
+    bleu_r: Optional[Sequence[float]],
+    bleu_f: Optional[Sequence[float]],
+    bert_p: Optional[Sequence[float]],
+    bert_r: Optional[Sequence[float]],
+    bert_f: Optional[Sequence[float]],
     ged_scores: Sequence[float],
+    metric_set: str = DEFAULT_METRIC_SET,
 ) -> Dict[str, Any]:
     grouped_indices: Dict[str, List[int]] = {chart_type: [] for chart_type in CHART_TYPES}
     for index, img_id in enumerate(intersection_ids):
@@ -590,6 +638,7 @@ def build_chart_type_summaries(
                 bert_f=bert_f,
                 ged_scores=ged_scores,
                 indices=indices,
+                metric_set=metric_set,
             ),
         }
     return summaries
@@ -608,6 +657,7 @@ def evaluate_strategy(
     offline_bert: bool = True,
     ged_workers: int = DEFAULT_GED_WORKERS,
     numeric_tolerance: float = DEFAULT_NUMERIC_TOLERANCE,
+    metric_set: str = DEFAULT_METRIC_SET,
 ) -> Dict[str, Any]:
     metrics = metrics_module or load_graph_matching_module(offline_bert=offline_bert)
     intersection_ids = collect_intersection_ids(gold_dir, pred_dir)
@@ -624,22 +674,28 @@ def evaluate_strategy(
     )
 
     print(f"[{strategy_name}:{graph_mode}] exact-match metrics")
-    gold_edges = metrics.split_to_edges(gold_graphs)
-    pred_edges = metrics.split_to_edges(pred_graphs)
-    gold_tokens, pred_tokens = metrics.get_tokens(gold_edges, pred_edges)
+    rouge_p = rouge_r = rouge_f = None
+    bleu_p = bleu_r = bleu_f = None
+    bert_p = bert_r = bert_f = None
+    if metric_set == "all":
+        gold_edges = metrics.split_to_edges(gold_graphs)
+        pred_edges = metrics.split_to_edges(pred_graphs)
+        gold_tokens, pred_tokens = metrics.get_tokens(gold_edges, pred_edges)
 
-    print(f"[{strategy_name}:{graph_mode}] BLEU/ROUGE")
-    rouge_p, rouge_r, rouge_f, bleu_p, bleu_r, bleu_f = metrics.get_bleu_rouge(
-        gold_tokens, pred_tokens, gold_edges, pred_edges
-    )
-    print(f"[{strategy_name}:{graph_mode}] BERTScore")
-    bert_p, bert_r, bert_f = metrics.get_bert_score(
-        gold_edges,
-        pred_edges,
-        model_type=bert_model_type,
-        device=bert_device,
-        batch_size=bert_batch_size,
-    )
+        print(f"[{strategy_name}:{graph_mode}] BLEU/ROUGE")
+        rouge_p, rouge_r, rouge_f, bleu_p, bleu_r, bleu_f = metrics.get_bleu_rouge(
+            gold_tokens, pred_tokens, gold_edges, pred_edges
+        )
+        print(f"[{strategy_name}:{graph_mode}] BERTScore")
+        bert_p, bert_r, bert_f = metrics.get_bert_score(
+            gold_edges,
+            pred_edges,
+            model_type=bert_model_type,
+            device=bert_device,
+            batch_size=bert_batch_size,
+        )
+    else:
+        print(f"[{strategy_name}:{graph_mode}] skipping BLEU/ROUGE/BERTScore for structural metric set")
     triple_accs = [
         metrics.get_triple_match_accuracy(pred_graph, gold_graph)
         for pred_graph, gold_graph in zip(structural_pred_graphs, structural_gold_graphs)
@@ -654,35 +710,40 @@ def evaluate_strategy(
 
     per_image = []
     for index, img_id in enumerate(intersection_ids):
-        per_image.append(
-            {
-                "img_id": img_id,
-                "chart_type": chart_types_by_id.get(img_id, "unknown"),
-                "triple_match_accuracy": _float(triple_accs[index]),
-                "rouge": {
-                    "precision": _float(rouge_p[index]),
-                    "recall": _float(rouge_r[index]),
-                    "f1": _float(rouge_f[index]),
-                },
-                "bleu": {
-                    "precision": _float(bleu_p[index]),
-                    "recall": _float(bleu_r[index]),
-                    "f1": _float(bleu_f[index]),
-                },
-                "bert_score": {
-                    "precision": _float(bert_p[index]),
-                    "recall": _float(bert_r[index]),
-                    "f1": _float(bert_f[index]),
-                },
-                "normalized_ged": _float(ged_scores[index]),
-                "tolerance": tolerance_metadata[index],
-            }
-        )
+        item = {
+            "img_id": img_id,
+            "chart_type": chart_types_by_id.get(img_id, "unknown"),
+            "triple_match_accuracy": _float(triple_accs[index]),
+            "normalized_ged": _float(ged_scores[index]),
+            "tolerance": tolerance_metadata[index],
+        }
+        if metric_set == "all":
+            item.update(
+                {
+                    "rouge": {
+                        "precision": _float(rouge_p[index]),
+                        "recall": _float(rouge_r[index]),
+                        "f1": _float(rouge_f[index]),
+                    },
+                    "bleu": {
+                        "precision": _float(bleu_p[index]),
+                        "recall": _float(bleu_r[index]),
+                        "f1": _float(bleu_f[index]),
+                    },
+                    "bert_score": {
+                        "precision": _float(bert_p[index]),
+                        "recall": _float(bert_r[index]),
+                        "f1": _float(bert_f[index]),
+                    },
+                }
+            )
+        per_image.append(item)
 
     return {
         "strategy": strategy_name,
         "graph_mode": graph_mode,
         "numeric_tolerance": numeric_tolerance,
+        "metric_set": metric_set,
         "prediction_dir": str(pred_dir.resolve()),
         "intersection_ids": intersection_ids,
         "intersection_size": len(intersection_ids),
@@ -702,6 +763,7 @@ def evaluate_strategy(
             bert_f=bert_f,
             ged_scores=ged_scores,
             indices=list(range(len(intersection_ids))),
+            metric_set=metric_set,
         ),
         "summary_by_chart_type": build_chart_type_summaries(
             intersection_ids=intersection_ids,
@@ -720,6 +782,7 @@ def evaluate_strategy(
             bert_r=bert_r,
             bert_f=bert_f,
             ged_scores=ged_scores,
+            metric_set=metric_set,
         ),
         "tolerance": {
             "enabled": numeric_tolerance > 0,
@@ -748,6 +811,7 @@ def build_report(
     output_path: Optional[Path] = None,
     ged_workers: int = DEFAULT_GED_WORKERS,
     numeric_tolerance: float = DEFAULT_NUMERIC_TOLERANCE,
+    metric_set: str = DEFAULT_METRIC_SET,
 ) -> Dict[str, Any]:
     selected_strategies = strategy_names or list(DEFAULT_STRATEGIES.keys())
     selected_graph_modes = graph_modes or list(DEFAULT_GRAPH_MODES)
@@ -757,15 +821,9 @@ def build_report(
         "extract_root": str(extract_root.resolve()),
         "labels_dir": str(labels_dir.resolve()),
         "graph_modes_requested": selected_graph_modes,
-        "metrics_used": [
-            "triple_match_micro_prf",
-            "triple_match_accuracy",
-            "rouge",
-            "bleu",
-            "bert_score",
-            "normalized_ged",
-        ],
-        "excluded_metrics": ["optimal_edit_path", "hallucination", "omission"],
+        "metric_set": metric_set,
+        "metrics_used": metrics_used_for(metric_set),
+        "excluded_metrics": excluded_metrics_for(metric_set),
         "metric_parameters": {
             "ged": {
                 "check_interval": GED_CHECK_INTERVAL,
@@ -776,11 +834,6 @@ def build_report(
             "numeric_tolerance": {
                 "relative_tolerance": numeric_tolerance,
                 "structural_metrics_only": True,
-            },
-            "bert_score": {
-                "model_type": bert_model_type,
-                "device": bert_device,
-                "batch_size": bert_batch_size,
             },
         },
         "graph_mode_definitions": {
@@ -794,6 +847,12 @@ def build_report(
         },
         "graph_modes": {},
     }
+    if metric_set == "all":
+        report["metric_parameters"]["bert_score"] = {
+            "model_type": bert_model_type,
+            "device": bert_device,
+            "batch_size": bert_batch_size,
+        }
 
     for graph_mode in selected_graph_modes:
         mode_report = {"strategies": {}}
@@ -813,6 +872,7 @@ def build_report(
                 offline_bert=offline_bert,
                 ged_workers=ged_workers,
                 numeric_tolerance=numeric_tolerance,
+                metric_set=metric_set,
             )
             if strategy_name == "oneshot_dynamic":
                 strategy_report["chart_type_classification"] = compute_dynamic_chart_accuracy(
@@ -828,6 +888,70 @@ def build_report(
         report["graph_modes"][graph_mode] = mode_report
 
     return report
+
+
+def tolerance_key(value: float) -> str:
+    return f"{value:g}"
+
+
+def normalize_tolerance_sweep(values: Optional[Sequence[float]]) -> Optional[List[float]]:
+    if values is None:
+        return None
+    normalized: List[float] = []
+    seen = set()
+    for value in values:
+        if value < 0:
+            raise SystemExit("--tolerance-sweep values must be non-negative")
+        key = tolerance_key(value)
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized.append(value)
+    if not normalized:
+        raise SystemExit("--tolerance-sweep requires at least one value")
+    return normalized
+
+
+def build_tolerance_sweep_report(
+    *,
+    tolerances: Sequence[float],
+    gold_dir: Path,
+    extract_root: Path,
+    labels_dir: Path,
+    bert_model_type: Optional[str],
+    bert_device: str,
+    bert_batch_size: Optional[int],
+    offline_bert: bool,
+    strategy_names: Optional[List[str]],
+    graph_modes: Optional[List[str]],
+    ged_workers: int,
+    metric_set: str,
+) -> Dict[str, Any]:
+    reports = {}
+    for tolerance in tolerances:
+        print(f"[tolerance-sweep] numeric tolerance={tolerance_key(tolerance)}")
+        reports[tolerance_key(tolerance)] = build_report(
+            gold_dir=gold_dir,
+            extract_root=extract_root,
+            labels_dir=labels_dir,
+            bert_model_type=bert_model_type,
+            bert_device=bert_device,
+            bert_batch_size=bert_batch_size,
+            offline_bert=offline_bert,
+            strategy_names=strategy_names,
+            graph_modes=graph_modes,
+            output_path=None,
+            ged_workers=ged_workers,
+            numeric_tolerance=tolerance,
+            metric_set=metric_set,
+        )
+    return {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "report_type": "tolerance_sweep",
+        "tolerances": [float(value) for value in tolerances],
+        "metric_set": metric_set,
+        "reports": reports,
+    }
 
 
 def parse_args() -> argparse.Namespace:
@@ -864,6 +988,12 @@ def parse_args() -> argparse.Namespace:
         help="Graph projections to evaluate. Defaults to both full_graph and content_only.",
     )
     parser.add_argument(
+        "--metric-set",
+        choices=METRIC_SETS,
+        default=DEFAULT_METRIC_SET,
+        help="Metrics to compute. Use 'structural' for tolerance sweeps to skip BLEU, ROUGE, and BERTScore.",
+    )
+    parser.add_argument(
         "--allow-online-model-download",
         action="store_true",
         help="Allow BERTScore to query/download Hugging Face models instead of forcing offline cache usage.",
@@ -880,6 +1010,13 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_NUMERIC_TOLERANCE,
         help="Relative tolerance for structural numeric matching. Example: 0.01 means +/- 1%%. Applies only to quantity-like datapoint x/y literals.",
     )
+    parser.add_argument(
+        "--tolerance-sweep",
+        nargs="+",
+        type=float,
+        default=None,
+        help="Evaluate multiple relative numeric tolerances in one run. Example: --tolerance-sweep 0 0.005 0.01 0.02.",
+    )
     return parser.parse_args()
 
 
@@ -889,23 +1026,41 @@ def main() -> int:
         raise SystemExit("--ged-workers must be at least 1")
     if args.numeric_tolerance < 0:
         raise SystemExit("--numeric-tolerance must be non-negative")
+    tolerance_sweep = normalize_tolerance_sweep(args.tolerance_sweep)
     if args.bert_batch_size is not None and args.bert_batch_size < 1:
         raise SystemExit("--bert-batch-size must be at least 1")
-    bert_device = resolve_bert_device(args.bert_device)
-    report = build_report(
-        gold_dir=Path(args.gold_dir),
-        extract_root=Path(args.extract_root),
-        labels_dir=Path(args.labels_dir),
-        bert_model_type=args.bert_model_type,
-        bert_device=bert_device,
-        bert_batch_size=args.bert_batch_size,
-        offline_bert=not args.allow_online_model_download,
-        strategy_names=args.strategies,
-        graph_modes=args.graph_modes,
-        output_path=Path(args.output),
-        ged_workers=args.ged_workers,
-        numeric_tolerance=args.numeric_tolerance,
-    )
+    bert_device = resolve_bert_device(args.bert_device) if args.metric_set == "all" else args.bert_device
+    if tolerance_sweep is not None:
+        report = build_tolerance_sweep_report(
+            tolerances=tolerance_sweep,
+            gold_dir=Path(args.gold_dir),
+            extract_root=Path(args.extract_root),
+            labels_dir=Path(args.labels_dir),
+            bert_model_type=args.bert_model_type,
+            bert_device=bert_device,
+            bert_batch_size=args.bert_batch_size,
+            offline_bert=not args.allow_online_model_download,
+            strategy_names=args.strategies,
+            graph_modes=args.graph_modes,
+            ged_workers=args.ged_workers,
+            metric_set=args.metric_set,
+        )
+    else:
+        report = build_report(
+            gold_dir=Path(args.gold_dir),
+            extract_root=Path(args.extract_root),
+            labels_dir=Path(args.labels_dir),
+            bert_model_type=args.bert_model_type,
+            bert_device=bert_device,
+            bert_batch_size=args.bert_batch_size,
+            offline_bert=not args.allow_online_model_download,
+            strategy_names=args.strategies,
+            graph_modes=args.graph_modes,
+            output_path=Path(args.output),
+            ged_workers=args.ged_workers,
+            numeric_tolerance=args.numeric_tolerance,
+            metric_set=args.metric_set,
+        )
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(report, indent=2), encoding="utf-8")

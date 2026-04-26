@@ -411,9 +411,9 @@ The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criter
 \toprule
 \textbf{Strategy} & \textbf{Mode} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & Whole graph & 0.8206 & 0.7522 & 0.7849 & 0.8715 & 0.0749 & 0.9560 & 0.9572 & 0.9710 \\
 Static one-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Whole graph & 0.8373 & 0.7545 & 0.7938 & 0.8737 & 0.0718 & 0.9583 & 0.9602 & 0.9738 \\
 Few-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \addlinespace
 Zero-shot & Content only & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 0.9395 & 0.9418 & 0.9695 \\
@@ -423,7 +423,7 @@ Few-shot & Content only & \pending & \pending & \pending & \pending & \pending &
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText evaluation results by prompting strategy and graph mode. All strategies are evaluated on the same test-set intersection within each mode, so the sample size is omitted from the table body and reported with the experimental configuration. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Lower nGED is better; all other metrics are higher-is-better.}
+\caption{VisText evaluation results by prompting strategy and graph mode. All completed rows are evaluated on the same 868-image test-set intersection within each mode, so the sample size is omitted from the table body. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Lower nGED is better; all other metrics are higher-is-better.}
 \label{tab:vistext_strategy_results}
 \end{table*}
 
