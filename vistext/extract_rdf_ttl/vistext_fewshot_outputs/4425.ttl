@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of killed soldiers in U.S. wars since World War I as of October 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "War or armed conflict" .
+
+:YAxis a :Axis ;
+    :title "Number of fatalities" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Korean War (1950-1953)" ;
+    :yValue "36574" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Operation Enduring Freedom (200..." ;
+    :yValue "2351" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Operation Freedom's Sentinel (20..." ;
+    :yValue "92" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Operation Inherent Resolve [CJTF-..." ;
+    :yValue "100" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Operation Iraqi Freedom (2003-20..." ;
+    :yValue "4410" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Operation New Dawn (2007-2011)" ;
+    :yValue "74" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Persian Gulf War (1990-1991)" ;
+    :yValue "383" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Vietnam Conflict (1964-1973)" ;
+    :yValue "58220" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "World War I (1917-1918)" ;
+    :yValue "116516" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "World War II (1941-1946)" ;
+    :yValue "405399" ;
+    :belongsTo :Chart .

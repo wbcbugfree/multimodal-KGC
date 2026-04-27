@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading reasons for male university students in Japan to have not experienced sexual intercourse yet as of December 2017" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.04" ;
+    :yValue "Aversion to sex" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Concerns about pregnancy" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Concerns about sexually transmitt..." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Lack of a partner" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.05" ;
+    :yValue "Lack of sexual desire" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.13" ;
+    :yValue "No reason in particular" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "No response" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Not sure what to do" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.03" ;
+    :yValue "Other" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Premarital sex is wrong" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.19" ;
+    :yValue "Still too young" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Too much hassle" ;
+    :belongsTo :Chart .

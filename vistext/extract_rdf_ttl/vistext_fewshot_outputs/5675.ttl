@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of mosques in the United Kingdom (UK) in 2017 , by capacity" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of masjids" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1001 to 2000 people" ;
+    :yValue "132" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "101 to 200 people" ;
+    :yValue "299" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2001 to 4000 people" ;
+    :yValue "52" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "201 to 300 people" ;
+    :yValue "280" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "301 to 400 people" ;
+    :yValue "145" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "401 to 500 people" ;
+    :yValue "138" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "50 to 100 people" ;
+    :yValue "278" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "501 to 750 people" ;
+    :yValue "146" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "751 to 1000 people" ;
+    :yValue "101" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Greater than 4000 people" ;
+    :yValue "12" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Less than 50 people" ;
+    :yValue "52" ;
+    :belongsTo :Chart .

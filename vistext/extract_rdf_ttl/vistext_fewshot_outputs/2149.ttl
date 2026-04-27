@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading stock life and health insurance companies in the United States in 2019 , by revenue (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "22.3" ;
+    :yValue "Aflac" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9.2" ;
+    :yValue "Equitable Holdings" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "17.2" ;
+    :yValue "Lincoln National" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "70.6" ;
+    :yValue "MetLife" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "10.3" ;
+    :yValue "Mutual of Omaha Insurance" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "11.8" ;
+    :yValue "Pacific Life" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "16.2" ;
+    :yValue "Principal Financial" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "65.3" ;
+    :yValue "Prudential Financial" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "14.3" ;
+    :yValue "Reinsurance Group of America" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Unum Group" ;
+    :belongsTo :Chart .

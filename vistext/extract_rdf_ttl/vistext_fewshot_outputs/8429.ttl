@@ -1,0 +1,52 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of deaths from stroke in Northern Ireland in 2018 , by gender and age" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Men" .
+
+:YAxis a :Axis ;
+    :title "age group" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1" ;
+    :yValue "45-49 years" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3" ;
+    :yValue "60-64 years" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "65-69 years" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "70-74 years" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "24" ;
+    :yValue "75-59 years" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "80-84 years" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "85-89 years" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "34" ;
+    :yValue "90 years and over" ;
+    :belongsTo :Chart .

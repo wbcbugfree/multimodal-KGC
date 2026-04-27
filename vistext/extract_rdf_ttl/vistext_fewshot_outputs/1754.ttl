@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Market capitalization of the largest U.S. internet companies as of June 2020 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Value of market cap in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "Platform" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "979.1" ;
+    :yValue "Alphabet" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "1371.4" ;
+    :yValue "Amazon.com" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "65.6" ;
+    :yValue "Booking Holdings Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "663" ;
+    :yValue "Facebook" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "190.4" ;
+    :yValue "Netflix" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "12.7" ;
+    :yValue "Pinterest" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "32.4" ;
+    :yValue "Snap Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "25.2" ;
+    :yValue "Twitter" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "208.1" ;
+    :yValue "Verizon Communications" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "34.3" ;
+    :yValue "eBay" ;
+    :belongsTo :Chart .

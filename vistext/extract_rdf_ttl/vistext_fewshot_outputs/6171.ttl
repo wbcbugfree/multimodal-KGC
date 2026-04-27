@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "NFL players ranked by salary and endorsement income in 2020 (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Endorsements" .
+
+:YAxis a :Axis ;
+    :title "Highest-paid NFL players" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "9" ;
+    :yValue "Aaron Rodgers" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "4" ;
+    :yValue "Carson Wentz" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Dak Prescott" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "8" ;
+    :yValue "Deshaun Watson" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "14.4" ;
+    :yValue "Drew Brees" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2" ;
+    :yValue "Jared Goff" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.6" ;
+    :yValue "Joey Bosa" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2.5" ;
+    :yValue "Kirk Cousins" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.2" ;
+    :yValue "Ryan Tannehill" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "12" ;
+    :yValue "Tom Brady" ;
+    :belongsTo :Chart .

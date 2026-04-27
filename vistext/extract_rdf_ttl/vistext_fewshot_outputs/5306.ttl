@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular all-time TV shows in the United Kingdom (UK) from August 2019 to August 2020" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Share of respondents with a positive opinion" .
+
+:YAxis a :Axis ;
+    :title "Response" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.66" ;
+    :yValue "Blackadder" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.72" ;
+    :yValue "Blue Planet II" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.64" ;
+    :yValue "David Attenborough's Natu..." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.74" ;
+    :yValue "Fawlty Towers" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.64" ;
+    :yValue "Mr. Bean" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.76" ;
+    :yValue "Only Fools and Horses" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.73" ;
+    :yValue "Planet Earth" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.62" ;
+    :yValue "Planet Earth II" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.73" ;
+    :yValue "The Blue Planet" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.63" ;
+    :yValue "The Flintstones" ;
+    :belongsTo :Chart .

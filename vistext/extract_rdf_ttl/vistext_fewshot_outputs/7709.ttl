@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of pupils attending schools in Northern Ireland from 2010/11 to 2019/20" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Secondary" .
+
+:YAxis a :Axis ;
+    :title "Year" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "147139" ;
+    :yValue "2010/11" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "145946" ;
+    :yValue "2011/12" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "144577" ;
+    :yValue "2012/13" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "143102" ;
+    :yValue "2013/14" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "141639" ;
+    :yValue "2014/15" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "140224" ;
+    :yValue "2015/16" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "139626" ;
+    :yValue "2016/17" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "139806" ;
+    :yValue "2017/18" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "141416" ;
+    :yValue "2018/19" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "144365" ;
+    :yValue "2019/20" ;
+    :belongsTo :Chart .

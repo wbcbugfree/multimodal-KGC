@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Growth of top 10 pharmaceutical companies in South Africa in 2014 - 2015" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Pharmaceutical company" .
+
+:YAxis a :Axis ;
+    :title "Percent growth (PPG)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Adcock Ingram" ;
+    :yValue "0.117" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Aspen" ;
+    :yValue "0.052" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Bayer" ;
+    :yValue "0.071" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Cipla" ;
+    :yValue "0.05" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Johnson & Johnson" ;
+    :yValue "0.088" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Merck & Co." ;
+    :yValue "0.096" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Novartis" ;
+    :yValue "0.114" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Pfizer" ;
+    :yValue "0.088" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Roche" ;
+    :yValue "0.069" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Sanofi" ;
+    :yValue "0.072" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Total market" ;
+    :yValue "0.075" ;
+    :belongsTo :Chart .

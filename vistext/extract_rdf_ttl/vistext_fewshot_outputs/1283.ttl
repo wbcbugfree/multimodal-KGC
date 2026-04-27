@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading BBC Radio stations ranked by weekly reach in the United Kingdom (UK) as of 1st quarter 2020 (in 1,000 listeners)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Listeners reached in thousands*" .
+
+:YAxis a :Axis ;
+    :title "radio station" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "940" ;
+    :yValue "1Xtra from the BBC" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2525" ;
+    :yValue "BBC 6 Music" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "8913" ;
+    :yValue "BBC Radio 1" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14413" ;
+    :yValue "BBC Radio 2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2050" ;
+    :yValue "BBC Radio 3" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "11130" ;
+    :yValue "BBC Radio 4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2017" ;
+    :yValue "BBC Radio 4 Extra" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "5236" ;
+    :yValue "BBC Radio 5 live" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "685" ;
+    :yValue "BBC Radio 5 live sports extra" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "1414" ;
+    :yValue "BBC World Service" ;
+    :belongsTo :Chart .

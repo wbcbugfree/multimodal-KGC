@@ -1,0 +1,57 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Number of coronavirus (COVID-19) recoveries in Romania as of January 8 , 2021 (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of people in thousands" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "June 1, 2020" ;
+    :yValue "15.1" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "July 1, 2020" ;
+    :yValue "21.2" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "August 1, 2020" ;
+    :yValue "32.4" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "September 1, 2020" ;
+    :yValue "44.2" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "October 1, 2020" ;
+    :yValue "91.5" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "November 1, 2020" ;
+    :yValue "135.4" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "December 1, 2020" ;
+    :yValue "322.2" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "January 1, 2021" ;
+    :yValue "530.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "January 8, 2021" ;
+    :yValue "600" ;
+    :belongsTo :Chart .

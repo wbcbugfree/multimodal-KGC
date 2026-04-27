@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Volume of oilseeds produced in India in financial year 2020 , by type (in 1,000 metric tons)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Volume in thousand metric tons" .
+
+:YAxis a :Axis ;
+    :title "type" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1840" ;
+    :yValue "Castorseed" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "9952" ;
+    :yValue "Groundnut" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "153" ;
+    :yValue "Linseed" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "31" ;
+    :yValue "Nigerseed" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "9116" ;
+    :yValue "Rapeseed and mustard" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "43" ;
+    :yValue "Safflower" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "689" ;
+    :yValue "Sesamum" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11226" ;
+    :yValue "Soyabean" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "213" ;
+    :yValue "Sunflower" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "33416" ;
+    :yValue "Total from nine oil seeds" ;
+    :belongsTo :Chart .

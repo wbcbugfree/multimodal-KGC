@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Syria : National debt from 2000 to 2010 in relation to gross domestic product (GDP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "National debt in relation to GDP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "2000" ;
+    :yValue "1.52" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "2001" ;
+    :yValue "1.45" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2002" ;
+    :yValue "1.33" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2003" ;
+    :yValue "1.34" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "2004" ;
+    :yValue "1.13" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2005" ;
+    :yValue "0.51" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2006" ;
+    :yValue "0.45" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2007" ;
+    :yValue "0.43" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "2008" ;
+    :yValue "0.38" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2009" ;
+    :yValue "0.31" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "2010*" ;
+    :yValue "0.3" ;
+    :belongsTo :Chart .

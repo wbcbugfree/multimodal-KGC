@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Production of cotton fabric in India from financial year 2008 to 2018 (in billion square meters)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Production in billion square meters" .
+
+:YAxis a :Axis ;
+    :title "Fiscal years" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "27.14" ;
+    :yValue "FY 2008" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "26.65" ;
+    :yValue "FY 2009" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "28.66" ;
+    :yValue "FY 2010" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "31.52" ;
+    :yValue "FY 2011" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "30.54" ;
+    :yValue "FY 2012" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "33.65" ;
+    :yValue "FY 2013" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "35.25" ;
+    :yValue "FY 2014" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "36.85" ;
+    :yValue "FY 2015" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "38.3" ;
+    :yValue "FY 2016" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "38.65" ;
+    :yValue "FY 2017" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "39.55" ;
+    :yValue "FY 2018*" ;
+    :belongsTo :Chart .

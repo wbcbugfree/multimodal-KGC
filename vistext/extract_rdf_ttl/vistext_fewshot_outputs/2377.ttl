@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :LineChart ;
+    :title "Total value of Barclay 's dividends paid to shareholders from 2010 to 2019 (in million GBP)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Total dividend value in million GBP" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "659" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "736" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "858" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "1064" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "1086" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "757" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "390" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "700" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "1018" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2018" ;
+    :yValue "1241" ;
+    :belongsTo :Chart .

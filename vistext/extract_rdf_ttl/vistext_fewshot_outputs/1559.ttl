@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading Chinese semiconductor companies in 2010 , based on revenue (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Chinese Semiconductor Company" .
+
+:YAxis a :Axis ;
+    :title "Revenue in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "GalaxyCore Inc." ;
+    :yValue "125" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Hangzhou Silan Microelectronics C..." ;
+    :yValue "124" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "HiSilicon Technologies Co., Ltd." ;
+    :yValue "652" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Jilin Sino Microelectronics Co., Ltd." ;
+    :yValue "164" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "RDA Microelectronics, Inc." ;
+    :yValue "190" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Shenzhen ZTE Microelectronics Co..." ;
+    :yValue "149" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Spreadtrum Communications Inc." ;
+    :yValue "371" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Suzhou Good-Ark Electronics Co., ..." ;
+    :yValue "124" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tianjin ZhongHuan Semiconductor..." ;
+    :yValue "223" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Wuxi China Resources Huajian Mic..." ;
+    :yValue "169" ;
+    :belongsTo :Chart .

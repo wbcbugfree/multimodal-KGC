@@ -1,0 +1,77 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Average penetration rate of bottled water brands in Turkey in 2012 and 2013" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "2013" .
+
+:YAxis a :Axis ;
+    :title "Brand" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Abant" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Aqua" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "Aquafina" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.11" ;
+    :yValue "Aytaç" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.14" ;
+    :yValue "Damla" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.28" ;
+    :yValue "Erikli" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Güzelpinar" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.27" ;
+    :yValue "Hayat" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.01" ;
+    :yValue "NAYA" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.17" ;
+    :yValue "Pinar" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.02" ;
+    :yValue "Pure Life" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.1" ;
+    :yValue "Saka" ;
+    :belongsTo :Chart .
+
+:DataPoint13 a :DataPoint ;
+    :xValue "0.09" ;
+    :yValue "Sirma" ;
+    :belongsTo :Chart .

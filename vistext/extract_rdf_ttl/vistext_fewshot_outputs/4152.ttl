@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :AreaChart ;
+    :title "Average weekly attendance for the Church of England from 2009 to 2018 (in 1000 attendees)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Number of attendees (in thousands)" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "1131" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 2009" ;
+    :yValue "1104" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "1089" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 2011" ;
+    :yValue "1085" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 2012" ;
+    :yValue "1024" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 2013" ;
+    :yValue "1000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2014" ;
+    :yValue "981" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2015" ;
+    :yValue "941" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2016" ;
+    :yValue "915" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2017" ;
+    :yValue "891" ;
+    :belongsTo :Chart .

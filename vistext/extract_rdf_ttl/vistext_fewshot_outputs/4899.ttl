@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading electric utilities based on the number of customers in the United States in 2019" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of consumers in thousands" .
+
+:YAxis a :Axis ;
+    :title "electric utility" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "4000000" ;
+    :yValue "Commonwealth Edison Co." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "3500000" ;
+    :yValue "Consolidated Edison Co-NY Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "2200000" ;
+    :yValue "DTE Electric Company" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "2000000" ;
+    :yValue "Duke Energy Carolinas, LLC." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "5000000" ;
+    :yValue "Florida Power & Light Co." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "2400000" ;
+    :yValue "Georgia Power Co." ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2300000" ;
+    :yValue "Pacific Gas & Electric Co." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "2100000" ;
+    :yValue "Public Service Elec & Gas Co." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "4200000" ;
+    :yValue "Southern California Edison Co." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "2400000" ;
+    :yValue "Virginia Electric & Power Co." ;
+    :belongsTo :Chart .

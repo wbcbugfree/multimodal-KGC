@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Top ten media markets for the 2016 presidential general election in the United States , as of August 18 , 2016 , by ad airings" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "media market" .
+
+:YAxis a :Axis ;
+    :title "Number of ads aired" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Charlotte , NC" ;
+    :yValue "4711" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Cleveland , OH" ;
+    :yValue "5109" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Columbus , OH" ;
+    :yValue "4278" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Denver , CO" ;
+    :yValue "3595" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Las Vegas , NV" ;
+    :yValue "4308" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Orlando , FL" ;
+    :yValue "5741" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Raleigh , NC" ;
+    :yValue "3511" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Reno , NV" ;
+    :yValue "3911" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Tampa , FL" ;
+    :yValue "6565" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "West Palm Beach , FL" ;
+    :yValue "4630" ;
+    :belongsTo :Chart .

@@ -1,0 +1,72 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Monthly inflation rate in Latvia from February 2018 to January 2019 (HICP compared to same month in the previous year)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Growth rate of HICP" .
+
+:YAxis a :Axis ;
+    :title "Month" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "0.022" ;
+    :yValue "Apr '18" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "0.028" ;
+    :yValue "Aug '18" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "0.025" ;
+    :yValue "Dec '18" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "0.018" ;
+    :yValue "Feb '18" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "0.029" ;
+    :yValue "Jan '19*" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "Jul '18" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "0.027" ;
+    :yValue "Jun '18" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "0.023" ;
+    :yValue "Mar '18" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "0.024" ;
+    :yValue "May '18" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "0.029" ;
+    :yValue "Nov '18" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "0.032" ;
+    :yValue "Oct '18" ;
+    :belongsTo :Chart .
+
+:DataPoint12 a :DataPoint ;
+    :xValue "0.033" ;
+    :yValue "Sep '18" ;
+    :belongsTo :Chart .

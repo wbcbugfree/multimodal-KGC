@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading gaming content on Twitch worldwide from January 1 , 2019 to June 30 , 2019 , by hours watched (in millions)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of hours watched" .
+
+:YAxis a :Axis ;
+    :title "gaming content" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "512.3" ;
+    :yValue "League of Legends" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "465" ;
+    :yValue "Fortnite" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "372.4" ;
+    :yValue "Just Chatting" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "268.4" ;
+    :yValue "Grand Theft Auto V" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "236.4" ;
+    :yValue "Dota 2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "181.4" ;
+    :yValue "Apex Legends" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "177.6" ;
+    :yValue "Counter-Strike: Global Offensive" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "128.5" ;
+    :yValue "Overwatch" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "121.2" ;
+    :yValue "Hearthstone" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "119.5" ;
+    :yValue "World of Warcraft" ;
+    :belongsTo :Chart .

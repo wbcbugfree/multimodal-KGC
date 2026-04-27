@@ -1,0 +1,66 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of Royal Canadian Mounted Police officers in Canada in 2019 , by level of policing and province Contract policing *" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "level of policing and province" .
+
+:YAxis a :Axis .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "2891" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "6845" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "934" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "720" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "436" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Northwest Territories" ;
+    :yValue "194" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "862" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Nunavut" ;
+    :yValue "135" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "118" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "1186" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Yukon" ;
+    :yValue "136" ;
+    :belongsTo :Chart .

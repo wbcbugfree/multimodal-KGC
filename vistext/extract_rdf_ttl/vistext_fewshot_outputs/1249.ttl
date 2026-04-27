@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most popular gaming genres on Kickstarter and Indiegogo as of May 2014 , by funds raised (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Gaming genre" .
+
+:YAxis a :Axis ;
+    :title "Successful funding in million U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Action" ;
+    :yValue "8.8" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Adventure" ;
+    :yValue "5.3" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Fighting" ;
+    :yValue "0.9" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Platformer" ;
+    :yValue "0.8" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Puzzle" ;
+    :yValue "0.2" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "RPG" ;
+    :yValue "7.7" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Racing" ;
+    :yValue "0.1" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Shooter" ;
+    :yValue "1.1" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Simulation" ;
+    :yValue "1.8" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Strategy" ;
+    :yValue "9.1" ;
+    :belongsTo :Chart .

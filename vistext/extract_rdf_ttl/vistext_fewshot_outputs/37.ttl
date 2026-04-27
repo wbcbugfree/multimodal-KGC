@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :LineChart ;
+    :title "Real value of U.S. fossil fuel imports from 1960 to 2011 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Year" .
+
+:YAxis a :Axis ;
+    :title "Real value in billion U.S. dollars" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Dec 31, 1959" ;
+    :yValue "10.5" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Dec 31, 1969" ;
+    :yValue "14.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Dec 31, 1979" ;
+    :yValue "167.3" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Dec 31, 1989" ;
+    :yValue "92.1" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Dec 31, 1994" ;
+    :yValue "73.8" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Dec 31, 1999" ;
+    :yValue "161" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Dec 31, 2006" ;
+    :yValue "346.5" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Dec 31, 2007" ;
+    :yValue "451.8" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Dec 31, 2008" ;
+    :yValue "251.5" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Dec 31, 2010" ;
+    :yValue "401.3" ;
+    :belongsTo :Chart .

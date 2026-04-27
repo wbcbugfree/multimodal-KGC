@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Largest self-publishing companies in the United States in 2018 , by number of print books published" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Number of published titles" .
+
+:YAxis a :Axis ;
+    :title "company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "1416384" ;
+    :yValue "Amazon’s CreateSpace/Independe..." ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "14463" ;
+    :yValue "AuthorHouse (Div. of Author Solut..." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "25274" ;
+    :yValue "Blurb, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "14036" ;
+    :yValue "Christian Faith Publishing" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "11768" ;
+    :yValue "Independent Publisher (Bar Code ..." ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "55341" ;
+    :yValue "Lulu Press, Inc.*" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "11544" ;
+    :yValue "Page Publishing, Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "11213" ;
+    :yValue "Salem Author Services [formerly ..." ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "10317" ;
+    :yValue "WestBow Press (imprint of Author ..." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "14942" ;
+    :yValue "Xlibris (Div. of Author Solutions)" ;
+    :belongsTo :Chart .

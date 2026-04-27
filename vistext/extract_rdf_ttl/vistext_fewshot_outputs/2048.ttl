@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading life insurance companies ranked by total gross premium income in Ireland in 2018 (in 1,000 euros)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Gross premium income in thousand euros" .
+
+:YAxis a :Axis ;
+    :title "Life Insurance Company" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "111860" ;
+    :yValue "Acorn Life" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "89354" ;
+    :yValue "Ark Life" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "855018" ;
+    :yValue "Aviva Life & Pensions" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "605988" ;
+    :yValue "Friends First Life" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "4124976" ;
+    :yValue "Irish Life" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "4181" ;
+    :yValue "London General Life" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "2187702" ;
+    :yValue "New Ireland" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "78949" ;
+    :yValue "Royal London*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "663242" ;
+    :yValue "Standard Life" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "3084365" ;
+    :yValue "Zurich Life" ;
+    :belongsTo :Chart .

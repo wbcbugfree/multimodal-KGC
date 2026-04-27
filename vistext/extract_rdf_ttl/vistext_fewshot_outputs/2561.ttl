@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Most viewed films at movie theaters in Argentina in 2018 (in million tickets sold)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Most viewed films" .
+
+:YAxis a :Axis ;
+    :title "Number of tickets sold in millions" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Avengers: Infinity War" ;
+    :yValue "2.93" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "Bohemian Rapsody" ;
+    :yValue "1.46" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Coco" ;
+    :yValue "3.21" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "Deadpool 2" ;
+    :yValue "1.04" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "El Ángel" ;
+    :yValue "1.36" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Hotel Transylvania" ;
+    :yValue "2.58" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Incredibles 2" ;
+    :yValue "3.61" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Jumanji: Welcome to the jungle" ;
+    :yValue "1.34" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Jurassic World: Fallen Kingdom" ;
+    :yValue "2.37" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "The Nun" ;
+    :yValue "1.17" ;
+    :belongsTo :Chart .

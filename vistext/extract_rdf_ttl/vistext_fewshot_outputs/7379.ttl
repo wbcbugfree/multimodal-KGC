@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Daily newspaper circulation in Canada in 2016 , by province (in 1,000s)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "province of Canada" .
+
+:YAxis a :Axis ;
+    :title "Weekly circulation" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "Alberta" ;
+    :yValue "2548.7" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "British Columbia" ;
+    :yValue "3129.5" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "Manitoba" ;
+    :yValue "1247.7" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "New Brunswick" ;
+    :yValue "559.5" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "Newfoundland and Labrador" ;
+    :yValue "201.7" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Nova Scotia" ;
+    :yValue "689.6" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "Ontario" ;
+    :yValue "14751.4" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "Prince Edward Island" ;
+    :yValue "139.7" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Quebec" ;
+    :yValue "8059" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "Saskatchewan" ;
+    :yValue "538.5" ;
+    :belongsTo :Chart .

@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Number of individuals with asthma in Great Britain in 2015 , by region" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "region in UK" .
+
+:YAxis a :Axis ;
+    :title "Number of individuals" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "East Midlands" ;
+    :yValue "408000" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "East of England" ;
+    :yValue "582000" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "London" ;
+    :yValue "603000" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "North East" ;
+    :yValue "293000" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "North West" ;
+    :yValue "824000" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "Scotland" ;
+    :yValue "575000" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "South East" ;
+    :yValue "735000" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "South West" ;
+    :yValue "554000" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "Wales" ;
+    :yValue "347000" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "West Midlands" ;
+    :yValue "463000" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "Yorkshire and the Humber" ;
+    :yValue "559000" ;
+    :belongsTo :Chart .

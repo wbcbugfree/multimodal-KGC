@@ -1,0 +1,67 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Convenience store sales of salty snacks in the United States in 2019 , by type (in million U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Industry total sales in million U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "salty snacks" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "811.6" ;
+    :yValue "Cheese snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "399.7" ;
+    :yValue "Corn snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "436.6" ;
+    :yValue "Crackers" ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "870.7" ;
+    :yValue "Other salty snacks" ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "234.3" ;
+    :yValue "Popcorn (ready-to-eat)" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "217.2" ;
+    :yValue "Pork rinds" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "1818" ;
+    :yValue "Potato chips" ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "251.5" ;
+    :yValue "Pretzels" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "632.2" ;
+    :yValue "Snack nuts" ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "291.1" ;
+    :yValue "Sunflower/pumpkin seeds" ;
+    :belongsTo :Chart .
+
+:DataPoint11 a :DataPoint ;
+    :xValue "1200.7" ;
+    :yValue "Tortilla/corn chips" ;
+    :belongsTo :Chart .

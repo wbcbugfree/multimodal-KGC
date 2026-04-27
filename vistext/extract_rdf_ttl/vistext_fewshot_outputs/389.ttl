@@ -1,0 +1,62 @@
+@prefix : <http://example.org/vistext#> .
+
+:Chart a :BarChart ;
+    :title "Leading 10 U.S. companies based on medical device revenue in 2019 (in billion U.S. dollars)" ;
+    :xAxis :XAxis ;
+    :yAxis :YAxis .
+
+:XAxis a :Axis ;
+    :title "Revenue in billion U.S. dollars" .
+
+:YAxis a :Axis ;
+    :title "companies based on medical device" .
+
+:DataPoint1 a :DataPoint ;
+    :xValue "12.21" ;
+    :yValue "Abbott Laboratories" ;
+    :belongsTo :Chart .
+
+:DataPoint2 a :DataPoint ;
+    :xValue "11.33" ;
+    :yValue "Baxter International Inc." ;
+    :belongsTo :Chart .
+
+:DataPoint3 a :DataPoint ;
+    :xValue "12.9" ;
+    :yValue "Becton Dickinson & Co." ;
+    :belongsTo :Chart .
+
+:DataPoint4 a :DataPoint ;
+    :xValue "10.74" ;
+    :yValue "Boston Scientific Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint5 a :DataPoint ;
+    :xValue "15.46" ;
+    :yValue "Cardinal Health" ;
+    :belongsTo :Chart .
+
+:DataPoint6 a :DataPoint ;
+    :xValue "19.9" ;
+    :yValue "General Electric Healthcare**" ;
+    :belongsTo :Chart .
+
+:DataPoint7 a :DataPoint ;
+    :xValue "25.96" ;
+    :yValue "Johnson & Johnson Medical Device..." ;
+    :belongsTo :Chart .
+
+:DataPoint8 a :DataPoint ;
+    :xValue "30.56" ;
+    :yValue "Medtronic Inc.*" ;
+    :belongsTo :Chart .
+
+:DataPoint9 a :DataPoint ;
+    :xValue "14.88" ;
+    :yValue "Stryker Corp." ;
+    :belongsTo :Chart .
+
+:DataPoint10 a :DataPoint ;
+    :xValue "7.92" ;
+    :yValue "Zimmer Biomet" ;
+    :belongsTo :Chart .
