@@ -164,8 +164,10 @@ def edge_target(edge: dict[str, Any]) -> str:
     return string_value(edge.get("target")).strip()
 
 
-def edge_subject(edge: dict[str, Any], index: int) -> str:
-    return f"Edge{index}"
+def edge_subject(source: str, target: str, index: int) -> str:
+    if source and target:
+        return f"Edge{source.removeprefix('Node')}{target.removeprefix('Node')}"
+    return f"EdgeUnknown{index}"
 
 
 def resolve_node_reference(
@@ -216,12 +218,14 @@ def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
         if not isinstance(edge, dict):
             triples.append([f"EdgeInvalid{index}", "invalid_edge", string_value(edge)])
             continue
-        subject = edge_subject(edge, index)
+        source = resolve_node_reference(edge_source(edge), node_id_map, node_label_map, edge, "source")
+        target = resolve_node_reference(edge_target(edge), node_id_map, node_label_map, edge, "target")
+        subject = edge_subject(source, target, index)
         values = {
-            "source": resolve_node_reference(edge_source(edge), node_id_map, node_label_map, edge, "source"),
+            "source": source,
             "source_type": string_value(edge.get("source_type")),
             "source_label": string_value(edge.get("source_label")),
-            "target": resolve_node_reference(edge_target(edge), node_id_map, node_label_map, edge, "target"),
+            "target": target,
             "target_type": string_value(edge.get("target_type")),
             "target_label": string_value(edge.get("target_label")),
             "type_of_edge": string_value(edge.get("type_of_edge")),
