@@ -1,96 +1,96 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodefruits a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Fruits" ;
     :shape :StartEvent .
 
-:Nodeinput_mango_pitaya_durian a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Input mango, pitaya, durian" ;
     :shape :Task .
 
-:Nodeprefer_pitaya_to_durian a :Decision, :Node ;
+:Node3 a :Decision, :Node ;
     :label "Prefer pitaya to durian?" ;
     :shape :Gateway .
 
-:Nodeprefer_mango_to_pitaya a :Decision, :Node ;
+:Node4 a :Decision, :Node ;
     :label "Prefer mango to pitaya?" ;
     :shape :Gateway .
 
-:Nodeprefer_mango_durian a :Decision, :Node ;
+:Node5 a :Decision, :Node ;
     :label "Prefer mango to durian?" ;
     :shape :Gateway .
 
-:Nodego_for_mango a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Go for mango" ;
     :shape :Task .
 
-:Nodego_for_pitaya a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Go for pitaya" ;
     :shape :Task .
 
-:Nodego_for_pitaya_1 a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Go for pitaya" ;
     :shape :Task .
 
-:Nodeend a :Terminator, :Node ;
+:Node9 a :Terminator, :Node ;
     :label "End" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodefruits ;
-    :target :Nodeinput_mango_pitaya_durian ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodeinput_mango_pitaya_durian ;
-    :target :Nodeprefer_mango_to_pitaya ;
+    :source :Node2 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodeprefer_mango_to_pitaya ;
-    :target :Nodeprefer_pitaya_to_durian ;
+    :source :Node4 ;
+    :target :Node3 ;
     :relationshipType :Branches .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodeprefer_mango_to_pitaya ;
-    :target :Nodeprefer_mango_durian ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Branches .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodeprefer_pitaya_to_durian ;
-    :target :Nodego_for_mango ;
+    :source :Node3 ;
+    :target :Node6 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodeprefer_pitaya_to_durian ;
-    :target :Nodego_for_mango ;
+    :source :Node3 ;
+    :target :Node6 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeprefer_mango_durian ;
-    :target :Nodego_for_pitaya ;
+    :source :Node5 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodeprefer_mango_durian ;
-    :target :Nodego_for_pitaya_1 ;
+    :source :Node5 ;
+    :target :Node8 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodego_for_mango ;
-    :target :Nodeend ;
+    :source :Node6 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodego_for_pitaya ;
-    :target :Nodeend ;
+    :source :Node7 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodego_for_pitaya_1 ;
-    :target :Nodeend ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Follows .

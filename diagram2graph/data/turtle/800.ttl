@@ -1,86 +1,86 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Noden1 a :Process, :Node ;
+:Node1 a :Process, :Node ;
     :label "Assessment" ;
     :shape :Task .
 
-:Noden2 a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Team work" ;
     :shape :Task .
 
-:Noden3 a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Work" ;
     :shape :Task .
 
-:Noden4 a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Gather" ;
     :shape :Task .
 
-:Noden5 a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Complete" ;
     :shape :Task .
 
-:Noden6 a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Closure" ;
     :shape :Task .
 
-:Noden7 a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Primary closure" ;
     :shape :Task .
 
-:Noden8 a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Bandaging" ;
     :shape :Task .
 
-:Noden9 a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Delayed primary closure" ;
     :shape :Task .
 
-:Noden10 a :Process, :Node ;
+:Node10 a :Process, :Node ;
     :label "Secondary closure" ;
     :shape :Task .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Noden1 ;
-    :target :Noden2 ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Noden2 ;
-    :target :Noden3 ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Noden3 ;
-    :target :Noden4 ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Noden4 ;
-    :target :Noden5 ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Noden5 ;
-    :target :Noden6 ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Noden6 ;
-    :target :Noden7 ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :Branches .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Noden6 ;
-    :target :Noden8 ;
+    :source :Node6 ;
+    :target :Node8 ;
     :relationshipType :Branches .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Noden8 ;
-    :target :Noden9 ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Branches .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Noden8 ;
-    :target :Noden10 ;
+    :source :Node8 ;
+    :target :Node10 ;
     :relationshipType :Branches .

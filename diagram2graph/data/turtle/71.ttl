@@ -1,107 +1,107 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodestart a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Start" ;
     :shape :StartEvent .
 
-:Noderead_values a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Read Values" ;
     :shape :Task .
 
-:Nodenew_trials_available a :Decision, :Node ;
+:Node3 a :Decision, :Node ;
     :label "new trials available?" ;
     :shape :Gateway .
 
-:Noderead_new_trial a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "read new trial" ;
     :shape :Task .
 
-:Nodeaverage_available a :Decision, :Node ;
+:Node5 a :Decision, :Node ;
     :label "average avaible for condition?" ;
     :shape :Gateway .
 
-:Nodeinitialize a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Initialize" ;
     :shape :Task .
 
-:Nodeadd_data_to_cumulative_sum a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "add data to cumulative sum" ;
     :shape :Task .
 
-:Nodecompute_t_value_and_plot a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "compute t-value and plot" ;
     :shape :Task .
 
-:Nodecontinue a :Decision, :Node ;
+:Node9 a :Decision, :Node ;
     :label "continue?" ;
     :shape :Gateway .
 
-:Nodestop a :Terminator, :Node ;
+:Node10 a :Terminator, :Node ;
     :label "Stop" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodestart ;
-    :target :Noderead_values ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Noderead_values ;
-    :target :Nodenew_trials_available ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodenew_trials_available ;
-    :target :Noderead_new_trial ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodenew_trials_available ;
-    :target :Noderead_values ;
+    :source :Node3 ;
+    :target :Node2 ;
     :relationshipType :DependsOn ;
     :relationshipValue "no" .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Noderead_new_trial ;
-    :target :Nodeaverage_available ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodeaverage_available ;
-    :target :Nodeinitialize ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :DependsOn ;
     :relationshipValue "no" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeaverage_available ;
-    :target :Nodeadd_data_to_cumulative_sum ;
+    :source :Node5 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodeinitialize ;
-    :target :Nodeadd_data_to_cumulative_sum ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :Follows .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodeadd_data_to_cumulative_sum ;
-    :target :Nodecompute_t_value_and_plot ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodecompute_t_value_and_plot ;
-    :target :Nodecontinue ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodecontinue ;
-    :target :Noderead_values ;
+    :source :Node9 ;
+    :target :Node2 ;
     :relationshipType :DependsOn ;
     :relationshipValue "yes" .
 
 :Edge12 a :Solid, :Edge ;
-    :source :Nodecontinue ;
-    :target :Nodestop ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :DependsOn ;
     :relationshipValue "no" .

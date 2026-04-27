@@ -1,100 +1,100 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodebegin a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Begin" ;
     :shape :StartEvent .
 
-:Nodeedit_video a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Edit video" ;
     :shape :Task .
 
-:Nodesmaller_than_2gb a :Decision, :Node ;
+:Node3 a :Decision, :Node ;
     :label "Smaller than 2GB?" ;
     :shape :Gateway .
 
-:Nodeclick_to_upload a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Click to upload" ;
     :shape :Task .
 
-:Nodehave_account_already a :Decision, :Node ;
+:Node5 a :Decision, :Node ;
     :label "Have an account already?" ;
     :shape :Gateway .
 
-:Noderegister a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Register" ;
     :shape :Task .
 
-:Nodelogin a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Login" ;
     :shape :Task .
 
-:Nodefind_on_computer a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Find on computer" ;
     :shape :Task .
 
-:Nodeadd_description_and_tags a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Add description and tags" ;
     :shape :Task .
 
-:Nodestop a :Terminator, :Node ;
+:Node10 a :Terminator, :Node ;
     :label "Stop" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodebegin ;
-    :target :Nodeedit_video ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodeedit_video ;
-    :target :Nodesmaller_than_2gb ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodesmaller_than_2gb ;
-    :target :Nodeclick_to_upload ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :DependsOn ;
     :relationshipValue "YES" .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodesmaller_than_2gb ;
-    :target :Nodeedit_video ;
+    :source :Node3 ;
+    :target :Node2 ;
     :relationshipType :DependsOn ;
     :relationshipValue "NO" .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodeclick_to_upload ;
-    :target :Nodehave_account_already ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodehave_account_already ;
-    :target :Noderegister ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :DependsOn ;
     :relationshipValue "NO" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodehave_account_already ;
-    :target :Nodelogin ;
+    :source :Node5 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "YES" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Noderegister ;
-    :target :Nodelogin ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :Follows .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodelogin ;
-    :target :Nodefind_on_computer ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodefind_on_computer ;
-    :target :Nodeadd_description_and_tags ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodeadd_description_and_tags ;
-    :target :Nodestop ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :Follows .

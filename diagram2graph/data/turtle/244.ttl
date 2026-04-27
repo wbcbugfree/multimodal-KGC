@@ -1,100 +1,100 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodestart a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Start" ;
     :shape :StartEvent .
 
-:Nodeusername a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Username" ;
     :shape :Task .
 
-:Nodepassword a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Password" ;
     :shape :Task .
 
-:Nodecredentials_check a :Decision, :Node ;
+:Node4 a :Decision, :Node ;
     :label "Username && Password correspond to the ones in database?" ;
     :shape :Gateway .
 
-:Nodeenter_id_password a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Enter ID and password" ;
     :shape :Task .
 
-:Nodeinvalid_credentials a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "\"Invalid credentials\"" ;
     :shape :Task .
 
-:Nodeuser_blocked_check a :Decision, :Node ;
+:Node7 a :Decision, :Node ;
     :label "Is User_ID blocked?" ;
     :shape :Gateway .
 
-:Nodeforbidden a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "\"403 Forbidden\"" ;
     :shape :Task .
 
-:Nodelogin_successfully a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Login successfully" ;
     :shape :Task .
 
-:Nodeend a :Terminator, :Node ;
+:Node10 a :Terminator, :Node ;
     :label "End" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodestart ;
-    :target :Nodeusername ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodeusername ;
-    :target :Nodepassword ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodepassword ;
-    :target :Nodecredentials_check ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodecredentials_check ;
-    :target :Nodeenter_id_password ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodecredentials_check ;
-    :target :Nodeinvalid_credentials ;
+    :source :Node4 ;
+    :target :Node6 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodeinvalid_credentials ;
-    :target :Nodeusername ;
+    :source :Node6 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeenter_id_password ;
-    :target :Nodeuser_blocked_check ;
+    :source :Node5 ;
+    :target :Node7 ;
     :relationshipType :Follows .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodeuser_blocked_check ;
-    :target :Nodeforbidden ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodeuser_blocked_check ;
-    :target :Nodelogin_successfully ;
+    :source :Node7 ;
+    :target :Node9 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodeforbidden ;
-    :target :Nodeusername ;
+    :source :Node8 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodelogin_successfully ;
-    :target :Nodeend ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :Follows .

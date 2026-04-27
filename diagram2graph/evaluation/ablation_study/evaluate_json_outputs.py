@@ -114,13 +114,50 @@ def string_value(value: Any) -> str:
     return str(value)
 
 
-def node_subject(node: dict[str, Any], index: int) -> str:
-    node_id = string_value(node.get("id")).strip()
-    return f"Node{node_id or index}"
+def ordinal_node_subject(index: int) -> str:
+    return f"Node{index}"
+
+
+def add_node_id_aliases(node_id_map: dict[str, str], raw_node_id: Any, subject: str) -> None:
+    node_id = string_value(raw_node_id).strip()
+    if not node_id:
+        return
+
+    aliases = [node_id]
+    stripped = node_id.strip("_-")
+    if stripped and stripped not in aliases:
+        aliases.append(stripped)
+    if node_id.isdigit():
+        aliases.append(f"Node{node_id}")
+    elif node_id.lower().startswith("node") and node_id[4:].isdigit():
+        aliases.append(node_id[4:])
+
+    for alias in aliases:
+        node_id_map.setdefault(alias, subject)
+
+
+def build_node_maps(nodes: Sequence[Any]) -> tuple[dict[str, str], dict[str, list[str]]]:
+    node_id_map: dict[str, str] = {}
+    node_label_map: dict[str, list[str]] = {}
+    for index, node in enumerate(nodes, start=1):
+        subject = ordinal_node_subject(index)
+        if isinstance(node, dict):
+            label = string_value(node.get("label")).strip()
+            if label:
+                node_label_map.setdefault(label, []).append(subject)
+            add_node_id_aliases(node_id_map, node.get("id"), subject)
+    for index, _node in enumerate(nodes, start=1):
+        subject = ordinal_node_subject(index)
+        node_id_map.setdefault(str(index), subject)
+        node_id_map.setdefault(subject, subject)
+    return node_id_map, node_label_map
 
 
 def edge_source(edge: dict[str, Any]) -> str:
-    return string_value(edge.get("source", edge.get("source_", ""))).strip()
+    source = string_value(edge.get("source")).strip()
+    if source:
+        return source
+    return string_value(edge.get("source_")).strip()
 
 
 def edge_target(edge: dict[str, Any]) -> str:
@@ -128,22 +165,48 @@ def edge_target(edge: dict[str, Any]) -> str:
 
 
 def edge_subject(edge: dict[str, Any], index: int) -> str:
-    source = edge_source(edge)
-    target = edge_target(edge)
-    if source and target:
-        return f"Edge{source}{target}"
-    return f"EdgeUnknown{index}"
+    return f"Edge{index}"
+
+
+def resolve_node_reference(
+    raw_node_id: str,
+    node_id_map: dict[str, str],
+    node_label_map: dict[str, list[str]],
+    edge: dict[str, Any],
+    field: str,
+) -> str:
+    node_id = raw_node_id.strip()
+    if not node_id:
+        return ""
+    if node_id in node_id_map:
+        return node_id_map[node_id]
+    stripped = node_id.strip("_-")
+    if stripped in node_id_map:
+        return node_id_map[stripped]
+
+    endpoint_label = string_value(edge.get(f"{field}_label")).strip()
+    label_matches = node_label_map.get(endpoint_label, [])
+    if len(label_matches) == 1:
+        return label_matches[0]
+
+    if node_id.isdigit():
+        return f"Node{node_id}"
+    if node_id.lower().startswith("node") and node_id[4:].isdigit():
+        return f"Node{node_id[4:]}"
+    return f"Node{node_id}"
 
 
 def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
     data = load_json(json_path)
     triples: list[list[str]] = []
+    nodes = data.get("nodes", [])
+    node_id_map, node_label_map = build_node_maps(nodes)
 
-    for index, node in enumerate(data.get("nodes", []), start=1):
+    for index, node in enumerate(nodes, start=1):
         if not isinstance(node, dict):
             triples.append([f"NodeInvalid{index}", "invalid_node", string_value(node)])
             continue
-        subject = node_subject(node, index)
+        subject = ordinal_node_subject(index)
         for field in NODE_FIELDS:
             triples.append([subject, field, string_value(node.get(field))])
         for extra_key in sorted(set(node) - {"id", *NODE_FIELDS}):
@@ -155,10 +218,10 @@ def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
             continue
         subject = edge_subject(edge, index)
         values = {
-            "source": edge_source(edge),
+            "source": resolve_node_reference(edge_source(edge), node_id_map, node_label_map, edge, "source"),
             "source_type": string_value(edge.get("source_type")),
             "source_label": string_value(edge.get("source_label")),
-            "target": edge_target(edge),
+            "target": resolve_node_reference(edge_target(edge), node_id_map, node_label_map, edge, "target"),
             "target_type": string_value(edge.get("target_type")),
             "target_label": string_value(edge.get("target_label")),
             "type_of_edge": string_value(edge.get("type_of_edge")),
@@ -167,8 +230,6 @@ def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
         }
         for field in EDGE_FIELDS:
             obj = values[field]
-            if field in {"source", "target"} and obj:
-                obj = f"Node{obj}"
             triples.append([subject, field, obj])
         for extra_key in sorted(set(edge) - {*EDGE_FIELDS, "source_"}):
             triples.append([subject, extra_key, string_value(edge.get(extra_key))])

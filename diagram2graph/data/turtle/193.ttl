@@ -1,94 +1,94 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodestart a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Start" ;
     :shape :StartEvent .
 
-:Noderound_1 a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Round 1\nT = 1" ;
     :shape :Task .
 
-:Nodedraw_lots a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Draw lots to select witness nodes" ;
     :shape :Task .
 
-:Nodebinarize_block a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Binarize block" ;
     :shape :Task .
 
-:Nodepacking_block a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Packing block" ;
     :shape :Task .
 
-:Nodeblock_verification a :Decision, :Node ;
+:Node6 a :Decision, :Node ;
     :label "Block verification" ;
     :shape :Gateway .
 
-:Nodefinish a :Terminator, :Node ;
+:Node7 a :Terminator, :Node ;
     :label "Finish" ;
     :shape :EndEvent .
 
-:Nodetimeout_verification a :Decision, :Node ;
+:Node8 a :Decision, :Node ;
     :label "Timeout verification" ;
     :shape :Gateway .
 
-:Nodenext_round_draw a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Next round draw" ;
     :shape :Task .
 
-:Nodeauthentication a :Process, :Node ;
+:Node10 a :Process, :Node ;
     :label "Authentication" ;
     :shape :Task .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodestart ;
-    :target :Noderound_1 ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Noderound_1 ;
-    :target :Nodedraw_lots ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodedraw_lots ;
-    :target :Nodebinarize_block ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodebinarize_block ;
-    :target :Nodepacking_block ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodepacking_block ;
-    :target :Nodeblock_verification ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodeblock_verification ;
-    :target :Nodefinish ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Success" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeblock_verification ;
-    :target :Nodetimeout_verification ;
+    :source :Node6 ;
+    :target :Node8 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Verification failed" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodeauthentication ;
-    :target :Nodebinarize_block ;
+    :source :Node10 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodetimeout_verification ;
-    :target :Nodenext_round_draw ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Timeout" .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodenext_round_draw ;
-    :target :Nodedraw_lots ;
+    :source :Node9 ;
+    :target :Node3 ;
     :relationshipType :Follows .

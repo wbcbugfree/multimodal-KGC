@@ -1,93 +1,93 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodebegin a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "BEGIN" ;
     :shape :StartEvent .
 
-:Nodeenter_limit a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Enter Limit" ;
     :shape :Task .
 
-:Nodeinitialize_number a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Initialize number" ;
     :shape :Task .
 
-:Nodeset_sum_to_0 a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Set Sum equal to 0" ;
     :shape :Task .
 
-:Nodedo a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "DO" ;
     :shape :Task .
 
-:Nodeif_sum_greater_than_limit a :Decision, :Node ;
+:Node6 a :Decision, :Node ;
     :label "If Sum > Limit" ;
     :shape :Gateway .
 
-:Nodeupdate_values a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Update values" ;
     :shape :Task .
 
-:Nodedecrease_loss a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Decrease loss" ;
     :shape :Task .
 
-:Nodedisplay_number_and_sum a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Display Number and Sum" ;
     :shape :Task .
 
-:Nodeend a :Terminator, :Node ;
+:Node10 a :Terminator, :Node ;
     :label "END" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodebegin ;
-    :target :Nodeenter_limit ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodeenter_limit ;
-    :target :Nodeinitialize_number ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodeinitialize_number ;
-    :target :Nodeset_sum_to_0 ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodeset_sum_to_0 ;
-    :target :Nodedo ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodedo ;
-    :target :Nodeif_sum_greater_than_limit ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodeif_sum_greater_than_limit ;
-    :target :Nodeupdate_values ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "false" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeif_sum_greater_than_limit ;
-    :target :Nodedisplay_number_and_sum ;
+    :source :Node6 ;
+    :target :Node9 ;
     :relationshipType :DependsOn ;
     :relationshipValue "true" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodeupdate_values ;
-    :target :Nodedecrease_loss ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :Follows .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodedecrease_loss ;
-    :target :Nodedo ;
+    :source :Node8 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodedisplay_number_and_sum ;
-    :target :Nodeend ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :Follows .

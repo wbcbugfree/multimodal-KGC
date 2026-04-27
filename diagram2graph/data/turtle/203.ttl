@@ -1,113 +1,113 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodecustomer_consulting a :Process, :Node ;
+:Node1 a :Process, :Node ;
     :label "Customer Consulting and Quotation" ;
     :shape :Task .
 
-:Nodedeal a :Decision, :Node ;
+:Node2 a :Decision, :Node ;
     :label "Deal?" ;
     :shape :Gateway .
 
-:Nodego_home a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Go home" ;
     :shape :Task .
 
-:Nodeinvoice a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Invoice" ;
     :shape :Task .
 
-:Nodeshipping a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Shipping" ;
     :shape :Task .
 
-:Nodecustom_clearance a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Custom Clearance" ;
     :shape :Task .
 
-:Nodepayment_mode a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Payment mode" ;
     :shape :Task .
 
-:Nodedelivery a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Delivery" ;
     :shape :Task .
 
-:Nodeservice_payment a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Service Payment" ;
     :shape :Task .
 
-:Nodepay_foreign_exchange a :Decision, :Node ;
+:Node10 a :Decision, :Node ;
     :label "Pay Foreign Exchange?" ;
     :shape :Gateway .
 
-:Nodepayment a :Process, :Node ;
+:Node11 a :Process, :Node ;
     :label "Payment" ;
     :shape :Task .
 
-:Nodestop a :Terminator, :Node ;
+:Node12 a :Terminator, :Node ;
     :label "Stop" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodecustomer_consulting ;
-    :target :Nodedeal ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodedeal ;
-    :target :Nodeinvoice ;
+    :source :Node2 ;
+    :target :Node4 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge3 a :Dashed, :Edge ;
-    :source :Nodedeal ;
-    :target :Nodego_home ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodeinvoice ;
-    :target :Nodeshipping ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodeshipping ;
-    :target :Nodecustom_clearance ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodecustom_clearance ;
-    :target :Nodepayment_mode ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :Follows .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodepayment_mode ;
-    :target :Nodedelivery ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :Follows .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodedelivery ;
-    :target :Nodeservice_payment ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodeservice_payment ;
-    :target :Nodepay_foreign_exchange ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodepay_foreign_exchange ;
-    :target :Nodepayment ;
+    :source :Node10 ;
+    :target :Node11 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge11 a :Dashed, :Edge ;
-    :source :Nodepay_foreign_exchange ;
-    :target :Nodestop ;
+    :source :Node10 ;
+    :target :Node12 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge12 a :Solid, :Edge ;
-    :source :Nodepayment ;
-    :target :Nodestop ;
+    :source :Node11 ;
+    :target :Node12 ;
     :relationshipType :Follows .

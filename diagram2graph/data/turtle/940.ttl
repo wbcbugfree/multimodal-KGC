@@ -1,109 +1,109 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Node0 a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Begin" ;
     :shape :StartEvent .
 
-:Node1 a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Enter to the website" ;
     :shape :Task .
 
-:Node2 a :Decision, :Node ;
+:Node3 a :Decision, :Node ;
     :label "have an account?" ;
     :shape :Gateway .
 
-:Node3 a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Sign up" ;
     :shape :Task .
 
-:Node4 a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Fill details" ;
     :shape :Task .
 
-:Node5 a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Submit" ;
     :shape :Task .
 
-:Node6 a :Process, :Node ;
+:Node7 a :Process, :Node ;
     :label "Login" ;
     :shape :Task .
 
-:Node7 a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Enter e-mail and password" ;
     :shape :Task .
 
-:Node8 a :Decision, :Node ;
+:Node9 a :Decision, :Node ;
     :label "e-mail and password valid?" ;
     :shape :Gateway .
 
-:Node9 a :Process, :Node ;
+:Node10 a :Process, :Node ;
     :label "Profile" ;
     :shape :Task .
 
-:Node10 a :Terminator, :Node ;
+:Node11 a :Terminator, :Node ;
     :label "end" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Node0 ;
-    :target :Node1 ;
-    :relationshipType :Follows .
-
-:Edge2 a :Solid, :Edge ;
     :source :Node1 ;
     :target :Node2 ;
     :relationshipType :Follows .
 
-:Edge3 a :Solid, :Edge ;
+:Edge2 a :Solid, :Edge ;
     :source :Node2 ;
     :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Branches ;
     :relationshipValue "No" .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Node2 ;
-    :target :Node6 ;
+    :source :Node3 ;
+    :target :Node7 ;
     :relationshipType :Branches ;
     :relationshipValue "Yes" .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Node3 ;
-    :target :Node4 ;
-    :relationshipType :Follows .
-
-:Edge6 a :Solid, :Edge ;
     :source :Node4 ;
     :target :Node5 ;
     :relationshipType :Follows .
 
-:Edge7 a :Solid, :Edge ;
+:Edge6 a :Solid, :Edge ;
     :source :Node5 ;
     :target :Node6 ;
     :relationshipType :Follows .
 
-:Edge8 a :Solid, :Edge ;
+:Edge7 a :Solid, :Edge ;
     :source :Node6 ;
     :target :Node7 ;
     :relationshipType :Follows .
 
-:Edge9 a :Solid, :Edge ;
+:Edge8 a :Solid, :Edge ;
     :source :Node7 ;
     :target :Node8 ;
     :relationshipType :Follows .
 
-:Edge10 a :Solid, :Edge ;
+:Edge9 a :Solid, :Edge ;
     :source :Node8 ;
-    :target :Node6 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node7 ;
     :relationshipType :Branches ;
     :relationshipValue "no" .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Node8 ;
-    :target :Node9 ;
+    :source :Node9 ;
+    :target :Node10 ;
     :relationshipType :Branches ;
     :relationshipValue "yes" .
 
 :Edge12 a :Solid, :Edge ;
-    :source :Node9 ;
-    :target :Node10 ;
+    :source :Node10 ;
+    :target :Node11 ;
     :relationshipType :Follows .

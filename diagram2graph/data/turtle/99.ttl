@@ -1,107 +1,107 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodestart a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Start" ;
     :shape :StartEvent .
 
-:Nodehard_work a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Hard work" ;
     :shape :Task .
 
-:Nodefranchise a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Franchise" ;
     :shape :Task .
 
-:Nodesuccess a :Decision, :Node ;
+:Node4 a :Decision, :Node ;
     :label "Success" ;
     :shape :Gateway .
 
-:Nodeorder_more a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Order more" ;
     :shape :Task .
 
-:Nodesold a :Decision, :Node ;
+:Node6 a :Decision, :Node ;
     :label "Sold" ;
     :shape :Gateway .
 
-:Nodeexpandable a :Decision, :Node ;
+:Node7 a :Decision, :Node ;
     :label "Expandable" ;
     :shape :Gateway .
 
-:Nodeopen_more_store a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Open more store" ;
     :shape :Task .
 
-:Nodenew_strategy a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "New Strategy" ;
     :shape :Task .
 
-:Nodeend a :Terminator, :Node ;
+:Node10 a :Terminator, :Node ;
     :label "End" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodestart ;
-    :target :Nodehard_work ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodehard_work ;
-    :target :Nodefranchise ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Branches .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodehard_work ;
-    :target :Nodenew_strategy ;
+    :source :Node2 ;
+    :target :Node9 ;
     :relationshipType :Branches .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodefranchise ;
-    :target :Nodesuccess ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodesuccess ;
-    :target :Nodeorder_more ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodesuccess ;
-    :target :Nodenew_strategy ;
+    :source :Node4 ;
+    :target :Node9 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Nodeorder_more ;
-    :target :Nodesold ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Nodesold ;
-    :target :Nodeexpandable ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodesold ;
-    :target :Nodenew_strategy ;
+    :source :Node6 ;
+    :target :Node9 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodeexpandable ;
-    :target :Nodeopen_more_store ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodeexpandable ;
-    :target :Nodeend ;
+    :source :Node7 ;
+    :target :Node10 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge12 a :Solid, :Edge ;
-    :source :Nodeopen_more_store ;
-    :target :Nodesuccess ;
+    :source :Node8 ;
+    :target :Node4 ;
     :relationshipType :Follows .

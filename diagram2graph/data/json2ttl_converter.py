@@ -52,15 +52,90 @@ def to_local_name(prefix: str, value: str) -> str:
     token = token.strip("_-")
     return f":{prefix}{token}" if token else f":{prefix}"
 
+def node_subject(index: int) -> str:
+    return f":Node{index}"
+
+def node_id_aliases(value: str) -> list[str]:
+    raw = value.strip()
+    if not raw:
+        return []
+    aliases = [raw]
+    stripped = raw.strip("_-")
+    if stripped and stripped != raw:
+        aliases.append(stripped)
+    if raw.isdigit():
+        aliases.append(f"Node{raw}")
+    elif raw.lower().startswith("node") and raw[4:].isdigit():
+        aliases.append(raw[4:])
+    return aliases
+
+def build_node_maps(nodes: list[dict]) -> tuple[dict[str, str], dict[str, list[str]]]:
+    node_id_map: dict[str, str] = {}
+    node_label_map: dict[str, list[str]] = {}
+    for index, node in enumerate(nodes, start=1):
+        subject = node_subject(index)
+
+        label = str(node.get("label", "")).strip()
+        if label:
+            node_label_map.setdefault(label, []).append(subject)
+
+        node_id = str(node.get("id", "")).strip()
+        if not node_id:
+            continue
+        if node_id in node_id_map:
+            if node_id_map[node_id] != subject:
+                raise ValueError(f"Duplicate node id in input JSON: {node_id}")
+            continue
+        node_id_map[node_id] = subject
+        for alias in node_id_aliases(node_id)[1:]:
+            node_id_map.setdefault(alias, subject)
+    for index, _node in enumerate(nodes, start=1):
+        subject = node_subject(index)
+        node_id_map.setdefault(str(index), subject)
+        node_id_map.setdefault(f"Node{index}", subject)
+    return node_id_map, node_label_map
+
+def edge_endpoint_uri(
+    node_id_map: dict[str, str],
+    node_label_map: dict[str, list[str]],
+    edge: dict,
+    raw_id: str,
+    edge_index: int,
+    field: str,
+) -> str:
+    node_id = raw_id.strip()
+    if node_id in node_id_map:
+        return node_id_map[node_id]
+    for alias in node_id_aliases(node_id):
+        if alias in node_id_map:
+            return node_id_map[alias]
+
+    endpoint_label = str(edge.get(f"{field}_label", "")).strip()
+    label_matches = node_label_map.get(endpoint_label, [])
+    if len(label_matches) == 1:
+        return label_matches[0]
+
+    if len(label_matches) > 1:
+        raise ValueError(
+            f"Edge {edge_index} {field} references missing node id {node_id!r}; "
+            f"endpoint label {endpoint_label!r} matches multiple nodes"
+        )
+    raise ValueError(
+        f"Edge {edge_index} {field} references missing node id {node_id!r} "
+        f"and endpoint label {endpoint_label!r} could not be resolved"
+    )
+
 def json_to_ttl_str(data: dict, base_iri: str | None = None, diagram_id: str | None = None) -> str:
     del base_iri, diagram_id
+
+    nodes = data.get("nodes", [])
+    node_id_map, node_label_map = build_node_maps(nodes)
 
     lines: list[str] = []
     lines.append('@prefix : <http://example.org/diagram2graph#> .')
     lines.append("")
 
-    for node in data.get("nodes", []):
-        nid = str(node.get("id", "")).strip()
+    for node_index, node in enumerate(nodes, start=1):
         label = escape_literal(node.get("label") or "")
         type_key = (node.get("type_of_node") or "").lower().strip()
         shape_key = (node.get("shape") or "").lower().strip()
@@ -68,7 +143,7 @@ def json_to_ttl_str(data: dict, base_iri: str | None = None, diagram_id: str | N
         specific_type = NODE_TYPE_MAP.get(type_key, to_camel_case(type_key) or "Node")
         shape_cls = to_camel_case(shape_key) or "Task"
 
-        subj = to_local_name("Node", nid)
+        subj = node_subject(node_index)
         block = [
             f"{subj} a :{specific_type}, :Node ;",
             f'    :label "{label}" ;',
@@ -88,8 +163,8 @@ def json_to_ttl_str(data: dict, base_iri: str | None = None, diagram_id: str | N
         rel_type_cap = REL_TYPE_MAP.get(rel_key, to_camel_case(rel_key) or "Follows")
 
         subj = f":Edge{edge_index}"
-        src_uri = to_local_name("Node", src)
-        tgt_uri = to_local_name("Node", tgt)
+        src_uri = edge_endpoint_uri(node_id_map, node_label_map, e, src, edge_index, "source")
+        tgt_uri = edge_endpoint_uri(node_id_map, node_label_map, e, tgt, edge_index, "target")
 
         block = [
             f"{subj} a :{edge_type}, :Edge ;",

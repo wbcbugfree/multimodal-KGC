@@ -1,102 +1,102 @@
 @prefix : <http://example.org/diagram2graph#> .
 
-:Nodestart a :Start, :Node ;
+:Node1 a :Start, :Node ;
     :label "Start" ;
     :shape :StartEvent .
 
-:Nodedocumentation_work a :Process, :Node ;
+:Node2 a :Process, :Node ;
     :label "Documentation Work" ;
     :shape :Task .
 
-:Nodeprint_cycle_count_sheets a :Process, :Node ;
+:Node3 a :Process, :Node ;
     :label "Print cycle count sheets" ;
     :shape :Task .
 
-:Nodeperform_physical_count_of_stock a :Process, :Node ;
+:Node4 a :Process, :Node ;
     :label "Perform physical count of stock" ;
     :shape :Task .
 
-:Nodeenter_physical_counts a :Process, :Node ;
+:Node5 a :Process, :Node ;
     :label "Enter physical counts" ;
     :shape :Task .
 
-:Nodereport_differences a :Process, :Node ;
+:Node6 a :Process, :Node ;
     :label "Report differences" ;
     :shape :Task .
 
-:Noderecount_inventory a :Decision, :Node ;
+:Node7 a :Decision, :Node ;
     :label "Recount inventory?" ;
     :shape :Gateway .
 
-:Nodedisplay_documents a :Process, :Node ;
+:Node8 a :Process, :Node ;
     :label "Display documents" ;
     :shape :Task .
 
-:Nodeperform_physical_count_of_stock_1 a :Process, :Node ;
+:Node9 a :Process, :Node ;
     :label "Perform physical count of stock" ;
     :shape :Task .
 
-:Nodepost_inventory_documents a :Process, :Node ;
+:Node10 a :Process, :Node ;
     :label "Post inventory documents" ;
     :shape :Task .
 
-:Nodeend a :Terminator, :Node ;
+:Node11 a :Terminator, :Node ;
     :label "End" ;
     :shape :EndEvent .
 
 :Edge1 a :Solid, :Edge ;
-    :source :Nodestart ;
-    :target :Nodedocumentation_work ;
+    :source :Node1 ;
+    :target :Node2 ;
     :relationshipType :Follows .
 
 :Edge2 a :Solid, :Edge ;
-    :source :Nodedocumentation_work ;
-    :target :Nodeprint_cycle_count_sheets ;
+    :source :Node2 ;
+    :target :Node3 ;
     :relationshipType :Follows .
 
 :Edge3 a :Solid, :Edge ;
-    :source :Nodeprint_cycle_count_sheets ;
-    :target :Nodeperform_physical_count_of_stock ;
+    :source :Node3 ;
+    :target :Node4 ;
     :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Nodeperform_physical_count_of_stock ;
-    :target :Nodeenter_physical_counts ;
+    :source :Node4 ;
+    :target :Node5 ;
     :relationshipType :Follows .
 
 :Edge5 a :Solid, :Edge ;
-    :source :Nodeenter_physical_counts ;
-    :target :Nodereport_differences ;
+    :source :Node5 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge6 a :Solid, :Edge ;
-    :source :Nodereport_differences ;
-    :target :Noderecount_inventory ;
+    :source :Node6 ;
+    :target :Node7 ;
     :relationshipType :Follows .
 
 :Edge7 a :Solid, :Edge ;
-    :source :Noderecount_inventory ;
-    :target :Nodepost_inventory_documents ;
+    :source :Node7 ;
+    :target :Node10 ;
     :relationshipType :DependsOn ;
     :relationshipValue "No" .
 
 :Edge8 a :Solid, :Edge ;
-    :source :Noderecount_inventory ;
-    :target :Nodedisplay_documents ;
+    :source :Node7 ;
+    :target :Node8 ;
     :relationshipType :DependsOn ;
     :relationshipValue "Yes" .
 
 :Edge9 a :Solid, :Edge ;
-    :source :Nodedisplay_documents ;
-    :target :Nodeperform_physical_count_of_stock_1 ;
+    :source :Node8 ;
+    :target :Node9 ;
     :relationshipType :Follows .
 
 :Edge10 a :Solid, :Edge ;
-    :source :Nodeperform_physical_count_of_stock_1 ;
-    :target :Nodereport_differences ;
+    :source :Node9 ;
+    :target :Node6 ;
     :relationshipType :Follows .
 
 :Edge11 a :Solid, :Edge ;
-    :source :Nodepost_inventory_documents ;
-    :target :Nodeend ;
+    :source :Node10 ;
+    :target :Node11 ;
     :relationshipType :Follows .
