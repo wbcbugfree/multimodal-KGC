@@ -413,17 +413,17 @@ The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criter
 \midrule
 Zero-shot & Whole graph & 0.8206 & 0.7522 & 0.7849 & 0.8715 & 0.0749 & 0.9560 & 0.9572 & 0.9710 \\
 Static one-shot & Whole graph & 0.8241 & 0.7536 & 0.7873 & 0.8697 & 0.0738 & 0.9580 & 0.9597 & 0.9735 \\
-Dynamic one-shot & Whole graph & 0.8373 & 0.7545 & 0.7938 & 0.8737 & 0.0718 & 0.9583 & 0.9602 & 0.9738 \\
+Dynamic one-shot & Whole graph & \textbf{0.8373} & \textbf{0.7545} & \textbf{0.7938} & \textbf{0.8737} & \textbf{0.0718} & \textbf{0.9583} & \textbf{0.9602} & \textbf{0.9738} \\
 Few-shot & Whole graph & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \addlinespace
 Zero-shot & Content only & 0.6979 & 0.6395 & 0.6674 & 0.7622 & 0.0961 & 0.9395 & 0.9418 & 0.9695 \\
 Static one-shot & Content only & 0.6978 & 0.6378 & 0.6664 & 0.7569 & 0.0959 & 0.9409 & 0.9443 & 0.9720 \\
-Dynamic one-shot & Content only & 0.7142 & 0.6432 & 0.6769 & 0.7633 & 0.0929 & 0.9414 & 0.9450 & 0.9723 \\
-Few-shot & Content only & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Dynamic one-shot & Content only & \textbf{0.7142} & \textbf{0.6432} & \textbf{0.6769} & \textbf{0.7633} & \textbf{0.0929} & 0.9414 & 0.9450 & 0.9723 \\
+Few-shot & Content only & 0.7101 & 0.6364 & 0.6713 & 0.7599 & 0.0945 & \textbf{0.9423} & \textbf{0.9468} & \textbf{0.9741} \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText evaluation results by prompting strategy and graph mode. All completed rows are evaluated on the same 868-image test-set intersection within each mode, so the sample size is omitted from the table body. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Lower nGED is better; all other metrics are higher-is-better.}
+\caption{VisText evaluation results by prompting strategy and graph mode. All completed rows are evaluated on the same 868-image test-set intersection within each mode, so the sample size is omitted from the table body. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Bold values indicate the best completed result within each graph mode. Lower nGED is better; all other metrics are higher-is-better.}
 \label{tab:vistext_strategy_results}
 \end{table*}
 
@@ -435,24 +435,26 @@ Few-shot & Content only & \pending & \pending & \pending & \pending & \pending &
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccccc}
 \toprule
-\textbf{Strategy} & \textbf{Chart} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
+\textbf{Chart} & \textbf{Strategy} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & Bar & 0.7875 & 0.7860 & 0.7867 & 0.7943 & 0.0624 & 0.9728 & 0.9705 & 0.9964 \\
-Zero-shot & Line & 0.6468 & 0.5911 & 0.6177 & 0.7473 & 0.1188 & 0.9185 & 0.9238 & 0.9520 \\
-Zero-shot & Area & 0.6175 & 0.5092 & 0.5581 & 0.7193 & 0.1346 & 0.9001 & 0.9075 & 0.9381 \\
-Static one-shot & Bar & 0.7790 & 0.7764 & 0.7777 & 0.7868 & 0.0657 & 0.9706 & 0.9697 & 0.9958 \\
-Static one-shot & Line & 0.6566 & 0.5981 & 0.6259 & 0.7481 & 0.1132 & 0.9224 & 0.9289 & 0.9574 \\
-Static one-shot & Area & 0.6203 & 0.5096 & 0.5596 & 0.7125 & 0.1333 & 0.9053 & 0.9137 & 0.9436 \\
-Dynamic one-shot & Bar & 0.7785 & 0.7768 & 0.7776 & 0.7854 & 0.0642 & 0.9717 & 0.9699 & 0.9962 \\
-Dynamic one-shot & Line & 0.6902 & 0.6144 & 0.6501 & 0.7703 & 0.1058 & 0.9235 & 0.9316 & 0.9585 \\
-Dynamic one-shot & Area & 0.6428 & 0.5125 & 0.5703 & 0.7185 & 0.1316 & 0.9043 & 0.9135 & 0.9430 \\
-Few-shot & Bar & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Line & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & Area & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Bar & Zero-shot & \textbf{0.7875} & \textbf{0.7860} & \textbf{0.7867} & \textbf{0.7943} & \textbf{0.0624} & \textbf{0.9728} & \textbf{0.9705} & \textbf{0.9964} \\
+Bar & Static one-shot & 0.7790 & 0.7764 & 0.7777 & 0.7868 & 0.0657 & 0.9706 & 0.9697 & 0.9958 \\
+Bar & Dynamic one-shot & 0.7785 & 0.7768 & 0.7776 & 0.7854 & 0.0642 & 0.9717 & 0.9699 & 0.9962 \\
+Bar & Few-shot & 0.7807 & 0.7778 & 0.7793 & 0.7901 & 0.0640 & 0.9696 & 0.9697 & 0.9955 \\
+\addlinespace
+Line & Zero-shot & 0.6468 & 0.5911 & 0.6177 & 0.7473 & 0.1188 & 0.9185 & 0.9238 & 0.9520 \\
+Line & Static one-shot & 0.6566 & 0.5981 & 0.6259 & 0.7481 & 0.1132 & 0.9224 & 0.9289 & 0.9574 \\
+Line & Dynamic one-shot & \textbf{0.6902} & \textbf{0.6144} & \textbf{0.6501} & \textbf{0.7703} & \textbf{0.1058} & \textbf{0.9235} & \textbf{0.9316} & \textbf{0.9585} \\
+Line & Few-shot & 0.6586 & 0.5898 & 0.6223 & 0.7458 & 0.1181 & 0.9230 & 0.9310 & 0.9584 \\
+\addlinespace
+Area & Zero-shot & 0.6175 & 0.5092 & 0.5581 & 0.7193 & 0.1346 & 0.9001 & 0.9075 & 0.9381 \\
+Area & Static one-shot & 0.6203 & 0.5096 & 0.5596 & 0.7125 & 0.1333 & 0.9053 & 0.9137 & 0.9436 \\
+Area & Dynamic one-shot & 0.6428 & \textbf{0.5125} & 0.5703 & 0.7185 & 0.1316 & 0.9043 & 0.9135 & 0.9430 \\
+Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} & \textbf{0.1269} & \textbf{0.9119} & \textbf{0.9210} & \textbf{0.9505} \\
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. All chart-type results use content-only mode and the reported completed rows use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
+\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. Bold values indicate the best result within each chart type. All chart-type results use content-only mode and the reported completed rows use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
 \label{tab:vistext_chart_type_results}
 \end{table*}
 
@@ -545,6 +547,12 @@ Diagram2Graph & Pairwise strategy preference & \pending & \pending \\
 % The use of multiple metrics is necessary because no single metric fully characterizes image-to-RDF quality. Triple-match metrics provide direct evidence about exact graph overlap. Normalized GED captures structural graph differences. BLEU, ROUGE, and G-BERTScore provide softer similarity signals for cases where a prediction is lexically or semantically close but not exactly identical to the reference graph. These metrics are read together, especially when comparing prompting strategies across visual genres.
 
 % The LLM-as-a-judge framework is also interpreted cautiously. Its purpose is not to replace labelled evaluation when reference graphs are available. Rather, it provides a possible evaluation mechanism for unlabelled image collections after it has been validated against traditional metrics on labelled datasets. Agreement between judge preferences and graph-matching metrics would support its use on unlabelled data; disagreement would indicate that the judge rubric or prompting requires further calibration.
+\subsection{VisText Numeric Tolerance Sensitivity}
+
+The numeric-tolerance analysis in Table~\ref{tab:vistext_tolerance_results} indicates that many visually inferred datapoint values are very close to the reference values even when they are not exact string matches. Under zero-shot prompting, 27.6\% of eligible numeric datapoint literals match exactly. Introducing only a 0.5\% relative tolerance increases the matched-literal ratio to 53.2\%, nearly doubling the exact-match result. At 1\% tolerance, 67.6\% of eligible numeric literals are matched, and at 2\% tolerance the matched-literal ratio reaches 79.0\%.
+
+This result is important because the model predicts these values directly from the chart image, without access to the underlying data table. The tolerance sweep therefore suggests that many numerical errors are small visual-estimation deviations rather than failures to recover the chart content. An extended sweep to 3\%, 4\%, and 5\% further raises the matched-literal ratio to 83.9\%, 86.8\%, and 88.7\%, respectively, but the largest gain already occurs within the first 2\% tolerance interval. We therefore interpret the 0--2\% range as the most informative region for characterizing typical VLM value-estimation accuracy in this task: most recoverable numeric datapoint predictions are close to the reference values, even under a strict image-only extraction setting.
+
 \subsection{Error Analysis}
 
 \subsection{JSON-versus-RDF Serialization Ablation}
