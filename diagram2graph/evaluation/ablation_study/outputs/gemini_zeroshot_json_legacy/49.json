@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "type_of_node": "start",
+      "shape": "start_event",
+      "label": "Start"
+    },
+    {
+      "id": "node_1",
+      "type_of_node": "process",
+      "shape": "data_store",
+      "label": "Read P,R,N"
+    },
+    {
+      "id": "node_2",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Calculate I = (P * R * N) / 100"
+    },
+    {
+      "id": "node_3",
+      "type_of_node": "process",
+      "shape": "data_store",
+      "label": "Print Output"
+    },
+    {
+      "id": "node_4",
+      "type_of_node": "terminator",
+      "shape": "end_event",
+      "label": "Stop"
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_0",
+      "source_type": "start",
+      "source_label": "Start",
+      "target": "node_1",
+      "target_type": "process",
+      "target_label": "Read P,R,N",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_1",
+      "source_type": "process",
+      "source_label": "Read P,R,N",
+      "target": "node_2",
+      "target_type": "process",
+      "target_label": "Calculate I = (P * R * N) / 100",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_2",
+      "source_type": "process",
+      "source_label": "Calculate I = (P * R * N) / 100",
+      "target": "node_3",
+      "target_type": "process",
+      "target_label": "Print Output",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_3",
+      "source_type": "process",
+      "source_label": "Print Output",
+      "target": "node_4",
+      "target_type": "terminator",
+      "target_label": "Stop",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "type_of_node": "start",
+      "shape": "start_event",
+      "label": "Start"
+    },
+    {
+      "id": "node_1",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "c = 1"
+    },
+    {
+      "id": "node_2",
+      "type_of_node": "decision",
+      "shape": "gateway",
+      "label": "is\nc < 6"
+    },
+    {
+      "id": "node_3",
+      "type_of_node": "terminator",
+      "shape": "end_event",
+      "label": "Stop"
+    },
+    {
+      "id": "node_4",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Print 3*c"
+    },
+    {
+      "id": "node_5",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "c = c + 1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_0",
+      "source_type": "start",
+      "source_label": "Start",
+      "target": "node_1",
+      "target_type": "process",
+      "target_label": "c = 1",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_1",
+      "source_type": "process",
+      "source_label": "c = 1",
+      "target": "node_2",
+      "target_type": "decision",
+      "target_label": "is\nc < 6",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_2",
+      "source_type": "decision",
+      "source_label": "is\nc < 6",
+      "target": "node_3",
+      "target_type": "terminator",
+      "target_label": "Stop",
+      "type_of_edge": "solid",
+      "relationship_value": "No",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "node_2",
+      "source_type": "decision",
+      "source_label": "is\nc < 6",
+      "target": "node_4",
+      "target_type": "process",
+      "target_label": "Print 3*c",
+      "type_of_edge": "solid",
+      "relationship_value": "Yes",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "node_4",
+      "source_type": "process",
+      "source_label": "Print 3*c",
+      "target": "node_5",
+      "target_type": "process",
+      "target_label": "c = c + 1",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_5",
+      "source_type": "process",
+      "source_label": "c = c + 1",
+      "target": "node_2",
+      "target_type": "decision",
+      "target_label": "is\nc < 6",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "type_of_node": "start",
+      "shape": "task",
+      "label": "Topic"
+    },
+    {
+      "id": "node_1",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Power signal"
+    },
+    {
+      "id": "node_2",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Processor"
+    },
+    {
+      "id": "node_3",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Output"
+    },
+    {
+      "id": "node_4",
+      "type_of_node": "terminator",
+      "shape": "task",
+      "label": "End"
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_0",
+      "source_type": "start",
+      "source_label": "Topic",
+      "target": "node_1",
+      "target_type": "process",
+      "target_label": "Power signal",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_1",
+      "source_type": "process",
+      "source_label": "Power signal",
+      "target": "node_2",
+      "target_type": "process",
+      "target_label": "Processor",
+      "type_of_edge": "solid",
+      "relationship_value": "Stream",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_2",
+      "source_type": "process",
+      "source_label": "Processor",
+      "target": "node_3",
+      "target_type": "process",
+      "target_label": "Output",
+      "type_of_edge": "solid",
+      "relationship_value": "Stream",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "node_3",
+      "source_type": "process",
+      "source_label": "Output",
+      "target": "node_4",
+      "target_type": "terminator",
+      "target_label": "End",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    }
+  ]
+}

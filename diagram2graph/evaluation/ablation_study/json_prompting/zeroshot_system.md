@@ -25,7 +25,10 @@ Each edge object must contain:
 
 ## Node Guidance
 - Create one node object for each readable shape.
-- Number nodes in visual reading order when the image does not provide explicit identifiers: top-to-bottom, then left-to-right.
+- Set every node `id` to a plain one-based ordinal string in visual reading order: `"1"`, `"2"`, `"3"`, and so on.
+- Do not use zero-based ids, prefixed ids such as `"node_1"` or `"Node1"`, or text labels as ids.
+- Use the same plain ordinal strings in every edge `source` and `target`.
+- Number nodes top-to-bottom, then left-to-right when the diagram does not impose a clearer flow order.
 - Use these mappings:
   - Start or begin rounded oval: `type_of_node` = `start`, `shape` = `start_event`
   - End, stop, or finish rounded oval: `type_of_node` = `terminator`, `shape` = `end_event`
