@@ -348,7 +348,7 @@ All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on 
 
 \section{Evaluation on Labelled Datasets}\label{sec:evaluation}
 
-\subsection{Traditional Graph Metrics for Labelled Datasets}
+\subsection{Traditional Graph Metrics for Labelled Datasets}\label{subsec:traditional_graph_metrics}
 
 For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. Following recent work on LLM-based KG construction evaluation \citep{ghanemcruz2025kgc}, we report a set of complementary metrics rather than a single score because different metrics measure different properties of graph quality.
 
@@ -363,11 +363,11 @@ The metric set is organized into four categories:
 
 The formal definitions used in the paper are provided in~\ref{app:metric_definitions}.
 
-\subsection{VisText Evaluation Modes and Numeric Tolerance}
+\subsection{VisText Evaluation Modes and Numeric Tolerance}\label{subsec:vistext_eval_modes}
 
 The VisText schema is designed to be semantically complete: its full RDF graph can be used directly as a chart knowledge graph because it includes chart type, axis resources, datapoint resources, and membership relations. For evaluation, however, this completeness can overestimate model performance because many triples are fixed by the schema once the model has adopted the expected output pattern. We therefore report both full-graph and content-only modes. Full-graph mode evaluates every normalized triple. Content-only mode retains literal-valued triples and the chart-type triple, while omitting fixed schema-completion triples. In Figure~\ref{fig:vistext_example}, for example, triples such as \texttt{:XAxis a :Axis}, \texttt{:DataPoint1 a :DataPoint}, and \texttt{:DataPoint1 :belongsTo :Chart} are omitted in content-only mode, whereas triples such as \texttt{:Chart :title "..."}, \texttt{:XAxis :title "Year"}, \texttt{:DataPoint1 :xValue "Dec 31, 1953"}, \texttt{:DataPoint1 :yValue "1"}, and \texttt{:Chart a :AreaChart} are retained.
 
-VisText evaluation also includes an optional relative numeric tolerance for quantity-like datapoint values. This is needed because the model receives only the chart image: for many line and area charts, a visually reasonable estimate may be close to the reference value but not exactly identical. The tolerance is applied only to exact structural metrics, namely triple-match precision, recall, F1, triple-match accuracy, and normalized GED. Lexical and embedding-based metrics, including BLEU, ROUGE, and G-BERTScore, are left unchanged so that tolerance-adjusted exact matching and soft textual similarity remain separate evaluation signals.
+VisText evaluation also includes an optional relative numeric tolerance for datapoint values. In each chart, one coordinate identifies the datapoint and the other coordinate gives the numeric value to be estimated from the visual mark. The tolerance is applied only to this numeric value. This is needed because the model receives only the chart image: for many charts, a visually reasonable estimate may be close to the reference value but not exactly identical. We report the tolerance sweep only for triple-match precision, recall, F1, triple-match accuracy, and normalized GED because these metrics depend on exact graph overlap. Without tolerance, a visually close estimate such as 0.38 for a reference value of 0.379 is counted as a non-match. BLEU, ROUGE, and G-BERTScore are not included in the tolerance sweep because they already measure lexical or embedding-based similarity.
 
 \subsection{LLM-as-a-Judge Validation Framework}
 
@@ -397,11 +397,13 @@ The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criter
 
 \subsection{Evaluation Results}\label{sec:results}
 
-% The following tables organize the labelled evaluation results by dataset, prompting strategy, and analysis mode. The standard dataset-level evaluation reports whole-graph metrics, while chart-type breakdowns and numeric-tolerance analyses use the VisText content-only mode because it better isolates performance on the core extracted information. At the present stage, the available VisText reports contain zero-shot and dynamic one-shot content-only results with a 1\% relative tolerance for eligible numeric datapoint values. Entries for modes or prompting strategies that have not yet been evaluated remain marked as pending.
-
 \subsubsection{VisText Labelled Evaluation}
 
-% Table~\ref{tab:vistext_strategy_results} reports the main VisText results by prompting strategy in both whole-graph and content-only modes. Whole-graph evaluation includes both content-bearing triples and schema-completeness triples, such as axis declarations and datapoint membership. Content-only evaluation reports the same metrics after projecting each graph to literal-valued triples and the chart-type triple.
+Table~\ref{tab:vistext_strategy_results} reports the main VisText evaluation results for all four prompting strategies. Each strategy is evaluated on the same 868 usable test-split images in both whole-graph and content-only modes, as defined in Section~\ref{subsec:vistext_eval_modes}. The reported precision, recall, F1, triple-match accuracy, and normalized GED use a 1\% numeric tolerance for datapoint values; ROUGE, BLEU, and G-BERTScore are not tolerance-adjusted. The metrics follow the definitions in Section~\ref{subsec:traditional_graph_metrics}.
+
+Table~\ref{tab:vistext_chart_type_results} reports the content-only results by chart type. The chart-type subsets contain 417 bar charts, 213 line charts, and 238 area charts. Dynamic one-shot prompting includes an image classification step before RDF generation; this chart-type classifier achieved 100\% accuracy on the evaluated VisText test split.
+
+Table~\ref{tab:vistext_tolerance_results} reports the numeric-tolerance sweep for zero-shot prompting in content-only mode. The tolerance setting follows Section~\ref{subsec:vistext_eval_modes} and is applied to the numeric datapoint value only.
 
 \begin{table*}[ht]
 \centering
@@ -423,11 +425,11 @@ Few-shot & Content only & 0.7101 & 0.6364 & 0.6713 & 0.7599 & 0.0945 & \textbf{0
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText evaluation results by prompting strategy and graph mode. All completed rows are evaluated on the same 868-image test-set intersection within each mode. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized graph edit distance; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Bold values indicate the best completed result within each graph mode. Lower nGED is better; all other metrics are higher-is-better.}
+\caption{VisText evaluation by prompting strategy and graph mode. P, R, and F1 denote exact triple-match precision, recall, and F1; Acc. denotes mean triple-match accuracy; nGED denotes normalized GED; R-F1, B-F1, and GBS-F1 denote ROUGE, BLEU, and G-BERTScore F1. Bold values indicate the best result within each graph mode.}
+
+
 \label{tab:vistext_strategy_results}
 \end{table*}
-
-% Table~\ref{tab:vistext_chart_type_results} reports VisText performance by chart type. This analysis is important because bar, line, and area charts impose different perceptual requirements: bar charts require discrete mark counting and label-value pairing, while line and area charts often require estimating values from axes and inferring the intended sequence of datapoints.
 
 \begin{table*}[ht]
 \centering
@@ -454,11 +456,9 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText content-only evaluation by chart type. Each prompting strategy is evaluated on the same chart-type intersections: 417 bar charts, 213 line charts, and 238 area charts. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. Bold values indicate the best result within each chart type. All chart-type results use content-only mode and the reported completed rows use a 1\% relative numeric tolerance for eligible quantity-like datapoint values.}
+\caption{VisText content-only evaluation by chart type. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. Bold values indicate the best result within each chart type.}
 \label{tab:vistext_chart_type_results}
 \end{table*}
-
-% Table~\ref{tab:vistext_tolerance_results} records the effect of numeric tolerance. Because tolerance affects only structural metrics, BLEU, ROUGE, and G-BERTScore are interpreted separately from this table.
 
 \begin{table*}[ht]
 \centering
@@ -476,11 +476,9 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 \bottomrule
 \end{tabular}%
 }
-\caption{VisText numeric tolerance analysis for numeric datapoint values under zero-shot prompting in content-only mode. Tolerance affects only structural metrics, so BLEU, ROUGE, and G-BERTScore are excluded from this analysis. Abbreviations follow Table~\ref{tab:vistext_strategy_results}, and candidate literals are numeric datapoint values that pass the tolerance guardrails; matched literals are candidates that either match exactly at 0\% tolerance or fall within the specified tolerance interval.}
+\caption{VisText zero-shot numeric tolerance analysis in content-only mode. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. Matched/Cand. reports matched numeric value literals over all candidate numeric value literals.}
 \label{tab:vistext_tolerance_results}
 \end{table*}
-
-% For dynamic one-shot prompting, the chart-type classifier is evaluated against the chart type recorded in the original VisText label file before RDF generation. In the current VisText run, this classification step achieved 100\% accuracy, so the classification component is reported in text rather than as a separate table.
 
 \subsubsection{Diagram2Graph Labelled Evaluation}
 
@@ -548,9 +546,9 @@ The VisText results show that direct chart-to-RDF generation is feasible, but th
 
 \subsubsection{Prompting Strategy Effects}
 
-Dynamic one-shot prompting gives the strongest exact structural performance on the full VisText test split. In content-only mode, it obtains the best triple precision, recall, F1, triple-match accuracy, and normalized GED among the four prompting strategies. The gain over zero-shot prompting is consistent but modest: content-only F1 increases from 0.6674 to 0.6769, and normalized GED decreases from 0.0961 to 0.0929. This suggests that chart-type-specific prompting helps align the output with the expected RDF representation, but it does not remove the main visual-estimation challenges.
+Dynamic one-shot prompting gives the strongest exact graph-overlap performance on the full VisText test split. In content-only mode, it obtains the best triple precision, recall, F1, triple-match accuracy, and normalized GED among the four prompting strategies. The gain over zero-shot prompting is consistent but modest: content-only F1 increases from 0.6674 to 0.6769, and normalized GED decreases from 0.0961 to 0.0929. This suggests that chart-type-specific prompting helps align the output with the expected RDF representation, but it does not remove the main visual-estimation challenges.
 
-Few-shot prompting shows a different profile. It produces the highest ROUGE-F1, BLEU-F1, and G-BERTScore-F1 in content-only mode, and the highest whole-graph precision and soft similarity scores. However, it does not achieve the best exact structural F1. This indicates that in-context examples can improve lexical and semantic resemblance to the reference graphs while still leaving exact triple recovery constrained by visual estimation, datapoint alignment, and value extraction.
+Few-shot prompting shows a different profile. It produces the highest ROUGE-F1, BLEU-F1, and G-BERTScore-F1 in content-only mode, and the highest whole-graph precision and soft similarity scores. However, it does not achieve the best exact triple-recovery F1. This indicates that in-context examples can improve lexical and semantic resemblance to the reference graphs while still leaving exact triple recovery constrained by visual estimation, datapoint alignment, and value extraction.
 
 \subsubsection{Chart-Type Differences}
 
@@ -574,7 +572,7 @@ This result is important because the model predicts these values directly from t
 %
 % \subsubsection{Prompting Strategy Effects}
 %
-% The Diagram2Graph prompting results should therefore be interpreted with greater emphasis on structural graph metrics, especially triple-match F1 and normalized GED. Soft textual metrics remain useful for assessing label similarity, but they cannot fully capture whether the predicted diagram graph preserves the correct topology. This distinction is important when comparing Diagram2Graph with VisText: two graph predictions may be lexically similar while differing in source-target assignments or relation types.
+% The Diagram2Graph prompting results should therefore be interpreted with greater emphasis on exact graph-overlap metrics, especially triple-match F1 and normalized GED. Soft textual metrics remain useful for assessing label similarity, but they cannot fully capture whether the predicted diagram graph preserves the correct topology. This distinction is important when comparing Diagram2Graph with VisText: two graph predictions may be lexically similar while differing in source-target assignments or relation types.
 
 \subsubsection{JSON-versus-RDF Serialization Ablation}
 
@@ -606,7 +604,7 @@ Gemini RDF few-shot & RDF/Turtle & \pending & \pending \\
 %
 % \subsection{Cross-Dataset Implications}
 %
-% Across the two labelled datasets, the results should be read through the interaction between visual form, ontology design, and metric choice. VisText shows that exact graph metrics can underestimate visually close numeric predictions, motivating tolerance analysis for quantity-like datapoint values. Diagram2Graph emphasizes topological correctness, where tolerance is not appropriate and exact structural recovery is central. The use of multiple metrics is therefore necessary: exact triple metrics and normalized GED assess graph correctness, while ROUGE, BLEU, and G-BERTScore provide softer signals about textual and semantic similarity.
+% Across the two labelled datasets, the results should be read through the interaction between visual form, ontology design, and metric choice. VisText shows that exact graph metrics can underestimate visually close numeric predictions, motivating tolerance analysis for numeric datapoint values. Diagram2Graph emphasizes topological correctness, where tolerance is not appropriate and exact graph recovery is central. The use of multiple metrics is therefore necessary: exact triple metrics and normalized GED assess graph correctness, while ROUGE, BLEU, and G-BERTScore provide softer signals about textual and semantic similarity.
 %
 % \subsection{Limitations}
 %
