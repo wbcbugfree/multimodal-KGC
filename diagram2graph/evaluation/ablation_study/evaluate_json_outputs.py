@@ -114,6 +114,13 @@ def string_value(value: Any) -> str:
     return str(value)
 
 
+def append_non_empty_triple(triples: list[list[str]], subject: str, predicate: str, obj: Any) -> None:
+    object_value = string_value(obj)
+    if not object_value.strip():
+        return
+    triples.append([subject, predicate, object_value])
+
+
 def ordinal_node_subject(index: int) -> str:
     return f"Node{index}"
 
@@ -206,17 +213,17 @@ def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
 
     for index, node in enumerate(nodes, start=1):
         if not isinstance(node, dict):
-            triples.append([f"NodeInvalid{index}", "invalid_node", string_value(node)])
+            append_non_empty_triple(triples, f"NodeInvalid{index}", "invalid_node", node)
             continue
         subject = ordinal_node_subject(index)
         for field in NODE_FIELDS:
-            triples.append([subject, field, string_value(node.get(field))])
+            append_non_empty_triple(triples, subject, field, node.get(field))
         for extra_key in sorted(set(node) - {"id", *NODE_FIELDS}):
-            triples.append([subject, extra_key, string_value(node.get(extra_key))])
+            append_non_empty_triple(triples, subject, extra_key, node.get(extra_key))
 
     for index, edge in enumerate(data.get("edges", []), start=1):
         if not isinstance(edge, dict):
-            triples.append([f"EdgeInvalid{index}", "invalid_edge", string_value(edge)])
+            append_non_empty_triple(triples, f"EdgeInvalid{index}", "invalid_edge", edge)
             continue
         source = resolve_node_reference(edge_source(edge), node_id_map, node_label_map, edge, "source")
         target = resolve_node_reference(edge_target(edge), node_id_map, node_label_map, edge, "target")
@@ -233,10 +240,9 @@ def json_to_webnlg_graph(json_path: Path) -> list[list[str]]:
             "relationship_type": string_value(edge.get("relationship_type")),
         }
         for field in EDGE_FIELDS:
-            obj = values[field]
-            triples.append([subject, field, obj])
+            append_non_empty_triple(triples, subject, field, values[field])
         for extra_key in sorted(set(edge) - {*EDGE_FIELDS, "source_"}):
-            triples.append([subject, extra_key, string_value(edge.get(extra_key))])
+            append_non_empty_triple(triples, subject, extra_key, edge.get(extra_key))
 
     triples.sort(key=lambda triple: tuple(part.lower() for part in triple))
     return triples

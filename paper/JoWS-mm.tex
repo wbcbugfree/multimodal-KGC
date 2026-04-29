@@ -145,14 +145,7 @@ The main contributions are as follows:
 
 Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper does not claim that prompting alone resolves all visual graph construction problems. Instead, it characterizes the capabilities and limitations of prompt-based RDF generation, provides labelled resources for systematic evaluation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
 
-Figure~\ref{fig:overview} summarizes the overall study design, including the labelled and unlabelled datasets, the prompting-based image-to-RDF workflow, and the complementary evaluation settings used throughout the paper.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\linewidth]{img/overview_figure_main.pdf}
-\caption{Overview of the proposed image-to-RDF framework. Panel A summarizes the two labelled benchmarks used for metric-based evaluation. Panel B shows the extraction workflow, in which scientific images are processed with prompting strategies from zero-shot to few-shot using Gemini 3 Flash, followed by RDF/Turtle validity checking. Panel C shows evaluation on labelled datasets through graph-matching metrics and LLM-as-a-judge validation. Panel D separates the Soil-Health application setting, where no reference RDF graphs are available and prompting strategies are compared through the validated LLM-as-a-judge framework.}
-\label{fig:overview}
-\end{figure}
+The remainder of the paper is organized as follows. Section~\ref{sec:related} reviews related work on multimodal understanding, LLM-supported knowledge engineering, and LLM-as-a-judge evaluation. Section~\ref{sec:method} defines the image-to-RDF task, introduces the labelled datasets, and describes the prompting strategies. Section~\ref{sec:evaluation} presents the evaluation protocol and labelled-dataset results. Section~\ref{sec:discussion} discusses the observed performance patterns and limitations. Section~\ref{sec:soil_use_case} presents the unlabelled Soil-Health application, and Section~\ref{sec:conclusion} concludes the paper.
 
 \section{Related Work}\label{sec:related}
 
@@ -177,6 +170,15 @@ LLM-as-a-judge methods use language models to assess generated outputs when huma
 This paper follows the same general principle but adapts the rubric to image-to-RDF extraction. The judge receives the source image and the candidate RDF/Turtle graph, and it is asked to assess whether the graph is faithful, informative, coherent, and specific with respect to the visible image content. We also avoid using the same model family for generation and judging. This design choice is motivated by evidence that LLM judges can exhibit self-bias and family-bias, assigning overly favourable ratings to outputs produced by themselves or by related models \citep{spiliopoulou2025playfavorites}. Using a different model family for the judge does not remove all evaluation bias, but it reduces one avoidable source of confounding. Because judge-based evaluation can itself be unreliable, we first validate it on labelled datasets before using it for unlabelled scientific images.
 
 \section{Materials and Methods}\label{sec:method}
+
+Figure~\ref{fig:overview} summarizes the overall study design, including the labelled and unlabelled datasets, the prompting-based image-to-RDF workflow, and the complementary evaluation settings used throughout the paper.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{img/overview_figure_main.pdf}
+\caption{Overview of the proposed image-to-RDF framework. Panel A summarizes the two labelled benchmarks used for metric-based evaluation. Panel B shows the extraction workflow, in which scientific images are processed with prompting strategies from zero-shot to few-shot using Gemini 3 Flash, followed by RDF/Turtle validity checking. Panel C shows evaluation on labelled datasets through graph-matching metrics and LLM-as-a-judge validation. Panel D separates the Soil-Health application setting, where no reference RDF graphs are available and prompting strategies are compared through the validated LLM-as-a-judge framework.}
+\label{fig:overview}
+\end{figure}
 
 \subsection{Task Definition and Target Representation}
 
