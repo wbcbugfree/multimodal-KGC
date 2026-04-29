@@ -1,0 +1,136 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type_of_node": "start",
+      "shape": "start_event",
+      "label": "Start"
+    },
+    {
+      "id": "2",
+      "type_of_node": "decision",
+      "shape": "gateway",
+      "label": "Are you\nhappy?"
+    },
+    {
+      "id": "3",
+      "type_of_node": "decision",
+      "shape": "gateway",
+      "label": "Want\nto be\nhappy?"
+    },
+    {
+      "id": "4",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "all over"
+    },
+    {
+      "id": "5",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Make others\nhappy"
+    },
+    {
+      "id": "6",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Ask\nsomeone"
+    },
+    {
+      "id": "7",
+      "type_of_node": "terminator",
+      "shape": "end_event",
+      "label": "Stop"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "source_type": "start",
+      "source_label": "Start",
+      "target": "2",
+      "target_type": "decision",
+      "target_label": "Are you\nhappy?",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "2",
+      "source_type": "decision",
+      "source_label": "Are you\nhappy?",
+      "target": "5",
+      "target_type": "process",
+      "target_label": "Make others\nhappy",
+      "type_of_edge": "solid",
+      "relationship_value": "Yes",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "2",
+      "source_type": "decision",
+      "source_label": "Are you\nhappy?",
+      "target": "3",
+      "target_type": "decision",
+      "target_label": "Want\nto be\nhappy?",
+      "type_of_edge": "solid",
+      "relationship_value": "No",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "3",
+      "source_type": "decision",
+      "source_label": "Want\nto be\nhappy?",
+      "target": "6",
+      "target_type": "process",
+      "target_label": "Ask\nsomeone",
+      "type_of_edge": "solid",
+      "relationship_value": "Yes",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "3",
+      "source_type": "decision",
+      "source_label": "Want\nto be\nhappy?",
+      "target": "4",
+      "target_type": "process",
+      "target_label": "all over",
+      "type_of_edge": "solid",
+      "relationship_value": "No",
+      "relationship_type": "branches"
+    },
+    {
+      "source": "4",
+      "source_type": "process",
+      "source_label": "all over",
+      "target": "1",
+      "target_type": "start",
+      "target_label": "Start",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "5",
+      "source_type": "process",
+      "source_label": "Make others\nhappy",
+      "target": "7",
+      "target_type": "terminator",
+      "target_label": "Stop",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source": "6",
+      "source_type": "process",
+      "source_label": "Ask\nsomeone",
+      "target": "7",
+      "target_type": "terminator",
+      "target_label": "Stop",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    }
+  ]
+}
