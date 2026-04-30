@@ -143,7 +143,7 @@ The main contributions are as follows:
     \item We develop an LLM-as-a-judge framework for evaluating image-to-RDF outputs when reference graphs are unavailable. The framework adapts the rubric-based assessment idea of KGEval \citep{kgeval}, supports direct and pairwise judging modes, and is validated on the two labelled datasets before being applied to an unlabelled soil-health image collection.
 \end{itemize}
 
-Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper does not claim that prompting alone resolves all visual graph construction problems. Instead, it characterizes the capabilities and limitations of prompt-based RDF generation, provides labelled resources for systematic evaluation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
+Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper characterizes the capabilities and limitations of prompt-based RDF generation, provides labelled resources for systematic evaluation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
 
 The remainder of the paper is organized as follows. Section~\ref{sec:related} reviews related work on multimodal understanding, LLM-supported knowledge engineering, and LLM-as-a-judge evaluation. Section~\ref{sec:method} defines the image-to-RDF task, introduces the labelled datasets, and describes the prompting strategies. Section~\ref{sec:evaluation} presents the evaluation protocol and labelled-dataset results. Section~\ref{sec:discussion} discusses the observed performance patterns and limitations. Section~\ref{sec:soil_use_case} presents the unlabelled Soil-Health application, and Section~\ref{sec:conclusion} concludes the paper.
 
@@ -490,13 +490,13 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 \centering
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccc}
+\begin{tabular}{lcccccccc}
 \toprule
-\textbf{Strategy} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
+\textbf{Strategy} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
-One-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+One-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Few-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
 \end{tabular}%
 }
@@ -580,25 +580,27 @@ This result is important because the model predicts these values directly from t
 
 % Diagram2Graph also provides an opportunity to examine whether the requested output format affects model performance. The original task is naturally expressed in JSON, while this paper evaluates RDF/Turtle. Because the two serializations can encode the same node-edge graph, differences in performance may reflect the model's ability to follow a particular structured-output format rather than its visual understanding alone. We therefore include a 20-image ablation study that asks Gemini 3 Flash to output JSON with a predefined structured-output schema and compares those results with existing fine-tuned Qwen2.5-VL-3B JSON outputs. The Qwen baseline is reported as the average of two inference runs, whereas each Gemini prompting result is reported from a single run. This ablation is treated as a secondary analysis: it does not replace the RDF evaluation, but it helps determine whether observed errors are caused by visual interpretation, graph modelling, or serialization constraints.
 
-\begin{table}[ht]
+\begin{table*}[ht]
 \centering
 \small
-\begin{tabular}{lccc}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccccccc}
 \toprule
-\textbf{System} & \textbf{Format} & \textbf{F1} & \textbf{nGED} \\
+\textbf{System} & \textbf{Format} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Gemini zero-shot & JSON & \pending & \pending \\
-Gemini one-shot & JSON & \pending & \pending \\
-Gemini few-shot & JSON & \pending & \pending \\
-Qwen2.5-VL-3B (2-run mean) & JSON & \pending & \pending \\
-Gemini RDF zero-shot & RDF/Turtle & \pending & \pending \\
-Gemini RDF one-shot & RDF/Turtle & \pending & \pending \\
-Gemini RDF few-shot & RDF/Turtle & \pending & \pending \\
+Gemini zero-shot & JSON & 0.7552 & 0.7552 & 0.7552 & 0.7773 & 0.0931 & 0.9692 & 0.9811 & 0.9982 \\
+Gemini one-shot & JSON & 0.8150 & 0.8150 & 0.8150 & 0.8381 & 0.0690 & 0.9771 & 0.9868 & 0.9988 \\
+Gemini few-shot & JSON & 0.8256 & 0.8214 & 0.8235 & 0.8505 & 0.0651 & 0.9758 & 0.9846 & 0.9962 \\
+Qwen2.5-VL-3B (2-run mean) & JSON & 0.7349 & 0.7171 & 0.7259 & 0.7712 & 0.1311 & 0.9358 & 0.9518 & 0.9691 \\
+Gemini RDF zero-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Gemini RDF one-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Gemini RDF few-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
 \bottomrule
-\end{tabular}
-\caption{Diagram2Graph JSON-versus-RDF serialization ablation. All rows are evaluated on the same 20-image ablation set. The Qwen baseline reports the mean score over two inference runs. The JSON and RDF representations encode the same diagram graph schema but impose different output constraints.}
+\end{tabular}%
+}
+\caption{Diagram2Graph JSON-versus-RDF serialization ablation on the same 20-image subset. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. The Qwen baseline reports the mean over two inference runs.}
 \label{tab:json_rdf_ablation}
-\end{table}
+\end{table*}
 
 % \subsubsection{Diagram2Graph Error Patterns}
 %

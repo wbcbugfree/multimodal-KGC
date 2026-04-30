@@ -87,12 +87,18 @@ If the arrow has a visible label, emit this structure:
     :relationshipType :RelationshipType ;
     :relationshipValue "exact visible arrow label" .
 
-Use these mappings:
-- Solid arrow or line: `:Solid`
-- Dashed or dotted arrow or line: `:Dashed`
-- Normal sequence/control-flow arrow: `:Follows`
-- Alternative branch from a decision/gateway: `:Branches`
-- Dependency-style relation shown in the diagram: `:DependsOn`
+Determine two independent edge attributes:
+
+1. Line style, represented as an edge class in the `a` triple:
+   - Solid arrow or line: use `:Solid`
+   - Dashed or dotted arrow or line: use `:Dashed`
+
+2. Relationship semantics, represented as the value of `:relationshipType`:
+   - Normal sequence/control-flow arrow: use `:Follows`
+   - Alternative branch from a decision/gateway: use `:Branches`
+   - Dependency-style relation shown in the diagram: use `:DependsOn`
+
+For example, a solid control-flow arrow should use `a :Solid, :Edge` and `:relationshipType :Follows`. A dashed dependency arrow should use `a :Dashed, :Edge` and `:relationshipType :DependsOn`.
 
 ## Constraints
 - Do not emit direct node-to-node relationship triples such as `:Node1 :follows :Node2`.

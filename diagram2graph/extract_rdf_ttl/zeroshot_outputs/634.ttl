@@ -1,0 +1,98 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Process, :Node ;
+    :label "Initial" ;
+    :shape :Task .
+
+:Node2 a :Decision, :Node ;
+    :label "Case 1" ;
+    :shape :Gateway .
+
+:Node3 a :Process, :Node ;
+    :label "Statement 1" ;
+    :shape :Task .
+
+:Node4 a :Decision, :Node ;
+    :label "Case 2" ;
+    :shape :Gateway .
+
+:Node5 a :Process, :Node ;
+    :label "Statement 2" ;
+    :shape :Task .
+
+:Node6 a :Decision, :Node ;
+    :label "Case N" ;
+    :shape :Gateway .
+
+:Node7 a :Process, :Node ;
+    :label "Statement N" ;
+    :shape :Task .
+
+:Node8 a :Process, :Node ;
+    :label "Default statement" ;
+    :shape :Task .
+
+:Node9 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge5 a :Dashed, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node8 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge11 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
