@@ -1,0 +1,41 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Input" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "C=5/9*(F-32)" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Display" ;
+    :shape :Task .
+
+:Node5 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .

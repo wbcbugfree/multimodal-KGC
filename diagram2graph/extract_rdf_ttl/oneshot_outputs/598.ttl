@@ -1,0 +1,74 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Process, :Node ;
+    :label "New Member" ;
+    :shape :Task .
+
+:Node2 a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Authentication" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Print info" ;
+    :shape :Task .
+
+:Node5 a :Process, :Node ;
+    :label "D1" ;
+    :shape :DataStore .
+
+:Node6 a :Process, :Node ;
+    :label "Validation" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "D2" ;
+    :shape :DataStore .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows ;
+    :relationshipValue "User name Password" .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows ;
+    :relationshipValue "If not a member" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "If existing member" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node1 ;
+    :relationshipType :Follows .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "ADP Username ADP Password" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows ;
+    :relationshipValue "ADP Username ADP Password" .

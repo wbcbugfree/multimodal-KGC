@@ -1,0 +1,35 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Process, :Node ;
+    :label "Analog retrieval" ;
+    :shape :Task .
+
+:Node2 a :Process, :Node ;
+    :label "Sampling" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Analogical inference" ;
+    :shape :Task .
+
+:Node4 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows ;
+    :relationshipValue "learning" .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows ;
+    :relationshipValue "Self-supervised learning" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows ;
+    :relationshipValue "Intersection" .

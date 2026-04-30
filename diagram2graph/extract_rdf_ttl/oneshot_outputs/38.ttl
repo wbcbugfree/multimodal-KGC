@@ -1,0 +1,82 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Order" ;
+    :shape :Task .
+
+:Node3 a :Decision, :Node ;
+    :label "Want fries?" ;
+    :shape :Gateway .
+
+:Node4 a :Process, :Node ;
+    :label "Order fries" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "Want drink?" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "Order drink" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "Pay" ;
+    :shape :Task .
+
+:Node8 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .

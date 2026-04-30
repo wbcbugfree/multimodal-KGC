@@ -1,0 +1,80 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "READ num1" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "I=1 bun = 1" ;
+    :shape :Task .
+
+:Node4 a :Decision, :Node ;
+    :label "Is I < num1" ;
+    :shape :Gateway .
+
+:Node5 a :Process, :Node ;
+    :label "I = I+1" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "PRINT bun" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "bun = bun*I" ;
+    :shape :Task .
+
+:Node8 a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "True" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "False" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node8 ;
+    :relationshipType :Follows .

@@ -1,0 +1,94 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Greet" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Enter ID" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "ACCEPT NO COMMANDS" ;
+    :shape :Task .
+
+:Node5 a :Process, :Node ;
+    :label "INPUT DRIVER INFORMATION" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "Verify finger scan" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "SCAN FINGER AGAIN" ;
+    :shape :Task .
+
+:Node8 a :Decision, :Node ;
+    :label "1ST AND 2ND SCAN MATCH?" ;
+    :shape :Gateway .
+
+:Node9 a :Process, :Node ;
+    :label "Login" ;
+    :shape :Task .
+
+:Node10 a :Terminator, :Node ;
+    :label "STOP" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Follows ;
+    :relationshipValue "FAILURE" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node10 ;
+    :relationshipType :Follows .

@@ -1,0 +1,107 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Read Values" ;
+    :shape :Task .
+
+:Node3 a :Decision, :Node ;
+    :label "new trials available?" ;
+    :shape :Gateway .
+
+:Node4 a :Process, :Node ;
+    :label "read new trial" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "average avaible for condition?" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "Initialize" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "add data to cumulative sum" ;
+    :shape :Task .
+
+:Node8 a :Process, :Node ;
+    :label "compute t-value and plot" ;
+    :shape :Task .
+
+:Node9 a :Decision, :Node ;
+    :label "continue?" ;
+    :shape :Gateway .
+
+:Node10 a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node2 ;
+    :relationshipType :Branches ;
+    :relationshipValue "no" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "yes" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "no" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "yes" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge11 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node2 ;
+    :relationshipType :Branches ;
+    :relationshipValue "yes" .
+
+:Edge12 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node10 ;
+    :relationshipType :Branches ;
+    :relationshipValue "no" .
