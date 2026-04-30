@@ -1,0 +1,63 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node2 a :Decision, :Node ;
+    :label "Check Software" ;
+    :shape :Gateway .
+
+:Node3 a :Terminator, :Node ;
+    :label "B" ;
+    :shape :EndEvent .
+
+:Node4 a :Decision, :Node ;
+    :label "Check all the needs" ;
+    :shape :Gateway .
+
+:Node5 a :Terminator, :Node ;
+    :label "C" ;
+    :shape :EndEvent .
+
+:Node6 a :Process, :Node ;
+    :label "Good Needs" ;
+    :shape :Task .
+
+:Node7 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .

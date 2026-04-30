@@ -1,0 +1,82 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "start" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "guess number" ;
+    :shape :Task .
+
+:Node3 a :Decision, :Node ;
+    :label "if <= 10" ;
+    :shape :Gateway .
+
+:Node4 a :Process, :Node ;
+    :label "small number" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "if > 10 and <= 80" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "medium number" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "large number" ;
+    :shape :Task .
+
+:Node8 a :Terminator, :Node ;
+    :label "end" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "true" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "false" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "true" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "false" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .

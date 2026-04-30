@@ -9,11 +9,11 @@
     :shape :Task .
 
 :Node3 a :Process, :Node ;
-    :label "Enter ID" ;
+    :label "ACCEPT NO COMMANDS" ;
     :shape :Task .
 
 :Node4 a :Process, :Node ;
-    :label "ACCEPT NO COMMANDS" ;
+    :label "Enter ID" ;
     :shape :Task .
 
 :Node5 a :Process, :Node ;
@@ -48,16 +48,16 @@
 :Edge2 a :Solid, :Edge ;
     :source :Node2 ;
     :target :Node3 ;
-    :relationshipType :Follows .
+    :relationshipType :Follows ;
+    :relationshipValue "FAILURE" .
 
 :Edge3 a :Solid, :Edge ;
     :source :Node2 ;
     :target :Node4 ;
-    :relationshipType :Branches ;
-    :relationshipValue "FAILURE" .
+    :relationshipType :Follows .
 
 :Edge4 a :Solid, :Edge ;
-    :source :Node3 ;
+    :source :Node4 ;
     :target :Node5 ;
     :relationshipType :Follows .
 
@@ -78,7 +78,7 @@
 
 :Edge8 a :Solid, :Edge ;
     :source :Node8 ;
-    :target :Node3 ;
+    :target :Node4 ;
     :relationshipType :Branches ;
     :relationshipValue "NO" .
 

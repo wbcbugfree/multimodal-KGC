@@ -1,0 +1,54 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node2 a :Decision, :Node ;
+    :label "Interested in watching movie?" ;
+    :shape :Gateway .
+
+:Node3 a :Process, :Node ;
+    :label "Well, go read a book then." ;
+    :shape :Task .
+
+:Node4 a :Decision, :Node ;
+    :label "Know the story?" ;
+    :shape :Gateway .
+
+:Node5 a :Process, :Node ;
+    :label "Think about what part of the process you need to see" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "Let’s start" ;
+    :shape :Task .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "no" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "yes" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "no" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "yes" .

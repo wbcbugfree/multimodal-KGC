@@ -1,0 +1,34 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Process, :Node ;
+    :label "Go to manager" ;
+    :shape :Task .
+
+:Node2 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node3 a :Decision, :Node ;
+    :label "Approval Needed?" ;
+    :shape :Gateway .
+
+:Node4 a :Terminator, :Node ;
+    :label "Finished" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node1 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .

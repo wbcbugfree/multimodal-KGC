@@ -1,0 +1,39 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Process, :Node ;
+    :label "Begin" ;
+    :shape :Task .
+
+:Node2 a :Decision, :Node ;
+    :label "Condition" ;
+    :shape :Gateway .
+
+:Node3 a :Process, :Node ;
+    :label "Loop Body" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "End of loop" ;
+    :shape :Task .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "True" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "False" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
