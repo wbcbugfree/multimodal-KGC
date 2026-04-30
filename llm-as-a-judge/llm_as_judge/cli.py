@@ -9,6 +9,12 @@ from typing import Any
 
 from .datasets import collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
 from .judge_core import JudgeRunner
+from .openai_batch import (
+    DEFAULT_BATCH_COMPLETION_WINDOW,
+    DEFAULT_BATCH_MAX_FILE_MB,
+    OpenAIBatchJudgeRunner,
+    build_batch_jobs,
+)
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
 from .validation import (
     compare_pairwise_to_metrics,
@@ -22,7 +28,7 @@ from .validation import (
 
 
 DEFAULT_METRICS_PATHS = {
-    "vistext": Path("vistext/evaluation/vistext_llm_evaluation_results.json"),
+    "vistext": Path("vistext/evaluation/vistext_prompting_strategy_evaluation_results.json"),
     "diagram2graph": Path("diagram2graph/evaluation/diagram2graph_llm_evaluation_results.json"),
 }
 
@@ -54,6 +60,29 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--output-dir", type=Path, default=result_path(dataset))
     parser.add_argument("--metrics-path", type=Path, default=DEFAULT_METRICS_PATHS.get(dataset))
+    parser.add_argument(
+        "--batch-action",
+        choices=["submit", "status", "collect", "cancel"],
+        default=None,
+        help="Use OpenAI Batch API instead of immediate synchronous judge calls.",
+    )
+    parser.add_argument(
+        "--batch-manifest",
+        type=Path,
+        default=None,
+        help="Path to the OpenAI Batch manifest. Defaults to <output-dir>/openai_batch_manifest.json.",
+    )
+    parser.add_argument(
+        "--batch-completion-window",
+        default=DEFAULT_BATCH_COMPLETION_WINDOW,
+        help="OpenAI Batch completion window. OpenAI currently supports 24h.",
+    )
+    parser.add_argument(
+        "--batch-max-file-mb",
+        type=float,
+        default=DEFAULT_BATCH_MAX_FILE_MB,
+        help="Maximum JSONL size per uploaded batch input file. Large jobs are split into multiple batches.",
+    )
     return parser
 
 
@@ -68,6 +97,10 @@ def _provider(args: argparse.Namespace) -> OpenAIJudgeProvider:
     if args.judge_provider == "openai":
         return OpenAIJudgeProvider(model=args.judge_model)
     raise ValueError(f"Unsupported judge provider: {args.judge_provider}")
+
+
+def _batch_manifest_path(args: argparse.Namespace) -> Path:
+    return args.batch_manifest or (args.output_dir / "openai_batch_manifest.json")
 
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -92,18 +125,29 @@ def run_dataset_cli(
     args = parser.parse_args(argv)
     if args.parallel_workers <= 0:
         parser.error("--parallel-workers must be greater than 0")
+    if args.batch_max_file_mb <= 0:
+        parser.error("--batch-max-file-mb must be greater than 0")
 
     should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
-    if should_validate and args.metrics_path is None:
+    metrics_required = should_validate and (
+        args.batch_action is None
+        or args.batch_action == "collect"
+        or (args.batch_action == "submit" and args.strategy_selection == "widest_pair")
+    )
+    if metrics_required and args.metrics_path is None:
         raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
-    if should_validate and not args.metrics_path.exists():
+    if metrics_required and not args.metrics_path.exists():
         raise FileNotFoundError(
             f"Traditional metrics report not found: {args.metrics_path}. "
             "Run the dataset's traditional evaluator first, or pass --metrics-path."
         )
 
-    metrics = load_traditional_metrics(args.metrics_path) if should_validate else None
-    effective_strategy_selection = args.strategy_selection if should_validate else "all"
+    metrics = (
+        load_traditional_metrics(args.metrics_path)
+        if should_validate and args.metrics_path is not None and args.metrics_path.exists()
+        else None
+    )
+    effective_strategy_selection = args.strategy_selection if should_validate and metrics is not None else "all"
     selection: dict[str, Any] | None = None
     if effective_strategy_selection == "widest_pair":
         if metrics is None:
@@ -149,6 +193,11 @@ def run_dataset_cli(
     )
     direct_count = len(records)
     pairwise_count = _pairwise_count(records)
+    batch_jobs = (
+        build_batch_jobs(records, modes=args.modes, output_dir=args.output_dir, skip_existing=args.skip_existing)
+        if args.batch_action in {"submit"} or (args.dry_run and args.batch_action == "submit")
+        else []
+    )
 
     if args.dry_run:
         print(f"Dataset: {dataset}")
@@ -161,9 +210,99 @@ def run_dataset_cli(
             print(f"Selected strategy pair: {', '.join(selection['best_pair']['strategies'])}")
             print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
         print(f"Parallel workers: {args.parallel_workers}")
+        if args.batch_action:
+            print(f"Batch action: {args.batch_action}")
+            print(f"Batch manifest: {_batch_manifest_path(args)}")
+            if args.batch_action == "submit":
+                print(f"Batch requests: {len(batch_jobs)}")
+                print(f"Batch completion window: {args.batch_completion_window}")
+                print(f"Batch max JSONL file size: {args.batch_max_file_mb} MB")
         print(f"Output directory: {args.output_dir}")
         if should_validate:
             print(f"Traditional metrics path: {args.metrics_path}")
+        return 0
+
+    if args.batch_action:
+        provider = _provider(args)
+        batch_runner = OpenAIBatchJudgeRunner(
+            provider=provider,
+            output_dir=args.output_dir,
+            manifest_path=_batch_manifest_path(args),
+            direct_prompt=JudgeRunner(provider=provider, results_root=args.output_dir).direct_prompt,
+            pairwise_prompt=JudgeRunner(provider=provider, results_root=args.output_dir).pairwise_prompt,
+            completion_window=args.batch_completion_window,
+            max_file_mb=args.batch_max_file_mb,
+        )
+        direct_report: dict[str, Any] | None = None
+        pairwise_report: dict[str, Any] | None = None
+        if args.batch_action == "submit":
+            manifest = batch_runner.submit(
+                dataset=dataset,
+                records=records,
+                modes=args.modes,
+                strategy_selection=selection,
+                skip_existing=args.skip_existing,
+                dry_run=False,
+            )
+            batch_count = len(manifest.get("batches", []))
+            print(f"Submitted {manifest.get('job_count', 0)} judge requests in {batch_count} OpenAI batch job(s).")
+            print(f"Wrote batch manifest: {_batch_manifest_path(args)}")
+            return 0
+        if args.batch_action == "status":
+            manifest = batch_runner.status()
+            for batch_entry in manifest.get("batches", []):
+                batch = batch_entry.get("batch") or {}
+                print(
+                    f"Batch {batch_entry.get('batch_index')}: "
+                    f"{batch.get('id')} status={batch.get('status')} counts={batch.get('request_counts')}"
+                )
+            print(f"Updated batch manifest: {_batch_manifest_path(args)}")
+            return 0
+        if args.batch_action == "cancel":
+            manifest = batch_runner.cancel()
+            for batch_entry in manifest.get("batches", []):
+                batch = batch_entry.get("batch") or {}
+                print(f"Batch {batch_entry.get('batch_index')}: {batch.get('id')} status={batch.get('status')}")
+            print(f"Updated batch manifest: {_batch_manifest_path(args)}")
+            return 0
+        if args.batch_action == "collect":
+            direct_report, pairwise_report, _manifest = batch_runner.collect()
+            print(f"Collected batch results from: {_batch_manifest_path(args)}")
+        else:
+            raise ValueError(f"Unsupported batch action: {args.batch_action}")
+
+        if should_validate and direct_report is None and pairwise_report is None:
+            print("No completed batch results were collected; validation summary was not updated.")
+            print(f"Wrote judge results under: {args.output_dir}")
+            return 0
+
+        if should_validate:
+            assert metrics is not None
+            validation: dict[str, Any] = {
+                "dataset": dataset,
+                "generated_at_utc": _utc_now(),
+                "strategy_selection": selection
+                or {
+                    "status": "selected",
+                    "best_pair": {"strategies": args.strategies},
+                },
+            }
+            direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
+            pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
+            if direct_report is not None:
+                validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
+            if pairwise_report is not None:
+                validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
+
+            validation_summary: dict[str, Any] = {}
+            if direct_key in validation:
+                validation_summary["direct"] = summarize_direct_alignment(validation[direct_key])
+            if pairwise_key in validation:
+                validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
+            validation_summary["overall"] = summarize_overall_alignment(validation_summary)
+            validation["validation_summary"] = validation_summary
+            _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
+        print(f"Wrote judge results under: {args.output_dir}")
         return 0
 
     runner = JudgeRunner(
