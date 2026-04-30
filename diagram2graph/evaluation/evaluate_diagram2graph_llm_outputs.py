@@ -25,6 +25,7 @@ if str(REPO_ROOT) not in sys.path:
 DEFAULT_GOLD_DIR = Path("diagram2graph/data/turtle")
 DEFAULT_EXTRACT_ROOT = Path("diagram2graph/extract_rdf_ttl")
 DEFAULT_OUTPUT = Path("diagram2graph/evaluation/diagram2graph_llm_evaluation_results.json")
+DEFAULT_ABLATION_EVAL_IMG_DIR = Path("diagram2graph/evaluation/ablation_study/eval_img")
 GED_CHECK_INTERVAL = 10.0
 GED_STABLE_THRESHOLD = 5
 GED_MAX_TIME = 300.0
@@ -107,6 +108,15 @@ def collect_intersection_ids(
         requested = {Path(raw_id).stem for raw_id in requested_ids}
         intersection &= requested
     return sorted(intersection, key=sort_id)
+
+
+def load_ids_from_image_dir(image_dir: Path) -> list[str]:
+    if not image_dir.exists():
+        raise SystemExit(f"Ablation image directory does not exist: {image_dir}")
+    ids = sorted({path.stem for path in image_dir.iterdir() if path.is_file()}, key=sort_id)
+    if not ids:
+        raise SystemExit(f"No ablation image files found in: {image_dir}")
+    return ids
 
 
 def _float(value: Any) -> float:
@@ -399,6 +409,14 @@ def parse_args() -> argparse.Namespace:
         help="Optional diagram ids to evaluate. Defaults to each strategy/gold intersection.",
     )
     parser.add_argument(
+        "--ablation-study-subset",
+        action="store_true",
+        help=(
+            "Evaluate only the 20-image Diagram2Graph JSON-vs-RDF ablation subset "
+            "from diagram2graph/evaluation/ablation_study/eval_img."
+        ),
+    )
+    parser.add_argument(
         "--allow-online-model-download",
         action="store_true",
         help="Allow BERTScore to query/download Hugging Face models instead of forcing offline cache usage.",
@@ -418,7 +436,10 @@ def main() -> int:
         raise SystemExit("--ged-workers must be at least 1")
     if args.bert_batch_size is not None and args.bert_batch_size < 1:
         raise SystemExit("--bert-batch-size must be at least 1")
+    if args.ablation_study_subset and args.ids:
+        raise SystemExit("Use either --ablation-study-subset or --ids, not both")
     bert_device = resolve_bert_device(args.bert_device)
+    requested_ids = load_ids_from_image_dir(DEFAULT_ABLATION_EVAL_IMG_DIR) if args.ablation_study_subset else args.ids
 
     report = build_report(
         gold_dir=Path(args.gold_dir),
@@ -430,7 +451,7 @@ def main() -> int:
         strategy_names=args.strategies,
         output_path=Path(args.output),
         ged_workers=args.ged_workers,
-        requested_ids=args.ids,
+        requested_ids=requested_ids,
     )
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
