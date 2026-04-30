@@ -9,8 +9,10 @@ from typing import Any, Iterable, Mapping, Sequence
 
 from .datasets import CandidateRecord, group_by_item
 from .judge_core import (
+    _include_pair,
     _coerce_mapping,
     _direct_key,
+    _order_pair_for_report,
     _pairwise_key,
     _read_json,
     _write_json,
@@ -142,6 +144,7 @@ def build_batch_jobs(
     modes: Sequence[str],
     output_dir: Path,
     skip_existing: bool,
+    pairing_mode: str = "all",
 ) -> list[BatchJudgeJob]:
     jobs: list[BatchJudgeJob] = []
     direct_existing = _load_existing_direct_keys(output_dir / "direct_judge_results.json") if skip_existing else set()
@@ -158,9 +161,9 @@ def build_batch_jobs(
     if "pairwise" in modes:
         for item_id, item_records in group_by_item(records).items():
             for record_a, record_b in combinations(item_records, 2):
-                strategy_a, strategy_b = sorted([record_a.strategy, record_b.strategy])
-                if record_a.strategy != strategy_a:
-                    record_a, record_b = record_b, record_a
+                if not _include_pair(record_a, record_b, pairing_mode):
+                    continue
+                record_a, record_b = _order_pair_for_report(record_a, record_b, pairing_mode)
                 if skip_existing and _pairwise_key(record_a, record_b) in pairwise_existing:
                     continue
                 jobs.append(
@@ -391,9 +394,17 @@ class OpenAIBatchJudgeRunner:
         strategy_selection: Mapping[str, Any] | None,
         skip_existing: bool,
         dry_run: bool,
+        validation_design: str | None = None,
+        pairing_mode: str = "all",
     ) -> dict[str, Any]:
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        all_jobs = build_batch_jobs(records, modes=modes, output_dir=self.output_dir, skip_existing=skip_existing)
+        all_jobs = build_batch_jobs(
+            records,
+            modes=modes,
+            output_dir=self.output_dir,
+            skip_existing=skip_existing,
+            pairing_mode=pairing_mode,
+        )
         preflight_errors = _write_preflight_errors(self.output_dir, all_jobs) if not dry_run else []
         jobs = _valid_jobs(all_jobs, preflight_errors)
         chunks = _chunk_request_lines(
@@ -413,6 +424,8 @@ class OpenAIBatchJudgeRunner:
             "endpoint": BATCH_ENDPOINT,
             "completion_window": self.completion_window,
             "modes": list(modes),
+            "validation_design": validation_design,
+            "pairing_mode": pairing_mode,
             "strategy_selection": strategy_selection,
             "dry_run": dry_run,
             "max_file_mb": self.max_file_mb,

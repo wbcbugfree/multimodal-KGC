@@ -24,6 +24,11 @@ DIAGRAM2GRAPH_STRATEGIES = {
     "oneshot": Path("diagram2graph/extract_rdf_ttl/oneshot_outputs"),
     "fewshot": Path("diagram2graph/extract_rdf_ttl/fewshot_outputs"),
 }
+GOLD_STRATEGY = "ground_truth"
+GOLD_TTL_DIRS = {
+    "vistext": Path("vistext/data/test/turtle"),
+    "diagram2graph": Path("diagram2graph/data/turtle"),
+}
 
 
 @dataclass(frozen=True)
@@ -142,6 +147,42 @@ def collect_ttl_records(
                     image_path=image_path,
                 )
             )
+    return records
+
+
+def collect_gold_records(
+    dataset: str,
+    *,
+    ids: Sequence[str] | None = None,
+    root: Path | None = None,
+    strategy_name: str = GOLD_STRATEGY,
+) -> list[CandidateRecord]:
+    base = root or repo_root()
+    relative_gold_dir = GOLD_TTL_DIRS.get(dataset)
+    if relative_gold_dir is None:
+        raise ValueError(f"No labelled RDF/Turtle ground truth is configured for dataset: {dataset}")
+    gold_dir = base / relative_gold_dir
+    if not gold_dir.exists():
+        raise FileNotFoundError(f"Ground-truth TTL directory not found: {gold_dir}")
+    id_filter = set(ids or [])
+    records: list[CandidateRecord] = []
+    for ttl_path in sorted(gold_dir.glob("*.ttl"), key=lambda path: path.stem):
+        item_id = ttl_path.stem
+        if id_filter and item_id not in id_filter:
+            continue
+        try:
+            image_path = resolve_image(dataset, item_id, root=root)
+        except FileNotFoundError:
+            continue
+        records.append(
+            CandidateRecord(
+                dataset=dataset,
+                strategy=strategy_name,
+                item_id=item_id,
+                ttl_path=ttl_path.resolve(),
+                image_path=image_path,
+            )
+        )
     return records
 
 

@@ -128,10 +128,11 @@ class OpenAIJudgeProvider:
         strategy_a: str,
         strategy_b: str,
     ) -> str:
+        del strategy_a, strategy_b
         return (
             f"{prompt_text}\n\n"
-            f"Candidate A strategy: {strategy_a}\n```turtle\n{ttl_a}\n```\n\n"
-            f"Candidate B strategy: {strategy_b}\n```turtle\n{ttl_b}\n```"
+            f"Candidate A RDF/Turtle:\n```turtle\n{ttl_a}\n```\n\n"
+            f"Candidate B RDF/Turtle:\n```turtle\n{ttl_b}\n```"
         )
 
     def build_direct_request_body(self, *, image_path: Path, ttl_text: str, prompt_text: str) -> dict[str, Any]:

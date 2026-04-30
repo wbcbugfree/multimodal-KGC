@@ -7,6 +7,8 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
+from .datasets import GOLD_STRATEGY
+
 
 @dataclass(frozen=True)
 class ContentOnlyMetrics:
@@ -124,6 +126,71 @@ def select_validation_strategy_pair(
     }
 
 
+def _per_image_metric_gap(metric_a: Mapping[str, Any], metric_b: Mapping[str, Any]) -> float | None:
+    values: list[float] = []
+    score_a = metric_a.get("triple_match_accuracy")
+    score_b = metric_b.get("triple_match_accuracy")
+    if isinstance(score_a, int | float) and isinstance(score_b, int | float):
+        values.append(abs(float(score_a) - float(score_b)))
+    ged_a = metric_a.get("normalized_ged")
+    ged_b = metric_b.get("normalized_ged")
+    if isinstance(ged_a, int | float) and isinstance(ged_b, int | float):
+        values.append(abs(float(ged_a) - float(ged_b)))
+    return _mean(values)
+
+
+def select_top_margin_items(
+    metrics: ContentOnlyMetrics,
+    *,
+    candidate_strategies: Sequence[str] | None = None,
+    top_n: int = 100,
+) -> dict[str, Any]:
+    pair_selection = select_validation_strategy_pair(
+        metrics,
+        candidate_strategies=candidate_strategies,
+        min_gap=0.0,
+    )
+    if pair_selection["status"] != "selected":
+        return pair_selection
+    first, second = pair_selection["best_pair"]["strategies"]
+    common_ids = sorted(
+        {
+            item_id
+            for strategy, item_id in metrics.per_image
+            if strategy == first and (second, item_id) in metrics.per_image
+        }
+    )
+    rows: list[dict[str, Any]] = []
+    for item_id in common_ids:
+        metric_a = metrics.per_image[(first, item_id)]
+        metric_b = metrics.per_image[(second, item_id)]
+        gap = _per_image_metric_gap(metric_a, metric_b)
+        if gap is None:
+            continue
+        rows.append(
+            {
+                "item_id": item_id,
+                "strategy_a": first,
+                "strategy_b": second,
+                "per_image_gap": gap,
+                "strategy_a_triple_match_accuracy": metric_a.get("triple_match_accuracy"),
+                "strategy_b_triple_match_accuracy": metric_b.get("triple_match_accuracy"),
+                "strategy_a_normalized_ged": metric_a.get("normalized_ged"),
+                "strategy_b_normalized_ged": metric_b.get("normalized_ged"),
+            }
+        )
+    rows = sorted(rows, key=lambda row: (-float(row["per_image_gap"]), str(row["item_id"])))
+    selected_rows = rows[: max(top_n, 0)]
+    return {
+        **pair_selection,
+        "selection_method": "strategy_margin_top_n",
+        "top_n": top_n,
+        "available_item_count": len(rows),
+        "selected_item_ids": [str(row["item_id"]) for row in selected_rows],
+        "selected_items": selected_rows,
+    }
+
+
 def _spearman(xs: list[float], ys: list[float]) -> float | None:
     if len(xs) < 2 or len(ys) < 2:
         return None
@@ -218,6 +285,54 @@ def summarize_pairwise_alignment(validation: Mapping[str, Any]) -> dict[str, Any
         "mode": "pairwise",
         "comparable_items": validation.get("comparable_items"),
         "agreement_rate": agreement_value,
+        "alignment_strength": strength,
+        "alignment_conclusion": conclusion,
+    }
+
+
+def summarize_direct_gold_preference(validation: Mapping[str, Any]) -> dict[str, Any]:
+    rate = validation.get("overall_gold_not_lower_rate")
+    rate_value = float(rate) if isinstance(rate, int | float) else None
+    strength = _classify_pairwise_alignment(rate_value)
+    if strength == "strong":
+        conclusion = "Direct-judge scores usually assign the ground-truth RDF graph a score at least as high as the generated RDF graph."
+    elif strength == "moderate":
+        conclusion = "Direct-judge scores moderately prefer the ground-truth RDF graph over the generated RDF graph."
+    elif strength == "weak":
+        conclusion = "Direct-judge scores show only weak preference for the ground-truth RDF graph."
+    elif strength == "poor":
+        conclusion = "Direct-judge scores do not reliably prefer the ground-truth RDF graph."
+    else:
+        conclusion = "Direct gold-vs-generated validation is inconclusive because no comparable items are available."
+    return {
+        "mode": "direct",
+        "comparison_type": "gold_vs_generated",
+        "comparable_items": validation.get("comparable_items"),
+        "gold_not_lower_rate": rate_value,
+        "alignment_strength": strength,
+        "alignment_conclusion": conclusion,
+    }
+
+
+def summarize_pairwise_gold_preference(validation: Mapping[str, Any]) -> dict[str, Any]:
+    rate = validation.get("gold_win_or_tie_rate")
+    rate_value = float(rate) if isinstance(rate, int | float) else None
+    strength = _classify_pairwise_alignment(rate_value)
+    if strength == "strong":
+        conclusion = "Pairwise judge preferences usually select the ground-truth RDF graph or mark it as tied."
+    elif strength == "moderate":
+        conclusion = "Pairwise judge preferences moderately favor the ground-truth RDF graph."
+    elif strength == "weak":
+        conclusion = "Pairwise judge preferences show only weak preference for the ground-truth RDF graph."
+    elif strength == "poor":
+        conclusion = "Pairwise judge preferences do not reliably favor the ground-truth RDF graph."
+    else:
+        conclusion = "Pairwise gold-vs-generated validation is inconclusive because no comparable items are available."
+    return {
+        "mode": "pairwise",
+        "comparison_type": "gold_vs_generated",
+        "comparable_items": validation.get("comparable_items"),
+        "gold_win_or_tie_rate": rate_value,
         "alignment_strength": strength,
         "alignment_conclusion": conclusion,
     }
@@ -345,5 +460,108 @@ def compare_pairwise_to_metrics(pairwise_report: Mapping[str, Any], metrics: Con
     return {
         "comparable_items": len(rows),
         "agreement_rate": agreements / len(rows) if rows else None,
+        "rows": rows,
+    }
+
+
+def validate_direct_gold_preference(
+    direct_report: Mapping[str, Any],
+    *,
+    gold_strategy: str = GOLD_STRATEGY,
+) -> dict[str, Any]:
+    grouped: dict[str, list[Mapping[str, Any]]] = {}
+    for item in direct_report.get("items", []):
+        if isinstance(item, Mapping) and item.get("status", "success") == "success":
+            grouped.setdefault(str(item.get("item_id")), []).append(item)
+
+    rows: list[dict[str, Any]] = []
+    overall_gold_higher = 0
+    overall_gold_not_lower = 0
+    criteria_gold_higher = 0
+    criteria_gold_not_lower = 0
+    for item_id, items in sorted(grouped.items()):
+        gold_items = [item for item in items if item.get("strategy") == gold_strategy]
+        generated_items = [item for item in items if item.get("strategy") != gold_strategy]
+        if not gold_items:
+            continue
+        gold_item = gold_items[0]
+        gold_overall = _score(gold_item, "overall_score")
+        gold_criteria = _score(gold_item, "criteria_mean")
+        for generated in generated_items:
+            generated_overall = _score(generated, "overall_score")
+            generated_criteria = _score(generated, "criteria_mean")
+            row = {
+                "item_id": item_id,
+                "generated_strategy": generated.get("strategy"),
+                "gold_overall_score": gold_overall,
+                "generated_overall_score": generated_overall,
+                "gold_criteria_mean": gold_criteria,
+                "generated_criteria_mean": generated_criteria,
+            }
+            if gold_overall is not None and generated_overall is not None:
+                row["gold_overall_higher"] = gold_overall > generated_overall
+                row["gold_overall_not_lower"] = gold_overall >= generated_overall
+                overall_gold_higher += 1 if gold_overall > generated_overall else 0
+                overall_gold_not_lower += 1 if gold_overall >= generated_overall else 0
+            if gold_criteria is not None and generated_criteria is not None:
+                row["gold_criteria_higher"] = gold_criteria > generated_criteria
+                row["gold_criteria_not_lower"] = gold_criteria >= generated_criteria
+                criteria_gold_higher += 1 if gold_criteria > generated_criteria else 0
+                criteria_gold_not_lower += 1 if gold_criteria >= generated_criteria else 0
+            rows.append(row)
+
+    overall_comparable = sum(1 for row in rows if "gold_overall_higher" in row)
+    criteria_comparable = sum(1 for row in rows if "gold_criteria_higher" in row)
+    return {
+        "comparison_type": "gold_vs_generated",
+        "gold_strategy": gold_strategy,
+        "comparable_items": len(rows),
+        "overall_gold_higher_rate": overall_gold_higher / overall_comparable if overall_comparable else None,
+        "overall_gold_not_lower_rate": overall_gold_not_lower / overall_comparable if overall_comparable else None,
+        "criteria_gold_higher_rate": criteria_gold_higher / criteria_comparable if criteria_comparable else None,
+        "criteria_gold_not_lower_rate": criteria_gold_not_lower / criteria_comparable if criteria_comparable else None,
+        "rows": rows,
+    }
+
+
+def compare_pairwise_gold_preference(
+    pairwise_report: Mapping[str, Any],
+    *,
+    gold_strategy: str = GOLD_STRATEGY,
+) -> dict[str, Any]:
+    rows: list[dict[str, Any]] = []
+    gold_wins = 0
+    gold_wins_or_ties = 0
+    for item in pairwise_report.get("items", []):
+        if not isinstance(item, Mapping) or item.get("status", "success") != "success":
+            continue
+        strategy_a = str(item.get("strategy_a"))
+        strategy_b = str(item.get("strategy_b"))
+        if (strategy_a == gold_strategy) == (strategy_b == gold_strategy):
+            continue
+        gold_side = "A" if strategy_a == gold_strategy else "B"
+        judge = item.get("judge", {})
+        judge_winner = judge.get("winner") if isinstance(judge, Mapping) else None
+        gold_selected = judge_winner == gold_side
+        gold_not_lost = gold_selected or judge_winner == "tie"
+        gold_wins += 1 if gold_selected else 0
+        gold_wins_or_ties += 1 if gold_not_lost else 0
+        rows.append(
+            {
+                "item_id": item.get("item_id"),
+                "strategy_a": strategy_a,
+                "strategy_b": strategy_b,
+                "gold_side": gold_side,
+                "judge_winner": judge_winner,
+                "gold_selected": gold_selected,
+                "gold_not_lost": gold_not_lost,
+            }
+        )
+    return {
+        "comparison_type": "gold_vs_generated",
+        "gold_strategy": gold_strategy,
+        "comparable_items": len(rows),
+        "gold_win_rate": gold_wins / len(rows) if rows else None,
+        "gold_win_or_tie_rate": gold_wins_or_ties / len(rows) if rows else None,
         "rows": rows,
     }

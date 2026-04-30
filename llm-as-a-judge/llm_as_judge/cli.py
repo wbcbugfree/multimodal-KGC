@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from datetime import datetime, timezone
 from itertools import combinations
 from pathlib import Path
 from typing import Any
 
-from .datasets import collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
-from .judge_core import JudgeRunner
+from .datasets import GOLD_STRATEGY, collect_gold_records, collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
+from .judge_core import JudgeRunner, _include_pair
 from .openai_batch import (
     DEFAULT_BATCH_COMPLETION_WINDOW,
     DEFAULT_BATCH_MAX_FILE_MB,
@@ -17,12 +18,17 @@ from .openai_batch import (
 )
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
 from .validation import (
+    compare_pairwise_gold_preference,
     compare_pairwise_to_metrics,
     load_traditional_metrics,
+    select_top_margin_items,
     select_validation_strategy_pair,
+    summarize_direct_gold_preference,
     summarize_direct_alignment,
+    summarize_pairwise_gold_preference,
     summarize_overall_alignment,
     summarize_pairwise_alignment,
+    validate_direct_gold_preference,
     validate_direct_against_metrics,
 )
 
@@ -37,6 +43,12 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--modes", nargs="+", choices=["direct", "pairwise"], default=["direct", "pairwise"])
     parser.add_argument("--strategies", nargs="+", default=list(strategy_dirs(dataset).keys()))
+    parser.add_argument(
+        "--validation-design",
+        choices=["strategy_gap", "strategy_margin_top_n", "gold_vs_generated"],
+        default="strategy_gap",
+        help="Validation sampling design for labelled datasets.",
+    )
     parser.add_argument("--strategy-selection", choices=["all", "widest_pair"], default="widest_pair")
     parser.add_argument(
         "--min-strategy-gap",
@@ -46,6 +58,18 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     )
     parser.add_argument("--sample-mode", choices=["all", "random", "ids"], default="all")
     parser.add_argument("--sample-count", type=int, default=5)
+    parser.add_argument(
+        "--top-margin-count",
+        type=int,
+        default=100,
+        help="Number of image IDs to keep for --validation-design strategy_margin_top_n.",
+    )
+    parser.add_argument(
+        "--gold-sample-count",
+        type=int,
+        default=None,
+        help="Optional item-ID limit for --validation-design gold_vs_generated after normal sampling.",
+    )
     parser.add_argument("--ids", nargs="*", default=[])
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--judge-provider", choices=["openai"], default="openai")
@@ -86,10 +110,10 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     return parser
 
 
-def _pairwise_count(records: list[Any]) -> int:
+def _pairwise_count(records: list[Any], *, pairing_mode: str = "all") -> int:
     total = 0
     for item_records in group_by_item(records).values():
-        total += sum(1 for _ in combinations(item_records, 2))
+        total += sum(1 for record_a, record_b in combinations(item_records, 2) if _include_pair(record_a, record_b, pairing_mode))
     return total
 
 
@@ -114,6 +138,60 @@ def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _limit_item_ids(item_ids: list[str], *, count: int | None, seed: int) -> list[str]:
+    if count is None or count >= len(item_ids):
+        return item_ids
+    if count <= 0:
+        return []
+    rng = random.Random(seed)
+    selected = set(rng.sample(item_ids, count))
+    return [item_id for item_id in item_ids if item_id in selected]
+
+
+def _build_validation_report(
+    *,
+    dataset: str,
+    validation_design: str,
+    selection: dict[str, Any] | None,
+    strategies: list[str],
+    direct_report: dict[str, Any] | None,
+    pairwise_report: dict[str, Any] | None,
+    metrics: Any,
+) -> dict[str, Any]:
+    validation: dict[str, Any] = {
+        "dataset": dataset,
+        "generated_at_utc": _utc_now(),
+        "validation_design": validation_design,
+        "strategy_selection": selection
+        or {
+            "status": "selected",
+            "best_pair": {"strategies": strategies},
+        },
+    }
+    validation_summary: dict[str, Any] = {}
+    if validation_design == "gold_vs_generated":
+        if direct_report is not None:
+            validation["direct_gold_vs_generated"] = validate_direct_gold_preference(direct_report)
+            validation_summary["direct"] = summarize_direct_gold_preference(validation["direct_gold_vs_generated"])
+        if pairwise_report is not None:
+            validation["pairwise_gold_vs_generated"] = compare_pairwise_gold_preference(pairwise_report)
+            validation_summary["pairwise"] = summarize_pairwise_gold_preference(validation["pairwise_gold_vs_generated"])
+    else:
+        if metrics is None:
+            raise ValueError("Traditional metrics are required for strategy-based judge validation.")
+        direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
+        pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
+        if direct_report is not None:
+            validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
+            validation_summary["direct"] = summarize_direct_alignment(validation[direct_key])
+        if pairwise_report is not None:
+            validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
+            validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
+    validation_summary["overall"] = summarize_overall_alignment(validation_summary)
+    validation["validation_summary"] = validation_summary
+    return validation
+
+
 def run_dataset_cli(
     *,
     dataset: str,
@@ -127,12 +205,29 @@ def run_dataset_cli(
         parser.error("--parallel-workers must be greater than 0")
     if args.batch_max_file_mb <= 0:
         parser.error("--batch-max-file-mb must be greater than 0")
+    if args.top_margin_count <= 0:
+        parser.error("--top-margin-count must be greater than 0")
+    if args.gold_sample_count is not None and args.gold_sample_count <= 0:
+        parser.error("--gold-sample-count must be greater than 0")
 
     should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
     metrics_required = should_validate and (
+        (
+            args.validation_design == "strategy_margin_top_n"
+            and args.batch_action in {None, "submit", "collect"}
+        )
+        or (
+            args.validation_design == "strategy_gap"
+            and (
+                args.batch_action is None
+                or args.batch_action == "collect"
+                or (args.batch_action == "submit" and args.strategy_selection == "widest_pair")
+            )
+        )
+    )
+    metrics_optional = should_validate and args.validation_design == "gold_vs_generated" and (
         args.batch_action is None
         or args.batch_action == "collect"
-        or (args.batch_action == "submit" and args.strategy_selection == "widest_pair")
     )
     if metrics_required and args.metrics_path is None:
         raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
@@ -144,12 +239,46 @@ def run_dataset_cli(
 
     metrics = (
         load_traditional_metrics(args.metrics_path)
-        if should_validate and args.metrics_path is not None and args.metrics_path.exists()
+        if (metrics_required or metrics_optional) and args.metrics_path is not None and args.metrics_path.exists()
         else None
     )
-    effective_strategy_selection = args.strategy_selection if should_validate and metrics is not None else "all"
+    effective_strategy_selection = (
+        args.strategy_selection if should_validate and args.validation_design == "strategy_gap" and metrics is not None else "all"
+    )
     selection: dict[str, Any] | None = None
-    if effective_strategy_selection == "widest_pair":
+    selected_top_margin_ids: list[str] | None = None
+    if should_validate and args.validation_design == "strategy_margin_top_n":
+        if metrics is None:
+            raise ValueError("--validation-design strategy_margin_top_n requires a traditional metrics report.")
+        selection = select_top_margin_items(
+            metrics,
+            candidate_strategies=args.strategies,
+            top_n=args.top_margin_count,
+        )
+        if selection["status"] == "skipped" or not selection.get("selected_item_ids"):
+            reason = selection.get("reason") or "No per-image metric gaps were available for the selected strategies."
+            if args.dry_run:
+                print(f"Dataset: {dataset}")
+                print(f"Validation design: {args.validation_design}")
+                print(f"Validation skipped: {reason}")
+                return 0
+            args.output_dir.mkdir(parents=True, exist_ok=True)
+            validation = {
+                "dataset": dataset,
+                "generated_at_utc": _utc_now(),
+                "validation_design": args.validation_design,
+                "strategy_selection": selection,
+                "validation_summary": {
+                    "alignment_strength": "skipped",
+                    "alignment_conclusion": reason,
+                },
+            }
+            _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
+            print(f"Skipped judge validation for {dataset}: {reason}")
+            return 0
+        args.strategies = list(selection["best_pair"]["strategies"])
+        selected_top_margin_ids = list(selection["selected_item_ids"])
+    elif effective_strategy_selection == "widest_pair":
         if metrics is None:
             raise ValueError("--strategy-selection widest_pair requires a traditional metrics report.")
         selection = select_validation_strategy_pair(
@@ -182,19 +311,32 @@ def run_dataset_cli(
             return 0
         args.strategies = list(selection["best_pair"]["strategies"])
 
-    ids = args.ids or None
+    ids = selected_top_margin_ids or args.ids or None
     records = collect_ttl_records(dataset, strategies=args.strategies, ids=ids)
     records = sample_records(
         records,
-        sample_mode=args.sample_mode,
+        sample_mode="ids" if selected_top_margin_ids else args.sample_mode,
         sample_count=args.sample_count,
         ids=ids,
         seed=args.seed,
     )
+    pairing_mode = "gold_vs_generated" if should_validate and args.validation_design == "gold_vs_generated" else "all"
+    if pairing_mode == "gold_vs_generated":
+        generated_item_ids = sorted({record.item_id for record in records})
+        generated_item_ids = _limit_item_ids(generated_item_ids, count=args.gold_sample_count, seed=args.seed)
+        records = [record for record in records if record.item_id in set(generated_item_ids)]
+        gold_records = collect_gold_records(dataset, ids=generated_item_ids, strategy_name=GOLD_STRATEGY)
+        records.extend(gold_records)
     direct_count = len(records)
-    pairwise_count = _pairwise_count(records)
+    pairwise_count = _pairwise_count(records, pairing_mode=pairing_mode)
     batch_jobs = (
-        build_batch_jobs(records, modes=args.modes, output_dir=args.output_dir, skip_existing=args.skip_existing)
+        build_batch_jobs(
+            records,
+            modes=args.modes,
+            output_dir=args.output_dir,
+            skip_existing=args.skip_existing,
+            pairing_mode=pairing_mode,
+        )
         if args.batch_action in {"submit"} or (args.dry_run and args.batch_action == "submit")
         else []
     )
@@ -203,12 +345,19 @@ def run_dataset_cli(
         print(f"Dataset: {dataset}")
         print(f"Strategies: {', '.join(args.strategies)}")
         print(f"Modes: {', '.join(args.modes)}")
+        print(f"Validation design: {args.validation_design}")
         print(f"Direct items: {direct_count}")
         print(f"Pairwise comparisons: {pairwise_count}")
         print(f"Strategy selection: {effective_strategy_selection}")
         if selection is not None and selection.get("status") == "selected":
             print(f"Selected strategy pair: {', '.join(selection['best_pair']['strategies'])}")
             print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
+            if selection.get("selection_method") == "strategy_margin_top_n":
+                print(f"Top-margin selected IDs: {len(selection.get('selected_item_ids', []))}")
+                print(f"Top-margin available IDs: {selection.get('available_item_count')}")
+        if pairing_mode == "gold_vs_generated":
+            print("Pairing mode: gold_vs_generated")
+            print(f"Ground-truth strategy alias: {GOLD_STRATEGY}")
         print(f"Parallel workers: {args.parallel_workers}")
         if args.batch_action:
             print(f"Batch action: {args.batch_action}")
@@ -241,7 +390,9 @@ def run_dataset_cli(
                 records=records,
                 modes=args.modes,
                 strategy_selection=selection,
+                validation_design=args.validation_design,
                 skip_existing=args.skip_existing,
+                pairing_mode=pairing_mode,
                 dry_run=False,
             )
             batch_count = len(manifest.get("batches", []))
@@ -277,30 +428,15 @@ def run_dataset_cli(
             return 0
 
         if should_validate:
-            assert metrics is not None
-            validation: dict[str, Any] = {
-                "dataset": dataset,
-                "generated_at_utc": _utc_now(),
-                "strategy_selection": selection
-                or {
-                    "status": "selected",
-                    "best_pair": {"strategies": args.strategies},
-                },
-            }
-            direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
-            pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
-            if direct_report is not None:
-                validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
-            if pairwise_report is not None:
-                validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
-
-            validation_summary: dict[str, Any] = {}
-            if direct_key in validation:
-                validation_summary["direct"] = summarize_direct_alignment(validation[direct_key])
-            if pairwise_key in validation:
-                validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
-            validation_summary["overall"] = summarize_overall_alignment(validation_summary)
-            validation["validation_summary"] = validation_summary
+            validation = _build_validation_report(
+                dataset=dataset,
+                validation_design=args.validation_design,
+                selection=selection,
+                strategies=args.strategies,
+                direct_report=direct_report,
+                pairwise_report=pairwise_report,
+                metrics=metrics,
+            )
             _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
         print(f"Wrote judge results under: {args.output_dir}")
         return 0
@@ -324,33 +460,19 @@ def run_dataset_cli(
             records,
             output_path=args.output_dir / "pairwise_judge_results.json",
             skip_existing=args.skip_existing,
+            pairing_mode=pairing_mode,
         )
 
     if should_validate:
-        assert metrics is not None
-        validation: dict[str, Any] = {
-            "dataset": dataset,
-            "generated_at_utc": _utc_now(),
-            "strategy_selection": selection
-            or {
-                "status": "selected",
-                "best_pair": {"strategies": args.strategies},
-            },
-        }
-        direct_key = "direct_vs_content_only_metrics" if dataset == "vistext" else "direct_vs_traditional_metrics"
-        pairwise_key = "pairwise_vs_content_only_metrics" if dataset == "vistext" else "pairwise_vs_traditional_metrics"
-        if direct_report is not None:
-            validation[direct_key] = validate_direct_against_metrics(direct_report, metrics)
-        if pairwise_report is not None:
-            validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
-
-        validation_summary: dict[str, Any] = {}
-        if direct_key in validation:
-            validation_summary["direct"] = summarize_direct_alignment(validation[direct_key])
-        if pairwise_key in validation:
-            validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
-        validation_summary["overall"] = summarize_overall_alignment(validation_summary)
-        validation["validation_summary"] = validation_summary
+        validation = _build_validation_report(
+            dataset=dataset,
+            validation_design=args.validation_design,
+            selection=selection,
+            strategies=args.strategies,
+            direct_report=direct_report,
+            pairwise_report=pairwise_report,
+            metrics=metrics,
+        )
         _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
 
     print(f"Wrote judge results under: {args.output_dir}")

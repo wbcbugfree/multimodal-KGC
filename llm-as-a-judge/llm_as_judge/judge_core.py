@@ -11,7 +11,7 @@ from typing import Any, Protocol, TypeVar
 from pydantic import BaseModel
 from rdflib import Graph
 
-from .datasets import CandidateRecord, group_by_item
+from .datasets import GOLD_STRATEGY, CandidateRecord, group_by_item
 from .schemas import DirectJudgeResult, PairwiseJudgeResult
 
 
@@ -97,6 +97,30 @@ def _direct_key(record: CandidateRecord) -> tuple[str, str, str]:
 def _pairwise_key(record_a: CandidateRecord, record_b: CandidateRecord) -> tuple[str, str, str, str]:
     first, second = sorted([record_a.strategy, record_b.strategy])
     return (record_a.dataset, record_a.item_id, first, second)
+
+
+def _include_pair(record_a: CandidateRecord, record_b: CandidateRecord, pairing_mode: str) -> bool:
+    if pairing_mode == "all":
+        return True
+    if pairing_mode == "gold_vs_generated":
+        return (record_a.strategy == GOLD_STRATEGY) != (record_b.strategy == GOLD_STRATEGY)
+    raise ValueError(f"Unsupported pairwise pairing mode: {pairing_mode}")
+
+
+def _order_pair_for_report(
+    record_a: CandidateRecord,
+    record_b: CandidateRecord,
+    pairing_mode: str,
+) -> tuple[CandidateRecord, CandidateRecord]:
+    if pairing_mode == "gold_vs_generated":
+        gold = record_a if record_a.strategy == GOLD_STRATEGY else record_b
+        generated = record_b if record_a.strategy == GOLD_STRATEGY else record_a
+        gold_first = sum(ord(char) for char in f"{gold.item_id}:{generated.strategy}") % 2 == 0
+        return (gold, generated) if gold_first else (generated, gold)
+    strategy_a, _strategy_b = sorted([record_a.strategy, record_b.strategy])
+    if record_a.strategy != strategy_a:
+        return record_b, record_a
+    return record_a, record_b
 
 
 def _run_jobs_ordered(
@@ -264,6 +288,7 @@ class JudgeRunner:
         *,
         output_path: Path,
         skip_existing: bool = False,
+        pairing_mode: str = "all",
     ) -> dict[str, Any]:
         report = _read_json(output_path)
         existing_keys = {
@@ -275,9 +300,9 @@ class JudgeRunner:
         jobs: list[tuple[str, CandidateRecord, CandidateRecord]] = []
         for item_id, item_records in group_by_item(records).items():
             for record_a, record_b in combinations(item_records, 2):
-                strategy_a, strategy_b = sorted([record_a.strategy, record_b.strategy])
-                if record_a.strategy != strategy_a:
-                    record_a, record_b = record_b, record_a
+                if not _include_pair(record_a, record_b, pairing_mode):
+                    continue
+                record_a, record_b = _order_pair_for_report(record_a, record_b, pairing_mode)
                 key = _pairwise_key(record_a, record_b)
                 if skip_existing and key in existing_keys:
                     continue
