@@ -494,13 +494,13 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 \toprule
 \textbf{Strategy} & \textbf{P} & \textbf{R} & \textbf{F1} & \textbf{Acc.} & \textbf{nGED} & \textbf{R-F1} & \textbf{B-F1} & \textbf{GBS-F1} \\
 \midrule
-Zero-shot & 0.8699 & 0.8742 & 0.8721 & 0.8822 & 0.0632 & 0.9836 & 0.9889 & 0.9969 \\
-One-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & 0.8699 & 0.8742 & 0.8721 & 0.8822 & 0.0637 & 0.9836 & 0.9889 & 0.9969 \\
+One-shot & 0.8701 & 0.8743 & 0.8722 & 0.8821 & 0.0635 & 0.9832 & 0.9887 & 0.9969 \\
+Few-shot & 0.8376 & 0.8579 & 0.8476 & 0.8587 & 0.0808 & 0.9683 & 0.9750 & 0.9849 \\
 \bottomrule
 \end{tabular}%
 }
-\caption{Diagram2Graph evaluation by prompting strategy. Abbreviations follow Table~\ref{tab:vistext_strategy_results}.}
+\caption{Diagram2Graph evaluation by prompting strategy on the same 219-image labelled set. Abbreviations follow Table~\ref{tab:vistext_strategy_results}.}
 \label{tab:diagram_results}
 \end{table*}
 
@@ -592,9 +592,9 @@ Gemini zero-shot & JSON & 0.7552 & 0.7552 & 0.7552 & 0.7773 & 0.0931 & 0.9692 & 
 Gemini one-shot & JSON & 0.8150 & 0.8150 & 0.8150 & 0.8381 & 0.0690 & 0.9771 & 0.9868 & 0.9988 \\
 Gemini few-shot & JSON & 0.8256 & 0.8214 & 0.8235 & 0.8505 & 0.0651 & 0.9758 & 0.9846 & 0.9962 \\
 Qwen2.5-VL-3B (2-run mean) & JSON & 0.7349 & 0.7171 & 0.7259 & 0.7712 & 0.1311 & 0.9358 & 0.9518 & 0.9691 \\
-Gemini RDF zero-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Gemini RDF one-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
-Gemini RDF few-shot & RDF/Turtle & \pending & \pending & \pending & \pending & \pending & \pending & \pending & \pending \\
+Gemini RDF zero-shot & RDF/Turtle & 0.8599 & 0.8599 & 0.8599 & 0.8801 & 0.0643 & 0.9843 & 0.9906 & 0.9993 \\
+Gemini RDF one-shot & RDF/Turtle & 0.8382 & 0.8382 & 0.8382 & 0.8594 & 0.0729 & 0.9811 & 0.9883 & 0.9990 \\
+Gemini RDF few-shot & RDF/Turtle & 0.8249 & 0.8313 & 0.8281 & 0.8518 & 0.0866 & 0.9692 & 0.9779 & 0.9904 \\
 \bottomrule
 \end{tabular}%
 }
