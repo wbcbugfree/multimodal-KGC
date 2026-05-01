@@ -1,0 +1,98 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Input A,B,C" ;
+    :shape :Task .
+
+:Node3 a :Decision, :Node ;
+    :label "IS B>C?" ;
+    :shape :Gateway .
+
+:Node4 a :Decision, :Node ;
+    :label "IS A>B?" ;
+    :shape :Gateway .
+
+:Node5 a :Decision, :Node ;
+    :label "IS A>C?" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "PRINT B" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "PRINT C" ;
+    :shape :Task .
+
+:Node8 a :Process, :Node ;
+    :label "PRINT A" ;
+    :shape :Task .
+
+:Node9 a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node9 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node8 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge11 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .

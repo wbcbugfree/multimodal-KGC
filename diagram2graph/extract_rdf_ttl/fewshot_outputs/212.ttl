@@ -1,0 +1,66 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "K is equal to 0" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "LOOP" ;
+    :shape :Task .
+
+:Node4 a :Decision, :Node ;
+    :label "YES OR NO?" ;
+    :shape :Gateway .
+
+:Node5 a :Process, :Node ;
+    :label "Calculate K as K+1" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "PRINT K" ;
+    :shape :Task .
+
+:Node7 a :Terminator, :Node ;
+    :label "STOP" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .

@@ -1,0 +1,90 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Pre-configuration" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Input" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Input Signal Analysis" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "Input Signal Analysis Finished?" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "Update" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "Output Signal Analysis" ;
+    :shape :Task .
+
+:Node8 a :Decision, :Node ;
+    :label "Output Signal Analysis Finished?" ;
+    :shape :Gateway .
+
+:Node9 a :Process, :Node ;
+    :label "Back to work" ;
+    :shape :Task .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node6 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node9 ;
+    :target :Node3 ;
+    :relationshipType :Follows .

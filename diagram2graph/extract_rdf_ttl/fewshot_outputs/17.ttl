@@ -1,0 +1,48 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Initialize" ;
+    :shape :Task .
+
+:Node3 a :Decision, :Node ;
+    :label "CHECK CONDITION" ;
+    :shape :Gateway .
+
+:Node4 a :Process, :Node ;
+    :label "EXIT LOOP" ;
+    :shape :Task .
+
+:Node5 a :Terminator, :Node ;
+    :label "STOP" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node2 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Condition is TRUE" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Condition is FALSE" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .

@@ -1,0 +1,59 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start-up" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Input variables" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Operator" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Main function" ;
+    :shape :Task .
+
+:Node5 a :Process, :Node ;
+    :label "MPU WDT1 setup" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "Configuration" ;
+    :shape :Task .
+
+:Node7 a :Terminator, :Node ;
+    :label "Finish" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .

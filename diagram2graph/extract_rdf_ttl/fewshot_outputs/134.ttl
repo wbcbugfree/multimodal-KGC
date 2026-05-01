@@ -1,0 +1,89 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Start" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "Read AI0, AI1 and AI2" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Display warning with visual indicator" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Convert values to standard" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "Current Value > Safety Thresholds" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "Print Output" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "Print Message" ;
+    :shape :Task .
+
+:Node8 a :Process, :Node ;
+    :label "Log the data in txt files for future analysis" ;
+    :shape :Task .
+
+:Node9 a :Terminator, :Node ;
+    :label "End" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "Yes" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "No" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node8 ;
+    :relationshipType :Follows .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
+
+:Edge10 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node2 ;
+    :relationshipType :Follows .

@@ -1,0 +1,66 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "START" ;
+    :shape :StartEvent .
+
+:Node2 a :Decision, :Node ;
+    :label "Is it necessary?" ;
+    :shape :Gateway .
+
+:Node3 a :Terminator, :Node ;
+    :label "Don't do it!" ;
+    :shape :EndEvent .
+
+:Node4 a :Decision, :Node ;
+    :label "Will it fail?" ;
+    :shape :Gateway .
+
+:Node5 a :Decision, :Node ;
+    :label "Knowledge" ;
+    :shape :Gateway .
+
+:Node6 a :Terminator, :Node ;
+    :label "Do it!" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows ;
+    :relationshipValue "NO" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node4 ;
+    :relationshipType :Follows ;
+    :relationshipValue "YES" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Follows ;
+    :relationshipValue "YES" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "NO" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node3 ;
+    :relationshipType :Follows ;
+    :relationshipValue "NO" .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows ;
+    :relationshipValue "YES" .

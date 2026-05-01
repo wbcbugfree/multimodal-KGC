@@ -1,0 +1,63 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node2 a :Decision, :Node ;
+    :label "Do You Understand Flowcharts?" ;
+    :shape :Gateway .
+
+:Node3 a :Process, :Node ;
+    :label "Great!" ;
+    :shape :Task .
+
+:Node4 a :Process, :Node ;
+    :label "Read each detail" ;
+    :shape :Task .
+
+:Node5 a :Decision, :Node ;
+    :label "Would You Like to Start With the Basics?" ;
+    :shape :Gateway .
+
+:Node6 a :Process, :Node ;
+    :label "Explain everyone" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "Further Reading About Flowcharts" ;
+    :shape :Task .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node4 ;
+    :relationshipType :Branches ;
+    :relationshipValue "YES" .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node7 ;
+    :relationshipType :Branches ;
+    :relationshipValue "NO" .

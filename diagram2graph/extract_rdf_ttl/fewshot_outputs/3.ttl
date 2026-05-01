@@ -1,0 +1,84 @@
+@prefix : <http://example.org/diagram2graph#> .
+
+:Node1 a :Start, :Node ;
+    :label "Begin" ;
+    :shape :StartEvent .
+
+:Node2 a :Process, :Node ;
+    :label "SUM=0" ;
+    :shape :Task .
+
+:Node3 a :Process, :Node ;
+    :label "Input N" ;
+    :shape :Task .
+
+:Node4 a :Decision, :Node ;
+    :label "N != 0 ?" ;
+    :shape :Gateway .
+
+:Node5 a :Process, :Node ;
+    :label "REM=N%10" ;
+    :shape :Task .
+
+:Node6 a :Process, :Node ;
+    :label "SUM=SUM+REM" ;
+    :shape :Task .
+
+:Node7 a :Process, :Node ;
+    :label "N=N/10" ;
+    :shape :Task .
+
+:Node8 a :Process, :Node ;
+    :label "PRINT SUM" ;
+    :shape :Task .
+
+:Node9 a :Terminator, :Node ;
+    :label "Stop" ;
+    :shape :EndEvent .
+
+:Edge1 a :Solid, :Edge ;
+    :source :Node1 ;
+    :target :Node2 ;
+    :relationshipType :Follows .
+
+:Edge2 a :Solid, :Edge ;
+    :source :Node2 ;
+    :target :Node3 ;
+    :relationshipType :Follows .
+
+:Edge3 a :Solid, :Edge ;
+    :source :Node3 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge4 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node5 ;
+    :relationshipType :Branches ;
+    :relationshipValue "TRUE" .
+
+:Edge5 a :Solid, :Edge ;
+    :source :Node5 ;
+    :target :Node6 ;
+    :relationshipType :Follows .
+
+:Edge6 a :Solid, :Edge ;
+    :source :Node6 ;
+    :target :Node7 ;
+    :relationshipType :Follows .
+
+:Edge7 a :Solid, :Edge ;
+    :source :Node7 ;
+    :target :Node4 ;
+    :relationshipType :Follows .
+
+:Edge8 a :Solid, :Edge ;
+    :source :Node4 ;
+    :target :Node8 ;
+    :relationshipType :Branches ;
+    :relationshipValue "FASLE" .
+
+:Edge9 a :Solid, :Edge ;
+    :source :Node8 ;
+    :target :Node9 ;
+    :relationshipType :Follows .
