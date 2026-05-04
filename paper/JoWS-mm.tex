@@ -484,7 +484,7 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 
 \subsubsection{Diagram2Graph Labelled Evaluation}
 
-% Diagram2Graph evaluation uses the full graph because node and edge identities are semantically relevant for diagrams. Unlike VisText, no datapoint ordinal normalization or content-only projection is applied.
+Table~\ref{tab:diagram_results} reports the Diagram2Graph labelled evaluation for the three RDF prompting strategies. The evaluation uses 216 diagrams after excluding the three images used as in-context examples, so all strategies are compared on the same image set. Because the target graph represents diagram topology through nodes, edges, labels, source-target links, line styles, and relationship types, the full RDF graph is evaluated directly; no content-only projection or ordinal normalization is applied.
 
 \begin{table*}[ht]
 \centering
@@ -570,15 +570,13 @@ This result is important because the model predicts these values directly from t
 
 \subsection{Diagram2Graph: Diagram Structure Extraction}
 
-% Diagram2Graph evaluates a different form of image-to-RDF construction. Unlike VisText, where much of the difficulty is numeric value estimation, Diagram2Graph primarily tests whether the model can recover node identities, node classes, edge direction, and edge relation types from diagram topology. This makes exact graph structure more central to the task: a small number of incorrect or missing edges can change the procedure or dependency structure represented by the diagram.
-%
-% \subsubsection{Prompting Strategy Effects}
-%
-% The Diagram2Graph prompting results should therefore be interpreted with greater emphasis on exact graph-overlap metrics, especially triple-match F1 and normalized GED. Soft textual metrics remain useful for assessing label similarity, but they cannot fully capture whether the predicted diagram graph preserves the correct topology. This distinction is important when comparing Diagram2Graph with VisText: two graph predictions may be lexically similar while differing in source-target assignments or relation types.
+Diagram2Graph evaluates a different form of image-to-RDF construction from VisText. Instead of estimating numerical values from plotted marks, the model must recover diagram topology: node identities, node classes, edge direction, line style, and relationship type. Errors in this setting can directly change the represented process or dependency structure.
+
+The results in Table~\ref{tab:diagram_results} show that zero-shot prompting with an explicit schema is sufficient for strong Diagram2Graph performance. Zero-shot prompting obtains the best value for every reported metric, with triple-match F1 of 0.8744, triple-match accuracy of 0.8841, and normalized GED of 0.0624. Static one-shot prompting is almost identical to zero-shot prompting, whereas few-shot prompting gives lower exact triple-match scores and a higher normalized GED. This pattern suggests that, for this compact diagram schema, adding examples does not necessarily improve extraction. The schema itself already specifies the required node and edge vocabulary, and additional examples may introduce local visual or topological patterns that are not representative of the broader diagram set.
 
 \subsubsection{JSON-versus-RDF Serialization Ablation}
 
-% Diagram2Graph also provides an opportunity to examine whether the requested output format affects model performance. The original task is naturally expressed in JSON, while this paper evaluates RDF/Turtle. Because the two serializations can encode the same node-edge graph, differences in performance may reflect the model's ability to follow a particular structured-output format rather than its visual understanding alone. We therefore include a 20-image ablation study that asks Gemini 3 Flash to output JSON with a predefined structured-output schema and compares those results with existing fine-tuned Qwen2.5-VL-3B JSON outputs. The Qwen baseline is reported as the average of two inference runs, whereas each Gemini prompting result is reported from a single run. This ablation is treated as a secondary analysis: it does not replace the RDF evaluation, but it helps determine whether observed errors are caused by visual interpretation, graph modelling, or serialization constraints.
+The JSON-versus-RDF ablation in Table~\ref{tab:json_rdf_ablation} tests whether requesting RDF/Turtle output causes a performance decline relative to a JSON serialization of the same diagram information. JSON and RDF/Turtle encode the same node-edge graph in this experiment, and the two serializations can be converted into each other without information loss. Their evaluation scores are therefore comparable under the same graph metrics. This ablation is necessary because, if JSON output were substantially better than RDF/Turtle output, a JSON-first pipeline followed by deterministic RDF conversion would be preferable to direct RDF/Turtle generation. The comparison uses the same 20-image subset for all rows. The JSON baseline is a Qwen2.5-VL-3B model \citep{bai2025qwen25vl} fine-tuned with LoRA \citep{hu2022lora} on 199 Diagram2Graph training examples; its reported scores are the mean of two inference runs. The Gemini rows are single-run prompting results.
 
 \begin{table*}[ht]
 \centering
@@ -601,6 +599,10 @@ Gemini RDF few-shot & RDF/Turtle & 0.8249 & 0.8313 & 0.8281 & 0.8518 & 0.0866 & 
 \caption{Diagram2Graph JSON-versus-RDF serialization ablation on the same 20-image subset. Abbreviations follow Table~\ref{tab:vistext_strategy_results}. The Qwen baseline reports the mean over two inference runs.}
 \label{tab:json_rdf_ablation}
 \end{table*}
+
+The ablation results do not show a decline when the target output is RDF/Turtle. On the same subset, the RDF/Turtle prompting results do not indicate a performance penalty relative to JSON serialization. This supports the use of direct RDF/Turtle generation in the proposed image-to-KG task, rather than treating RDF as a post-processing target that must first be mediated through JSON.
+
+The table also shows that all Gemini prompting strategies outperform the LoRA-fine-tuned Qwen2.5-VL-3B baseline on the reported metrics. In this setting, a frontier multimodal model prompted with the target schema provides stronger structured extraction than a smaller model adapted to the task with parameter-efficient fine-tuning. This result does not rule out the value of fine-tuning, but it indicates that prompt-based frontier models can be highly competitive for diagram-to-graph extraction even without task-specific parameter updates.
 
 % \subsubsection{Diagram2Graph Error Patterns}
 %
