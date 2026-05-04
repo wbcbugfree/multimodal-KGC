@@ -318,8 +318,17 @@ she:SoilFunctionalIndicators a skos:Concept ;
         she:SoilMoistureDeficit,
         she:WaterStorageCapacity ;
     skos:prefLabel "soil functional indicators" ;
-    she:hasThreshold [ skos:related she:SoilHealth ] ;
+    she:has she:Thresholds, she:CriticalLevels ;
     she:measures she:SoilThreats .
+
+she:Thresholds a skos:Concept ;
+    skos:prefLabel "thresholds" ;
+    skos:related she:SoilHealth .
+
+she:CriticalLevels a skos:Concept ;
+    skos:prefLabel "critical levels" ;
+    she:equivalentTo she:Thresholds ;
+    skos:related she:SoilHealth .
 
 she:SoilHealth a skos:Concept ;
     skos:definition "Soil health is the level to which soil functions are fulfilled." ;
@@ -340,7 +349,7 @@ she:SoilThreatIndicators a skos:Concept ;
         she:SoilSealing ;
     skos:prefLabel "soil threat indicators" ;
     she:affects she:SoilFunctions ;
-    she:hasThreshold [ skos:related she:SoilHealth ] .
+    she:has she:Thresholds, she:CriticalLevels .
 
 she:SoilQuality a skos:Concept ;
     skos:prefLabel "soil quality" ;

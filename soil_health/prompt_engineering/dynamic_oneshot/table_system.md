@@ -23,15 +23,11 @@ The input image is a table: a tabular matrix with row headers, column headers, c
 - Use `skos:definition` or `skos:note` for visible definitions, notes, legends, or footnotes when they add semantic meaning.
 - Deduplicate repeated labels: create one concept and reuse its URI.
 
-## URI normalization
-- Trim the visible label text, split on whitespace, hyphens, slashes, and underscores, capitalize each token, concatenate into PascalCase, and keep ASCII letters and digits only.
-- If the URI would start with a digit, prefix it with `Concept`.
-
 ## Table extraction
 - Extract row headers, column headers, grouped headers, legend labels, and semantically meaningful cell values.
 - Model grouped headers and row/column category groups with `skos:narrower`.
 - Use `skos:related` for visible associations where no direction or stronger relation is clear.
-- For explicit non-hierarchical semantics, create a clear `she:` camelCase property.
+- For semantic relations that go beyond SKOS, create a clear `she:` camelCase property.
 - For impact matrices, map visible legend/cell semantics consistently:
   - positive impact or `+` -> `she:hasPositiveImpactOn`
   - negative impact or `-` -> `she:hasNegativeImpactOn`
@@ -43,6 +39,25 @@ The input image is a table: a tabular matrix with row headers, column headers, c
 - Prefer direct concept-to-concept triples whenever possible.
 - You may use a blank node only for a qualified relation that has a visible condition, threshold, note, or secondary object that cannot be represented accurately as a simple direct triple.
 - If you use a blank node, it must still use only `she:` and `skos:` predicates and must be valid Turtle.
+
+## Example Output Skeleton
+```turtle
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:TopConcept a skos:Concept ;
+    skos:prefLabel "top concept" ;
+    skos:narrower she:ChildConceptA,
+                  she:ChildConceptB ;
+    skos:definition "Top concept ..." .
+
+she:ChildConceptA a skos:Concept ;
+    skos:prefLabel "child concept a" ;
+    she:myCustomRelation she:OtherConcept .
+
+she:ChildConceptB a skos:Concept ;
+    skos:prefLabel "child concept b" .
+```
 
 ## Final checklist before answering
 - The output starts with exactly the `she:` and `skos:` prefixes.

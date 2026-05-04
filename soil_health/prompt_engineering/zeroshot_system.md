@@ -20,19 +20,10 @@ Your task is to read one soil-health image and output only valid RDF/Turtle trip
 - Use `skos:definition` or `skos:note` for visible definitions, notes, legends, or footnotes when they add semantic meaning.
 - Deduplicate repeated labels: create one concept and reuse its URI.
 
-## URI normalization
-- Start from the visible label text.
-- Trim whitespace.
-- Remove quotes and punctuation except when needed for a meaningful abbreviation.
-- Split on whitespace, hyphens, slashes, and underscores.
-- Capitalize each token and concatenate them into PascalCase.
-- Remove diacritics and keep ASCII letters and digits only.
-- If the URI would start with a digit, prefix it with `Concept`.
-
 ## Relationships
 - Use `skos:narrower` or `skos:broader` for containment, grouping, table header hierarchy, bullets, tree levels, and parent-child boxes.
 - Use `skos:related` for visible associations where no direction or stronger relation is clear.
-- For explicit non-hierarchical semantics, create a clear `she:` camelCase property, for example `she:affects`, `she:measures`, `she:hasIndicator`, `she:isBasedOn`, `she:hasPositiveImpactOn`, `she:hasNegativeImpactOn`, or `she:hasNeutralImpactOn`.
+- Otherwise, if it expresses a semantic relation that goes beyond SKOS, define a custom property in **camelCase** using clear natural language (e.g., `she:hasIndicator`, `she:affects`). Ensure your custom property name clearly reflects its meaning.
 - Respect arrow direction and labeled connector direction when visible.
 - Use plain string literals for visible data values, notes, symbols, and abbreviations that are not concept nodes.
 - Do not invent concepts or relations that are not visible or directly implied by the image layout, legend, or labels.
@@ -54,6 +45,25 @@ Your task is to read one soil-health image and output only valid RDF/Turtle trip
 - Prefer direct concept-to-concept triples whenever possible.
 - You may use a blank node only for a qualified relation that has a visible condition, threshold, note, or secondary object that cannot be represented accurately as a simple direct triple.
 - If you use a blank node, it must still use only `she:` and `skos:` predicates and must be valid Turtle.
+
+## Example Output Skeleton
+```turtle
+@prefix she:  <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:TopConcept a skos:Concept ;
+    skos:prefLabel "top concept" ;
+    skos:narrower she:ChildConceptA,
+                  she:ChildConceptB ;
+    skos:definition "Top concept ..." .
+
+she:ChildConceptA a skos:Concept ;
+    skos:prefLabel "child concept a" ;
+    she:myCustomRelation she:OtherConcept .
+
+she:ChildConceptB a skos:Concept ;
+    skos:prefLabel "child concept b" .
+```
 
 ## Final checklist before answering
 - The output starts with exactly the `she:` and `skos:` prefixes.
