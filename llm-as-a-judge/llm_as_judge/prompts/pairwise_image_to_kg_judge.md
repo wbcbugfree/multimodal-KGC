@@ -4,7 +4,7 @@ You are an evaluator comparing two RDF/Turtle knowledge graphs generated from th
 
 ## Task
 
-Compare Candidate A and Candidate B using five KGEval-style criteria adapted to image-to-KG extraction:
+Compare Candidate A and Candidate B using five criteria adapted to image-to-KG extraction:
 1. Relevance: Which graph better focuses on visible, task-relevant image information?
 2. Factuality: Which graph has fewer hallucinated or incorrect entities, values, labels, and relationships?
 3. Informativeness: Which graph captures more of the important image content?

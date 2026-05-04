@@ -4,7 +4,7 @@ You are an evaluator assessing the quality of an RDF/Turtle knowledge graph gene
 
 ## Task
 
-Evaluate the candidate RDF/Turtle graph against the source image using five KGEval-style criteria adapted to image-to-KG extraction:
+Evaluate the candidate RDF/Turtle graph against the source image using five criteria adapted to image-to-KG extraction:
 1. Relevance: Does the graph focus on information that is visible and important in the image?
 2. Factuality: Are entities, labels, values, relationships, and chart or table claims grounded in the image without hallucination?
 3. Informativeness: Does the graph capture the major useful content, such as chart titles, axes, data points, table rows, columns, diagram nodes, and relationships?
