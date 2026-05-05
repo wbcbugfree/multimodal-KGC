@@ -28,6 +28,78 @@ def _mean(values: Sequence[float]) -> float | None:
     return sum(values) / len(values)
 
 
+def _triple_match_f1(metric: Mapping[str, Any] | None) -> float | None:
+    if not isinstance(metric, Mapping):
+        return None
+    value = _as_float(metric.get("triple_match_f1"))
+    if value is not None:
+        return value
+    triple_match = metric.get("triple_match")
+    if isinstance(triple_match, Mapping):
+        return _as_float(triple_match.get("f1"))
+    return None
+
+
+def traditional_metric_snapshot(metric: Mapping[str, Any] | None) -> dict[str, Any] | None:
+    if not isinstance(metric, Mapping):
+        return None
+
+    triple_match_f1 = _triple_match_f1(metric)
+    triple_match_accuracy = _as_float(metric.get("triple_match_accuracy"))
+    normalized_ged = _as_float(metric.get("normalized_ged"))
+    inverse_normalized_ged = 1.0 - normalized_ged if normalized_ged is not None else None
+
+    quality_components: list[float] = []
+    quality_basis: list[str] = []
+    if triple_match_f1 is not None:
+        quality_components.append(triple_match_f1)
+        quality_basis.append("triple_match_f1")
+    elif triple_match_accuracy is not None:
+        quality_components.append(triple_match_accuracy)
+        quality_basis.append("triple_match_accuracy")
+    if inverse_normalized_ged is not None:
+        quality_components.append(inverse_normalized_ged)
+        quality_basis.append("inverse_normalized_ged")
+
+    return {
+        "triple_match_f1": triple_match_f1,
+        "triple_match_accuracy": triple_match_accuracy,
+        "normalized_ged": normalized_ged,
+        "inverse_normalized_ged": inverse_normalized_ged,
+        "quality_score": _mean(quality_components),
+        "quality_score_basis": quality_basis,
+    }
+
+
+def _summarize_generated_metrics_by_outcome(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    outcome_key: str,
+) -> dict[str, Any]:
+    grouped: dict[str, list[Mapping[str, Any]]] = {}
+    for row in rows:
+        outcome = row.get(outcome_key)
+        metrics = row.get("generated_traditional_metrics")
+        if isinstance(outcome, str) and isinstance(metrics, Mapping):
+            grouped.setdefault(outcome, []).append(metrics)
+
+    summaries: dict[str, Any] = {}
+    metric_keys = [
+        "triple_match_f1",
+        "triple_match_accuracy",
+        "normalized_ged",
+        "inverse_normalized_ged",
+        "quality_score",
+    ]
+    for outcome, metric_rows in sorted(grouped.items()):
+        summary: dict[str, Any] = {"count": len(metric_rows)}
+        for metric_key in metric_keys:
+            values = [float(item[metric_key]) for item in metric_rows if isinstance(item.get(metric_key), int | float)]
+            summary[f"{metric_key}_mean"] = _mean(values)
+        summaries[outcome] = summary
+    return summaries
+
+
 def load_traditional_metrics(path: Path) -> ContentOnlyMetrics:
     with path.open("r", encoding="utf-8") as handle:
         data = json.load(handle)
@@ -374,38 +446,45 @@ def validate_direct_against_metrics(direct_report: Mapping[str, Any], metrics: C
         metric = metrics.per_image.get((strategy, item_id))
         if metric is None:
             continue
+        metric_snapshot = traditional_metric_snapshot(metric) or {}
         rows.append(
             {
                 "strategy": strategy,
                 "item_id": item_id,
                 "overall_score": _score(item, "overall_score"),
                 "criteria_mean": _score(item, "criteria_mean"),
-                "triple_match_accuracy": metric.get("triple_match_accuracy"),
-                "inverse_normalized_ged": (
-                    1.0 - float(metric["normalized_ged"])
-                    if isinstance(metric.get("normalized_ged"), int | float)
-                    else None
-                ),
+                "triple_match_f1": metric_snapshot.get("triple_match_f1"),
+                "triple_match_accuracy": metric_snapshot.get("triple_match_accuracy"),
+                "inverse_normalized_ged": metric_snapshot.get("inverse_normalized_ged"),
             }
         )
 
-    overall = [row["overall_score"] for row in rows if row["overall_score"] is not None and row["triple_match_accuracy"] is not None]
-    triple = [row["triple_match_accuracy"] for row in rows if row["overall_score"] is not None and row["triple_match_accuracy"] is not None]
-    criteria = [row["criteria_mean"] for row in rows if row["criteria_mean"] is not None and row["triple_match_accuracy"] is not None]
-    triple_for_criteria = [
-        row["triple_match_accuracy"] for row in rows if row["criteria_mean"] is not None and row["triple_match_accuracy"] is not None
+    overall_f1 = [row["overall_score"] for row in rows if row["overall_score"] is not None and row["triple_match_f1"] is not None]
+    f1_for_overall = [row["triple_match_f1"] for row in rows if row["overall_score"] is not None and row["triple_match_f1"] is not None]
+    criteria_f1 = [row["criteria_mean"] for row in rows if row["criteria_mean"] is not None and row["triple_match_f1"] is not None]
+    f1_for_criteria = [
+        row["triple_match_f1"] for row in rows if row["criteria_mean"] is not None and row["triple_match_f1"] is not None
     ]
     ged_overall = [row["overall_score"] for row in rows if row["overall_score"] is not None and row["inverse_normalized_ged"] is not None]
     inverse_ged = [
         row["inverse_normalized_ged"] for row in rows if row["overall_score"] is not None and row["inverse_normalized_ged"] is not None
     ]
+    ged_criteria = [row["criteria_mean"] for row in rows if row["criteria_mean"] is not None and row["inverse_normalized_ged"] is not None]
+    inverse_ged_for_criteria = [
+        row["inverse_normalized_ged"] for row in rows if row["criteria_mean"] is not None and row["inverse_normalized_ged"] is not None
+    ]
 
     return {
         "matched_items": len(rows),
+        "metric_availability": {
+            "triple_match_f1_rows": sum(1 for row in rows if row.get("triple_match_f1") is not None),
+            "inverse_normalized_ged_rows": sum(1 for row in rows if row.get("inverse_normalized_ged") is not None),
+        },
         "spearman": {
-            "overall_vs_triple_match_accuracy": _spearman(overall, triple),
-            "criteria_mean_vs_triple_match_accuracy": _spearman(criteria, triple_for_criteria),
+            "overall_vs_triple_match_f1": _spearman(overall_f1, f1_for_overall),
+            "criteria_mean_vs_triple_match_f1": _spearman(criteria_f1, f1_for_criteria),
             "overall_vs_inverse_normalized_ged": _spearman(ged_overall, inverse_ged),
+            "criteria_mean_vs_inverse_normalized_ged": _spearman(ged_criteria, inverse_ged_for_criteria),
         },
         "rows": rows,
     }
@@ -467,6 +546,7 @@ def compare_pairwise_to_metrics(pairwise_report: Mapping[str, Any], metrics: Con
 def validate_direct_gold_preference(
     direct_report: Mapping[str, Any],
     *,
+    metrics: ContentOnlyMetrics | None = None,
     gold_strategy: str = GOLD_STRATEGY,
 ) -> dict[str, Any]:
     grouped: dict[str, list[Mapping[str, Any]]] = {}
@@ -488,24 +568,41 @@ def validate_direct_gold_preference(
         gold_overall = _score(gold_item, "overall_score")
         gold_criteria = _score(gold_item, "criteria_mean")
         for generated in generated_items:
+            generated_strategy = str(generated.get("strategy"))
             generated_overall = _score(generated, "overall_score")
             generated_criteria = _score(generated, "criteria_mean")
             row = {
                 "item_id": item_id,
-                "generated_strategy": generated.get("strategy"),
+                "generated_strategy": generated_strategy,
                 "gold_overall_score": gold_overall,
                 "generated_overall_score": generated_overall,
                 "gold_criteria_mean": gold_criteria,
                 "generated_criteria_mean": generated_criteria,
             }
+            if metrics is not None:
+                metric_snapshot = traditional_metric_snapshot(metrics.per_image.get((generated_strategy, item_id)))
+                if metric_snapshot is not None:
+                    row["generated_traditional_metrics"] = metric_snapshot
             if gold_overall is not None and generated_overall is not None:
                 row["gold_overall_higher"] = gold_overall > generated_overall
                 row["gold_overall_not_lower"] = gold_overall >= generated_overall
+                if gold_overall > generated_overall:
+                    row["overall_outcome"] = "gold_higher"
+                elif gold_overall == generated_overall:
+                    row["overall_outcome"] = "tie"
+                else:
+                    row["overall_outcome"] = "generated_higher"
                 overall_gold_higher += 1 if gold_overall > generated_overall else 0
                 overall_gold_not_lower += 1 if gold_overall >= generated_overall else 0
             if gold_criteria is not None and generated_criteria is not None:
                 row["gold_criteria_higher"] = gold_criteria > generated_criteria
                 row["gold_criteria_not_lower"] = gold_criteria >= generated_criteria
+                if gold_criteria > generated_criteria:
+                    row["criteria_outcome"] = "gold_higher"
+                elif gold_criteria == generated_criteria:
+                    row["criteria_outcome"] = "tie"
+                else:
+                    row["criteria_outcome"] = "generated_higher"
                 criteria_gold_higher += 1 if gold_criteria > generated_criteria else 0
                 criteria_gold_not_lower += 1 if gold_criteria >= generated_criteria else 0
             rows.append(row)
@@ -520,6 +617,14 @@ def validate_direct_gold_preference(
         "overall_gold_not_lower_rate": overall_gold_not_lower / overall_comparable if overall_comparable else None,
         "criteria_gold_higher_rate": criteria_gold_higher / criteria_comparable if criteria_comparable else None,
         "criteria_gold_not_lower_rate": criteria_gold_not_lower / criteria_comparable if criteria_comparable else None,
+        "generated_metric_summary_by_overall_outcome": _summarize_generated_metrics_by_outcome(
+            rows,
+            outcome_key="overall_outcome",
+        ),
+        "generated_metric_summary_by_criteria_outcome": _summarize_generated_metrics_by_outcome(
+            rows,
+            outcome_key="criteria_outcome",
+        ),
         "rows": rows,
     }
 
@@ -527,6 +632,7 @@ def validate_direct_gold_preference(
 def compare_pairwise_gold_preference(
     pairwise_report: Mapping[str, Any],
     *,
+    metrics: ContentOnlyMetrics | None = None,
     gold_strategy: str = GOLD_STRATEGY,
 ) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
@@ -540,28 +646,45 @@ def compare_pairwise_gold_preference(
         if (strategy_a == gold_strategy) == (strategy_b == gold_strategy):
             continue
         gold_side = "A" if strategy_a == gold_strategy else "B"
+        generated_strategy = strategy_b if strategy_a == gold_strategy else strategy_a
+        item_id = str(item.get("item_id"))
         judge = item.get("judge", {})
         judge_winner = judge.get("winner") if isinstance(judge, Mapping) else None
         gold_selected = judge_winner == gold_side
         gold_not_lost = gold_selected or judge_winner == "tie"
+        if gold_selected:
+            outcome = "gold_selected"
+        elif judge_winner == "tie":
+            outcome = "tie"
+        else:
+            outcome = "generated_selected"
         gold_wins += 1 if gold_selected else 0
         gold_wins_or_ties += 1 if gold_not_lost else 0
-        rows.append(
-            {
-                "item_id": item.get("item_id"),
-                "strategy_a": strategy_a,
-                "strategy_b": strategy_b,
-                "gold_side": gold_side,
-                "judge_winner": judge_winner,
-                "gold_selected": gold_selected,
-                "gold_not_lost": gold_not_lost,
-            }
-        )
+        row = {
+            "item_id": item_id,
+            "strategy_a": strategy_a,
+            "strategy_b": strategy_b,
+            "generated_strategy": generated_strategy,
+            "gold_side": gold_side,
+            "judge_winner": judge_winner,
+            "gold_selected": gold_selected,
+            "gold_not_lost": gold_not_lost,
+            "outcome": outcome,
+        }
+        if metrics is not None:
+            metric_snapshot = traditional_metric_snapshot(metrics.per_image.get((generated_strategy, item_id)))
+            if metric_snapshot is not None:
+                row["generated_traditional_metrics"] = metric_snapshot
+        rows.append(row)
     return {
         "comparison_type": "gold_vs_generated",
         "gold_strategy": gold_strategy,
         "comparable_items": len(rows),
         "gold_win_rate": gold_wins / len(rows) if rows else None,
         "gold_win_or_tie_rate": gold_wins_or_ties / len(rows) if rows else None,
+        "generated_metric_summary_by_outcome": _summarize_generated_metrics_by_outcome(
+            rows,
+            outcome_key="outcome",
+        ),
         "rows": rows,
     }

@@ -28,6 +28,7 @@ from .validation import (
     summarize_pairwise_gold_preference,
     summarize_overall_alignment,
     summarize_pairwise_alignment,
+    traditional_metric_snapshot,
     validate_direct_gold_preference,
     validate_direct_against_metrics,
 )
@@ -56,7 +57,7 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
         default=0.02,
         help="Skip judge validation if the widest available strategy pair differs by less than this composite gap.",
     )
-    parser.add_argument("--sample-mode", choices=["all", "random", "ids"], default="all")
+    parser.add_argument("--sample-mode", choices=["all", "random", "ids", "ascend"], default="all")
     parser.add_argument("--sample-count", type=int, default=5)
     parser.add_argument(
         "--top-margin-count",
@@ -148,6 +149,53 @@ def _limit_item_ids(item_ids: list[str], *, count: int | None, seed: int) -> lis
     return [item_id for item_id in item_ids if item_id in selected]
 
 
+def _select_ascending_metric_records(
+    records: list[Any],
+    *,
+    metrics: Any,
+    count: int,
+) -> tuple[list[Any], dict[str, Any]]:
+    ranked: list[tuple[float, str, str, Any, dict[str, Any]]] = []
+    missing_metric_records: list[dict[str, str]] = []
+    for record in records:
+        metric = metrics.per_image.get((record.strategy, record.item_id))
+        snapshot = traditional_metric_snapshot(metric)
+        quality_score = snapshot.get("quality_score") if isinstance(snapshot, dict) else None
+        if not isinstance(quality_score, int | float):
+            missing_metric_records.append(
+                {
+                    "strategy": record.strategy,
+                    "item_id": record.item_id,
+                }
+            )
+            continue
+        ranked.append((float(quality_score), record.item_id, record.strategy, record, snapshot))
+
+    selected = ranked[:0] if count <= 0 else sorted(ranked, key=lambda item: (item[0], item[1], item[2]))[:count]
+    selected_records = [item[3] for item in selected]
+    selection = {
+        "status": "selected" if selected_records else "skipped",
+        "selection_method": "gold_vs_generated_ascending_metric",
+        "sample_mode": "ascend",
+        "sample_count": count,
+        "available_generated_record_count": len(ranked),
+        "missing_metric_record_count": len(missing_metric_records),
+        "missing_metric_records": missing_metric_records,
+        "selected_item_ids": [item[1] for item in selected],
+        "selected_generated_records": [
+            {
+                "strategy": strategy,
+                "item_id": item_id,
+                "generated_traditional_metrics": snapshot,
+            }
+            for quality_score, item_id, strategy, _record, snapshot in selected
+        ],
+    }
+    if not selected_records:
+        selection["reason"] = "No generated outputs had traditional metrics for ascending sampling."
+    return selected_records, selection
+
+
 def _build_validation_report(
     *,
     dataset: str,
@@ -171,10 +219,10 @@ def _build_validation_report(
     validation_summary: dict[str, Any] = {}
     if validation_design == "gold_vs_generated":
         if direct_report is not None:
-            validation["direct_gold_vs_generated"] = validate_direct_gold_preference(direct_report)
+            validation["direct_gold_vs_generated"] = validate_direct_gold_preference(direct_report, metrics=metrics)
             validation_summary["direct"] = summarize_direct_gold_preference(validation["direct_gold_vs_generated"])
         if pairwise_report is not None:
-            validation["pairwise_gold_vs_generated"] = compare_pairwise_gold_preference(pairwise_report)
+            validation["pairwise_gold_vs_generated"] = compare_pairwise_gold_preference(pairwise_report, metrics=metrics)
             validation_summary["pairwise"] = summarize_pairwise_gold_preference(validation["pairwise_gold_vs_generated"])
     else:
         if metrics is None:
@@ -209,8 +257,11 @@ def run_dataset_cli(
         parser.error("--top-margin-count must be greater than 0")
     if args.gold_sample_count is not None and args.gold_sample_count <= 0:
         parser.error("--gold-sample-count must be greater than 0")
+    if args.sample_mode == "ascend" and args.validation_design != "gold_vs_generated":
+        parser.error("--sample-mode ascend is only supported with --validation-design gold_vs_generated")
 
     should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
+    needs_metrics_for_ascending_sample = should_validate and args.validation_design == "gold_vs_generated" and args.sample_mode == "ascend"
     metrics_required = should_validate and (
         (
             args.validation_design == "strategy_margin_top_n"
@@ -224,6 +275,7 @@ def run_dataset_cli(
                 or (args.batch_action == "submit" and args.strategy_selection == "widest_pair")
             )
         )
+        or needs_metrics_for_ascending_sample
     )
     metrics_optional = should_validate and args.validation_design == "gold_vs_generated" and (
         args.batch_action is None
@@ -311,19 +363,52 @@ def run_dataset_cli(
             return 0
         args.strategies = list(selection["best_pair"]["strategies"])
 
+    pairing_mode = "gold_vs_generated" if should_validate and args.validation_design == "gold_vs_generated" else "all"
     ids = selected_top_margin_ids or args.ids or None
     records = collect_ttl_records(dataset, strategies=args.strategies, ids=ids)
-    records = sample_records(
-        records,
-        sample_mode="ids" if selected_top_margin_ids else args.sample_mode,
-        sample_count=args.sample_count,
-        ids=ids,
-        seed=args.seed,
-    )
-    pairing_mode = "gold_vs_generated" if should_validate and args.validation_design == "gold_vs_generated" else "all"
+    if args.sample_mode == "ascend":
+        if pairing_mode != "gold_vs_generated":
+            raise ValueError("--sample-mode ascend is only supported for gold_vs_generated validation.")
+        if metrics is None:
+            raise ValueError("--sample-mode ascend requires a traditional metrics report.")
+        records, selection = _select_ascending_metric_records(
+            records,
+            metrics=metrics,
+            count=args.gold_sample_count or args.sample_count,
+        )
+        if selection.get("status") == "skipped":
+            reason = selection.get("reason") or "No generated outputs were selected by ascending traditional metrics."
+            if args.dry_run:
+                print(f"Dataset: {dataset}")
+                print(f"Validation design: {args.validation_design}")
+                print(f"Validation skipped: {reason}")
+                return 0
+            args.output_dir.mkdir(parents=True, exist_ok=True)
+            validation = {
+                "dataset": dataset,
+                "generated_at_utc": _utc_now(),
+                "validation_design": args.validation_design,
+                "strategy_selection": selection,
+                "validation_summary": {
+                    "alignment_strength": "skipped",
+                    "alignment_conclusion": reason,
+                },
+            }
+            _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
+            print(f"Skipped judge validation for {dataset}: {reason}")
+            return 0
+    else:
+        records = sample_records(
+            records,
+            sample_mode="ids" if selected_top_margin_ids else args.sample_mode,
+            sample_count=args.sample_count,
+            ids=ids,
+            seed=args.seed,
+        )
     if pairing_mode == "gold_vs_generated":
         generated_item_ids = sorted({record.item_id for record in records})
-        generated_item_ids = _limit_item_ids(generated_item_ids, count=args.gold_sample_count, seed=args.seed)
+        if args.sample_mode != "ascend":
+            generated_item_ids = _limit_item_ids(generated_item_ids, count=args.gold_sample_count, seed=args.seed)
         records = [record for record in records if record.item_id in set(generated_item_ids)]
         gold_records = collect_gold_records(dataset, ids=generated_item_ids, strategy_name=GOLD_STRATEGY)
         records.extend(gold_records)
@@ -350,11 +435,15 @@ def run_dataset_cli(
         print(f"Pairwise comparisons: {pairwise_count}")
         print(f"Strategy selection: {effective_strategy_selection}")
         if selection is not None and selection.get("status") == "selected":
-            print(f"Selected strategy pair: {', '.join(selection['best_pair']['strategies'])}")
-            print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
+            if selection.get("best_pair"):
+                print(f"Selected strategy pair: {', '.join(selection['best_pair']['strategies'])}")
+                print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
             if selection.get("selection_method") == "strategy_margin_top_n":
                 print(f"Top-margin selected IDs: {len(selection.get('selected_item_ids', []))}")
                 print(f"Top-margin available IDs: {selection.get('available_item_count')}")
+            if selection.get("selection_method") == "gold_vs_generated_ascending_metric":
+                print(f"Ascending-metric selected generated outputs: {len(selection.get('selected_generated_records', []))}")
+                print(f"Ascending-metric available generated outputs: {selection.get('available_generated_record_count')}")
         if pairing_mode == "gold_vs_generated":
             print("Pairing mode: gold_vs_generated")
             print(f"Ground-truth strategy alias: {GOLD_STRATEGY}")

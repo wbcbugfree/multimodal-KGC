@@ -700,6 +700,10 @@ def evaluate_strategy(
         metrics.get_triple_match_accuracy(pred_graph, gold_graph)
         for pred_graph, gold_graph in zip(structural_pred_graphs, structural_gold_graphs)
     ]
+    triple_prfs = [
+        metrics.get_triple_match_prf([gold_graph], [pred_graph])
+        for pred_graph, gold_graph in zip(structural_pred_graphs, structural_gold_graphs)
+    ]
     print(f"[{strategy_name}:{graph_mode}] GED")
     ged_scores = compute_ged_scores(
         structural_gold_graphs,
@@ -714,6 +718,11 @@ def evaluate_strategy(
             "img_id": img_id,
             "chart_type": chart_types_by_id.get(img_id, "unknown"),
             "triple_match_accuracy": _float(triple_accs[index]),
+            "triple_match": {
+                "precision": _float(triple_prfs[index][0]),
+                "recall": _float(triple_prfs[index][1]),
+                "f1": _float(triple_prfs[index][2]),
+            },
             "normalized_ged": _float(ged_scores[index]),
             "tolerance": tolerance_metadata[index],
         }
