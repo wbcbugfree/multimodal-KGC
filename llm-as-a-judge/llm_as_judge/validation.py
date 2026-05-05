@@ -14,6 +14,7 @@ from .datasets import GOLD_STRATEGY
 class ContentOnlyMetrics:
     per_image: dict[tuple[str, str], Mapping[str, Any]]
     strategy_summary: dict[str, Mapping[str, Any]]
+    metadata: Mapping[str, Any] | None = None
 
 
 def _as_float(value: Any) -> float | None:
@@ -120,7 +121,7 @@ def load_traditional_metrics(path: Path) -> ContentOnlyMetrics:
         for item in strategy_data.get("per_image", []):
             item_id = str(item.get("img_id") or item.get("item_id"))
             per_image[(strategy, item_id)] = item
-    return ContentOnlyMetrics(per_image=per_image, strategy_summary=summary)
+    return ContentOnlyMetrics(per_image=per_image, strategy_summary=summary, metadata=data)
 
 
 def load_content_only_metrics(path: Path) -> ContentOnlyMetrics:
@@ -142,16 +143,13 @@ def select_validation_strategy_pair(
             "candidate_strategies": strategies,
             "available_strategies": available,
             "min_gap": min_gap,
+            "gap_metric_components": ["triple_match_f1", "normalized_ged"],
         }
 
     best_pair: dict[str, Any] | None = None
     for first, second in combinations(available, 2):
         first_summary = metrics.strategy_summary[first]
         second_summary = metrics.strategy_summary[second]
-        triple_accuracy_gap = abs(
-            (_as_float(first_summary.get("triple_match_accuracy_mean")) or 0.0)
-            - (_as_float(second_summary.get("triple_match_accuracy_mean")) or 0.0)
-        )
         triple_f1_gap = abs(
             (_as_float(first_summary.get("triple_match_micro_f1")) or 0.0)
             - (_as_float(second_summary.get("triple_match_micro_f1")) or 0.0)
@@ -162,18 +160,17 @@ def select_validation_strategy_pair(
         )
         pair_summary = {
             "strategies": [first, second],
-            "triple_match_accuracy_gap": triple_accuracy_gap,
             "triple_match_micro_f1_gap": triple_f1_gap,
             "normalized_ged_gap": normalized_ged_gap,
-            "composite_gap": _mean([triple_accuracy_gap, triple_f1_gap, normalized_ged_gap]) or 0.0,
+            "composite_gap": _mean([triple_f1_gap, normalized_ged_gap]) or 0.0,
         }
         if best_pair is None or (
             pair_summary["composite_gap"],
-            pair_summary["triple_match_accuracy_gap"],
+            pair_summary["triple_match_micro_f1_gap"],
             pair_summary["normalized_ged_gap"],
         ) > (
             best_pair["composite_gap"],
-            best_pair["triple_match_accuracy_gap"],
+            best_pair["triple_match_micro_f1_gap"],
             best_pair["normalized_ged_gap"],
         ):
             best_pair = pair_summary
@@ -186,6 +183,7 @@ def select_validation_strategy_pair(
             "candidate_strategies": strategies,
             "available_strategies": available,
             "min_gap": min_gap,
+            "gap_metric_components": ["triple_match_f1", "normalized_ged"],
             "best_pair": best_pair,
         }
 
@@ -194,21 +192,68 @@ def select_validation_strategy_pair(
         "candidate_strategies": strategies,
         "available_strategies": available,
         "min_gap": min_gap,
+        "gap_metric_components": ["triple_match_f1", "normalized_ged"],
         "best_pair": best_pair,
     }
 
 
-def _per_image_metric_gap(metric_a: Mapping[str, Any], metric_b: Mapping[str, Any]) -> float | None:
+def _per_image_metric_gap_components(metric_a: Mapping[str, Any], metric_b: Mapping[str, Any]) -> dict[str, float | None]:
     values: list[float] = []
-    score_a = metric_a.get("triple_match_accuracy")
-    score_b = metric_b.get("triple_match_accuracy")
+    score_a = _triple_match_f1(metric_a)
+    score_b = _triple_match_f1(metric_b)
+    triple_match_f1_gap = None
     if isinstance(score_a, int | float) and isinstance(score_b, int | float):
-        values.append(abs(float(score_a) - float(score_b)))
+        triple_match_f1_gap = abs(float(score_a) - float(score_b))
+        values.append(triple_match_f1_gap)
     ged_a = metric_a.get("normalized_ged")
     ged_b = metric_b.get("normalized_ged")
+    normalized_ged_gap = None
     if isinstance(ged_a, int | float) and isinstance(ged_b, int | float):
-        values.append(abs(float(ged_a) - float(ged_b)))
-    return _mean(values)
+        normalized_ged_gap = abs(float(ged_a) - float(ged_b))
+        values.append(normalized_ged_gap)
+    return {
+        "triple_match_f1_gap": triple_match_f1_gap,
+        "normalized_ged_gap": normalized_ged_gap,
+        "per_image_gap": _mean(values),
+    }
+
+
+def _passes_gap_threshold(
+    gap_components: Mapping[str, float | None],
+    *,
+    gap_threshold: float | None,
+    gap_threshold_mode: str,
+) -> bool:
+    if gap_threshold is None:
+        return True
+    component_values = [
+        gap_components.get("triple_match_f1_gap"),
+        gap_components.get("normalized_ged_gap"),
+    ]
+    comparisons = [float(value) > gap_threshold for value in component_values if isinstance(value, int | float)]
+    if gap_threshold_mode == "any":
+        return any(comparisons)
+    if gap_threshold_mode == "all":
+        return len(comparisons) == len(component_values) and all(comparisons)
+    raise ValueError(f"Unsupported gap threshold mode: {gap_threshold_mode}")
+
+
+def _gap_summary(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    gaps = [float(row["per_image_gap"]) for row in rows if isinstance(row.get("per_image_gap"), int | float)]
+    return {
+        "count": len(gaps),
+        "mean": _mean(gaps),
+        "min": min(gaps) if gaps else None,
+        "max": max(gaps) if gaps else None,
+    }
+
+
+def _gap_component_availability(rows: Sequence[Mapping[str, Any]]) -> dict[str, int]:
+    return {
+        "items": len(rows),
+        "triple_match_f1_gap_items": sum(1 for row in rows if isinstance(row.get("triple_match_f1_gap"), int | float)),
+        "normalized_ged_gap_items": sum(1 for row in rows if isinstance(row.get("normalized_ged_gap"), int | float)),
+    }
 
 
 def select_top_margin_items(
@@ -216,6 +261,8 @@ def select_top_margin_items(
     *,
     candidate_strategies: Sequence[str] | None = None,
     top_n: int = 100,
+    gap_threshold: float | None = None,
+    gap_threshold_mode: str = "any",
 ) -> dict[str, Any]:
     pair_selection = select_validation_strategy_pair(
         metrics,
@@ -232,33 +279,51 @@ def select_top_margin_items(
             if strategy == first and (second, item_id) in metrics.per_image
         }
     )
-    rows: list[dict[str, Any]] = []
+    candidate_rows: list[dict[str, Any]] = []
     for item_id in common_ids:
         metric_a = metrics.per_image[(first, item_id)]
         metric_b = metrics.per_image[(second, item_id)]
-        gap = _per_image_metric_gap(metric_a, metric_b)
+        gap_components = _per_image_metric_gap_components(metric_a, metric_b)
+        gap = gap_components.get("per_image_gap")
         if gap is None:
             continue
-        rows.append(
+        candidate_rows.append(
             {
                 "item_id": item_id,
                 "strategy_a": first,
                 "strategy_b": second,
                 "per_image_gap": gap,
+                "triple_match_f1_gap": gap_components.get("triple_match_f1_gap"),
+                "normalized_ged_gap": gap_components.get("normalized_ged_gap"),
+                "strategy_a_triple_match_f1": _triple_match_f1(metric_a),
+                "strategy_b_triple_match_f1": _triple_match_f1(metric_b),
                 "strategy_a_triple_match_accuracy": metric_a.get("triple_match_accuracy"),
                 "strategy_b_triple_match_accuracy": metric_b.get("triple_match_accuracy"),
                 "strategy_a_normalized_ged": metric_a.get("normalized_ged"),
                 "strategy_b_normalized_ged": metric_b.get("normalized_ged"),
             }
         )
+    rows = [
+        row
+        for row in candidate_rows
+        if _passes_gap_threshold(row, gap_threshold=gap_threshold, gap_threshold_mode=gap_threshold_mode)
+    ]
     rows = sorted(rows, key=lambda row: (-float(row["per_image_gap"]), str(row["item_id"])))
     selected_rows = rows[: max(top_n, 0)]
     return {
         **pair_selection,
         "selection_method": "strategy_margin_top_n",
         "top_n": top_n,
+        "gap_threshold": gap_threshold,
+        "gap_threshold_mode": gap_threshold_mode,
+        "candidate_item_count": len(candidate_rows),
+        "candidate_gap_component_availability": _gap_component_availability(candidate_rows),
+        "candidate_per_image_gap_summary": _gap_summary(candidate_rows),
         "available_item_count": len(rows),
+        "available_gap_component_availability": _gap_component_availability(rows),
+        "available_per_image_gap_summary": _gap_summary(rows),
         "selected_item_ids": [str(row["item_id"]) for row in selected_rows],
+        "selected_per_image_gap_summary": _gap_summary(selected_rows),
         "selected_items": selected_rows,
     }
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import random
 from datetime import datetime, timezone
@@ -8,7 +9,17 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any
 
-from .datasets import GOLD_STRATEGY, collect_gold_records, collect_ttl_records, group_by_item, result_path, sample_records, strategy_dirs
+from .datasets import (
+    GOLD_STRATEGY,
+    GOLD_TTL_DIRS,
+    collect_gold_records,
+    collect_ttl_records,
+    group_by_item,
+    repo_root,
+    result_path,
+    sample_records,
+    strategy_dirs,
+)
 from .judge_core import JudgeRunner, _include_pair
 from .openai_batch import (
     DEFAULT_BATCH_COMPLETION_WINDOW,
@@ -18,6 +29,7 @@ from .openai_batch import (
 )
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
 from .validation import (
+    ContentOnlyMetrics,
     compare_pairwise_gold_preference,
     compare_pairwise_to_metrics,
     load_traditional_metrics,
@@ -38,6 +50,9 @@ DEFAULT_METRICS_PATHS = {
     "vistext": Path("vistext/evaluation/vistext_prompting_strategy_evaluation_results.json"),
     "diagram2graph": Path("diagram2graph/evaluation/diagram2graph_llm_evaluation_results.json"),
 }
+_EVALUATOR_MODULES: dict[str, Any] = {}
+_GRAPH_MATCHING_MODULES: dict[str, Any] = {}
+_PER_IMAGE_F1_CACHE: dict[tuple[str, str, str, float | None], tuple[float, float, float]] = {}
 
 
 def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
@@ -64,6 +79,21 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
         type=int,
         default=100,
         help="Number of image IDs to keep for --validation-design strategy_margin_top_n.",
+    )
+    parser.add_argument(
+        "--top-margin-threshold",
+        type=float,
+        default=None,
+        help="Optional per-image gap threshold for --validation-design strategy_margin_top_n.",
+    )
+    parser.add_argument(
+        "--top-margin-threshold-mode",
+        choices=["any", "all"],
+        default="any",
+        help=(
+            "Threshold filter for --top-margin-threshold. 'any' keeps images where either F1 or normalized GED gap "
+            "exceeds the threshold; 'all' requires both gaps to exceed it."
+        ),
     )
     parser.add_argument(
         "--gold-sample-count",
@@ -137,6 +167,164 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _load_evaluator_module(dataset: str) -> Any:
+    if dataset in _EVALUATOR_MODULES:
+        return _EVALUATOR_MODULES[dataset]
+    module_paths = {
+        "vistext": Path("vistext/evaluation/evaluate_vistext_llm_outputs.py"),
+        "diagram2graph": Path("diagram2graph/evaluation/evaluate_diagram2graph_llm_outputs.py"),
+    }
+    module_path = module_paths.get(dataset)
+    if module_path is None:
+        raise ValueError(f"On-the-fly per-image F1 is not configured for dataset: {dataset}")
+    absolute_path = repo_root() / module_path
+    spec = importlib.util.spec_from_file_location(f"llm_as_judge_{dataset}_evaluator", absolute_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load evaluator module: {absolute_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    _EVALUATOR_MODULES[dataset] = module
+    return module
+
+
+def _graph_matching_module(dataset: str) -> Any:
+    if dataset not in _GRAPH_MATCHING_MODULES:
+        _GRAPH_MATCHING_MODULES[dataset] = _load_evaluator_module(dataset).load_graph_matching_module()
+    return _GRAPH_MATCHING_MODULES[dataset]
+
+
+def _vistext_numeric_tolerance(metrics: ContentOnlyMetrics) -> float:
+    metadata = metrics.metadata if isinstance(metrics.metadata, dict) else {}
+    metric_parameters = metadata.get("metric_parameters") if isinstance(metadata, dict) else None
+    numeric_tolerance = metric_parameters.get("numeric_tolerance") if isinstance(metric_parameters, dict) else None
+    relative_tolerance = numeric_tolerance.get("relative_tolerance") if isinstance(numeric_tolerance, dict) else None
+    return float(relative_tolerance) if isinstance(relative_tolerance, int | float) else 0.01
+
+
+def _triple_match_f1_from_metric(metric: Any) -> float | None:
+    if not isinstance(metric, dict):
+        return None
+    value = metric.get("triple_match_f1")
+    if isinstance(value, int | float):
+        return float(value)
+    triple_match = metric.get("triple_match")
+    if isinstance(triple_match, dict) and isinstance(triple_match.get("f1"), int | float):
+        return float(triple_match["f1"])
+    return None
+
+
+def _compute_per_image_triple_match_prf(
+    dataset: str,
+    strategy: str,
+    item_id: str,
+    *,
+    vistext_numeric_tolerance: float,
+) -> tuple[float, float, float]:
+    cache_key = (
+        dataset,
+        strategy,
+        item_id,
+        vistext_numeric_tolerance if dataset == "vistext" else None,
+    )
+    if cache_key in _PER_IMAGE_F1_CACHE:
+        return _PER_IMAGE_F1_CACHE[cache_key]
+
+    root = repo_root()
+    gold_dir = GOLD_TTL_DIRS.get(dataset)
+    if gold_dir is None:
+        raise ValueError(f"No ground-truth TTL directory is configured for dataset: {dataset}")
+    pred_dir = strategy_dirs(dataset).get(strategy)
+    if pred_dir is None:
+        raise ValueError(f"Unknown {dataset} strategy: {strategy}")
+
+    gold_path = root / gold_dir / f"{item_id}.ttl"
+    pred_path = root / pred_dir / f"{item_id}.ttl"
+    if not gold_path.exists():
+        raise FileNotFoundError(f"Ground-truth TTL not found: {gold_path}")
+    if not pred_path.exists():
+        raise FileNotFoundError(f"Predicted TTL not found: {pred_path}")
+
+    evaluator = _load_evaluator_module(dataset)
+    graph_metrics = _graph_matching_module(dataset)
+    if dataset == "vistext":
+        gold_graph = evaluator.ttl_to_webnlg_graph(gold_path, graph_mode="content_only")
+        pred_graph = evaluator.ttl_to_webnlg_graph(pred_path, graph_mode="content_only")
+        gold_graphs, pred_graphs, _metadata = evaluator.prepare_structural_graphs(
+            [gold_graph],
+            [pred_graph],
+            vistext_numeric_tolerance,
+            [item_id],
+        )
+    elif dataset == "diagram2graph":
+        gold_graphs = [evaluator.ttl_to_webnlg_graph(gold_path)]
+        pred_graphs = [evaluator.ttl_to_webnlg_graph(pred_path)]
+    else:
+        raise ValueError(f"On-the-fly per-image F1 is not configured for dataset: {dataset}")
+
+    precision, recall, f1 = graph_metrics.get_triple_match_prf(gold_graphs, pred_graphs)
+    result = (float(precision), float(recall), float(f1))
+    _PER_IMAGE_F1_CACHE[cache_key] = result
+    return result
+
+
+def _fill_missing_top_margin_f1(
+    *,
+    dataset: str,
+    metrics: ContentOnlyMetrics,
+    candidate_strategies: list[str],
+) -> ContentOnlyMetrics:
+    pair_selection = select_validation_strategy_pair(
+        metrics,
+        candidate_strategies=candidate_strategies,
+        min_gap=0.0,
+    )
+    if pair_selection.get("status") != "selected":
+        return metrics
+    first, second = pair_selection["best_pair"]["strategies"]
+    common_ids = sorted(
+        {
+            item_id
+            for strategy, item_id in metrics.per_image
+            if strategy == first and (second, item_id) in metrics.per_image
+        },
+        key=lambda value: (int(value) if value.isdigit() else value),
+    )
+    missing_keys = [
+        (strategy, item_id)
+        for item_id in common_ids
+        for strategy in (first, second)
+        if _triple_match_f1_from_metric(metrics.per_image.get((strategy, item_id))) is None
+    ]
+    if not missing_keys:
+        return metrics
+
+    print(
+        "Computing missing per-image triple-match F1 for "
+        f"{len(missing_keys)} {dataset} strategy/item rows used by top-margin sampling."
+    )
+    vistext_tolerance = _vistext_numeric_tolerance(metrics)
+    updated_per_image: dict[tuple[str, str], Any] = dict(metrics.per_image)
+    for strategy, item_id in missing_keys:
+        precision, recall, f1 = _compute_per_image_triple_match_prf(
+            dataset,
+            strategy,
+            item_id,
+            vistext_numeric_tolerance=vistext_tolerance,
+        )
+        metric = dict(updated_per_image[(strategy, item_id)])
+        metric["triple_match"] = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+        }
+        updated_per_image[(strategy, item_id)] = metric
+    return ContentOnlyMetrics(
+        per_image=updated_per_image,
+        strategy_summary=metrics.strategy_summary,
+        metadata=metrics.metadata,
+    )
 
 
 def _limit_item_ids(item_ids: list[str], *, count: int | None, seed: int) -> list[str]:
@@ -255,6 +443,8 @@ def run_dataset_cli(
         parser.error("--batch-max-file-mb must be greater than 0")
     if args.top_margin_count <= 0:
         parser.error("--top-margin-count must be greater than 0")
+    if args.top_margin_threshold is not None and args.top_margin_threshold < 0:
+        parser.error("--top-margin-threshold must be non-negative")
     if args.gold_sample_count is not None and args.gold_sample_count <= 0:
         parser.error("--gold-sample-count must be greater than 0")
     if args.sample_mode == "ascend" and args.validation_design != "gold_vs_generated":
@@ -302,11 +492,28 @@ def run_dataset_cli(
     if should_validate and args.validation_design == "strategy_margin_top_n":
         if metrics is None:
             raise ValueError("--validation-design strategy_margin_top_n requires a traditional metrics report.")
+        metrics = _fill_missing_top_margin_f1(
+            dataset=dataset,
+            metrics=metrics,
+            candidate_strategies=args.strategies,
+        )
         selection = select_top_margin_items(
             metrics,
             candidate_strategies=args.strategies,
             top_n=args.top_margin_count,
+            gap_threshold=args.top_margin_threshold,
+            gap_threshold_mode=args.top_margin_threshold_mode,
         )
+        gap_availability = selection.get("candidate_gap_component_availability") or {}
+        f1_items = gap_availability.get("triple_match_f1_gap_items")
+        total_items = gap_availability.get("items")
+        if isinstance(f1_items, int) and isinstance(total_items, int) and f1_items < total_items:
+            raise ValueError(
+                "Per-image triple-match F1 is required for --validation-design strategy_margin_top_n, but the "
+                f"traditional metrics report only has F1 gaps for {f1_items}/{total_items} candidate items. "
+                "Regenerate the traditional metrics report with the current evaluator, or pass --metrics-path "
+                "to a report that includes per-image triple_match.f1."
+            )
         if selection["status"] == "skipped" or not selection.get("selected_item_ids"):
             reason = selection.get("reason") or "No per-image metric gaps were available for the selected strategies."
             if args.dry_run:
@@ -440,7 +647,28 @@ def run_dataset_cli(
                 print(f"Selected pair composite gap: {selection['best_pair']['composite_gap']:.6f}")
             if selection.get("selection_method") == "strategy_margin_top_n":
                 print(f"Top-margin selected IDs: {len(selection.get('selected_item_ids', []))}")
+                print(f"Top-margin candidate IDs: {selection.get('candidate_item_count')}")
                 print(f"Top-margin available IDs: {selection.get('available_item_count')}")
+                if selection.get("gap_threshold") is not None:
+                    print(
+                        "Top-margin threshold: "
+                        f"{selection.get('gap_threshold')} ({selection.get('gap_threshold_mode')})"
+                    )
+                selected_gap_summary = selection.get("selected_per_image_gap_summary") or {}
+                available_gap_summary = selection.get("available_per_image_gap_summary") or {}
+                candidate_gap_availability = selection.get("candidate_gap_component_availability") or {}
+                if candidate_gap_availability:
+                    print(
+                        "Top-margin gap availability: "
+                        f"F1={candidate_gap_availability.get('triple_match_f1_gap_items')}/"
+                        f"{candidate_gap_availability.get('items')}, "
+                        f"GED={candidate_gap_availability.get('normalized_ged_gap_items')}/"
+                        f"{candidate_gap_availability.get('items')}"
+                    )
+                if isinstance(selected_gap_summary.get("mean"), int | float):
+                    print(f"Selected top-margin mean per-image gap: {selected_gap_summary['mean']:.6f}")
+                if isinstance(available_gap_summary.get("mean"), int | float):
+                    print(f"Available top-margin mean per-image gap: {available_gap_summary['mean']:.6f}")
             if selection.get("selection_method") == "gold_vs_generated_ascending_metric":
                 print(f"Ascending-metric selected generated outputs: {len(selection.get('selected_generated_records', []))}")
                 print(f"Ascending-metric available generated outputs: {selection.get('available_generated_record_count')}")
