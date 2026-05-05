@@ -6,11 +6,12 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 DIRECT_CRITERIA = (
-    "relevance",
-    "factuality",
-    "informativeness",
-    "coherence",
-    "specificity",
+    "visual_grounding",
+    "structural_fidelity",
+    "semantic_correctness",
+    "completeness",
+    "schema_compliance",
+    "non_hallucination",
 )
 DIRECT_SCORE_FIELDS = (*DIRECT_CRITERIA, "overall_score")
 PAIRWISE_CHOICES = {"A", "B", "tie"}
@@ -31,11 +32,12 @@ class _StrictJudgeModel(BaseModel):
 
 
 class DirectJudgeResult(_StrictJudgeModel):
-    relevance: int = Field(ge=1, le=5)
-    factuality: int = Field(ge=1, le=5)
-    informativeness: int = Field(ge=1, le=5)
-    coherence: int = Field(ge=1, le=5)
-    specificity: int = Field(ge=1, le=5)
+    visual_grounding: int = Field(ge=1, le=5)
+    structural_fidelity: int = Field(ge=1, le=5)
+    semantic_correctness: int = Field(ge=1, le=5)
+    completeness: int = Field(ge=1, le=5)
+    schema_compliance: int = Field(ge=1, le=5)
+    non_hallucination: int = Field(ge=1, le=5)
     overall_score: int = Field(ge=1, le=5)
 
     @property
@@ -53,11 +55,12 @@ class DirectJudgeResult(_StrictJudgeModel):
 
 
 class CriterionPreferences(_StrictJudgeModel):
-    relevance: PairwiseChoice
-    factuality: PairwiseChoice
-    informativeness: PairwiseChoice
-    coherence: PairwiseChoice
-    specificity: PairwiseChoice
+    visual_grounding: PairwiseChoice
+    structural_fidelity: PairwiseChoice
+    semantic_correctness: PairwiseChoice
+    completeness: PairwiseChoice
+    schema_compliance: PairwiseChoice
+    non_hallucination: PairwiseChoice
 
 
 class PairwiseJudgeResult(_StrictJudgeModel):

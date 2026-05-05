@@ -19,6 +19,7 @@ from .judge_core import (
     validate_turtle_text,
 )
 from .openai_provider import OpenAIJudgeProvider
+from .schema_guidance import prompt_with_schema_guidance
 from .schemas import DirectJudgeResult, PairwiseJudgeResult
 
 
@@ -237,7 +238,7 @@ def _request_line(provider: OpenAIJudgeProvider, job: BatchJudgeJob, direct_prom
         body = provider.build_direct_request_body(
             image_path=job.record_a.image_path,
             ttl_text=job.record_a.ttl_path.read_text(encoding="utf-8"),
-            prompt_text=direct_prompt,
+            prompt_text=prompt_with_schema_guidance(direct_prompt, job.record_a.dataset),
         )
     else:
         if job.record_b is None:
@@ -246,7 +247,7 @@ def _request_line(provider: OpenAIJudgeProvider, job: BatchJudgeJob, direct_prom
             image_path=job.record_a.image_path,
             ttl_a=job.record_a.ttl_path.read_text(encoding="utf-8"),
             ttl_b=job.record_b.ttl_path.read_text(encoding="utf-8"),
-            prompt_text=pairwise_prompt,
+            prompt_text=prompt_with_schema_guidance(pairwise_prompt, job.record_a.dataset),
             strategy_a=job.record_a.strategy,
             strategy_b=job.record_b.strategy,
         )

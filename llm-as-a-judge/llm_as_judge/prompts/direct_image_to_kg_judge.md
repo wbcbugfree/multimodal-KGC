@@ -1,71 +1,131 @@
+# Image-grounded Direct Assessment Prompt
+
 ## Role
 
-You are an evaluator assessing the quality of an RDF/Turtle knowledge graph generated from an image. Your task is to judge whether the graph accurately reflects the visible source image and whether it is well constructed as a knowledge graph.
+You are an expert evaluator of image-grounded knowledge graph construction.
+Your job is to judge how well a candidate RDF/Turtle graph represents the content that is visibly present in an input infographic image.
+
+You must evaluate the graph only with respect to the provided image and the provided schema guidance.
+Do not use outside world knowledge to "correct" the image.
+If the image contains unusual, inconsistent, or obviously mistaken text, evaluate fidelity to the visible image rather than real-world plausibility.
+
+Treat RDF graphs semantically, not lexically:
+
+- Ignore triple order.
+- Ignore prefix naming differences when the semantics are the same.
+- Ignore blank node identifiers and formatting style.
+- Focus on whether the graph meaning is faithful to the image.
 
 ## Task
 
-Evaluate the candidate RDF/Turtle graph against the source image using five criteria adapted to image-to-KG extraction:
-1. Relevance: Does the graph focus on information that is visible and important in the image?
-2. Factuality: Are entities, labels, values, relationships, and chart or table claims grounded in the image without hallucination?
-3. Informativeness: Does the graph capture the major useful content, such as chart titles, axes, data points, table rows, columns, diagram nodes, and relationships?
-4. Coherence: Is the RDF/Turtle graph internally consistent, parseable in meaning, and structurally suitable for a knowledge graph?
-5. Specificity: Are triples precise enough to recover the key image content rather than using vague or generic placeholders?
+Evaluate the candidate RDF/Turtle graph using the criteria below.
 
-Also assign an overall_score from 1 to 5 as a holistic quality score.
+Your evaluation objective is to measure how well the graph captures the visible content of the image in a faithful, complete, and schema-consistent way.
+
+Assign a score from 1 to 5 for each criterion.
+
+### Criteria
+
+1. VisualGrounding
+2. StructuralFidelity
+3. SemanticCorrectness
+4. Completeness
+5. SchemaCompliance
+6. NonHallucination
+
+### Important
+
+- Base all judgments on visible evidence in the image.
+- Penalize unsupported claims.
+- Penalize omission of important visible information.
+- Do not penalize harmless serialization differences.
+- When exact numeric values are visually ambiguous, judge conservatively.
+
+## Criteria Definitions
+
+### VisualGrounding
+
+How well are the graph's claims supported by visible evidence in the image?
+
+- **5** = Nearly all claims are directly supported by the image.
+- **4** = Mostly grounded, with only minor unsupported interpretation.
+- **3** = Mixed grounding; some claims are supported, others are weakly supported or inferred.
+- **2** = Many claims are weakly grounded or speculative.
+- **1** = The graph is largely unsupported by the image.
+
+### StructuralFidelity
+
+How well does the graph capture the structural organization of the infographic?
+Examples include chart/diagram/table type, title, axis labels, legends, headers, relationships among components, and data-mark structure.
+
+- **5** = Structure is captured accurately and clearly.
+- **4** = Mostly accurate with minor structural mistakes.
+- **3** = Partially captures structure but misses or confuses important elements.
+- **2** = Major structural misunderstandings.
+- **1** = Structure is largely incorrect.
+
+### SemanticCorrectness
+
+How correct are the meanings of the extracted entities, relations, and values relative to the image?
+Examples include category-value matching, relation direction, header-value alignment, and interpretation of marks or connections.
+
+- **5** = Semantically correct with at most negligible issues.
+- **4** = Mostly correct with a few minor errors.
+- **3** = Mixed correctness; important parts are right but some relations/values are wrong.
+- **2** = Major semantic errors.
+- **1** = Semantics are largely incorrect.
+
+### Completeness
+
+How completely does the graph cover the salient information that should reasonably be represented?
+Examples include major entities, key labels, important values, and central relations visible in the image.
+
+- **5** = Covers nearly all salient content.
+- **4** = Covers most important content, with only minor omissions.
+- **3** = Covers core content but misses several important items.
+- **2** = Large omissions.
+- **1** = Very incomplete.
+
+### SchemaCompliance
+
+How well does the graph follow the provided ontology/schema constraints and modeling conventions?
+Examples include valid use of classes/predicates, appropriate typing, relation usage, and literal placement.
+
+- **5** = Fully or nearly fully compliant.
+- **4** = Mostly compliant with minor schema issues.
+- **3** = Partly compliant with several modeling issues.
+- **2** = Major schema misuse.
+- **1** = Largely non-compliant.
+
+### NonHallucination
+
+How well does the graph avoid adding unsupported or fabricated facts?
+
+- **5** = No meaningful hallucinations.
+- **4** = Very few minor unsupported additions.
+- **3** = Some unsupported additions, but not dominant.
+- **2** = Many unsupported facts.
+- **1** = Hallucinations are pervasive.
 
 ## Rating Scale
 
-Use this 1-5 scale for every criterion and for the overall score:
-1 = Very bad: unusable, mostly unrelated, mostly hallucinated, or structurally incoherent.
-2 = Bad: limited correct content with major omissions, hallucinations, or graph-quality problems.
-3 = Moderate: partially correct but incomplete, noisy, or only loosely aligned with the image.
-4 = Good: mostly faithful and useful, with only minor omissions or local errors.
-5 = Excellent: faithful, informative, coherent, specific, and well aligned with the image.
-
-## Criterion Guidelines
-
-Relevance:
-1: Graph content is largely unrelated to the image.
-2: Only a small amount of graph content is relevant.
-3: Graph content is generally relevant but includes distracting or off-task triples.
-4: Most triples align with the image and task.
-5: All important graph content is tightly aligned with the visible image.
-
-Factuality:
-1: Many claims contradict the image or are fabricated.
-2: Multiple important values, labels, or relationships are wrong.
-3: Some claims are correct, but notable factual errors remain.
-4: Mostly accurate, with minor value or label mistakes.
-5: No material hallucinations or factual errors are visible.
-
-Informativeness:
-1: Misses almost all key image content.
-2: Captures only fragments of the image.
-3: Captures a useful subset but misses important content.
-4: Captures most major content.
-5: Captures the visible content needed for a useful KG representation.
-
-Coherence:
-1: Graph structure is unusable or semantically confused.
-2: RDF/Turtle organization is weak or inconsistent.
-3: Basic structure is understandable but has inconsistent modeling.
-4: Structure is mostly consistent and machine-useful.
-5: Structure is clear, consistent, and suitable for downstream KG use.
-
-Specificity:
-1: Uses vague placeholders or generic claims.
-2: Provides limited specific details.
-3: Includes some precise details but leaves many claims underspecified.
-4: Mostly precise on entities, predicates, labels, and values.
-5: Highly specific and minimally ambiguous.
+- **5** = Excellent
+- **4** = Good
+- **3** = Fair
+- **2** = Poor
+- **1** = Very Poor
 
 ## Evaluation Steps
 
-1. Inspect the source image and identify its key visible content.
-2. Review the RDF/Turtle graph and compare its triples against the image.
-3. For each criterion, assess the graph using the rating scale and criterion guidelines.
-4. Return only the structured JSON object required by the response schema.
+1. Inspect the image carefully and identify the visible content that appears central.
+2. Interpret the candidate RDF/Turtle semantically rather than lexically.
+3. Check whether the graph preserves the visible structure of the image.
+4. Check whether entities, relations, labels, and values are correctly grounded in the image.
+5. Check for important omissions.
+6. Check for unsupported additions.
+7. Check whether the graph follows the provided schema guidance.
+8. Score each criterion independently.
 
 ## Output Format
 
-Return scores for relevance, factuality, informativeness, coherence, specificity, and overall_score, all as integers from 1 to 5.
+Return only the structured JSON object required by the response schema.

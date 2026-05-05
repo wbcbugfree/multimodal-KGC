@@ -12,6 +12,7 @@ from pydantic import BaseModel
 from rdflib import Graph
 
 from .datasets import GOLD_STRATEGY, CandidateRecord, group_by_item
+from .schema_guidance import prompt_with_schema_guidance
 from .schemas import DirectJudgeResult, PairwiseJudgeResult
 
 
@@ -172,7 +173,7 @@ class JudgeRunner:
                 raw = self.provider.judge_direct(
                     image_path=record.image_path,
                     ttl_text=ttl_text,
-                    prompt_text=self.direct_prompt,
+                    prompt_text=prompt_with_schema_guidance(self.direct_prompt, record.dataset),
                 )
                 return DirectJudgeResult.from_mapping(_coerce_mapping(raw))
             except Exception as exc:
@@ -193,7 +194,7 @@ class JudgeRunner:
                     image_path=record_a.image_path,
                     ttl_a=ttl_a,
                     ttl_b=ttl_b,
-                    prompt_text=self.pairwise_prompt,
+                    prompt_text=prompt_with_schema_guidance(self.pairwise_prompt, record_a.dataset),
                     strategy_a=record_a.strategy,
                     strategy_b=record_b.strategy,
                 )
