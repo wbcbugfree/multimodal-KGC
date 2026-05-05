@@ -1,0 +1,82 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table_2_8 a skos:Concept ;
+    skos:prefLabel "table 2.8" ;
+    skos:definition "guideline ranges for soc content of sandy and loamy soils without groundwater influence (% soc in plough layer) depending on fine silt (<6.3µm) and clay content (pipette method)" ;
+    skos:note "compiled from körschens et al. (1998)" ;
+    skos:narrower she:ClayPlusFineSilt,
+                  she:SocInSandySoils,
+                  she:SocInLoamySoils .
+
+she:ClayPlusFineSilt a skos:Concept ;
+    skos:prefLabel "clay + fine silt (%)" ;
+    skos:note "fine silt (<6.3µm) and clay content" ;
+    she:measuredBy she:PipetteMethod ;
+    skos:narrower she:ClaySilt4,
+                  she:ClaySilt10,
+                  she:ClaySilt20,
+                  she:ClaySilt30,
+                  she:ClaySilt38 .
+
+she:PipetteMethod a skos:Concept ;
+    skos:prefLabel "pipette method" .
+
+she:SocInSandySoils a skos:Concept ;
+    skos:prefLabel "soc in sandy soils (%)" ;
+    skos:narrower she:UpperValue,
+                  she:LowerValue .
+
+she:SocInLoamySoils a skos:Concept ;
+    skos:prefLabel "soc in loamy soils (%)" ;
+    skos:narrower she:UpperValue,
+                  she:LowerValue .
+
+she:UpperValue a skos:Concept ;
+    skos:prefLabel "upper value" .
+
+she:LowerValue a skos:Concept ;
+    skos:prefLabel "lower value" .
+
+she:ClaySilt4 a skos:Concept ;
+    skos:prefLabel "4" ;
+    she:hasSandySocRange [ 
+        she:hasUpperValue "0.9" ; 
+        she:hasLowerValue "0.6" 
+    ] .
+
+she:ClaySilt10 a skos:Concept ;
+    skos:prefLabel "10" ;
+    she:hasSandySocRange [ 
+        she:hasUpperValue "1.0" ; 
+        she:hasLowerValue "0.7" 
+    ] ;
+    she:hasLoamySocRange [ 
+        she:hasUpperValue "1.2" ; 
+        she:hasLowerValue "0.8" 
+    ] .
+
+she:ClaySilt20 a skos:Concept ;
+    skos:prefLabel "20" ;
+    she:hasSandySocRange [ 
+        she:hasUpperValue "1.4" ; 
+        she:hasLowerValue "1.1" 
+    ] ;
+    she:hasLoamySocRange [ 
+        she:hasUpperValue "1.6" ; 
+        she:hasLowerValue "1.2" 
+    ] .
+
+she:ClaySilt30 a skos:Concept ;
+    skos:prefLabel "30" ;
+    she:hasLoamySocRange [ 
+        she:hasUpperValue "2.1" ; 
+        she:hasLowerValue "1.6" 
+    ] .
+
+she:ClaySilt38 a skos:Concept ;
+    skos:prefLabel "38" ;
+    she:hasLoamySocRange [ 
+        she:hasUpperValue "2.6" ; 
+        she:hasLowerValue "2.0" 
+    ] .

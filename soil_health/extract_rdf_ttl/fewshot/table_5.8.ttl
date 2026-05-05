@@ -1,0 +1,181 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ScreeningValuesPotentiallyUnacceptableRisk a skos:Concept ;
+    skos:prefLabel "screening values for potentially unacceptable risk (residential soil use) for organic contaminants" ;
+    skos:definition "Screening values for potentially unacceptable risk related to organic contaminants in residential soil use." ;
+    skos:note "Units are mg/kg unless otherwise specified." ;
+    skos:narrower she:OrganicContaminant,
+                  she:CountryRegion .
+
+she:ResidentialSoilUse a skos:Concept ;
+    skos:prefLabel "residential soil use" .
+
+she:OrganicContaminant a skos:Concept ;
+    skos:prefLabel "organic contaminant" ;
+    skos:narrower she:Benzene,
+                  she:Ethylbenzene,
+                  she:Toluene,
+                  she:Xylene,
+                  she:Naphthalene,
+                  she:Anthracene,
+                  she:BenzoAAnthracene,
+                  she:BenzoGhiPerylene,
+                  she:PahsTotal,
+                  she:Dichloromethane,
+                  she:Trichloroethylene,
+                  she:Tetrachloromethane,
+                  she:Hexachlorobenzene,
+                  she:Phenol,
+                  she:CresolsSum,
+                  she:AtrazineP,
+                  she:DdtSum,
+                  she:Pcb,
+                  she:MethylTButylEther,
+                  she:Trichloroethane111,
+                  she:ChlorobenzenesSum,
+                  she:BenzoAPyrene,
+                  she:PcddPcdf .
+
+she:CountryRegion a skos:Concept ;
+    skos:prefLabel "country/region" ;
+    skos:narrower she:Austria,
+                  she:BelgiumFlanders,
+                  she:BelgiumBrussels,
+                  she:BelgiumWallonia,
+                  she:CzechRepublic,
+                  she:Finland,
+                  she:Italy,
+                  she:Lithuania,
+                  she:Netherlands,
+                  she:Poland,
+                  she:Spain,
+                  she:UnitedKingdom,
+                  she:Denmark .
+
+she:Benzene a skos:Concept ;
+    skos:prefLabel "benzene" ;
+    she:hasScreeningValue [ she:hasValue "0.5" ; she:hasCountry she:BelgiumFlanders ] ,
+                          [ she:hasValue "0.5" ; she:hasCountry she:BelgiumBrussels ] ,
+                          [ she:hasValue "0.4" ; she:hasCountry she:BelgiumWallonia ] ,
+                          [ she:hasValue "0.8" ; she:hasCountry she:CzechRepublic ] ,
+                          [ she:hasValue "0.2" ; she:hasCountry she:Finland ] ,
+                          [ she:hasValue "0.1" ; she:hasCountry she:Italy ] ,
+                          [ she:hasValue "0.5" ; she:hasCountry she:Lithuania ] ,
+                          [ she:hasValue "1" ; she:hasCountry she:Netherlands ] ,
+                          [ she:hasValue "12.6" ; she:hasCountry she:Poland ] ,
+                          [ she:hasValue "1" ; she:hasCountry she:Spain ] .
+
+she:Ethylbenzene a skos:Concept ; skos:prefLabel "ethylbenzene" .
+she:Toluene a skos:Concept ; skos:prefLabel "toluene" .
+she:Xylene a skos:Concept ; skos:prefLabel "xylene" .
+she:Naphthalene a skos:Concept ; skos:prefLabel "naphthalene" .
+she:Anthracene a skos:Concept ; skos:prefLabel "anthracene" .
+she:BenzoAAnthracene a skos:Concept ; skos:prefLabel "benzo(a)anthracene" .
+she:BenzoGhiPerylene a skos:Concept ; skos:prefLabel "benzo(g,h,i)perylene" .
+
+she:PahsTotal a skos:Concept ;
+    skos:prefLabel "pahs (total)" ;
+    skos:altLabel "PAHs" ;
+    she:hasScreeningValue [ she:hasValue "50" ; she:hasCountry she:Austria ] ,
+                          [ she:hasValue "30" ; she:hasCountry she:Finland ] ,
+                          [ she:hasValue "10" ; she:hasCountry she:Italy ] ,
+                          [ she:hasValue "5" ; she:hasCountry she:Lithuania ] ,
+                          [ she:hasValue "40" ; she:hasCountry she:Netherlands ] ,
+                          [ she:hasValue "30" ; she:hasCountry she:Poland ] ,
+                          [ she:hasValue "40" ; she:hasCountry she:Denmark ] .
+
+she:Dichloromethane a skos:Concept ; skos:prefLabel "dichloromethane" .
+she:Trichloroethylene a skos:Concept ; skos:prefLabel "trichloroethylene" .
+she:Tetrachloromethane a skos:Concept ; skos:prefLabel "tetrachloromethane" .
+she:Hexachlorobenzene a skos:Concept ; skos:prefLabel "hexachlorobenzene" .
+she:Phenol a skos:Concept ; skos:prefLabel "phenol" .
+she:CresolsSum a skos:Concept ; skos:prefLabel "cresols (sum)" .
+she:AtrazineP a skos:Concept ; skos:prefLabel "atrazine (p)" .
+
+she:DdtSum a skos:Concept ;
+    skos:prefLabel "ddt (sum of ddt, dde, ddd)" ;
+    skos:altLabel "DDT", "DDE", "DDD" .
+
+she:Pcb a skos:Concept ;
+    skos:prefLabel "pcb" ;
+    she:hasScreeningValue [ she:hasValue "1" ; she:hasCountry she:Austria ] ,
+                          [ she:hasValue "0.9" ; she:hasCountry she:BelgiumBrussels ] ,
+                          [ she:hasValue "5" ; she:hasCountry she:CzechRepublic ] ,
+                          [ she:hasValue "0.5" ; she:hasCountry she:Finland ] ,
+                          [ she:hasValue "0" ; she:hasCountry she:Italy ] ,
+                          [ she:hasValue "0.1" ; she:hasCountry she:Lithuania ] ,
+                          [ she:hasValue "1" ; she:hasCountry she:Netherlands ] ,
+                          [ she:hasValue "0.55" ; she:hasCountry she:Poland ] ,
+                          [ she:hasValue "0.08" ; she:hasCountry she:Spain ] .
+
+she:MethylTButylEther a skos:Concept ; skos:prefLabel "methyl t-butyl ether" .
+she:Trichloroethane111 a skos:Concept ; skos:prefLabel "1,1,1-trichloroethane" .
+she:ChlorobenzenesSum a skos:Concept ; skos:prefLabel "chlorobenzenes (sum)" .
+she:BenzoAPyrene a skos:Concept ; skos:prefLabel "benzo(a)pyrene" .
+
+she:PcddPcdf a skos:Concept ;
+    skos:prefLabel "pcdd/pcdf" ;
+    she:hasAbbreviation "PCDD", "PCDF" ;
+    skos:note "polychlorinated dibenzodioxins; polychlorinated dibenzofurans" ;
+    she:hasUnit "ng iteq tecdd/g" ;
+    she:hasScreeningValue [ she:hasValue "100" ; she:hasCountry she:Austria ] ,
+                          [ she:hasValue "0.5" ; she:hasCountry she:CzechRepublic ] ,
+                          [ she:hasValue "1x10-4" ; she:hasCountry she:Finland ] ,
+                          [ she:hasValue "1x10-5" ; she:hasCountry she:Italy ] ,
+                          [ she:hasValue "1x10-3" ; she:hasCountry she:Netherlands ] .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" ;
+    she:hasAbbreviation "AT" .
+
+she:BelgiumFlanders a skos:Concept ;
+    skos:prefLabel "belgium (flanders)" ;
+    she:hasAbbreviation "BE (F)" ;
+    skos:note "Flanders" .
+
+she:BelgiumBrussels a skos:Concept ;
+    skos:prefLabel "belgium (brussels)" ;
+    she:hasAbbreviation "BE (B)" ;
+    skos:note "Brussels" .
+
+she:BelgiumWallonia a skos:Concept ;
+    skos:prefLabel "belgium (wallonia)" ;
+    she:hasAbbreviation "BE (W)" ;
+    skos:note "Wallonia" .
+
+she:CzechRepublic a skos:Concept ;
+    skos:prefLabel "czech republic" ;
+    she:hasAbbreviation "CZ" .
+
+she:Finland a skos:Concept ;
+    skos:prefLabel "finland" ;
+    she:hasAbbreviation "FI" .
+
+she:Italy a skos:Concept ;
+    skos:prefLabel "italy" ;
+    she:hasAbbreviation "IT" .
+
+she:Lithuania a skos:Concept ;
+    skos:prefLabel "lithuania" ;
+    she:hasAbbreviation "LT" .
+
+she:Netherlands a skos:Concept ;
+    skos:prefLabel "netherlands" ;
+    she:hasAbbreviation "NL" .
+
+she:Poland a skos:Concept ;
+    skos:prefLabel "poland" ;
+    she:hasAbbreviation "PL" .
+
+she:Spain a skos:Concept ;
+    skos:prefLabel "spain" ;
+    she:hasAbbreviation "ES" .
+
+she:UnitedKingdom a skos:Concept ;
+    skos:prefLabel "united kingdom" ;
+    she:hasAbbreviation "UK" .
+
+she:Denmark a skos:Concept ;
+    skos:prefLabel "denmark" ;
+    she:hasAbbreviation "DK" .

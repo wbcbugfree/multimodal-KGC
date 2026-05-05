@@ -1,158 +1,112 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-she:AtlanticRepresentativity a skos:Concept ;
-    skos:broader she:RepresentativityCategory ;
-    skos:prefLabel "n=358 (belgium, germany)" ;
-    she:describesClimate she:AtlanticClimate ;
-    she:hasLocation "belgium, germany" ;
-    she:hasSampleCount "358" .
-
-she:ContinentalRepresentativity a skos:Concept ;
-    skos:broader she:RepresentativityCategory ;
-    skos:prefLabel "n=167 (austria, germany)" ;
-    she:describesClimate she:ContinentalClimate ;
-    she:hasLocation "austria, germany" ;
-    she:hasSampleCount "167" .
-
-she:MediterraneanRepresentativity a skos:Concept ;
-    skos:broader she:RepresentativityCategory ;
-    skos:prefLabel "n=110 (italy, spain)" ;
-    she:describesClimate she:MediterraneanClimate ;
-    she:hasLocation "italy, spain" ;
-    she:hasSampleCount "110" .
 
 she:SocThresholdsForCropland a skos:Concept ;
-    skos:narrower she:AtlanticCoarseEntry,
-        she:AtlanticMediumEntry,
-        she:AtlanticMediumFineEntry,
-        she:ContinentalCoarseEntry,
-        she:ContinentalMediumEntry,
-        she:ContinentalMediumFineEntry,
-        she:MediterraneanCoarseEntry,
-        she:MediterraneanMediumEntry,
-        she:MediterraneanMediumFineEntry ;
-    skos:prefLabel "soc thresholds for cropland (% soil mass) derived from a farmer questionnaire" ;
-    skos:related she:BorealRegionThresholds ;
-    she:compiledFrom "hijbeek et al. (2017b)" ;
-    she:recalculatedUsingConversionFactor "1.724" .
+    skos:prefLabel "soc thresholds for cropland" ;
+    skos:note "SOC values in % soil mass. Compiled from Hijbeek et al. (2017b); SOC values have been recalculated from original SOM values by applying the conversion factor of 1.724." ;
+    skos:narrower she:Atlantic, she:Continental, she:Mediterranean, she:Boreal .
 
-she:Threshold1Category a skos:Concept ;
-    skos:prefLabel "threshold 1" .
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:note "Climate regions according to Metzger et al. (2005)" .
 
-she:Threshold2Category a skos:Concept ;
-    skos:prefLabel "threshold 2" .
-
-she:hasUncertainty a skos:Concept ;
-    skos:definition "particular high uncertainty due to low number of observations" ;
-    skos:prefLabel "has uncertainty" .
-
-she:AtlanticCoarseEntry a she:SocThresholdEntry ;
-    skos:prefLabel "atlantic coarse entry" ;
-    she:appliesToClimate she:AtlanticClimate ;
-    she:appliesToTexture she:CoarseTexture ;
-    she:hasThreshold1Value "1.2" ;
-    she:hasThreshold2Value "2.0" .
-
-she:AtlanticMediumEntry a she:SocThresholdEntry ;
-    skos:prefLabel "atlantic medium entry" ;
-    she:appliesToClimate she:AtlanticClimate ;
-    she:appliesToTexture she:MediumTexture ;
-    she:hasThreshold1Value "1.0" ;
-    she:hasThreshold2Value "1.5" .
-
-she:AtlanticMediumFineEntry a she:SocThresholdEntry ;
-    skos:prefLabel "atlantic medium fine entry" ;
-    she:appliesToClimate she:AtlanticClimate ;
-    she:appliesToTexture she:MediumFineTexture ;
-    she:hasThreshold1Value "1.6" ;
-    she:hasUncertainty true .
-
-she:BorealRegionThresholds a skos:Concept ;
-    skos:prefLabel "boreal region thresholds" ;
-    she:basedOnExpertJudgement true ;
-    she:derivedFromLiterature "soinne et al., 2016" ;
-    she:hasCoarserSoilThreshold "2% for soc (4% som)" ;
-    she:hasFinerSoilThreshold "4% for soc (8% som)" .
-
-she:ContinentalCoarseEntry a she:SocThresholdEntry ;
-    skos:prefLabel "continental coarse entry" ;
-    she:appliesToClimate she:ContinentalClimate ;
-    she:appliesToTexture she:CoarseTexture ;
-    she:hasThreshold1Value "1.0" ;
-    she:hasThreshold2Value "1.2" .
-
-she:ContinentalMediumEntry a she:SocThresholdEntry ;
-    skos:prefLabel "continental medium entry" ;
-    she:appliesToClimate she:ContinentalClimate ;
-    she:appliesToTexture she:MediumTexture ;
-    she:hasThreshold1Value "1.3" ;
-    she:hasThreshold2Value "1.9" ;
-    she:hasUncertainty true .
-
-she:ContinentalMediumFineEntry a she:SocThresholdEntry ;
-    skos:prefLabel "continental medium fine entry" ;
-    she:appliesToClimate she:ContinentalClimate ;
-    she:appliesToTexture she:MediumFineTexture ;
-    she:hasThreshold1Value "1.2" ;
-    she:hasThreshold2Value "1.4" ;
-    she:hasUncertainty true .
-
-she:MediterraneanCoarseEntry a she:SocThresholdEntry ;
-    skos:prefLabel "mediterranean coarse entry" ;
-    she:appliesToClimate she:MediterraneanClimate ;
-    she:appliesToTexture she:CoarseTexture .
-
-she:MediterraneanMediumEntry a she:SocThresholdEntry ;
-    skos:prefLabel "mediterranean medium entry" ;
-    she:appliesToClimate she:MediterraneanClimate ;
-    she:appliesToTexture she:MediumTexture ;
-    she:hasThreshold1Value "0.6" ;
-    she:hasThreshold2Value "1.2" .
-
-she:MediterraneanMediumFineEntry a she:SocThresholdEntry ;
-    skos:prefLabel "mediterranean medium fine entry" ;
-    she:appliesToClimate she:MediterraneanClimate ;
-    she:appliesToTexture she:MediumFineTexture ;
-    she:hasThreshold1Value "0.8" ;
-    she:hasThreshold2Value "0.8" ;
-    she:hasUncertainty true .
-
-she:ClimateCategory a skos:Concept ;
-    skos:definition "climate regions according to metzger et al. (2005)" ;
-    skos:prefLabel "climate" .
-
-she:CoarseTexture a skos:Concept ;
-    skos:broader she:TextureCategory ;
-    skos:prefLabel "coarse" .
-
-she:MediumFineTexture a skos:Concept ;
-    skos:broader she:TextureCategory ;
-    skos:prefLabel "medium fine" .
-
-she:MediumTexture a skos:Concept ;
-    skos:broader she:TextureCategory ;
-    skos:prefLabel "medium" .
-
-she:RepresentativityCategory a skos:Concept ;
+she:Representativity a skos:Concept ;
     skos:prefLabel "representativity" .
 
-she:TextureCategory a skos:Concept ;
+she:Texture a skos:Concept ;
     skos:prefLabel "texture" .
 
-she:AtlanticClimate a skos:Concept ;
-    skos:broader she:ClimateCategory ;
-    skos:prefLabel "atlantic" .
+she:Threshold1 a skos:Concept ;
+    skos:prefLabel "threshold 1" .
 
-she:ContinentalClimate a skos:Concept ;
-    skos:broader she:ClimateCategory ;
-    skos:prefLabel "continental" .
+she:Threshold2 a skos:Concept ;
+    skos:prefLabel "threshold 2" .
 
-she:MediterraneanClimate a skos:Concept ;
-    skos:broader she:ClimateCategory ;
-    skos:prefLabel "mediterranean" .
+she:Atlantic a skos:Concept ;
+    skos:prefLabel "atlantic" ;
+    skos:broader she:Climate ;
+    she:hasRepresentativity "n=358 (Belgium, Germany)" ;
+    she:hasSocThresholdValue [
+        she:hasTexture she:Coarse ;
+        she:hasThreshold1 "1.2" ;
+        she:hasThreshold2 "2.0"
+    ] ,
+    [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "1.0" ;
+        she:hasThreshold2 "1.5"
+    ] ,
+    [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "1.6" ;
+        skos:note "particular high uncertainty due to low number of observations"
+    ] .
 
-she:SocThresholdEntry a skos:Concept ;
-    skos:prefLabel "soc threshold entry" .
+she:Continental a skos:Concept ;
+    skos:prefLabel "continental" ;
+    skos:broader she:Climate ;
+    she:hasRepresentativity "n=167 (Austria, Germany)" ;
+    she:hasSocThresholdValue [
+        she:hasTexture she:Coarse ;
+        she:hasThreshold1 "1.0" ;
+        she:hasThreshold2 "1.2"
+    ] ,
+    [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "1.3" ;
+        she:hasThreshold2 "1.9" ;
+        skos:note "particular high uncertainty due to low number of observations"
+    ] ,
+    [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "1.2" ;
+        she:hasThreshold2 "1.4" ;
+        skos:note "particular high uncertainty due to low number of observations"
+    ] .
 
+she:Mediterranean a skos:Concept ;
+    skos:prefLabel "mediterranean" ;
+    skos:broader she:Climate ;
+    she:hasRepresentativity "n=110 (Italy, Spain)" ;
+    she:hasSocThresholdValue [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "0.6" ;
+        she:hasThreshold2 "1.2"
+    ] ,
+    [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "0.8" ;
+        she:hasThreshold2 "0.8" ;
+        skos:note "particular high uncertainty due to low number of observations"
+    ] .
+
+she:Boreal a skos:Concept ;
+    skos:prefLabel "boreal" ;
+    skos:broader she:Climate ;
+    skos:note "No farm has been included for the Boreal region: for this region, thresholds have been derived from literature (Soinne et al., 2016)" ;
+    she:hasSocThresholdValue [
+        she:hasTexture she:FinerSoils ;
+        she:hasThreshold1 "4" ;
+        skos:note "clay > 30%; 8% SOM"
+    ] ,
+    [
+        she:hasTexture she:Coarse ;
+        she:hasThreshold1 "2" ;
+        skos:note "4% SOM; based on expert judgement"
+    ] .
+
+she:Coarse a skos:Concept ;
+    skos:prefLabel "coarse" ;
+    skos:broader she:Texture .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" ;
+    skos:broader she:Texture .
+
+she:MediumFine a skos:Concept ;
+    skos:prefLabel "medium fine" ;
+    skos:broader she:Texture .
+
+she:FinerSoils a skos:Concept ;
+    skos:prefLabel "finer soils" ;
+    skos:broader she:Texture .

@@ -1,0 +1,258 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilScreeningValuesTable a skos:Concept ;
+    skos:prefLabel "current screening values (ssvs) for cadmium and copper in soil for intermediate and critical risk levels (mg/kg)" ;
+    skos:narrower she:Cadmium, she:Copper, she:Lead, she:Zinc .
+
+she:Cadmium a skos:Concept ;
+    skos:prefLabel "cadmium" .
+
+she:Copper a skos:Concept ;
+    skos:prefLabel "copper" .
+
+she:Lead a skos:Concept ;
+    skos:prefLabel "lead" .
+
+she:Zinc a skos:Concept ;
+    skos:prefLabel "zinc" .
+
+she:RiskLevel a skos:Concept ;
+    skos:prefLabel "risk level" ;
+    skos:narrower she:WarningValue, she:ActionValue .
+
+she:WarningValue a skos:Concept ;
+    skos:prefLabel "warning value" ;
+    skos:definition "intermediate risk level" .
+
+she:ActionValue a skos:Concept ;
+    skos:prefLabel "action value" ;
+    skos:definition "critical risk level" .
+
+she:Stratum a skos:Concept ;
+    skos:prefLabel "stratum" ;
+    skos:narrower she:LandUse, she:Texture, she:SoilOrganicMatter, she:SaturatedHydraulicConductivity, she:SoilDepth, she:PH, she:Clay ;
+    skos:note "stratified according to various soil and land use parameters." .
+
+she:LandUse a skos:Concept ;
+    skos:prefLabel "land use" ;
+    she:hasAbbreviation "LU" .
+
+she:Texture a skos:Concept ;
+    skos:prefLabel "texture" ;
+    she:hasAbbreviation "text." .
+
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" ;
+    she:hasAbbreviation "SOM" .
+
+she:SaturatedHydraulicConductivity a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity" ;
+    she:hasAbbreviation "SHC" .
+
+she:SoilDepth a skos:Concept ;
+    skos:prefLabel "soil depth" ;
+    she:hasAbbreviation "z" .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" .
+
+she:Clay a skos:Concept ;
+    skos:prefLabel "clay" .
+
+she:CountryRegion a skos:Concept ;
+    skos:prefLabel "country/region" ;
+    skos:narrower she:Austria, she:BelgiumBrussels, she:BelgiumFlanders, she:BelgiumWallonia,
+        she:Bulgaria, she:Czechia, she:Denmark, she:Finland, she:Germany,
+        she:Hungary, she:Italy, she:Lithuania, she:Netherlands, she:Poland,
+        she:Slovakia, she:Slovenia, she:Sweden .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "1-40"
+    ] , [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "10"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "100-1,500"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "600"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "100-300"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "500"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:WarningValue ;
+        she:hasValue "300"
+    ] .
+
+she:BelgiumBrussels a skos:Concept ;
+    skos:prefLabel "belgium/brussels" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:hasValue "1"
+    ] , [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "2-30"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:WarningValue ;
+        she:hasValue "40"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "145-800"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:WarningValue ;
+        she:hasValue "120"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "200-2,500"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:WarningValue ;
+        she:hasValue "120"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "300-3,000"
+    ] .
+
+she:Bulgaria a skos:Concept ;
+    skos:prefLabel "bulgaria" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse, she:PH ;
+        she:hasValue "1.5-3.5"
+    ] , [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "12"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse, she:PH ;
+        she:hasValue "60-150"
+    ] .
+
+she:Czechia a skos:Concept ;
+    skos:prefLabel "czechia" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse, she:PH, she:Texture ;
+        she:hasValue "1.5-20"
+    ] .
+
+she:Germany a skos:Concept ;
+    skos:prefLabel "germany" ;
+    skos:note "Analysis for copper, lead, and zinc is based on concentrated ammonium nitrate (commonly, extraction with aqua regia is used)." ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "2-20"
+    ] , [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "0.1-20"
+    ] .
+
+she:Netherlands a skos:Concept ;
+    skos:prefLabel "netherlands" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:SoilOrganicMatter, she:Clay ;
+        she:hasValue "13"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:SoilOrganicMatter, she:Clay ;
+        she:hasValue "190"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:SoilOrganicMatter, she:Clay ;
+        she:hasValue "530"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:SoilOrganicMatter, she:Clay ;
+        she:hasValue "720"
+    ] .
+
+she:Poland a skos:Concept ;
+    skos:prefLabel "poland" ;
+    she:hasScreeningValue [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:ActionValue ;
+        she:stratifiedBy she:LandUse, she:SaturatedHydraulicConductivity, she:SoilDepth ;
+        she:hasValue "50-1,000"
+    ] .
+
+she:Sweden a skos:Concept ;
+    skos:prefLabel "sweden" ;
+    she:hasScreeningValue [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "0.4-12"
+    ] , [
+        she:forElement she:Cadmium ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "4"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "100-300"
+    ] , [
+        she:forElement she:Copper ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "1,000"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "80-300"
+    ] , [
+        she:forElement she:Lead ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "800"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:WarningValue ;
+        she:stratifiedBy she:LandUse ;
+        she:hasValue "350-1,050"
+    ] , [
+        she:forElement she:Zinc ;
+        she:hasRiskLevel she:ActionValue ;
+        she:hasValue "3,500"
+    ] .

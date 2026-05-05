@@ -1,100 +1,170 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:SiteSpecificLowerSOCBenchmarksForGermanAgriculturalSoils a skos:Concept ;
+she:LowerSOCBenchmarksForGermanAgriculturalSoils a skos:Concept ;
     skos:prefLabel "site-specific lower soc benchmarks for german agricultural soils across different strata" ;
-    she:considersLandUseType she:ArableSoil,
+    skos:narrower she:ArableSoil,
         she:PermanentGrassland ;
-    she:considersMeanAnnualPrecipitation she:MeanAnnualPrecipitation ;
-    she:considersTexture she:Texture ;
-    she:providesBenchmark she:LowerSOCBenchmark .
+    skos:note "Source: Compiled from Drexler et al. (2002)." .
 
 she:ArableSoil a skos:Concept ;
-    skos:prefLabel "arable soil" .
-
-she:HeavyIITexture a skos:Concept ;
-    skos:definition "heavy ii >35% clay" ;
-    skos:prefLabel "heavy ii texture" ;
-    she:hasArableSoilHighMAPBenchmark "2.0" ;
-    she:hasArableSoilHighMAPRange ">900" ;
-    she:hasArableSoilLowMAPBenchmark "1.5" ;
-    she:hasArableSoilLowMAPRange "<900" ;
-    she:hasPermanentGrasslandHighMAPBenchmark "4.3" ;
-    she:hasPermanentGrasslandHighMAPRange ">750" ;
-    she:hasPermanentGrasslandLowMAPBenchmark "3.7" ;
-    she:hasPermanentGrasslandLowMAPRange "<750" .
-
-she:HeavyITexture a skos:Concept ;
-    skos:definition "heavy i 25-35% clay" ;
-    skos:prefLabel "heavy i texture" ;
-    she:hasArableSoilHighMAPBenchmark "1.4" ;
-    she:hasArableSoilHighMAPRange ">900" ;
-    she:hasArableSoilLowMAPBenchmark "1.2" ;
-    she:hasArableSoilLowMAPRange "<900" ;
-    she:hasPermanentGrasslandHighMAPBenchmark "3.7" ;
-    she:hasPermanentGrasslandHighMAPRange ">750" ;
-    she:hasPermanentGrasslandLowMAPBenchmark "3.3" ;
-    she:hasPermanentGrasslandLowMAPRange "<750" .
-
-she:HighMAP a skos:Concept ;
-    skos:prefLabel "high map" .
-
-she:LightTexture a skos:Concept ;
-    skos:definition "light <12% clay, <50% silt" ;
-    skos:prefLabel "light texture" ;
-    she:hasArableSoilHighMAPBenchmark "0.9" ;
-    she:hasArableSoilHighMAPRange ">700" ;
-    she:hasArableSoilLowMAPBenchmark "0.7" ;
-    she:hasArableSoilLowMAPRange "<700" ;
-    she:hasPermanentGrasslandHighMAPBenchmark "2.0" ;
-    she:hasPermanentGrasslandHighMAPRange ">650" ;
-    she:hasPermanentGrasslandLowMAPBenchmark "1.4" ;
-    she:hasPermanentGrasslandLowMAPRange "<650" .
-
-she:LowMAP a skos:Concept ;
-    skos:prefLabel "low map" .
-
-she:LowerSOCBenchmark a skos:Concept ;
-    skos:prefLabel "lower soc benchmark" .
-
-she:MeanAnnualPrecipitation a skos:Concept ;
-    skos:definition "map, mean annual precipitation (mm)" ;
-    skos:narrower she:HighMAP,
-        she:LowMAP ;
-    skos:prefLabel "mean annual precipitation" .
-
-she:MediumIITexture a skos:Concept ;
-    skos:definition "medium ii 17-25% clay" ;
-    skos:prefLabel "medium ii texture" ;
-    she:hasArableSoilHighMAPBenchmark "1.4" ;
-    she:hasArableSoilHighMAPRange ">1,000" ;
-    she:hasArableSoilLowMAPBenchmark "1.1" ;
-    she:hasArableSoilLowMAPRange "<1,000" ;
-    she:hasPermanentGrasslandHighMAPBenchmark "3.1" ;
-    she:hasPermanentGrasslandHighMAPRange ">1,250" ;
-    she:hasPermanentGrasslandLowMAPBenchmark "2.7" ;
-    she:hasPermanentGrasslandLowMAPRange "<1,250" .
-
-she:MediumTexture a skos:Concept ;
-    skos:definition "medium i 12-17% clay, <50% silt" ;
-    skos:prefLabel "medium texture" ;
-    she:hasArableSoilHighMAPBenchmark "1.1" ;
-    she:hasArableSoilHighMAPRange ">850" ;
-    she:hasArableSoilLowMAPBenchmark "1.0" ;
-    she:hasArableSoilLowMAPRange "<850" ;
-    she:hasPermanentGrasslandHighMAPBenchmark "3.0" ;
-    she:hasPermanentGrasslandHighMAPRange "<950" ;
-    she:hasPermanentGrasslandLowMAPBenchmark "2.3" ;
-    she:hasPermanentGrasslandLowMAPRange "<950" .
+    skos:prefLabel "arable soil" ;
+    skos:narrower she:LowMAP,
+        she:HighMAP .
 
 she:PermanentGrassland a skos:Concept ;
-    skos:prefLabel "permanent grassland" .
+    skos:prefLabel "permanent grassland" ;
+    skos:narrower she:LowMAP,
+        she:HighMAP .
 
 she:Texture a skos:Concept ;
-    skos:narrower she:HeavyIITexture,
-        she:HeavyITexture,
-        she:LightTexture,
-        she:MediumIITexture,
-        she:MediumTexture ;
-    skos:prefLabel "texture" .
+    skos:prefLabel "texture" ;
+    skos:narrower she:Light,
+        she:Medium,
+        she:MediumII,
+        she:HeavyI,
+        she:HeavyII ;
+    skos:note "(a) Light <12% clay, <50% silt; medium I 12-17% clay, <50% silt; medium II 17-25% clay; heavy I 25-35% clay; heavy II >35% clay." .
 
+she:MeanAnnualPrecipitation a skos:Concept ;
+    skos:prefLabel "mean annual precipitation" ;
+    she:hasAbbreviation "MAP" ;
+    skos:note "Unit: mm" .
+
+she:LowMAP a skos:Concept ;
+    skos:prefLabel "low map" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:HighMAP a skos:Concept ;
+    skos:prefLabel "high map" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:LowerBenchmark a skos:Concept ;
+    skos:prefLabel "lower benchmark" .
+
+she:Light a skos:Concept ;
+    skos:prefLabel "light" ;
+    skos:definition "<12% clay, <50% silt" ;
+    she:hasLowerSOCBenchmark [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<700" ;
+        she:benchmarkValue "0.7"
+    ] , [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">700" ;
+        she:benchmarkValue "0.9"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<650" ;
+        she:benchmarkValue "1.4"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">650" ;
+        she:benchmarkValue "2.0"
+    ] .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" ;
+    skos:definition "12-17% clay, <50% silt" ;
+    skos:note "Labelled as medium I in footnotes" ;
+    she:hasLowerSOCBenchmark [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<850" ;
+        she:benchmarkValue "1.0"
+    ] , [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">850" ;
+        she:benchmarkValue "1.1"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<950" ;
+        she:benchmarkValue "2.3" ;
+        skos:note "MAP threshold for permanent grassland medium texture is <950"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">950" ;
+        she:benchmarkValue "3.0"
+    ] .
+
+she:MediumII a skos:Concept ;
+    skos:prefLabel "medium ii" ;
+    skos:definition "17-25% clay" ;
+    she:hasLowerSOCBenchmark [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<1,000" ;
+        she:benchmarkValue "1.1"
+    ] , [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">1,000" ;
+        she:benchmarkValue "1.4"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<1,250" ;
+        she:benchmarkValue "2.7"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">1,250" ;
+        she:benchmarkValue "3.1"
+    ] .
+
+she:HeavyI a skos:Concept ;
+    skos:prefLabel "heavy i" ;
+    skos:definition "25-35% clay" ;
+    she:hasLowerSOCBenchmark [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<900" ;
+        she:benchmarkValue "1.2"
+    ] , [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">900" ;
+        she:benchmarkValue "1.4"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<750" ;
+        she:benchmarkValue "3.3"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">750" ;
+        she:benchmarkValue "3.7"
+    ] .
+
+she:HeavyII a skos:Concept ;
+    skos:prefLabel "heavy ii" ;
+    skos:definition ">35% clay" ;
+    she:hasLowerSOCBenchmark [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<900" ;
+        she:benchmarkValue "1.5"
+    ] , [
+        she:soilUse she:ArableSoil ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">900" ;
+        she:benchmarkValue "2.0"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:LowMAP ;
+        she:mapThreshold "<750" ;
+        she:benchmarkValue "3.7"
+    ] , [
+        she:soilUse she:PermanentGrassland ;
+        she:mapClass she:HighMAP ;
+        she:mapThreshold ">750" ;
+        she:benchmarkValue "4.3"
+    ] .

@@ -1,176 +1,175 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:SoilPropertiesForIndicatorsOfSoilCompaction a skos:Concept ;
+she:SoilPropertiesIndicatorsCompaction a skos:Concept ;
+    skos:prefLabel "soil properties for use as indicators for soil compaction" ;
     skos:narrower she:AirRegime,
+        she:WaterRegime,
+        she:ThermalRegime,
         she:HabitatForLivingOrganisms,
         she:PhysicalSoilRegimeSoilStrength,
-        she:RootFunctions,
-        she:ThermalRegime,
-        she:WaterRegime ;
-    skos:prefLabel "soil properties for use as indicators for soil compaction" .
+        she:RootFunctions .
+
+she:AirRegime a skos:Concept ;
+    skos:prefLabel "air regime" ;
+    skos:narrower she:AirStorage,
+        she:AirFlow .
+
+she:AirStorage a skos:Concept ;
+    skos:prefLabel "air storage" ;
+    skos:narrower she:AirCapacity,
+        she:BulkDensity .
+
+she:AirFlow a skos:Concept ;
+    skos:prefLabel "air flow" ;
+    skos:narrower she:AirPermeability,
+        she:OxygenDiffusion,
+        she:PoreContinuity .
+
+she:WaterRegime a skos:Concept ;
+    skos:prefLabel "water regime" ;
+    skos:narrower she:WaterStorage,
+        she:WaterSeepage .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" ;
+    skos:narrower she:AvailableWaterCapacity,
+        she:BulkDensity .
+
+she:WaterSeepage a skos:Concept ;
+    skos:prefLabel "water seepage" ;
+    skos:narrower she:HydraulicConductivity,
+        she:PoreContinuity,
+        she:FluxDirectionsIsotropyAnisotropy .
+
+she:ThermalRegime a skos:Concept ;
+    skos:prefLabel "thermal regime" ;
+    skos:narrower she:HeatStorage,
+        she:HeatFlux .
+
+she:HeatStorage a skos:Concept ;
+    skos:prefLabel "heat storage" ;
+    skos:narrower she:HeatCapacityAndConductivity,
+        she:ThermalDiffusivity .
+
+she:HeatFlux a skos:Concept ;
+    skos:prefLabel "heat flux" ;
+    skos:narrower she:WaterContent,
+        she:PoreContinuity .
+
+she:HabitatForLivingOrganisms a skos:Concept ;
+    skos:prefLabel "habitat for living organisms" ;
+    skos:narrower she:MicrobialComposition,
+        she:AbundanceOfFunctionalSpeciesGroups .
+
+she:MicrobialComposition a skos:Concept ;
+    skos:prefLabel "microbial composition" ;
+    skos:narrower she:DiversityAndCommunityStructure .
 
 she:AbundanceOfFunctionalSpeciesGroups a skos:Concept ;
     skos:prefLabel "abundance of functional species groups" ;
-    she:measures she:BulkDensity,
-        she:OxicAnoxicTaxaAndDistribution .
+    skos:narrower she:OxicAnoxicTaxaAndDistribution .
+
+she:PhysicalSoilRegimeSoilStrength a skos:Concept ;
+    skos:prefLabel "physical soil regime: soil strength" ;
+    skos:narrower she:DeformationStatus,
+        she:StressStrain .
+
+she:DeformationStatus a skos:Concept ;
+    skos:prefLabel "deformation status" ;
+    skos:narrower she:BulkDensity,
+        she:ProctorDensity,
+        she:AverageMeanDiameterOfAggregates,
+        she:PrecompressionStress,
+        she:CrushingStrength,
+        she:ShearStrength .
+
+she:StressStrain a skos:Concept ;
+    skos:prefLabel "stress strain" ;
+    skos:note "Stress-strain describes the relationship between the effect of stress (machine weight and trafficking) on soil strength (syn. soil strain, 'change in size or shape'), indicated by an increase in soil particles per unit of soil volume and the change in pore structure (diameter and amount) (also called 'densification' or 'stiffness'). The comparison of soil strength and mechanical stresses (called the 'soil rigidity ratio') is used here as an indicator of soil compaction." ;
+    skos:narrower she:RatioOfPrecompressionStressToActuallyAppliedStress,
+        she:StressPropagation,
+        she:ChangesInFlowProcessesDueToStressStrain .
+
+she:RootFunctions a skos:Concept ;
+    skos:prefLabel "root functions" ;
+    skos:narrower she:Rootability,
+        she:NutrientAvailability .
+
+she:Rootability a skos:Concept ;
+    skos:prefLabel "rootability" ;
+    skos:narrower she:RootLengthAndRootSurfaceDensity .
+
+she:NutrientAvailability a skos:Concept ;
+    skos:prefLabel "nutrient availability" ;
+    skos:narrower she:PenetrationResistance .
 
 she:AirCapacity a skos:Concept ;
     skos:prefLabel "air capacity" .
 
-she:AirFlow a skos:Concept ;
-    skos:prefLabel "air flow" ;
-    she:measures she:AirPermeability,
-        she:OxygenDiffusion,
-        she:PoreContinuity .
+she:BulkDensity a skos:Concept ;
+    skos:prefLabel "bulk density" .
 
 she:AirPermeability a skos:Concept ;
     skos:prefLabel "air permeability" .
 
-she:AirRegime a skos:Concept ;
-    skos:narrower she:AirFlow,
-        she:AirStorage ;
-    skos:prefLabel "air regime" .
-
-she:AirStorage a skos:Concept ;
-    skos:prefLabel "air storage" ;
-    she:measures she:AirCapacity,
-        she:BulkDensity .
-
-she:AvailableWaterCapacity a skos:Concept ;
-    skos:prefLabel "available water capacity" .
-
-she:AverageMeanDiameterOfAggregates a skos:Concept ;
-    skos:prefLabel "average mean diameter of aggregates" .
-
-she:ChangesInAirWaterThermalFlowProcessesAndBiologicalRegimesDueToStressStrainAndShearStressInducedDistortion a skos:Concept ;
-    skos:prefLabel "changes in air, water, thermal flow processes and biological regimes due to stress strain and shear stress-induced distortion" .
-
-she:CrushingStrength a skos:Concept ;
-    skos:prefLabel "crushing strength" .
-
-she:DeformationStatus a skos:Concept ;
-    skos:prefLabel "deformation status" ;
-    she:measures she:AverageMeanDiameterOfAggregates,
-        she:CrushingStrength,
-        she:PrecompressionStress,
-        she:ProctorDensity,
-        she:ShearStrength .
-
-she:DiversityAndCommunityStructure a skos:Concept ;
-    skos:prefLabel "diversity and community structure" .
-
-she:FluxDirectionsIsotropyAnisotropy a skos:Concept ;
-    skos:prefLabel "flux directions: isotropy/anisotropy" .
-
-she:HabitatForLivingOrganisms a skos:Concept ;
-    skos:narrower she:AbundanceOfFunctionalSpeciesGroups,
-        she:MicrobialComposition ;
-    skos:prefLabel "habitat for living organisms" .
-
-she:HeatCapacityAndConductivity a skos:Concept ;
-    skos:prefLabel "heat capacity and conductivity" .
-
-she:HeatFlux a skos:Concept ;
-    skos:prefLabel "heat flux" ;
-    she:measures she:PoreContinuity .
-
-she:HeatStorage a skos:Concept ;
-    skos:prefLabel "heat storage" ;
-    she:measures she:FluxDirectionsIsotropyAnisotropy,
-        she:HeatCapacityAndConductivity,
-        she:ThermalDiffusivity,
-        she:WaterContent .
-
-she:HydraulicConductivitySaturatedUnsaturated a skos:Concept ;
-    skos:prefLabel "hydraulic conductivity (saturated/unsaturated)" .
-
-she:MicrobialComposition a skos:Concept ;
-    skos:prefLabel "microbial composition" ;
-    she:measures she:DiversityAndCommunityStructure .
-
-she:NutrientAvailability a skos:Concept ;
-    skos:prefLabel "nutrient availability" ;
-    she:measures she:PenetrationResistance .
-
-she:OxicAnoxicTaxaAndDistribution a skos:Concept ;
-    skos:prefLabel "oxic/anoxic taxa and distribution (e.g. methanogens; sulphate-reducing bacteria or ectomycorrhizal fungi)" .
-
 she:OxygenDiffusion a skos:Concept ;
     skos:prefLabel "oxygen diffusion" .
-
-she:PenetrationResistance a skos:Concept ;
-    skos:prefLabel "penetration resistance" .
-
-she:PhysicalSoilRegimeSoilStrength a skos:Concept ;
-    skos:narrower she:DeformationStatus,
-        she:StressStrain ;
-    skos:prefLabel "physical soil regime: soil strength" .
-
-she:PrecompressionStress a skos:Concept ;
-    skos:prefLabel "precompression stress" .
-
-she:ProctorDensity a skos:Concept ;
-    skos:definition "defines the maximum bulk density at the optimal water content of the soil sample due to a given dynamic energy applied with a proctor hammer" ;
-    skos:prefLabel "proctor density" .
-
-she:RatioOfPrecompressionStressToActuallyAppliedStress a skos:Concept ;
-    skos:prefLabel "ratio of precompression stress to actually applied stress" .
-
-she:RootFunctions a skos:Concept ;
-    skos:narrower she:NutrientAvailability,
-        she:Rootability ;
-    skos:prefLabel "root functions" .
-
-she:RootLengthAndRootSurfaceDensity a skos:Concept ;
-    skos:prefLabel "root length and root surface density" .
-
-she:Rootability a skos:Concept ;
-    skos:prefLabel "rootability" ;
-    she:measures she:RootLengthAndRootSurfaceDensity .
-
-she:ShearStrength a skos:Concept ;
-    skos:prefLabel "shear strength" .
-
-she:StressPropagation a skos:Concept ;
-    skos:prefLabel "stress propagation" .
-
-she:StressStrain a skos:Concept ;
-    skos:definition "describes the relationship between the effect of stress (machine weight and trafficking) on soil strength (syn. soil strain, change in size or shape'), indicated by an increase in soil particles per unit of soil volume and the change in pore structure (diameter and amount) (also called 'densification' or 'stiffness'). the comparison of soil strength and mechanical stresses (called the 'soil rigidity ratio') is used here as an indicator of soil compaction." ;
-    skos:prefLabel "stress strain" ;
-    she:measures she:ChangesInAirWaterThermalFlowProcessesAndBiologicalRegimesDueToStressStrainAndShearStressInducedDistortion,
-        she:RatioOfPrecompressionStressToActuallyAppliedStress,
-        she:StressPropagation .
-
-she:ThermalDiffusivity a skos:Concept ;
-    skos:prefLabel "thermal diffusivity" .
-
-she:ThermalRegime a skos:Concept ;
-    skos:narrower she:HeatFlux,
-        she:HeatStorage ;
-    skos:prefLabel "thermal regime" .
-
-she:WaterContent a skos:Concept ;
-    skos:prefLabel "water content" .
-
-she:WaterRegime a skos:Concept ;
-    skos:narrower she:WaterSeepage,
-        she:WaterStorage ;
-    skos:prefLabel "water regime" .
-
-she:WaterSeepage a skos:Concept ;
-    skos:prefLabel "water seepage" ;
-    she:measures she:HydraulicConductivitySaturatedUnsaturated,
-        she:PoreContinuity .
-
-she:WaterStorage a skos:Concept ;
-    skos:prefLabel "water storage" ;
-    she:measures she:AvailableWaterCapacity,
-        she:BulkDensity .
-
-she:BulkDensity a skos:Concept ;
-    skos:prefLabel "bulk density" .
 
 she:PoreContinuity a skos:Concept ;
     skos:prefLabel "pore continuity" .
 
+she:AvailableWaterCapacity a skos:Concept ;
+    skos:prefLabel "available water capacity" .
+
+she:HydraulicConductivity a skos:Concept ;
+    skos:prefLabel "hydraulic conductivity (saturated/unsaturated)" .
+
+she:FluxDirectionsIsotropyAnisotropy a skos:Concept ;
+    skos:prefLabel "flux directions: isotropy/anisotropy" .
+
+she:HeatCapacityAndConductivity a skos:Concept ;
+    skos:prefLabel "heat capacity and conductivity" .
+
+she:ThermalDiffusivity a skos:Concept ;
+    skos:prefLabel "thermal diffusivity" .
+
+she:WaterContent a skos:Concept ;
+    skos:prefLabel "water content" .
+
+she:DiversityAndCommunityStructure a skos:Concept ;
+    skos:prefLabel "diversity and community structure" .
+
+she:OxicAnoxicTaxaAndDistribution a skos:Concept ;
+    skos:prefLabel "oxic/anoxic taxa and distribution (e.g. methanogens; sulphate-reducing bacteria or ectomycorrhizal fungi)" .
+
+she:ProctorDensity a skos:Concept ;
+    skos:prefLabel "proctor density" ;
+    skos:note "Proctor density defines the maximum bulk density at the optimal water content of the soil sample due to a given dynamic energy applied with a Proctor hammer." .
+
+she:AverageMeanDiameterOfAggregates a skos:Concept ;
+    skos:prefLabel "average mean diameter of aggregates" .
+
+she:PrecompressionStress a skos:Concept ;
+    skos:prefLabel "precompression stress" .
+
+she:CrushingStrength a skos:Concept ;
+    skos:prefLabel "crushing strength" .
+
+she:ShearStrength a skos:Concept ;
+    skos:prefLabel "shear strength" .
+
+she:RatioOfPrecompressionStressToActuallyAppliedStress a skos:Concept ;
+    skos:prefLabel "ratio of precompression stress to actually applied stress" .
+
+she:StressPropagation a skos:Concept ;
+    skos:prefLabel "stress propagation" .
+
+she:ChangesInFlowProcessesDueToStressStrain a skos:Concept ;
+    skos:prefLabel "changes in air, water, thermal flow processes and biological regimes due to stress strain and shear stress-induced distortion" .
+
+she:RootLengthAndRootSurfaceDensity a skos:Concept ;
+    skos:prefLabel "root length and root surface density" .
+
+she:PenetrationResistance a skos:Concept ;
+    skos:prefLabel "penetration resistance" .

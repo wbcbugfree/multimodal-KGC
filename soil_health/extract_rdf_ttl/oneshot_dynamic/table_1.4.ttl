@@ -1,0 +1,342 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DegradationTypesOrSoilThreats a skos:Concept ;
+    skos:prefLabel "degradation types/soil threats" ;
+    skos:narrower she:WaterErosion,
+        she:WindErosion,
+        she:Overblowing,
+        she:LossOfOrganicMatter,
+        she:Salinisation,
+        she:Acidification,
+        she:LossOfNutrients,
+        she:Pollution,
+        she:CompactionAndPhysicalDegradation,
+        she:Waterlogging,
+        she:SubsidenceOfOrganicSoils,
+        she:LossOfSoilBiodiversity,
+        she:Landslides,
+        she:SoilSealing,
+        she:Desertification,
+        she:WaterCycle .
+
+she:WaterErosion a skos:Concept ;
+    skos:prefLabel "water erosion" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:SoilLoss,
+        she:SoilLossMetric,
+        she:ObservedErosionFeatures,
+        she:AreaAffectedBySoilErosion .
+
+she:WindErosion a skos:Concept ;
+    skos:prefLabel "wind erosion" ;
+    she:isAddressedBy she:Glasod .
+
+she:Overblowing a skos:Concept ;
+    skos:prefLabel "overblowing" ;
+    she:isAddressedBy she:Glasod ;
+    she:hasIndicator she:DepositedSoil .
+
+she:LossOfOrganicMatter a skos:Concept ;
+    skos:prefLabel "loss of organic matter" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:TopsoilOrganicMatterOrCarbonContent,
+        she:SOCStock,
+        she:PeatStock,
+        she:CPoolOrganicCStocks,
+        she:SoilCarbon .
+
+she:Salinisation a skos:Concept ;
+    skos:prefLabel "salinisation" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:SalinityStateTotalSaltContent,
+        she:ExchangeableSodium,
+        she:SpatialDistributionOfSaltAffectedSoils,
+        she:AreaAffectedBySalinisation .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:TopSoilPH,
+        she:ExchangeableAcidCations,
+        she:PH,
+        she:AcidNeutralisationCapacity,
+        she:AreaAffectedByAcidification .
+
+she:LossOfNutrients a skos:Concept ;
+    skos:prefLabel "loss of nutrients" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:ExchangeableBasicCations,
+        she:TraceElements,
+        she:SoilFertility,
+        she:NutrientBalances,
+        she:NutrientConcentrations .
+
+she:Pollution a skos:Concept ;
+    skos:prefLabel "pollution" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:HeavyMetalContent,
+        she:CriticalLoadExceedance,
+        she:ContaminatedSitesManagementProgress,
+        she:ContaminatedLandArea,
+        she:AreaOrNumberOfContaminatedAndRemediatedSites .
+
+she:CompactionAndPhysicalDegradation a skos:Concept ;
+    skos:prefLabel "compaction and physical degradation" ;
+    she:isAddressedBy she:Glasod,
+        she:EU ;
+    she:hasIndicator she:SoilDensity,
+        she:AirCapacity,
+        she:VulnerabilityToSoilCompaction,
+        she:AreaAffectedByCompaction .
+
+she:Waterlogging a skos:Concept ;
+    skos:prefLabel "waterlogging" ;
+    she:isAddressedBy she:Glasod ;
+    she:hasIndicator she:AreaAffectedByWaterlogging .
+
+she:SubsidenceOfOrganicSoils a skos:Concept ;
+    skos:prefLabel "subsidence of organic soils" ;
+    she:isAddressedBy she:Glasod .
+
+she:LossOfSoilBiodiversity a skos:Concept ;
+    skos:prefLabel "loss of soil biodiversity" ;
+    she:isAddressedBy she:EU ;
+    she:hasIndicator she:Macrofauna,
+        she:Mesofauna,
+        she:MicrobialRespiration .
+
+she:Landslides a skos:Concept ;
+    skos:prefLabel "landslides" ;
+    she:isAddressedBy she:EU ;
+    she:hasIndicator she:OccurrenceOfLandslides .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    she:isAddressedBy she:EU ;
+    she:hasIndicator she:SealedArea .
+
+she:Desertification a skos:Concept ;
+    skos:prefLabel "desertification" ;
+    she:isAddressedBy she:EU ;
+    she:hasIndicator she:VulnerabilityToDesertification,
+        she:Wildfires,
+        she:SOCInDesertifiedSoil,
+        she:AreaAffectedByDesertification .
+
+she:WaterCycle a skos:Concept ;
+    skos:prefLabel "water cycle" ;
+    she:hasIndicator she:SoilMoisture .
+
+she:Glasod a skos:Concept ;
+    skos:prefLabel "glasod" ;
+    skos:definition "Global Assessment of Human-induced Soil Degradation: 12 types of human-induced soil degradation recognised." .
+
+she:EU a skos:Concept ;
+    skos:prefLabel "eu" ;
+    skos:definition "Soil thematic strategy of the European Commission (EC, 2006a)." .
+
+she:Envasso a skos:Concept ;
+    skos:prefLabel "envasso indicators, modified" ;
+    skos:definition "Environmental Assessment of Soil for Monitoring: Volume 1 identifies 290 potential indicators related to 188 key issues for nine soil threats (Huber et al., 2008)." .
+
+she:StatusOfTheWorldsSoilResourcesReport a skos:Concept ;
+    skos:prefLabel "indicators in status of the world's soil resources report" ;
+    skos:note "FAO and ITPS (2015)." .
+
+she:SEEAAndFDES a skos:Concept ;
+    skos:prefLabel "seea and fdes" ;
+    skos:note "System of Environmental Economic Accounting (SEEA) and Framework for the Development of Environment Statistics (FDES)." .
+
+she:SoilLossMetric a skos:Concept ;
+    skos:prefLabel "soil loss (t/ha)" ;
+    she:reportedIn she:Envasso .
+
+she:SoilLoss a skos:Concept ;
+    skos:prefLabel "soil loss" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:ObservedErosionFeatures a skos:Concept ;
+    skos:prefLabel "observed erosion features (type/amount per unit area)" ;
+    she:reportedIn she:Envasso .
+
+she:AreaAffectedBySoilErosion a skos:Concept ;
+    skos:prefLabel "area affected by soil erosion" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:DepositedSoil a skos:Concept ;
+    skos:prefLabel "deposited soil (t/ha)" ;
+    she:reportedIn she:Envasso .
+
+she:TopsoilOrganicMatterOrCarbonContent a skos:Concept ;
+    skos:prefLabel "topsoil organic matter (som) or carbon (soc) content" ;
+    she:hasAbbreviation "SOM", "SOC" ;
+    she:reportedIn she:Envasso .
+
+she:SOCStock a skos:Concept ;
+    skos:prefLabel "soc stock (t/ha)" ;
+    she:hasAbbreviation "SOC" ;
+    she:reportedIn she:Envasso .
+
+she:PeatStock a skos:Concept ;
+    skos:prefLabel "peat stock (t/ha)" ;
+    she:reportedIn she:Envasso .
+
+she:CPoolOrganicCStocks a skos:Concept ;
+    skos:prefLabel "c pool: organic c stocks" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:SoilCarbon a skos:Concept ;
+    skos:prefLabel "soil carbon" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:SalinityStateTotalSaltContent a skos:Concept ;
+    skos:prefLabel "salinity state: total salt content (% ec)" ;
+    she:hasSymbol "% EC" ;
+    she:reportedIn she:Envasso .
+
+she:ExchangeableSodium a skos:Concept ;
+    skos:prefLabel "exchangeable sodium (ph, esp %)" ;
+    skos:note "ESP: exchangeable sodium percentage" ;
+    she:hasAbbreviation "ESP" ;
+    she:reportedIn she:Envasso .
+
+she:SpatialDistributionOfSaltAffectedSoils a skos:Concept ;
+    skos:prefLabel "spatial distribution of salt-affected soils" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:AreaAffectedBySalinisation a skos:Concept ;
+    skos:prefLabel "area affected by salinisation" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:TopSoilPH a skos:Concept ;
+    skos:prefLabel "top soil ph" ;
+    she:hasSymbol "pH" ;
+    she:reportedIn she:Envasso .
+
+she:ExchangeableAcidCations a skos:Concept ;
+    skos:prefLabel "%exchangeable acid cations (mn, al, fe)" ;
+    she:hasSymbol "Mn", "Al", "Fe" ;
+    she:reportedIn she:Envasso .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:AcidNeutralisationCapacity a skos:Concept ;
+    skos:prefLabel "acid neutralisation capacity" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:AreaAffectedByAcidification a skos:Concept ;
+    skos:prefLabel "area affected by acidification" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:ExchangeableBasicCations a skos:Concept ;
+    skos:prefLabel "%exchangeable basic cations" ;
+    she:reportedIn she:Envasso .
+
+she:TraceElements a skos:Concept ;
+    skos:prefLabel "%trace elements (including micronutrients)" ;
+    she:reportedIn she:Envasso .
+
+she:SoilFertility a skos:Concept ;
+    skos:prefLabel "soil fertility: %nutrients, ph" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:NutrientBalances a skos:Concept ;
+    skos:prefLabel "nutrient balances: n, p" ;
+    she:hasSymbol "N", "P" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:NutrientConcentrations a skos:Concept ;
+    skos:prefLabel "nutrient concentrations: n, p, ca, mg, k, zn" ;
+    she:hasSymbol "N", "P", "Ca", "Mg", "K", "Zn" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:HeavyMetalContent a skos:Concept ;
+    skos:prefLabel "heavy metal content (mg/ha)" ;
+    she:reportedIn she:Envasso .
+
+she:CriticalLoadExceedance a skos:Concept ;
+    skos:prefLabel "critical load exceedance (s, n)" ;
+    she:hasSymbol "S", "N" ;
+    she:reportedIn she:Envasso .
+
+she:ContaminatedSitesManagementProgress a skos:Concept ;
+    skos:prefLabel "progress in the management of contaminated sites" ;
+    she:reportedIn she:Envasso .
+
+she:ContaminatedLandArea a skos:Concept ;
+    skos:prefLabel "contaminated land area" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .
+
+she:AreaOrNumberOfContaminatedAndRemediatedSites a skos:Concept ;
+    skos:prefLabel "area/number of contaminated and remediated sites" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:SoilDensity a skos:Concept ;
+    skos:prefLabel "soil density" ;
+    she:reportedIn she:Envasso .
+
+she:AirCapacity a skos:Concept ;
+    skos:prefLabel "air capacity" ;
+    she:reportedIn she:Envasso .
+
+she:VulnerabilityToSoilCompaction a skos:Concept ;
+    skos:prefLabel "vulnerability to soil compaction" ;
+    she:reportedIn she:Envasso .
+
+she:AreaAffectedByCompaction a skos:Concept ;
+    skos:prefLabel "area affected by compaction" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:AreaAffectedByWaterlogging a skos:Concept ;
+    skos:prefLabel "area affected by waterlogging" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:Macrofauna a skos:Concept ;
+    skos:prefLabel "macrofauna (earthworms)" ;
+    she:reportedIn she:Envasso .
+
+she:Mesofauna a skos:Concept ;
+    skos:prefLabel "mesofauna (collembola)" ;
+    she:reportedIn she:Envasso .
+
+she:MicrobialRespiration a skos:Concept ;
+    skos:prefLabel "microbial respiration" ;
+    she:reportedIn she:Envasso .
+
+she:OccurrenceOfLandslides a skos:Concept ;
+    skos:prefLabel "occurrence of landslides" ;
+    she:reportedIn she:Envasso .
+
+she:SealedArea a skos:Concept ;
+    skos:prefLabel "sealed area" ;
+    she:reportedIn she:Envasso .
+
+she:VulnerabilityToDesertification a skos:Concept ;
+    skos:prefLabel "vulnerability to desertification" ;
+    she:reportedIn she:Envasso .
+
+she:Wildfires a skos:Concept ;
+    skos:prefLabel "wildfires" ;
+    she:reportedIn she:Envasso .
+
+she:SOCInDesertifiedSoil a skos:Concept ;
+    skos:prefLabel "soc in desertified soil" ;
+    she:hasAbbreviation "SOC" ;
+    she:reportedIn she:Envasso .
+
+she:AreaAffectedByDesertification a skos:Concept ;
+    skos:prefLabel "area affected by desertification" ;
+    she:reportedIn she:SEEAAndFDES .
+
+she:SoilMoisture a skos:Concept ;
+    skos:prefLabel "soil moisture" ;
+    she:reportedIn she:StatusOfTheWorldsSoilResourcesReport .

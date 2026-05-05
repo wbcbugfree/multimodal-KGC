@@ -1,147 +1,106 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:MeanSoilLossRateArableLandTHaYear a skos:Concept ;
-    skos:prefLabel "mean soil loss rate (arable land) (t/ha/year)" .
+she:SoilLossRatesArableLandEurope a skos:Concept ;
+    skos:prefLabel "soil loss rates from different types of erosion on arable land in europe taken from studies at a continental scale" ;
+    skos:narrower she:ErosionType,
+                  she:Approach,
+                  she:ReferencePeriod,
+                  she:MeanSoilLossRateHeader,
+                  she:ReferenceHeader .
+
+she:ErosionType a skos:Concept ;
+    skos:prefLabel "erosion type" ;
+    skos:narrower she:SoilErosionByWater,
+                  she:SoilErosionByWind,
+                  she:GullyErosion,
+                  she:TillageErosion,
+                  she:SoilLossByCropHarvesting .
+
+she:Approach a skos:Concept ;
+    skos:prefLabel "approach" ;
+    skos:narrower she:EmpiricalModelRUSLE2015,
+                  she:UpscalingPlotData,
+                  she:EmpiricalModelGISRWEQ,
+                  she:ObservationsAndScreenInterpretation,
+                  she:EmpiricalGISBasedModel,
+                  she:UpscalingStudyResults .
 
 she:ReferencePeriod a skos:Concept ;
     skos:prefLabel "reference period" .
 
-she:SoilLossMeasurement1 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 1" ;
-    she:hasMeanSoilLossRate "2.65" ;
-    she:hasReferencePeriod "2016" ;
-    she:hasSourceReference she:PanagosEtAl2020a ;
-    she:isMeasurementOf she:SoilErosionByWater ;
-    she:usesApproach she:EmpiricalModelRusle2015 .
+she:MeanSoilLossRateHeader a skos:Concept ;
+    skos:prefLabel "mean soil loss rate (arable land) (t/ha/year)" .
 
-she:SoilLossMeasurement2 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 2" ;
-    she:hasMeanSoilLossRate "3.6" ;
-    she:hasReferencePeriod "-" ;
-    she:hasSourceReference she:CerdanEtAl2010 ;
-    she:isMeasurementOf she:SoilErosionByWater ;
-    she:usesApproach she:UpscalingPlotData .
-
-she:SoilLossMeasurement3 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 3" ;
-    she:hasMeanSoilLossRate "0.53" ;
-    she:hasReferencePeriod "2001-2010" ;
-    she:hasSourceReference she:BorelliEtAl2017 ;
-    she:isMeasurementOf she:SoilErosionByWind ;
-    she:usesApproach she:EmpiricalModelGisRweq .
-
-she:SoilLossMeasurement4 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 4" ;
-    she:hasMeanSoilLossRate "unknown" ;
-    she:hasReferencePeriod "2018-" ;
-    she:hasSourceReference she:BorelliEtAl2022 ;
-    she:isMeasurementOf she:GullyErosion ;
-    she:usesApproach she:ObservationsAndScreenInterpretation .
-
-she:SoilLossMeasurement5 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 5" ;
-    she:hasMeanSoilLossRate "3.3" ;
-    she:hasReferencePeriod "2000" ;
-    she:hasSourceReference she:VanOost2009 ;
-    she:isMeasurementOf she:TillageErosion ;
-    she:usesApproach she:EmpiricalGisBasedModel .
-
-she:SoilLossMeasurement6 a skos:Concept ;
-    skos:broader she:SoilLossMeasurement ;
-    skos:prefLabel "soil loss measurement 6" ;
-    she:hasMeanSoilLossRate "0.134" ;
-    she:hasMeanSoilLossRateAnnotation "due to potato and sugar beet harvesting; recalculated for the total arable land area" ;
-    she:hasReferencePeriod "2000-2016" ;
-    she:hasSourceReference she:PanagosEtAl2019 ;
-    she:isMeasurementOf she:SoilLossByCropHarvesting ;
-    she:usesApproach she:UpscalingStudyResults .
-
-she:Table72 a skos:Concept ;
-    skos:prefLabel "table 7.2 soil loss rates from different types of erosion on arable land in europe taken from studies at a continental scale" .
-
-she:BorelliEtAl2017 a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "borelli et al. (2017)" .
-
-she:BorelliEtAl2022 a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "borelli et al. (2022)" .
-
-she:CerdanEtAl2010 a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "cerdan et al. (2010)" .
-
-she:EmpiricalGisBasedModel a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "empirical gis-based model" .
-
-she:EmpiricalModelGisRweq a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "empirical model (gis-rweq)" .
-
-she:EmpiricalModelRusle2015 a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "empirical model (rusle2015)" .
-
-she:GullyErosion a skos:Concept ;
-    skos:broader she:ErosionType ;
-    skos:prefLabel "gully erosion" .
-
-she:ObservationsAndScreenInterpretation a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "observations and screen interpretation" .
-
-she:PanagosEtAl2019 a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "panagos et al. (2019)" .
-
-she:PanagosEtAl2020a a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "panagos et al. (2020a)" .
-
-she:SoilErosionByWind a skos:Concept ;
-    skos:broader she:ErosionType ;
-    skos:prefLabel "soil erosion by wind" .
-
-she:SoilLossByCropHarvesting a skos:Concept ;
-    skos:broader she:ErosionType ;
-    skos:prefLabel "soil loss by crop harvesting" .
-
-she:TillageErosion a skos:Concept ;
-    skos:broader she:ErosionType ;
-    skos:prefLabel "tillage erosion" .
-
-she:UpscalingPlotData a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "upscaling plot data" .
-
-she:UpscalingStudyResults a skos:Concept ;
-    skos:broader she:Approach ;
-    skos:prefLabel "upscaling study results" .
-
-she:VanOost2009 a skos:Concept ;
-    skos:broader she:Reference ;
-    skos:prefLabel "van oost (2009)" .
-
-she:SoilErosionByWater a skos:Concept ;
-    skos:broader she:ErosionType ;
-    skos:prefLabel "soil erosion by water" .
-
-she:ErosionType a skos:Concept ;
-    skos:prefLabel "erosion type" .
-
-she:Approach a skos:Concept ;
-    skos:prefLabel "approach" .
-
-she:Reference a skos:Concept ;
+she:ReferenceHeader a skos:Concept ;
     skos:prefLabel "reference" .
 
-she:SoilLossMeasurement a skos:Concept ;
-    skos:prefLabel "soil loss measurement" .
+she:SoilErosionByWater a skos:Concept ;
+    skos:prefLabel "soil erosion by water" ;
+    she:hasStudyResult [
+        she:hasApproach she:EmpiricalModelRUSLE2015 ;
+        she:hasReferencePeriod "2016" ;
+        she:hasMeanSoilLossRate "2.65" ;
+        she:hasReference "Panagos et al. (2020a)"
+    ] , [
+        she:hasApproach she:UpscalingPlotData ;
+        she:hasMeanSoilLossRate "3.6" ;
+        she:hasReference "Cerdan et al. (2010)"
+    ] .
 
+she:SoilErosionByWind a skos:Concept ;
+    skos:prefLabel "soil erosion by wind" ;
+    she:hasStudyResult [
+        she:hasApproach she:EmpiricalModelGISRWEQ ;
+        she:hasReferencePeriod "2001-2010" ;
+        she:hasMeanSoilLossRate "0.53" ;
+        she:hasReference "Borelli et al. (2017)"
+    ] .
+
+she:GullyErosion a skos:Concept ;
+    skos:prefLabel "gully erosion" ;
+    she:hasStudyResult [
+        she:hasApproach she:ObservationsAndScreenInterpretation ;
+        she:hasReferencePeriod "2018-" ;
+        she:hasMeanSoilLossRate "unknown" ;
+        she:hasReference "Borelli et al. (2022)"
+    ] .
+
+she:TillageErosion a skos:Concept ;
+    skos:prefLabel "tillage erosion" ;
+    she:hasStudyResult [
+        she:hasApproach she:EmpiricalGISBasedModel ;
+        she:hasReferencePeriod "2000" ;
+        she:hasMeanSoilLossRate "3.3" ;
+        she:hasReference "Van Oost (2009)"
+    ] .
+
+she:SoilLossByCropHarvesting a skos:Concept ;
+    skos:prefLabel "soil loss by crop harvesting" ;
+    she:hasStudyResult [
+        she:hasApproach she:UpscalingStudyResults ;
+        she:hasReferencePeriod "2000-2016" ;
+        she:hasMeanSoilLossRate "0.134" ;
+        skos:note "(a) Due to potato and sugar beet harvesting; recalculated for the total arable land area." ;
+        she:hasReference "Panagos et al. (2019)"
+    ] .
+
+she:EmpiricalModelRUSLE2015 a skos:Concept ;
+    skos:prefLabel "empirical model (rusle2015)" ;
+    she:hasAbbreviation "RUSLE2015" .
+
+she:UpscalingPlotData a skos:Concept ;
+    skos:prefLabel "upscaling plot data" .
+
+she:EmpiricalModelGISRWEQ a skos:Concept ;
+    skos:prefLabel "empirical model (gis-rweq)" ;
+    she:hasAbbreviation "GIS-RWEQ" .
+
+she:ObservationsAndScreenInterpretation a skos:Concept ;
+    skos:prefLabel "observations and screen interpretation" .
+
+she:EmpiricalGISBasedModel a skos:Concept ;
+    skos:prefLabel "empirical gis-based model" .
+
+she:UpscalingStudyResults a skos:Concept ;
+    skos:prefLabel "upscaling study results" .

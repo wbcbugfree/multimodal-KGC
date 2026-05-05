@@ -1,0 +1,80 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilRelatedPolicyObjectivesAndTargets a skos:Concept ;
+    skos:prefLabel "soil-related policy objectives and targets" ;
+    skos:narrower she:ZeroPollutionActionPlanAirSoilWater,
+                  she:EuSoilStrategy2030 .
+
+she:ZeroPollutionActionPlanAirSoilWater a skos:Concept ;
+    skos:prefLabel "zero pollution action plan for air, soil and water" ;
+    she:hasCitation "EC, 2021c" ;
+    she:hasPolicyObjective she:ToxinFreeEnvironmentAmbition,
+                            she:PollutionMonitoringAndRemediationLevels,
+                            she:NewPollutionLegislationProposal,
+                            she:SoilPollutionRemediationFramework ;
+    skos:related she:EuropeanGreenDeal,
+                 she:BiodiversityStrategy2030,
+                 she:FarmToForkStrategy,
+                 she:CircularEconomyActionPlan ;
+    skos:note "Including 'A clean planet for all' (EC, 2018) and long-term low greenhouse gas emission development strategy (EC, 2020k)." .
+
+she:EuSoilStrategy2030 a skos:Concept ;
+    skos:prefLabel "eu soil strategy 2030" ;
+    she:hasCitation "EC, 2021e" ;
+    she:hasPolicyObjective she:HealthySoilEcosystems2050,
+                            she:CombatDesertificationRestoreEcosystems,
+                            she:ClimateNeutralityAndPollutionImpact,
+                            she:ContaminatedSitesManagementProgress .
+
+she:ToxinFreeEnvironmentAmbition a skos:Concept ;
+    skos:prefLabel "zero pollution ambition for a toxin-free environment" ;
+    skos:note "A zero pollution ambition for a toxin-free environment, including for air, water and soil" .
+
+she:PollutionMonitoringAndRemediationLevels a skos:Concept ;
+    skos:prefLabel "monitor, report, prevent and remedy pollution" ;
+    skos:note "To better monitor, report, prevent and remedy pollution from air, water, soil and consumer products to levels that are no longer harmful to human health and the environment" .
+
+she:NewPollutionLegislationProposal a skos:Concept ;
+    skos:prefLabel "propose new legislation for pollution sources" ;
+    skos:note "To propose new legislation covering significant pollution sources, which are not yet addressed by other policies, strategies and protocols" .
+
+she:SoilPollutionRemediationFramework a skos:Concept ;
+    skos:prefLabel "remediation of soil pollution framework" ;
+    skos:note "To facilitate remediation of soil pollution via (1) a monitoring framework on the state of pollution and (2) an outlook report, including a specific assessment of the evolution of human health and environmental impacts" .
+
+she:HealthySoilEcosystems2050 a skos:Concept ;
+    skos:prefLabel "healthy eu soil ecosystems by 2050" ;
+    skos:note "By 2050, all EU soil ecosystems are in healthy condition and are thus more resilient" .
+
+she:CombatDesertificationRestoreEcosystems a skos:Concept ;
+    skos:prefLabel "combat desertification and restore degraded ecosystems" ;
+    skos:note "To combat desertification and to achieve no net land take, to restore degraded ecosystems including soils" .
+
+she:ClimateNeutralityAndPollutionImpact a skos:Concept ;
+    skos:prefLabel "land-based climate neutrality and pollution reduction" ;
+    skos:note "To contribute to (1) land-based climate neutrality by 2035, and (2) reducing the impact of soil pollution (on ecosystems, waters, human health)" .
+
+she:ContaminatedSitesManagementProgress a skos:Concept ;
+    skos:prefLabel "management of contaminated sites" ;
+    skos:note "To achieve progress in the management of contaminated sites" .
+
+she:EuropeanGreenDeal a skos:Concept ;
+    skos:prefLabel "european green deal" .
+
+she:BiodiversityStrategy2030 a skos:Concept ;
+    skos:prefLabel "biodiversity strategy 2030" .
+
+she:FarmToForkStrategy a skos:Concept ;
+    skos:prefLabel "farm to fork strategy" .
+
+she:CircularEconomyActionPlan a skos:Concept ;
+    skos:prefLabel "circular economy action plan" .
+
+she:NecDirective a skos:Concept ;
+    skos:prefLabel "nec directive" ;
+    skos:note "Ecosystem monitoring under Article 9 and Annex V of the NEC Directive." .
+
+she:GothenburgProtocol a skos:Concept ;
+    skos:prefLabel "gothenburg protocol" ;
+    skos:note "Thresholds based on the Working Group on Effects under the Gothenburg Protocol to the Convention on Long-range Transboundary Air Pollution." .

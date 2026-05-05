@@ -1,0 +1,233 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ScreeningValuesPotentiallyUnacceptableRiskIndustrialSoilUseOrganicContaminants a skos:Concept ;
+    skos:prefLabel "screening values for potentially unacceptable risk (industrial soil use) for organic contaminants (mg/kg)" ;
+    skos:altLabel "Table 5.7" ;
+    skos:note "B, Brussels; F, Flanders, W, Wallonia. For Finland, the upper guideline values are presented." ;
+    skos:note "Not presented are countries where the intended land use is not clearly stated." ;
+    skos:note "Until 2007, 13 countries had not reported any national SSVs for organic pollutants." ;
+    skos:note "The list of substances in several national guidelines is larger than represented here." ;
+    skos:note "Source: Compiled from Carlon et al. (2007)." ;
+    she:hasUnit "mg/kg" ;
+    skos:narrower she:Pollutant,
+                  she:CountryRegion .
+
+she:Pollutant a skos:Concept ;
+    skos:prefLabel "pollutant" ;
+    skos:narrower she:Benzene,
+                  she:Ethylbenzene,
+                  she:Toluene,
+                  she:Xylene,
+                  she:Naphthalene,
+                  she:Anthracene,
+                  she:BenzoAAnthracene,
+                  she:BenzoGHIPerylene,
+                  she:PahsTotal,
+                  she:Dichloromethane,
+                  she:Trichloroethylene,
+                  she:Tetrachloromethane,
+                  she:Hexachlorobenzene,
+                  she:Phenol,
+                  she:CresolsSum,
+                  she:AtrazineP,
+                  she:Pcb,
+                  she:MethylTButylEther,
+                  she:Trichloroethane111,
+                  she:BenzoAPyrene .
+
+she:CountryRegion a skos:Concept ;
+    skos:prefLabel "country/region" ;
+    skos:narrower she:BelgiumF,
+                  she:BelgiumB,
+                  she:BelgiumW,
+                  she:Finland,
+                  she:Italy,
+                  she:Poland,
+                  she:Spain .
+
+she:BelgiumF a skos:Concept ;
+    skos:prefLabel "belgium (f)" ;
+    skos:note "Flanders" .
+
+she:BelgiumB a skos:Concept ;
+    skos:prefLabel "belgium (b)" ;
+    skos:note "Brussels" .
+
+she:BelgiumW a skos:Concept ;
+    skos:prefLabel "belgium (w)" ;
+    skos:note "Wallonia" .
+
+she:Finland a skos:Concept ;
+    skos:prefLabel "finland" .
+
+she:Italy a skos:Concept ;
+    skos:prefLabel "italy" .
+
+she:Poland a skos:Concept ;
+    skos:prefLabel "poland" .
+
+she:Spain a skos:Concept ;
+    skos:prefLabel "spain" .
+
+she:Benzene a skos:Concept ;
+    skos:prefLabel "benzene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "0.6" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "2" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "76.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "10" ] .
+
+she:Ethylbenzene a skos:Concept ;
+    skos:prefLabel "ethylbenzene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "70" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "70" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "76" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "130" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:Toluene a skos:Concept ;
+    skos:prefLabel "toluene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "200" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "200" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "85" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "25" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "117.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:Xylene a skos:Concept ;
+    skos:prefLabel "xylene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "190" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "190" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "20" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "77.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:Naphthalene a skos:Concept ;
+    skos:prefLabel "naphthalene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "160" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "160" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "15" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "25" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "10" ] .
+
+she:Anthracene a skos:Concept ;
+    skos:prefLabel "anthracene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "4,690" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "4,690" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "15" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "25" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:BenzoAAnthracene a skos:Concept ;
+    skos:prefLabel "benzo(a)anthracene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "30" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "30" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "15" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "25" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "20" ] .
+
+she:BenzoGHIPerylene a skos:Concept ;
+    skos:prefLabel "benzo(g,h,i)perylene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "4,690" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "4,690" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "100" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "52.5" ] .
+
+she:PahsTotal a skos:Concept ;
+    skos:prefLabel "pahs (total)" ;
+    she:hasScreeningValue [ she:hasCountry she:Finland ; she:hasValue "30" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "100" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "110" ] .
+
+she:Dichloromethane a skos:Concept ;
+    skos:prefLabel "dichloromethane" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "3.5" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "3.5" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "60" ] .
+
+she:Trichloroethylene a skos:Concept ;
+    skos:prefLabel "trichloroethylene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "70" ] .
+
+she:Tetrachloromethane a skos:Concept ;
+    skos:prefLabel "tetrachloromethane" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "1" ] .
+
+she:Hexachlorobenzene a skos:Concept ;
+    skos:prefLabel "hexachlorobenzene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "55" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "55" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "2" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "1" ] .
+
+she:Phenol a skos:Concept ;
+    skos:prefLabel "phenol" ;
+    she:hasScreeningValue [ she:hasCountry she:Italy ; she:hasValue "60" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "51.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:CresolsSum a skos:Concept ;
+    skos:prefLabel "cresols (sum)" ;
+    she:hasScreeningValue [ she:hasCountry she:Italy ; she:hasValue "25" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "51.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "100" ] .
+
+she:AtrazineP a skos:Concept ;
+    skos:prefLabel "atrazine (p)" ;
+    she:hasScreeningValue [ she:hasCountry she:Finland ; she:hasValue "2" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "1" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "3" ] .
+
+she:Pcb a skos:Concept ;
+    skos:prefLabel "pcb" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumB ; she:hasValue "10.4" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "5" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "2.75" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "0.8" ] .
+
+she:MethylTButylEther a skos:Concept ;
+    skos:prefLabel "methyl t-butyl ether" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "140" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "140" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "50" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "250" ] .
+
+she:Trichloroethane111 a skos:Concept ;
+    skos:prefLabel "1,1,1-trichloroethane" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "300" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "300" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "50" ] .
+
+she:BenzoAPyrene a skos:Concept ;
+    skos:prefLabel "benzo(a)pyrene" ;
+    she:hasScreeningValue [ she:hasCountry she:BelgiumF ; she:hasValue "3" ] ,
+                          [ she:hasCountry she:BelgiumB ; she:hasValue "3" ] ,
+                          [ she:hasCountry she:BelgiumW ; she:hasValue "8.8" ] ,
+                          [ she:hasCountry she:Finland ; she:hasValue "15" ] ,
+                          [ she:hasCountry she:Italy ; she:hasValue "10" ] ,
+                          [ she:hasCountry she:Poland ; she:hasValue "22.5" ] ,
+                          [ she:hasCountry she:Spain ; she:hasValue "2" ] .

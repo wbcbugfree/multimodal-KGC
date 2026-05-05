@@ -1,0 +1,62 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilSealingAndLandTakeAssessment a skos:Concept ;
+    skos:prefLabel "indicators used to assess soil sealing and land take" ;
+    skos:narrower she:Indicator,
+                  she:SubIndicator .
+
+she:Indicator a skos:Concept ;
+    skos:prefLabel "indicator" ;
+    skos:narrower she:Imperviousness,
+                  she:LandTake,
+                  she:RatioOfSoilSealingToLandTake,
+                  she:LandRecycling .
+
+she:SubIndicator a skos:Concept ;
+    skos:prefLabel "sub-indicator" ;
+    skos:narrower she:CcCoRatio,
+                  she:SparseUrbanisationPrevalenceIndex,
+                  she:SprawlDensificationRatio,
+                  she:ShareOfUndevelopedLittleBuildingLand .
+
+she:Imperviousness a skos:Concept ;
+    skos:prefLabel "imperviousness" ;
+    she:hasSource "EEA Land and soil indicator set (LSI002), per area, per capita (stratified)" ;
+    skos:definition "European data set used in combination with other assessments, i.e. fragmentation, land recycling. Example stratification: urban centre, peri-urban, rural." .
+
+she:LandTake a skos:Concept ;
+    skos:prefLabel "land take" ;
+    she:hasSource "EEA Land and soil indicator set (LSI001), 8th Environment Action Programme headline indicator set, SDG target 15.3. Stratified, e.g. by major land cover category, urban protected areas, functional urban areas, urban floodplains." ;
+    skos:definition "Used to report land take under the European and global environment programmes." .
+
+she:RatioOfSoilSealingToLandTake a skos:Concept ;
+    skos:prefLabel "ratio of soil sealing to land take" ;
+    she:hasSource "Quality and quantity of sustainable land use and urban redevelopment" ;
+    skos:definition "1 = total loss of all soil ecosystem services (except soil as a carrier for construction); 0 = no soil function is affected." .
+
+she:LandRecycling a skos:Concept ;
+    skos:prefLabel "land recycling" ;
+    she:hasSource "Includes recultivation" .
+
+she:CcCoRatio a skos:Concept ;
+    skos:prefLabel "cc/co ratio" ;
+    she:hasSymbol "Cc/Co" ;
+    skos:note "Ratio between C in built-up land and organic C in soils (Cc/Co), according to Villa et al. (2018)." ;
+    she:hasSource "Tested in three Italian peri-urban areas, using multi-temporal SOC stock maps: SOC in built-up land and in natural soils (Cc/Co)." ;
+    skos:definition "0 = unsealed land; ≤0.5 low-intensity sealing; 0.5≤2.0 medium-intensity sealing; >2.0 high-intensity sealing." .
+
+she:SparseUrbanisationPrevalenceIndex a skos:Concept ;
+    skos:prefLabel "sparse urbanisation prevalence index" ;
+    skos:note "Ratio between C in built-up land and organic C in soils (Cc/Co), according to Villa et al. (2018)." ;
+    she:hasSource "Ratio of low-intensity sealed land to severely sealed land." ;
+    skos:definition "Degree of anthropogenic sealing." .
+
+she:SprawlDensificationRatio a skos:Concept ;
+    skos:prefLabel "sprawl/densification ratio" ;
+    she:hasSource "Ratio of new sparse urban areas to urban densification area (trend in soil sealing change)." ;
+    skos:definition "<1 tendency towards more compact urban forms; >1 tendency to more diffuse urban forms." .
+
+she:ShareOfUndevelopedLittleBuildingLand a skos:Concept ;
+    skos:prefLabel "share of undeveloped little building land" ;
+    skos:definition ">50% of cities ('population ≥50,000') have only a little (<10%) building land left while smaller towns have a larger buffer." .

@@ -1,0 +1,153 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:HeavyMetals a skos:Concept ;
+    skos:prefLabel "heavy metals" ;
+    she:hasRepresentativeChemical she:Cadmium, she:Lead ;
+    she:hasRelevantDiffuseSource she:Compost, she:Mineral, she:Fertiliser, she:Sludge, she:AerialDeposition ;
+    she:hasSourceControl she:MineralFertilisersEU, she:SludgeEU, she:CompostEU ;
+    she:hasCriticalLimitsInPlace "National risk-based limits, no EU-wide limits" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:FoodQuality ;
+        she:criticalLimit "Yes (As, Cd, Pb, Hg) EU/WHO standards" ;
+        she:transferModel "Soil specific for a limited number of metals (Cd, Pb)"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:FodderQuality ;
+        she:criticalLimit "Yes (Cd, PB), EU standards" ;
+        she:transferModel "For limited number of metals (Cd, Pb)"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystemAndAnimalHealth ;
+        she:criticalLimit "Yes (most metals, PNEC + TDI)" ;
+        she:transferModel "For most metals, national approaches"
+    ] .
+
+she:Micronutrients a skos:Concept ;
+    skos:prefLabel "micronutrients" ;
+    she:hasRepresentativeChemical she:Copper, she:Zinc ;
+    she:hasRelevantDiffuseSource she:AnimalManure, she:Compost, she:Sludge ;
+    she:hasSourceControl she:CompostEUNational, she:ManureUsuallyNotRegulated ;
+    she:hasCriticalLimitsInPlace "National, risk-based" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystem ;
+        she:criticalLimit "Yes, national" ;
+        she:transferModel "Yes (biotic ligand model based)"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:AquaticEcosystem ;
+        she:criticalLimit "Yes, EU-wide (WFD)" ;
+        she:transferModel "Yes (biotic ligand model based)"
+    ] .
+
+she:PersistentOrganicMicropollutants a skos:Concept ;
+    skos:prefLabel "persistent organic micropollutants" ;
+    she:hasRepresentativeChemical she:PAHs ;
+    she:hasRelevantDiffuseSource she:Sludge, she:AerialDeposition ;
+    she:hasSourceControl she:Sludge ;
+    she:hasCriticalLimitsInPlace "National, partly risk-based" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystem ;
+        she:criticalLimit "No" ;
+        she:transferModel "Few, poor quality in relation to predicted levels in endpoints"
+    ] .
+
+she:PlantProtectionChemicals a skos:Concept ;
+    skos:altLabel "pesticides" ;
+    skos:prefLabel "plant protection chemicals" ;
+    she:hasRelevantDiffuseSource she:AerialDepositionSpraying ;
+    she:hasSourceControl she:NoManagementControl ;
+    she:hasCriticalLimitsInPlace "National, risk-based" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:AquaticEcosystem ;
+        she:criticalLimit "Yes" ;
+        she:transferModel "Yes"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystem ;
+        she:criticalLimit "Yes" ;
+        she:transferModel "Yes"
+    ] .
+
+she:PersistentEmergingPollutants a skos:Concept ;
+    skos:prefLabel "persistent emerging pollutants" ;
+    skos:narrower she:MedicinalProducts, she:PFAS .
+
+she:MedicinalProducts a skos:Concept ;
+    skos:prefLabel "medicinal products" ;
+    she:hasRelevantDiffuseSource she:AnimalManure, she:Sludge ;
+    she:hasSourceControl she:NoManagementControl ;
+    she:hasCriticalLimitsInPlace "No soil criteria" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystem ;
+        she:criticalLimit "No?" ;
+        she:transferModel "Few, in development"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:AquaticEcosystem ;
+        she:criticalLimit "Yes (Water quality)" ;
+        she:transferModel "Few, in development"
+    ] .
+
+she:PFAS a skos:Concept ;
+    skos:prefLabel "pfas" ;
+    she:hasRelevantDiffuseSource she:Sludge, she:WaterFireFighting ;
+    she:hasSourceControl "Not yet in place" ;
+    she:hasCriticalLimitsInPlace "No risk-based soil criteria; few countries are developing background values" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:FoodQuality ;
+        she:criticalLimit "No (TDI has been derived by EFSA)" ;
+        she:transferModel "Few, based on initial experimental studies"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:DrinkingWaterQuality ;
+        she:criticalLimit "Yes (drinking water)" ;
+        she:transferModel "Limited, based on documented cases, large discrepancy with laboratory tests"
+    ] .
+
+she:OtherSubstances a skos:Concept ;
+    skos:prefLabel "other" ;
+    she:hasRepresentativeChemical she:MicroPlastics ;
+    she:hasRelevantDiffuseSource she:Compost, she:Sludge ;
+    she:hasSourceControl "Compost (limited to particles >1-2 mm)" ;
+    she:hasCriticalLimitsInPlace "No soil criteria" ;
+    she:assessedAgainst [
+        she:keyEndpoint she:SoilEcosystem ;
+        she:criticalLimit "No" ;
+        she:transferModel "No experimental case studies only"
+    ] ;
+    she:assessedAgainst [
+        she:keyEndpoint she:FoodQuality ;
+        she:criticalLimit "No" ;
+        she:transferModel "No experimental case studies only"
+    ] .
+
+she:Cadmium a skos:Concept ; skos:prefLabel "cadmium" .
+she:Lead a skos:Concept ; skos:prefLabel "lead" .
+she:Copper a skos:Concept ; skos:prefLabel "copper" .
+she:Zinc a skos:Concept ; skos:prefLabel "zinc" .
+she:PAHs a skos:Concept ; skos:prefLabel "pah's" .
+she:MicroPlastics a skos:Concept ; skos:prefLabel "micro-plastics" .
+
+she:FoodQuality a skos:Concept ; skos:prefLabel "food/quality (crops/animal products)" .
+she:FodderQuality a skos:Concept ; skos:prefLabel "fodder quality" .
+she:SoilEcosystemAndAnimalHealth a skos:Concept ; skos:prefLabel "soil ecosystem and animal health" .
+she:SoilEcosystem a skos:Concept ; skos:prefLabel "soil ecosystem" .
+she:AquaticEcosystem a skos:Concept ; skos:prefLabel "aquatic ecosystem" .
+she:DrinkingWaterQuality a skos:Concept ; skos:prefLabel "drinking water quality" .
+
+she:EFSA a skos:Concept ;
+    skos:prefLabel "european food safety authority" ;
+    she:hasAbbreviation "EFSA" .
+
+she:PNEC a skos:Concept ;
+    skos:prefLabel "predicted no-effect concentration" ;
+    she:hasAbbreviation "PNEC" .
+
+she:TDI a skos:Concept ;
+    skos:prefLabel "tolerable daily intake" ;
+    she:hasAbbreviation "TDI" .
+
+she:WFD a skos:Concept ;
+    skos:prefLabel "water framework directive" ;
+    she:hasAbbreviation "WFD" .

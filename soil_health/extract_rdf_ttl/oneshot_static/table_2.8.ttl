@@ -1,49 +1,76 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:GuidelineRangesForSOCContent a skos:Concept ;
+she:SoilOrganicCarbonGuidelineTable a skos:Concept ;
+    skos:prefLabel "guideline ranges for soc content of sandy and loamy soils" ;
     skos:definition "Guideline ranges for SOC content of sandy and loamy soils without groundwater influence (% SOC in plough layer) depending on fine silt (<6.3µm) and clay content (Pipette method)" ;
-    skos:narrower she:SOCContentInLoamySoils,
-        she:SOCContentInSandySoils ;
-    skos:prefLabel "guideline ranges for soc content" ;
-    she:appliesToLayer she:PloughLayer ;
-    she:excludesInfluenceOf she:GroundwaterInfluence ;
-    she:isDependentOn she:ClayAndFineSiltContent ;
-    she:usesMethod she:PipetteMethod .
+    skos:note "Compiled from Körschens et al. (1998)." ;
+    skos:narrower she:ClayPlusFineSilt,
+                  she:SOCInSandySoils,
+                  she:SOCInLoamySoils .
 
-she:ClayAndFineSiltContent a skos:Concept ;
-    skos:prefLabel "clay + fine silt (%)" .
-
-she:GroundwaterInfluence a skos:Concept ;
-    skos:prefLabel "groundwater influence" .
-
-she:LoamySoils a skos:Concept ;
-    skos:prefLabel "loamy soils" .
-
-she:PipetteMethod a skos:Concept ;
-    skos:prefLabel "pipette method" .
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" ;
+    she:measuredIn she:PloughLayer ;
+    she:measuredBy she:PipetteMethod .
 
 she:PloughLayer a skos:Concept ;
     skos:prefLabel "plough layer" .
 
-she:SOCContentInLoamySoils a skos:Concept ;
-    skos:prefLabel "soc in loamy soils (%)" ;
-    she:hasLowerLimit she:LowerValueConcept ;
-    she:hasUpperLimit she:UpperValueConcept ;
-    she:isCharacteristicOf she:LoamySoils .
+she:PipetteMethod a skos:Concept ;
+    skos:prefLabel "pipette method" .
 
-she:SOCContentInSandySoils a skos:Concept ;
+she:ClayPlusFineSilt a skos:Concept ;
+    skos:prefLabel "clay + fine silt (%)" ;
+    skos:note "Fine silt is defined as <6.3µm" .
+
+she:SOCInSandySoils a skos:Concept ;
     skos:prefLabel "soc in sandy soils (%)" ;
-    she:hasLowerLimit she:LowerValueConcept ;
-    she:hasUpperLimit she:UpperValueConcept ;
-    she:isCharacteristicOf she:SandySoils .
+    skos:narrower she:UpperValue, she:LowerValue .
 
-she:SandySoils a skos:Concept ;
-    skos:prefLabel "sandy soils" .
+she:SOCInLoamySoils a skos:Concept ;
+    skos:prefLabel "soc in loamy soils (%)" ;
+    skos:narrower she:UpperValue, she:LowerValue .
 
-she:LowerValueConcept a skos:Concept ;
-    skos:prefLabel "lower value" .
-
-she:UpperValueConcept a skos:Concept ;
+she:UpperValue a skos:Concept ;
     skos:prefLabel "upper value" .
 
+she:LowerValue a skos:Concept ;
+    skos:prefLabel "lower value" .
+
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "4" ; she:sandyUpperValue "0.9" ; she:sandyLowerValue "0.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "5" ; she:sandyUpperValue "0.9" ; she:sandyLowerValue "0.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "6" ; she:sandyUpperValue "0.9" ; she:sandyLowerValue "0.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "7" ; she:sandyUpperValue "0.9" ; she:sandyLowerValue "0.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "8" ; she:sandyUpperValue "0.9" ; she:sandyLowerValue "0.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "9" ; she:sandyUpperValue "1.0" ; she:sandyLowerValue "0.7" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "10" ; she:sandyUpperValue "1.0" ; she:sandyLowerValue "0.7" ; she:loamyUpperValue "1.2" ; she:loamyLowerValue "0.8" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "11" ; she:sandyUpperValue "1.0" ; she:sandyLowerValue "0.8" ; she:loamyUpperValue "1.2" ; she:loamyLowerValue "0.8" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "12" ; she:sandyUpperValue "1.1" ; she:sandyLowerValue "0.8" ; she:loamyUpperValue "1.3" ; she:loamyLowerValue "0.8" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "13" ; she:sandyUpperValue "1.1" ; she:sandyLowerValue "0.8" ; she:loamyUpperValue "1.3" ; she:loamyLowerValue "0.9" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "14" ; she:sandyUpperValue "1.2" ; she:sandyLowerValue "0.9" ; she:loamyUpperValue "1.3" ; she:loamyLowerValue "0.9" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "15" ; she:sandyUpperValue "1.2" ; she:sandyLowerValue "0.9" ; she:loamyUpperValue "1.4" ; she:loamyLowerValue "1,0" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "16" ; she:sandyUpperValue "1.2" ; she:sandyLowerValue "0.9" ; she:loamyUpperValue "1.5" ; she:loamyLowerValue "1.0" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "17" ; she:sandyUpperValue "1.3" ; she:sandyLowerValue "1.0" ; she:loamyUpperValue "1.5" ; she:loamyLowerValue "1.0" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "18" ; she:sandyUpperValue "1.3" ; she:sandyLowerValue "1.0" ; she:loamyUpperValue "1.6" ; she:loamyLowerValue "1.1" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "19" ; she:sandyUpperValue "1.3" ; she:sandyLowerValue "1.0" ; she:loamyUpperValue "1.6" ; she:loamyLowerValue "1.2" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "20" ; she:sandyUpperValue "1.4" ; she:sandyLowerValue "1.1" ; she:loamyUpperValue "1.6" ; she:loamyLowerValue "1.2" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "21" ; she:sandyUpperValue "1.5" ; she:sandyLowerValue "1.2" ; she:loamyUpperValue "1.7" ; she:loamyLowerValue "1.2" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "22" ; she:sandyUpperValue "1.5" ; she:sandyLowerValue "1.2" ; she:loamyUpperValue "1.7" ; she:loamyLowerValue "1.3" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "23" ; she:sandyUpperValue "1.5" ; she:sandyLowerValue "1.2" ; she:loamyUpperValue "1.8" ; she:loamyLowerValue "1.3" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "24" ; she:sandyUpperValue "1.6" ; she:sandyLowerValue "1.3" ; she:loamyUpperValue "1.9" ; she:loamyLowerValue "1.4" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "25" ; she:sandyUpperValue "1.6" ; she:sandyLowerValue "1.3" ; she:loamyUpperValue "1.9" ; she:loamyLowerValue "1.5" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "26" ; she:loamyUpperValue "2.0" ; she:loamyLowerValue "1.5" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "27" ; she:loamyUpperValue "2.0" ; she:loamyLowerValue "1.5" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "28" ; she:loamyUpperValue "2.0" ; she:loamyLowerValue "1.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "29" ; she:loamyUpperValue "2.1" ; she:loamyLowerValue "1.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "30" ; she:loamyUpperValue "2.1" ; she:loamyLowerValue "1.6" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "31" ; she:loamyUpperValue "2.2" ; she:loamyLowerValue "1.7" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "32" ; she:loamyUpperValue "2.3" ; she:loamyLowerValue "1.7" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "33" ; she:loamyUpperValue "2.3" ; she:loamyLowerValue "1.8" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "34" ; she:loamyUpperValue "2.4" ; she:loamyLowerValue "1.9" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "35" ; she:loamyUpperValue "2.4" ; she:loamyLowerValue "1.9" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "36" ; she:loamyUpperValue "2.4" ; she:loamyLowerValue "1.9" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "37" ; she:loamyUpperValue "2.5" ; she:loamyLowerValue "2.0" .
+[] a she:SOCGuidelineEntry ; she:clayPlusFineSiltPercentage "38" ; she:loamyUpperValue "2.6" ; she:loamyLowerValue "2.0" .

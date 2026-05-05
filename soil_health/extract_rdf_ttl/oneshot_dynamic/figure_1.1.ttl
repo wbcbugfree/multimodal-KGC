@@ -1,0 +1,141 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:StatusAndTrends a skos:Concept ;
+    skos:prefLabel "status and trends" ;
+    skos:narrower she:ObservableSoilProperties,
+                  she:DerivedSoilProperties,
+                  she:PhysicalProperties,
+                  she:ChemicalProperties,
+                  she:BiologicalProperties .
+
+she:DriversAndPressures a skos:Concept ;
+    skos:prefLabel "drivers and pressures" ;
+    skos:narrower she:ExternalEnvironmentalFactors,
+                  she:NonSoilIndicators .
+
+she:ObservableSoilProperties a skos:Concept ;
+    skos:prefLabel "observable soil properties" ;
+    skos:note "measurements" ;
+    skos:narrower she:SOC, she:Nitrogen, she:Phosphorus,
+                  she:TexturalClasses, she:StructurePH,
+                  she:Depth, she:StoneContent, she:Mineralogy,
+                  she:BulkDensity, she:WaterContent,
+                  she:SoilTemperature, she:SoilBiota,
+                  she:CationAndAnionContent ;
+    she:affects she:SoilQuality .
+
+she:SOC a skos:Concept ;
+    skos:prefLabel "soc" ;
+    she:hasAbbreviation "SOC" .
+
+she:Nitrogen a skos:Concept ;
+    skos:prefLabel "nitrogen" ;
+    she:hasSymbol "N" .
+
+she:Phosphorus a skos:Concept ;
+    skos:prefLabel "phosphorus" ;
+    she:hasSymbol "P" .
+
+she:SoilBiota a skos:Concept ;
+    skos:prefLabel "soil biota" ;
+    skos:note "micro, meso, macro" .
+
+she:CationAndAnionContent a skos:Concept ;
+    skos:prefLabel "cation and anion content" ;
+    skos:note "contaminants, nutrients, acidifiers, salts" .
+
+she:DerivedSoilProperties a skos:Concept ;
+    skos:prefLabel "derived soil properties" ;
+    skos:note "modeling" ;
+    skos:narrower she:Porosity, she:AggregateStability,
+                  she:RootingDepth, she:CationExchangeCapacity,
+                  she:ElectricConductivity, she:HydraulicConductivity,
+                  she:WaterRunoffInfiltration, she:Erodibility,
+                  she:AdsorptionAndCationExchangeCapacity ;
+    she:affects she:SoilQuality .
+
+she:PhysicalProperties a skos:Concept ; skos:prefLabel "physical properties" .
+she:ChemicalProperties a skos:Concept ; skos:prefLabel "chemical properties" .
+she:BiologicalProperties a skos:Concept ; skos:prefLabel "biological properties" .
+
+she:SoilQuality a skos:Concept ;
+    skos:prefLabel "soil quality" ;
+    she:setsConditionFor she:SoilThreatIndicators,
+                         she:SoilFunctionalIndicators .
+
+she:SoilThreatIndicators a skos:Concept ;
+    skos:prefLabel "soil threat indicators" ;
+    skos:narrower she:SOCLoss, she:SoilNutrientLoss,
+                  she:SoilAcidification, she:SoilPollution,
+                  she:SoilBiodiversityLoss, she:SoilErosion,
+                  she:SoilCompaction, she:Salinisation,
+                  she:SoilSealing ;
+    she:effectOnSoilFunctions she:SoilFunctionalIndicators ;
+    she:leadsTo she:Thresholds .
+
+she:SoilNutrientLoss a skos:Concept ;
+    skos:prefLabel "soil nutrient loss" ;
+    skos:note "N and P" .
+
+she:Salinisation a skos:Concept ;
+    skos:prefLabel "salinisation" ;
+    skos:note "salinisation is not covered in this report" .
+
+she:SoilFunctionalIndicators a skos:Concept ;
+    skos:prefLabel "soil functional indicators" ;
+    skos:narrower she:BiomassProductivity,
+                  she:WaterStorageCapacity,
+                  she:SoilMoistureDeficit,
+                  she:GroundwaterReproduction,
+                  she:CarbonStorageCapacity,
+                  she:NutrientMobilisationAndBufferingCapacity,
+                  she:HabitatProvisionCapacity ;
+    she:conditioningTheExtentOfSoilThreats she:SoilThreatIndicators ;
+    she:leadsTo she:Thresholds .
+
+she:Thresholds a skos:Concept ;
+    skos:prefLabel "thresholds" ;
+    skos:altLabel "critical levels" ;
+    she:leadsTo she:SoilHealth .
+
+she:SoilHealth a skos:Concept ;
+    skos:prefLabel "soil health" ;
+    skos:definition "level to which soil functions are fulfilled" ;
+    she:leadsTo she:Impact .
+
+she:NonSoilIndicators a skos:Concept ;
+    skos:prefLabel "non-soil indicators" ;
+    she:affects she:SoilFunctions .
+
+she:ExternalEnvironmentalFactors a skos:Concept ;
+    skos:prefLabel "external (environmental) factors" ;
+    skos:note "climate, land use, inputs, emissions" .
+
+she:SoilFunctions a skos:Concept ;
+    skos:prefLabel "soil functions" ;
+    skos:narrower she:FoodProduction, she:WaterRetention,
+                  she:WaterPurificationAndRegulation,
+                  she:CarbonPoolAndClimateRegulations,
+                  she:NutrientDynamics, she:Habitat .
+
+she:EcosystemServices a skos:Concept ;
+    skos:prefLabel "ecosystem services" ;
+    skos:narrower she:Provisioning, she:Regulation, she:Supporting .
+
+she:Provisioning a skos:Concept ;
+    skos:prefLabel "provisioning" ;
+    skos:related she:FoodProduction, she:WaterRetention .
+
+she:Regulation a skos:Concept ;
+    skos:prefLabel "regulation" ;
+    skos:related she:WaterPurificationAndRegulation,
+                  she:CarbonPoolAndClimateRegulations .
+
+she:Supporting a skos:Concept ;
+    skos:prefLabel "supporting" ;
+    skos:related she:NutrientDynamics, she:Habitat .
+
+she:Impact a skos:Concept ;
+    skos:prefLabel "impact" ;
+    she:affects she:DriversAndPressures .

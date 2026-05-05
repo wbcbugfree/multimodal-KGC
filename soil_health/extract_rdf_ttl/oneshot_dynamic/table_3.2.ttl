@@ -1,0 +1,76 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:NRetentionLeachingRiskVsCNRatioInForestSoils a skos:Concept ;
+    skos:prefLabel "n retention and related n leaching risk versus c/n ratio in the organic layer of forest soils" ;
+    skos:narrower she:Indication,
+                  she:CNRatioInOrganicLayers .
+
+she:Indication a skos:Concept ;
+    skos:prefLabel "indication" ;
+    skos:narrower she:HighNRetentionLowNLeachingPotential,
+                  she:ModerateToHighNRetentionLowToModerateNLeachingPotential,
+                  she:LowToModerateNRetentionModerateToHighNLeachingPotential,
+                  she:LowNRetentionHighNLeachingPotential .
+
+she:CNRatioInOrganicLayers a skos:Concept ;
+    skos:prefLabel "c/n ratio in organic layers" ;
+    skos:related she:CNRatio,
+                 she:OrganicLayer .
+
+she:CNRatio a skos:Concept ;
+    skos:prefLabel "c/n ratio" ;
+    she:hasSymbol "C/N" .
+
+she:OrganicLayer a skos:Concept ;
+    skos:prefLabel "organic layer" ;
+    skos:related she:ForestSoils .
+
+she:ForestSoils a skos:Concept ;
+    skos:prefLabel "forest soils" .
+
+she:NRetention a skos:Concept ;
+    skos:prefLabel "n retention" .
+
+she:NLeachingPotential a skos:Concept ;
+    skos:prefLabel "n leaching potential" ;
+    skos:related she:NLeachingRisk .
+
+she:NLeachingRisk a skos:Concept ;
+    skos:prefLabel "n leaching risk" .
+
+she:HighNRetentionLowNLeachingPotential a skos:Concept ;
+    skos:prefLabel "high n retention and thus low n leaching potential" ;
+    she:hasCNRatioValue she:GreaterThan30 ;
+    skos:related she:NRetention,
+                 she:NLeachingPotential .
+
+she:ModerateToHighNRetentionLowToModerateNLeachingPotential a skos:Concept ;
+    skos:prefLabel "moderate to high n retention and thus low to moderate n leaching potential" ;
+    she:hasCNRatioValue she:From25To30 ;
+    skos:related she:NRetention,
+                 she:NLeachingPotential .
+
+she:LowToModerateNRetentionModerateToHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low to moderate n retention and thus moderate to high n leaching potential" ;
+    she:hasCNRatioValue she:From20To25 ;
+    skos:related she:NRetention,
+                 she:NLeachingPotential .
+
+she:LowNRetentionHighNLeachingPotential a skos:Concept ;
+    skos:prefLabel "low n retention and thus high n leaching potential" ;
+    she:hasCNRatioValue she:LessThan20 ;
+    skos:related she:NRetention,
+                 she:NLeachingPotential .
+
+she:GreaterThan30 a skos:Concept ;
+    skos:prefLabel ">30" .
+
+she:From25To30 a skos:Concept ;
+    skos:prefLabel "25-30" .
+
+she:From20To25 a skos:Concept ;
+    skos:prefLabel "20-25" .
+
+she:LessThan20 a skos:Concept ;
+    skos:prefLabel "<20" .

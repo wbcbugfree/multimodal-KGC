@@ -1,0 +1,31 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Figure3_2 a skos:Concept ;
+    skos:prefLabel "relationships between crop yield and p leaching risk and soil p fertility status" ;
+    skos:note "Source: Bai et al. (2013)." ;
+    skos:narrower she:CropYield,
+                  she:PLeachingRisk,
+                  she:SoilPFertilityStatus .
+
+she:CropYield a skos:Concept ;
+    skos:prefLabel "crop yield" ;
+    she:relatesTo she:SoilPFertilityStatus ;
+    she:hasCriticalLevel she:CriticalLevelForCropYield .
+
+she:PLeachingRisk a skos:Concept ;
+    skos:prefLabel "p leaching risk" ;
+    skos:altLabel "p leaching potential" ;
+    she:relatesTo she:SoilPFertilityStatus ;
+    she:hasCriticalLevel she:CriticalLevelForPLeachingPotential .
+
+she:SoilPFertilityStatus a skos:Concept ;
+    skos:prefLabel "soil p fertility status" .
+
+she:CriticalLevelForCropYield a skos:Concept ;
+    skos:prefLabel "critical level for crop yield" ;
+    she:isThresholdValueFor she:SoilPFertilityStatus .
+
+she:CriticalLevelForPLeachingPotential a skos:Concept ;
+    skos:prefLabel "critical level for p leaching potential" ;
+    she:isThresholdValueFor she:SoilPFertilityStatus .

@@ -1,0 +1,152 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilRelatedPolicyObjectivesAndTargets a skos:Concept ;
+    skos:prefLabel "soil-related policy objectives and targets at eu and global levels" ;
+    skos:narrower she:PolicyDocument,
+                  she:RelevantPolicyObjectivesOrTargets .
+
+she:PolicyDocument a skos:Concept ;
+    skos:prefLabel "policy document" ;
+    skos:narrower she:WaterFrameworkDirective,
+                  she:RoadmapForAResourceEfficientEurope,
+                  she:NationalEmissionCeilingsDirective,
+                  she:LulucfRegulation,
+                  she:CapRegulation1306_2013,
+                  she:EighthEnvironmentActionProgramme2030,
+                  she:BiodiversityStrategyTo2030,
+                  she:FarmToForkStrategy .
+
+she:RelevantPolicyObjectivesOrTargets a skos:Concept ;
+    skos:prefLabel "relevant policy objectives or targets" .
+
+she:WaterFrameworkDirective a skos:Concept ;
+    skos:prefLabel "water framework directive (2000/60/ec)" ;
+    she:hasAbbreviation "2000/60/EC" ;
+    skos:narrower she:RiverBasinManagementPlans,
+                  she:ReduceNitrogenInputs .
+
+she:RiverBasinManagementPlans a skos:Concept ;
+    skos:prefLabel "member states to produce river basin management plans, requiring the identification of point sources and their impacts" .
+
+she:ReduceNitrogenInputs a skos:Concept ;
+    skos:prefLabel "member states to establish programmes of measures and implement 'basic' measures, including adapted agricultural production schemes to reduce nitrogen inputs to agricultural soils and as a consequence connected water bodies" .
+
+she:RoadmapForAResourceEfficientEurope a skos:Concept ;
+    skos:prefLabel "roadmap for a resource efficient europe (ec, 2011)" ;
+    skos:narrower she:ReduceSoilErosion2050,
+                  she:IncreaseSoilOrganicMatter2011_2050,
+                  she:RemedialWorkContaminatedSites2020,
+                  she:NoNetLandTake2050 .
+
+she:ReduceSoilErosion2050 a skos:Concept ;
+    skos:prefLabel "soil erosion is reduced by 2050" .
+
+she:IncreaseSoilOrganicMatter2011_2050 a skos:Concept ;
+    skos:prefLabel "increase in soil organic matter between 2011 and 2050" .
+
+she:RemedialWorkContaminatedSites2020 a skos:Concept ;
+    skos:prefLabel "by 2020 remedial work on contaminated sites well under way" .
+
+she:NoNetLandTake2050 a skos:Concept ;
+    skos:prefLabel "achieve no net land take by 2050" .
+
+she:NationalEmissionCeilingsDirective a skos:Concept ;
+    skos:prefLabel "national emission ceilings directive ((eu) 2016/2284)" ;
+    she:hasAbbreviation "(EU) 2016/2284" ;
+    skos:note "Based on Seventh Environment Action Programme" ;
+    skos:narrower she:ReduceAirPollutionImpacts,
+                  she:ReduceEutrophicationArea,
+                  she:NationalEmissionReductionTargets,
+                  she:AssessAirPollutantImpacts .
+
+she:ReduceAirPollutionImpacts a skos:Concept ;
+    skos:prefLabel "air pollution and its impacts on ecosystems and biodiversity are further reduced with the long-term aim of not exceeding critical loads and levels" .
+
+she:ReduceEutrophicationArea a skos:Concept ;
+    skos:prefLabel "to reduce the ecosystem area subject to eutrophication by 35% by 2030, compared with 2005" .
+
+she:NationalEmissionReductionTargets a skos:Concept ;
+    skos:prefLabel "to achieve national emission reduction targets for anthropogenic emissions" .
+
+she:AssessAirPollutantImpacts a skos:Concept ;
+    skos:prefLabel "member states to assess the impacts of air pollutants to sensitive receiving environments (natural and semi-natural habitats and forest ecosystems)" .
+
+she:LulucfRegulation a skos:Concept ;
+    skos:prefLabel "lulucf regulation ((eu) 2018/841)" ;
+    she:hasAbbreviation "(EU) 2018/841" ;
+    skos:narrower she:LulucfEmissionReductionTarget,
+                  she:CompensateCo2EmissionsLandUse .
+
+she:LulucfEmissionReductionTarget a skos:Concept ;
+    skos:prefLabel "to ensure the contribution of the lulucf sector to the achievement of the eu's emission reduction target of at least 40% and to the long-term goal of the paris agreement in the period 2021-2030" .
+
+she:CompensateCo2EmissionsLandUse a skos:Concept ;
+    skos:prefLabel "member states have binding commitments to compensate co2 emissions from the land use sector; land management practices that increase soil organic carbon stocks are accountable compensation measures" .
+
+she:CapRegulation1306_2013 a skos:Concept ;
+    skos:prefLabel "regulation (eu) no 1306/2013 on the financing, management and monitoring of the cap 2021-2027" ;
+    she:hasAbbreviation "CAP" ;
+    skos:narrower she:CapBeneficialPractices,
+                  she:GaecsStandards .
+
+she:CapBeneficialPractices a skos:Concept ;
+    skos:prefLabel "cap post-2020 continues to promote practices beneficial to the climate and the environment; introduces eco-schemes for additional measures. impact indicators indicate the increase in soil carbon, reduction in soil erosion and nutrient (n) loss; a result indicator covers practices targeted to improve soils" .
+
+she:GaecsStandards a skos:Concept ;
+    skos:prefLabel "gaecs as conditional standards remain valid in the future cap, including gaecs in support of soil protection and quality: gaec 6 'tillage management'; gaec 7 'no bare soil'; gaec 8 'crop rotation'" ;
+    she:hasAbbreviation "GAECs" ;
+    skos:narrower she:Gaec6TillageManagement,
+                  she:Gaec7NoBareSoil,
+                  she:Gaec8CropRotation .
+
+she:Gaec6TillageManagement a skos:Concept ;
+    skos:prefLabel "gaec 6 'tillage management'" .
+
+she:Gaec7NoBareSoil a skos:Concept ;
+    skos:prefLabel "gaec 7 'no bare soil'" .
+
+she:Gaec8CropRotation a skos:Concept ;
+    skos:prefLabel "gaec 8 'crop rotation'" .
+
+she:EighthEnvironmentActionProgramme2030 a skos:Concept ;
+    skos:prefLabel "eighth environment action programme 2030 (ec, 2020b)" ;
+    skos:narrower she:ProtectBiodiversityNaturalCapital,
+                  she:UmbrellaProgrammeBiodiversityLoss .
+
+she:ProtectBiodiversityNaturalCapital a skos:Concept ;
+    skos:prefLabel "protecting, preserving and restoring biodiversity and enhancing natural capital, notably air, water, soil, and forest, freshwater, wetland and marine ecosystems" .
+
+she:UmbrellaProgrammeBiodiversityLoss a skos:Concept ;
+    skos:prefLabel "umbrella programme against biodiversity loss and ecosystem services degradation, climate change and its impacts, and unsustainable use of resources, pollution, and associated risks to human health" .
+
+she:BiodiversityStrategyTo2030 a skos:Concept ;
+    skos:prefLabel "biodiversity strategy to 2030 (ec, 2020e)" ;
+    skos:narrower she:ProtectEuLandArea,
+                  she:OrganicallyFarmedAgriculturalLand,
+                  she:HighDiversityLandscapeFeatures,
+                  she:ReduceChemicalPesticides .
+
+she:ProtectEuLandArea a skos:Concept ;
+    skos:prefLabel "legally protect a minimum of 30% of the eu's land area" .
+
+she:OrganicallyFarmedAgriculturalLand a skos:Concept ;
+    skos:prefLabel "at least 25% of the eu's agricultural land must be organically farmed by 2030" .
+
+she:HighDiversityLandscapeFeatures a skos:Concept ;
+    skos:prefLabel "at least 10% of the agricultural area is under high-diversity landscape features" .
+
+she:ReduceChemicalPesticides a skos:Concept ;
+    skos:prefLabel "the risk and use of chemical pesticides is reduced by 50%, and the use of more hazardous pesticides is reduced by 50%" .
+
+she:FarmToForkStrategy a skos:Concept ;
+    skos:prefLabel "farm to fork strategy (ec, 2020f)" ;
+    skos:narrower she:ReduceOverallPesticideUse,
+                  she:ReduceFertiliserUse,
+                  she:OrganicallyFarmedAgriculturalLand .
+
+she:ReduceOverallPesticideUse a skos:Concept ;
+    skos:prefLabel "to reduce the overall use and risk of chemical pesticides by 50% by 2030" .
+
+she:ReduceFertiliserUse a skos:Concept ;
+    skos:prefLabel "to reduce the use of fertilisers by 2030 by at least 20%" .

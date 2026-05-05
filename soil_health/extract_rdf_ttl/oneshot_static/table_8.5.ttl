@@ -2,54 +2,66 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:ModelsToPredictSubsoilCompaction a skos:Concept ;
-    skos:narrower she:FEMCoupledProcessModel,
-        she:PedotransferFunctions,
-        she:ScaleApproach,
-        she:Socomo,
-        she:SoilFlex,
-        she:Terranimo ;
-    skos:prefLabel "models to predict subsoil compaction" .
+    skos:prefLabel "models to predict subsoil compaction" ;
+    skos:narrower she:FemCoupledProcessModel,
+                  she:Socomo,
+                  she:SoilFlex,
+                  she:Terranimo,
+                  she:ScaleApproach,
+                  she:PedotransferFunctions .
 
-she:FEMCoupledProcessModel a skos:Concept ;
-    skos:definition "modelling of stress distribution based on mechanical properties and options to link the stresses with physical soil indicators" ;
+she:FemCoupledProcessModel a skos:Concept ;
     skos:prefLabel "fem (finite element method) coupled process model" ;
-    she:hasSource "Richards et al. (1997), Gräsle (1999), Richards and Peth (2009)" .
-
-she:PedotransferFunctions a skos:Concept ;
-    skos:narrower she:PedotransferFunctionsRegressionModels,
-        she:PedotransferFunctionsTopsoilShearStressPrediction,
-        she:PedotransferFunctionsWaterRetentionAndResistance ;
-    skos:prefLabel "pedotransfer functions" .
-
-she:PedotransferFunctionsRegressionModels a skos:Concept ;
-    skos:prefLabel "regression models used to quantify the interaction between general soil properties and the dependent variable, e.g. precompression stress, as well as the stress-induced change in physical properties and functions such as air capacity and hydraulic conductivity" ;
-    she:hasSource "Horn and Fleige (2003, 2009), Schroeder et al. (2022a, 2022b)" .
-
-she:PedotransferFunctionsTopsoilShearStressPrediction a skos:Concept ;
-    skos:prefLabel "prediction of the topsoil shear stress and stress distribution" ;
-    she:hasSource "Schjønning (2021), Schjønning et al. (2020)" .
-
-she:PedotransferFunctionsWaterRetentionAndResistance a skos:Concept ;
-    skos:prefLabel "pedotransfer functions of water retention curves and soil resistance to penetration" ;
-    she:hasSource "Imhoff et al. (2015)" .
-
-she:ScaleApproach a skos:Concept ;
-    skos:definition "combination of the field traffic model fitram and the spatially explicit soil compaction risk assessment model sascia" ;
-    skos:prefLabel "scale approach" ;
-    she:hasSource "Duttmann et al. (2022)" .
+    she:hasAbbreviation "FEM" ;
+    skos:definition "modelling of stress distribution based on mechanical properties and options to link the stresses with physical soil indicators" ;
+    she:hasSource "Richards et al. (1997)", "Gräsle (1999)", "Richards and Peth (2009)" .
 
 she:Socomo a skos:Concept ;
-    skos:definition "stress calculation and comparison with internal soil strength" ;
     skos:prefLabel "socomo" ;
+    skos:definition "stress calculation and comparison with internal soil strength" ;
     she:hasSource "Van der Akker (2004)" .
 
 she:SoilFlex a skos:Concept ;
-    skos:definition "analytical model to predict stress propagation in soils" ;
     skos:prefLabel "soil flex" ;
+    skos:definition "analytical model to predict stress propagation in soils" ;
     she:hasSource "Keller et al. (2007)" .
 
 she:Terranimo a skos:Concept ;
-    skos:definition "open-source tool for practitioners for site-specific data analysis of given soil properties and mechanical impacts" ;
     skos:prefLabel "terranimo" ;
-    she:hasSource "Stettler et al. (2014), www.soilcompaction.eu, www.terranimo.dk" .
+    skos:definition "open-source tool for practitioners for site-specific data analysis of given soil properties and mechanical impacts" ;
+    she:hasSource "Stettler et al. (2014)", "www.soilcompaction.eu", "www.terranimo.dk" .
 
+she:ScaleApproach a skos:Concept ;
+    skos:prefLabel "scale approach" ;
+    skos:definition "combination of the field traffic model FiTraM and the spatially explicit soil compaction risk assessment model SaSciA" ;
+    she:hasSource "Duttmann et al. (2022)" ;
+    skos:narrower she:FiTraM, she:SaSciA .
+
+she:FiTraM a skos:Concept ;
+    skos:prefLabel "field traffic model" ;
+    she:hasAbbreviation "FiTraM" .
+
+she:SaSciA a skos:Concept ;
+    skos:prefLabel "spatially explicit soil compaction risk assessment model" ;
+    she:hasAbbreviation "SaSciA" .
+
+she:PedotransferFunctions a skos:Concept ;
+    skos:prefLabel "pedotransfer functions" ;
+    skos:narrower she:PtfRegressionModels,
+                  she:PtfTopsoilShearStressPrediction,
+                  she:PtfWaterRetentionAndPenetration .
+
+she:PtfRegressionModels a skos:Concept ;
+    skos:prefLabel "regression models for soil properties" ;
+    skos:definition "regression models used to quantify the interaction between general soil properties and the dependent variable, e.g. precompression stress, as well as the stress-induced change in physical properties and functions such as air capacity and hydraulic conductivity" ;
+    she:hasSource "Horn and Fleige (2003, 2009)", "Schroeder et al. (2022a, 2022b)" .
+
+she:PtfTopsoilShearStressPrediction a skos:Concept ;
+    skos:prefLabel "prediction of the topsoil shear stress and stress distribution" ;
+    skos:definition "prediction of the topsoil shear stress and stress distribution" ;
+    she:hasSource "Schjønning (2021)", "Schjønning et al. (2020)" .
+
+she:PtfWaterRetentionAndPenetration a skos:Concept ;
+    skos:prefLabel "pedotransfer functions of water retention curves and soil resistance to penetration" ;
+    skos:definition "pedotransfer functions of water retention curves and soil resistance to penetration" ;
+    she:hasSource "Imhoff et al. (2015)" .

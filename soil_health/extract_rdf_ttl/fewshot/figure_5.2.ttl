@@ -1,84 +1,86 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:ConcentrationRisk a skos:Concept ;
-    skos:definition "Represents a continuum of increasing concentration or risk, evaluated against screening values to determine risk levels and implications." ;
-    skos:prefLabel "concentration/risk" .
-
-she:Implications a skos:Concept ;
-    skos:narrower she:MinorRestrictionsForSensitiveLandUses,
-        she:NoRestrictionsInLandUse,
-        she:ProblemsForAnyFurtherLandUse,
-        she:RestrictionsForSensitiveLandUses ;
-    skos:prefLabel "implications" .
-
 she:NaturalBackground a skos:Concept ;
-    skos:narrower she:BackgroundValue ;
-    skos:prefLabel "natural background" .
-
-she:RiskLevels a skos:Concept ;
-    skos:narrower she:AcceptableRisk,
-        she:IntermediateRisk,
-        she:UnacceptableRisk ;
-    skos:prefLabel "risks levels" .
-
-she:SchematicRepresentationOfThresholds a skos:Concept ;
-    skos:definition "A diagram illustrating different thresholds, risk levels, and their implications based on concentration or risk, adopted from the Heracles network." ;
-    skos:prefLabel "schematic representation of thresholds" .
+    skos:prefLabel "natural background" ;
+    skos:narrower she:BackgroundValue .
 
 she:ScreeningValues a skos:Concept ;
+    skos:prefLabel "screening values" ;
     skos:narrower she:AcceptableValue,
         she:ActionValue,
-        she:WarningValue ;
-    skos:prefLabel "screening values" .
+        she:WarningValue .
 
-she:AcceptableRisk a skos:Concept ;
-    skos:prefLabel "acceptable risk" ;
-    she:hasAssociatedImplication she:NoRestrictionsInLandUse .
+she:RisksLevels a skos:Concept ;
+    skos:prefLabel "risks levels" ;
+    skos:narrower she:AcceptableRisk,
+        she:IntermediateRisk,
+        she:UnacceptableRisk .
 
-she:AcceptableValue a skos:Concept ;
-    skos:prefLabel "acceptable value" ;
-    she:definesLowerBoundaryForImplication she:MinorRestrictionsForSensitiveLandUses ;
-    she:definesLowerBoundaryForRisk she:IntermediateRisk .
-
-she:ActionValue a skos:Concept ;
-    skos:prefLabel "action value" ;
-    she:definesLowerBoundaryForImplication she:ProblemsForAnyFurtherLandUse ;
-    she:definesLowerBoundaryForRisk she:UnacceptableRisk .
+she:Implications a skos:Concept ;
+    skos:prefLabel "implications" ;
+    skos:narrower she:MinorRestrictionsForSensitiveLandUses,
+        she:NoRestrictionsInLandUse,
+        she:PossiblyFurtherInvestigations,
+        she:ProblemsForAnyFurtherLandUse,
+        she:RestrictionsForSensitiveLandUses,
+        she:SiteSpecificRiskAssessment,
+        she:SoilQualityManagement .
 
 she:BackgroundValue a skos:Concept ;
     skos:prefLabel "background value" .
 
-she:PossiblyFurtherInvestigations a skos:Concept ;
-    skos:prefLabel "possibly further investigations" .
-
-she:SiteSpecificRiskAssessmentOrSoilQualityManagement a skos:Concept ;
-    skos:prefLabel "site specific risk assessment or soil quality management (e.g., remediation)" .
+she:AcceptableValue a skos:Concept ;
+    skos:prefLabel "acceptable value" ;
+    she:definesBoundaryBetween she:AcceptableRisk,
+        she:IntermediateRisk .
 
 she:WarningValue a skos:Concept ;
     skos:prefLabel "warning value" ;
-    she:definesLowerBoundaryForImplication she:RestrictionsForSensitiveLandUses .
+    she:subdivides she:IntermediateRisk .
+
+she:ActionValue a skos:Concept ;
+    skos:prefLabel "action value" ;
+    she:definesBoundaryBetween she:IntermediateRisk,
+        she:UnacceptableRisk .
+
+she:AcceptableRisk a skos:Concept ;
+    skos:prefLabel "acceptable risk" ;
+    she:hasImplication she:NoRestrictionsInLandUse .
 
 she:IntermediateRisk a skos:Concept ;
     skos:prefLabel "intermediate risk" ;
-    she:hasAssociatedImplication she:MinorRestrictionsForSensitiveLandUses,
+    she:hasImplication she:MinorRestrictionsForSensitiveLandUses,
+        she:PossiblyFurtherInvestigations,
         she:RestrictionsForSensitiveLandUses .
+
+she:UnacceptableRisk a skos:Concept ;
+    skos:prefLabel "unacceptable risk" ;
+    she:hasImplication she:ProblemsForAnyFurtherLandUse,
+        she:SiteSpecificRiskAssessment,
+        she:SoilQualityManagement .
 
 she:NoRestrictionsInLandUse a skos:Concept ;
     skos:prefLabel "no restrictions in land use" .
 
-she:UnacceptableRisk a skos:Concept ;
-    skos:prefLabel "unacceptable risk" ;
-    she:hasAssociatedImplication she:ProblemsForAnyFurtherLandUse .
-
 she:MinorRestrictionsForSensitiveLandUses a skos:Concept ;
     skos:prefLabel "minor restrictions for sensitive land uses" .
 
-she:ProblemsForAnyFurtherLandUse a skos:Concept ;
-    skos:prefLabel "problems for any further land use" ;
-    she:requiresAction she:SiteSpecificRiskAssessmentOrSoilQualityManagement .
-
 she:RestrictionsForSensitiveLandUses a skos:Concept ;
-    skos:prefLabel "restrictions for sensitive land uses" ;
-    she:requiresAction she:PossiblyFurtherInvestigations .
+    skos:prefLabel "restrictions for sensitive land uses" .
 
+she:PossiblyFurtherInvestigations a skos:Concept ;
+    skos:prefLabel "possibly further investigations" .
+
+she:ProblemsForAnyFurtherLandUse a skos:Concept ;
+    skos:prefLabel "problems for any further land use" .
+
+she:SiteSpecificRiskAssessment a skos:Concept ;
+    skos:prefLabel "site specific risk assessment" .
+
+she:SoilQualityManagement a skos:Concept ;
+    skos:note "e.g., remediation" ;
+    skos:prefLabel "soil quality management" .
+
+she:ConcentrationRisk a skos:Concept ;
+    skos:prefLabel "concentration/risk" .

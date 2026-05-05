@@ -2,35 +2,32 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:SOMFractionsPoolsInSoils a skos:Concept ;
-    skos:narrower she:InertOrganicMatter,
-        she:MAOM,
-        she:MicrobialBiomassC,
-        she:POM ;
-    skos:prefLabel "som fractions/pools in soils" .
+    skos:prefLabel "som fractions/pools in soils" ;
+    skos:narrower she:MicrobialBiomassC,
+                  she:POM,
+                  she:MAOM,
+                  she:InertOrganicMatter .
 
-she:BlackCarbon a skos:Concept ;
-    skos:prefLabel "black carbon" .
+she:MicrobialBiomassC a skos:Concept ;
+    skos:prefLabel "microbial biomass c" ;
+    skos:note "bacteria, fungi" ;
+    she:approximateShareOfTotalSOM "1-5%" ;
+    she:hasCharacteristic "Labile", "active" .
+
+she:POM a skos:Concept ;
+    skos:prefLabel "pom" ;
+    skos:definition "It can be further subdivided into freshly added plant and animal residues, usually coarse POM with a low degree of decomposition (e.g. >250μm), and partially decomposed residues, frequently finer sized" ;
+    she:approximateShareOfTotalSOM "5-25%" ;
+    she:hasCharacteristic "Labile", "active" .
+
+she:MAOM a skos:Concept ;
+    skos:prefLabel "maom" ;
+    skos:definition "largely consisting of microbial necromass and other adsorbed organic soil constituents" ;
+    she:approximateShareOfTotalSOM "50-75%" ;
+    she:hasCharacteristic "Stable", "activity level depends on degree of organo-mineral complexation" .
 
 she:InertOrganicMatter a skos:Concept ;
     skos:prefLabel "inert organic matter" ;
-    she:alsoKnownAs she:BlackCarbon ;
-    she:hasApproximateShareOfTotalSOM "5-20% or more" ;
-    she:hasCharacteristics "constant, passive" .
-
-she:MAOM a skos:Concept ;
-    skos:definition "largely consisting of microbial necromass and other adsorbed organic soil constituents" ;
-    skos:prefLabel "maom" ;
-    she:hasApproximateShareOfTotalSOM "50-75%" ;
-    she:hasCharacteristics "stable, activity level depends on degree of organo-mineral complexation" .
-
-she:MicrobialBiomassC a skos:Concept ;
-    skos:prefLabel "microbial biomass c (bacteria, fungi)" ;
-    she:hasApproximateShareOfTotalSOM "1-5%" ;
-    she:hasCharacteristics "labile, active" .
-
-she:POM a skos:Concept ;
-    skos:definition "it can be further subdivided into freshly added plant and animal residues, usually coarse pom with a low degree of decomposition (e.g. >250µm), and partially decomposed residues, frequently finer sized" ;
-    skos:prefLabel "pom" ;
-    she:hasApproximateShareOfTotalSOM "5-25%" ;
-    she:hasCharacteristics "labile, active" .
-
+    skos:altLabel "black carbon" ;
+    she:approximateShareOfTotalSOM "5-20% or more" ;
+    she:hasCharacteristic "Constant", "passive" .

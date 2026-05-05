@@ -1,80 +1,79 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Table6_3IndicatorsProposedForSoilBiodiversityMonitoring a skos:Concept ;
-    skos:narrower she:BulkDensity,
-        she:CNRatio,
+she:IndicatorsProposedForSoilBiodiversityMonitoring a skos:Concept ;
+    skos:prefLabel "indicators proposed for soil biodiversity monitoring" ;
+    skos:narrower she:DiversityOfEarthworms,
         she:DiversityOfCollembolans,
-        she:DiversityOfEarthworms,
-        she:DiversityOfNematodes,
-        she:GroundwaterTableDepth,
         she:MicrobialBiomass,
-        she:NPRatio,
-        she:OrganicCarbonContent,
+        she:DiversityOfNematodes,
+        she:SoilTexture,
+        she:BulkDensity,
+        she:GroundwaterTableDepth,
         she:PH,
+        she:CNRatio,
+        she:NPRatio,
         she:SoilOrganicMatter,
-        she:SoilTexture ;
-    skos:prefLabel "table 6.3 indicators proposed for soil biodiversity monitoring" .
+        she:OrganicCarbonContent .
 
-she:BulkDensity a skos:Concept ;
-    skos:prefLabel "bulk density" ;
-    she:proposedBy she:CreamerEtAl2019 .
+she:CreamerEtAl2019 a skos:Concept ;
+    skos:prefLabel "creamer et al. (2019)" .
 
-she:CNRatio a skos:Concept ;
-    skos:prefLabel "c:n ratio" ;
-    she:proposedBy she:CreamerEtAl2019 .
+she:HuberEtAl2008 a skos:Concept ;
+    skos:prefLabel "huber et al. (2008)" .
+
+she:Breure2004 a skos:Concept ;
+    skos:prefLabel "breure (2004)" .
+
+she:DiversityOfEarthworms a skos:Concept ;
+    skos:prefLabel "diversity of earthworms" ;
+    she:proposedBy she:CreamerEtAl2019,
+        she:HuberEtAl2008,
+        she:Breure2004 .
 
 she:DiversityOfCollembolans a skos:Concept ;
     skos:prefLabel "diversity of collembolans" ;
     she:proposedBy she:HuberEtAl2008 .
 
-she:DiversityOfEarthworms a skos:Concept ;
-    skos:prefLabel "diversity of earthworms" ;
-    she:proposedBy she:Breure2004,
-        she:CreamerEtAl2019,
-        she:HuberEtAl2008 .
+she:MicrobialBiomass a skos:Concept ;
+    skos:prefLabel "microbial biomass" ;
+    she:proposedBy she:CreamerEtAl2019,
+        she:HuberEtAl2008,
+        she:Breure2004 .
 
 she:DiversityOfNematodes a skos:Concept ;
     skos:prefLabel "diversity of nematodes" ;
-    she:proposedBy she:Breure2004,
-        she:CreamerEtAl2019 .
+    she:proposedBy she:CreamerEtAl2019,
+        she:Breure2004 .
+
+she:SoilTexture a skos:Concept ;
+    skos:prefLabel "soil texture" ;
+    she:proposedBy she:CreamerEtAl2019 .
+
+she:BulkDensity a skos:Concept ;
+    skos:prefLabel "bulk density" ;
+    she:proposedBy she:CreamerEtAl2019 .
 
 she:GroundwaterTableDepth a skos:Concept ;
     skos:prefLabel "groundwater table depth" ;
-    she:proposedBy she:CreamerEtAl2019 .
-
-she:MicrobialBiomass a skos:Concept ;
-    skos:prefLabel "microbial biomass" ;
-    she:proposedBy she:Breure2004,
-        she:CreamerEtAl2019,
-        she:HuberEtAl2008 .
-
-she:NPRatio a skos:Concept ;
-    skos:prefLabel "n:p ratio" ;
-    she:proposedBy she:CreamerEtAl2019 .
-
-she:OrganicCarbonContent a skos:Concept ;
-    skos:prefLabel "organic carbon content" ;
     she:proposedBy she:CreamerEtAl2019 .
 
 she:PH a skos:Concept ;
     skos:prefLabel "ph" ;
     she:proposedBy she:CreamerEtAl2019 .
 
+she:CNRatio a skos:Concept ;
+    skos:prefLabel "c:n ratio" ;
+    she:proposedBy she:CreamerEtAl2019 .
+
+she:NPRatio a skos:Concept ;
+    skos:prefLabel "n:p ratio" ;
+    she:proposedBy she:CreamerEtAl2019 .
+
 she:SoilOrganicMatter a skos:Concept ;
     skos:prefLabel "soil organic matter" ;
     she:proposedBy she:CreamerEtAl2019 .
 
-she:SoilTexture a skos:Concept ;
-    skos:prefLabel "soil texture" ;
+she:OrganicCarbonContent a skos:Concept ;
+    skos:prefLabel "organic carbon content" ;
     she:proposedBy she:CreamerEtAl2019 .
-
-she:Breure2004 a skos:Concept ;
-    skos:prefLabel "breure (2004)" .
-
-she:HuberEtAl2008 a skos:Concept ;
-    skos:prefLabel "huber et al. (2008)" .
-
-she:CreamerEtAl2019 a skos:Concept ;
-    skos:prefLabel "creamer et al. (2019)" .
-

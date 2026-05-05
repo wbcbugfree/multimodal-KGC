@@ -1,0 +1,183 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SiteSpecificLowerSocBenchmarksForGermanAgriculturalSoilsAcrossDifferentStrata a skos:Concept ;
+    skos:prefLabel "site-specific lower soc benchmarks for german agricultural soils across different strata" ;
+    skos:note "Source: Compiled from Drexler et al. (2002)." .
+
+she:Texture a skos:Concept ;
+    skos:prefLabel "texture" ;
+    she:hasSymbol "(a)" ;
+    skos:note "light <12% clay, <50% silt; medium I 12-17% clay, <50% silt; medium II 17-25% clay; heavy I 25-35% clay; heavy II >35% clay." ;
+    skos:narrower she:Light,
+        she:Medium,
+        she:MediumII,
+        she:HeavyI,
+        she:HeavyII .
+
+she:Light a skos:Concept ;
+    skos:prefLabel "light" ;
+    skos:note "<12% clay, <50% silt" .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" ;
+    skos:note "12-17% clay, <50% silt" .
+
+she:MediumII a skos:Concept ;
+    skos:prefLabel "medium ii" ;
+    skos:note "17-25% clay" .
+
+she:HeavyI a skos:Concept ;
+    skos:prefLabel "heavy i" ;
+    skos:note "25-35% clay" .
+
+she:HeavyII a skos:Concept ;
+    skos:prefLabel "heavy ii" ;
+    skos:note ">35% clay" .
+
+she:ArableSoil a skos:Concept ;
+    skos:prefLabel "arable soil" .
+
+she:PermanentGrassland a skos:Concept ;
+    skos:prefLabel "permanent grassland" .
+
+she:MeanAnnualPrecipitation a skos:Concept ;
+    skos:prefLabel "mean annual precipitation" ;
+    she:hasAbbreviation "MAP" ;
+    skos:note "MAP, mean annual precipitation (mm)." .
+
+she:LowMap a skos:Concept ;
+    skos:prefLabel "low map" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:HighMap a skos:Concept ;
+    skos:prefLabel "high map" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:LowerBenchmark a skos:Concept ;
+    skos:prefLabel "lower benchmark" .
+
+she:Light she:hasLowerBenchmark [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<700" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "0.7"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">700" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "0.9"
+    ],
+    [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<650" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "1.4"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">650" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "2.0"
+    ] .
+
+she:Medium she:hasLowerBenchmark [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<850" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.0"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">850" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.1"
+    ],
+    [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<950" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "2.3"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">950" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "3.0"
+    ] .
+
+she:MediumII she:hasLowerBenchmark [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<1,000" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.1"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">1,000" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.4"
+    ],
+    [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<1,250" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "2.7"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">1,250" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "3.1"
+    ] .
+
+she:HeavyI she:hasLowerBenchmark [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<900" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.2"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">900" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.4"
+    ],
+    [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<750" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "3.3"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">750" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "3.7"
+    ] .
+
+she:HeavyII she:hasLowerBenchmark [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<900" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "1.5"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">900" ;
+        she:hasSoilType she:ArableSoil ;
+        she:hasValue "2.0"
+    ],
+    [
+        she:hasPrecipitationCategory she:LowMap ;
+        she:hasPrecipitationThreshold "<750" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "3.7"
+    ],
+    [
+        she:hasPrecipitationCategory she:HighMap ;
+        she:hasPrecipitationThreshold ">750" ;
+        she:hasSoilType she:PermanentGrassland ;
+        she:hasValue "4.3"
+    ] .

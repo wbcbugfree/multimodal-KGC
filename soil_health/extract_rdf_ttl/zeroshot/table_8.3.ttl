@@ -1,0 +1,105 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table83DesignOfLargeScaleSoilCompactionMonitoring a skos:Concept ;
+    skos:prefLabel "table 8.3 design of large-scale soil compaction monitoring" ;
+    skos:narrower she:Compartment, she:MeasurementAndEstimationParameters .
+
+she:MeasurementAndEstimationParameters a skos:Concept ;
+    skos:prefLabel "measurement and estimation parameters" ;
+    skos:narrower she:LevelI, she:LevelII, she:LevelIII .
+
+she:LevelI a skos:Concept ;
+    skos:prefLabel "level i" .
+
+she:LevelII a skos:Concept ;
+    skos:prefLabel "level ii" .
+
+she:LevelIII a skos:Concept ;
+    skos:prefLabel "level iii: wheeling plots and unloaded reference plots" .
+
+she:Compartment a skos:Concept ;
+    skos:prefLabel "compartment" ;
+    skos:narrower she:LocationOfSampling,
+                  she:DirectAndIndirectMonitoringOfSoilCompaction,
+                  she:BasicSoilPhysicalParameters,
+                  she:BasicSoilChemicalParameters,
+                  she:BiologicalParameters,
+                  she:Depth,
+                  she:Repetitions,
+                  she:Operations,
+                  she:SeasonalityOfMonitoring .
+
+she:LocationOfSampling a skos:Concept ;
+    skos:prefLabel "location of sampling" ;
+    she:hasLevelIImplementation "In the field: hot spots with visible marks of compaction: e.g. reduced vegetation cover or growth, puddles" ;
+    she:hasLevelIIImplementation "Proportion of affected area, e.g. per field, or per area around a representative observation point" ;
+    she:hasLevelIIIImplementation "Representative sub-plots throughout a given field surrounding the plot centre" .
+
+she:DirectAndIndirectMonitoringOfSoilCompaction a skos:Concept ;
+    skos:prefLabel "direct and indirect monitoring of soil compaction" ;
+    she:hasLevelIImplementation "Morphological features (waterlogging, (platy) soil structure, rooting); Precompression stress (estimated); Soil rigidity ratio; Penetration resistance (PR) (estimated with pedotransfer functions, PTFs)" ;
+    she:hasLevelIIIImplementation "Samples are measured at defined matric potential; Contact area pressure of the machines and the actual contact area are determined; Measurements of depth-dependent PR at a given matric potential" ;
+    skos:narrower she:PrecompressionStress, she:SoilRigidityRatio, she:PenetrationResistance .
+
+she:PrecompressionStress a skos:Concept ;
+    skos:prefLabel "precompression stress" ;
+    skos:note "Precompression stress derived from PTFs for a given texture and aggregation, according to Horn and Fleige (2003): requires pore size distribution, hydraulic conductivity, and soil chemical soil properties. In areas where this approach is not calibrated, horizon-specific stress strain measurements of undisturbed soil samples at a given matric potential and confined shear tests are needed to determine both the internal mechanical strength and the shear strength of a given structured soil." .
+
+she:SoilRigidityRatio a skos:Concept ;
+    skos:prefLabel "soil rigidity ratio" ;
+    skos:note "Ratio precompression stress/actual stress imposed by field traffic (see also Duttmann et al. 2014, 2022)." .
+
+she:PenetrationResistance a skos:Concept ;
+    skos:prefLabel "penetration resistance" ;
+    she:hasAbbreviation "PR" ;
+    skos:note "Establish reference sites from undisturbed, uncultivated sites." .
+
+she:PedotransferFunctions a skos:Concept ;
+    skos:prefLabel "pedotransfer functions" ;
+    she:hasAbbreviation "PTFs" .
+
+she:BasicSoilPhysicalParameters a skos:Concept ;
+    skos:prefLabel "basic soil physical parameters" ;
+    she:hasLevelIImplementation "Saturated hydraulic conductivity, air capacity, plant available water capacity (estimated with PTFs, e.g. Wösten et al. (1999), Schroeder et al. (2022b)); Bulk density (estimated or measured)" ;
+    she:hasLevelIIImplementation "All basic soil physical parameters for PTF are measured; Bulk density (measured)" ;
+    she:hasLevelIIIImplementation "Tensiometer, sensors, actual soil sampling at defined depths; Stress-dependent changes in the parameters are measured under in-field and under lab conditions" .
+
+she:BasicSoilChemicalParameters a skos:Concept ;
+    skos:prefLabel "basic soil chemical parameters" ;
+    she:hasLevelIImplementation "Soil texture/coarse fragments/CaCO3 (estimated — soil auger); Soil organic matter (measured)" ;
+    she:hasLevelIIImplementation "Soil texture/coarse fragments/CaCO3 (measured — soil profiles)" ;
+    skos:related she:CalciumCarbonate .
+
+she:CalciumCarbonate a skos:Concept ;
+    skos:prefLabel "calcium carbonate" ;
+    she:hasSymbol "CaCO3" .
+
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" .
+
+she:BiologicalParameters a skos:Concept ;
+    skos:prefLabel "biological parameters" ;
+    she:hasLevelIImplementation "Rooting estimated; Biological activity (bioturbation)" ;
+    she:hasLevelIIImplementation "Root density (measured); Diversity and community structure of soil microorganisms" .
+
+she:Depth a skos:Concept ;
+    skos:prefLabel "depth" ;
+    she:hasLevelIImplementation "Soil surface, upper boundary of lower soil horizons (or simply topsoil and subsoil)" ;
+    she:hasLevelIIImplementation "Refined depth classes/by genetic horizon" ;
+    she:hasLevelIIIImplementation "Depths of 40-45cm and 60-100cm" .
+
+she:Repetitions a skos:Concept ;
+    skos:prefLabel "repetitions" ;
+    she:hasLevelIImplementation "4-8 samples per depth" ;
+    she:hasLevelIIIImplementation "10-20 samples per parameter and depth" .
+
+she:Operations a skos:Concept ;
+    skos:prefLabel "operations" ;
+    she:hasLevelIImplementation "Field traffic: percentage of the wheeled area, number of wheel-to-wheel passages" ;
+    she:hasLevelIIIImplementation "Weight, air pressure, wheel type, axle and tyre widths of every vehicle, contact area" .
+
+she:SeasonalityOfMonitoring a skos:Concept ;
+    skos:prefLabel "seasonality of monitoring" ;
+    she:hasLevelIImplementation "Spring sampling (soil at field capacity)" ;
+    she:hasLevelIIIImplementation "Sampling at requested times throughout the year" .

@@ -1,40 +1,32 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Figure3_2 a skos:Concept ;
-    skos:narrower she:RelationshipsBetweenCropYieldAndPLeachingRiskAndSoilPFertilityStatus ;
-    skos:prefLabel "figure 3.2" .
-
-she:BaiEtAl2013 a skos:Concept ;
-    skos:prefLabel "bai et al. (2013)" .
-
-she:CriticalLevelForCropYield a skos:Concept ;
-    skos:prefLabel "critical level for crop yield" ;
-    she:appliesTo she:CropYield ;
-    she:isDeterminedBy she:SoilPFertilityStatus .
-
-she:CriticalLevelForPLeachingPotential a skos:Concept ;
-    skos:prefLabel "critical level for p leaching potential" ;
-    she:appliesTo she:PLeachingRisk ;
-    she:isDeterminedBy she:SoilPFertilityStatus .
-
 she:RelationshipsBetweenCropYieldAndPLeachingRiskAndSoilPFertilityStatus a skos:Concept ;
     skos:prefLabel "relationships between crop yield (left y-axis) and p leaching risk (right y-axis) and soil p fertility status" ;
-    she:hasSource she:BaiEtAl2013 ;
-    she:illustratesRelationshipBetween she:CropYield,
-        she:PLeachingRisk,
-        she:SoilPFertilityStatus .
+    skos:note "Source: Bai et al. (2013)." ;
+    skos:narrower she:SoilPFertilityStatus,
+                  she:CropYield,
+                  she:PLeachingRisk .
+
+she:SoilPFertilityStatus a skos:Concept ;
+    skos:prefLabel "soil p fertility status" ;
+    she:affects she:CropYield,
+               she:PLeachingRisk .
 
 she:CropYield a skos:Concept ;
     skos:prefLabel "crop yield" ;
-    she:hasCriticalLevel she:CriticalLevelForCropYield ;
-    she:isInfluencedBy she:SoilPFertilityStatus .
+    she:increasesWith she:SoilPFertilityStatus ;
+    she:hasCriticalLevel she:CriticalLevelForCropYield .
 
 she:PLeachingRisk a skos:Concept ;
     skos:prefLabel "p leaching risk" ;
-    she:hasCriticalLevel she:CriticalLevelForPLeachingPotential ;
-    she:isInfluencedBy she:SoilPFertilityStatus .
+    she:increasesWith she:SoilPFertilityStatus ;
+    she:hasCriticalLevel she:CriticalLevelForPLeachingPotential .
 
-she:SoilPFertilityStatus a skos:Concept ;
-    skos:prefLabel "soil p fertility status" .
+she:CriticalLevelForCropYield a skos:Concept ;
+    skos:prefLabel "critical level for crop yield" ;
+    skos:note "Visual threshold on the soil P fertility status axis where crop yield plateaus." .
 
+she:CriticalLevelForPLeachingPotential a skos:Concept ;
+    skos:prefLabel "critical level for p leaching potential" ;
+    skos:note "Visual threshold on the soil P fertility status axis where P leaching risk begins to rise sharply." .

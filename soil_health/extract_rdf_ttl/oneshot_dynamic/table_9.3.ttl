@@ -1,0 +1,55 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:AvailableNationalSoilSealingDataComparedWithCopernicusData2015 a skos:Concept ;
+    skos:prefLabel "available national soil sealing data compared with copernicus data, 2015" ;
+    skos:narrower she:Country,
+                  she:CountrySize,
+                  she:SoilSealingAreaPercentage .
+
+she:Country a skos:Concept ;
+    skos:prefLabel "country" ;
+    skos:narrower she:BelgiumFlanders,
+                  she:Austria,
+                  she:Luxembourg .
+
+she:CountrySize a skos:Concept ;
+    skos:prefLabel "country size" .
+
+she:SoilSealingAreaPercentage a skos:Concept ;
+    skos:prefLabel "soil sealing (area, %)" ;
+    skos:narrower she:NationalMethod,
+                  she:EEACopernicus .
+
+she:NationalMethod a skos:Concept ;
+    skos:prefLabel "national method" .
+
+she:EEACopernicus a skos:Concept ;
+    skos:prefLabel "eea/copernicus" .
+
+she:BelgiumFlanders a skos:Concept ;
+    skos:prefLabel "belgium (flanders)" ;
+    she:hasCountrySize "13,625km²" ;
+    she:hasNationalMethodArea "1,935km²" ;
+    she:hasNationalMethodPercentage "14.2%" ;
+    she:hasEEACopernicusArea "1,212km²" ;
+    she:hasEEACopernicusPercentage "8.9%" .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" ;
+    she:hasCountrySize "83,882km²" ;
+    she:hasNationalMethodArea "2,298km²" ;
+    she:hasNationalMethodPercentage "2.7%" ;
+    she:hasEEACopernicusArea "1,475km²" ;
+    she:hasEEACopernicusPercentage "1.8%" .
+
+she:Luxembourg a skos:Concept ;
+    skos:prefLabel "luxembourg" ;
+    she:hasCountrySize "2,593km²" ;
+    she:hasNationalMethodMeasurement [
+        she:hasArea "176km²" ;
+        she:hasPercentage "6.8%" ;
+        skos:note "refers to the year 2018, as there are no data for 2015."
+    ] ;
+    she:hasEEACopernicusArea "49km²" ;
+    she:hasEEACopernicusPercentage "1.9%" .

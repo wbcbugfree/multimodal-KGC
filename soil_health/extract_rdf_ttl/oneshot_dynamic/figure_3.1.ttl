@@ -1,0 +1,79 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Inputs a skos:Concept ;
+    skos:prefLabel "inputs" ;
+    skos:narrower she:BaseCations,
+                  she:NPS .
+
+she:BaseCations a skos:Concept ;
+    skos:prefLabel "base cations" ;
+    she:hasSymbol "Ca²⁺", "Mg²⁺", "K⁺" ;
+    she:hasSource she:Fertiliser,
+                  she:Irrigation,
+                  she:Deposition ;
+    she:flowsTo she:BaseCationsPool .
+
+she:NPS a skos:Concept ;
+    skos:prefLabel "n, p, s" ;
+    she:hasSource she:Fertiliser,
+                  she:NFixation,
+                  she:Irrigation,
+                  she:Deposition ;
+    she:flowsTo she:NPool,
+                  she:PPool,
+                  she:SPool .
+
+she:Soil a skos:Concept ;
+    skos:prefLabel "soil" ;
+    skos:narrower she:BaseCationsPool,
+                  she:NPool,
+                  she:PPool,
+                  she:SPool .
+
+she:BaseCationsPool a skos:Concept ;
+    skos:prefLabel "base cations pool" ;
+    she:flowsTo she:Outputs .
+
+she:NPool a skos:Concept ;
+    skos:prefLabel "n pool" ;
+    she:flowsTo she:Outputs .
+
+she:PPool a skos:Concept ;
+    skos:prefLabel "p pool" ;
+    she:flowsTo she:Outputs .
+
+she:SPool a skos:Concept ;
+    skos:prefLabel "s pool" ;
+    she:flowsTo she:Outputs .
+
+she:Outputs a skos:Concept ;
+    skos:prefLabel "outputs" ;
+    skos:narrower she:Atmosphere,
+                  she:VegetationThroughCropUptake,
+                  she:SoilSolutionLeaching .
+
+she:Atmosphere a skos:Concept ;
+    skos:prefLabel "atmosphere" ;
+    skos:note "Volatilisation and gas emission (NH, NOₓ, N₂O, N₂ and SO₂)" .
+
+she:VegetationThroughCropUptake a skos:Concept ;
+    skos:prefLabel "vegetation through crop uptake" ;
+    skos:note "Related compounds: Base cations, N, P, S" .
+
+she:SoilSolutionLeaching a skos:Concept ;
+    skos:prefLabel "soil solution/leaching" ;
+    skos:note "Related compounds: Base cations, SO₄²⁻, H₂PO₄⁻, NO₃⁻" .
+
+she:Fertiliser a skos:Concept ;
+    skos:prefLabel "fertiliser" ;
+    skos:note "Including sewage sludge, waste waters, composts, digestates." .
+
+she:Irrigation a skos:Concept ;
+    skos:prefLabel "irrigation" .
+
+she:Deposition a skos:Concept ;
+    skos:prefLabel "deposition" .
+
+she:NFixation a skos:Concept ;
+    skos:prefLabel "n fixation" .

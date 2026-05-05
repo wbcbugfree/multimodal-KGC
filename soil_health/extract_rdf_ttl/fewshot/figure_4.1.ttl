@@ -1,63 +1,49 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:ImpactOfSoilPHOnRelativeYields a skos:Concept ;
-    skos:prefLabel "impact of soil ph on the relative yields of wheat, maize and rice using combined short-term ph manipulation experiments and long-term observations" ;
-    she:appliesToCrop she:Maize,
-        she:Rice,
-        she:Wheat ;
-    she:basedOnMethod she:LongTermObservations,
-        she:PHManipulationExperiments ;
-    she:investigates she:SoilPH ;
-    she:measures she:RelativeYields .
+she:SoilPH a skos:Concept ;
+    skos:prefLabel "soil ph" ;
+    she:hasSymbol "pH" ;
+    she:hasImpactOn she:RelativeYield .
 
-she:Source a skos:Concept ;
-    skos:prefLabel "source" ;
-    she:adaptedAfter she:ZhuEtAl2020 .
+she:RelativeYield a skos:Concept ;
+    skos:prefLabel "relative yield" .
 
-she:FitMaize a skos:Concept ;
-    skos:prefLabel "fit maize" ;
-    she:modelsYieldResponseOf she:Maize ;
-    she:showsRelationshipBetween she:RelativeYields,
-        she:SoilPH .
+she:Rice a skos:Concept ;
+    skos:prefLabel "rice" ;
+    she:hasRelativeYield she:RelativeYield .
+
+she:Wheat a skos:Concept ;
+    skos:prefLabel "wheat" ;
+    she:hasRelativeYield she:RelativeYield .
+
+she:Maize a skos:Concept ;
+    skos:prefLabel "maize" ;
+    she:hasRelativeYield she:RelativeYield .
 
 she:FitRice a skos:Concept ;
     skos:prefLabel "fit rice" ;
-    she:modelsYieldResponseOf she:Rice ;
-    she:showsRelationshipBetween she:RelativeYields,
-        she:SoilPH .
+    skos:related she:Rice .
 
 she:FitWheat a skos:Concept ;
     skos:prefLabel "fit wheat" ;
-    she:modelsYieldResponseOf she:Wheat ;
-    she:showsRelationshipBetween she:RelativeYields,
-        she:SoilPH .
+    skos:related she:Wheat .
+
+she:FitMaize a skos:Concept ;
+    skos:prefLabel "fit maize" ;
+    skos:related she:Maize .
+
+she:ShortTermPHManipulationExperiments a skos:Concept ;
+    skos:prefLabel "short-term ph manipulation experiments" .
 
 she:LongTermObservations a skos:Concept ;
     skos:prefLabel "long-term observations" .
 
-she:PHManipulationExperiments a skos:Concept ;
-    skos:prefLabel "ph manipulation experiments" .
-
-she:ZhuEtAl2020 a skos:Concept ;
-    skos:prefLabel "zhu et al. (2020)" .
-
-she:Maize a skos:Concept ;
-    skos:prefLabel "maize" ;
-    she:hasFittedCurve she:FitMaize .
-
-she:Rice a skos:Concept ;
-    skos:prefLabel "rice" ;
-    she:hasFittedCurve she:FitRice .
-
-she:Wheat a skos:Concept ;
-    skos:prefLabel "wheat" ;
-    she:hasFittedCurve she:FitWheat .
-
-she:RelativeYields a skos:Concept ;
-    skos:prefLabel "relative yields" ;
-    she:areInfluencedBy she:SoilPH .
-
-she:SoilPH a skos:Concept ;
-    skos:prefLabel "soil ph" .
-
+she:SoilPHImpactOnCropYields a skos:Concept ;
+    skos:prefLabel "impact of soil ph on the relative yields of wheat, maize and rice using combined short-term ph manipulation experiments and long-term observations" ;
+    skos:note "Adapted after Zhu et al. (2020)." ;
+    skos:narrower she:Maize,
+        she:Rice,
+        she:Wheat ;
+    she:usesMethod she:LongTermObservations,
+        she:ShortTermPHManipulationExperiments .

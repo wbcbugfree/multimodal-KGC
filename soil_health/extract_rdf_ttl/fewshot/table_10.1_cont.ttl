@@ -2,143 +2,104 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:SoilThreatIndicators a skos:Concept ;
-    skos:narrower she:SoilBiodiversityLoss,
-        she:SoilCompaction,
+    skos:prefLabel "soil threat indicators" ;
+    skos:narrower she:SoilPollution,
         she:SoilErosion,
-        she:SoilPollution,
+        she:SoilBiodiversityLoss,
+        she:SoilCompaction,
         she:SoilSealing ;
-    skos:note "the current knowledge base covers a limited set of land uses and soil properties, for which thresholds are available; in the future, all relevant land uses and sites need to be covered." ;
-    skos:prefLabel "overview of soil threat indicators investigated in this report (cont.)" .
+    skos:note "The current knowledge base covers a limited set of land uses and soil properties, for which thresholds are available; in the future, all relevant land uses and sites need to be covered." .
 
-she:Agriculture a skos:Concept ;
-    skos:prefLabel "agriculture" ;
-    she:hasIndicator she:ExceedanceOfActualRateOfSoilLossByWaterErosion .
-
-she:AirCapacity a skos:Concept ;
-    skos:prefLabel "air capacity (ac) <5%" .
-
-she:AllLandUses a skos:Concept ;
-    skos:prefLabel "all land uses" ;
-    she:hasIndicator she:ExceedanceOfScreeningValuesForCriticalRiskFromHeavyMetalsAndOrganicPollutants .
-
-she:Country a skos:Concept ;
-    skos:prefLabel "by country" .
-
-she:CountrySpecificValuesVaryBroadlyAndAreNotNecessarilyComparable a skos:Concept ;
-    skos:prefLabel "country-specific values vary broadly and are not necessarily comparable" .
-
-she:CurrentIndicatorDescriptionIncludesOnlySoilErosionByWater a skos:Concept ;
-    skos:prefLabel "the current indicator description in this report includes only soil erosion by water, whereas the threshold addresses all other or erosion types" .
-
-she:DatabaseDeveloped a skos:Concept ;
-    skos:prefLabel "database developed (cd, cu, pb, zn, as, hg, ni, cr)" .
-
-she:ExceedanceOfActionValues a skos:Concept ;
-    skos:prefLabel "exceedance of 'action values' (zink et al., 2011)" .
-
-she:ExceedanceOfActualRateOfSoilLossByWaterErosion a skos:Concept ;
-    skos:prefLabel "exceedance of actual rate of soil loss by water erosion" ;
-    she:hasRemark she:CurrentIndicatorDescriptionIncludesOnlySoilErosionByWater,
-        she:PreliminaryThresholdsDerivationOfSiteAdaptedTolerableSoilLossRatesRecommended,
-        she:SoilFormationRate ;
-    she:hasThresholdOrTarget she:FourTonsPerHectarePerYearForDeeperSoils,
-        she:TwoTonsPerHectarePerYearForShallowSoils .
-
-she:ExceedanceOfOperatingRangesForSpecificSoilAnimalsAndMicroorganisms a skos:Concept ;
-    skos:prefLabel "exceedance of operating ranges (or) for specific soil animals and microorganisms" .
-
-she:ExceedanceOfSafeMinimumStandardsOfEcosystemConservation a skos:Concept ;
-    skos:prefLabel "exceedance of safe minimum standards of ecosystem conservation" .
+she:SoilPollution a skos:Concept ;
+    skos:prefLabel "soil pollution" ;
+    skos:narrower she:ExceedanceOfScreeningValuesForCriticalRiskFromHeavyMetalsAndOrganicPollutants .
 
 she:ExceedanceOfScreeningValuesForCriticalRiskFromHeavyMetalsAndOrganicPollutants a skos:Concept ;
     skos:prefLabel "exceedance of screening values for critical risk from heavy metals and organic pollutants" ;
-    she:hasRemark she:CountrySpecificValuesVaryBroadlyAndAreNotNecessarilyComparable,
-        she:StratificationByLandUseAndSoilTexture ;
-    she:hasThresholdOrTarget she:DatabaseDeveloped,
-        she:OrganicPollutants,
-        she:UpdatedValuesForCdCuPbAndZn .
+    skos:note "Country-specific values vary broadly and are not necessarily comparable. Stratification by land use and soil texture." ;
+    she:appliesToLandUse "all land uses" ;
+    she:hasIndicatorFor she:Cd, she:Cu, she:Pb, she:Zn, she:As, she:Hg, she:Ni, she:Cr, she:OrganicPollutants .
 
-she:FourTonsPerHectarePerYearForDeeperSoils a skos:Concept ;
-    skos:note "loss rates lower than 2t/ha/year are mandatory on soils adjacent to water bodies and/or soils with elevated levels of pollutants; such lower limits are needed to maintain water quality." ;
-    skos:prefLabel "4t/ha/year for deeper soils (≥70cm)" ;
-    she:isAlsoKnownAs she:SoilLossTolerance .
+she:Cd a skos:Concept ; skos:prefLabel "cd" .
+she:Cu a skos:Concept ; skos:prefLabel "cu" .
+she:Pb a skos:Concept ; skos:prefLabel "pb" .
+she:Zn a skos:Concept ; skos:prefLabel "zn" .
+she:As a skos:Concept ; skos:prefLabel "as" .
+she:Hg a skos:Concept ; skos:prefLabel "hg" .
+she:Ni a skos:Concept ; skos:prefLabel "ni" .
+she:Cr a skos:Concept ; skos:prefLabel "cr" .
+she:OrganicPollutants a skos:Concept ; skos:prefLabel "organic pollutants" .
 
-she:HarmfulSubsoilCompactionSubIndicators a skos:Concept ;
-    skos:prefLabel "harmful subsoil compaction (sub-indicators)" ;
-    she:hasRemark she:ExceedanceOfActionValues,
-        she:SecondarySubIndicatorsWithAvailableThresholds ;
-    she:hasThresholdOrTarget she:PrioritySubIndicators .
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" ;
+    skos:narrower she:ExceedanceOfActualRateOfSoilLossByWaterErosion .
 
-she:LossOfSoilBiodiversitySubIndicators a skos:Concept ;
-    skos:prefLabel "loss of soil biodiversity (sub-indicators)" ;
-    she:hasRemark she:RequiresSubIndicatorsBySpeciesAndOrFunctionalGroup ;
-    she:hasThresholdOrTarget she:ToBeDeveloped .
+she:ExceedanceOfActualRateOfSoilLossByWaterErosion a skos:Concept ;
+    skos:prefLabel "exceedance of actual rate of soil loss by water erosion" ;
+    skos:note "Soil formation rate: 0.3-1.4 t/ha/year (Verheijen et al., 2009). Preliminary thresholds, derivation of site-adapted tolerable soil loss rates recommended. The current indicator description in this report includes only soil erosion by water, whereas the threshold addresses all other erosion types." ;
+    she:appliesToLandUse "agriculture" ;
+    she:hasThreshold [
+        a skos:Concept ;
+        skos:prefLabel "soil loss tolerance for shallow soils" ;
+        she:hasCondition "shallow soils (<70cm depth)" ;
+        she:hasValue "2t/ha/year"
+    ], [
+        a skos:Concept ;
+        skos:prefLabel "soil loss tolerance for deeper soils" ;
+        skos:note "Loss rates lower than 2t/ha/year are mandatory on soils adjacent to water bodies and/or soils with elevated levels of pollutants; such lower limits are needed to maintain water quality." ;
+        she:hasCondition "deeper soils (≥70cm)" ;
+        she:hasValue "4t/ha/year"
+    ] .
 
-she:NationalTargetsToAchieveNoNetLandTake a skos:Concept ;
-    skos:prefLabel "national targets to achieve 'no net land take'" .
+she:SoilBiodiversityLoss a skos:Concept ;
+    skos:prefLabel "soil biodiversity loss" ;
+    skos:narrower she:LossOfSoilBiodiversity .
 
-she:OrganicPollutants a skos:Concept ;
-    skos:prefLabel "organic pollutants" .
+she:LossOfSoilBiodiversity a skos:Concept ;
+    skos:prefLabel "loss of soil biodiversity" ;
+    skos:note "Requires sub-indicators by species and/ or (functional) group" ;
+    she:hasSubIndicator she:ExceedanceOfSafeMinimumStandards,
+        she:ExceedanceOfOperatingRanges .
 
-she:PreliminaryThresholdsDerivationOfSiteAdaptedTolerableSoilLossRatesRecommended a skos:Concept ;
-    skos:prefLabel "preliminary thresholds, derivation of site-adapted tolerable soil loss rates recommended" .
+she:ExceedanceOfSafeMinimumStandards a skos:Concept ;
+    skos:prefLabel "exceedance of safe minimum standards of ecosystem conservation" .
 
-she:PrioritySubIndicators a skos:Concept ;
-    skos:narrower she:AirCapacity,
-        she:SaturatedHydraulicConductivity ;
-    skos:prefLabel "priority (sub)-indicators" .
+she:ExceedanceOfOperatingRanges a skos:Concept ;
+    skos:prefLabel "exceedance of operating ranges (or) for specific soil animals and microorganisms" .
 
-she:RequiresSubIndicatorsBySpeciesAndOrFunctionalGroup a skos:Concept ;
-    skos:prefLabel "requires sub-indicators by species and/or (functional) group" .
+she:SoilCompaction a skos:Concept ;
+    skos:prefLabel "soil compaction" ;
+    skos:narrower she:HarmfulSubsoilCompaction .
+
+she:HarmfulSubsoilCompaction a skos:Concept ;
+    skos:prefLabel "harmful subsoil compaction" ;
+    skos:note "Exceedance of 'action values' (Zink et al., 2011)" ;
+    she:hasPriorityIndicator she:SaturatedHydraulicConductivity,
+        she:AirCapacity ;
+    she:hasSecondaryIndicator she:BulkDensity,
+        she:InternalSoilStrength,
+        she:AirPermeability,
+        she:OxygenDiffusion .
 
 she:SaturatedHydraulicConductivity a skos:Concept ;
-    skos:prefLabel "saturated hydraulic conductivity (ks) <10cm/day" .
+    skos:prefLabel "saturated hydraulic conductivity" ;
+    she:hasAbbreviation "Ks" ;
+    she:hasThresholdValue "<10cm/day" .
+
+she:AirCapacity a skos:Concept ;
+    skos:prefLabel "air capacity" ;
+    she:hasAbbreviation "AC" ;
+    she:hasThresholdValue "<5%" .
+
+she:BulkDensity a skos:Concept ; skos:prefLabel "bulk density" .
+she:InternalSoilStrength a skos:Concept ; skos:prefLabel "internal soil strength" .
+she:AirPermeability a skos:Concept ; skos:prefLabel "air permeability" .
+she:OxygenDiffusion a skos:Concept ; skos:prefLabel "oxygen diffusion" .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    skos:narrower she:SealedAreaPerTotalLandArea .
 
 she:SealedAreaPerTotalLandArea a skos:Concept ;
     skos:prefLabel "sealed area per total land area" ;
-    she:hasThresholdOrTarget she:NationalTargetsToAchieveNoNetLandTake .
-
-she:SecondarySubIndicatorsWithAvailableThresholds a skos:Concept ;
-    skos:prefLabel "secondary sub-indicators with available thresholds: bulk density, internal soil strength, air permeability and oxygen diffusion" .
-
-she:SoilBiodiversityLoss a skos:Concept ;
-    skos:narrower she:LossOfSoilBiodiversitySubIndicators ;
-    skos:prefLabel "soil biodiversity loss" .
-
-she:SoilCompaction a skos:Concept ;
-    skos:narrower she:HarmfulSubsoilCompactionSubIndicators ;
-    skos:prefLabel "soil compaction" .
-
-she:SoilErosion a skos:Concept ;
-    skos:narrower she:Agriculture ;
-    skos:prefLabel "soil erosion" .
-
-she:SoilFormationRate a skos:Concept ;
-    skos:prefLabel "soil formation rate: 0.3-1.4 t/ha/year (verheijen et al., 2009)" .
-
-she:SoilLossTolerance a skos:Concept ;
-    skos:prefLabel "soil loss tolerance" .
-
-she:SoilPollution a skos:Concept ;
-    skos:narrower she:AllLandUses ;
-    skos:prefLabel "soil pollution" .
-
-she:SoilSealing a skos:Concept ;
-    skos:narrower she:SealedAreaPerTotalLandArea ;
-    skos:prefLabel "soil sealing" .
-
-she:StratificationByLandUseAndSoilTexture a skos:Concept ;
-    skos:prefLabel "stratification by land use and soil texture" .
-
-she:ToBeDeveloped a skos:Concept ;
-    skos:narrower she:ExceedanceOfOperatingRangesForSpecificSoilAnimalsAndMicroorganisms,
-        she:ExceedanceOfSafeMinimumStandardsOfEcosystemConservation ;
-    skos:prefLabel "to be developed" .
-
-she:TwoTonsPerHectarePerYearForShallowSoils a skos:Concept ;
-    skos:prefLabel "2t/ha/year for shallow soils (<70cm depth)" .
-
-she:UpdatedValuesForCdCuPbAndZn a skos:Concept ;
-    skos:prefLabel "updated values for cd, cu, pb and zn (mg/kg) in this report" ;
-    she:by she:Country .
-
+    skos:note "National targets to achieve 'no net land take'" .

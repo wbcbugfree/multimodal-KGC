@@ -1,39 +1,83 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:MonitoringBiologicalGroupsResultsFromFrenchSoilMonitoringNetwork a skos:Concept ;
-    skos:narrower she:AbundanceOfEarthwormsNematodesAcariBacterialCommunityMicrobialBiomassEarthwormSpeciesRichness,
-        she:BiologicalSoilQualityIndexBasedOnSoilMacroInvertebrateCommunityPatterns,
-        she:EarthwormCommunityAndSpecies,
-        she:MacroInvertebrateAbundanceCollembolanAbundanceAndRichnessNematodeRichness,
-        she:SoilMicrobialAbundanceAndDiversity ;
-    skos:prefLabel "monitoring biological groups: results from the french soil monitoring network" .
+she:MonitoringBiologicalGroupsResultsFrenchSoilMonitoringNetwork a skos:Concept ;
+    skos:prefLabel "monitoring biological groups: results from the french soil monitoring network" ;
+    skos:narrower she:ParametersIndicators,
+                  she:IndicatorValue,
+                  she:SiteDensity,
+                  she:Source .
 
-she:AbundanceOfEarthwormsNematodesAcariBacterialCommunityMicrobialBiomassEarthwormSpeciesRichness a skos:Concept ;
+she:ParametersIndicators a skos:Concept ;
+    skos:prefLabel "parameters/indicators" ;
+    skos:narrower she:AbundanceOfEarthwormsNematodesAcariBacteriaMicrobialBiomassRichness,
+                  she:MacroInvertebrateCollembolanNematodeAbundanceRichness,
+                  she:BiologicalSoilQualityIndexMacroInvertebrate,
+                  she:EarthwormCommunityAndSpeciesTraits,
+                  she:SoilMicrobialAbundanceAndDiversity .
+
+she:IndicatorValue a skos:Concept ;
+    skos:prefLabel "indicator value" ;
+    skos:narrower she:MainLandUse,
+                  she:AgriculturalPractice,
+                  she:DegreeOfSoilPollution .
+
+she:SiteDensity a skos:Concept ;
+    skos:prefLabel "site density" .
+
+she:Source a skos:Concept ;
+    skos:prefLabel "source" .
+
+she:AbundanceOfEarthwormsNematodesAcariBacteriaMicrobialBiomassRichness a skos:Concept ;
     skos:prefLabel "abundance of earthworms, nematodes, acari and the bacterial community, microbial biomass and earthworm species richness" ;
-    she:hasIndicatorValue "main land use (grassland, cropland, forest)" ;
+    she:hasIndicatorValue she:MainLandUse ;
     she:hasSiteDensity "109" ;
-    she:hasSource "cluzeau et al. (2012)" .
+    she:hasSource "Cluzeau et al. (2012)" .
 
-she:BiologicalSoilQualityIndexBasedOnSoilMacroInvertebrateCommunityPatterns a skos:Concept ;
-    skos:prefLabel "biological soil quality index based on soil macro-invertebrate community patterns" ;
-    she:hasIndicatorValue "agricultural practice" ;
-    she:hasSiteDensity "22" ;
-    she:hasSource "ruiz et al. (2011)" .
-
-she:EarthwormCommunityAndSpecies a skos:Concept ;
-    skos:prefLabel "earthworm community and species (abundance, biomass, functional structure and ecological traits)" ;
-    she:hasIndicatorValue "main land use, degree of soil pollution" ;
-    she:hasSiteDensity "13" ;
-    she:hasSource "pérès et al. (2011)" .
-
-she:MacroInvertebrateAbundanceCollembolanAbundanceAndRichnessNematodeRichness a skos:Concept ;
+she:MacroInvertebrateCollembolanNematodeAbundanceRichness a skos:Concept ;
     skos:prefLabel "macro-invertebrate abundance, collembolan abundance and richness, and nematode richness" ;
-    she:hasIndicatorValue "agricultural practice" .
+    she:hasIndicatorValue she:AgriculturalPractice ;
+    she:hasSiteDensity "109" ;
+    she:hasSource "Cluzeau et al. (2012)" .
+
+she:BiologicalSoilQualityIndexMacroInvertebrate a skos:Concept ;
+    skos:prefLabel "biological soil quality index based on soil macro-invertebrate community patterns" ;
+    she:hasIndicatorValue she:AgriculturalPractice ;
+    she:hasSiteDensity "22" ;
+    she:hasSource "Ruiz et al. (2011)" .
+
+she:EarthwormCommunityAndSpeciesTraits a skos:Concept ;
+    skos:prefLabel "earthworm community and species (abundance, biomass, functional structure and ecological traits)" ;
+    she:hasIndicatorValue she:MainLandUse,
+                          she:DegreeOfSoilPollution ;
+    she:hasSiteDensity "13" ;
+    she:hasSource "Pérès et al. (2011)" .
 
 she:SoilMicrobialAbundanceAndDiversity a skos:Concept ;
     skos:prefLabel "soil microbial abundance and diversity" ;
-    she:hasIndicatorValue "main land use and/or agricultural practices" ;
+    she:hasIndicatorValue she:MainLandUse,
+                          she:AgriculturalPractice ;
     she:hasSiteDensity ">1700" ;
-    she:hasSource "terrat et al. (2017)" .
+    she:hasSource "Terrat et al. (2017)" .
 
+she:MainLandUse a skos:Concept ;
+    skos:prefLabel "main land use" ;
+    skos:narrower she:Grassland,
+                  she:Cropland,
+                  she:Forest .
+
+she:Grassland a skos:Concept ;
+    skos:prefLabel "grassland" .
+
+she:Cropland a skos:Concept ;
+    skos:prefLabel "cropland" .
+
+she:Forest a skos:Concept ;
+    skos:prefLabel "forest" .
+
+she:AgriculturalPractice a skos:Concept ;
+    skos:altLabel "agricultural practices" ;
+    skos:prefLabel "agricultural practice" .
+
+she:DegreeOfSoilPollution a skos:Concept ;
+    skos:prefLabel "degree of soil pollution" .

@@ -1,0 +1,79 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    she:hasNegativeImpactOn she:WoodAndFibreProduction,
+                            she:GrowthOfCrops,
+                            she:FilteringOfContaminants,
+                            she:WaterStorage,
+                            she:CarbonStorage,
+                            she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna ;
+    she:hasPositiveImpactOn she:PlatformForInfrastructure,
+                            she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+                  she:Water,
+                  she:Climate,
+                  she:Biodiversity,
+                  she:Infrastructure .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops,
+                  she:FilteringOfContaminants,
+                  she:WaterStorage,
+                  she:CarbonStorage,
+                  she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna,
+                  she:PlatformForInfrastructure,
+                  she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:narrower she:FilteringOfContaminants,
+                  she:WaterStorage .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:narrower she:CarbonStorage .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna .
+
+she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi and any microfauna" .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:narrower she:PlatformForInfrastructure,
+                  she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" .

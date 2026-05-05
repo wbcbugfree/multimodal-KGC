@@ -1,0 +1,57 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DynamicAssessmentOfSoilHealth a skos:Concept ;
+    skos:prefLabel "dynamic assessment of soil health" ;
+    skos:narrower she:Healthy,
+        she:Intermediate,
+        she:Unhealthy ;
+    she:hasXAxis she:Time ;
+    she:hasYAxis she:IndicatorsFromMonitoring .
+
+she:ExceedanceOfThresholdsForIntermediateRisk a skos:Concept ;
+    skos:prefLabel "exceedance of thresholds for intermediate risk" ;
+    skos:note "where available" .
+
+she:Healthy a skos:Concept ;
+    skos:definition "None of the indicators shows any threshold exceedance" ;
+    skos:prefLabel "healthy" .
+
+she:IndicatorsFromMonitoring a skos:Concept ;
+    skos:prefLabel "indicators from monitoring" .
+
+she:Intermediate a skos:Concept ;
+    skos:definition "Slight soil degradation at warning level (pre-cautionary soil protection)" ;
+    skos:narrower she:ExceedanceOfThresholdsForIntermediateRisk,
+        she:NegativeIndicatorTrendWithoutAnyThresholdExceedance,
+        she:PositiveIndicatorTrendWhileThresholdsForUnacceptableDegradationAreStillExceeded,
+        she:SustainableSoilManagementInPlaceWhileThresholdsAreExceeded ;
+    skos:prefLabel "intermediate" .
+
+she:NegativeIndicatorTrendWithoutAnyThresholdExceedance a skos:Concept ;
+    skos:prefLabel "negative indicator trend without any threshold exceedance" .
+
+she:NegativeTrend a skos:Concept ;
+    she:leadsTo she:Unhealthy ;
+    skos:prefLabel "negative trend" .
+
+she:PositiveIndicatorTrendWhileThresholdsForUnacceptableDegradationAreStillExceeded a skos:Concept ;
+    skos:prefLabel "positive indicator trend while thresholds for unacceptable degradation are still exceeded" .
+
+she:PositiveTrend a skos:Concept ;
+    she:leadsTo she:Healthy ;
+    skos:prefLabel "positive trend" .
+
+she:SustainableSoilManagementInPlaceWhileThresholdsAreExceeded a skos:Concept ;
+    skos:prefLabel "sustainable soil management in place while thresholds are exceeded" .
+
+she:ThresholdForUnacceptableDegradation a skos:Concept ;
+    skos:prefLabel "threshold for unacceptable degradation" .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" .
+
+she:Unhealthy a skos:Concept ;
+    skos:definition "At least one indicator exceeds thresholds for unacceptable degradation (ecosystem services significantly compromised)" ;
+    she:exceeds she:ThresholdForUnacceptableDegradation ;
+    skos:prefLabel "unhealthy" .

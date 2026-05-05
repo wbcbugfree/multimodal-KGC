@@ -1,65 +1,84 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:ThresholdsRepresentation a skos:Concept ;
-    skos:narrower she:ConcentrationRisk,
-        she:Implications,
-        she:NaturalBackground,
-        she:RiskLevels,
-        she:ScreeningValues ;
-    skos:prefLabel "schematic representation of thresholds (adopted from the heracles network)" .
+she:SchematicRepresentationOfThresholds a skos:Concept ;
+    skos:prefLabel "schematic representation of thresholds" ;
+    skos:note "adopted from the heracles network", "Source: EEA." ;
+    skos:narrower she:NaturalBackground,
+                  she:ScreeningValues,
+                  she:RisksLevels,
+                  she:Implications .
 
-she:AcceptableValue a skos:Concept ;
-    skos:prefLabel "acceptable value" ;
-    she:definesBoundaryBetween she:AcceptableRisk,
-        she:IntermediateRisk .
-
-she:ActionValue a skos:Concept ;
-    skos:prefLabel "action value" ;
-    she:definesBoundaryBetween she:IntermediateRisk,
-        she:UnacceptableRisk .
+she:NaturalBackground a skos:Concept ;
+    skos:prefLabel "natural background" ;
+    skos:narrower she:BackgroundValue .
 
 she:BackgroundValue a skos:Concept ;
     skos:prefLabel "background value" .
 
-she:ConcentrationRisk a skos:Concept ;
-    skos:narrower she:AcceptableRisk,
-        she:IntermediateRisk,
-        she:UnacceptableRisk ;
-    skos:prefLabel "concentration/risk" .
-
-she:Implications a skos:Concept ;
-    skos:narrower she:MinorRestrictionsForSensitiveLandUses,
-        she:NoRestrictionsInLandUse,
-        she:PossiblyFurtherInvestigations,
-        she:ProblemsForAnyFurtherLandUse,
-        she:RestrictionsForSensitiveLandUses,
-        she:SiteSpecificRiskAssessmentOrSoilQualityManagement ;
-    skos:prefLabel "implications" .
-
-she:NaturalBackground a skos:Concept ;
-    skos:narrower she:BackgroundValue ;
-    skos:prefLabel "natural background" .
-
-she:RiskLevels a skos:Concept ;
-    skos:narrower she:AcceptableRisk,
-        she:IntermediateRisk,
-        she:UnacceptableRisk ;
-    skos:prefLabel "risks levels" .
-
 she:ScreeningValues a skos:Concept ;
+    skos:prefLabel "screening values" ;
     skos:narrower she:AcceptableValue,
-        she:ActionValue,
-        she:WarningValue ;
-    skos:prefLabel "screening values" .
+                  she:WarningValue,
+                  she:ActionValue .
+
+she:AcceptableValue a skos:Concept ;
+    skos:prefLabel "acceptable value" ;
+    she:marksEndOf she:AcceptableRisk ;
+    she:marksStartOf she:IntermediateRisk .
 
 she:WarningValue a skos:Concept ;
     skos:prefLabel "warning value" ;
-    she:definesBoundaryBetween she:MinorRestrictionsForSensitiveLandUses,
-        she:RestrictionsForSensitiveLandUses .
+    she:liesWithin she:IntermediateRisk .
+
+she:ActionValue a skos:Concept ;
+    skos:prefLabel "action value" ;
+    she:marksEndOf she:IntermediateRisk ;
+    she:marksStartOf she:UnacceptableRisk .
+
+she:ConcentrationRisk a skos:Concept ;
+    skos:prefLabel "concentration/risk" ;
+    she:measuredBy she:ScreeningValues ;
+    she:determines she:RisksLevels .
+
+she:RisksLevels a skos:Concept ;
+    skos:prefLabel "risks levels" ;
+    skos:narrower she:AcceptableRisk,
+                  she:IntermediateRisk,
+                  she:UnacceptableRisk .
+
+she:AcceptableRisk a skos:Concept ;
+    skos:prefLabel "acceptable risk" ;
+    she:hasImplication she:NoRestrictionsInLandUse .
+
+she:IntermediateRisk a skos:Concept ;
+    skos:prefLabel "intermediate risk" ;
+    she:hasImplication she:MinorRestrictionsForSensitiveLandUses,
+                       she:RestrictionsForSensitiveLandUses,
+                       she:PossiblyFurtherInvestigations .
+
+she:UnacceptableRisk a skos:Concept ;
+    skos:prefLabel "unacceptable risk" ;
+    she:hasImplication she:ProblemsForAnyFurtherLandUse,
+                       she:SiteSpecificRiskAssessmentOrSoilQualityManagement .
+
+she:Implications a skos:Concept ;
+    skos:prefLabel "implications" ;
+    skos:narrower she:NoRestrictionsInLandUse,
+                  she:MinorRestrictionsForSensitiveLandUses,
+                  she:RestrictionsForSensitiveLandUses,
+                  she:PossiblyFurtherInvestigations,
+                  she:ProblemsForAnyFurtherLandUse,
+                  she:SiteSpecificRiskAssessmentOrSoilQualityManagement .
 
 she:NoRestrictionsInLandUse a skos:Concept ;
     skos:prefLabel "no restrictions in land use" .
+
+she:MinorRestrictionsForSensitiveLandUses a skos:Concept ;
+    skos:prefLabel "minor restrictions for sensitive land uses" .
+
+she:RestrictionsForSensitiveLandUses a skos:Concept ;
+    skos:prefLabel "restrictions for sensitive land uses" .
 
 she:PossiblyFurtherInvestigations a skos:Concept ;
     skos:prefLabel "possibly further investigations" .
@@ -68,26 +87,5 @@ she:ProblemsForAnyFurtherLandUse a skos:Concept ;
     skos:prefLabel "problems for any further land use" .
 
 she:SiteSpecificRiskAssessmentOrSoilQualityManagement a skos:Concept ;
-    skos:prefLabel "site specific risk assessment or soil quality management (e.g., remediation)" .
-
-she:AcceptableRisk a skos:Concept ;
-    skos:prefLabel "acceptable risk" ;
-    she:hasImplication she:NoRestrictionsInLandUse .
-
-she:MinorRestrictionsForSensitiveLandUses a skos:Concept ;
-    skos:prefLabel "minor restrictions for sensitive land uses" .
-
-she:RestrictionsForSensitiveLandUses a skos:Concept ;
-    skos:prefLabel "restrictions for sensitive land uses" .
-
-she:UnacceptableRisk a skos:Concept ;
-    skos:prefLabel "unacceptable risk" ;
-    she:hasImplication she:ProblemsForAnyFurtherLandUse,
-        she:SiteSpecificRiskAssessmentOrSoilQualityManagement .
-
-she:IntermediateRisk a skos:Concept ;
-    skos:prefLabel "intermediate risk" ;
-    she:hasImplication she:MinorRestrictionsForSensitiveLandUses,
-        she:PossiblyFurtherInvestigations,
-        she:RestrictionsForSensitiveLandUses .
-
+    skos:prefLabel "site specific risk assessment or soil quality management" ;
+    skos:note "e.g., remediation" .

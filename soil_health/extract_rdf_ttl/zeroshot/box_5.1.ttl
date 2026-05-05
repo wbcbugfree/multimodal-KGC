@@ -1,84 +1,35 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Step1DerivationOfRiskBasedScreeningValuesSsvForSoilBasedOnCriticalLimitsInEndpoint a skos:Concept ;
+she:Step1DerivationOfRiskBasedScreeningValues a skos:Concept ;
+    skos:prefLabel "step 1: derivation of risk-based screening values (ssv) for soil based on critical limits in endpoint" ;
     skos:narrower she:RelevantCriticalLimitInEndpointSelected,
-        she:RelevantPathwayAndDataNeeded,
-        she:ResultingSsvSoil ;
-    skos:prefLabel "step 1: derivation of risk-based screening values (ssv) for soil based on critical limits in endpoint" .
+                  she:RelevantPathwayAndDataNeeded,
+                  she:ResultingSSVSoil .
 
-she:Step2EvaluationOfCurrentSoilQualityUsingRiskBasedSsvs a skos:Concept ;
-    skos:narrower she:Assessment,
-        she:AssessmentSoilQuality,
-        she:RelevantSsv ;
-    skos:prefLabel "step 2: evaluation of current soil quality using risk-based ssvs" .
+she:RelevantCriticalLimitInEndpointSelected a skos:Concept ;
+    skos:prefLabel "relevant critical limit in endpoint selected" ;
+    skos:narrower she:MaxAllowedConcentrationInDrinkingWater,
+                  she:MaxAllowedConcentrationInFood .
 
-she:Assessment a skos:Concept ;
-    skos:prefLabel "assessment" .
+she:RelevantPathwayAndDataNeeded a skos:Concept ;
+    skos:prefLabel "relevant pathway and data needed" ;
+    skos:narrower she:SoilSolutionSorptionModel,
+                  she:TransportModel,
+                  she:HydrologicalData,
+                  she:SoilCropTransferModel,
+                  she:SoilPropertiesNeededInModel .
 
-she:AssessmentSoilQuality a skos:Concept ;
-    skos:prefLabel "assessment soil quality" .
-
-she:LevelInSoilGreaterThanSsvAgriculture a skos:Concept ;
-    skos:prefLabel "level in soil > ssv agriculture" ;
-    she:resultsInAssessment she:NotSuitableActionsRequired .
-
-she:LevelInSoilLessThanSsvAgriculture a skos:Concept ;
-    skos:prefLabel "level in soil < ssv agriculture" ;
-    she:resultsInAssessment she:SuitableLandUsePosesNoRisk .
+she:ResultingSSVSoil a skos:Concept ;
+    skos:prefLabel "resulting ssv soil" ;
+    skos:narrower she:ScreeningValueDrinkingWater,
+                  she:ScreeningValueAgriculture .
 
 she:MaxAllowedConcentrationInDrinkingWater a skos:Concept ;
     skos:prefLabel "max allowed concentration in drinking water" ;
-    she:informsPathwayAndData she:HydrologicalData,
-        she:SoilSolutionSorptionModel,
-        she:TransportModel .
-
-she:MaxAllowedConcentrationInFood a skos:Concept ;
-    skos:prefLabel "max allowed concentration in food" ;
-    she:informsPathwayAndData she:SoilCropTransferModel,
-        she:SoilPropertiesNeededInModel .
-
-she:NotSuitableActionsRequired a skos:Concept ;
-    skos:prefLabel "not suitable, actions required" .
-
-she:RelevantCriticalLimitInEndpointSelected a skos:Concept ;
-    skos:narrower she:MaxAllowedConcentrationInDrinkingWater,
-        she:MaxAllowedConcentrationInFood ;
-    skos:prefLabel "relevant critical limit in endpoint selected" .
-
-she:RelevantPathwayAndDataNeeded a skos:Concept ;
-    skos:narrower she:HydrologicalData,
-        she:SoilCropTransferModel,
-        she:SoilPropertiesNeededInModel,
-        she:SoilSolutionSorptionModel,
-        she:TransportModel ;
-    skos:prefLabel "relevant pathway and data needed" .
-
-she:RelevantSsv a skos:Concept ;
-    skos:narrower she:SsvAgriculture ;
-    skos:prefLabel "relevant ssv" .
-
-she:ResultingSsvSoil a skos:Concept ;
-    skos:narrower she:ScreeningValueAgriculture,
-        she:ScreeningValueDrinkingWater ;
-    skos:prefLabel "resulting ssv soil" .
-
-she:SsvAgriculture a skos:Concept ;
-    skos:prefLabel "ssv agriculture" .
-
-she:SuitableLandUsePosesNoRisk a skos:Concept ;
-    skos:prefLabel "suitable, land use poses no risk" .
-
-she:HydrologicalData a skos:Concept ;
-    skos:prefLabel "hydrological data" .
-
-she:SoilCropTransferModel a skos:Concept ;
-    skos:prefLabel "soil — crop transfer model" ;
-    she:leadsTo she:ScreeningValueAgriculture .
-
-she:SoilPropertiesNeededInModel a skos:Concept ;
-    skos:prefLabel "soil properties needed in model (e.g. clay, ph, org matter)" ;
-    she:leadsTo she:ScreeningValueAgriculture .
+    she:requires she:SoilSolutionSorptionModel,
+                 she:TransportModel,
+                 she:HydrologicalData .
 
 she:SoilSolutionSorptionModel a skos:Concept ;
     skos:prefLabel "soil — solution sorption model" ;
@@ -88,11 +39,68 @@ she:TransportModel a skos:Concept ;
     skos:prefLabel "transport model" ;
     she:leadsTo she:ScreeningValueDrinkingWater .
 
-she:ScreeningValueAgriculture a skos:Concept ;
-    skos:prefLabel "screening value agriculture" ;
-    she:isUsedForAssessment she:LevelInSoilGreaterThanSsvAgriculture,
-        she:LevelInSoilLessThanSsvAgriculture .
+she:HydrologicalData a skos:Concept ;
+    skos:prefLabel "hydrological data" ;
+    she:leadsTo she:ScreeningValueDrinkingWater .
 
 she:ScreeningValueDrinkingWater a skos:Concept ;
     skos:prefLabel "screening value drinking water" .
 
+she:MaxAllowedConcentrationInFood a skos:Concept ;
+    skos:prefLabel "max allowed concentration in food" ;
+    she:requires she:SoilCropTransferModel,
+                 she:SoilPropertiesNeededInModel .
+
+she:SoilCropTransferModel a skos:Concept ;
+    skos:prefLabel "soil — crop transfer model" ;
+    she:leadsTo she:ScreeningValueAgriculture .
+
+she:SoilPropertiesNeededInModel a skos:Concept ;
+    skos:prefLabel "soil properties needed in model" ;
+    skos:note "e.g. clay, ph, org matter" ;
+    she:leadsTo she:ScreeningValueAgriculture .
+
+she:ScreeningValueAgriculture a skos:Concept ;
+    skos:prefLabel "screening value agriculture" ;
+    skos:altLabel "ssv agriculture" .
+
+she:Step2EvaluationOfCurrentSoilQuality a skos:Concept ;
+    skos:prefLabel "step 2: evaluation of current soil quality using risk-based ssvs" ;
+    skos:narrower she:RelevantSSV,
+                  she:Assessment,
+                  she:AssessmentSoilQuality .
+
+she:RelevantSSV a skos:Concept ;
+    skos:prefLabel "relevant ssv" ;
+    skos:narrower she:ScreeningValueAgriculture .
+
+she:Assessment a skos:Concept ;
+    skos:prefLabel "assessment" ;
+    skos:narrower she:LevelInSoilGreaterThanSSVAgriculture,
+                  she:LevelInSoilLessThanSSVAgriculture .
+
+she:AssessmentSoilQuality a skos:Concept ;
+    skos:prefLabel "assessment soil quality" ;
+    skos:narrower she:NotSuitableActionsRequired,
+                  she:SuitableLandUsePosesNoRisk .
+
+she:LevelInSoilGreaterThanSSVAgriculture a skos:Concept ;
+    skos:prefLabel "level in soil > ssv agriculture" ;
+    she:leadsTo she:NotSuitableActionsRequired .
+
+she:LevelInSoilLessThanSSVAgriculture a skos:Concept ;
+    skos:prefLabel "level in soil < ssv agriculture" ;
+    she:leadsTo she:SuitableLandUsePosesNoRisk .
+
+she:NotSuitableActionsRequired a skos:Concept ;
+    skos:prefLabel "not suitable, actions required" .
+
+she:SuitableLandUsePosesNoRisk a skos:Concept ;
+    skos:prefLabel "suitable, land use poses no risk" .
+
+she:SSV a skos:Concept ;
+    skos:prefLabel "ssv" ;
+    skos:altLabel "risk-based screening values" .
+
+she:ScreeningValueAgriculture she:assessedBy she:LevelInSoilGreaterThanSSVAgriculture,
+                                              she:LevelInSoilLessThanSSVAgriculture .

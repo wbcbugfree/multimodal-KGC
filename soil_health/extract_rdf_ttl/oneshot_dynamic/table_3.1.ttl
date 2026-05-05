@@ -1,0 +1,82 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilNutrientStatus a skos:Concept ;
+    skos:prefLabel "soil nutrient status" ;
+    skos:definition "Relationship of soil nutrient status to key societal needs and soil functions" ;
+    she:hasPositiveImpactOn she:WoodAndFibreProduction,
+        she:GrowthOfCrops,
+        she:CarbonStorage,
+        she:HabitatForPlantsInsectsMicrobesFungi ;
+    she:hasNegativeImpactOn she:FilteringOfContaminantsWaterQuality,
+        she:HabitatForPlantsInsectsMicrobesFungi ;
+    she:hasNeutralImpactOn she:WaterStorage,
+        she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+        she:Water,
+        she:Climate,
+        she:Biodiversity,
+        she:Infrastructure .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" ;
+    skos:narrower she:WoodAndFibreProduction,
+        she:GrowthOfCrops,
+        she:FilteringOfContaminantsWaterQuality,
+        she:WaterStorage,
+        she:CarbonStorage,
+        she:HabitatForPlantsInsectsMicrobesFungi,
+        she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:narrower she:WoodAndFibreProduction,
+        she:GrowthOfCrops .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:narrower she:FilteringOfContaminantsWaterQuality,
+        she:WaterStorage .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:narrower she:CarbonStorage .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:narrower she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" .
+
+she:FilteringOfContaminantsWaterQuality a skos:Concept ;
+    skos:prefLabel "filtering of contaminants: water quality" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    skos:note "+ or -" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" .

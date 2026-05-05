@@ -1,0 +1,138 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilOrganicCarbonGuideline a skos:Concept ;
+    skos:prefLabel "guideline ranges for soc content of sandy and loamy soils without groundwater influence" ;
+    skos:definition "% soc in plough layer depending on fine silt (<6.3µm) and clay content" ;
+    skos:note "compiled from körschens et al. (1998)" ;
+    skos:related she:PipetteMethod,
+        she:PloughLayer ;
+    skos:narrower she:SOCInSandySoils,
+        she:SOCInLoamySoils,
+        she:ClayPlusFineSiltContent .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
+
+she:ClayPlusFineSiltContent a skos:Concept ;
+    skos:prefLabel "clay + fine silt (%)" ;
+    skos:note "fine silt defined as < 6.3µm" .
+
+she:SOCInSandySoils a skos:Concept ;
+    skos:prefLabel "soc in sandy soils (%)" ;
+    skos:narrower she:UpperValue,
+        she:LowerValue ;
+    she:appliesTo she:SandySoils .
+
+she:SOCInLoamySoils a skos:Concept ;
+    skos:prefLabel "soc in loamy soils (%)" ;
+    skos:narrower she:UpperValue,
+        she:LowerValue ;
+    she:appliesTo she:LoamySoils .
+
+she:UpperValue a skos:Concept ;
+    skos:prefLabel "upper value" .
+
+she:LowerValue a skos:Concept ;
+    skos:prefLabel "lower value" .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:PipetteMethod a skos:Concept ;
+    skos:prefLabel "pipette method" .
+
+she:PloughLayer a skos:Concept ;
+    skos:prefLabel "plough layer" .
+
+she:ClaySilt4 a skos:Concept ;
+    skos:prefLabel "4" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 0.9 ; 
+        she:hasLowerValue 0.6 
+    ] .
+
+she:ClaySilt9 a skos:Concept ;
+    skos:prefLabel "9" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 1.0 ; 
+        she:hasLowerValue 0.7 
+    ] .
+
+she:ClaySilt10 a skos:Concept ;
+    skos:prefLabel "10" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 1.0 ; 
+        she:hasLowerValue 0.7 
+    ] ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 1.2 ; 
+        she:hasLowerValue 0.8 
+    ] .
+
+she:ClaySilt15 a skos:Concept ;
+    skos:prefLabel "15" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 1.2 ; 
+        she:hasLowerValue 0.9 
+    ] ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 1.4 ; 
+        she:hasLowerValue 1.0 
+    ] .
+
+she:ClaySilt20 a skos:Concept ;
+    skos:prefLabel "20" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 1.4 ; 
+        she:hasLowerValue 1.1 
+    ] ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 1.6 ; 
+        she:hasLowerValue 1.2 
+    ] .
+
+she:ClaySilt25 a skos:Concept ;
+    skos:prefLabel "25" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasSandySOC [ 
+        she:hasUpperValue 1.6 ; 
+        she:hasLowerValue 1.3 
+    ] ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 1.9 ; 
+        she:hasLowerValue 1.5 
+    ] .
+
+she:ClaySilt26 a skos:Concept ;
+    skos:prefLabel "26" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 2.0 ; 
+        she:hasLowerValue 1.5 
+    ] .
+
+she:ClaySilt30 a skos:Concept ;
+    skos:prefLabel "30" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 2.1 ; 
+        she:hasLowerValue 1.6 
+    ] .
+
+she:ClaySilt38 a skos:Concept ;
+    skos:prefLabel "38" ;
+    skos:broader she:ClayPlusFineSiltContent ;
+    she:hasLoamySOC [ 
+        she:hasUpperValue 2.6 ; 
+        she:hasLowerValue 2.0 
+    ] .

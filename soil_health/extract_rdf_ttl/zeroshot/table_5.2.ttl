@@ -1,72 +1,64 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:BTEX a skos:Concept ;
-    skos:definition "benzene, toluene, ethylbenzene and xylene" ;
-    skos:prefLabel "btex" .
-
-she:IED a skos:Concept ;
-    skos:definition "industrial emissions directive" ;
-    skos:prefLabel "ied" .
-
-she:TDI a skos:Concept ;
-    skos:definition "tolerable daily intake" ;
-    skos:prefLabel "tdi" .
-
-she:Table52MainCharacteristicsOfDiffuseAndPointSourceSoilPollution a skos:Concept ;
-    skos:narrower she:Characteristic,
-        she:DiffusePollution,
-        she:PointSourcePollution ;
-    skos:prefLabel "table 5.2 main characteristics of diffuse and point source soil pollution" .
-
-she:WFD a skos:Concept ;
-    skos:definition "water framework directive" ;
-    skos:prefLabel "wfd" .
-
-she:AvailabilityThresholdsInReceptors a skos:Concept ;
-    skos:prefLabel "availability thresholds in receptors" ;
-    she:describesForDiffusePollution "largely confined to nutrients (in surface water and groundwater), selected metals/metalloids (in plant products) and an array of plant protection chemicals used in agriculture. the number of other organic chemicals included in assessments of diffuse pollution varies strongly per country." ;
-    she:describesForPointSourcePollution "for most metals/metalloids, pahs, aromatic compounds (including btex), volatile organic chlorinated compounds, mineral oil, asbestos and other commonly observed organic chemicals produced and emitted by industry; thresholds are available for human health based on exposure (tdi) and reference dose or soil organisms (ecological effects levels)." .
-
-she:Characteristic a skos:Concept ;
-    skos:narrower she:AvailabilityThresholdsInReceptors,
-        she:Policy,
-        she:ProceduralFramework,
-        she:ProtectionTarget,
-        she:Source ;
-    skos:prefLabel "characteristic" .
+she:MainCharacteristicsOfDiffuseAndPointSourceSoilPollution a skos:Concept ;
+    skos:prefLabel "main characteristics of diffuse and point source soil pollution" ;
+    skos:narrower she:DiffusePollution,
+                  she:PointSourcePollution,
+                  she:Source,
+                  she:ProtectionTarget,
+                  she:ProceduralFramework,
+                  she:AvailabilityThresholdsInReceptors,
+                  she:Policy .
 
 she:DiffusePollution a skos:Concept ;
-    skos:prefLabel "diffuse pollution" .
+    skos:prefLabel "diffuse pollution" ;
+    she:hasSource """Largely ongoing in agricultural areas due to application of plant protection products and nutrients resulting in emission of metals, microplastics and/or nanoparticles. Partially historical in the case of floodplain soils or cases of proximity pollution. Immobile and persistent organic chemicals used in the past can still be found in specific forms of land use (e.g. DDT in areas with intensive fruit tree cropping).""" ;
+    she:hasProtectionTarget """Mostly targeting arable cropping systems, including animal husbandry (grassland); more recently, adjacent terrestrial and aquatic ecosystems are also considered. Direct human exposure is considered in the case of proximity pollution.""" ;
+    she:hasProceduralFramework """Soil screening values and/or relevant risk limits in products are based on (1) at source level, i.e. quantity and quality of applied substances (sludges, fertiliser quality), (2) at effect level, i.e. risk limits for foodstuffs and drinking water quality. In many countries natural background levels are used as a first screening level even though these are not necessarily related to the risks of pollutants as such.""" ;
+    she:hasAvailabilityThresholdsInReceptors """Largely confined to nutrients (in surface water and groundwater), selected metals/metalloids (in plant products) and an array of plant protection chemicals used in agriculture. The number of other organic chemicals included in assessments of diffuse pollution varies strongly per country.""" ;
+    she:hasPolicy """Largely acting via regulation of quantity and quality of inputs to soil (sources), either indirect (e.g. regulation of inputs of nitrogen and phosphorus) or direct (quality standards for pollutants in products used in agriculture). Specifically for sewage sludge current EU policy is based on preventing accumulation. EU-wide limit values are in place that regulate the quality of mineral and organic fertilisers or soil improvers as well as sludges.""" .
 
 she:PointSourcePollution a skos:Concept ;
-    skos:prefLabel "point source pollution" .
-
-she:Policy a skos:Concept ;
-    skos:prefLabel "policy" ;
-    she:describesForDiffusePollution "eu-wide limit values are in place that regulate the quality of mineral and organic fertilisers or soil improvers as well as sludges.",
-        "largely acting via regulation of quantity and quality of inputs to soil (sources), either indirect (e.g. regulation of inputs of nitrogen and phosphorus) or direct (quality standards for pollutants in products used in agriculture). specifically for sewage sludge current eu policy is based on preventing accumulation." ;
-    she:describesForPointSourcePollution "further development of emission control (zero pollution action plan)",
-        "largely based on remediation and/or soil management of affected sites to contain or reduce risk (including restriction of land use) at a local scale.",
-        "no common european regulation (except for wfd and ied – see table 1.6); national remediation targets vary widely across the eu depending on the approach (and risk limit) applied." .
-
-she:ProceduralFramework a skos:Concept ;
-    skos:prefLabel "procedural framework" ;
-    she:describesForDiffusePollution "in many countries natural background levels are used as a first screening level even though these are not necessarily related to the risks of pollutants as such.",
-        "soil screening values and/or relevant risk limits in products are based on (1) at source level, i.e. quantity and quality of applied substances (sludges, fertiliser quality), (2) at effect level, i.e. risk limits for foodstuffs and drinking water quality." ;
-    she:describesForPointSourcePollution "tiered approaches for risk-based assessment, usually combining thresholds for soil and groundwater based on human health risks (exposure) and toxic effects on the ecosystem (ecotoxicological response of selected species). risk assessment aims to ensure that the future intended land use remains below agreed risk levels." .
-
-she:ProtectionTarget a skos:Concept ;
-    skos:prefLabel "protection target" ;
-    she:describesForDiffusePollution "direct human exposure is considered in the case of proximity pollution.",
-        "mostly targeting arable cropping systems, including animal husbandry (grassland); more recently, adjacent terrestrial and aquatic ecosystems are also considered." ;
-    she:describesForPointSourcePollution "primarily focused on human health and on the soil ecosystem directly located at or near the polluted area. in addition, drinking water resources that are affected by leaching from soil or direct emissions into the water body are considered." .
+    skos:prefLabel "point source pollution" ;
+    skos:related she:BTEX, she:IED, she:TDI, she:WFD ;
+    she:hasSource """Largely historical resulting from (historical) industrial emissions. Current emissions on land from large industrial installations (IED) are hardly reported (vs emission to air and water), but it is likely that the percentage of areas affected by ongoing point source pollution varies depending on the degree of implementation of existing legislation in individual Member States and required legal obligations to reduce emissions and/or remediate polluted sites.""" ;
+    she:hasProtectionTarget """Primarily focused on human health and on the soil ecosystem directly located at or near the polluted area. In addition, drinking water resources that are affected by leaching from soil or direct emissions into the water body are considered.""" ;
+    she:hasProceduralFramework """Tiered approaches for risk-based assessment, usually combining thresholds for soil and groundwater based on human health risks (exposure) and toxic effects on the ecosystem (ecotoxicological response of selected species). Risk assessment aims to ensure that the future intended land use remains below agreed risk levels.""" ;
+    she:hasAvailabilityThresholdsInReceptors """For most metals/metalloids, PAHs, aromatic compounds (including BTEX), volatile organic chlorinated compounds, mineral oil, asbestos and other commonly observed organic chemicals produced and emitted by industry; thresholds are available for human health based on exposure (TDI) and reference dose or soil organisms (ecological effects levels).""" ;
+    she:hasPolicy """Largely based on remediation and/or soil management of affected sites to contain or reduce risk (including restriction of land use) at a local scale. Further development of emission control (zero pollution action plan). No common European regulation (except for WFD and IED — see Table 1.6); national remediation targets vary widely across the EU depending on the approach (and risk limit) applied.""" .
 
 she:Source a skos:Concept ;
-    skos:prefLabel "source" ;
-    she:describesForDiffusePollution "immobile and persistent organic chemicals used in the past can still be found in specific forms of land use (e.g. ddt in areas with intensive fruit tree cropping).",
-        "largely ongoing in agricultural areas due to application of plant protection products and nutrients resulting in emission of metals, microplastics and/or nanoparticles.",
-        "partially historical in the case of floodplain soils or cases of proximity pollution." ;
-    she:describesForPointSourcePollution "current emissions on land from large industrial installations (ied) are hardly reported (vs emission to air and water), but it is likely that the percentage of areas affected by ongoing point source pollution varies depending on the degree of implementation of existing legislation in individual member states and required legal obligations to reduce emissions and/or remediate polluted sites.",
-        "largely historical resulting from (historical) industrial emissions." .
+    skos:prefLabel "source" .
 
+she:ProtectionTarget a skos:Concept ;
+    skos:prefLabel "protection target" .
+
+she:ProceduralFramework a skos:Concept ;
+    skos:prefLabel "procedural framework" .
+
+she:AvailabilityThresholdsInReceptors a skos:Concept ;
+    skos:prefLabel "availability thresholds in receptors" .
+
+she:Policy a skos:Concept ;
+    skos:prefLabel "policy" .
+
+she:BTEX a skos:Concept ;
+    skos:prefLabel "btex" ;
+    she:hasAbbreviation "BTEX" ;
+    skos:definition "benzene, toluene, ethylbenzene and xylene" .
+
+she:IED a skos:Concept ;
+    skos:prefLabel "ied" ;
+    she:hasAbbreviation "IED" ;
+    skos:altLabel "industrial emissions directive" .
+
+she:TDI a skos:Concept ;
+    skos:prefLabel "tdi" ;
+    she:hasAbbreviation "TDI" ;
+    skos:definition "tolerable daily intake" .
+
+she:WFD a skos:Concept ;
+    skos:prefLabel "wfd" ;
+    she:hasAbbreviation "WFD" ;
+    skos:altLabel "water framework directive" .

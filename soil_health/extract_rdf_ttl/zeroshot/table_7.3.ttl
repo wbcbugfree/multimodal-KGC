@@ -1,58 +1,62 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Nuts a skos:Concept ;
-    skos:definition "nomenclature of territorial units for statistics." ;
-    skos:prefLabel "nuts" .
-
-she:SoilErosionIndicatorsToSupportAgriEnvironmentalPoliciesAtEuropeanAndGlobalLevels a skos:Concept ;
+she:SoilErosionIndicatorsTable a skos:Concept ;
+    skos:prefLabel "soil erosion indicators to support agri-environmental policies at european and global levels" ;
+    skos:note "Source: Panagos et al. (2020b)." ;
     skos:narrower she:AgriEnvironmentalPolicy,
-        she:Indicator ;
-    skos:prefLabel "soil erosion indicators to support agri-environmental policies at european and global levels" .
+                  she:Indicator .
 
 she:AgriEnvironmentalPolicy a skos:Concept ;
-    skos:narrower she:EuAgriEnvironmentalIndicatorsAeis,
-        she:EuCommonAgriculturalPolicyCap20142020,
-        she:EuResourceEfficiencyScoreboard,
-        she:EuSustainableDevelopmentGoalsIndicatorSet ;
-    skos:prefLabel "agri-environmental policy" .
-
-she:EstimatedAgriculturalAreaAffectedByACertainRateOfSoilErosionByWaterHa a skos:Concept ;
-    skos:prefLabel "estimated agricultural area affected by a certain rate of soil erosion by water (ha)" .
-
-she:EuAgriEnvironmentalIndicatorsAeis a skos:Concept ;
-    skos:prefLabel "eu: agri-environmental indicators (aeis)" ;
-    she:hasIndicator she:Aei21SoilErosionMeanEstimatedRateOfSoilLossByWaterErosionTHaYearAtVariousAdministrativeLevelsMemberStateNuts1Nuts2Nuts3 .
-
-she:EuCommonAgriculturalPolicyCap20142020 a skos:Concept ;
-    skos:prefLabel "eu: common agricultural policy (cap 2014-2020)" ;
-    she:hasIndicator she:CapContextIndicator42SoilErosion .
-
-she:EuResourceEfficiencyScoreboard a skos:Concept ;
-    skos:prefLabel "eu: resource efficiency scoreboard" ;
-    she:hasIndicator she:EstimatedSoilErosionByWaterAreaAffectedBySevereErosionRateGt10THaYear .
-
-she:EuSustainableDevelopmentGoalsIndicatorSet a skos:Concept ;
-    skos:prefLabel "eu: sustainable development goals indicator set" ;
-    she:hasIndicator she:EstimatedSoilErosionByWaterAreaAffectedBySevereErosionRateGt10THaYear .
+    skos:prefLabel "agri-environmental policy" ;
+    skos:narrower she:CommonAgriculturalPolicy2014_2020,
+                  she:ResourceEfficiencyScoreboard,
+                  she:SustainableDevelopmentGoalsIndicatorSet,
+                  she:AgriEnvironmentalIndicators .
 
 she:Indicator a skos:Concept ;
-    skos:narrower she:Aei21SoilErosionMeanEstimatedRateOfSoilLossByWaterErosionTHaYearAtVariousAdministrativeLevelsMemberStateNuts1Nuts2Nuts3,
-        she:CapContextIndicator42SoilErosion,
-        she:EstimatedSoilErosionByWaterAreaAffectedBySevereErosionRateGt10THaYear ;
-    skos:prefLabel "indicator" .
+    skos:prefLabel "indicator" ;
+    skos:narrower she:CapContextIndicator42,
+                  she:EstimatedSoilErosionByWaterSevereRate,
+                  she:Aei21SoilErosion .
 
-she:SubIndicatorEstimatedRateOfSoilLossByWaterErosionTHaYear a skos:Concept ;
+she:CommonAgriculturalPolicy2014_2020 a skos:Concept ;
+    skos:prefLabel "eu: common agricultural policy (cap 2014-2020)" ;
+    she:hasAbbreviation "CAP" ;
+    she:hasIndicator she:CapContextIndicator42 .
+
+she:CapContextIndicator42 a skos:Concept ;
+    skos:prefLabel "cap context indicator 42: soil erosion" ;
+    skos:narrower she:EstimatedRateOfSoilLossByWaterErosion,
+                  she:EstimatedAgriculturalAreaAffectedBySoilErosionByWater .
+
+she:EstimatedRateOfSoilLossByWaterErosion a skos:Concept ;
     skos:prefLabel "sub-indicator: estimated rate of soil loss by water erosion (t/ha/year)" .
 
-she:Aei21SoilErosionMeanEstimatedRateOfSoilLossByWaterErosionTHaYearAtVariousAdministrativeLevelsMemberStateNuts1Nuts2Nuts3 a skos:Concept ;
-    skos:prefLabel "aei 21: soil erosion: mean estimated rate of soil loss by water erosion (t/ha/year) at various administrative levels (member state, nuts1, nuts2, nuts3)" .
+she:EstimatedAgriculturalAreaAffectedBySoilErosionByWater a skos:Concept ;
+    skos:prefLabel "estimated agricultural area affected by a certain rate of soil erosion by water (ha)" .
 
-she:CapContextIndicator42SoilErosion a skos:Concept ;
-    skos:narrower she:EstimatedAgriculturalAreaAffectedByACertainRateOfSoilErosionByWaterHa,
-        she:SubIndicatorEstimatedRateOfSoilLossByWaterErosionTHaYear ;
-    skos:prefLabel "cap context indicator 42: soil erosion" .
+she:ResourceEfficiencyScoreboard a skos:Concept ;
+    skos:prefLabel "eu: resource efficiency scoreboard" ;
+    she:hasIndicator she:EstimatedSoilErosionByWaterSevereRate .
 
-she:EstimatedSoilErosionByWaterAreaAffectedBySevereErosionRateGt10THaYear a skos:Concept ;
+she:SustainableDevelopmentGoalsIndicatorSet a skos:Concept ;
+    skos:prefLabel "eu: sustainable development goals indicator set" ;
+    she:hasIndicator she:EstimatedSoilErosionByWaterSevereRate .
+
+she:EstimatedSoilErosionByWaterSevereRate a skos:Concept ;
     skos:prefLabel "estimated soil erosion by water: area affected by severe erosion rate (>10t/ha/year)" .
 
+she:AgriEnvironmentalIndicators a skos:Concept ;
+    skos:prefLabel "eu: agri-environmental indicators (aeis)" ;
+    she:hasAbbreviation "AEIs" ;
+    she:hasIndicator she:Aei21SoilErosion .
+
+she:Aei21SoilErosion a skos:Concept ;
+    skos:prefLabel "aei 21: soil erosion: mean estimated rate of soil loss by water erosion (t/ha/year) at various administrative levels (member state, nuts1, nuts2, nuts3)" ;
+    skos:related she:Nuts .
+
+she:Nuts a skos:Concept ;
+    skos:prefLabel "nuts" ;
+    she:hasAbbreviation "NUTS" ;
+    skos:definition "nomenclature of territorial units for statistics" .

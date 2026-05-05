@@ -1,0 +1,63 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ThresholdsSchematic a skos:Concept ;
+    skos:prefLabel "schematic representation of thresholds" ;
+    skos:note "adopted from the Heracles network" ;
+    skos:narrower she:NaturalBackground,
+                  she:ScreeningValues,
+                  she:ConcentrationRisk,
+                  she:RisksLevels,
+                  she:Implications .
+
+she:NaturalBackground a skos:Concept ;
+    skos:prefLabel "natural background" ;
+    skos:narrower she:BackgroundValue .
+
+she:BackgroundValue a skos:Concept ;
+    skos:prefLabel "background value" .
+
+she:ScreeningValues a skos:Concept ;
+    skos:prefLabel "screening values" ;
+    skos:narrower she:AcceptableValue,
+                  she:WarningValue,
+                  she:ActionValue .
+
+she:AcceptableValue a skos:Concept ;
+    skos:prefLabel "acceptable value" ;
+    she:isThresholdBetween she:AcceptableRisk, she:IntermediateRisk .
+
+she:WarningValue a skos:Concept ;
+    skos:prefLabel "warning value" ;
+    skos:related she:IntermediateRisk .
+
+she:ActionValue a skos:Concept ;
+    skos:prefLabel "action value" ;
+    she:isThresholdBetween she:IntermediateRisk, she:UnacceptableRisk .
+
+she:ConcentrationRisk a skos:Concept ;
+    skos:prefLabel "concentration/risk" .
+
+she:RisksLevels a skos:Concept ;
+    skos:prefLabel "risks levels" ;
+    skos:narrower she:AcceptableRisk,
+                  she:IntermediateRisk,
+                  she:UnacceptableRisk .
+
+she:AcceptableRisk a skos:Concept ;
+    skos:prefLabel "acceptable risk" ;
+    she:hasImplication "No restrictions in land use" .
+
+she:IntermediateRisk a skos:Concept ;
+    skos:prefLabel "intermediate risk" ;
+    she:hasImplication "Minor restrictions for sensitive land uses",
+                       "Restrictions for sensitive land uses",
+                       "Possibly further investigations" .
+
+she:UnacceptableRisk a skos:Concept ;
+    skos:prefLabel "unacceptable risk" ;
+    she:hasImplication "Problems for any further land use",
+                       "Site specific risk assessment or soil quality management (e.g., remediation)" .
+
+she:Implications a skos:Concept ;
+    skos:prefLabel "implications" .

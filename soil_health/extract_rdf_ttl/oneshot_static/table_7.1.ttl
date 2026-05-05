@@ -1,96 +1,93 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:RelationshipOfSoilErosionToKeySocietalNeedsAndSoilFunctions a skos:Concept ;
-    skos:narrower she:SocietalNeedCategory,
-        she:SoilErosion,
-        she:SoilServiceCategory ;
-    skos:prefLabel "relationship of soil erosion to key societal needs and soil functions" .
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" ;
+    skos:note "Soil erosion can increase the volume of soil sediments that need to be managed." ;
+    she:hasNegativeImpactOn she:WoodAndFibreProduction,
+        she:GrowthOfCrops,
+        she:FilteringOfContaminants,
+        she:WaterStorage,
+        she:CarbonStorage,
+        she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna,
+        she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
 
-she:Biodiversity a skos:Concept ;
-    skos:prefLabel "biodiversity" ;
-    she:isSupportedBy she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna .
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+        she:Water,
+        she:Climate,
+        she:Biodiversity,
+        she:Infrastructure .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" ;
+    skos:narrower she:WoodAndFibreProduction,
+        she:GrowthOfCrops,
+        she:FilteringOfContaminants,
+        she:WaterStorage,
+        she:CarbonStorage,
+        she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna,
+        she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
 
 she:Biomass a skos:Concept ;
     skos:prefLabel "biomass" ;
-    she:isSupportedBy she:GrowthOfCrops,
-        she:WoodAndFibreProduction .
-
-she:Climate a skos:Concept ;
-    skos:prefLabel "climate" ;
-    she:isSupportedBy she:CarbonStorage .
-
-she:Infrastructure a skos:Concept ;
-    skos:prefLabel "infrastructure" ;
-    she:isSupportedBy she:PlatformForInfrastructure,
-        she:StorageOfRelocatedMaterialOrArtefacts .
-
-she:SocietalNeedCategory a skos:Concept ;
-    skos:narrower she:Biodiversity,
-        she:Biomass,
-        she:Climate,
-        she:Infrastructure,
-        she:Water ;
-    skos:prefLabel "societal need" .
-
-she:SoilSedimentsManagement a skos:Concept ;
-    skos:prefLabel "soil sediments management" .
-
-she:SoilServiceCategory a skos:Concept ;
-    skos:narrower she:CarbonStorage,
-        she:FilteringOfContaminants,
-        she:GrowthOfCrops,
-        she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna,
-        she:PlatformForInfrastructure,
-        she:StorageOfRelocatedMaterialOrArtefacts,
-        she:WaterStorage,
-        she:WoodAndFibreProduction ;
-    skos:prefLabel "soil service" .
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:WoodAndFibreProduction,
+        she:GrowthOfCrops .
 
 she:Water a skos:Concept ;
     skos:prefLabel "water" ;
-    she:isSupportedBy she:FilteringOfContaminants,
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:FilteringOfContaminants,
         she:WaterStorage .
 
-she:CarbonStorage a skos:Concept ;
-    skos:prefLabel "carbon storage" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:CarbonStorage .
 
-she:FilteringOfContaminants a skos:Concept ;
-    skos:prefLabel "filtering of contaminants" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna .
 
-she:GrowthOfCrops a skos:Concept ;
-    skos:prefLabel "growth of crops" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
-
-she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna a skos:Concept ;
-    skos:prefLabel "habitat for plants, insects, microbes, fungi and any microfauna" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
-
-she:IncreasedVolumeOfSoilSediments a skos:Concept ;
-    skos:prefLabel "increased volume of soil sediments" ;
-    she:requires she:SoilSedimentsManagement .
-
-she:PlatformForInfrastructure a skos:Concept ;
-    skos:prefLabel "platform for infrastructure" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
-
-she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
-    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
-    she:isNegativelyAffectedBy she:SoilErosion ;
-    she:isSpecificallyImpactedBy she:IncreasedVolumeOfSoilSediments .
-
-she:WaterStorage a skos:Concept ;
-    skos:prefLabel "water storage" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:PlatformForInfrastructure,
+        she:StorageOfRelocatedMaterialOrArtefacts .
 
 she:WoodAndFibreProduction a skos:Concept ;
     skos:prefLabel "wood and fibre production" ;
-    she:isNegativelyAffectedBy she:SoilErosion .
+    skos:broader she:Biomass, she:SoilService .
 
-she:SoilErosion a skos:Concept ;
-    skos:definition "soil erosion can increase the volume of soil sediments that need to be managed." ;
-    skos:prefLabel "soil erosion" ;
-    she:causes she:IncreasedVolumeOfSoilSediments .
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" ;
+    skos:broader she:Biomass, she:SoilService .
 
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" ;
+    skos:broader she:Water, she:SoilService .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" ;
+    skos:broader she:Water, she:SoilService .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    skos:broader she:Climate, she:SoilService .
+
+she:HabitatForPlantsInsectsMicrobesFungiAndAnyMicrofauna a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi and any microfauna" ;
+    skos:broader she:Biodiversity, she:SoilService .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    skos:broader she:Infrastructure, she:SoilService .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
+    skos:broader she:Infrastructure, she:SoilService .

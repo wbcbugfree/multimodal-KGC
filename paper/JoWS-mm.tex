@@ -506,22 +506,20 @@ Few-shot & 0.8390 & 0.8597 & 0.8493 & 0.8600 & 0.0799 & 0.9682 & 0.9749 & 0.9847
 
 \subsubsection{LLM-as-a-Judge Validation}
 
-% Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report judge validation on labelled datasets. Direct validation compares judge scores with traditional metric scores. Pairwise validation compares judge preferences with metric-derived strategy preferences.
+Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the Diagram2Graph LLM-as-a-judge validation results. The validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. Direct scoring compares judge scores with traditional metric scores on this sampled set. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B. In direct scoring, Spearman's rank correlations were moderate: 0.4975 between the overall judge score and triple-match F1, 0.4842 between the mean criterion score and triple-match F1, 0.5319 between the overall judge score and inverse normalized GED, and 0.5223 between the mean criterion score and inverse normalized GED.
 
 \begin{table}[ht]
 \centering
 \small
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Dataset} & \textbf{Compared metric} & \textbf{Correlation} & \textbf{N} \\
+\textbf{Strategy} & \textbf{Overall} & \textbf{Criteria} & \textbf{F1} & \textbf{nGED} \\
 \midrule
-VisText & Content-only triple accuracy & \pending & \pending \\
-VisText & Inverse normalized GED & \pending & \pending \\
-Diagram2Graph & Full-graph triple accuracy & \pending & \pending \\
-Diagram2Graph & Inverse normalized GED & \pending & \pending \\
+Zero-shot & \textbf{4.8158} & \textbf{4.8854} & \textbf{0.8509} & \textbf{0.0776} \\
+Few-shot & 3.6901 & 3.9234 & 0.7718 & 0.1393 \\
 \bottomrule
 \end{tabular}
-\caption{Direct LLM-as-a-judge validation against traditional metrics.}
+\caption{Direct LLM-as-a-judge validation on the selected Diagram2Graph diagrams. Overall denotes the holistic judge score; Criteria denotes the mean criterion score; F1 denotes triple-match F1; nGED denotes normalized GED.}
 \label{tab:judge_direct_validation}
 \end{table}
 
@@ -530,10 +528,9 @@ Diagram2Graph & Inverse normalized GED & \pending & \pending \\
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Dataset} & \textbf{Comparison mode} & \textbf{Agreement} & \textbf{N} \\
+\textbf{Dataset} & \textbf{Compared strategies} & \textbf{Agreement} & \textbf{N} \\
 \midrule
-VisText & Pairwise strategy preference & \pending & \pending \\
-Diagram2Graph & Pairwise strategy preference & \pending & \pending \\
+Diagram2Graph & Few-shot vs zero-shot & 0.4737 & 57 \\
 \bottomrule
 \end{tabular}
 \caption{Pairwise LLM-as-a-judge validation against metric-derived preferences.}

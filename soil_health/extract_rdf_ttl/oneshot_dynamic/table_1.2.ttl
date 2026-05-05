@@ -1,0 +1,47 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ImportantSoilFunctions a skos:Concept ;
+    skos:prefLabel "important soil functions" ;
+    skos:narrower she:Production,
+        she:WaterStorageAndQuality,
+        she:CarbonStorage,
+        she:NutrientCycling,
+        she:HabitatForBiologicalActivity ;
+    skos:note "Source: Modified from Vogel et al. (2020). Reproduction licensed under Creative Commons CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)." .
+
+she:Production a skos:Concept ;
+    skos:prefLabel "production" ;
+    skos:definition "Capacity to produce biomass" .
+
+she:WaterStorageAndQuality a skos:Concept ;
+    skos:prefLabel "water storage and quality" ;
+    skos:definition "Capacity to store precipitation water and filter for soil pollutants" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    skos:definition "Capacity to store and stabilise SOC" ;
+    skos:related she:Soc .
+
+she:Soc a skos:Concept ;
+    skos:prefLabel "soc" ;
+    she:hasAbbreviation "SOC" .
+
+she:NutrientCycling a skos:Concept ;
+    skos:prefLabel "nutrient cycling" ;
+    skos:definition "i. Capacity to provide nutrients from mineral and organic soil resources in available form (nutrient mobilisation capacity). ii. The capacity to store mobile nutrients within the root zone to avoid losses by leaching and gaseous emissions (nutrient buffering capacity)" ;
+    skos:narrower she:NutrientMobilisationCapacity,
+        she:NutrientBufferingCapacity .
+
+she:NutrientMobilisationCapacity a skos:Concept ;
+    skos:prefLabel "nutrient mobilisation capacity" ;
+    skos:definition "Capacity to provide nutrients from mineral and organic soil resources in available form" .
+
+she:NutrientBufferingCapacity a skos:Concept ;
+    skos:prefLabel "nutrient buffering capacity" ;
+    skos:definition "The capacity to store mobile nutrients within the root zone to avoid losses by leaching and gaseous emissions" .
+
+she:HabitatForBiologicalActivity a skos:Concept ;
+    skos:prefLabel "habitat for biological activity" ;
+    skos:definition "Provision of a species (gene) pool that can buffer ecosystem functions against species extinction" ;
+    skos:note "assumption: loss of soil function is more likely with low species diversity in each functional group" .

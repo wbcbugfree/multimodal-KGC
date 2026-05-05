@@ -2,17 +2,25 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:EnvironmentalThresholdsForOTUsOfEctomycorrhizalFungi a skos:Concept ;
-    skos:narrower she:FoliarNPRatio,
-        she:ForestFloorPH,
-        she:MeanAnnualAirTemperature,
-        she:ThroughfallNitrogenDeposition,
-        she:ThroughfallPotassiumDeposition ;
-    skos:prefLabel "environmental thresholds for operational taxonomic units (otus) of ectomycorrhizal fungi" .
+    skos:prefLabel "environmental thresholds for operational taxonomic units (otus) of ectomycorrhizal fungi" ;
+    skos:note "Source: Compiled from Van der Linde et al. (2018)." ;
+    skos:narrower she:ThroughfallNitrogenDeposition,
+                  she:ForestFloorPH,
+                  she:MeanAnnualAirTemperature,
+                  she:ThroughfallPotassiumDeposition,
+                  she:FoliarNPRatio .
 
-she:FoliarNPRatio a skos:Concept ;
-    skos:prefLabel "foliar n:p ratio" ;
-    she:hasThresholdForDecreasingOTUs "10.2" ;
-    she:hasThresholdForIncreasingOTUs "13.3" .
+she:OperationalTaxonomicUnit a skos:Concept ;
+    skos:prefLabel "operational taxonomic unit" ;
+    she:hasAbbreviation "OTU" .
+
+she:EctomycorrhizalFungi a skos:Concept ;
+    skos:prefLabel "ectomycorrhizal fungi" .
+
+she:ThroughfallNitrogenDeposition a skos:Concept ;
+    skos:prefLabel "throughfall nitrogen deposition" ;
+    she:hasThresholdForDecreasingOTUs "5.8kg N/ha/year" ;
+    she:hasThresholdForIncreasingOTUs "15.5kg N/ha/year" .
 
 she:ForestFloorPH a skos:Concept ;
     skos:prefLabel "forest floor ph" ;
@@ -23,13 +31,12 @@ she:MeanAnnualAirTemperature a skos:Concept ;
     she:hasThresholdForDecreasingOTUs "7.4°C" ;
     she:hasThresholdForIncreasingOTUs "9.1°C" .
 
-she:ThroughfallNitrogenDeposition a skos:Concept ;
-    skos:prefLabel "throughfall nitrogen deposition" ;
-    she:hasThresholdForDecreasingOTUs "5.8kg N/ha/year" ;
-    she:hasThresholdForIncreasingOTUs "15.5kg N/ha/year" .
-
 she:ThroughfallPotassiumDeposition a skos:Concept ;
     skos:prefLabel "throughfall potassium deposition" ;
     she:hasThresholdForDecreasingOTUs "6.9kg K/ha/year" ;
     she:hasThresholdForIncreasingOTUs "21.7kg K/ha/year" .
 
+she:FoliarNPRatio a skos:Concept ;
+    skos:prefLabel "foliar n:p ratio" ;
+    she:hasThresholdForDecreasingOTUs "10.2" ;
+    she:hasThresholdForIncreasingOTUs "13.3" .

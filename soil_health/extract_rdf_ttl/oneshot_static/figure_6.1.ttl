@@ -2,52 +2,51 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:BaselineAndThresholdApproachForSoilBiodiversityMonitoring a skos:Concept ;
+    skos:prefLabel "baseline and threshold approach for soil biodiversity monitoring" ;
     skos:narrower she:ReferenceState,
         she:TransitionalStages,
-        she:UnacceptableStress ;
-    skos:prefLabel "baseline and threshold approach for soil biodiversity monitoring" .
+        she:UnacceptableStress .
 
 she:SoilBiologicalCondition a skos:Concept ;
-    skos:prefLabel "soil biological condition" ;
-    she:isInfluencedBy she:StressLevel .
+    skos:prefLabel "soil biological condition" .
 
-she:Decline a skos:Concept ;
-    skos:prefLabel "decline" ;
-    she:reaches she:Threshold .
+she:StressLevel a skos:Concept ;
+    skos:prefLabel "stress level" ;
+    she:impacts she:SoilBiologicalCondition .
+
+she:ReferenceState a skos:Concept ;
+    skos:prefLabel "reference state" ;
+    skos:note "ecosystem-specific" ;
+    skos:narrower she:DesiredValueRange .
 
 she:DesiredValueRange a skos:Concept ;
     skos:prefLabel "desired value (range)" .
 
-she:EmergencyPush a skos:Concept ;
-    skos:prefLabel "emergency push" ;
-    she:initiates she:StressResponse .
-
-she:ReferenceState a skos:Concept ;
-    skos:definition "ecosystem-specific" ;
-    skos:narrower she:DesiredValueRange ;
-    skos:prefLabel "reference state" .
-
-she:StressLevel a skos:Concept ;
-    skos:prefLabel "stress level" .
-
 she:TransitionalStages a skos:Concept ;
-    skos:narrower she:EmergencyPush,
-        she:StressResponse ;
-    skos:prefLabel "transitional stages" .
-
-she:UnacceptableStress a skos:Concept ;
-    skos:narrower she:Damage,
-        she:Threshold ;
-    skos:prefLabel "unacceptable stress" .
-
-she:Damage a skos:Concept ;
-    skos:prefLabel "damage" .
+    skos:prefLabel "transitional stages" ;
+    skos:narrower she:StressResponse .
 
 she:StressResponse a skos:Concept ;
     skos:prefLabel "stress response" ;
-    she:leadsTo she:Decline .
+    skos:narrower she:EmergencyPush,
+        she:Decline .
+
+she:EmergencyPush a skos:Concept ;
+    skos:prefLabel "emergency push" ;
+    skos:note "indicated by upward arrow on response curve" .
+
+she:Decline a skos:Concept ;
+    skos:prefLabel "decline" ;
+    skos:note "indicated by downward arrow on response curve" .
 
 she:Threshold a skos:Concept ;
     skos:prefLabel "threshold" ;
-    she:resultsIn she:Damage .
+    she:delimits she:TransitionalStages,
+        she:UnacceptableStress .
 
+she:UnacceptableStress a skos:Concept ;
+    skos:prefLabel "unacceptable stress" ;
+    skos:narrower she:Damage .
+
+she:Damage a skos:Concept ;
+    skos:prefLabel "damage" .

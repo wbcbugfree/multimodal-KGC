@@ -1,119 +1,84 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+she:DiagnosisOfSoilCompaction a skos:Concept ;
+    skos:prefLabel "diagnosis of soil compaction based on threshold exceedance" ;
+    skos:narrower she:CompactionVerificationTool,
+                  she:ThresholdsAndRiskLevels,
+                  she:MonitoringOfCompactionClasses,
+                  she:EvaluationOfCompactionRisk .
+
 she:CompactionVerificationTool a skos:Concept ;
-    skos:definition "based on critical values of the soil physical parameters ks < 10 cm*d-1 and AC < 5vol% which are related to soil functions" ;
-    skos:prefLabel "compaction verification tool (cvt)" .
+    skos:prefLabel "compaction verification tool" ;
+    she:hasAbbreviation "CVT" ;
+    skos:note "Based on critical values of the soil physical parameters ks < 10 cm*d-1 and AC < 5vol% which are related to soil functions" ;
+    she:usesParameter she:SaturatedHydraulicConductivity,
+                      she:AirCapacity .
 
-she:EvaluationOfCompactionRisk a skos:Concept ;
-    skos:definition "the degree of subsoil compaction depends of the increase of class iv" ;
-    skos:narrower she:IncreaseOfClassIV10To25Percent,
-        she:IncreaseOfClassIVGreaterThan25Percent ;
-    skos:prefLabel "evaluation of compaction risk" .
+she:SaturatedHydraulicConductivity a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity" ;
+    she:hasSymbol "ks" ;
+    she:hasCriticalThreshold "10 cm*d-1" .
 
-she:MonitoringOfCompactionClasses a skos:Concept ;
-    skos:narrower she:ExampleAfterMonitoring,
-        she:ExampleOfInitialSubsoilConditions ;
-    skos:prefLabel "monitoring of compaction classes" .
+she:AirCapacity a skos:Concept ;
+    skos:prefLabel "air capacity" ;
+    she:hasSymbol "AC" ;
+    she:hasCriticalThreshold "5vol%" .
 
-she:ThresholdesAndRiskLevels a skos:Concept ;
+she:ThresholdsAndRiskLevels a skos:Concept ;
+    skos:prefLabel "thresholds and risk levels" ;
+    skos:narrower she:NoHarmfulCompaction,
+                  she:HarmfulCompaction .
+
+she:NoHarmfulCompaction a skos:Concept ;
+    skos:prefLabel "no harmful compaction" ;
     skos:narrower she:ClassI,
-        she:ClassII,
-        she:ClassIII,
-        she:ClassIV ;
-    skos:prefLabel "thresholdes and risk levels" .
+                  she:ClassII,
+                  she:ClassIII ;
+    skos:note "Indicator is below the critical value (none or one parameter exceeded)" .
 
-she:BothIndicatorsBelowCriticalValue a skos:Concept ;
-    skos:definition "both indicators are below the critical value" ;
-    skos:prefLabel "both" .
+she:HarmfulCompaction a skos:Concept ;
+    skos:prefLabel "harmful compaction" ;
+    skos:narrower she:ClassIV ;
+    skos:note "Indicators are below the critical value (both parameters exceeded)" .
 
 she:ClassI a skos:Concept ;
     skos:prefLabel "class i" ;
-    she:correspondsToCondition she:NoIndicatorBelowCriticalValue ;
-    she:hasAcCondition she:AcAtOrAboveCriticalValue ;
-    she:hasKsCondition she:KsAtOrAboveCriticalValue ;
-    she:hasRiskLevel she:NoHarmfulCompaction .
+    skos:note "no indicator below the critical value" .
 
 she:ClassII a skos:Concept ;
     skos:prefLabel "class ii" ;
-    she:correspondsToCondition she:KsOrAcIndicatorBelowCriticalValue ;
-    she:hasAcCondition she:AcAtOrAboveCriticalValue ;
-    she:hasKsCondition she:KsLessThanCriticalValue ;
-    she:hasRiskLevel she:NoHarmfulCompaction .
+    skos:note "ks or AC below the critical value" .
 
 she:ClassIII a skos:Concept ;
     skos:prefLabel "class iii" ;
-    she:correspondsToCondition she:KsOrAcIndicatorBelowCriticalValue ;
-    she:hasAcCondition she:AcLessThanCriticalValue ;
-    she:hasKsCondition she:KsAtOrAboveCriticalValue ;
-    she:hasRiskLevel she:NoHarmfulCompaction .
+    skos:note "ks or AC below the critical value" .
 
 she:ClassIV a skos:Concept ;
     skos:prefLabel "class iv" ;
-    she:correspondsToCondition she:BothIndicatorsBelowCriticalValue ;
-    she:hasAcCondition she:AcLessThanCriticalValue ;
-    she:hasKsCondition she:KsLessThanCriticalValue ;
-    she:hasRiskLevel she:HarmfulCompaction .
+    skos:note "both indicators below the critical value" .
 
-she:ContinuousObservationOfLandUsePracticesRecommendationOfTillageSystems a skos:Concept ;
-    skos:prefLabel "continuous observation of land use practices, recommendation of tillage systems" .
+she:MonitoringOfCompactionClasses a skos:Concept ;
+    skos:prefLabel "monitoring of compaction classes" ;
+    skos:note "Evaluation depends on the increase of class iv" .
 
-she:ExampleAfterMonitoring a skos:Concept ;
-    skos:prefLabel "example after monitoring" ;
-    she:hasClassIIIProportion "25%" ;
-    she:hasClassIIProportion "25%" ;
-    she:hasClassIProportion "13%" ;
-    she:hasClassIVProportion "37%" .
-
-she:ExampleOfInitialSubsoilConditions a skos:Concept ;
-    skos:prefLabel "example of initial subsoil conditions" ;
-    she:hasClassIIIProportion "20%" ;
-    she:hasClassIIProportion "12%" ;
-    she:hasClassIProportion "63%" ;
-    she:hasClassIVProportion "5%" .
-
-she:HarmfulCompaction a skos:Concept ;
-    skos:prefLabel "harmful compaction" .
-
-she:ImpositionOfMeliorationMeasuresAndAdaptedLandUsePractice a skos:Concept ;
-    skos:prefLabel "imposition of melioration measures and adapted land use practice" .
-
-she:IncreaseOfClassIV10To25Percent a skos:Concept ;
-    skos:prefLabel "increase of class iv 10-25%" ;
-    she:leadsTo she:IntermediateSubsoilCompactionRisk .
-
-she:IncreaseOfClassIVGreaterThan25Percent a skos:Concept ;
-    skos:prefLabel "increase of class iv >25%" ;
-    she:leadsTo she:UnacceptableSubsoilCompactionRisk .
+she:EvaluationOfCompactionRisk a skos:Concept ;
+    skos:prefLabel "evaluation of compaction risk" ;
+    skos:narrower she:IntermediateSubsoilCompactionRisk,
+                  she:UnacceptableSubsoilCompactionRisk .
 
 she:IntermediateSubsoilCompactionRisk a skos:Concept ;
     skos:prefLabel "intermediate subsoil compaction risk" ;
-    she:requiresAction she:ContinuousObservationOfLandUsePracticesRecommendationOfTillageSystems .
-
-she:NoIndicatorBelowCriticalValue a skos:Concept ;
-    skos:definition "no indicator is below the critical value" ;
-    skos:prefLabel "no" .
+    she:hasCondition "increase of class iv between 10-25%" ;
+    she:recommendsAction she:ContinuousObservationOfLandUsePractices .
 
 she:UnacceptableSubsoilCompactionRisk a skos:Concept ;
     skos:prefLabel "unacceptable subsoil compaction risk" ;
-    she:requiresAction she:ImpositionOfMeliorationMeasuresAndAdaptedLandUsePractice .
+    she:hasCondition "increase of class iv > 25%" ;
+    she:recommendsAction she:ImpositionOfMeliorationMeasures .
 
-she:AcAtOrAboveCriticalValue a skos:Concept ;
-    skos:prefLabel "ac >= 5vol%" .
+she:ContinuousObservationOfLandUsePractices a skos:Concept ;
+    skos:prefLabel "continuous observation of land use practices, recommendation of tillage systems" .
 
-she:AcLessThanCriticalValue a skos:Concept ;
-    skos:prefLabel "ac < 5vol%" .
-
-she:KsAtOrAboveCriticalValue a skos:Concept ;
-    skos:prefLabel "ks >= 10 cm*d-1" .
-
-she:KsLessThanCriticalValue a skos:Concept ;
-    skos:prefLabel "ks < 10 cm*d-1" .
-
-she:KsOrAcIndicatorBelowCriticalValue a skos:Concept ;
-    skos:definition "ks or ac indicator is below the critical value" ;
-    skos:prefLabel "ks or ac" .
-
-she:NoHarmfulCompaction a skos:Concept ;
-    skos:prefLabel "no harmful compaction" .
-
+she:ImpositionOfMeliorationMeasures a skos:Concept ;
+    skos:prefLabel "imposition of melioration measures and adapted land use practice" .

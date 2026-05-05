@@ -1,0 +1,139 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:MatrixOfMeanSOCTargetValues a skos:Concept ;
+    skos:prefLabel "matrix of mean soc target values (% soil mass) for mineral cropland soils" ;
+    skos:note "Data are valid for Germany and neighbouring countries for different soil textures, climatic conditions and fertilisation regimes." ;
+    she:hasSource "Wessolek et al. (2008)" ;
+    skos:narrower she:SoilTextureClass,
+                  she:ManagementIntensity,
+                  she:ClimaticWaterBalanceDuringSummer .
+
+she:SoilTextureClass a skos:Concept ;
+    skos:prefLabel "soil texture class" ;
+    skos:narrower she:Sand,
+                  she:Silt,
+                  she:LoamAndClay .
+
+she:Sand a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "sand" ;
+    skos:broader she:SoilTextureClass .
+
+she:Silt a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "silt" ;
+    skos:broader she:SoilTextureClass .
+
+she:LoamAndClay a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "loam and clay" ;
+    skos:broader she:SoilTextureClass .
+
+she:ManagementIntensity a skos:Concept ;
+    skos:prefLabel "management intensity (fertiliser)" ;
+    skos:narrower she:MaxBoth,
+                  she:OrganicAndMineral,
+                  she:Organic,
+                  she:Mineral,
+                  she:Null .
+
+she:MaxBoth a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "max. both" ;
+    skos:definition "Maximal application of organic and mineral fertiliser." ;
+    skos:broader she:ManagementIntensity .
+
+she:OrganicAndMineral a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "organic and mineral" ;
+    skos:broader she:ManagementIntensity .
+
+she:Organic a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "organic" ;
+    skos:broader she:ManagementIntensity .
+
+she:Mineral a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "mineral" ;
+    skos:broader she:ManagementIntensity .
+
+she:Null a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "null" ;
+    skos:definition "no fertiliser applied" ;
+    skos:broader she:ManagementIntensity .
+
+she:ClimaticWaterBalanceDuringSummer a skos:Concept ;
+    skos:prefLabel "climatic water balance (mm) during summer" ;
+    skos:note "Negative water balance: potential evapotranspiration more than precipitation during summer. Positive values indicate climate-induced surplus in the water budget from April to September." ;
+    skos:narrower she:LessThanMinus100,
+                  she:Minus100To0,
+                  she:MoreThan0 .
+
+she:LessThanMinus100 a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "less than -100" ;
+    skos:broader she:ClimaticWaterBalanceDuringSummer .
+
+she:Minus100To0 a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "-100 to 0" ;
+    skos:broader she:ClimaticWaterBalanceDuringSummer .
+
+she:MoreThan0 a skos:Concept ;
+    a skos:Concept ;
+    skos:prefLabel "more than 0" ;
+    skos:broader she:ClimaticWaterBalanceDuringSummer .
+
+she:Sand she:hasMeanSOCTargetValue 
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "1.01" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.51" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.01" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.95" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.45" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.95" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.83" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.33" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.83" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.73" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.23" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.73" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.70" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.2" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.7" ] .
+
+she:Silt she:hasMeanSOCTargetValue 
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "2.37" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.92" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.44" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "2.19" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.72" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.24" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "2.07" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.61" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.18" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "1.89" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.5" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "1.11" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "1.71" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.24" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "0.77" ] .
+
+she:LoamAndClay she:hasMeanSOCTargetValue 
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.99" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.64" ] ,
+    [ she:hasManagementIntensity she:MaxBoth ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.8" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.95" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.2" ] ,
+    [ she:hasManagementIntensity she:OrganicAndMineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.67" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.91" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.12" ] ,
+    [ she:hasManagementIntensity she:Organic ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.63" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.87" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.07" ] ,
+    [ she:hasManagementIntensity she:Mineral ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.59" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:LessThanMinus100 ; she:hasValue "0.82" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:Minus100To0 ; she:hasValue "1.16" ] ,
+    [ she:hasManagementIntensity she:Null ; she:hasClimaticWaterBalance she:MoreThan0 ; she:hasValue "2.46" ] .

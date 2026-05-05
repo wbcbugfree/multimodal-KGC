@@ -1,0 +1,83 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table6_5 a skos:Concept ;
+    skos:prefLabel "environmental thresholds for operational taxonomic units (otus) of ectomycorrhizal fungi" ;
+    skos:note "Source: Compiled from Van der Linde et al. (2018)." ;
+    skos:narrower she:Variable, 
+                  she:DecreasingOTUs, 
+                  she:IncreasingOTUs .
+
+she:Variable a skos:Concept ;
+    skos:prefLabel "variable" ;
+    skos:narrower she:ThroughfallNitrogenDeposition,
+                  she:ForestFloorPH,
+                  she:MeanAnnualAirTemperature,
+                  she:ThroughfallPotassiumDeposition,
+                  she:FoliarNPRatio .
+
+she:DecreasingOTUs a skos:Concept ;
+    skos:prefLabel "decreasing otus" ;
+    she:hasAbbreviation "OTUs" .
+
+she:IncreasingOTUs a skos:Concept ;
+    skos:prefLabel "increasing otus" ;
+    she:hasAbbreviation "OTUs" .
+
+she:ThroughfallNitrogenDeposition a skos:Concept ;
+    skos:prefLabel "throughfall nitrogen deposition" ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:DecreasingOTUs ;
+        she:hasValue "5.8" ;
+        she:hasUnit "kg N/ha/year"
+    ] ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:IncreasingOTUs ;
+        she:hasValue "15.5" ;
+        she:hasUnit "kg N/ha/year"
+    ] .
+
+she:ForestFloorPH a skos:Concept ;
+    skos:prefLabel "forest floor ph" ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:DecreasingOTUs ;
+        she:hasValue "3.8"
+    ] .
+
+she:MeanAnnualAirTemperature a skos:Concept ;
+    skos:prefLabel "mean annual air temperature" ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:DecreasingOTUs ;
+        she:hasValue "7.4" ;
+        she:hasUnit "°C"
+    ] ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:IncreasingOTUs ;
+        she:hasValue "9.1" ;
+        she:hasUnit "°C"
+    ] .
+
+she:ThroughfallPotassiumDeposition a skos:Concept ;
+    skos:prefLabel "throughfall potassium deposition" ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:DecreasingOTUs ;
+        she:hasValue "6.9" ;
+        she:hasUnit "kg K/ha/year"
+    ] ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:IncreasingOTUs ;
+        she:hasValue "21.7" ;
+        she:hasUnit "kg K/ha/year"
+    ] .
+
+she:FoliarNPRatio a skos:Concept ;
+    skos:prefLabel "foliar n:p ratio" ;
+    she:hasSymbol "N:P" ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:DecreasingOTUs ;
+        she:hasValue "10.2"
+    ] ;
+    she:hasEnvironmentalThreshold [
+        she:forOutcome she:IncreasingOTUs ;
+        she:hasValue "13.3"
+    ] .

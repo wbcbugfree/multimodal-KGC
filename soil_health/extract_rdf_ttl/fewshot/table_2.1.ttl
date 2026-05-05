@@ -1,0 +1,95 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" ;
+    she:hasPositiveImpactOn she:WoodAndFibreProduction,
+                            she:GrowthOfCrops,
+                            she:FilteringOfContaminants,
+                            she:WaterStorage,
+                            she:CarbonStorage,
+                            she:HabitatForPlantsInsectsMicrobesFungi ;
+    she:hasNeutralImpactOn she:PlatformForInfrastructure,
+                           she:StorageOfGeologicalMaterial .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+                  she:Water,
+                  she:Climate,
+                  she:Biodiversity,
+                  she:Infrastructure .
+
+she:SoilFunction a skos:Concept ;
+    skos:prefLabel "soil function" ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops,
+                  she:FilteringOfContaminants,
+                  she:WaterStorage,
+                  she:CarbonStorage,
+                  she:HabitatForPlantsInsectsMicrobesFungi,
+                  she:PlatformForInfrastructure,
+                  she:StorageOfGeologicalMaterial .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:FilteringOfContaminants,
+                  she:WaterStorage .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:CarbonStorage .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:PlatformForInfrastructure,
+                  she:StorageOfGeologicalMaterial .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" ;
+    skos:broader she:Biomass, she:SoilFunction .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" ;
+    skos:broader she:Biomass, she:SoilFunction .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" ;
+    skos:broader she:Water, she:SoilFunction .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" ;
+    skos:broader she:Water, she:SoilFunction .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    skos:broader she:Climate, she:SoilFunction .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    skos:broader she:Biodiversity, she:SoilFunction .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    skos:broader she:Infrastructure, she:SoilFunction ;
+    skos:note "Indifferent for mineral soils" ;
+    skos:definition "SOC-rich soils (e.g. drained organic soils in estuaries) are unstable and unsuitable as a platform for construction because of subsidence and natural changes of the soil's drainage status (Trepel, 2015)." .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" ;
+    skos:broader she:Infrastructure, she:SoilFunction .

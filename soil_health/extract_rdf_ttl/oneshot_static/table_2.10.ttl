@@ -1,38 +1,30 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:EuropeanCroplandArea a skos:Concept ;
-    skos:prefLabel "european cropland area" .
+she:SomThresholdsDefinition a skos:Concept ;
+    skos:prefLabel "definition of som thresholds derived from a farmer questionnaire" ;
+    skos:narrower she:Threshold1,
+                  she:Threshold2 ;
+    skos:note "Sources: Elaborated based on Hijbeek et al. (2017b); SOC data for the area estimates are from De Brogniez et al. (2015)." .
 
-she:SomContent a skos:Concept ;
-    skos:prefLabel "som content" .
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" ;
+    she:hasAbbreviation "SOM" .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
 
 she:Threshold1 a skos:Concept ;
-    skos:broader she:SomThresholdsDerivedFromFarmerQuestionnaire ;
-    skos:definition "lower end of som value range (10th percentile) at which farmers judge their current som content sufficient" ;
     skos:prefLabel "threshold 1" ;
-    she:concernedArea "1.1% of the european cropland area" ;
-    she:implication "below this threshold value, no farmers are expected to be satisfied with their som content" ;
-    she:specificallyConcernsRegion she:NorthernFrance .
+    skos:broader she:SomThresholdsDefinition ;
+    skos:definition "Lower end of SOM value range (10th percentile) at which farmers judge their current SOM content sufficient" ;
+    skos:note "Below this threshold value, no farmers are expected to be satisfied with their SOM content",
+              "1.1% of the European cropland area is concerned (in particular northern France)" .
 
 she:Threshold2 a skos:Concept ;
-    skos:broader she:SomThresholdsDerivedFromFarmerQuestionnaire ;
-    skos:definition "upper end of the range of values (90th percentile) at which farmers perceive a high or very high deficiency of som content" ;
     skos:prefLabel "threshold 2" ;
-    she:concernedArea "14.3% of the cropland area" ;
-    she:implication "above this threshold, no farmers are expected to be dissatisfied with their som content" ;
-    she:specificallyConcernsRegion she:CentralEasternEurope,
-        she:SouthernEurope .
-
-she:CentralEasternEurope a skos:Concept ;
-    skos:prefLabel "central/eastern europe" .
-
-she:NorthernFrance a skos:Concept ;
-    skos:prefLabel "northern france" .
-
-she:SouthernEurope a skos:Concept ;
-    skos:prefLabel "southern europe" .
-
-she:SomThresholdsDerivedFromFarmerQuestionnaire a skos:Concept ;
-    skos:prefLabel "definition of som thresholds derived from a farmer questionnaire" .
-
+    skos:broader she:SomThresholdsDefinition ;
+    skos:definition "Upper end of the range of values (90th percentile) at which farmers perceive a high or very high deficiency of SOM content" ;
+    skos:note "Above this threshold, no farmers are expected to be dissatisfied with their SOM content",
+              "14.3% of the cropland area (mostly central/eastern Europe and southern Europe)" .

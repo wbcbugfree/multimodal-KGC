@@ -1,0 +1,137 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table2_4 a skos:Concept ;
+    skos:prefLabel "matrix of mean soc target values (% soil mass) for mineral cropland soils based on extensive national soil data sets" ;
+    skos:definition "Matrix of mean SOC target values (% soil mass) for mineral cropland soils based on extensive national soil data sets" ;
+    skos:note "Data are valid for Germany and neighbouring countries for different soil textures, climatic conditions and fertilisation regimes. Source: Compiled from Wessolek et al. (2008)." ;
+    skos:narrower she:SoilTextureClass,
+                  she:ManagementIntensity,
+                  she:ClimaticWaterBalance .
+
+she:SoilTextureClass a skos:Concept ;
+    skos:prefLabel "soil texture class" ;
+    skos:broader she:Table2_4 ;
+    skos:narrower she:Sand,
+                  she:Silt,
+                  she:LoamAndClay .
+
+she:Sand a skos:Concept ;
+    skos:prefLabel "sand" ;
+    skos:broader she:SoilTextureClass .
+
+she:Silt a skos:Concept ;
+    skos:prefLabel "silt" ;
+    skos:broader she:SoilTextureClass .
+
+she:LoamAndClay a skos:Concept ;
+    skos:prefLabel "loam and clay" ;
+    skos:broader she:SoilTextureClass .
+
+she:ManagementIntensity a skos:Concept ;
+    skos:prefLabel "management intensity (fertiliser)" ;
+    skos:broader she:Table2_4 ;
+    skos:narrower she:MaxBoth,
+                  she:OrganicAndMineral,
+                  she:Organic,
+                  she:Mineral,
+                  she:Null .
+
+she:MaxBoth a skos:Concept ;
+    skos:prefLabel "max. both" ;
+    skos:note "maximal application of organic and mineral fertiliser" ;
+    skos:broader she:ManagementIntensity .
+
+she:OrganicAndMineral a skos:Concept ;
+    skos:prefLabel "organic and mineral" ;
+    skos:broader she:ManagementIntensity .
+
+she:Organic a skos:Concept ;
+    skos:prefLabel "organic" ;
+    skos:broader she:ManagementIntensity .
+
+she:Mineral a skos:Concept ;
+    skos:prefLabel "mineral" ;
+    skos:broader she:ManagementIntensity .
+
+she:Null a skos:Concept ;
+    skos:prefLabel "null" ;
+    skos:note "no fertiliser applied" ;
+    skos:broader she:ManagementIntensity .
+
+she:ClimaticWaterBalance a skos:Concept ;
+    skos:prefLabel "climatic water balance (mm) during summer" ;
+    skos:note "Negative water balance: potential evapotranspiration more than precipitation during summer. Positive values indicate climate-induced surplus in the water budget from April to September." ;
+    skos:broader she:Table2_4 ;
+    skos:narrower she:LessThanMinus100,
+                  she:Minus100To0,
+                  she:MoreThan0 .
+
+she:LessThanMinus100 a skos:Concept ;
+    skos:prefLabel "less than -100" ;
+    skos:broader she:ClimaticWaterBalance .
+
+she:Minus100To0 a skos:Concept ;
+    skos:prefLabel "-100 to 0" ;
+    skos:broader she:ClimaticWaterBalance .
+
+she:MoreThan0 a skos:Concept ;
+    skos:prefLabel "more than 0" ;
+    skos:broader she:ClimaticWaterBalance .
+
+# Representative Data Extraction for Sand
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Sand ;
+    she:forManagementIntensity she:MaxBoth ;
+    she:forClimaticWaterBalance she:LessThanMinus100 ;
+    she:hasMeanSOCValue "1.01" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Sand ;
+    she:forManagementIntensity she:OrganicAndMineral ;
+    she:forClimaticWaterBalance she:Minus100To0 ;
+    she:hasMeanSOCValue "1.45" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Sand ;
+    she:forManagementIntensity she:Null ;
+    she:forClimaticWaterBalance she:MoreThan0 ;
+    she:hasMeanSOCValue "1.7" .
+
+# Representative Data Extraction for Silt
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Silt ;
+    she:forManagementIntensity she:MaxBoth ;
+    she:forClimaticWaterBalance she:LessThanMinus100 ;
+    she:hasMeanSOCValue "2.37" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Silt ;
+    she:forManagementIntensity she:Organic ;
+    she:forClimaticWaterBalance she:Minus100To0 ;
+    she:hasMeanSOCValue "1.61" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:Silt ;
+    she:forManagementIntensity she:Null ;
+    she:forClimaticWaterBalance she:MoreThan0 ;
+    she:hasMeanSOCValue "0.77" .
+
+# Representative Data Extraction for Loam and Clay
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:LoamAndClay ;
+    she:forManagementIntensity she:MaxBoth ;
+    she:forClimaticWaterBalance she:MoreThan0 ;
+    she:hasMeanSOCValue "2.8" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:LoamAndClay ;
+    she:forManagementIntensity she:Mineral ;
+    she:forClimaticWaterBalance she:LessThanMinus100 ;
+    she:hasMeanSOCValue "0.87" .
+
+[] a she:SOCTargetObservation ;
+    she:forSoilTexture she:LoamAndClay ;
+    she:forManagementIntensity she:Null ;
+    she:forClimaticWaterBalance she:Minus100To0 ;
+    she:hasMeanSOCValue "1.16" .

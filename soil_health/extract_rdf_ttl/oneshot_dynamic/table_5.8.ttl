@@ -1,0 +1,105 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ScreeningValuesTable a skos:Concept ;
+    skos:prefLabel "screening values for potentially unacceptable risk (residential soil use) for organic contaminants" ;
+    skos:note "Compiled from Carlon et al. (2007). Values are in mg/kg unless otherwise specified. B: Brussels, F: Flanders, W: Wallonia. PCDD: polychlorinated dibenzodioxins, PCDF: polychlorinated dibenzofurans." ;
+    skos:narrower she:Compound, she:CountryRegion .
+
+she:CountryRegion a skos:Concept ;
+    skos:prefLabel "country/region" ;
+    skos:narrower she:AT, she:BE_F, she:BE_B, she:BE_W, she:CZ, she:FI, she:IT, she:LT, she:NL, she:PL, she:ES, she:UK, she:DK .
+
+she:Compound a skos:Concept ;
+    skos:prefLabel "compound" ;
+    skos:narrower she:Benzene, she:Ethylbenzene, she:Toluene, she:Xylene, she:Naphthalene, 
+                  she:Anthracene, she:BenzoAAnthracene, she:BenzoGHIPerylene, she:PAHsTotal, 
+                  she:Dichloromethane, she:Trichloroethylene, she:Tetrachloromethane, 
+                  she:Hexachlorobenzene, she:Phenol, she:CresolsSum, she:AtrazineP, 
+                  she:DDTSum, she:PCB, she:MethylTButylEther, she:OneOneOneTrichloroethane, 
+                  she:ChlorobenzenesSum, she:BenzoAPyrene, she:PCDD_PCDF .
+
+she:AT a skos:Concept ; skos:prefLabel "at" ; skos:note "austria" .
+she:BE_F a skos:Concept ; skos:prefLabel "be (f)" ; skos:note "flanders" .
+she:BE_B a skos:Concept ; skos:prefLabel "be (b)" ; skos:note "brussels" .
+she:BE_W a skos:Concept ; skos:prefLabel "be (w)" ; skos:note "wallonia" .
+she:CZ a skos:Concept ; skos:prefLabel "cz" ; skos:note "czech republic" .
+she:FI a skos:Concept ; skos:prefLabel "fi" ; skos:note "finland" .
+she:IT a skos:Concept ; skos:prefLabel "it" ; skos:note "italy" .
+she:LT a skos:Concept ; skos:prefLabel "lt" ; skos:note "lithuania" .
+she:NL a skos:Concept ; skos:prefLabel "nl" ; skos:note "netherlands" .
+she:PL a skos:Concept ; skos:prefLabel "pl" ; skos:note "poland" .
+she:ES a skos:Concept ; skos:prefLabel "es" ; skos:note "spain" .
+she:UK a skos:Concept ; skos:prefLabel "uk" ; skos:note "united kingdom" .
+she:DK a skos:Concept ; skos:prefLabel "dk" ; skos:note "denmark" .
+
+she:Benzene a skos:Concept ; skos:prefLabel "benzene" ;
+    she:hasScreeningValue [ she:hasValue 0.5 ; she:hasRegion she:BE_F ] , [ she:hasValue 0.5 ; she:hasRegion she:BE_B ] , [ she:hasValue 0.4 ; she:hasRegion she:BE_W ] , [ she:hasValue 0.8 ; she:hasRegion she:CZ ] , [ she:hasValue 0.2 ; she:hasRegion she:FI ] , [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 0.5 ; she:hasRegion she:LT ] , [ she:hasValue 1.0 ; she:hasRegion she:NL ] , [ she:hasValue 12.6 ; she:hasRegion she:PL ] , [ she:hasValue 1.0 ; she:hasRegion she:ES ] .
+
+she:Ethylbenzene a skos:Concept ; skos:prefLabel "ethylbenzene" ;
+    she:hasScreeningValue [ she:hasValue 5.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 5.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 28.0 ; she:hasRegion she:BE_W ] , [ she:hasValue 50.0 ; she:hasRegion she:CZ ] , [ she:hasValue 10.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.5 ; she:hasRegion she:IT ] , [ she:hasValue 5.0 ; she:hasRegion she:LT ] , [ she:hasValue 50.0 ; she:hasRegion she:NL ] , [ she:hasValue 38.0 ; she:hasRegion she:PL ] , [ she:hasValue 20.0 ; she:hasRegion she:ES ] , [ she:hasValue 41.0 ; she:hasRegion she:UK ] .
+
+she:Toluene a skos:Concept ; skos:prefLabel "toluene" ;
+    she:hasScreeningValue [ she:hasValue 15.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 15.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 33.0 ; she:hasRegion she:BE_W ] , [ she:hasValue 100.0 ; she:hasRegion she:CZ ] , [ she:hasValue 5.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.5 ; she:hasRegion she:IT ] , [ she:hasValue 0.1 ; she:hasRegion she:LT ] , [ she:hasValue 130.0 ; she:hasRegion she:NL ] , [ she:hasValue 38.0 ; she:hasRegion she:PL ] , [ she:hasValue 30.0 ; she:hasRegion she:ES ] .
+
+she:Xylene a skos:Concept ; skos:prefLabel "xylene" ;
+    she:hasScreeningValue [ she:hasValue 15.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 15.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 10.0 ; she:hasRegion she:BE_W ] , [ she:hasValue 30.0 ; she:hasRegion she:CZ ] , [ she:hasValue 10.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.5 ; she:hasRegion she:IT ] , [ she:hasValue 0.1 ; she:hasRegion she:LT ] , [ she:hasValue 25.0 ; she:hasRegion she:NL ] , [ she:hasValue 18.0 ; she:hasRegion she:PL ] , [ she:hasValue 100.0 ; she:hasRegion she:ES ] .
+
+she:Naphthalene a skos:Concept ; skos:prefLabel "naphthalene" ;
+    she:hasScreeningValue [ she:hasValue 5.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 5.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 60.0 ; she:hasRegion she:CZ ] , [ she:hasValue 5.0 ; she:hasRegion she:FI ] , [ she:hasValue 5.0 ; she:hasRegion she:IT ] , [ she:hasValue 5.0 ; she:hasRegion she:LT ] , [ she:hasValue 12.5 ; she:hasRegion she:PL ] , [ she:hasValue 8.0 ; she:hasRegion she:ES ] .
+
+she:Anthracene a skos:Concept ; skos:prefLabel "anthracene" ;
+    she:hasScreeningValue [ she:hasValue 70.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 70.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 60.0 ; she:hasRegion she:CZ ] , [ she:hasValue 5.0 ; she:hasRegion she:FI ] , [ she:hasValue 5.0 ; she:hasRegion she:IT ] , [ she:hasValue 5.0 ; she:hasRegion she:LT ] , [ she:hasValue 12.5 ; she:hasRegion she:PL ] , [ she:hasValue 100.0 ; she:hasRegion she:ES ] .
+
+she:BenzoAAnthracene a skos:Concept ; skos:prefLabel "benzo(a)anthracene" ;
+    she:hasScreeningValue [ she:hasValue 10.5 ; she:hasRegion she:BE_F ] , [ she:hasValue 10.5 ; she:hasRegion she:BE_B ] , [ she:hasValue 5.0 ; she:hasRegion she:BE_W ] , [ she:hasValue 5.0 ; she:hasRegion she:CZ ] , [ she:hasValue 5.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.5 ; she:hasRegion she:IT ] , [ she:hasValue 12.5 ; she:hasRegion she:PL ] , [ she:hasValue 2.0 ; she:hasRegion she:ES ] .
+
+she:BenzoGHIPerylene a skos:Concept ; skos:prefLabel "benzo(g,h,i)perylene" ;
+    she:hasScreeningValue [ she:hasValue 3920.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 3920.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 15.0 ; she:hasRegion she:BE_W ] , [ she:hasValue 30.0 ; she:hasRegion she:CZ ] , [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 10.0 ; she:hasRegion she:PL ] .
+
+she:PAHsTotal a skos:Concept ; skos:prefLabel "pahs (total)" ;
+    she:hasScreeningValue [ she:hasValue 50.0 ; she:hasRegion she:AT ] , [ she:hasValue 30.0 ; she:hasRegion she:FI ] , [ she:hasValue 10.0 ; she:hasRegion she:IT ] , [ she:hasValue 5.0 ; she:hasRegion she:LT ] , [ she:hasValue 40.0 ; she:hasRegion she:NL ] , [ she:hasValue 30.0 ; she:hasRegion she:PL ] , [ she:hasValue 40.0 ; she:hasRegion she:DK ] .
+
+she:Dichloromethane a skos:Concept ; skos:prefLabel "dichloromethane" ;
+    she:hasScreeningValue [ she:hasValue 0.35 ; she:hasRegion she:BE_F ] , [ she:hasValue 0.35 ; she:hasRegion she:BE_B ] , [ she:hasValue 1.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 2.0 ; she:hasRegion she:LT ] , [ she:hasValue 10.0 ; she:hasRegion she:NL ] , [ she:hasValue 6.0 ; she:hasRegion she:ES ] .
+
+she:Trichloroethylene a skos:Concept ; skos:prefLabel "trichloroethylene" ;
+    she:hasScreeningValue [ she:hasValue 1.4 ; she:hasRegion she:BE_F ] , [ she:hasValue 1.4 ; she:hasRegion she:BE_B ] , [ she:hasValue 1.0 ; she:hasRegion she:FI ] , [ she:hasValue 1.0 ; she:hasRegion she:IT ] , [ she:hasValue 2.0 ; she:hasRegion she:LT ] , [ she:hasValue 60.0 ; she:hasRegion she:NL ] , [ she:hasValue 7.0 ; she:hasRegion she:ES ] .
+
+she:Tetrachloromethane a skos:Concept ; skos:prefLabel "tetrachloromethane" ;
+    she:hasScreeningValue [ she:hasValue 0.02 ; she:hasRegion she:BE_F ] , [ she:hasValue 0.02 ; she:hasRegion she:BE_B ] , [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 1.0 ; she:hasRegion she:LT ] , [ she:hasValue 1.0 ; she:hasRegion she:NL ] , [ she:hasValue 0.5 ; she:hasRegion she:ES ] .
+
+she:Hexachlorobenzene a skos:Concept ; skos:prefLabel "hexachlorobenzene" ;
+    she:hasScreeningValue [ she:hasValue 0.1 ; she:hasRegion she:BE_F ] , [ she:hasValue 0.1 ; she:hasRegion she:BE_B ] , [ she:hasValue 0.05 ; she:hasRegion she:FI ] , [ she:hasValue 0.05 ; she:hasRegion she:IT ] , [ she:hasValue 0.5 ; she:hasRegion she:LT ] , [ she:hasValue 0.1 ; she:hasRegion she:ES ] .
+
+she:Phenol a skos:Concept ; skos:prefLabel "phenol" ;
+    she:hasScreeningValue [ she:hasValue 1.0 ; she:hasRegion she:IT ] , [ she:hasValue 10.0 ; she:hasRegion she:LT ] , [ she:hasValue 40.0 ; she:hasRegion she:NL ] , [ she:hasValue 10.25 ; she:hasRegion she:PL ] , [ she:hasValue 70.0 ; she:hasRegion she:ES ] , [ she:hasValue 280.0 ; she:hasRegion she:UK ] .
+
+she:CresolsSum a skos:Concept ; skos:prefLabel "cresols (sum)" ;
+    she:hasScreeningValue [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 5.0 ; she:hasRegion she:NL ] , [ she:hasValue 10.25 ; she:hasRegion she:PL ] , [ she:hasValue 40.0 ; she:hasRegion she:ES ] .
+
+she:AtrazineP a skos:Concept ; skos:prefLabel "atrazine (p)" ;
+    she:hasScreeningValue [ she:hasValue 1.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.01 ; she:hasRegion she:IT ] , [ she:hasValue 6.0 ; she:hasRegion she:NL ] , [ she:hasValue 3.0 ; she:hasRegion she:PL ] .
+
+she:DDTSum a skos:Concept ; skos:prefLabel "ddt (sum of ddt, dde, ddd)" ;
+    she:hasScreeningValue [ she:hasValue 1.0 ; she:hasRegion she:FI ] , [ she:hasValue 4.0 ; she:hasRegion she:NL ] , [ she:hasValue 2.01 ; she:hasRegion she:PL ] .
+
+she:PCB a skos:Concept ; skos:prefLabel "pcb" ;
+    she:hasScreeningValue [ she:hasValue 1.0 ; she:hasRegion she:AT ] , [ she:hasValue 0.9 ; she:hasRegion she:BE_B ] , [ she:hasValue 5.0 ; she:hasRegion she:CZ ] , [ she:hasValue 0.5 ; she:hasRegion she:FI ] , [ she:hasValue 0.0 ; she:hasRegion she:IT ] , [ she:hasValue 0.1 ; she:hasRegion she:LT ] , [ she:hasValue 1.0 ; she:hasRegion she:NL ] , [ she:hasValue 0.55 ; she:hasRegion she:PL ] , [ she:hasValue 0.08 ; she:hasRegion she:ES ] .
+
+she:MethylTButylEther a skos:Concept ; skos:prefLabel "methyl t-butyl ether" ;
+    she:hasScreeningValue [ she:hasValue 9.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 9.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 5.0 ; she:hasRegion she:FI ] , [ she:hasValue 10.0 ; she:hasRegion she:IT ] , [ she:hasValue 100.0 ; she:hasRegion she:NL ] .
+
+she:OneOneOneTrichloroethane a skos:Concept ; skos:prefLabel "1,1,1-trichloroethane" ;
+    she:hasScreeningValue [ she:hasValue 13.0 ; she:hasRegion she:BE_F ] , [ she:hasValue 13.0 ; she:hasRegion she:BE_B ] , [ she:hasValue 0.5 ; she:hasRegion she:IT ] , [ she:hasValue 15.0 ; she:hasRegion she:NL ] .
+
+she:ChlorobenzenesSum a skos:Concept ; skos:prefLabel "chlorobenzenes (sum)" ;
+    she:hasScreeningValue [ she:hasValue 30.0 ; she:hasRegion she:NL ] , [ she:hasValue 1.05 ; she:hasRegion she:PL ] .
+
+she:BenzoAPyrene a skos:Concept ; skos:prefLabel "benzo(a)pyrene" ;
+    she:hasScreeningValue [ she:hasValue 5.0 ; she:hasRegion she:AT ] , [ she:hasValue 1.5 ; she:hasRegion she:BE_F ] , [ she:hasValue 1.5 ; she:hasRegion she:BE_B ] , [ she:hasValue 4.4 ; she:hasRegion she:BE_W ] , [ she:hasValue 2.0 ; she:hasRegion she:CZ ] , [ she:hasValue 2.0 ; she:hasRegion she:FI ] , [ she:hasValue 0.1 ; she:hasRegion she:IT ] , [ she:hasValue 0.1 ; she:hasRegion she:LT ] , [ she:hasValue 7.5 ; she:hasRegion she:PL ] , [ she:hasValue 0.2 ; she:hasRegion she:ES ] .
+
+she:PCDD_PCDF a skos:Concept ; skos:prefLabel "pcdd/pcdf" ;
+    skos:note "Values in ng ITEQ TeCdd/g" ;
+    she:hasAbbreviation "PCDD", "PCDF" ;
+    she:hasScreeningValue [ she:hasValue 100.0 ; she:hasRegion she:AT ] , [ she:hasValue 0.5 ; she:hasRegion she:CZ ] , [ she:hasValue 0.0001 ; she:hasRegion she:FI ] , [ she:hasValue 0.00001 ; she:hasRegion she:IT ] , [ she:hasValue 0.001 ; she:hasRegion she:NL ] .

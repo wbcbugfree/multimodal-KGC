@@ -1,22 +1,30 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+she:SoilCompactionProcessesParametersAndIndicators a skos:Concept ;
+    skos:prefLabel "soil compaction processes, parameters and indicators" ;
+    skos:narrower she:Management,
+                  she:Machinery,
+                  she:StressCause,
+                  she:SoilProperties,
+                  she:Indicators,
+                  she:SoilCompaction,
+                  she:Impact ;
+    she:hasSource "EEA." .
+
 she:Management a skos:Concept ;
-    skos:narrower she:FertilisationPlantProtection,
-        she:Harvesting,
-        she:Seeding,
-        she:SoilPreparationTillage ;
     skos:prefLabel "management" ;
-    she:influences she:MachineryGroundPressure .
+    skos:narrower she:SoilPreparationTillage,
+                  she:Seeding,
+                  she:FertilisationPlantProtection,
+                  she:Harvesting ;
+    she:influences she:Machinery .
 
-she:BiodiversityAndCompositionOfMicrobialCommunities a skos:Concept ;
-    skos:prefLabel "biodiversity and composition of microbial communities" .
+she:SoilPreparationTillage a skos:Concept ;
+    skos:prefLabel "soil preparation (tillage)" .
 
-she:ClayMineralogy a skos:Concept ;
-    skos:prefLabel "clay mineralogy" .
-
-she:DensificationCompression a skos:Concept ;
-    skos:prefLabel "1. densification: compression" .
+she:Seeding a skos:Concept ;
+    skos:prefLabel "seeding" .
 
 she:FertilisationPlantProtection a skos:Concept ;
     skos:prefLabel "fertilisation/plant protection" .
@@ -24,128 +32,134 @@ she:FertilisationPlantProtection a skos:Concept ;
 she:Harvesting a skos:Concept ;
     skos:prefLabel "harvesting" .
 
-she:Impact a skos:Concept ;
-    skos:narrower she:BiodiversityAndCompositionOfMicrobialCommunities,
-        she:RootPenetration,
-        she:SoilBiologicalActivity,
-        she:WaterStagnationSeepage ;
-    skos:prefLabel "impact" .
-
-she:Indicators a skos:Concept ;
-    skos:narrower she:Permeability,
-        she:PoreVolume,
-        she:SoilDensity,
-        she:SoilStrength ;
-    skos:prefLabel "indicators" ;
-    she:reflect she:SoilCompaction .
-
-she:InflationPressure a skos:Concept ;
-    skos:prefLabel "inflation pressure" .
-
-she:MachineryGroundPressure a skos:Concept ;
-    skos:narrower she:InflationPressure,
-        she:TraffickingMultiplePass,
-        she:Velocity,
-        she:Weight,
-        she:WheelingSlip,
-        she:Width ;
-    skos:prefLabel "machinery (ground pressure)" ;
-    she:generates she:StressCause .
-
-she:PackingState a skos:Concept ;
-    skos:prefLabel "packing state" .
-
-she:Permeability a skos:Concept ;
-    skos:definition "determined by saturated hydralic conductivity." ;
-    skos:prefLabel "permeability" .
-
-she:PoreVolume a skos:Concept ;
-    skos:definition "represent envsso indicators (explained in huber et al. 2008)." ;
-    skos:prefLabel "pore volume" .
-
-she:RootPenetration a skos:Concept ;
-    skos:prefLabel "root penetration" .
-
-she:Seeding a skos:Concept ;
-    skos:prefLabel "seeding" .
-
-she:ShearStress a skos:Concept ;
-    skos:prefLabel "shear stress" .
-
-she:SoilBiologicalActivity a skos:Concept ;
-    skos:prefLabel "soil biological activity" .
-
-she:SoilCations a skos:Concept ;
-    skos:prefLabel "soil cations" .
-
-she:SoilCompaction a skos:Concept ;
-    skos:narrower she:DensificationCompression,
-        she:StructuralDegradationPlasticitySmearing ;
-    skos:prefLabel "soil compaction" ;
-    she:resultsIn she:Impact .
-
-she:SoilDensity a skos:Concept ;
-    skos:definition "indicated by: bulk density, packing density, total porosity.",
-        "represent envsso indicators (explained in huber et al. 2008)." ;
-    skos:prefLabel "soil density" .
-
-she:SoilOrganicMatter a skos:Concept ;
-    skos:prefLabel "soil organic matter" .
-
-she:SoilPreparationTillage a skos:Concept ;
-    skos:prefLabel "soil preparation (tillage)" .
-
-she:SoilProperties a skos:Concept ;
-    skos:narrower she:ClayMineralogy,
-        she:PackingState,
-        she:SoilCations,
-        she:SoilOrganicMatter,
-        she:SoilStructure,
-        she:SoilTexture ;
-    skos:prefLabel "soil properties" ;
-    she:areMeasuredBy she:Indicators .
-
-she:SoilStrength a skos:Concept ;
-    skos:definition "mechanical resistance to failure under mechanical stress (soil mechanical strength): it is the maximun shear stress which soil can sustain; it increases with increasing soil bulk density, and decreases with soil-water and organic matter contents; silty texture tends to deform more easily, it is indicated by the soil's precompression strength and describes its compressibility." ;
-    skos:prefLabel "soil strength" .
-
-she:SoilStructure a skos:Concept ;
-    skos:prefLabel "soil structure" .
-
-she:SoilTexture a skos:Concept ;
-    skos:prefLabel "soil texture" .
-
-she:StressCause a skos:Concept ;
-    skos:narrower she:ShearStress,
-        she:VerticalStress,
-        she:VibrationStress ;
-    skos:prefLabel "stress/ cause" ;
-    she:modifies she:SoilProperties .
-
-she:StructuralDegradationPlasticitySmearing a skos:Concept ;
-    skos:prefLabel "2. structural degradation: plasticity, smearing" .
-
-she:TraffickingMultiplePass a skos:Concept ;
-    skos:prefLabel "trafficking (multiple pass)" .
-
-she:Velocity a skos:Concept ;
-    skos:prefLabel "velocity" .
-
-she:VerticalStress a skos:Concept ;
-    skos:prefLabel "vertical stress" .
-
-she:VibrationStress a skos:Concept ;
-    skos:prefLabel "vibration stress" .
-
-she:WaterStagnationSeepage a skos:Concept ;
-    skos:prefLabel "water stagnation/ seepage" .
+she:Machinery a skos:Concept ;
+    skos:prefLabel "machinery" ;
+    skos:altLabel "ground pressure" ;
+    skos:narrower she:Weight,
+                  she:Width,
+                  she:InflationPressure,
+                  she:Velocity,
+                  she:WheelingSlip,
+                  she:TraffickingMultiplePass .
 
 she:Weight a skos:Concept ;
     skos:prefLabel "weight" .
 
-she:WheelingSlip a skos:Concept ;
-    skos:prefLabel "wheeling slip" .
-
 she:Width a skos:Concept ;
     skos:prefLabel "width" .
 
+she:InflationPressure a skos:Concept ;
+    skos:prefLabel "inflation pressure" .
+
+she:Velocity a skos:Concept ;
+    skos:prefLabel "velocity" .
+
+she:WheelingSlip a skos:Concept ;
+    skos:prefLabel "wheeling slip" .
+
+she:TraffickingMultiplePass a skos:Concept ;
+    skos:prefLabel "trafficking (multiple pass)" .
+
+she:StressCause a skos:Concept ;
+    skos:prefLabel "stress/ cause" ;
+    skos:narrower she:VerticalStress,
+                  she:ShearStress,
+                  she:VibrationStress ;
+    she:affects she:SoilProperties .
+
+she:VerticalStress a skos:Concept ;
+    skos:prefLabel "vertical stress" .
+
+she:ShearStress a skos:Concept ;
+    skos:prefLabel "shear stress" .
+
+she:VibrationStress a skos:Concept ;
+    skos:prefLabel "vibration stress" .
+
+she:SoilProperties a skos:Concept ;
+    skos:prefLabel "soil properties" ;
+    skos:narrower she:SoilTexture,
+                  she:SoilOrganicMatter,
+                  she:SoilStructure,
+                  she:PackingState,
+                  she:SoilCations,
+                  she:ClayMineralogy .
+
+she:SoilTexture a skos:Concept ;
+    skos:prefLabel "soil texture" .
+
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" .
+
+she:SoilStructure a skos:Concept ;
+    skos:prefLabel "soil structure" .
+
+she:PackingState a skos:Concept ;
+    skos:prefLabel "packing state" .
+
+she:SoilCations a skos:Concept ;
+    skos:prefLabel "soil cations" .
+
+she:ClayMineralogy a skos:Concept ;
+    skos:prefLabel "clay mineralogy" .
+
+she:Indicators a skos:Concept ;
+    skos:prefLabel "indicators" ;
+    skos:narrower she:SoilDensity,
+                  she:PoreVolume,
+                  she:SoilStrength,
+                  she:Permeability ;
+    she:indicates she:SoilCompaction .
+
+she:SoilDensity a skos:Concept ;
+    skos:prefLabel "soil density" ;
+    she:hasSymbol "*" ;
+    she:hasReference "1" ;
+    skos:note "Indicated by: bulk density, packing density, total porosity." ;
+    skos:note "Represent ENVSSO indicators (Explained in Huber et al. 2008)." .
+
+she:PoreVolume a skos:Concept ;
+    skos:prefLabel "pore volume" ;
+    she:hasReference "1" ;
+    skos:note "Represent ENVSSO indicators (Explained in Huber et al. 2008)." .
+
+she:SoilStrength a skos:Concept ;
+    skos:prefLabel "soil strength" ;
+    she:hasReference "2" ;
+    skos:definition "Mechanical resistence to failure under mechanical stress (soil mechanical strength): it is the maximun shear stress which soil can sustain; it increases with increasing soil bulk density, and decreases with soil-water and organic matter contents; silty texture tends to deform more easily, it is indicated by the soil's precompression strength and describes its compressibility." .
+
+she:Permeability a skos:Concept ;
+    skos:prefLabel "permeability" ;
+    she:hasReference "3" ;
+    skos:note "Determined by saturated hydralic conductivity." .
+
+she:SoilCompaction a skos:Concept ;
+    skos:prefLabel "soil compaction" ;
+    skos:narrower she:DensificationCompression,
+                  she:StructuralDegradationPlasticitySmearing ;
+    she:hasImpact she:Impact .
+
+she:DensificationCompression a skos:Concept ;
+    skos:prefLabel "1. densification: compression" .
+
+she:StructuralDegradationPlasticitySmearing a skos:Concept ;
+    skos:prefLabel "2. structural degradation: plasticity, smearing" .
+
+she:Impact a skos:Concept ;
+    skos:prefLabel "impact" ;
+    skos:narrower she:RootPenetration,
+                  she:WaterStagnationSeepage,
+                  she:BiodiversityAndCompositionOfMicrobialCommunities,
+                  she:SoilBiologicalActivity .
+
+she:RootPenetration a skos:Concept ;
+    skos:prefLabel "root penetration" .
+
+she:WaterStagnationSeepage a skos:Concept ;
+    skos:prefLabel "water stagnation/ seepage" .
+
+she:BiodiversityAndCompositionOfMicrobialCommunities a skos:Concept ;
+    skos:prefLabel "biodiversity and composition of microbial communities" .
+
+she:SoilBiologicalActivity a skos:Concept ;
+    skos:prefLabel "soil biological activity" .

@@ -2,42 +2,41 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:EcosystemService a skos:Concept ;
-    skos:narrower she:SoilFunction ;
-    skos:prefLabel "ecosystem service" .
+    skos:prefLabel "ecosystem service" ;
+    she:leadsTo she:SoilFunction .
 
-she:ActionNeededPolicyInduced a skos:Concept ;
-    skos:prefLabel "action needed (policy induced)" ;
-    she:influences she:ChangeOfLandUseAndOrManagement .
+she:SoilFunction a skos:Concept ;
+    skos:prefLabel "soil function" ;
+    she:leadsTo she:Endpoints .
 
-she:ActualLevelGreaterThanThreshold a skos:Concept ;
-    skos:prefLabel "actual level > threshold" ;
-    she:triggers she:ActionNeededPolicyInduced .
+she:Endpoints a skos:Concept ;
+    skos:prefLabel "endpoints" ;
+    she:leadsTo she:SoilWaterProductQuality .
+
+she:ChangeOfLandUseAndOrManagement a skos:Concept ;
+    skos:prefLabel "change of land use and/or management" ;
+    she:leadsTo she:SoilWaterProductQuality .
+
+she:SoilWaterProductQuality a skos:Concept ;
+    skos:prefLabel "soil/ water/ product/ quality" ;
+    she:leadsTo she:ThresholdsLimits .
+
+she:ThresholdsLimits a skos:Concept ;
+    skos:prefLabel "thresholds (limits)" ;
+    she:leadsTo she:Evaluation .
+
+she:Evaluation a skos:Concept ;
+    skos:prefLabel "evaluation" ;
+    she:leadsTo she:ActualLevelLessThanThreshold,
+                she:ActualLevelGreaterThanThreshold .
 
 she:ActualLevelLessThanThreshold a skos:Concept ;
     skos:prefLabel "actual level < threshold" .
 
-she:ChangeOfLandUseAndOrManagement a skos:Concept ;
-    skos:prefLabel "change of land use and/or management" ;
-    she:affects she:SoilWaterProductQuality .
+she:ActualLevelGreaterThanThreshold a skos:Concept ;
+    skos:prefLabel "actual level > threshold" ;
+    she:leadsTo she:ActionNeededPolicyInduced .
 
-she:Endpoints a skos:Concept ;
-    skos:prefLabel "endpoints" ;
-    she:isAssessedAs she:SoilWaterProductQuality .
-
-she:Evaluation a skos:Concept ;
-    skos:prefLabel "evaluation" ;
-    she:hasOutcome she:ActualLevelGreaterThanThreshold,
-        she:ActualLevelLessThanThreshold .
-
-she:SoilFunction a skos:Concept ;
-    skos:narrower she:Endpoints ;
-    skos:prefLabel "soil function" .
-
-she:ThresholdsLimits a skos:Concept ;
-    skos:prefLabel "thresholds (limits)" ;
-    she:informs she:Evaluation .
-
-she:SoilWaterProductQuality a skos:Concept ;
-    skos:prefLabel "soil/ water/ product/ quality" ;
-    she:isComparedTo she:ThresholdsLimits .
-
+she:ActionNeededPolicyInduced a skos:Concept ;
+    skos:prefLabel "action needed (policy induced)" ;
+    she:leadsTo she:ChangeOfLandUseAndOrManagement .

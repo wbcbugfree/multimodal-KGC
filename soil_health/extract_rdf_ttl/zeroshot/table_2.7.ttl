@@ -1,0 +1,53 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SocClayRatioAsAnIndexOfGoodSoilStructure a skos:Concept ;
+    skos:prefLabel "soc/clay ratio as an index of good soil structure" ;
+    skos:narrower she:SocClayRatio,
+                  she:SoilStructure ;
+    she:hasSource "Compiled from Johannes et al. (2017)." .
+
+she:SocClayRatio a skos:Concept ;
+    skos:prefLabel "soc/clay ratio" ;
+    skos:narrower she:SocClayRatioGreaterThan0_125,
+                  she:SocClayRatio0_1,
+                  she:SocClayRatioLessThan0_07 .
+
+she:SoilStructure a skos:Concept ;
+    skos:prefLabel "soil structure" ;
+    skos:narrower she:SoilStructureAcceptableOrGood,
+                  she:SoilStructureDegraded ;
+    skos:note "VESS, visual evaluation of soil structure (Ball et al., 2017); the score ranges from 1 (good structure) to 5 (poor structure)." .
+
+she:SocClayRatioGreaterThan0_125 a skos:Concept ;
+    skos:prefLabel ">0.125 (1/8)" ;
+    she:hasExplanation "field-level optimum for good structural quality" ;
+    skos:note "SOC enriched relative to the clay content." ;
+    she:indicates she:SoilStructureAcceptableOrGood .
+
+she:SocClayRatio0_1 a skos:Concept ;
+    skos:prefLabel "0.1 (1/10) (1/8-1/13)" ;
+    she:hasExplanation "goal for farmers as minimum desired soc level" ;
+    she:indicates she:SoilStructureAcceptableOrGood .
+
+she:SocClayRatioLessThan0_07 a skos:Concept ;
+    skos:prefLabel "<0.07 (1/13)" ;
+    she:hasExplanation "structural soil quality is likely to be unacceptable" ;
+    skos:note "SOC depleted relative to the clay content." ;
+    she:indicates she:SoilStructureDegraded .
+
+she:SoilStructureAcceptableOrGood a skos:Concept ;
+    skos:prefLabel ">1/10 (vess <3)" ;
+    she:hasExplanation "acceptable or good soil structure" .
+
+she:SoilStructureDegraded a skos:Concept ;
+    skos:prefLabel "< 1/10 (vess >3)" ;
+    she:hasExplanation "degraded soil structure" .
+
+she:Vess a skos:Concept ;
+    skos:prefLabel "vess" ;
+    she:hasAbbreviation "VESS" ;
+    skos:altLabel "visual evaluation of soil structure" ;
+    skos:note "the score ranges from 1 (good structure) to 5 (poor structure)." .
+
+she:SoilStructure skos:related she:Vess .

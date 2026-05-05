@@ -1,0 +1,155 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilThreat a skos:Concept ;
+    skos:prefLabel "soil threat" ;
+    skos:narrower she:SoilOrganicCarbonLoss,
+                  she:NutrientLoss,
+                  she:Acidification .
+
+she:SoilOrganicCarbonLoss a skos:Concept ;
+    skos:prefLabel "soil organic carbon loss" ;
+    skos:narrower she:FallingBelowOptimalSOCLevel .
+
+she:NutrientLoss a skos:Concept ;
+    skos:prefLabel "nutrient loss" ;
+    skos:narrower she:ExceedanceOfCriticalLevelsOfMineralNitrogen,
+                  she:NLimitationBasedOnExceedanceOfCNRatio,
+                  she:FallingBelowOfOptimalPhosphorus,
+                  she:PLimitationBasedOnExceedanceOfNPRatio .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification" ;
+    skos:narrower she:ExceedanceOfCriticalPHLevels,
+                  she:ExceedanceOfCriticalInorganicAlLevels .
+
+she:Cropland a skos:Concept ;
+    skos:prefLabel "cropland" .
+
+she:Agriculture a skos:Concept ;
+    skos:prefLabel "agriculture" .
+
+she:ForestLand a skos:Concept ;
+    skos:prefLabel "forest land" .
+
+she:FallingBelowOptimalSOCLevel a skos:Concept ;
+    skos:prefLabel "falling below optimal soc level" ;
+    skos:note "SOC: clay ratio (Johannes et al., 2017): optimum SOC content as 10% of the clay content/vulnerability limit" ;
+    she:hasContext she:Cropland ;
+    she:hasThreshold [ 
+        she:hasCondition "light soils" ;
+        she:hasValue "<1.2% SOC" 
+    ], [ 
+        she:hasCondition "medium soils" ;
+        she:hasValue "1.2-1.9% SOC" 
+    ], [ 
+        she:hasCondition "heavy soils" ;
+        she:hasValue ">1.9% SOC" 
+    ] .
+
+she:ExceedanceOfCriticalLevelsOfMineralNitrogen a skos:Concept ;
+    skos:prefLabel "exceedance of critical levels of mineral nitrogen (agricultural land)" ;
+    skos:note "Mineral N: sum of available NH4 and NO3" ;
+    she:hasContext she:Agriculture ;
+    she:hasThreshold [
+        she:hasCondition "NH3 in air" ;
+        she:hasValue "1-3mg NH3/m3"
+    ], [
+        she:hasCondition "NO3 in groundwater" ;
+        she:hasValue "50mg NO3/l"
+    ], [
+        she:hasCondition "N in surface water" ;
+        she:hasValue "1.0-2.5mg N/l"
+    ] .
+
+she:NLimitationBasedOnExceedanceOfCNRatio a skos:Concept ;
+    skos:prefLabel "n limitation based on exceedance of c:n ratio" ;
+    skos:note "Forest floor organic layer" ;
+    she:hasContext she:ForestLand ;
+    she:hasThreshold [
+        she:hasCondition "C:N ratio" ;
+        she:hasValue "20-25"
+    ], [
+        she:hasCondition "Leakage from forests" ;
+        she:hasValue "1mg N/l"
+    ] .
+
+she:FallingBelowOfOptimalPhosphorus a skos:Concept ;
+    skos:prefLabel "falling below of optimal phosphorus" ;
+    skos:note "Extractable P concentration < optimum (value range refers to Mehlich 3-ICP; also available P-Bray P1 and Olsen P)" ;
+    she:hasContext she:Agriculture ;
+    she:hasThreshold [
+        she:hasCondition "P concentration" ;
+        she:hasValue "25-35mg/kg (optimal P fertility class)"
+    ] .
+
+she:PLimitationBasedOnExceedanceOfNPRatio a skos:Concept ;
+    skos:prefLabel "p limitation based on exceedance of n:p ratio" ;
+    skos:note "Forest floor organic layer" ;
+    she:hasContext she:ForestLand ;
+    she:hasThreshold [
+        she:hasCondition "coniferous forests" ;
+        she:hasValue "N:P ratio >18"
+    ], [
+        she:hasCondition "deciduous forests" ;
+        she:hasValue "N:P ratio >25"
+    ] .
+
+she:ExceedanceOfCriticalPHLevels a skos:Concept ;
+    skos:prefLabel "exceedance of critical ph levels" ;
+    she:hasContext she:Agriculture ;
+    she:hasThreshold [
+        she:hasValue "pH<4.5-4.7" ;
+        skos:note "critical; risk of Al toxicity"
+    ], [
+        she:hasValue "pH<5.0-5.5" ;
+        skos:note "avoid; limited availability of Ca, Mg, K and P"
+    ] .
+
+she:ExceedanceOfCriticalInorganicAlLevels a skos:Concept ;
+    skos:prefLabel "exceedance of critical inorganic al levels" ;
+    skos:note "Base cations are Ca2+, Mg2+ and K+" ;
+    she:hasContext she:ForestLand ;
+    she:hasThreshold [
+        she:hasCondition "Base cation (Bc):Al ratio" ;
+        she:hasValue "1 (0.5-2.0)"
+    ] .
+
+she:SOC a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
+
+she:MineralNitrogen a skos:Concept ;
+    skos:prefLabel "mineral nitrogen" .
+
+she:NH3 a skos:Concept ;
+    skos:prefLabel "ammonia" ;
+    she:hasSymbol "NH3" .
+
+she:NO3 a skos:Concept ;
+    skos:prefLabel "nitrate" ;
+    she:hasSymbol "NO3" .
+
+she:Phosphorus a skos:Concept ;
+    skos:prefLabel "phosphorus" ;
+    she:hasSymbol "P" .
+
+she:CNRatio a skos:Concept ;
+    skos:prefLabel "c:n ratio" ;
+    she:hasSymbol "C:N" .
+
+she:NPRatio a skos:Concept ;
+    skos:prefLabel "n:p ratio" ;
+    she:hasSymbol "N:P" .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" ;
+    she:hasSymbol "pH" .
+
+she:Aluminum a skos:Concept ;
+    skos:prefLabel "aluminum" ;
+    she:hasSymbol "Al" .
+
+she:BaseCationAlRatio a skos:Concept ;
+    skos:prefLabel "base cation (bc):al ratio" ;
+    she:hasSymbol "Bc:Al" .

@@ -1,0 +1,157 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ObjectiveReduceLandDegradation a skos:Concept ;
+    skos:prefLabel "1. reduce land degradation, including desertification and salinisation" ;
+    skos:narrower she:TargetDegradedLandRestoration .
+
+she:ObjectiveConserveAndIncreaseSOC a skos:Concept ;
+    skos:prefLabel "2. conserve (e.g. in forests, permanent pastures, wetlands) and increase soil organic carbon stocks" ;
+    skos:narrower she:TargetCarbonLossReversal,
+        she:TargetPeatlandCarbonLossReduction .
+
+she:ObjectiveNoNetSoilSealing a skos:Concept ;
+    skos:prefLabel "3. no net soil sealing and increase the re-use of urban soils for urban development" ;
+    skos:narrower she:TargetNoNetSoilSealingSwitch,
+        she:TargetSoilReUseIncrease .
+
+she:ObjectiveReduceSoilPollution a skos:Concept ;
+    skos:prefLabel "4. reduce soil pollution and enhance restoration" ;
+    skos:narrower she:TargetOrganicFarmingExpansion,
+        she:TargetReducedRiskLand,
+        she:TargetPollutedSiteRestoration .
+
+she:ObjectivePreventErosion a skos:Concept ;
+    skos:prefLabel "5. prevent erosion" ;
+    skos:narrower she:TargetUnsustainableErosionStop .
+
+she:ObjectiveImproveSoilStructure a skos:Concept ;
+    skos:prefLabel "6. improve soil structure to enhance habitat quality for soil biota and crops" ;
+    skos:narrower she:TargetHighDensitySubsoilReduction .
+
+she:ObjectiveReduceGlobalFootprint a skos:Concept ;
+    skos:prefLabel "7. reduce the eu global footprint on soils" ;
+    skos:narrower she:TargetGlobalFootprintReduction .
+
+she:ObjectiveIncreaseSoilLiteracy a skos:Concept ;
+    skos:prefLabel "8. increase soil literacy in society across member states" ;
+    skos:narrower she:TargetSoilHealthInSchools,
+        she:TargetSoilHealthTraining,
+        she:TargetConsumerChoiceUnderstanding .
+
+she:TargetDegradedLandRestoration a skos:Concept ;
+    skos:prefLabel "1.1. 50% of degraded land is restored moving beyond land degradation neutrality" ;
+    she:hasRecommendedIndicator she:AreaOfForestAndOtherWoodedLands,
+        she:LandscapeHeterogeneity,
+        she:PresenceOfSoilPollutantsExcessNutrientsAndSalts,
+        she:SoilBiodiversity,
+        she:SoilNutrientsAndPH,
+        she:SoilOrganicCarbon,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetCarbonLossReversal a skos:Concept ;
+    skos:prefLabel "2.1. current carbon concentration losses on cultivated land (0.5% per year) are reversed to an increase by 0.1-0.4% per year" ;
+    she:hasRecommendedIndicator she:SoilOrganicCarbon,
+        she:VegetationCover .
+
+she:TargetPeatlandCarbonLossReduction a skos:Concept ;
+    skos:prefLabel "2.2. the area of management peatlands losing carbon is reduced by 30-50%" ;
+    she:hasRecommendedIndicator she:SoilOrganicCarbon,
+        she:VegetationCover .
+
+she:TargetNoNetSoilSealingSwitch a skos:Concept ;
+    skos:prefLabel "3.1. switch from 24% to no net soil sealing" ;
+    she:hasRecommendedIndicator she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetSoilReUseIncrease a skos:Concept ;
+    skos:prefLabel "3.2. the current rate of soil re-use is increased from current 13% to 50% to help meet the eu target of no net land take by 2050" ;
+    she:hasRecommendedIndicator she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetOrganicFarmingExpansion a skos:Concept ;
+    skos:prefLabel "4.1. 25% of land under organic farming" ;
+    she:hasRecommendedIndicator she:PresenceOfSoilPollutantsExcessNutrientsAndSalts .
+
+she:TargetReducedRiskLand a skos:Concept ;
+    skos:prefLabel "4.2. a further 5-25% additional land (i.e. over and above the 25% in full organic) with reduced risk from eutrophication, pesticides, anti-microbials and other contaminants" ;
+    she:hasRecommendedIndicator she:PresenceOfSoilPollutantsExcessNutrientsAndSalts .
+
+she:TargetPollutedSiteRestoration a skos:Concept ;
+    skos:prefLabel "4.3. doubling of the rate of restoration of polluted sites" ;
+    she:hasRecommendedIndicator she:PresenceOfSoilPollutantsExcessNutrientsAndSalts .
+
+she:TargetUnsustainableErosionStop a skos:Concept ;
+    skos:prefLabel "5.1. stop erosion on 30-50% of land with unsustainable erosion risk" ;
+    she:hasRecommendedIndicator she:AreaOfForestAndOtherWoodedLands,
+        she:LandscapeHeterogeneity,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetHighDensitySubsoilReduction a skos:Concept ;
+    skos:prefLabel "6.1. reduction by 30-50% of soil with high density subsoils" ;
+    she:hasRecommendedIndicator she:LandscapeHeterogeneity,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetGlobalFootprintReduction a skos:Concept ;
+    skos:prefLabel "7.1. the impact of eu's food, timber and biomass imports on land degradation are reduced by 20-40%" ;
+    skos:note "food, feed and fibre imports" .
+
+she:TargetSoilHealthInSchools a skos:Concept ;
+    skos:prefLabel "8.1. soil health is firmly embedded in schools and educational curricula" ;
+    she:hasRecommendedIndicator she:AreaOfForestAndOtherWoodedLands,
+        she:LandscapeHeterogeneity,
+        she:PresenceOfSoilPollutantsExcessNutrientsAndSalts,
+        she:SoilBiodiversity,
+        she:SoilNutrientsAndPH,
+        she:SoilOrganicCarbon,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetSoilHealthTraining a skos:Concept ;
+    skos:prefLabel "8.2. uptake of soil health training by land managers is increased" ;
+    she:hasRecommendedIndicator she:AreaOfForestAndOtherWoodedLands,
+        she:LandscapeHeterogeneity,
+        she:PresenceOfSoilPollutantsExcessNutrientsAndSalts,
+        she:SoilBiodiversity,
+        she:SoilNutrientsAndPH,
+        she:SoilOrganicCarbon,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:TargetConsumerChoiceUnderstanding a skos:Concept ;
+    skos:prefLabel "8.3. understanding of impact of consumer choices on soil health is increased" ;
+    she:hasRecommendedIndicator she:AreaOfForestAndOtherWoodedLands,
+        she:LandscapeHeterogeneity,
+        she:PresenceOfSoilPollutantsExcessNutrientsAndSalts,
+        she:SoilBiodiversity,
+        she:SoilNutrientsAndPH,
+        she:SoilOrganicCarbon,
+        she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion,
+        she:VegetationCover .
+
+she:PresenceOfSoilPollutantsExcessNutrientsAndSalts a skos:Concept ;
+    skos:prefLabel "presence of soil pollutants, excess nutrients and salts" .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" .
+
+she:SoilStructureBulkDensityAbsenceOfSoilSealingErosion a skos:Concept ;
+    skos:prefLabel "soil structure bulk density & absence of soil sealing /erosion" .
+
+she:SoilBiodiversity a skos:Concept ;
+    skos:prefLabel "soil biodiversity" .
+
+she:SoilNutrientsAndPH a skos:Concept ;
+    skos:prefLabel "soil nutrients and ph" .
+
+she:VegetationCover a skos:Concept ;
+    skos:prefLabel "vegetation cover" .
+
+she:LandscapeHeterogeneity a skos:Concept ;
+    skos:prefLabel "landscape heterogeneity" .
+
+she:AreaOfForestAndOtherWoodedLands a skos:Concept ;
+    skos:prefLabel "area of forest and other wooded lands" .

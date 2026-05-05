@@ -1,0 +1,88 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SocThresholdsForCropland a skos:Concept ;
+    skos:prefLabel "soc thresholds for cropland (% soil mass) derived from a farmer questionnaire" ;
+    skos:definition "Table 2.11: SOC thresholds for cropland (% soil mass) derived from a farmer questionnaire" ;
+    skos:note "(a) Climate regions according to Metzger et al. (2005); No farm has been included for the Boreal region: for this region, thresholds have been derived from literature (Soinne et al., 2016): there, a threshold of 4% for SOC (8% SOM) can be considered for finer soils (clay > 30%) while, for coarser soils, a 2% threshold for SOC (4% SOM) could be considered based on expert judgement." ;
+    she:hasSource "Compiled from Hijbeek et al. (2017b); SOC values have been recalculated from original SOM values by applying the conversion factor of 1.724." ;
+    skos:narrower she:Atlantic, she:Continental, she:Mediterranean .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate (a)" ;
+    skos:note "Climate regions according to Metzger et al. (2005)" ;
+    skos:narrower she:Atlantic, she:Continental, she:Mediterranean .
+
+she:Representativity a skos:Concept ;
+    skos:prefLabel "representativity" .
+
+she:Texture a skos:Concept ;
+    skos:prefLabel "texture" ;
+    skos:narrower she:Coarse, she:Medium, she:MediumFine .
+
+she:Threshold1 a skos:Concept ;
+    skos:prefLabel "threshold 1" .
+
+she:Threshold2 a skos:Concept ;
+    skos:prefLabel "threshold 2" .
+
+she:Atlantic a skos:Concept ;
+    skos:prefLabel "atlantic" ;
+    she:hasRepresentativity "n=358 (Belgium, Germany)" ;
+    she:hasObservation [
+        she:hasTexture she:Coarse ;
+        she:hasThreshold1 "1.2" ;
+        she:hasThreshold2 "2.0"
+    ] , [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "1.0" ;
+        she:hasThreshold2 "1.5"
+    ] , [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "1.6" ;
+        skos:note "(b) particular high uncertainty due to low number of observations"
+    ] .
+
+she:Continental a skos:Concept ;
+    skos:prefLabel "continental" ;
+    she:hasRepresentativity "n=167 (Austria, Germany)" ;
+    she:hasObservation [
+        she:hasTexture she:Coarse ;
+        she:hasThreshold1 "1.0" ;
+        she:hasThreshold2 "1.2"
+    ] , [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "1.3" ;
+        she:hasThreshold2 "1.9" ;
+        skos:note "(b) particular high uncertainty due to low number of observations"
+    ] , [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "1.2" ;
+        she:hasThreshold2 "1.4" ;
+        skos:note "(b) particular high uncertainty due to low number of observations"
+    ] .
+
+she:Mediterranean a skos:Concept ;
+    skos:prefLabel "mediterranean" ;
+    she:hasRepresentativity "n=110 (Italy, Spain)" ;
+    she:hasObservation [
+        she:hasTexture she:Coarse
+    ] , [
+        she:hasTexture she:Medium ;
+        she:hasThreshold1 "0.6" ;
+        she:hasThreshold2 "1.2"
+    ] , [
+        she:hasTexture she:MediumFine ;
+        she:hasThreshold1 "0.8" ;
+        she:hasThreshold2 "0.8" ;
+        skos:note "(b) particular high uncertainty due to low number of observations"
+    ] .
+
+she:Coarse a skos:Concept ;
+    skos:prefLabel "coarse" .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" .
+
+she:MediumFine a skos:Concept ;
+    skos:prefLabel "medium fine" .

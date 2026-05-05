@@ -1,0 +1,254 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DiffusePollution a skos:Concept ;
+    skos:prefLabel "diffuse pollution" ;
+    she:hasSource she:AgriculturalAreas,
+        she:FloodplainSoils,
+        she:ProximityPollution ;
+    she:hasProtectionTarget she:ArableCroppingSystems,
+        she:AnimalHusbandry,
+        she:AdjacentTerrestrialEcosystems,
+        she:AdjacentAquaticEcosystems,
+        she:DirectHumanExposure ;
+    she:hasProceduralFramework she:SoilScreeningValues,
+        she:RiskLimitsInProducts,
+        she:NaturalBackgroundLevels ;
+    she:hasAvailabilityThresholdsInReceptors she:Nutrients,
+        she:MetalsAndMetalloidsInPlantProducts,
+        she:PlantProtectionChemicals ;
+    she:hasPolicy she:InputRegulation,
+        she:SewageSludgePolicy,
+        she:EUWideLimitValues .
+
+she:PointSourcePollution a skos:Concept ;
+    skos:prefLabel "point source pollution" ;
+    she:hasSource she:IndustrialEmissions,
+        she:IndustrialInstallations ;
+    she:hasProtectionTarget she:HumanHealth,
+        she:SoilEcosystem,
+        she:DrinkingWaterResources ;
+    she:hasProceduralFramework she:RiskBasedAssessment,
+        she:SoilAndGroundwaterThresholds ;
+    she:hasAvailabilityThresholdsInReceptors she:MetalsAndMetalloids,
+        she:PAHs,
+        she:BTEX,
+        she:VolatileOrganicChlorinatedCompounds,
+        she:MineralOil,
+        she:Asbestos,
+        she:IndustrialOrganicChemicals,
+        she:TolerableDailyIntake,
+        she:EcologicalEffectsLevels ;
+    she:hasPolicy she:Remediation,
+        she:LandUseRestriction,
+        she:ZeroPollutionActionPlan,
+        she:IndustrialEmissionsDirective,
+        she:WaterFrameworkDirective .
+
+she:Characteristic a skos:Concept ;
+    skos:prefLabel "characteristic" ;
+    skos:narrower she:Source,
+        she:ProtectionTarget,
+        she:ProceduralFramework,
+        she:AvailabilityThresholdsInReceptors,
+        she:Policy .
+
+she:Source a skos:Concept ;
+    skos:prefLabel "source" ;
+    skos:narrower she:AgriculturalAreas,
+        she:FloodplainSoils,
+        she:ProximityPollution,
+        she:IndustrialEmissions,
+        she:IndustrialInstallations .
+
+she:ProtectionTarget a skos:Concept ;
+    skos:prefLabel "protection target" ;
+    skos:narrower she:ArableCroppingSystems,
+        she:AnimalHusbandry,
+        she:AdjacentTerrestrialEcosystems,
+        she:AdjacentAquaticEcosystems,
+        she:DirectHumanExposure,
+        she:HumanHealth,
+        she:SoilEcosystem,
+        she:DrinkingWaterResources .
+
+she:ProceduralFramework a skos:Concept ;
+    skos:prefLabel "procedural framework" ;
+    skos:narrower she:SoilScreeningValues,
+        she:RiskLimitsInProducts,
+        she:NaturalBackgroundLevels,
+        she:RiskBasedAssessment,
+        she:SoilAndGroundwaterThresholds .
+
+she:AvailabilityThresholdsInReceptors a skos:Concept ;
+    skos:prefLabel "availability thresholds in receptors" ;
+    skos:narrower she:Nutrients,
+        she:MetalsAndMetalloidsInPlantProducts,
+        she:PlantProtectionChemicals,
+        she:MetalsAndMetalloids,
+        she:PAHs,
+        she:BTEX,
+        she:VolatileOrganicChlorinatedCompounds,
+        she:MineralOil,
+        she:Asbestos,
+        she:IndustrialOrganicChemicals .
+
+she:Policy a skos:Concept ;
+    skos:prefLabel "policy" ;
+    skos:narrower she:InputRegulation,
+        she:SewageSludgePolicy,
+        she:EUWideLimitValues,
+        she:Remediation,
+        she:LandUseRestriction,
+        she:ZeroPollutionActionPlan,
+        she:IndustrialEmissionsDirective,
+        she:WaterFrameworkDirective .
+
+she:AgriculturalAreas a skos:Concept ;
+    skos:prefLabel "agricultural areas" ;
+    skos:note "Largely ongoing due to application of plant protection products and nutrients." ;
+    she:emits she:Metals,
+        she:Microplastics,
+        she:Nanoparticles .
+
+she:FloodplainSoils a skos:Concept ;
+    skos:prefLabel "floodplain soils" ;
+    skos:note "Partially historical in the case of floodplain soils." .
+
+she:ProximityPollution a skos:Concept ;
+    skos:prefLabel "proximity pollution" .
+
+she:IndustrialEmissions a skos:Concept ;
+    skos:prefLabel "industrial emissions" ;
+    skos:note "Largely historical resulting from industrial emissions." .
+
+she:IndustrialInstallations a skos:Concept ;
+    skos:prefLabel "industrial installations" ;
+    she:hasAbbreviation "IED" ;
+    skos:note "Current emissions on land from large industrial installations (IED) are hardly reported." .
+
+she:ArableCroppingSystems a skos:Concept ;
+    skos:prefLabel "arable cropping systems" .
+
+she:AnimalHusbandry a skos:Concept ;
+    skos:prefLabel "animal husbandry" ;
+    skos:altLabel "grassland" .
+
+she:AdjacentTerrestrialEcosystems a skos:Concept ;
+    skos:prefLabel "adjacent terrestrial ecosystems" .
+
+she:AdjacentAquaticEcosystems a skos:Concept ;
+    skos:prefLabel "adjacent aquatic ecosystems" .
+
+she:DirectHumanExposure a skos:Concept ;
+    skos:prefLabel "direct human exposure" .
+
+she:HumanHealth a skos:Concept ;
+    skos:prefLabel "human health" .
+
+she:SoilEcosystem a skos:Concept ;
+    skos:prefLabel "soil ecosystem" .
+
+she:DrinkingWaterResources a skos:Concept ;
+    skos:prefLabel "drinking water resources" .
+
+she:SoilScreeningValues a skos:Concept ;
+    skos:prefLabel "soil screening values" .
+
+she:RiskLimitsInProducts a skos:Concept ;
+    skos:prefLabel "risk limits in products" ;
+    skos:note "Based on source level (sludges, fertiliser quality) and effect level (foodstuffs and drinking water quality)." .
+
+she:NaturalBackgroundLevels a skos:Concept ;
+    skos:prefLabel "natural background levels" .
+
+she:RiskBasedAssessment a skos:Concept ;
+    skos:prefLabel "risk-based assessment" ;
+    skos:note "Tiered approaches for risk-based assessment." .
+
+she:SoilAndGroundwaterThresholds a skos:Concept ;
+    skos:prefLabel "soil and groundwater thresholds" ;
+    skos:note "Based on human health risks and toxic effects on the ecosystem." .
+
+she:Nutrients a skos:Concept ;
+    skos:prefLabel "nutrients" ;
+    skos:note "Largely confined to surface water and groundwater." .
+
+she:MetalsAndMetalloidsInPlantProducts a skos:Concept ;
+    skos:prefLabel "metals/metalloids in plant products" .
+
+she:PlantProtectionChemicals a skos:Concept ;
+    skos:prefLabel "plant protection chemicals" .
+
+she:MetalsAndMetalloids a skos:Concept ;
+    skos:prefLabel "metals/metalloids" .
+
+she:PAHs a skos:Concept ;
+    skos:prefLabel "PAHs" .
+
+she:BTEX a skos:Concept ;
+    skos:prefLabel "BTEX" ;
+    skos:definition "benzene, toluene, ethylbenzene and xylene" .
+
+she:VolatileOrganicChlorinatedCompounds a skos:Concept ;
+    skos:prefLabel "volatile organic chlorinated compounds" .
+
+she:MineralOil a skos:Concept ;
+    skos:prefLabel "mineral oil" .
+
+she:Asbestos a skos:Concept ;
+    skos:prefLabel "asbestos" .
+
+she:IndustrialOrganicChemicals a skos:Concept ;
+    skos:prefLabel "industrial organic chemicals" .
+
+she:TolerableDailyIntake a skos:Concept ;
+    skos:prefLabel "tolerable daily intake" ;
+    she:hasAbbreviation "TDI" .
+
+she:EcologicalEffectsLevels a skos:Concept ;
+    skos:prefLabel "ecological effects levels" ;
+    skos:note "Based on reference dose or soil organisms." .
+
+she:InputRegulation a skos:Concept ;
+    skos:prefLabel "regulation of quantity and quality of inputs to soil" ;
+    skos:note "Includes regulation of nitrogen and phosphorus (indirect) and quality standards for pollutants (direct)." .
+
+she:SewageSludgePolicy a skos:Concept ;
+    skos:prefLabel "sewage sludge policy" ;
+    skos:note "EU policy is based on preventing accumulation." .
+
+she:EUWideLimitValues a skos:Concept ;
+    skos:prefLabel "EU-wide limit values" ;
+    skos:note "Regulate quality of mineral and organic fertilisers, soil improvers, and sludges." .
+
+she:Remediation a skos:Concept ;
+    skos:prefLabel "remediation" ;
+    skos:note "Largely based on remediation and/or soil management of affected sites." .
+
+she:LandUseRestriction a skos:Concept ;
+    skos:prefLabel "restriction of land use" .
+
+she:ZeroPollutionActionPlan a skos:Concept ;
+    skos:prefLabel "zero pollution action plan" .
+
+she:IndustrialEmissionsDirective a skos:Concept ;
+    skos:prefLabel "industrial emissions directive" ;
+    she:hasAbbreviation "IED" .
+
+she:WaterFrameworkDirective a skos:Concept ;
+    skos:prefLabel "water framework directive" ;
+    she:hasAbbreviation "WFD" .
+
+she:Metals a skos:Concept ;
+    skos:prefLabel "metals" .
+
+she:Microplastics a skos:Concept ;
+    skos:prefLabel "microplastics" .
+
+she:Nanoparticles a skos:Concept ;
+    skos:prefLabel "nanoparticles" .
+
+she:DDT a skos:Concept ;
+    skos:prefLabel "DDT" ;
+    skos:note "Found in areas with intensive fruit tree cropping." .

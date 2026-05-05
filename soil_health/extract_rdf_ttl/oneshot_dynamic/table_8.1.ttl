@@ -1,0 +1,100 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilCompaction a skos:Concept ;
+    skos:prefLabel "soil compaction" ;
+    skos:note "Table 8.1 Relationship of soil compaction to key societal needs and soil functions" ;
+    she:hasNegativeImpactOn she:WoodAndFibreProduction,
+        she:GrowthAndQualityOfCrops,
+        she:FilteringAndBufferingOfContaminants,
+        she:WaterStorageAndAvailability,
+        she:CompositionAndExchangeOfSoilGas,
+        she:CarbonStorageAndTurnover,
+        she:HabitatForPlantsInsectsMicrobesFungi,
+        she:DocumentationOfHistoricalHumanCultureAndLandManagement ;
+    she:hasNeutralImpactOn she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+        she:Water,
+        she:Air,
+        she:Climate,
+        she:Biodiversity,
+        she:CulturalHeritage,
+        she:Infrastructure .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:narrower she:WoodAndFibreProduction,
+        she:GrowthAndQualityOfCrops .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:narrower she:FilteringAndBufferingOfContaminants,
+        she:WaterStorageAndAvailability .
+
+she:Air a skos:Concept ;
+    skos:prefLabel "air" ;
+    skos:narrower she:CompositionAndExchangeOfSoilGas .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:narrower she:CarbonStorageAndTurnover .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:CulturalHeritage a skos:Concept ;
+    skos:prefLabel "cultural heritage" ;
+    skos:narrower she:DocumentationOfHistoricalHumanCultureAndLandManagement .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:narrower she:PlatformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" ;
+    a she:SoilService .
+
+she:GrowthAndQualityOfCrops a skos:Concept ;
+    skos:prefLabel "growth and quality of crops" ;
+    a she:SoilService .
+
+she:FilteringAndBufferingOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering and buffering of contaminants, including supply of drinking water" ;
+    a she:SoilService .
+
+she:WaterStorageAndAvailability a skos:Concept ;
+    skos:prefLabel "water storage and availability, groundwater recharge, surface run-off and interflow" ;
+    a she:SoilService .
+
+she:CompositionAndExchangeOfSoilGas a skos:Concept ;
+    skos:prefLabel "composition and exchange of soil gas with the atmosphere" ;
+    a she:SoilService .
+
+she:CarbonStorageAndTurnover a skos:Concept ;
+    skos:prefLabel "carbon storage and turnover, avoidance of greenhouse gas releases (e.g. nitrous oxide, methane)" ;
+    a she:SoilService .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    a she:SoilService .
+
+she:DocumentationOfHistoricalHumanCultureAndLandManagement a skos:Concept ;
+    skos:prefLabel "documentation of historical human culture and land management" ;
+    a she:SoilService .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    a she:SoilService .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" ;
+    a she:SoilService .

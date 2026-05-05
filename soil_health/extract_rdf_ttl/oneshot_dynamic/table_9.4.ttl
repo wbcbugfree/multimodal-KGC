@@ -1,0 +1,126 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilSealingLandTakeTargets a skos:Concept ;
+    skos:prefLabel "current targets and baselines for soil sealing/land take in selected european countries" ;
+    skos:narrower she:AchieveNoNetLandTakeBy2050,
+        she:DecreaseLandTakeGradually,
+        she:HalveLandTakeFrance,
+        she:ReduceAnnualLandTakeToRateOf2_5haPerDayBy2030,
+        she:ReduceLandConsumptionLuxembourg,
+        she:ReduceLandTakeForSettlementsAndTrafficRoutes,
+        she:StopNetLandTakeSwitzerland .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    skos:related she:LandTake .
+
+she:LandTake a skos:Concept ;
+    skos:prefLabel "land take" .
+
+she:EuropeanUnion a skos:Concept ;
+    skos:prefLabel "eu" .
+
+she:Flanders a skos:Concept ;
+    skos:prefLabel "flanders" .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" .
+
+she:Germany a skos:Concept ;
+    skos:prefLabel "germany" .
+
+she:Luxembourg a skos:Concept ;
+    skos:prefLabel "luxembourg" .
+
+she:France a skos:Concept ;
+    skos:prefLabel "france" .
+
+she:Switzerland a skos:Concept ;
+    skos:prefLabel "switzerland" .
+
+she:LandTakeIndicator a skos:Concept ;
+    skos:prefLabel "indicator" ;
+    skos:narrower she:AverageAnnualLandTakeHectaresPerDay,
+        she:AverageAnnualLandTakeThousandHectaresPerYearInMetropolitanAreas,
+        she:LandTakeKm2Per3YearPeriod,
+        she:NotYetDefined .
+
+she:LandTakeKm2Per3YearPeriod a skos:Concept ;
+    skos:prefLabel "land take (km2) per 3-year period" .
+
+she:AverageAnnualLandTakeHectaresPerDay a skos:Concept ;
+    skos:prefLabel "average annual land take measured in hectares per day" .
+
+she:AverageAnnualLandTakeThousandHectaresPerYearInMetropolitanAreas a skos:Concept ;
+    skos:prefLabel "average annual land take measured in thousand hectares per year in metropolitan areas" .
+
+she:NotYetDefined a skos:Concept ;
+    skos:prefLabel "not yet defined" .
+
+she:AchieveNoNetLandTakeBy2050 a skos:Concept ;
+    skos:prefLabel "achieve no net land take by 2050" ;
+    she:appliesTo she:EuropeanUnion ;
+    she:hasIndicator she:LandTakeKm2Per3YearPeriod ;
+    she:hasSource she:RoadmapToAResourceEfficientEurope .
+
+she:RoadmapToAResourceEfficientEurope a skos:Concept ;
+    skos:prefLabel "roadmap to a resource efficient europe" ;
+    skos:note "EC (2011, p. 15, milestone 4.6)." .
+
+she:DecreaseLandTakeGradually a skos:Concept ;
+    skos:prefLabel "to decrease land take gradually" ;
+    skos:note "2016: land take 6ha/day (baseline); 2025 interim target 3ha/day; 2040 final target 0ha/day ('land take neutral')" ;
+    she:appliesTo she:Flanders ;
+    she:hasIndicator she:AverageAnnualLandTakeHectaresPerDay ;
+    she:hasSource she:StrategicVisionOfTheSpatialPolicyPlanOfFlanders .
+
+she:StrategicVisionOfTheSpatialPolicyPlanOfFlanders a skos:Concept ;
+    skos:prefLabel "strategic vision of the spatial policy plan of flanders" .
+
+she:ReduceAnnualLandTakeToRateOf2_5haPerDayBy2030 a skos:Concept ;
+    skos:prefLabel "to reduce annual land take to a rate of 2.5ha/day by 2030 and to compensate unavoidable soil sealing" ;
+    she:appliesTo she:Austria ;
+    she:hasIndicator she:AverageAnnualLandTakeHectaresPerDay ;
+    she:hasSource she:AustrianGovernmentProgramme2020_2024 .
+
+she:AustrianGovernmentProgramme2020_2024 a skos:Concept ;
+    skos:prefLabel "austrian government programme 2020-2024" .
+
+she:ReduceLandTakeForSettlementsAndTrafficRoutes a skos:Concept ;
+    skos:prefLabel "to reduce land take for settlements and traffic routes to less than 30ha/day by 2030" ;
+    skos:note "at present 52ha/day as a 4-year average from 2016 to 2019" ;
+    she:appliesTo she:Germany ;
+    she:hasIndicator she:AverageAnnualLandTakeHectaresPerDay ;
+    she:hasSource she:GermanSustainabilityStrategy2016 .
+
+she:GermanSustainabilityStrategy2016 a skos:Concept ;
+    skos:prefLabel "german sustainability strategy 2016" .
+
+she:ReduceLandConsumptionLuxembourg a skos:Concept ;
+    skos:prefLabel "to reduce land consumption from 1.3ha/day (average 2000-2006) to 1ha/day by 2020 and 0ha/day by 2050" ;
+    she:appliesTo she:Luxembourg ;
+    she:hasIndicator she:AverageAnnualLandTakeHectaresPerDay ;
+    she:hasSource she:UnLuxembourgDurable .
+
+she:UnLuxembourgDurable a skos:Concept ;
+    skos:prefLabel "un luxembourg durable pour une meilleure qualité de vie" .
+
+she:HalveLandTakeFrance a skos:Concept ;
+    skos:prefLabel "to halve land take at the expense of agricultural land until 2020 and reduce urban sprawl" ;
+    she:appliesTo she:France ;
+    she:hasIndicator she:AverageAnnualLandTakeThousandHectaresPerYearInMetropolitanAreas ;
+    she:hasSource she:LawOfAgriculturalAndFisheryModernization .
+
+she:LawOfAgriculturalAndFisheryModernization a skos:Concept ;
+    skos:prefLabel "the law of agricultural and fishery modernization" .
+
+she:StopNetLandTakeSwitzerland a skos:Concept ;
+    skos:prefLabel "to stop net land (soil) take ('use') by 2050" ;
+    skos:note "this target implements sdg target 15.3 and the seventh environment action programme (no net land take). compensation measures included, however, are based on qualitative requirements and measures rather than area related. soil sealing is used as an indicator for land take until a national soil functions map is available." ;
+    she:appliesTo she:Switzerland ;
+    she:hasIndicator she:NotYetDefined ;
+    she:hasSource she:SchweizerischerBundesrat .
+
+she:SchweizerischerBundesrat a skos:Concept ;
+    skos:prefLabel "schweizerischer bundesrat" .

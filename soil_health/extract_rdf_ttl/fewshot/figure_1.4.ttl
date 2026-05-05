@@ -1,0 +1,282 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:OperationalDefinitionOfLandDegradation a skos:Concept ;
+    skos:prefLabel "operational definition of land degradation and linkage with sub-indicators" ;
+    skos:narrower she:ExternalDriversPressures,
+        she:LandDegradation,
+        she:NaturalCapital,
+        she:EcosystemServices,
+        she:HumanNeeds ;
+    skos:note "NB: All elements depicted can change over time at different rates" .
+
+she:ExternalDriversPressures a skos:Concept ;
+    skos:prefLabel "external drivers/pressures" ;
+    skos:narrower she:NaturalDrivers, she:AnthropogenicDrivers ;
+    she:drives she:LandDegradation .
+
+she:NaturalDrivers a skos:Concept ;
+    skos:prefLabel "natural" ;
+    skos:broader she:ExternalDriversPressures ;
+    skos:narrower she:ClimateChange, she:NaturalDisastersExtremeEvents ;
+    she:exacerbatedBy she:GeologyGeomorphology, 
+        she:Topography, 
+        she:SoilPropertiesDrivers, 
+        she:BiodiversityDrivers .
+
+she:AnthropogenicDrivers a skos:Concept ;
+    skos:prefLabel "anthropogenic" ;
+    skos:broader she:ExternalDriversPressures ;
+    skos:narrower she:PopulationChange, 
+        she:MigrationImpacts, 
+        she:PolicyImpacts, 
+        she:GlobalisationImpacts, 
+        she:NegativeLandUseChange, 
+        she:UnsustainableFarmingPractices, 
+        she:UnsustainableForestryPractices, 
+        she:UnsustainableMiningPractices, 
+        she:InfrastructureDesignUrbanisation, 
+        she:IneffectiveGovernance, 
+        she:LandTenureInsecurity, 
+        she:PoorLandUsePlanning, 
+        she:InappropriateTechnology, 
+        she:WastePollution .
+
+she:GlobalisationImpacts a skos:Concept ;
+    skos:prefLabel "globalisation impacts" ;
+    skos:narrower she:MarketPriceShocks, she:InstabilityInsecurityConflict .
+
+she:LandDegradation a skos:Concept ;
+    skos:prefLabel "land degradation" ;
+    skos:narrower she:DegradationProcesses ;
+    she:impactsViaProcesses she:NaturalCapital .
+
+she:DegradationProcesses a skos:Concept ;
+    skos:prefLabel "degradation processes" ;
+    skos:narrower she:LandscapeModification, 
+        she:SoilErosionByWaterAndWind, 
+        she:SoilSurfaceSealingCompaction,
+        she:SoilSalinisationAndAlkalinisation, 
+        she:SoilAcidification, 
+        she:SoilFertilityDecline,
+        she:SoilContamination, 
+        she:SoilExtraction, 
+        she:Aridification, 
+        she:DeclineInVegetationCover,
+        she:DeclineInVegetationCommunityFunctioning, 
+        she:DeclineInBiomass, 
+        she:DeclineInBiodiversity,
+        she:DepletionOfSeedBank, 
+        she:IncreaseInWeeds, 
+        she:IncreaseInInvasiveSpecies, 
+        she:HabitatLoss,
+        she:HydrologicalModification, 
+        she:ChangeInGroundwaterLevelQuality .
+
+she:NaturalCapital a skos:Concept ;
+    skos:prefLabel "natural capital" ;
+    skos:narrower she:InherentProperties, she:ManageableProperties ;
+    she:influencesViaProperties she:LandDegradation ;
+    she:flowsTo she:EcosystemServices .
+
+she:InherentProperties a skos:Concept ;
+    skos:prefLabel "inherent properties" ;
+    skos:narrower she:Slope, 
+        she:Orientation, 
+        she:SoilDepth, 
+        she:SoilTexture, 
+        she:ClayTypes, 
+        she:Stoniness,
+        she:SoilStrengthAndStructureSubsoil, 
+        she:ParentMaterial, 
+        she:BiodiversityInherent .
+
+she:ManageableProperties a skos:Concept ;
+    skos:prefLabel "manageable properties" ;
+    skos:narrower she:NutrientLevels, 
+        she:SoilOrganicMatter, 
+        she:Temperature, 
+        she:SoilPH, 
+        she:Macroporosity,
+        she:BulkDensity, 
+        she:SoilStrengthAndStructureTopsoil, 
+        she:SizeOfAggregateTopsoil,
+        she:Sedimentation, 
+        she:LandCover, 
+        she:VegetationCommunityStructure, 
+        she:WaterTable .
+
+she:EcosystemServices a skos:Concept ;
+    skos:prefLabel "ecosystem services" ;
+    skos:narrower she:CulturalServices, 
+        she:RegulatingServices, 
+        she:ProvisioningServices, 
+        she:SupportingServices, 
+        she:BiodiversityServices .
+
+she:CulturalServices a skos:Concept ;
+    skos:prefLabel "cultural services" ;
+    skos:broader she:EcosystemServices ;
+    skos:narrower she:CulturalHeritage, she:RecreationAndTourism ;
+    she:flowsTo she:HumanNeeds ;
+    she:hasIndicator she:OtherNationalIndicator, 
+        she:BiodiversityRedListIndex, 
+        she:OtherSDGIndicator, 
+        she:LandCoverLCChange .
+
+she:RegulatingServices a skos:Concept ;
+    skos:prefLabel "regulating services" ;
+    skos:broader she:EcosystemServices ;
+    skos:narrower she:RegionalClimateRegulation, 
+        she:ClimateChangeMitigation, 
+        she:DisasterRiskReduction,
+        she:RegulationOfPestsAndDiseases, 
+        she:Pollination, 
+        she:WaterRegulation ;
+    she:flowsTo she:SafetyAndSecurityNeeds, she:PhysiologicalNeeds ;
+    she:hasIndicator she:OtherSDGIndicator, 
+        she:LandProductivityNPP, 
+        she:OtherNationalIndicator, 
+        she:LandCoverLCChange, 
+        she:CarbonStocksSOC .
+
+she:ProvisioningServices a skos:Concept ;
+    skos:prefLabel "provisioning services" ;
+    skos:broader she:EcosystemServices ;
+    skos:narrower she:Food, 
+        she:Water, 
+        she:FibreWoodProducts, 
+        she:MedicinalResources ;
+    she:flowsTo she:SafetyAndSecurityNeeds, she:PhysiologicalNeeds ;
+    she:hasIndicator she:LandProductivityNPP, 
+        she:CarbonStocksSOC, 
+        she:LandCoverLCChange, 
+        she:OtherSDGIndicator, 
+        she:OtherNationalIndicator .
+
+she:SupportingServices a skos:Concept ;
+    skos:prefLabel "supporting services" ;
+    skos:broader she:EcosystemServices ;
+    skos:narrower she:PrimaryProduction, 
+        she:NutrientCycling, 
+        she:WaterCycling, 
+        she:SoilFormation ;
+    skos:note "Services that support all other ecosystem services and also influence natural capital." ;
+    she:flowsTo she:EcosystemServices ;
+    she:influencesViaProperties she:NaturalCapital ;
+    she:hasIndicator she:LandProductivityNPP, she:CarbonStocksSOC .
+
+she:BiodiversityServices a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:broader she:EcosystemServices ;
+    skos:narrower she:BiodiversityConservation, she:SoilBiodiversityServices, she:Agrobiodiversity ;
+    skos:note "Biodiversity underpins all ecosystem services." ;
+    she:underpins she:EcosystemServices ;
+    she:flowsTo she:EcosystemServices, 
+        she:SelfActualisationNeeds, 
+        she:EsteemNeeds, 
+        she:SocialNeeds ;
+    she:hasIndicator she:BiodiversityRedListIndex, 
+        she:OtherSDGIndicator, 
+        she:OtherNationalIndicator, 
+        she:CarbonStocksSOC .
+
+she:HumanNeeds a skos:Concept ;
+    skos:prefLabel "human needs" ;
+    skos:narrower she:SelfActualisationNeeds, 
+        she:EsteemNeeds, 
+        she:SocialNeeds, 
+        she:SafetyAndSecurityNeeds, 
+        she:PhysiologicalNeeds .
+
+she:ClimateChange a skos:Concept ; skos:prefLabel "climate change" .
+she:NaturalDisastersExtremeEvents a skos:Concept ; skos:prefLabel "natural disasters/extreme events" .
+she:GeologyGeomorphology a skos:Concept ; skos:prefLabel "geology/geomorphology" .
+she:Topography a skos:Concept ; skos:prefLabel "topography" .
+she:SoilPropertiesDrivers a skos:Concept ; skos:prefLabel "soil properties" .
+she:BiodiversityDrivers a skos:Concept ; skos:prefLabel "biodiversity" .
+she:PopulationChange a skos:Concept ; skos:prefLabel "population change" .
+she:MigrationImpacts a skos:Concept ; skos:prefLabel "migration impacts" .
+she:PolicyImpacts a skos:Concept ; skos:prefLabel "policy impacts" .
+she:MarketPriceShocks a skos:Concept ; skos:prefLabel "market price shocks" .
+she:InstabilityInsecurityConflict a skos:Concept ; skos:prefLabel "instability-insecurity conflict" .
+she:NegativeLandUseChange a skos:Concept ; skos:prefLabel "negative land use change" .
+she:UnsustainableFarmingPractices a skos:Concept ; skos:prefLabel "unsustainable farming practices" .
+she:UnsustainableForestryPractices a skos:Concept ; skos:prefLabel "unsustainable forestry practices" .
+she:UnsustainableMiningPractices a skos:Concept ; skos:prefLabel "unsustainable mining practices" .
+she:InfrastructureDesignUrbanisation a skos:Concept ; skos:prefLabel "infrastructure design/ urbanisation" .
+she:IneffectiveGovernance a skos:Concept ; skos:prefLabel "ineffective governance" .
+she:LandTenureInsecurity a skos:Concept ; skos:prefLabel "land tenure insecurity" .
+she:PoorLandUsePlanning a skos:Concept ; skos:prefLabel "poor land use planning" .
+she:InappropriateTechnology a skos:Concept ; skos:prefLabel "inappropriate technology" .
+she:WastePollution a skos:Concept ; skos:prefLabel "waste, pollution" .
+she:LandscapeModification a skos:Concept ; skos:prefLabel "landscape modification" .
+she:SoilErosionByWaterAndWind a skos:Concept ; skos:prefLabel "soil erosion by water and wind" .
+she:SoilSurfaceSealingCompaction a skos:Concept ; skos:prefLabel "soil surface sealing, compaction" .
+she:SoilSalinisationAndAlkalinisation a skos:Concept ; skos:prefLabel "soil salinisation and alkalinisation" .
+she:SoilAcidification a skos:Concept ; skos:prefLabel "soil acidification" .
+she:SoilFertilityDecline a skos:Concept ; skos:prefLabel "soil fertility decline" .
+she:SoilContamination a skos:Concept ; skos:prefLabel "soil contamination" .
+she:SoilExtraction a skos:Concept ; skos:prefLabel "soil extraction" .
+she:Aridification a skos:Concept ; skos:prefLabel "aridification" .
+she:DeclineInVegetationCover a skos:Concept ; skos:prefLabel "decline in vegetation cover" .
+she:DeclineInVegetationCommunityFunctioning a skos:Concept ; skos:prefLabel "decline in vegetation community functioning" .
+she:DeclineInBiomass a skos:Concept ; skos:prefLabel "decline in biomass" .
+she:DeclineInBiodiversity a skos:Concept ; skos:prefLabel "decline in biodiversity" .
+she:DepletionOfSeedBank a skos:Concept ; skos:prefLabel "depletion of seed bank" .
+she:IncreaseInWeeds a skos:Concept ; skos:prefLabel "increase in weeds" .
+she:IncreaseInInvasiveSpecies a skos:Concept ; skos:prefLabel "increase in invasive species" .
+she:HabitatLoss a skos:Concept ; skos:prefLabel "habitat loss" .
+she:HydrologicalModification a skos:Concept ; skos:prefLabel "hydrological modification" .
+she:ChangeInGroundwaterLevelQuality a skos:Concept ; skos:prefLabel "change in groundwater level/ quality" .
+she:Slope a skos:Concept ; skos:prefLabel "slope" .
+she:Orientation a skos:Concept ; skos:prefLabel "orientation" .
+she:SoilDepth a skos:Concept ; skos:prefLabel "soil depth" .
+she:SoilTexture a skos:Concept ; skos:prefLabel "soil texture" .
+she:ClayTypes a skos:Concept ; skos:prefLabel "clay types" .
+she:Stoniness a skos:Concept ; skos:prefLabel "stoniness" .
+she:SoilStrengthAndStructureSubsoil a skos:Concept ; skos:prefLabel "soil strength and structure (subsoil)" .
+she:ParentMaterial a skos:Concept ; skos:prefLabel "parent material" .
+she:BiodiversityInherent a skos:Concept ; skos:prefLabel "biodiversity" .
+she:NutrientLevels a skos:Concept ; skos:prefLabel "nutrient levels" .
+she:SoilOrganicMatter a skos:Concept ; skos:prefLabel "soil organic matter" .
+she:Temperature a skos:Concept ; skos:prefLabel "temperature" .
+she:SoilPH a skos:Concept ; skos:prefLabel "soil ph" .
+she:Macroporosity a skos:Concept ; skos:prefLabel "macroporosity" .
+she:BulkDensity a skos:Concept ; skos:prefLabel "bulk density" .
+she:SoilStrengthAndStructureTopsoil a skos:Concept ; skos:prefLabel "soil strength and structure (top soil)" .
+she:SizeOfAggregateTopsoil a skos:Concept ; skos:prefLabel "size of aggregate (top soil)" .
+she:Sedimentation a skos:Concept ; skos:prefLabel "sedimentation" .
+she:LandCover a skos:Concept ; skos:prefLabel "land cover" .
+she:VegetationCommunityStructure a skos:Concept ; skos:prefLabel "vegetation community structure" .
+she:WaterTable a skos:Concept ; skos:prefLabel "water table" .
+she:CulturalHeritage a skos:Concept ; skos:prefLabel "cultural heritage" .
+she:RecreationAndTourism a skos:Concept ; skos:prefLabel "recreation & tourism" .
+she:RegionalClimateRegulation a skos:Concept ; skos:prefLabel "regional climate regulation" .
+she:ClimateChangeMitigation a skos:Concept ; skos:prefLabel "climate change mitigation" .
+she:DisasterRiskReduction a skos:Concept ; skos:prefLabel "disaster risk reduction" ; skos:note "(flood, drought, soil erosion)" .
+she:RegulationOfPestsAndDiseases a skos:Concept ; skos:prefLabel "regulation of pests and diseases" .
+she:Pollination a skos:Concept ; skos:prefLabel "pollination" .
+she:WaterRegulation a skos:Concept ; skos:prefLabel "water regulation" .
+she:Food a skos:Concept ; skos:prefLabel "food" .
+she:Water a skos:Concept ; skos:prefLabel "water" .
+she:FibreWoodProducts a skos:Concept ; skos:prefLabel "fibre, wood products" .
+she:MedicinalResources a skos:Concept ; skos:prefLabel "medicinal resources" .
+she:PrimaryProduction a skos:Concept ; skos:prefLabel "primary production" .
+she:NutrientCycling a skos:Concept ; skos:prefLabel "nutrient cycling" .
+she:WaterCycling a skos:Concept ; skos:prefLabel "water cycling" .
+she:SoilFormation a skos:Concept ; skos:prefLabel "soil formation" .
+she:BiodiversityConservation a skos:Concept ; skos:prefLabel "biodiversity conservation" .
+she:SoilBiodiversityServices a skos:Concept ; skos:prefLabel "soil biodiversity" .
+she:Agrobiodiversity a skos:Concept ; skos:prefLabel "agrobiodiversity" .
+she:SelfActualisationNeeds a skos:Concept ; skos:prefLabel "self-actualisation needs" .
+she:EsteemNeeds a skos:Concept ; skos:prefLabel "esteem needs (psychological)" .
+she:SocialNeeds a skos:Concept ; skos:prefLabel "social needs" .
+she:SafetyAndSecurityNeeds a skos:Concept ; skos:prefLabel "safety and security needs" .
+she:PhysiologicalNeeds a skos:Concept ; skos:prefLabel "physiological needs" .
+she:LandProductivityNPP a skos:Concept ; skos:prefLabel "land productivity/npp" ; she:hasAbbreviation "NPP" .
+she:CarbonStocksSOC a skos:Concept ; skos:prefLabel "carbon stocks/soc" ; she:hasAbbreviation "SOC" .
+she:LandCoverLCChange a skos:Concept ; skos:prefLabel "land cover/lc change" ; she:hasAbbreviation "LC" .
+she:OtherSDGIndicator a skos:Concept ; skos:prefLabel "other sdg indicator" ; she:hasAbbreviation "SDG" .
+she:BiodiversityRedListIndex a skos:Concept ; skos:prefLabel "biodiversity/ red list index" .
+she:OtherNationalIndicator a skos:Concept ; skos:prefLabel "other national indicator" .

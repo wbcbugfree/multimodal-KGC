@@ -1,0 +1,95 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:EuropeanToolboxForRiskBasedLandManagement a skos:Concept ;
+    skos:prefLabel "design of a european toolbox for stimulating convergence in risk-based land management in the eu member states" ;
+    skos:narrower she:StandardisedTools,
+                  she:FlexibleTools .
+
+she:StandardisedTools a skos:Concept ;
+    skos:prefLabel "1. standardised tools" ;
+    skos:narrower she:HumanHealthRiskAssessment,
+                  she:EcologicalRiskAssessment,
+                  she:EndpointSpecificRiskAssessmentTools .
+
+she:FlexibleTools a skos:Concept ;
+    skos:prefLabel "2. flexible tools" ;
+    skos:narrower she:ConsiderationOfCountryAndSiteSpecificConditions .
+
+she:HumanHealthRiskAssessment a skos:Concept ;
+    skos:prefLabel "human health risk assessment" ;
+    she:hasComponentToBeStandardised she:DailyInhalationRates,
+                                      she:TolerableExposure,
+                                      she:SoilIngestionByChildren,
+                                      she:DermalUptakeFromSoilMaterialModels .
+
+she:EcologicalRiskAssessment a skos:Concept ;
+    skos:prefLabel "ecological risk assessment" ;
+    she:hasComponentToBeStandardised she:SpeciesSensitivityDistribution,
+                                      she:DeterminationOfCompoundSpecificBioavailableFractions,
+                                      she:DatabaseWithPollutantCompoundCharacteristics .
+
+she:EndpointSpecificRiskAssessmentTools a skos:Concept ;
+    skos:prefLabel "endpoint-specific risk assessment tools" ;
+    she:hasComponentToBeStandardised she:RelevantEUWideCriticalLimits,
+                                      she:DescriptionOfRelevantPathwayAndModels .
+
+she:ConsiderationOfCountryAndSiteSpecificConditions a skos:Concept ;
+    skos:prefLabel "consideration of country- and site-specific conditions" ;
+    she:hasComponentToBeStandardised she:GeographicalConditions,
+                                      she:LocalManagement,
+                                      she:HistoryOfLandManagement,
+                                      she:NationalLegalConditions .
+
+she:DailyInhalationRates a skos:Concept ;
+    skos:prefLabel "daily inhalation rates" .
+
+she:TolerableExposure a skos:Concept ;
+    skos:prefLabel "tolerable exposure" ;
+    skos:note "reference dose or tolerable daily intake, which can be similar for a defined sensitive group of people; risk per unit of exposure" .
+
+she:SoilIngestionByChildren a skos:Concept ;
+    skos:prefLabel "average amount of soil ingested daily by children" ;
+    skos:note "Bierkens et al., 2011" .
+
+she:DermalUptakeFromSoilMaterialModels a skos:Concept ;
+    skos:prefLabel "dermal uptake from soil material models" .
+
+she:SpeciesSensitivityDistribution a skos:Concept ;
+    skos:prefLabel "species sensitivity distribution" ;
+    she:hasAbbreviation "SSD" ;
+    skos:note "the species sensitivity distribution (ssd) is the empirical relation between soil concentration and fraction of species affected. the ssd gives the corresponding risk limit that can be used as an ecologically based soil health standard (swartjes et al., 2009)." ;
+    she:determines she:EcologicallyBasedSoilHealthStandards .
+
+she:EcologicallyBasedSoilHealthStandards a skos:Concept ;
+    skos:prefLabel "ecologically-based soil health standards" .
+
+she:DeterminationOfCompoundSpecificBioavailableFractions a skos:Concept ;
+    skos:prefLabel "determination of compound-specific bioavailable fractions" ;
+    skos:note "e.g. correction factors for the difference between intake and uptake of metals in the human body" .
+
+she:DatabaseWithPollutantCompoundCharacteristics a skos:Concept ;
+    skos:prefLabel "database with pollutant/compound characteristics" ;
+    skos:note "e.g. water solubility, vapour pressure, water-octanol partition coefficients" .
+
+she:RelevantEUWideCriticalLimits a skos:Concept ;
+    skos:prefLabel "relevant eu-wide critical limits" ;
+    skos:note "used in specific endpoints considered (e.g. critical limits in food, surface water or soil pore water concentrations)" .
+
+she:DescriptionOfRelevantPathwayAndModels a skos:Concept ;
+    skos:prefLabel "description of relevant pathway and models" ;
+    skos:note "needed to describe these to predict flows of pollutants to endpoints considered" .
+
+she:GeographicalConditions a skos:Concept ;
+    skos:prefLabel "geographical conditions" ;
+    skos:note "e.g. for vapour intrusion models, which are dependent on soil type and groundwater depth" .
+
+she:LocalManagement a skos:Concept ;
+    skos:prefLabel "local management" ;
+    skos:note "e.g. home-grown vegetable consumption, food consumption data" .
+
+she:HistoryOfLandManagement a skos:Concept ;
+    skos:prefLabel "history of land management" .
+
+she:NationalLegalConditions a skos:Concept ;
+    skos:prefLabel "national legal conditions" .

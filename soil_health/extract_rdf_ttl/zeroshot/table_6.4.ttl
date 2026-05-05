@@ -1,0 +1,55 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ThresholdsForEnvironmentalVariablesThatMayHaveAStrongEffectOnSoilBiodiversity a skos:Concept ;
+    skos:prefLabel "thresholds for environmental variables that may have a strong effect on soil biodiversity" ;
+    skos:note "Table 6.4" ;
+    skos:note "Source: Compiled from Aksoy et al. (2017)." ;
+    she:affects she:SoilBiodiversity ;
+    skos:narrower she:Variable,
+                  she:ClassesOfParametersForScoringSoilBiodiversityPotential .
+
+she:SoilBiodiversity a skos:Concept ;
+    skos:prefLabel "soil biodiversity" .
+
+she:Variable a skos:Concept ;
+    skos:prefLabel "variable" ;
+    skos:narrower she:PH,
+                  she:SoilTexturalClass,
+                  she:OrganicMatter,
+                  she:PotentialEvapotranspiration,
+                  she:AnnualAverageTemperature,
+                  she:SoilBiomassProductivity,
+                  she:LandUseLandCover .
+
+she:ClassesOfParametersForScoringSoilBiodiversityPotential a skos:Concept ;
+    skos:prefLabel "classes of parameters for scoring soil biodiversity potential" .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" ;
+    skos:altLabel "pH" ;
+    she:hasScoringClass "<4", "4-5.2", "5.2-8.2", ">8.2" .
+
+she:SoilTexturalClass a skos:Concept ;
+    skos:prefLabel "soil textural class" ;
+    she:hasScoringClass "coarse", "medium", "medium-fine", "fine" .
+
+she:OrganicMatter a skos:Concept ;
+    skos:prefLabel "organic matter (%)" ;
+    she:hasScoringClass "<1", "1-2", "2-4", ">4" .
+
+she:PotentialEvapotranspiration a skos:Concept ;
+    skos:prefLabel "potential evapotranspiration (mm)" ;
+    she:hasScoringClass "<-500", "-500 to 500", ">500" .
+
+she:AnnualAverageTemperature a skos:Concept ;
+    skos:prefLabel "annual average temperature (°c)" ;
+    she:hasScoringClass "<5", "5-20", ">20" .
+
+she:SoilBiomassProductivity a skos:Concept ;
+    skos:prefLabel "soil biomass productivity" ;
+    she:hasScoringClass "poor", "average", "good" .
+
+she:LandUseLandCover a skos:Concept ;
+    skos:prefLabel "land use/land cover" ;
+    she:hasScoringClass "artificial", "arable", "permanent crops", "others" .

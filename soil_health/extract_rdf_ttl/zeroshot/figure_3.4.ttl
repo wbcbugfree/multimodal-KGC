@@ -1,0 +1,92 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Figure3_4 a skos:Concept ;
+    skos:prefLabel "the relationship between soil olsen-p contents and relative yield of wheat in long-term experiments in china" ;
+    skos:narrower she:RelativeYieldPercentage,
+                  she:OlsenPMgKg,
+                  she:Regression,
+                  she:CriticalPLevelAt90RelativeYield ;
+    she:investigates she:Wheat ;
+    she:hasGeographicScope she:China ;
+    she:hasSource "Chen, X. et al., unpublished data." .
+
+she:RelativeYieldPercentage a skos:Concept ;
+    skos:prefLabel "relative yield (percentage)" .
+
+she:OlsenPMgKg a skos:Concept ;
+    skos:prefLabel "olsen-p (mg/kg)" .
+
+she:Wheat a skos:Concept ;
+    skos:prefLabel "wheat" .
+
+she:China a skos:Concept ;
+    skos:prefLabel "china" .
+
+she:Treatment a skos:Concept ;
+    skos:prefLabel "treatment" ;
+    skos:narrower she:CK, 
+                  she:NK, 
+                  she:NPK, 
+                  she:NPKM, 
+                  she:OnePointFiveNPKM, 
+                  she:NPKS .
+
+she:CK a skos:Concept ;
+    skos:prefLabel "ck" ;
+    skos:definition "control plot without nutrient additions" ;
+    skos:broader she:Treatment .
+
+she:NK a skos:Concept ;
+    skos:prefLabel "nk" ;
+    she:hasComponent she:Nitrogen, she:Potassium ;
+    skos:broader she:Treatment .
+
+she:NPK a skos:Concept ;
+    skos:prefLabel "npk" ;
+    she:hasComponent she:Nitrogen, she:Phosphorus, she:Potassium ;
+    skos:broader she:Treatment .
+
+she:NPKM a skos:Concept ;
+    skos:prefLabel "npkm" ;
+    she:hasComponent she:Nitrogen, she:Phosphorus, she:Potassium, she:AnimalManure ;
+    skos:broader she:Treatment .
+
+she:OnePointFiveNPKM a skos:Concept ;
+    skos:prefLabel "1.5npkm" ;
+    skos:definition "50% higher addition of n, p, k and manure than in the standard treatment" ;
+    she:hasComponent she:Nitrogen, she:Phosphorus, she:Potassium, she:AnimalManure ;
+    skos:broader she:Treatment .
+
+she:NPKS a skos:Concept ;
+    skos:prefLabel "npks" ;
+    she:hasComponent she:Nitrogen, she:Phosphorus, she:Potassium, she:Sulphur ;
+    skos:broader she:Treatment .
+
+she:Nitrogen a skos:Concept ;
+    skos:prefLabel "nitrogen" ;
+    she:hasAbbreviation "N" .
+
+she:Phosphorus a skos:Concept ;
+    skos:prefLabel "phosphorus" ;
+    she:hasAbbreviation "P" .
+
+she:Potassium a skos:Concept ;
+    skos:prefLabel "potassium" ;
+    she:hasAbbreviation "K" .
+
+she:Sulphur a skos:Concept ;
+    skos:prefLabel "sulphur" ;
+    she:hasAbbreviation "S" .
+
+she:AnimalManure a skos:Concept ;
+    skos:prefLabel "animal manure" ;
+    she:hasAbbreviation "M" .
+
+she:Regression a skos:Concept ;
+    skos:prefLabel "regression" ;
+    she:modelsRelationshipBetween she:OlsenPMgKg, she:RelativeYieldPercentage .
+
+she:CriticalPLevelAt90RelativeYield a skos:Concept ;
+    skos:prefLabel "critical p level at 90% relative yield" ;
+    skos:note "indicated by the intersection of the red dashed lines at approximately 18 mg/kg olsen-p and 90% relative yield" .

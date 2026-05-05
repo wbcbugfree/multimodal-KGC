@@ -1,0 +1,91 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:RelationshipSoilOlsenPAndRelativeYieldOfWheat a skos:Concept ;
+    skos:prefLabel "the relationship between soil olsen-p contents and relative yield of wheat in long-term experiments in china" ;
+    skos:narrower she:SoilOlsenP,
+                  she:RelativeYield,
+                  she:FertilizationTreatment,
+                  she:Regression,
+                  she:CriticalPLevelAt90PercentRelativeYield .
+
+she:SoilOlsenP a skos:Concept ;
+    skos:prefLabel "soil olsen-p" ;
+    she:hasUnit "mg/kg" ;
+    skos:note "x-axis variable" .
+
+she:RelativeYield a skos:Concept ;
+    skos:prefLabel "relative yield" ;
+    she:hasUnit "percentage" ;
+    skos:note "y-axis variable" ;
+    skos:related she:Wheat .
+
+she:Wheat a skos:Concept ;
+    skos:prefLabel "wheat" .
+
+she:Regression a skos:Concept ;
+    skos:prefLabel "regression" ;
+    she:models she:RelationshipSoilOlsenPAndRelativeYieldOfWheat .
+
+she:CriticalPLevelAt90PercentRelativeYield a skos:Concept ;
+    skos:prefLabel "critical p level at 90% relative yield" ;
+    she:hasThresholdValue "18 mg/kg" ;
+    she:atRelativeYield "90%" .
+
+she:FertilizationTreatment a skos:Concept ;
+    skos:prefLabel "fertilization treatment" ;
+    skos:narrower she:CK,
+                  she:NK,
+                  she:NPK,
+                  she:NPKM,
+                  she:OnePointFiveNPKM,
+                  she:NPKS .
+
+she:CK a skos:Concept ;
+    skos:prefLabel "ck" ;
+    skos:definition "control plot without nutrient additions" .
+
+she:NK a skos:Concept ;
+    skos:prefLabel "nk" ;
+    skos:definition "additions of nitrogen and potassium" ;
+    she:contains she:Nitrogen, she:Potassium .
+
+she:NPK a skos:Concept ;
+    skos:prefLabel "npk" ;
+    skos:definition "additions of nitrogen, phosphorus, and potassium" ;
+    she:contains she:Nitrogen, she:Phosphorus, she:Potassium .
+
+she:NPKM a skos:Concept ;
+    skos:prefLabel "npkm" ;
+    skos:definition "addition of nitrogen, phosphorus, potassium and animal manure" ;
+    she:contains she:Nitrogen, she:Phosphorus, she:Potassium, she:AnimalManure .
+
+she:OnePointFiveNPKM a skos:Concept ;
+    skos:prefLabel "1.5npkm" ;
+    skos:definition "50% higher addition of n, p, k and manure than in the standard treatment" ;
+    she:contains she:Nitrogen, she:Phosphorus, she:Potassium, she:AnimalManure .
+
+she:NPKS a skos:Concept ;
+    skos:prefLabel "npks" ;
+    skos:definition "additions of nitrogen, phosphorus, potassium and sulphur" ;
+    she:contains she:Nitrogen, she:Phosphorus, she:Potassium, she:Sulphur .
+
+she:Nitrogen a skos:Concept ;
+    skos:prefLabel "nitrogen" ;
+    she:hasSymbol "N" .
+
+she:Phosphorus a skos:Concept ;
+    skos:prefLabel "phosphorus" ;
+    she:hasSymbol "P" .
+
+she:Potassium a skos:Concept ;
+    skos:prefLabel "potassium" ;
+    she:hasSymbol "K" .
+
+she:Sulphur a skos:Concept ;
+    skos:prefLabel "sulphur" ;
+    she:hasSymbol "S" .
+
+she:AnimalManure a skos:Concept ;
+    skos:prefLabel "animal manure" ;
+    she:hasSymbol "M" .

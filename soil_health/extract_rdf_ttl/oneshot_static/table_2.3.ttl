@@ -1,61 +1,97 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:SocThresholdsOverview a skos:Concept ;
-    skos:narrower she:BenchmarkValues,
-        she:FarmersPerspectiveOnDeficientSoc,
-        she:OptimalSocContentForSoilFunctioning,
-        she:ReciprocalSocSequestrationPotential,
-        she:ReferenceValuesSiteSpecific,
-        she:SoilVulnerabilityIndex,
-        she:ThresholdsFromLongTermFieldExperiments ;
-    skos:prefLabel "overview of soc thresholds" .
+she:OverviewOfSocThresholds a skos:Concept ;
+    skos:prefLabel "overview of soc thresholds" ;
+    skos:narrower she:Section2_3_2,
+                  she:Section2_3_3,
+                  she:Section2_3_4,
+                  she:Section2_3_5,
+                  she:Section2_3_6 .
 
-she:BenchmarkValues a skos:Concept ;
-    skos:definition "requires extensive monitoring evaluations and large data sets to sufficiently define site-specific value ranges. benchmark sites reflect environmental and management conditions that are representative of a large area (van lynden et al., 2004). each site represents a very specific set of local conditions that are distinct from other environments. benchmark sites are particularly important to validate simulation models of indicators." ;
-    skos:narrower she:ModelledSocSteadyStateGrassland,
-        she:NearNaturalForestSoils,
-        she:PercentilesUpperLowerBenchmarks,
-        she:TwentyFifthPercentileSocPermanentGrassland ;
-    skos:prefLabel "benchmark values" .
+she:Section2_3_2 a skos:Concept ;
+    skos:prefLabel "section 2.3.2" ;
+    skos:narrower she:ReferenceValuesSiteSpecific,
+                  she:BenchmarkValues,
+                  she:NearNaturalForestSoils,
+                  she:Percentile25SocValuesForPermanentGrassland,
+                  she:ModelledSocSteadyStateForGrassland,
+                  she:PercentileRangeBenchmarks,
+                  she:OptimalSocContentForSoilFunctioning .
 
-she:FarmersPerspectiveOnDeficientSoc a skos:Concept ;
-    skos:definition "degraded soc levels according to farmers' perceptions (values for europe)" ;
-    skos:prefLabel "farmers' perspective on deficient soc" .
+she:Section2_3_3 a skos:Concept ;
+    skos:prefLabel "section 2.3.3" ;
+    skos:narrower she:SoilVulnerabilityIndex .
 
-she:ModelledSocSteadyStateGrassland a skos:Concept ;
-    skos:definition "80% of steady state as target soc value" ;
-    skos:prefLabel "modelled soc steady state (25 years) for grassland (sparling et al., 2003)" .
+she:Section2_3_4 a skos:Concept ;
+    skos:prefLabel "section 2.3.4" ;
+    skos:narrower she:ReciprocalSocSequestrationPotential .
 
-she:NearNaturalForestSoils a skos:Concept ;
-    skos:definition "problematic, because humus dynamics in cropland soils (low c input, high c turnover) are different from forest soils, leading to a lower level c equilibrium at cropland sites" ;
-    skos:prefLabel "near-natural forest soils (arshad and martin, 2002)" .
+she:Section2_3_5 a skos:Concept ;
+    skos:prefLabel "section 2.3.5" ;
+    skos:narrower she:ThresholdsFromLongTermFieldExperiments .
 
-she:OptimalSocContentForSoilFunctioning a skos:Concept ;
-    skos:definition "reference values for central european cropland soil and climatic conditions are available. needs to be validated for clay-rich soils and climate regions outside central europe. values are site specific and ensure sufficient yield while not limiting natural soil functions. if the inert stable soc fraction is known, körschens et al. (1998) suggest that optimal soc is c_inert + 0.62%(c_inert); a separate pedotransfer function is suggested to identify the inert fraction based on the clay content (körschens and schulz (1999); validity range by körschens (1999): 400-800mm precipitation and 6-10°c average annual temperature). note that c_inert as defined by körschens et al. (1998), residual c at fallow trials, differs from c_inert commonly used in soil modelling (e.g. black carbon; skjemstad et al., 2004)" ;
-    skos:prefLabel "optimal soc content for soil functioning (based on the role of soc in soil functional pedotransfer function, combined with data from long-term field experiments) (wessolek et al., 2008)" .
-
-she:PercentilesUpperLowerBenchmarks a skos:Concept ;
-    skos:definition "example: drexler et al. (2022)" ;
-    skos:prefLabel "12.5th - 87.5th percentiles as upper and lower benchmarks" .
-
-she:ReciprocalSocSequestrationPotential a skos:Concept ;
-    skos:definition "optimum soc content for the co₂ mitigation function of soils; target values represent soc equilibrium under long-term sustainable soil management" ;
-    skos:prefLabel "reciprocal soc sequestration potential" .
+she:Section2_3_6 a skos:Concept ;
+    skos:prefLabel "section 2.3.6" ;
+    skos:narrower she:FarmersPerspectiveOnDeficientSoc .
 
 she:ReferenceValuesSiteSpecific a skos:Concept ;
-    skos:definition "can be derived from existing monitoring systems for different land uses (e.g. as baseline); 50% of the standard deviation of the mean are 'low', indicating deficiency" ;
-    skos:prefLabel "reference values, site-specific, typical soc or som values under current management (arshad and martin, 2002)" .
+    skos:prefLabel "reference values, site-specific" ;
+    skos:definition "typical SOC or SOM values under current management (Arshad and Martin, 2002)" ;
+    skos:note "Can be derived from existing monitoring systems for different land uses (e.g. as baseline); 50% of the standard deviation of the mean are 'low', indicating deficiency" .
+
+she:BenchmarkValues a skos:Concept ;
+    skos:prefLabel "benchmark values" ;
+    skos:note "Requires extensive monitoring evaluations and large data sets to sufficiently define site-specific value ranges" .
+
+she:NearNaturalForestSoils a skos:Concept ;
+    skos:prefLabel "near-natural forest soils" ;
+    skos:definition "(Arshad and Martin, 2002)" ;
+    skos:note "Problematic, because humus dynamics in cropland soils (low C input, high C turnover) are different from forest soils, leading to a lower level C equilibrium at cropland sites" .
+
+she:Percentile25SocValuesForPermanentGrassland a skos:Concept ;
+    skos:prefLabel "25th percentile of soc values for permanent grassland" ;
+    skos:definition "(Sparling et al., 2003)" ;
+    skos:note "Pragmatic, but selection of quartile thresholds requires validation" .
+
+she:ModelledSocSteadyStateForGrassland a skos:Concept ;
+    skos:prefLabel "modelled soc steady state (25 years) for grassland" ;
+    skos:definition "(Sparling et al., 2003)" ;
+    skos:note "80% of steady state as target SOC value" .
+
+she:PercentileRangeBenchmarks a skos:Concept ;
+    skos:prefLabel "12.5th - 87.5th percentiles as upper and lower benchmarks" ;
+    skos:note "Example: Drexler et al. (2022)" .
+
+she:OptimalSocContentForSoilFunctioning a skos:Concept ;
+    skos:prefLabel "optimal soc content for soil functioning" ;
+    skos:definition "based on the role of SOC in soil functional pedotransfer function, combined with data from long-term field experiments (Wessolek et al., 2008)" ;
+    skos:note "Reference values for central European cropland soil and climatic conditions are available. Needs to be validated for clay-rich soils and climate regions outside central Europe. Values are site specific and ensure sufficient yield while not limiting natural soil functions. If the inert stable SOC fraction is known, Körschens et al. (1998) suggest that optimal SOC is Cinert + 0.62%(Cinert); a separate pedotransfer function is suggested to identify the inert fraction based on the clay content (Körschens and Schulz (1999); validity range by Körschens (1999): 400-800mm precipitation and 6-10°C average annual temperature). Note that Cinert as defined by Körschens et al. (1998), residual C at fallow trials, differs from Cinert commonly used in soil modelling (e.g. black carbon; Skjemstad et al., 2004)." .
 
 she:SoilVulnerabilityIndex a skos:Concept ;
-    skos:definition "optimum soc content, defined as 10% of the observed clay content (piloted in switzerland, england and wales)" ;
-    skos:prefLabel "soil vulnerability index based on the soc/clay ratio" .
+    skos:prefLabel "soil vulnerability index based on the soc/clay ratio" ;
+    skos:note "Optimum SOC content, defined as 10% of the observed clay content (piloted in Switzerland, England and Wales)" .
+
+she:ReciprocalSocSequestrationPotential a skos:Concept ;
+    skos:prefLabel "reciprocal soc sequestration potential" ;
+    skos:note "Optimum SOC content for the CO2 mitigation function of soils; target values represent SOC equilibrium under long-term sustainable soil management" .
 
 she:ThresholdsFromLongTermFieldExperiments a skos:Concept ;
-    skos:definition "minimum soc levels for sustainable crop production (values for central europe); values are conceptually comparable to optimal values (see section 2.3.2)" ;
-    skos:prefLabel "thresholds from long-term field experiments" .
+    skos:prefLabel "thresholds from long-term field experiments" ;
+    skos:note "Minimum SOC levels for sustainable crop production (values for central Europe); values are conceptually comparable to optimal values (see Section 2.3.2)" .
 
-she:TwentyFifthPercentileSocPermanentGrassland a skos:Concept ;
-    skos:definition "pragmatic, but selection of quartile thresholds requires validation" ;
-    skos:prefLabel "25th percentile of soc values for permanent grassland (sparling et al., 2003)" .
+she:FarmersPerspectiveOnDeficientSoc a skos:Concept ;
+    skos:prefLabel "farmers' perspective on deficient soc" ;
+    skos:note "Degraded SOC levels according to farmers' perceptions (values for Europe)" .
 
+she:BenchmarkSites a skos:Concept ;
+    skos:prefLabel "benchmark sites" ;
+    skos:note "Benchmark sites reflect environmental and management conditions that are representative of a large area (Van Lynden et al., 2004). Each site represents a very specific set of local conditions that are distinct from other environments. Benchmark sites are particularly important to validate simulation models of indicators." .
+
+she:Soc a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
+
+she:Som a skos:Concept ;
+    skos:prefLabel "soil organic matter" ;
+    she:hasAbbreviation "SOM" .

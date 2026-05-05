@@ -1,0 +1,153 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilThreatsLinkageTable a skos:Concept ;
+    skos:prefLabel "soil threats and their linkage to soil services and key societal needs" ;
+    skos:narrower she:SocietalNeeds,
+        she:SoilServices,
+        she:SoilThreatIndicators .
+
+she:SocietalNeeds a skos:Concept ;
+    skos:prefLabel "societal needs" ;
+    skos:narrower she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Infrastructure,
+        she:Water .
+
+she:Biomass a skos:Concept ;
+    skos:prefLabel "biomass" ;
+    skos:narrower she:GrowthOfCrops,
+        she:WoodAndFibreProduction .
+
+she:Water a skos:Concept ;
+    skos:prefLabel "water" ;
+    skos:narrower she:FilteringOfContaminants,
+        she:WaterStorage .
+
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:narrower she:CarbonStage .
+
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungi .
+
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:narrower she:PlataformForInfrastructure,
+        she:StorageOfGeologicalMaterial .
+
+she:SoilServices a skos:Concept ;
+    skos:prefLabel "soil services" ;
+    skos:narrower she:CarbonStage,
+        she:FilteringOfContaminants,
+        she:GrowthOfCrops,
+        she:HabitatForPlantsInsectsMicrobesFungi,
+        she:PlataformForInfrastructure,
+        she:StorageOfGeologicalMaterial,
+        she:WaterStorage,
+        she:WoodAndFibreProduction .
+
+she:WoodAndFibreProduction a skos:Concept ;
+    skos:prefLabel "wood and fibre production" .
+
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" .
+
+she:FilteringOfContaminants a skos:Concept ;
+    skos:prefLabel "filtering of contaminants" .
+
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" .
+
+she:CarbonStage a skos:Concept ;
+    skos:prefLabel "carbon stage" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" .
+
+she:PlataformForInfrastructure a skos:Concept ;
+    skos:prefLabel "plataform for infrastructure" .
+
+she:StorageOfGeologicalMaterial a skos:Concept ;
+    skos:prefLabel "storage of geological material" .
+
+she:SoilThreatIndicators a skos:Concept ;
+    skos:prefLabel "soil threat indicators" ;
+    skos:narrower she:SoilAcidification,
+        she:SoilBiodiversity,
+        she:SoilCompaction,
+        she:SoilErosion,
+        she:SoilNutrientStatuts,
+        she:SoilOrganicCarbon,
+        she:SoilPollution,
+        she:SoilSealing .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    skos:note "(i) Soil organic carbon/infrastructure: organic soils are unstable as platform for infastructure." ;
+    she:hasNeutralImpactOn she:Infrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water .
+
+she:SoilNutrientStatuts a skos:Concept ;
+    skos:prefLabel "soil nutrient statuts" ;
+    skos:note "(ii) The filtering capacity of soils prevents of buffers eutrophication and acidification." ;
+    she:hasNegativeImpactOn she:Water ;
+    she:hasNeutralImpactOn she:Climate,
+        she:Infrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass .
+
+she:SoilAcidification a skos:Concept ;
+    skos:prefLabel "soil acidification" ;
+    skos:note "(iii) Soil organic /carbon storage: fulvic acid (from acidified forest floors) engances bleaching and nutrient loss, as well as loss of dissolved organic carbon; acidic soils slow down decomposition. From a climate point of view, soil acidification could favour carbon storage, as it leads to a lower biological activity and hence accumulation of dead biomass." ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Water ;
+    she:hasNeutralImpactOn she:Climate,
+        she:Infrastructure .
+
+she:SoilPollution a skos:Concept ;
+    skos:prefLabel "soil pollution" ;
+    skos:note "(iv) Land prices are lower if the soil is polluted, as remediation costs are incurred." ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water ;
+    she:hasNeutralImpactOn she:Infrastructure .
+
+she:SoilBiodiversity a skos:Concept ;
+    skos:prefLabel "soil biodiversity" ;
+    she:hasNeutralImpactOn she:Infrastructure ;
+    she:hasPositiveImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water .
+
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water ;
+    she:hasNeutralImpactOn she:Infrastructure .
+
+she:SoilCompaction a skos:Concept ;
+    skos:prefLabel "soil compaction" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water ;
+    she:hasNeutralImpactOn she:Infrastructure .
+
+she:SoilSealing a skos:Concept ;
+    skos:prefLabel "soil sealing" ;
+    she:hasNegativeImpactOn she:Biodiversity,
+        she:Biomass,
+        she:Climate,
+        she:Water ;
+    she:hasPositiveImpactOn she:Infrastructure .

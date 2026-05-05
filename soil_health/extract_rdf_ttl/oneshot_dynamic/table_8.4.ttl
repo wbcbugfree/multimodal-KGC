@@ -1,0 +1,74 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:ThresholdsForSoilPhysicalParametersForDetectingHarmfulSubsoilCompaction a skos:Concept ;
+    skos:prefLabel "thresholds for soil physical parameters for detecting harmful subsoil compaction" ;
+    skos:narrower she:ParameterSetI,
+                  she:ParameterSetII ;
+    skos:note "Sources: Arah and Ball (1994), Babel et al. (1995), Ball et al. (1988), Frey et al. (2011), Huber et al. (2008), Lebert et al. (2007), Stepniewski (1980, 1981), Schjønning et al. (2003, 2016); supplemented with additional information from the review in this report." .
+
+she:ParameterSetI a skos:Concept ;
+    skos:prefLabel "parameter set i" ;
+    skos:narrower she:BulkDensity,
+                  she:AirCapacityAirFilledPoreVolume,
+                  she:VisualSoilEvaluations .
+
+she:BulkDensity a skos:Concept ;
+    skos:prefLabel "bulk density" ;
+    skos:note "<1.2g/cm³ = very loose; 1.2g/cm³ and 1.6g/cm³ = normal; 1.6g/cm³ and >1.9g/cm³ = dense; >1.9g/cm³ = very impermeable. Based on DVWK 1997, 1998; see also Keller et al. 2019" ;
+    she:hasSoilSensitivity "Soils originating from clay > silt > sand; higher values are due to geological pre-stressing or anthropogenic impacts" .
+
+she:AirCapacityAirFilledPoreVolume a skos:Concept ;
+    skos:prefLabel "air capacity: air-filled pore volume" ;
+    skos:note "A low air capacity impairs root growth, reduces oxygen pressure in soil air and increases the formation of greenhouse gases. Below 5% air capacity at a soil matric potential of -6kPa, aeration or gas diffusion are mostly insufficient. With decreasing particle size, the pore volume increases, and soil aggregation and soil organic matter content increases. Values around 45% total pore volume are at least acceptable while those below 35% are generally defined as very critical irrespective of texture effects)." ;
+    she:hasSoilSensitivity "Soils originating from clay > loam > silt and sandy loam > sandy loess" .
+
+she:VisualSoilEvaluations a skos:Concept ;
+    skos:prefLabel "visual soil evaluations" ;
+    skos:narrower she:AggregateTypeAndEstimatedBulkDensity,
+                  she:RootGrowthPenetrometer,
+                  she:SpadeDiagnosis ;
+    she:hasSoilSensitivity "Additional assessment for all soils" .
+
+she:AggregateTypeAndEstimatedBulkDensity a skos:Concept ;
+    skos:prefLabel "aggregate type and estimated bulk density" ;
+    skos:note "The visual assessment of the soil as loose or dense based on aggregate size and strength, pore size and continuity, root density and distribution" .
+
+she:RootGrowthPenetrometer a skos:Concept ;
+    skos:prefLabel "root growth/penetrometer" .
+
+she:SpadeDiagnosis a skos:Concept ;
+    skos:prefLabel "spade diagnosis" .
+
+she:ParameterSetII a skos:Concept ;
+    skos:prefLabel "parameter set ii" ;
+    skos:narrower she:PrecompressionStress,
+                  she:RatioOfPrecompressionStressToActualStressApplied,
+                  she:ShearStrength,
+                  she:SaturatedUnsaturatedHydraulicConductivity,
+                  she:AirPermeabilityAndOxygenDiffusion .
+
+she:PrecompressionStress a skos:Concept ;
+    skos:prefLabel "precompression stress (= internal soil strength)" ;
+    skos:note "Low precompression stress includes 'very low' (<30kPa) and 'low' (30-60kPa) internal soil strength, e.g. because of weak aggregation or wet soil conditions; soils are very sensitive to further deformation and decline in physical, biological and physico-chemical functions. At medium (60-90kPa) or high (90-120kPa) stress levels, sustainable soil management practices are especially necessary and effective." ;
+    she:hasSoilSensitivity "All soils, but especially loamy, silty and clayey soils" .
+
+she:RatioOfPrecompressionStressToActualStressApplied a skos:Concept ;
+    skos:prefLabel "ratio of precompression stress to actual stress applied" ;
+    skos:note "Values >1.2 define rigid soil structure conditions with no risk to compaction processes, while values ≤0.8 define structure as irreversibly deformed. Values in between classify soil properties and functions as very susceptible to further soil deformation." ;
+    she:hasSoilSensitivity "All soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" .
+
+she:ShearStrength a skos:Concept ;
+    skos:prefLabel "shear strength" ;
+    skos:note "Shear forces due to wheeling result in smearing: the shear strength is lower for less aggregated soils and decreases with increasing water content. Shearing is more pronounced at higher levels of wheel spin, especially when soils are moist." ;
+    she:hasSoilSensitivity "All soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation" .
+
+she:SaturatedUnsaturatedHydraulicConductivity a skos:Concept ;
+    skos:prefLabel "saturated/unsaturated hydraulic conductivity" ;
+    skos:note "Low conductivity is typical for stagnic soil conditions: delayed percolation reduces soil aeration and groundwater accumulation and increases surface run-off (critical values are defined as below 10cm/day)." .
+
+she:AirPermeabilityAndOxygenDiffusion a skos:Concept ;
+    skos:prefLabel "air permeability and oxygen diffusion" ;
+    she:hasSymbol "Ds" ;
+    skos:note "Low air fluxes coincide with retarded gas exchange and the formation of anoxic conditions through CH4 or N2O formation. Critical values for air permeability <1μm². Diffusion coefficient (Ds) <1.5×10⁻⁸/m²/s (Bakker et al., 1987) or relative diffusion <0.005 for loamy soils and 0.02 for sandy soils." ;
+    she:hasSoilSensitivity "All soils, but especially loamy, silty and clayey soils, at high water contents and weak levels of aggregation due to tillage or soil management" .

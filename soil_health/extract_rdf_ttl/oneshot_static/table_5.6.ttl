@@ -1,0 +1,216 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:CurrentScreeningValues a skos:Concept ;
+    skos:prefLabel "current screening values" ;
+    she:hasAbbreviation "SSV" ;
+    she:hasUnit "mg/kg" ;
+    skos:definition "Screening values for cadmium, copper, lead, and zinc in soil for intermediate and critical risk levels." ;
+    skos:narrower she:Cadmium, she:Copper, she:Lead, she:Zinc .
+
+she:Cadmium a skos:Concept ;
+    skos:prefLabel "cadmium" ;
+    skos:narrower she:WarningValue, she:ActionValue .
+
+she:Copper a skos:Concept ;
+    skos:prefLabel "copper" ;
+    skos:narrower she:WarningValue, she:ActionValue .
+
+she:Lead a skos:Concept ;
+    skos:prefLabel "lead" ;
+    skos:narrower she:WarningValue, she:ActionValue .
+
+she:Zinc a skos:Concept ;
+    skos:prefLabel "zinc" ;
+    skos:narrower she:WarningValue, she:ActionValue .
+
+she:WarningValue a skos:Concept ;
+    skos:prefLabel "warning value" ;
+    skos:note "Represents intermediate risk level." .
+
+she:ActionValue a skos:Concept ;
+    skos:prefLabel "action value" ;
+    skos:note "Represents critical risk level." .
+
+she:Stratum a skos:Concept ;
+    skos:prefLabel "stratum" ;
+    skos:note "Factors used for stratification of screening values." ;
+    skos:narrower she:LandUse, she:Texture, she:SoilOrganicMatter, she:SaturatedHydraulicConductivity, she:SoilDepth, she:PH, she:Clay .
+
+she:LandUse a skos:Concept ;
+    skos:prefLabel "land use" ;
+    she:hasAbbreviation "LU" .
+
+she:Texture a skos:Concept ;
+    skos:prefLabel "texture" ;
+    she:hasAbbreviation "text." .
+
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" ;
+    she:hasAbbreviation "SOM" .
+
+she:SaturatedHydraulicConductivity a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity" ;
+    she:hasAbbreviation "SHC" .
+
+she:SoilDepth a skos:Concept ;
+    skos:prefLabel "soil depth" ;
+    she:hasAbbreviation "z" .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" .
+
+she:Clay a skos:Concept ;
+    skos:prefLabel "clay" .
+
+she:CountryRegion a skos:Concept ;
+    skos:prefLabel "country/region" ;
+    skos:narrower she:Austria, she:BelgiumBrussels, she:BelgiumFlanders, she:BelgiumWallonia, she:Bulgaria, she:Czechia, she:Denmark, she:Finland, she:Germany, she:Hungary, she:Italy, she:Lithuania, she:Netherlands, she:Poland, she:Slovakia, she:Slovenia, she:Sweden .
+
+she:Austria a skos:Concept ;
+    skos:prefLabel "austria" ;
+    she:isStratifiedBy she:LandUse ;
+    she:hasCadmiumWarningValue "1-40" ;
+    she:hasCadmiumActionValue "10" ;
+    she:hasCopperWarningValue "100-1,500" ;
+    she:hasCopperActionValue "600" ;
+    she:hasLeadWarningValue "100-300" ;
+    she:hasLeadActionValue "500" ;
+    she:hasZincWarningValue "300" .
+
+she:BelgiumBrussels a skos:Concept ;
+    skos:prefLabel "belgium/brussels" ;
+    she:isStratifiedBy she:LandUse ;
+    she:hasCadmiumWarningValue "1" ;
+    she:hasCadmiumActionValue "2-30" ;
+    she:hasCopperWarningValue "40" ;
+    she:hasCopperActionValue "145-800" ;
+    she:hasLeadWarningValue "120" ;
+    she:hasLeadActionValue "200-2,500" ;
+    she:hasZincWarningValue "120" ;
+    she:hasZincActionValue "300-3,000" .
+
+she:Bulgaria a skos:Concept ;
+    skos:prefLabel "bulgaria" ;
+    she:isStratifiedBy she:LandUse, she:PH ;
+    she:hasCadmiumWarningValue "1.5-3.5" ;
+    she:hasCadmiumActionValue "12" ;
+    she:hasCopperWarningValue "80-300" ;
+    she:hasCopperActionValue "500" ;
+    she:hasLeadWarningValue "60-150" ;
+    she:hasLeadActionValue "500" ;
+    she:hasZincWarningValue "200-450" ;
+    she:hasZincActionValue "900" .
+
+she:Czechia a skos:Concept ;
+    skos:prefLabel "czechia" ;
+    she:isStratifiedBy she:LandUse, she:PH, she:Texture ;
+    she:hasCadmiumWarningValue "1.5-20" ;
+    she:hasCopperWarningValue "150-300" ;
+    she:hasLeadWarningValue "300-400" ;
+    she:hasZincWarningValue "400" .
+
+she:Denmark a skos:Concept ;
+    skos:prefLabel "denmark" ;
+    she:hasCadmiumWarningValue "5" ;
+    she:hasCopperWarningValue "1,000" ;
+    she:hasLeadWarningValue "40" ;
+    she:hasLeadActionValue "400" ;
+    she:hasZincWarningValue "500" ;
+    she:hasZincActionValue "1,000" .
+
+she:Finland a skos:Concept ;
+    skos:prefLabel "finland" ;
+    she:isStratifiedBy she:LandUse ;
+    she:hasCadmiumWarningValue "1" ;
+    she:hasCadmiumActionValue "10-20" ;
+    she:hasCopperWarningValue "100" ;
+    she:hasCopperActionValue "150-200" ;
+    she:hasLeadWarningValue "60" ;
+    she:hasLeadActionValue "200-750" ;
+    she:hasZincWarningValue "200" ;
+    she:hasZincActionValue "250-400" .
+
+she:Germany a skos:Concept ;
+    skos:prefLabel "germany" ;
+    she:isStratifiedBy she:LandUse ;
+    she:usesAnalysisMethod she:ConcentratedAmmoniumNitrateAnalysis ;
+    she:hasCadmiumWarningValue "2-20" ;
+    she:hasCadmiumActionValue "0.1-20" ;
+    she:hasCopperWarningValue "1" ;
+    she:hasCopperActionValue "1,300" .
+
+she:Hungary a skos:Concept ;
+    skos:prefLabel "hungary" ;
+    she:hasCadmiumWarningValue "1" ;
+    she:hasCadmiumActionValue "10" ;
+    she:hasCopperWarningValue "75" ;
+    she:hasCopperActionValue "1,000" ;
+    she:hasLeadWarningValue "100" ;
+    she:hasLeadActionValue "750" ;
+    she:hasZincWarningValue "200" ;
+    she:hasZincActionValue "2,500" .
+
+she:Lithuania a skos:Concept ;
+    skos:prefLabel "lithuania" ;
+    she:hasCadmiumActionValue "0.75-3" ;
+    she:hasCopperActionValue "35-200" ;
+    she:hasLeadActionValue "50-500" ;
+    she:hasZincActionValue "75-1,200" .
+
+she:Netherlands a skos:Concept ;
+    skos:prefLabel "netherlands" ;
+    she:isStratifiedBy she:SoilOrganicMatter, she:Clay ;
+    she:hasCadmiumActionValue "13" ;
+    she:hasCopperActionValue "190" ;
+    she:hasLeadWarningValue "15-590" ;
+    she:hasLeadActionValue "530" ;
+    she:hasZincWarningValue "150-720" ;
+    she:hasZincActionValue "720" .
+
+she:Poland a skos:Concept ;
+    skos:prefLabel "poland" ;
+    she:isStratifiedBy she:LandUse, she:SaturatedHydraulicConductivity, she:SoilDepth ;
+    she:hasCadmiumActionValue "1-20" ;
+    she:hasCopperActionValue "30-1,000" ;
+    she:hasLeadActionValue "50-1,000" ;
+    she:hasZincActionValue "100-3,000" .
+
+she:Slovakia a skos:Concept ;
+    skos:prefLabel "slovakia" ;
+    she:isStratifiedBy she:LandUse, she:Texture ;
+    she:hasCadmiumWarningValue "0.4-10" ;
+    she:hasCadmiumActionValue "20-30" ;
+    she:hasCopperWarningValue "30-500" ;
+    she:hasCopperActionValue "600-1,500" ;
+    she:hasLeadWarningValue "150" ;
+    she:hasLeadActionValue "600" ;
+    she:hasZincWarningValue "2-500" ;
+    she:hasZincActionValue "3,000" .
+
+she:Slovenia a skos:Concept ;
+    skos:prefLabel "slovenia" ;
+    she:hasCadmiumWarningValue "2" ;
+    she:hasCadmiumActionValue "12" ;
+    she:hasCopperWarningValue "100" ;
+    she:hasCopperActionValue "300" ;
+    she:hasLeadWarningValue "100" ;
+    she:hasLeadActionValue "530" ;
+    she:hasZincWarningValue "300" ;
+    she:hasZincActionValue "720" .
+
+she:Sweden a skos:Concept ;
+    skos:prefLabel "sweden" ;
+    she:isStratifiedBy she:LandUse ;
+    she:hasCadmiumWarningValue "0.4-12" ;
+    she:hasCadmiumActionValue "4" ;
+    she:hasCopperWarningValue "100-300" ;
+    she:hasCopperActionValue "1,000" ;
+    she:hasLeadWarningValue "80-300" ;
+    she:hasLeadActionValue "800" ;
+    she:hasZincWarningValue "350-1,050" ;
+    she:hasZincActionValue "3,500" .
+
+she:ConcentratedAmmoniumNitrateAnalysis a skos:Concept ;
+    skos:prefLabel "concentrated ammonium nitrate analysis" ;
+    skos:note "Analysis based on concentrated ammonium nitrate (commonly, extraction with aqua regia is used). Specified in footnote (b)." .

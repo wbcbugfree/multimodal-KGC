@@ -1,153 +1,163 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:EFSA a skos:Concept ;
-    skos:definition "european food safety authority" ;
-    skos:prefLabel "efsa" .
-
-she:FAO a skos:Concept ;
-    skos:definition "food and agriculture organization of the united nations" ;
-    skos:prefLabel "fao" .
-
-she:HC50 a skos:Concept ;
-    skos:prefLabel "hc50" .
-
-she:NOEC a skos:Concept ;
-    skos:definition "no effect concentration" ;
-    skos:prefLabel "noec" .
-
-she:OverviewOfRelevantCompartmentsRelatedToSoilServicesToBeProtectedAndRelevantAssessmentCriteria a skos:Concept ;
-    skos:narrower she:AssessmentCriteria,
-        she:LevelOfRegulation,
-        she:ProtectionTarget,
-        she:RelevantCompartment ;
-    skos:prefLabel "overview of relevant compartments related to soil services to be protected and relevant assessment criteria" .
-
-she:PAF a skos:Concept ;
-    skos:definition "potentially affected fraction of species and ecological processes." ;
-    skos:prefLabel "paf" .
-
-she:TDI a skos:Concept ;
-    skos:prefLabel "tdi" .
-
-she:AdjacentGroundwaterAndSurfaceWaterSystems a skos:Concept ;
-    skos:prefLabel "adjacent groundwater and surface water systems" ;
-    she:isProtectedFor she:EcosystemHealth,
-        she:HumanHealth .
-
-she:ArableCroppingSystems a skos:Concept ;
-    skos:prefLabel "arable cropping systems" ;
-    she:isProtectedFor she:AnimalHealth,
-        she:EcosystemHealth,
-        she:HumanHealth .
-
-she:AssessmentCriteria a skos:Concept ;
-    skos:narrower she:DrinkingWaterAndSurfaceWaterStandards,
-        she:FoodQualityStandardsInPlantAndAnimalProductsBasedOnHumanTDIs,
-        she:NoEffectConcentrationsBasedOnPAFDerivedForSoilOrSoilSolution,
-        she:NoEffectConcentrationsBasedOnPAFInSoilTerrestrialEcosystemsOrWaterAquaticEcosystems,
-        she:NoEffectConcentrationsBasedOnPAFInWater,
-        she:TDIBasedOnToxicologicalLimitValues,
-        she:TDIOrExcessLifetimeCancerRiskBasedOnIntakeOfPlantProductsUrbanAgricultureOrIntakeOfSoilDust ;
-    skos:prefLabel "assessment criteria" .
-
-she:LevelOfRegulation a skos:Concept ;
-    skos:narrower she:NationalEU,
-        she:NationalEUEFSA,
-        she:NationalEUFAO_WHO,
-        she:RecommendedLevels ;
-    skos:prefLabel "level of regulation" .
-
-she:NaturalAreas a skos:Concept ;
-    skos:prefLabel "natural areas" ;
-    she:isProtectedFor she:EcosystemHealth .
-
-she:NoteA a skos:Concept ;
-    skos:definition "note that the criterion used depends on the desired level of protection. for natural systems, no effect concentration (noec) levels are commonly based on the 5th percentile of noec concentrations of all organisms. for other soil functions this can be less strict, e.g. in the case of industrial land, an hc50 is applied as criterion for acceptance, equivalent to a level at which 50% of all species will be affected." ;
-    skos:prefLabel "note a" .
-
-she:ProtectionTarget a skos:Concept ;
-    skos:narrower she:AnimalHealth,
-        she:EcosystemHealth,
-        she:HumanHealth,
-        she:HumanHealthAndOrEcosystemHealth ;
-    skos:prefLabel "protection target" .
-
 she:RelevantCompartment a skos:Concept ;
+    skos:prefLabel "relevant compartment" ;
     skos:narrower she:AdjacentGroundwaterAndSurfaceWaterSystems,
         she:ArableCroppingSystems,
         she:NaturalAreas,
-        she:UrbanSoils ;
-    skos:prefLabel "relevant compartment" .
+        she:UrbanSoils .
+
+she:ProtectionTarget a skos:Concept ;
+    skos:prefLabel "protection target" ;
+    skos:narrower she:AnimalHealth,
+        she:EcosystemHealth,
+        she:HumanHealth,
+        she:HumanHealthAndEcosystemHealth .
+
+she:AssessmentCriteria a skos:Concept ;
+    skos:prefLabel "assessment criteria" ;
+    skos:narrower she:DrinkingWaterStandards,
+        she:FoodQualityStandards,
+        she:HC50,
+        she:NOEC,
+        she:PAF,
+        she:SurfaceWaterStandards,
+        she:TDI .
+
+she:LevelOfRegulation a skos:Concept ;
+    skos:prefLabel "level of regulation" ;
+    skos:narrower she:EFSA,
+        she:EU,
+        she:FAO,
+        she:National,
+        she:RecommendedLevels,
+        she:WHO .
+
+she:ArableCroppingSystems a skos:Concept ;
+    skos:prefLabel "arable cropping systems" ;
+    she:hasAssessment [
+            she:hasAssessmentCriteria "Food quality standards in plant and animal products based on human TDIs" ;
+            she:hasLevelOfRegulation she:EU,
+                she:FAO,
+                she:National,
+                she:WHO ;
+            she:hasProtectionTarget she:HumanHealth
+        ],
+        [
+            she:hasAssessmentCriteria "TDI based on toxicological limit values" ;
+            she:hasLevelOfRegulation she:RecommendedLevels ;
+            she:hasProtectionTarget she:AnimalHealth
+        ],
+        [
+            skos:note "Note that the criterion used depends on the desired level of protection. For natural systems, no effect concentration (NOEC) levels are commonly based on the 5th percentile of NOEC concentrations of all organisms." ;
+            she:hasAssessmentCriteria "No effect concentrations based on PAF derived for soil or soil solution" ;
+            she:hasLevelOfRegulation she:EU,
+                she:FAO,
+                she:WHO ;
+            she:hasProtectionTarget she:EcosystemHealth
+        ] .
 
 she:UrbanSoils a skos:Concept ;
     skos:prefLabel "urban soils" ;
-    she:isProtectedFor she:HumanHealthAndOrEcosystemHealth .
+    she:hasAssessment [
+            skos:note "For other soil functions this can be less strict, e.g. in the case of industrial land, an HC50 is applied as criterion for acceptance, equivalent to a level at which 50% of all species will be affected." ;
+            she:hasAssessmentCriteria "TDI or excess lifetime cancer risk based on intake of plant products (urban agriculture) or intake of soil/dust. For ecosystem health, effect levels are applied" ;
+            she:hasLevelOfRegulation she:EFSA,
+                she:EU,
+                she:National ;
+            she:hasProtectionTarget she:HumanHealthAndEcosystemHealth
+        ] .
+
+she:NaturalAreas a skos:Concept ;
+    skos:prefLabel "natural areas" ;
+    she:hasAssessment [
+            she:hasAssessmentCriteria "No effect concentrations based on PAF in soil (terrestrial ecosystems) or water (aquatic ecosystems)" ;
+            she:hasLevelOfRegulation she:EU,
+                she:National ;
+            she:hasProtectionTarget she:EcosystemHealth
+        ] .
+
+she:AdjacentGroundwaterAndSurfaceWaterSystems a skos:Concept ;
+    skos:prefLabel "adjacent groundwater and surface water systems" ;
+    she:hasAssessment [
+            she:hasAssessmentCriteria "No effect concentrations based on PAF in water" ;
+            she:hasLevelOfRegulation she:EU,
+                she:National ;
+            she:hasProtectionTarget she:EcosystemHealth
+        ],
+        [
+            she:hasAssessmentCriteria "Drinking water and surface water standards" ;
+            she:hasLevelOfRegulation she:EU,
+                she:National ;
+            she:hasProtectionTarget she:HumanHealth
+        ] .
+
+she:HumanHealth a skos:Concept ;
+    skos:prefLabel "human health" .
 
 she:AnimalHealth a skos:Concept ;
-    skos:prefLabel "animal health" ;
-    she:isAssessedBy she:TDIBasedOnToxicologicalLimitValues .
+    skos:prefLabel "animal health" .
 
-she:DrinkingWaterAndSurfaceWaterStandards a skos:Concept ;
-    skos:prefLabel "drinking water and surface water standards" ;
-    she:isRegulatedAt she:NationalEU .
+she:EcosystemHealth a skos:Concept ;
+    skos:prefLabel "ecosystem health" .
 
-she:FoodQualityStandardsInPlantAndAnimalProductsBasedOnHumanTDIs a skos:Concept ;
-    skos:prefLabel "food quality standards in plant and animal products based on human tdis" ;
-    she:isRegulatedAt she:NationalEUFAO_WHO .
-
-she:HumanHealthAndOrEcosystemHealth a skos:Concept ;
+she:HumanHealthAndEcosystemHealth a skos:Concept ;
     skos:prefLabel "human health and/or ecosystem health" ;
-    she:isAssessedBy she:TDIOrExcessLifetimeCancerRiskBasedOnIntakeOfPlantProductsUrbanAgricultureOrIntakeOfSoilDust .
+    skos:related she:EcosystemHealth,
+        she:HumanHealth .
 
-she:NationalEUEFSA a skos:Concept ;
-    skos:prefLabel "national, eu (efsa)" .
+she:National a skos:Concept ;
+    skos:prefLabel "national" .
 
-she:NationalEUFAO_WHO a skos:Concept ;
-    skos:prefLabel "national, eu, fao, who" .
+she:EU a skos:Concept ;
+    skos:altLabel "European Union" ;
+    skos:prefLabel "eu" .
 
-she:NoEffectConcentrationsBasedOnPAFDerivedForSoilOrSoilSolution a skos:Concept ;
-    skos:prefLabel "no effect concentrations (a) based on paf (b) derived for soil or soil solution" ;
-    she:hasReferenceToNote she:NoteA,
-        she:NoteB ;
-    she:isRegulatedAt she:EUFAO_WHO .
+she:EFSA a skos:Concept ;
+    skos:altLabel "European Food Safety Authority" ;
+    skos:prefLabel "efsa" .
 
-she:NoEffectConcentrationsBasedOnPAFInSoilTerrestrialEcosystemsOrWaterAquaticEcosystems a skos:Concept ;
-    skos:prefLabel "no effect concentrations based on paf in soil (terrestrial ecosystems) or water (aquatic ecosystems)" ;
-    she:hasReferenceToNote she:NoteB ;
-    she:isRegulatedAt she:NationalEU .
+she:FAO a skos:Concept ;
+    skos:altLabel "Food and Agriculture Organization of the United Nations" ;
+    skos:prefLabel "fao" .
 
-she:NoEffectConcentrationsBasedOnPAFInWater a skos:Concept ;
-    skos:prefLabel "no effect concentrations based on paf in water" ;
-    she:hasReferenceToNote she:NoteB ;
-    she:isRegulatedAt she:NationalEU .
+she:WHO a skos:Concept ;
+    skos:altLabel "World Health Organization" ;
+    skos:prefLabel "who" .
 
 she:RecommendedLevels a skos:Concept ;
     skos:prefLabel "recommended levels" .
 
-she:TDIBasedOnToxicologicalLimitValues a skos:Concept ;
-    skos:prefLabel "tdi based on toxicological limit values" ;
-    she:isRegulatedAt she:RecommendedLevels .
+she:TDI a skos:Concept ;
+    skos:definition "tolerable daily intake" ;
+    she:hasAbbreviation "TDI" ;
+    skos:prefLabel "tdi" .
 
-she:TDIOrExcessLifetimeCancerRiskBasedOnIntakeOfPlantProductsUrbanAgricultureOrIntakeOfSoilDust a skos:Concept ;
-    skos:prefLabel "tdi or excess lifetime cancer risk based on intake of plant products (urban agriculture) or intake of soil/dust. for ecosystem health, effect levels are applied" ;
-    she:isRegulatedAt she:NationalEUEFSA .
+she:PAF a skos:Concept ;
+    skos:definition "potentially affected fraction of species and ecological processes" ;
+    she:hasAbbreviation "PAF" ;
+    skos:prefLabel "paf" .
 
-she:HumanHealth a skos:Concept ;
-    skos:prefLabel "human health" ;
-    she:isAssessedBy she:DrinkingWaterAndSurfaceWaterStandards,
-        she:FoodQualityStandardsInPlantAndAnimalProductsBasedOnHumanTDIs .
+she:NOEC a skos:Concept ;
+    skos:definition "no effect concentration" ;
+    she:hasAbbreviation "NOEC" ;
+    skos:prefLabel "noec" .
 
-she:NoteB a skos:Concept ;
-    skos:definition "potentially affected fraction of species and ecological processes." ;
-    skos:prefLabel "note b" .
+she:HC50 a skos:Concept ;
+    skos:note "Hazardous concentration for 50% of species; applied as criterion for acceptance, equivalent to a level at which 50% of all species will be affected." ;
+    she:hasAbbreviation "HC50" ;
+    skos:prefLabel "hc50" .
 
-she:EcosystemHealth a skos:Concept ;
-    skos:prefLabel "ecosystem health" ;
-    she:isAssessedBy she:NoEffectConcentrationsBasedOnPAFDerivedForSoilOrSoilSolution,
-        she:NoEffectConcentrationsBasedOnPAFInSoilTerrestrialEcosystemsOrWaterAquaticEcosystems,
-        she:NoEffectConcentrationsBasedOnPAFInWater .
+she:DrinkingWaterStandards a skos:Concept ;
+    skos:prefLabel "drinking water standards" .
 
-she:NationalEU a skos:Concept ;
-    skos:prefLabel "national, eu" .
+she:SurfaceWaterStandards a skos:Concept ;
+    skos:prefLabel "surface water standards" .
 
+she:FoodQualityStandards a skos:Concept ;
+    skos:prefLabel "food quality standards" .
+
+she:IndustrialLand a skos:Concept ;
+    skos:prefLabel "industrial land" ;
+    she:hasAssessmentCriteria she:HC50 .

@@ -1,53 +1,105 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:ThresholdsForEnvironmentalVariablesAffectingSoilBiodiversity a skos:Concept ;
-    skos:narrower she:ClassesOfParametersForScoringSoilBiodiversityPotential,
-        she:Variable ;
-    skos:prefLabel "thresholds for environmental variables that may have a strong effect on soil biodiversity" .
+she:ThresholdsForEnvironmentalVariablesForSoilBiodiversity a skos:Concept ;
+    skos:prefLabel "thresholds for environmental variables that may have a strong effect on soil biodiversity" ;
+    skos:note "source: compiled from aksoy et al. (2017)." ;
+    skos:narrower she:Variable,
+                  she:ClassesOfParametersForScoringSoilBiodiversityPotential .
 
-she:AnnualAverageTemperature a skos:Concept ;
-    skos:prefLabel "annual average temperature (°c)" ;
-    she:hasParameterClass she:AnnualAverageTemperature5To20,
-        she:AnnualAverageTemperatureGreaterThan20,
-        she:AnnualAverageTemperatureLessThan5 .
+she:SoilBiodiversity a skos:Concept ;
+    skos:prefLabel "soil biodiversity" .
 
-she:AnnualAverageTemperature5To20 a skos:Concept ;
-    skos:prefLabel "5-20" .
-
-she:AnnualAverageTemperatureGreaterThan20 a skos:Concept ;
-    skos:prefLabel ">20" .
-
-she:AnnualAverageTemperatureLessThan5 a skos:Concept ;
-    skos:prefLabel "<5" .
-
-she:Arable a skos:Concept ;
-    skos:prefLabel "arable" .
-
-she:Artificial a skos:Concept ;
-    skos:prefLabel "artificial" .
-
-she:Average a skos:Concept ;
-    skos:prefLabel "average" .
+she:Variable a skos:Concept ;
+    skos:prefLabel "variable" ;
+    skos:narrower she:PH,
+                  she:SoilTexturalClass,
+                  she:OrganicMatter,
+                  she:PotentialEvapotranspiration,
+                  she:AnnualAverageTemperature,
+                  she:SoilBiomassProductivity,
+                  she:LandUseLandCover .
 
 she:ClassesOfParametersForScoringSoilBiodiversityPotential a skos:Concept ;
     skos:prefLabel "classes of parameters for scoring soil biodiversity potential" .
 
-she:Coarse a skos:Concept ;
-    skos:prefLabel "coarse" .
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:LessThan4,
+                  she:Between4And5Point2,
+                  she:Between5Point2And8Point2,
+                  she:GreaterThan8Point2 .
 
-she:Fine a skos:Concept ;
-    skos:prefLabel "fine" .
+she:SoilTexturalClass a skos:Concept ;
+    skos:prefLabel "soil textural class" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:Coarse,
+                  she:Medium,
+                  she:MediumFine,
+                  she:Fine .
 
-she:Good a skos:Concept ;
-    skos:prefLabel "good" .
+she:OrganicMatter a skos:Concept ;
+    skos:prefLabel "organic matter" ;
+    she:hasSymbol "%" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:LessThan1,
+                  she:Between1And2,
+                  she:Between2And4,
+                  she:GreaterThan4 .
+
+she:PotentialEvapotranspiration a skos:Concept ;
+    skos:prefLabel "potential evapotranspiration" ;
+    she:hasSymbol "mm" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:LessThanMinus500,
+                  she:BetweenMinus500And500,
+                  she:GreaterThan500 .
+
+she:AnnualAverageTemperature a skos:Concept ;
+    skos:prefLabel "annual average temperature" ;
+    she:hasSymbol "°c" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:LessThan5,
+                  she:Between5And20,
+                  she:GreaterThan20 .
+
+she:SoilBiomassProductivity a skos:Concept ;
+    skos:prefLabel "soil biomass productivity" ;
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:Poor,
+                  she:Average,
+                  she:Good .
 
 she:LandUseLandCover a skos:Concept ;
     skos:prefLabel "land use/land cover" ;
-    she:hasParameterClass she:Arable,
-        she:Artificial,
-        she:Others,
-        she:PermanentCrops .
+    skos:broader she:Variable ;
+    she:mayHaveStrongEffectOn she:SoilBiodiversity ;
+    skos:narrower she:Artificial,
+                  she:Arable,
+                  she:PermanentCrops,
+                  she:Others .
+
+she:LessThan4 a skos:Concept ;
+    skos:prefLabel "<4" .
+
+she:Between4And5Point2 a skos:Concept ;
+    skos:prefLabel "4-5.2" .
+
+she:Between5Point2And8Point2 a skos:Concept ;
+    skos:prefLabel "5.2-8.2" .
+
+she:GreaterThan8Point2 a skos:Concept ;
+    skos:prefLabel ">8.2" .
+
+she:Coarse a skos:Concept ;
+    skos:prefLabel "coarse" .
 
 she:Medium a skos:Concept ;
     skos:prefLabel "medium" .
@@ -55,88 +107,56 @@ she:Medium a skos:Concept ;
 she:MediumFine a skos:Concept ;
     skos:prefLabel "medium-fine" .
 
-she:OrganicMatter a skos:Concept ;
-    skos:prefLabel "organic matter (%)" ;
-    she:hasParameterClass she:OrganicMatter1To2,
-        she:OrganicMatter2To4,
-        she:OrganicMatterGreaterThan4,
-        she:OrganicMatterLessThan1 .
+she:Fine a skos:Concept ;
+    skos:prefLabel "fine" .
 
-she:OrganicMatter1To2 a skos:Concept ;
-    skos:prefLabel "1-2" .
-
-she:OrganicMatter2To4 a skos:Concept ;
-    skos:prefLabel "2-4" .
-
-she:OrganicMatterGreaterThan4 a skos:Concept ;
-    skos:prefLabel ">4" .
-
-she:OrganicMatterLessThan1 a skos:Concept ;
+she:LessThan1 a skos:Concept ;
     skos:prefLabel "<1" .
 
-she:Others a skos:Concept ;
-    skos:prefLabel "others" .
+she:Between1And2 a skos:Concept ;
+    skos:prefLabel "1-2" .
 
-she:PH a skos:Concept ;
-    skos:prefLabel "ph" ;
-    she:hasParameterClass she:PH4To5_2,
-        she:PH5_2To8_2,
-        she:PHGreaterThan8_2,
-        she:PHLessThan4 .
+she:Between2And4 a skos:Concept ;
+    skos:prefLabel "2-4" .
 
-she:PH4To5_2 a skos:Concept ;
-    skos:prefLabel "4-5.2" .
+she:GreaterThan4 a skos:Concept ;
+    skos:prefLabel ">4" .
 
-she:PH5_2To8_2 a skos:Concept ;
-    skos:prefLabel "5.2-8.2" .
+she:LessThanMinus500 a skos:Concept ;
+    skos:prefLabel "<-500" .
 
-she:PHGreaterThan8_2 a skos:Concept ;
-    skos:prefLabel ">8.2" .
+she:BetweenMinus500And500 a skos:Concept ;
+    skos:prefLabel "-500 to 500" .
 
-she:PHLessThan4 a skos:Concept ;
-    skos:prefLabel "<4" .
+she:GreaterThan500 a skos:Concept ;
+    skos:prefLabel ">500" .
 
-she:PermanentCrops a skos:Concept ;
-    skos:prefLabel "permanent crops" .
+she:LessThan5 a skos:Concept ;
+    skos:prefLabel "<5" .
+
+she:Between5And20 a skos:Concept ;
+    skos:prefLabel "5-20" .
+
+she:GreaterThan20 a skos:Concept ;
+    skos:prefLabel ">20" .
 
 she:Poor a skos:Concept ;
     skos:prefLabel "poor" .
 
-she:PotentialEvapotranspiration a skos:Concept ;
-    skos:prefLabel "potential evapotranspiration (mm)" ;
-    she:hasParameterClass she:PotentialEvapotranspirationGreaterThan500,
-        she:PotentialEvapotranspirationLessThanMinus500,
-        she:PotentialEvapotranspirationMinus500To500 .
+she:Average a skos:Concept ;
+    skos:prefLabel "average" .
 
-she:PotentialEvapotranspirationGreaterThan500 a skos:Concept ;
-    skos:prefLabel ">500" .
+she:Good a skos:Concept ;
+    skos:prefLabel "good" .
 
-she:PotentialEvapotranspirationLessThanMinus500 a skos:Concept ;
-    skos:prefLabel "<-500" .
+she:Artificial a skos:Concept ;
+    skos:prefLabel "artificial" .
 
-she:PotentialEvapotranspirationMinus500To500 a skos:Concept ;
-    skos:prefLabel "-500 to 500" .
+she:Arable a skos:Concept ;
+    skos:prefLabel "arable" .
 
-she:SoilBiomassProductivity a skos:Concept ;
-    skos:prefLabel "soil biomass productivity" ;
-    she:hasParameterClass she:Average,
-        she:Good,
-        she:Poor .
+she:PermanentCrops a skos:Concept ;
+    skos:prefLabel "permanent crops" .
 
-she:SoilTexturalClass a skos:Concept ;
-    skos:prefLabel "soil textural class" ;
-    she:hasParameterClass she:Coarse,
-        she:Fine,
-        she:Medium,
-        she:MediumFine .
-
-she:Variable a skos:Concept ;
-    skos:narrower she:AnnualAverageTemperature,
-        she:LandUseLandCover,
-        she:OrganicMatter,
-        she:PH,
-        she:PotentialEvapotranspiration,
-        she:SoilBiomassProductivity,
-        she:SoilTexturalClass ;
-    skos:prefLabel "variable" .
-
+she:Others a skos:Concept ;
+    skos:prefLabel "others" .

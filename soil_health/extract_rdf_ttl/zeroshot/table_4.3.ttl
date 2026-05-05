@@ -1,52 +1,74 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Table43 a skos:Concept ;
-    skos:narrower she:Crop,
-        she:PHAt95Yield ;
-    skos:prefLabel "table 4.3" ;
-    she:hasSourceInformation "Compiled from Zhu et al. (2020)." ;
-    she:hasTitle she:SummarisedCriticalPHValuesForWheatMaizeAndRiceDerivedFromShortTermManipulationExperimentsSTEAndLongTermObservationsLTE .
+she:SummarisedCriticalPhValuesTable a skos:Concept ;
+    skos:prefLabel "summarised critical ph values for wheat, maize and rice derived from short-term manipulation experiments (ste) and long-term observations (lte)" ;
+    skos:note "source: compiled from zhu et al. (2020)." ;
+    skos:narrower she:Crop, she:PhAt95PercentYield .
 
 she:Crop a skos:Concept ;
-    skos:narrower she:Maize,
-        she:Rice,
-        she:Wheat ;
-    skos:prefLabel "crop" .
-
-she:LTE a skos:Concept ;
-    skos:prefLabel "lte" .
-
-she:Maize a skos:Concept ;
-    skos:prefLabel "maize" ;
-    she:hasLTEValue "5.1" ;
-    she:hasSTELTEValue "4.8" ;
-    she:hasSTEValue "4.6" .
-
-she:PHAt95Yield a skos:Concept ;
-    skos:narrower she:LTE,
-        she:STE,
-        she:STELTE ;
-    skos:prefLabel "ph at 95% yield" .
-
-she:Rice a skos:Concept ;
-    skos:prefLabel "rice" ;
-    she:hasLTEValue "5.0" ;
-    she:hasSTELTEValue "4.7" ;
-    she:hasSTEValue "4.7" .
-
-she:STE a skos:Concept ;
-    skos:prefLabel "ste" .
-
-she:STELTE a skos:Concept ;
-    skos:prefLabel "ste+lte" .
-
-she:SummarisedCriticalPHValuesForWheatMaizeAndRiceDerivedFromShortTermManipulationExperimentsSTEAndLongTermObservationsLTE a skos:Concept ;
-    skos:prefLabel "summarised critical ph values for wheat, maize and rice derived from short-term manipulation experiments (ste) and long-term observations (lte)" .
+    skos:prefLabel "crop" ;
+    skos:narrower she:Wheat, she:Maize, she:Rice .
 
 she:Wheat a skos:Concept ;
     skos:prefLabel "wheat" ;
-    she:hasLTEValue "5.9" ;
-    she:hasSTELTEValue "5.3" ;
-    she:hasSTEValue "4.5" .
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:ShortTermManipulationExperiments ;
+        she:hasValue "4.5"
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:LongTermObservations ;
+        she:hasValue "5.9"
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:CombinedSTEAndLTE ;
+        she:hasValue "5.3"
+    ] .
 
+she:Maize a skos:Concept ;
+    skos:prefLabel "maize" ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:ShortTermManipulationExperiments ;
+        she:hasValue "4.6"
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:LongTermObservations ;
+        she:hasValue "5.1" ;
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:CombinedSTEAndLTE ;
+        she:hasValue "4.8"
+    ] .
+
+she:Rice a skos:Concept ;
+    skos:prefLabel "rice" ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:ShortTermManipulationExperiments ;
+        she:hasValue "4.7"
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:LongTermObservations ;
+        she:hasValue "5.0"
+    ] ;
+    she:hasPhAt95PercentYield [
+        she:experimentalMethod she:CombinedSTEAndLTE ;
+        she:hasValue "4.7"
+    ] .
+
+she:PhAt95PercentYield a skos:Concept ;
+    skos:prefLabel "ph at 95% yield" ;
+    skos:narrower she:ShortTermManipulationExperiments,
+                  she:LongTermObservations,
+                  she:CombinedSTEAndLTE .
+
+she:ShortTermManipulationExperiments a skos:Concept ;
+    skos:prefLabel "short-term manipulation experiments" ;
+    she:hasAbbreviation "STE" .
+
+she:LongTermObservations a skos:Concept ;
+    skos:prefLabel "long-term observations" ;
+    she:hasAbbreviation "LTE" .
+
+she:CombinedSTEAndLTE a skos:Concept ;
+    skos:prefLabel "combined short-term manipulation experiments and long-term observations" ;
+    she:hasAbbreviation "STE+LTE" .

@@ -1,0 +1,100 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:Table5_4 a skos:Concept ;
+    skos:prefLabel "table 5.4: overview of relevant compartments related to soil services to be protected and relevant assessment criteria" ;
+    skos:narrower she:ArableCroppingSystems,
+                  she:UrbanSoils,
+                  she:NaturalAreas,
+                  she:AdjacentGroundwaterAndSurfaceWaterSystems .
+
+she:ArableCroppingSystems a skos:Concept ;
+    skos:prefLabel "arable cropping systems" ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:HumanHealth ;
+        she:hasAssessmentCriteria "Food quality standards in plant and animal products based on human TDIs" ;
+        she:hasLevelOfRegulation she:National, she:EU, she:FAO, she:WHO
+    ] ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:AnimalHealth ;
+        she:hasAssessmentCriteria "TDI based on toxicological limit values" ;
+        she:hasLevelOfRegulation she:RecommendedLevels
+    ] ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:EcosystemHealth ;
+        she:hasAssessmentCriteria "No effect concentrations (a) based on PAF (b) derived for soil or soil solution" ;
+        she:hasLevelOfRegulation she:EU, she:FAO, she:WHO ;
+        skos:note "(a) Note that the criterion used depends on the desired level of protection. For natural systems, no effect concentration (NOEC) levels are commonly based on the 5th percentile of NOEC concentrations of all organisms. For other soil functions this can be less strict, e.g. in the case of industrial land, an HC50 is applied as criterion for acceptance, equivalent to a level at which 50% of all species will be affected."
+    ] .
+
+she:UrbanSoils a skos:Concept ;
+    skos:prefLabel "urban soils" ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:HumanHealthAndOrEcosystemHealth ;
+        she:hasAssessmentCriteria "TDI or excess lifetime cancer risk based on intake of plant products (urban agriculture) or intake of soil/dust. For ecosystem health, effect levels are applied" ;
+        she:hasLevelOfRegulation she:National, she:EU, she:EFSA
+    ] .
+
+she:NaturalAreas a skos:Concept ;
+    skos:prefLabel "natural areas" ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:EcosystemHealth ;
+        she:hasAssessmentCriteria "No effect concentrations based on PAF in soil (terrestrial ecosystems) or water (aquatic ecosystems)" ;
+        she:hasLevelOfRegulation she:National, she:EU
+    ] .
+
+she:AdjacentGroundwaterAndSurfaceWaterSystems a skos:Concept ;
+    skos:prefLabel "adjacent groundwater and surface water systems" ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:EcosystemHealth ;
+        she:hasAssessmentCriteria "No effect concentrations based on PAF in water" ;
+        she:hasLevelOfRegulation she:National, she:EU
+    ] ;
+    she:hasAssessment [
+        she:hasProtectionTarget she:HumanHealth ;
+        she:hasAssessmentCriteria "Drinking water and surface water standards" ;
+        she:hasLevelOfRegulation she:National, she:EU
+    ] .
+
+she:HumanHealth a skos:Concept ;
+    skos:prefLabel "human health" .
+
+she:AnimalHealth a skos:Concept ;
+    skos:prefLabel "animal health" .
+
+she:EcosystemHealth a skos:Concept ;
+    skos:prefLabel "ecosystem health" .
+
+she:HumanHealthAndOrEcosystemHealth a skos:Concept ;
+    skos:prefLabel "human health and/or ecosystem health" .
+
+she:National a skos:Concept ;
+    skos:prefLabel "national" .
+
+she:EU a skos:Concept ;
+    skos:prefLabel "eu" .
+
+she:FAO a skos:Concept ;
+    skos:prefLabel "fao" ;
+    skos:altLabel "Food and Agriculture Organization of the United Nations" .
+
+she:WHO a skos:Concept ;
+    skos:prefLabel "who" ;
+    skos:altLabel "World Health Organization" .
+
+she:EFSA a skos:Concept ;
+    skos:prefLabel "efsa" ;
+    skos:altLabel "European Food Safety Authority" .
+
+she:RecommendedLevels a skos:Concept ;
+    skos:prefLabel "recommended levels" .
+
+she:TDI a skos:Concept ;
+    skos:prefLabel "tdi" ;
+    she:hasAbbreviation "TDI" ;
+    skos:note "tolerable daily intake" .
+
+she:PAF a skos:Concept ;
+    skos:prefLabel "paf" ;
+    she:hasAbbreviation "PAF" ;
+    skos:definition "potentially affected fraction of species and ecological processes" .

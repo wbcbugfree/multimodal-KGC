@@ -1,0 +1,44 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:DynamicAssessmentOfSoilHealth a skos:Concept ;
+    skos:prefLabel "dynamic assessment of soil health" ;
+    skos:note "Figure 1.3" ;
+    she:hasSource "EEA" ;
+    skos:narrower she:Unhealthy,
+                  she:Intermediate,
+                  she:Healthy .
+
+she:IndicatorsFromMonitoring a skos:Concept ;
+    skos:prefLabel "indicators from monitoring" ;
+    she:isMeasuredAgainst she:Time .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" .
+
+she:ThresholdForUnacceptableDegradation a skos:Concept ;
+    skos:prefLabel "threshold for unacceptable degradation" ;
+    she:definesBoundaryFor she:Unhealthy .
+
+she:Unhealthy a skos:Concept ;
+    skos:prefLabel "unhealthy" ;
+    skos:definition "at least one indicator exceeds thresholds for unacceptable degradation (ecosystem services significantly compromised)" .
+
+she:Intermediate a skos:Concept ;
+    skos:prefLabel "intermediate" ;
+    skos:definition "slight soil degradation at warning level (pre-cautionary soil protection)" ;
+    skos:note "a) Exceedance of thresholds for intermediate risk (where available); b) Positive indicator trend while thresholds for unacceptable degradation are still exceeded; c) Negative indicator trend without any threshold exceedance; d) Sustainable soil management in place while thresholds are exceeded" .
+
+she:Healthy a skos:Concept ;
+    skos:prefLabel "healthy" ;
+    skos:definition "none of the indicators shows any threshold exceedance" .
+
+she:PositiveTrend a skos:Concept ;
+    skos:prefLabel "positive trend" ;
+    she:leadsFrom she:Unhealthy ;
+    she:leadsTo she:Healthy .
+
+she:NegativeTrend a skos:Concept ;
+    skos:prefLabel "negative trend" ;
+    she:leadsFrom she:Healthy ;
+    she:leadsTo she:Unhealthy .

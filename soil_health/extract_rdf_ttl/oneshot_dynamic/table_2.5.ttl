@@ -1,0 +1,98 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:MeanSOCThresholdsForCroplandSoils a skos:Concept ;
+    skos:prefLabel "matrix of mean soc minimum and maximum thresholds for cropland soils (% soil mass)" ;
+    skos:note "Source: Compiled from Wessolek et al. (2008)." ;
+    skos:related she:CroplandSoils ;
+    skos:narrower she:SoilTextureClass,
+                  she:ClimaticWaterBalanceSummer .
+
+she:CroplandSoils a skos:Concept ;
+    skos:prefLabel "cropland soils" .
+
+she:SoilTextureClass a skos:Concept ;
+    skos:prefLabel "soil texture class" ;
+    skos:narrower she:Sand,
+                  she:Silt,
+                  she:LoamAndClay .
+
+she:ClimaticWaterBalanceSummer a skos:Concept ;
+    skos:prefLabel "climatic water balance (mm) summer" ;
+    skos:narrower she:LessThanMinus100,
+                  she:Minus100To0,
+                  she:MoreThan0 .
+
+she:Sand a skos:Concept ;
+    skos:prefLabel "sand" ;
+    she:hasSOCThreshold [
+        she:hasCondition she:LessThanMinus100 ;
+        she:hasMinValue "0.5" ;
+        she:hasMaxValue "1.23"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:Minus100To0 ;
+        she:hasMinValue "0.9" ;
+        she:hasMaxValue "1.73"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:MoreThan0 ;
+        she:hasMinValue "1.2" ;
+        she:hasMaxValue "2.23"
+    ] .
+
+she:Silt a skos:Concept ;
+    skos:prefLabel "silt" ;
+    she:hasSOCThreshold [
+        she:hasCondition she:LessThanMinus100 ;
+        she:hasMinValue "1.5" ;
+        she:hasMaxValue "2.53"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:Minus100To0 ;
+        she:hasMinValue "1.0" ;
+        she:hasMaxValue "2.07"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:MoreThan0 ;
+        she:hasMinValue "0.8" ;
+        she:hasMaxValue "1.59"
+    ] .
+
+she:LoamAndClay a skos:Concept ;
+    skos:prefLabel "loam and clay" ;
+    she:hasSOCThreshold [
+        she:hasCondition she:LessThanMinus100 ;
+        she:hasMinValue "0.6" ;
+        she:hasMaxValue "1.47"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:Minus100To0 ;
+        she:hasMinValue "0.9" ;
+        she:hasMaxValue "1.92"
+    ] ;
+    she:hasSOCThreshold [
+        she:hasCondition she:MoreThan0 ;
+        she:hasMinValue "1.9" ;
+        she:hasMaxValue "3.23"
+    ] .
+
+she:LessThanMinus100 a skos:Concept ;
+    skos:prefLabel "less than -100" .
+
+she:Minus100To0 a skos:Concept ;
+    skos:prefLabel "-100 to 0" .
+
+she:MoreThan0 a skos:Concept ;
+    skos:prefLabel "more than 0" .
+
+she:Min a skos:Concept ;
+    skos:prefLabel "min." .
+
+she:Max a skos:Concept ;
+    skos:prefLabel "max." .
+
+she:SOC a skos:Concept ;
+    skos:prefLabel "soc" ;
+    she:hasAbbreviation "SOC" ;
+    skos:altLabel "soil organic carbon" .

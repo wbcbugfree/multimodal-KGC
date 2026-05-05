@@ -1,0 +1,87 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
+
+she:SoilGroup a skos:Concept ;
+    skos:prefLabel "soil group" ;
+    skos:narrower she:LightSoil,
+                  she:MediumSoil,
+                  she:HeavySoil .
+
+she:LightSoil a skos:Concept ;
+    skos:prefLabel "light" ;
+    skos:note "<15% clay" ;
+    skos:narrower she:Range4To7,
+                  she:Range8To14 ;
+    she:hasMinimumSocThreshold "1.2" .
+
+she:MediumSoil a skos:Concept ;
+    skos:prefLabel "medium" ;
+    skos:note "15-25% clay" ;
+    skos:narrower she:Range15To22,
+                  she:Range23To25 ;
+    she:hasMinimumSocThreshold "1.5" .
+
+she:HeavySoil a skos:Concept ;
+    skos:prefLabel "heavy" ;
+    skos:note ">25% clay" ;
+    skos:narrower she:Range25To32,
+                  she:RangeAbove32 ;
+    she:hasMinimumSocThreshold "1.7" .
+
+she:ClayFineSiltPercentage a skos:Concept ;
+    skos:prefLabel "clay/fine silt (%)" .
+
+she:KorschensEtAl1998 a skos:Concept ;
+    skos:prefLabel "körschens et al. (1998)" ;
+    skos:narrower she:SandySoils,
+                  she:LoamySoils .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:Bmlfuw2017MinimumSocThreshold a skos:Concept ;
+    skos:prefLabel "bmlfuw (2017) minimum soc threshold" ;
+    skos:related she:SoilOrganicCarbon .
+
+she:SocClayRatio a skos:Concept ;
+    skos:prefLabel "soc/clay ratio" ;
+    skos:narrower she:Ratio1To8,
+                  she:Ratio1To10,
+                  she:Ratio1To13 .
+
+she:Ratio1To8 a skos:Concept ;
+    skos:prefLabel "1/8" ;
+    skos:definition "optimum for good structural quality" .
+
+she:Ratio1To10 a skos:Concept ;
+    skos:prefLabel "1/10" ;
+    skos:definition "minimum desired soc level for farmers" .
+
+she:Ratio1To13 a skos:Concept ;
+    skos:prefLabel "1/13" ;
+    skos:definition "structural soil quality is unacceptable" .
+
+she:Range4To7 a skos:Concept ;
+    skos:prefLabel "4-7" .
+
+she:Range8To14 a skos:Concept ;
+    skos:prefLabel "8-14" .
+
+she:Range15To22 a skos:Concept ;
+    skos:prefLabel "15-22" .
+
+she:Range23To25 a skos:Concept ;
+    skos:prefLabel "23-25" .
+
+she:Range25To32 a skos:Concept ;
+    skos:prefLabel "25-32" .
+
+she:RangeAbove32 a skos:Concept ;
+    skos:prefLabel ">32" .

@@ -1,105 +1,162 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:HighMAP a skos:Concept ;
-    skos:prefLabel "high map" .
-
-she:LowMAP a skos:Concept ;
-    skos:prefLabel "low map" .
-
-she:LowerBenchmark a skos:Concept ;
-    skos:prefLabel "lower benchmark" .
-
-she:MAP a skos:Concept ;
-    skos:definition "mean annual precipitation (mm)" ;
-    skos:prefLabel "map" .
-
-she:NoteA a skos:Concept ;
-    skos:prefLabel "note (a)" .
-
-she:Source a skos:Concept ;
-    skos:narrower she:CompiledFromDrexlerEtAl2002 ;
-    skos:prefLabel "source" .
-
-she:Table26SiteSpecificLowerSocBenchmarksForGermanAgriculturalSoilsAcrossDifferentStrata a skos:Concept ;
+she:Table2_6 a skos:Concept ;
+    skos:prefLabel "table 2.6" ;
+    skos:definition "site-specific lower soc benchmarks for german agricultural soils across different strata" ;
+    skos:note "source: compiled from drexler et al. (2002)." ;
     skos:narrower she:ArableSoil,
-        she:PermanentGrassland ;
-    skos:prefLabel "table 2.6 site-specific lower soc benchmarks for german agricultural soils across different strata" .
-
-she:TextureA a skos:Concept ;
-    skos:narrower she:HeavyI,
-        she:HeavyII,
-        she:Light,
-        she:Medium,
-        she:MediumII ;
-    skos:prefLabel "texture (a)" .
+                  she:PermanentGrassland,
+                  she:Texture .
 
 she:ArableSoil a skos:Concept ;
-    skos:prefLabel "arable soil" .
-
-she:CompiledFromDrexlerEtAl2002 a skos:Concept ;
-    skos:prefLabel "compiled from drexler et al. (2002)" .
-
-she:HeavyI a skos:Concept ;
-    skos:definition "heavy i 25-35% clay" ;
-    skos:prefLabel "heavy i" ;
-    she:hasArableSoilHighMAPThreshold ">900" ;
-    she:hasArableSoilLowMAPThreshold "<900" ;
-    she:hasArableSoilLowerBenchmarkForHighMAP "1.4" ;
-    she:hasArableSoilLowerBenchmarkForLowMAP "1.2" ;
-    she:hasPermanentGrasslandHighMAPThreshold ">750" ;
-    she:hasPermanentGrasslandLowMAPThreshold "<750" ;
-    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.7" ;
-    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "3.3" .
-
-she:HeavyII a skos:Concept ;
-    skos:definition "heavy ii >35% clay" ;
-    skos:prefLabel "heavy ii" ;
-    she:hasArableSoilHighMAPThreshold ">900" ;
-    she:hasArableSoilLowMAPThreshold "<900" ;
-    she:hasArableSoilLowerBenchmarkForHighMAP "2.0" ;
-    she:hasArableSoilLowerBenchmarkForLowMAP "1.5" ;
-    she:hasPermanentGrasslandHighMAPThreshold ">750" ;
-    she:hasPermanentGrasslandLowMAPThreshold "<750" ;
-    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "4.3" ;
-    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "3.7" .
-
-she:Light a skos:Concept ;
-    skos:definition "light <12% clay, <50% silt" ;
-    skos:prefLabel "light" ;
-    she:hasArableSoilHighMAPThreshold ">700" ;
-    she:hasArableSoilLowMAPThreshold "<700" ;
-    she:hasArableSoilLowerBenchmarkForHighMAP "0.9" ;
-    she:hasArableSoilLowerBenchmarkForLowMAP "0.7" ;
-    she:hasPermanentGrasslandHighMAPThreshold ">650" ;
-    she:hasPermanentGrasslandLowMAPThreshold "<650" ;
-    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "2.0" ;
-    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "1.4" .
-
-she:Medium a skos:Concept ;
-    skos:definition "medium i 12-17% clay, <50% silt" ;
-    skos:prefLabel "medium" ;
-    she:hasArableSoilHighMAPThreshold ">850" ;
-    she:hasArableSoilLowMAPThreshold "<850" ;
-    she:hasArableSoilLowerBenchmarkForHighMAP "1.1" ;
-    she:hasArableSoilLowerBenchmarkForLowMAP "1.0" ;
-    she:hasPermanentGrasslandHighMAPThreshold "<950" ;
-    she:hasPermanentGrasslandLowMAPThreshold "<950" ;
-    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.0" ;
-    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "2.3" .
-
-she:MediumII a skos:Concept ;
-    skos:definition "medium ii 17-25% clay" ;
-    skos:prefLabel "medium ii" ;
-    she:hasArableSoilHighMAPThreshold ">1,000" ;
-    she:hasArableSoilLowMAPThreshold "<1,000" ;
-    she:hasArableSoilLowerBenchmarkForHighMAP "1.4" ;
-    she:hasArableSoilLowerBenchmarkForLowMAP "1.1" ;
-    she:hasPermanentGrasslandHighMAPThreshold ">1,250" ;
-    she:hasPermanentGrasslandLowMAPThreshold "<1,250" ;
-    she:hasPermanentGrasslandLowerBenchmarkForHighMAP "3.1" ;
-    she:hasPermanentGrasslandLowerBenchmarkForLowMAP "2.7" .
+    skos:prefLabel "arable soil" ;
+    skos:narrower she:ArableLowMAP,
+                  she:ArableHighMAP .
 
 she:PermanentGrassland a skos:Concept ;
-    skos:prefLabel "permanent grassland" .
+    skos:prefLabel "permanent grassland" ;
+    skos:narrower she:GrasslandLowMAP,
+                  she:GrasslandHighMAP .
 
+she:MeanAnnualPrecipitation a skos:Concept ;
+    skos:prefLabel "mean annual precipitation" ;
+    she:hasAbbreviation "MAP" ;
+    skos:note "unit: mm" .
+
+she:ArableLowMAP a skos:Concept ;
+    skos:prefLabel "low map" ;
+    skos:definition "<700" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:ArableHighMAP a skos:Concept ;
+    skos:prefLabel "high map" ;
+    skos:definition ">700" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:GrasslandLowMAP a skos:Concept ;
+    skos:prefLabel "low map" ;
+    skos:definition "<650" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:GrasslandHighMAP a skos:Concept ;
+    skos:prefLabel "high map" ;
+    skos:definition ">650" ;
+    skos:related she:MeanAnnualPrecipitation .
+
+she:Texture a skos:Concept ;
+    skos:prefLabel "texture" ;
+    skos:narrower she:Light,
+                  she:Medium,
+                  she:MediumII,
+                  she:HeavyI,
+                  she:HeavyII .
+
+she:Light a skos:Concept ;
+    skos:prefLabel "light" ;
+    skos:note "<12% clay, <50% silt" .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" ;
+    skos:altLabel "medium i" ;
+    skos:note "12-17% clay, <50% silt" .
+
+she:MediumII a skos:Concept ;
+    skos:prefLabel "medium ii" ;
+    skos:note "17-25% clay, <50% silt" .
+
+she:HeavyI a skos:Concept ;
+    skos:prefLabel "heavy i" ;
+    skos:note "25-35% clay" .
+
+she:HeavyII a skos:Concept ;
+    skos:prefLabel "heavy ii" ;
+    skos:note ">35% clay" .
+
+she:LowerSOCBenchmark a skos:Concept ;
+    skos:prefLabel "lower soc benchmark" .
+
+she:Light she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableLowMAP ;
+    she:hasValue "0.7"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableHighMAP ;
+    she:hasValue "0.9"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandLowMAP ;
+    she:hasValue "1.4"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandHighMAP ;
+    she:hasValue "2.0"
+] .
+
+she:Medium she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableLowMAP ;
+    she:hasValue "1.0"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableHighMAP ;
+    she:hasValue "1.1"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandLowMAP ;
+    she:hasValue "2.3"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandHighMAP ;
+    she:hasValue "3.0"
+] .
+
+she:MediumII she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableLowMAP ;
+    she:hasValue "1.1"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableHighMAP ;
+    she:hasValue "1.4"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandLowMAP ;
+    she:hasValue "2.7"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandHighMAP ;
+    she:hasValue "3.1"
+] .
+
+she:HeavyI she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableLowMAP ;
+    she:hasValue "1.2"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableHighMAP ;
+    she:hasValue "1.4"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandLowMAP ;
+    she:hasValue "3.3"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandHighMAP ;
+    she:hasValue "3.7"
+] .
+
+she:HeavyII she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableLowMAP ;
+    she:hasValue "1.5"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:ArableHighMAP ;
+    she:hasValue "2.0"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandLowMAP ;
+    she:hasValue "3.7"
+] ;
+she:hasLowerSOCBenchmark [
+    she:underCondition she:GrasslandHighMAP ;
+    she:hasValue "4.3"
+] .

@@ -1,0 +1,55 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilBiodiversityMonitoring a skos:Concept ;
+    skos:prefLabel "soil biodiversity monitoring" ;
+    skos:definition "baseline and threshold approach for soil biodiversity monitoring" ;
+    skos:narrower she:ReferenceState,
+                  she:TransitionalStages,
+                  she:UnacceptableStress .
+
+she:SoilBiologicalCondition a skos:Concept ;
+    skos:prefLabel "soil biological condition" ;
+    she:measuredAgainst she:StressLevel .
+
+she:StressLevel a skos:Concept ;
+    skos:prefLabel "stress level" .
+
+she:ReferenceState a skos:Concept ;
+    skos:prefLabel "reference state" ;
+    skos:note "ecosystem-specific" ;
+    skos:narrower she:DesiredValueRange ;
+    she:precedes she:TransitionalStages .
+
+she:DesiredValueRange a skos:Concept ;
+    skos:prefLabel "desired value (range)" .
+
+she:TransitionalStages a skos:Concept ;
+    skos:prefLabel "transitional stages" ;
+    skos:narrower she:EmergencyPush,
+                  she:StressResponse,
+                  she:Decline ;
+    she:precedes she:UnacceptableStress .
+
+she:EmergencyPush a skos:Concept ;
+    skos:prefLabel "emergency push" ;
+    she:affects she:StressResponse .
+
+she:StressResponse a skos:Concept ;
+    skos:prefLabel "stress response" .
+
+she:Decline a skos:Concept ;
+    skos:prefLabel "decline" ;
+    she:leadsTo she:Threshold .
+
+she:UnacceptableStress a skos:Concept ;
+    skos:prefLabel "unacceptable stress" ;
+    skos:narrower she:Threshold,
+                  she:Damage .
+
+she:Threshold a skos:Concept ;
+    skos:prefLabel "threshold" ;
+    she:demarcates she:Damage .
+
+she:Damage a skos:Concept ;
+    skos:prefLabel "damage" .

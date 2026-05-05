@@ -1,102 +1,113 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:Table31RelationshipOfSoilNutrientStatusToKeySocietalNeedsAndSoilFunctions a skos:Concept ;
-    skos:narrower she:Impact,
-        she:SocietalNeed,
-        she:SoilService ;
-    skos:prefLabel "table 3.1 relationship of soil nutrient status to key societal needs and soil functions" .
+she:Table3_1 a skos:Concept ;
+    skos:prefLabel "table 3.1" ;
+    skos:note "relationship of soil nutrient status to key societal needs and soil functions" .
 
-she:Biodiversity a skos:Concept ;
-    skos:prefLabel "biodiversity" ;
-    she:isSupportedBySoilService she:HabitatForPlantsInsectsMicrobesFungi .
+she:SoilNutrientStatus a skos:Concept ;
+    skos:prefLabel "soil nutrient status" ;
+    she:hasPositiveImpactOn she:WoodAndFibreProduction,
+                             she:GrowthOfCrops,
+                             she:CarbonStorage,
+                             she:HabitatForPlantsInsectsMicrobesFungi ;
+    she:hasNegativeImpactOn she:FilteringOfContaminantsWaterQuality,
+                             she:HabitatForPlantsInsectsMicrobesFungi ;
+    she:hasNeutralImpactOn she:WaterStorage,
+                            she:PlatformForInfrastructure,
+                            she:StorageOfRelocatedMaterialOrArtefacts .
+
+she:SocietalNeed a skos:Concept ;
+    skos:prefLabel "societal need" ;
+    skos:narrower she:Biomass,
+                  she:Water,
+                  she:Climate,
+                  she:Biodiversity,
+                  she:Infrastructure .
+
+she:SoilService a skos:Concept ;
+    skos:prefLabel "soil service" ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops,
+                  she:FilteringOfContaminantsWaterQuality,
+                  she:WaterStorage,
+                  she:CarbonStorage,
+                  she:HabitatForPlantsInsectsMicrobesFungi,
+                  she:PlatformForInfrastructure,
+                  she:StorageOfRelocatedMaterialOrArtefacts .
 
 she:Biomass a skos:Concept ;
     skos:prefLabel "biomass" ;
-    she:isSupportedBySoilService she:GrowthOfCrops,
-        she:WoodAndFibreProduction .
-
-she:Climate a skos:Concept ;
-    skos:prefLabel "climate" ;
-    she:isSupportedBySoilService she:CarbonStorage .
-
-she:Impact a skos:Concept ;
-    skos:narrower she:IndifferentImpact,
-        she:NegativeImpact,
-        she:PositiveImpact,
-        she:PositiveOrNegativeImpact ;
-    skos:prefLabel "impact" .
-
-she:Infrastructure a skos:Concept ;
-    skos:prefLabel "infrastructure" ;
-    she:isSupportedBySoilService she:PlatformForInfrastructure,
-        she:StorageOfRelocatedMaterialOrArtefacts .
-
-she:SocietalNeed a skos:Concept ;
-    skos:narrower she:Biodiversity,
-        she:Biomass,
-        she:Climate,
-        she:Infrastructure,
-        she:Water ;
-    skos:prefLabel "societal need" .
-
-she:SoilService a skos:Concept ;
-    skos:narrower she:CarbonStorage,
-        she:FilteringOfContaminantsWaterQuality,
-        she:GrowthOfCrops,
-        she:HabitatForPlantsInsectsMicrobesFungi,
-        she:PlatformForInfrastructure,
-        she:StorageOfRelocatedMaterialOrArtefacts,
-        she:WaterStorage,
-        she:WoodAndFibreProduction ;
-    skos:prefLabel "soil service" .
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:WoodAndFibreProduction,
+                  she:GrowthOfCrops .
 
 she:Water a skos:Concept ;
     skos:prefLabel "water" ;
-    she:isSupportedBySoilService she:FilteringOfContaminantsWaterQuality,
-        she:WaterStorage .
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:FilteringOfContaminantsWaterQuality,
+                  she:WaterStorage .
 
-she:CarbonStorage a skos:Concept ;
-    skos:prefLabel "carbon storage" ;
-    she:hasImpactOfNutrientStatus she:PositiveImpact .
+she:Climate a skos:Concept ;
+    skos:prefLabel "climate" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:CarbonStorage .
 
-she:FilteringOfContaminantsWaterQuality a skos:Concept ;
-    skos:prefLabel "filtering of contaminants: water quality" ;
-    she:hasImpactOfNutrientStatus she:NegativeImpact .
+she:Biodiversity a skos:Concept ;
+    skos:prefLabel "biodiversity" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:HabitatForPlantsInsectsMicrobesFungi .
 
-she:GrowthOfCrops a skos:Concept ;
-    skos:prefLabel "growth of crops" ;
-    she:hasImpactOfNutrientStatus she:PositiveImpact .
-
-she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
-    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
-    she:hasImpactOfNutrientStatus she:PositiveOrNegativeImpact .
-
-she:NegativeImpact a skos:Concept ;
-    skos:prefLabel "-" .
-
-she:PlatformForInfrastructure a skos:Concept ;
-    skos:prefLabel "platform for infrastructure" ;
-    she:hasImpactOfNutrientStatus she:IndifferentImpact .
-
-she:PositiveOrNegativeImpact a skos:Concept ;
-    skos:prefLabel "+ or -" .
-
-she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
-    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
-    she:hasImpactOfNutrientStatus she:IndifferentImpact .
-
-she:WaterStorage a skos:Concept ;
-    skos:prefLabel "water storage" ;
-    she:hasImpactOfNutrientStatus she:IndifferentImpact .
+she:Infrastructure a skos:Concept ;
+    skos:prefLabel "infrastructure" ;
+    skos:broader she:SocietalNeed ;
+    skos:narrower she:PlatformForInfrastructure,
+                  she:StorageOfRelocatedMaterialOrArtefacts .
 
 she:WoodAndFibreProduction a skos:Concept ;
     skos:prefLabel "wood and fibre production" ;
-    she:hasImpactOfNutrientStatus she:PositiveImpact .
+    skos:broader she:Biomass,
+                 she:SoilService ;
+    she:hasSymbol "+" .
 
-she:IndifferentImpact a skos:Concept ;
-    skos:prefLabel "indifferent" .
+she:GrowthOfCrops a skos:Concept ;
+    skos:prefLabel "growth of crops" ;
+    skos:broader she:Biomass,
+                 she:SoilService ;
+    she:hasSymbol "+" .
 
-she:PositiveImpact a skos:Concept ;
-    skos:prefLabel "+" .
+she:FilteringOfContaminantsWaterQuality a skos:Concept ;
+    skos:prefLabel "filtering of contaminants: water quality" ;
+    skos:broader she:Water,
+                 she:SoilService ;
+    she:hasSymbol "-" .
 
+she:WaterStorage a skos:Concept ;
+    skos:prefLabel "water storage" ;
+    skos:broader she:Water,
+                 she:SoilService ;
+    skos:note "indifferent" .
+
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    skos:broader she:Climate,
+                 she:SoilService ;
+    she:hasSymbol "+" .
+
+she:HabitatForPlantsInsectsMicrobesFungi a skos:Concept ;
+    skos:prefLabel "habitat for plants, insects, microbes, fungi" ;
+    skos:broader she:Biodiversity,
+                 she:SoilService ;
+    she:hasSymbol "+ or -" .
+
+she:PlatformForInfrastructure a skos:Concept ;
+    skos:prefLabel "platform for infrastructure" ;
+    skos:broader she:Infrastructure,
+                 she:SoilService ;
+    skos:note "indifferent" .
+
+she:StorageOfRelocatedMaterialOrArtefacts a skos:Concept ;
+    skos:prefLabel "storage of relocated material or artefacts (excavated geological material, sediments, cables and pipelines, archaeological material)" ;
+    skos:broader she:Infrastructure,
+                 she:SoilService ;
+    skos:note "indifferent" .

@@ -2,107 +2,109 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:PrincipleOfSoilPStatusAndEnvironmentalRisk a skos:Concept ;
+    skos:prefLabel "principle of soil p status and environmental risk" ;
     skos:narrower she:Approach,
-        she:CropProductionRiskZone,
-        she:EnvironmentalRiskZone,
-        she:OptimumLevelForCropProduction,
-        she:PRecommendation,
-        she:SoilPLevel,
-        she:SoilPStatus,
-        she:Time ;
-    skos:prefLabel "principle of soil p status and environmental risk" .
+                  she:PRecommendation,
+                  she:SoilP,
+                  she:EnvironmentalRiskZone,
+                  she:OptimumLevelForCropProduction,
+                  she:CropProductionRiskZone .
 
 she:Approach a skos:Concept ;
-    skos:narrower she:BuildingUp,
-        she:Maintenance,
-        she:Mining ;
-    skos:prefLabel "approach" .
+    skos:prefLabel "approach" ;
+    skos:narrower she:Mining,
+                  she:Maintenance,
+                  she:BuildingUp .
+
+she:Mining a skos:Concept ;
+    skos:prefLabel "mining" ;
+    she:hasPRecommendation she:NoFertiliser,
+                           she:InputLessThanOutput ;
+    she:hasSoilPStatus she:VeryHigh,
+                       she:High .
+
+she:Maintenance a skos:Concept ;
+    skos:prefLabel "maintenance" ;
+    she:hasPRecommendation she:InputEqualsOutput ;
+    she:hasSoilPStatus she:Medium .
 
 she:BuildingUp a skos:Concept ;
     skos:prefLabel "building up" ;
     she:hasPRecommendation she:InputGreaterThanOutput,
-        she:InputMuchGreaterThanOutput .
-
-she:CropProductionRiskZone a skos:Concept ;
-    skos:prefLabel "crop production risk zone" ;
-    she:correspondsToSoilPStatus she:Low,
-        she:VeryLow ;
-    she:isBelow she:OptimumLevelForCropProduction .
-
-she:EnvironmentalRiskZone a skos:Concept ;
-    skos:prefLabel "environmental risk zone" ;
-    she:correspondsToSoilPStatus she:High,
-        she:VeryHigh ;
-    she:isAbove she:OptimumLevelForCropProduction .
-
-she:Maintenance a skos:Concept ;
-    skos:prefLabel "maintenance" ;
-    she:hasPRecommendation she:InputEqualsOutput .
-
-she:Mining a skos:Concept ;
-    skos:prefLabel "mining" ;
-    she:hasPRecommendation she:InputLessThanOutput,
-        she:NoFertiliser .
+                           she:InputMuchGreaterThanOutput ;
+    she:hasSoilPStatus she:Low,
+                       she:VeryLow .
 
 she:PRecommendation a skos:Concept ;
-    skos:narrower she:InputEqualsOutput,
-        she:InputGreaterThanOutput,
-        she:InputLessThanOutput,
-        she:InputMuchGreaterThanOutput,
-        she:NoFertiliser ;
-    skos:prefLabel "p recommendation" .
-
-she:SoilPLevel a skos:Concept ;
-    skos:prefLabel "soil p" ;
-    she:isMeasuredAgainst she:Time .
-
-she:SoilPStatus a skos:Concept ;
-    skos:narrower she:High,
-        she:Low,
-        she:Medium,
-        she:VeryHigh,
-        she:VeryLow ;
-    skos:prefLabel "soil p" .
-
-she:InputEqualsOutput a skos:Concept ;
-    skos:prefLabel "input = output" ;
-    she:resultsInSoilPStatus she:Medium .
-
-she:InputGreaterThanOutput a skos:Concept ;
-    skos:prefLabel "input > output" ;
-    she:resultsInSoilPStatus she:Low .
-
-she:InputLessThanOutput a skos:Concept ;
-    skos:prefLabel "input < output" ;
-    she:resultsInSoilPStatus she:High .
-
-she:InputMuchGreaterThanOutput a skos:Concept ;
-    skos:prefLabel "input >> output" ;
-    she:resultsInSoilPStatus she:VeryLow .
+    skos:prefLabel "p recommendation" ;
+    skos:narrower she:NoFertiliser,
+                  she:InputLessThanOutput,
+                  she:InputEqualsOutput,
+                  she:InputGreaterThanOutput,
+                  she:InputMuchGreaterThanOutput .
 
 she:NoFertiliser a skos:Concept ;
     skos:prefLabel "no fertiliser" ;
-    she:resultsInSoilPStatus she:VeryHigh .
+    she:linkedToSoilP she:VeryHigh .
 
-she:Time a skos:Concept ;
-    skos:prefLabel "time" .
+she:InputLessThanOutput a skos:Concept ;
+    skos:prefLabel "input < output" ;
+    she:linkedToSoilP she:High .
 
-she:High a skos:Concept ;
-    skos:prefLabel "high" .
+she:InputEqualsOutput a skos:Concept ;
+    skos:prefLabel "input = output" ;
+    she:linkedToSoilP she:Medium .
 
-she:Low a skos:Concept ;
-    skos:prefLabel "low" .
+she:InputGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input > output" ;
+    she:linkedToSoilP she:Low .
 
-she:Medium a skos:Concept ;
-    skos:prefLabel "medium" .
+she:InputMuchGreaterThanOutput a skos:Concept ;
+    skos:prefLabel "input >> output" ;
+    she:linkedToSoilP she:VeryLow .
 
-she:OptimumLevelForCropProduction a skos:Concept ;
-    skos:prefLabel "optimum level for crop production" ;
-    she:correspondsToSoilPStatus she:Medium .
+she:SoilP a skos:Concept ;
+    skos:prefLabel "soil p" ;
+    she:hasSymbol "P" ;
+    skos:narrower she:VeryHigh,
+                  she:High,
+                  she:Medium,
+                  she:Low,
+                  she:VeryLow .
 
 she:VeryHigh a skos:Concept ;
-    skos:prefLabel "very high" .
+    skos:prefLabel "very high" ;
+    she:locatedInZone she:EnvironmentalRiskZone ;
+    she:convergesTowards she:OptimumLevelForCropProduction .
+
+she:High a skos:Concept ;
+    skos:prefLabel "high" ;
+    she:locatedInZone she:EnvironmentalRiskZone ;
+    she:convergesTowards she:OptimumLevelForCropProduction .
+
+she:Medium a skos:Concept ;
+    skos:prefLabel "medium" ;
+    she:locatedInZone she:OptimumLevelForCropProduction .
+
+she:Low a skos:Concept ;
+    skos:prefLabel "low" ;
+    she:locatedInZone she:CropProductionRiskZone ;
+    she:convergesTowards she:OptimumLevelForCropProduction .
 
 she:VeryLow a skos:Concept ;
-    skos:prefLabel "very low" .
+    skos:prefLabel "very low" ;
+    she:locatedInZone she:CropProductionRiskZone ;
+    she:convergesTowards she:OptimumLevelForCropProduction .
 
+she:EnvironmentalRiskZone a skos:Concept ;
+    skos:prefLabel "environmental risk zone" .
+
+she:OptimumLevelForCropProduction a skos:Concept ;
+    skos:prefLabel "optimum level for crop production" .
+
+she:CropProductionRiskZone a skos:Concept ;
+    skos:prefLabel "crop production risk zone" .
+
+she:Time a skos:Concept ;
+    skos:prefLabel "time" ;
+    skos:note "horizontal axis of the risk and production convergence graph" .

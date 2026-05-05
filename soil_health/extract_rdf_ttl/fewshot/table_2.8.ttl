@@ -1,0 +1,63 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:GuidelineRangesForSOCContent a skos:Concept ;
+    skos:prefLabel "guideline ranges for soc content" ;
+    skos:definition "Guideline ranges for SOC content of sandy and loamy soils without groundwater influence depending on fine silt (<6.3µm) and clay content." ;
+    skos:note "Table 2.8. Compiled from Körschens et al. (1998)." ;
+    she:appliesTo she:SoilsWithoutGroundwaterInfluence ;
+    she:measuredBy she:PipetteMethod ;
+    she:measuredIn she:PloughLayer ;
+    skos:narrower she:ClayAndFineSiltPercentage,
+        she:SOCInLoamySoils,
+        she:SOCInSandySoils .
+
+she:ClayAndFineSiltPercentage a skos:Concept ;
+    skos:definition "Sum of clay and fine silt (<6.3µm) and clay content." ;
+    skos:prefLabel "clay + fine silt (%)" ;
+    she:hasUnit "%" .
+
+she:LoamySoils a skos:Concept ;
+    skos:prefLabel "loamy soils" .
+
+she:LowerValue a skos:Concept ;
+    skos:prefLabel "lower value" .
+
+she:PipetteMethod a skos:Concept ;
+    skos:note "Method used for determining clay and fine silt content." ;
+    skos:prefLabel "pipette method" .
+
+she:PloughLayer a skos:Concept ;
+    skos:note "The layer where SOC is measured in this guideline." ;
+    skos:prefLabel "plough layer" .
+
+she:SOCInLoamySoils a skos:Concept ;
+    skos:broader she:SoilOrganicCarbon ;
+    skos:narrower she:LowerValue,
+        she:UpperValue ;
+    skos:prefLabel "soc in loamy soils (%)" ;
+    skos:note "Valid for clay + fine silt content from 10% (0.8-1.2% SOC) to 38% (2.0-2.6% SOC)." ;
+    she:appliesTo she:LoamySoils ;
+    she:hasUnit "%" .
+
+she:SOCInSandySoils a skos:Concept ;
+    skos:broader she:SoilOrganicCarbon ;
+    skos:narrower she:LowerValue,
+        she:UpperValue ;
+    skos:prefLabel "soc in sandy soils (%)" ;
+    skos:note "Valid for clay + fine silt content from 4% (0.6-0.9% SOC) to 25% (1.3-1.6% SOC)." ;
+    she:appliesTo she:SandySoils ;
+    she:hasUnit "%" .
+
+she:SandySoils a skos:Concept ;
+    skos:prefLabel "sandy soils" .
+
+she:SoilOrganicCarbon a skos:Concept ;
+    skos:prefLabel "soil organic carbon" ;
+    she:hasAbbreviation "SOC" .
+
+she:SoilsWithoutGroundwaterInfluence a skos:Concept ;
+    skos:prefLabel "soils without groundwater influence" .
+
+she:UpperValue a skos:Concept ;
+    skos:prefLabel "upper value" .

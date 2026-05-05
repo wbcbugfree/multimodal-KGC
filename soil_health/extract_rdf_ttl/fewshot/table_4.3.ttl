@@ -2,46 +2,76 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:SummarisedCriticalPHValues a skos:Concept ;
-    skos:narrower she:Crop,
-        she:PHAt95PercentYield ;
-    skos:prefLabel "summarised critical ph values for wheat, maize and rice derived from short-term manipulation experiments (ste) and long-term observations (lte)" .
-
-she:CombinedSTEAndLTE a skos:Concept ;
-    skos:prefLabel "ste+lte" .
+    skos:prefLabel "summarised critical ph values for wheat, maize and rice" ;
+    skos:note "Derived from short-term manipulation experiments (STE) and long-term observations (LTE)" ;
+    skos:definition "Source: Compiled from Zhu et al. (2020)." ;
+    skos:narrower she:Crop, she:PHAt95PercentYield .
 
 she:Crop a skos:Concept ;
-    skos:narrower she:Maize,
-        she:Rice,
-        she:Wheat ;
-    skos:prefLabel "crop" .
-
-she:LongTermObservations a skos:Concept ;
-    skos:prefLabel "lte" .
-
-she:Maize a skos:Concept ;
-    skos:prefLabel "maize" ;
-    she:hasPHValueForLTE "5.1" ;
-    she:hasPHValueForSTE "4.6" ;
-    she:hasPHValueForSTEAndLTE "4.8" .
+    skos:prefLabel "crop" ;
+    skos:narrower she:Wheat,
+                  she:Maize,
+                  she:Rice .
 
 she:PHAt95PercentYield a skos:Concept ;
-    skos:narrower she:CombinedSTEAndLTE,
-        she:LongTermObservations,
-        she:ShortTermManipulationExperiments ;
-    skos:prefLabel "ph at 95% yield" .
+    skos:prefLabel "ph at 95% yield" ;
+    skos:narrower she:STE,
+                  she:LTE,
+                  she:STELTE .
 
-she:Rice a skos:Concept ;
-    skos:prefLabel "rice" ;
-    she:hasPHValueForLTE "5.0" ;
-    she:hasPHValueForSTE "4.7" ;
-    she:hasPHValueForSTEAndLTE "4.7" .
+she:STE a skos:Concept ;
+    skos:prefLabel "short-term manipulation experiments" ;
+    she:hasAbbreviation "STE" .
 
-she:ShortTermManipulationExperiments a skos:Concept ;
-    skos:prefLabel "ste" .
+she:LTE a skos:Concept ;
+    skos:prefLabel "long-term observations" ;
+    she:hasAbbreviation "LTE" .
+
+she:STELTE a skos:Concept ;
+    skos:prefLabel "ste+lte" ;
+    skos:note "Combined results from short-term manipulation experiments and long-term observations" .
 
 she:Wheat a skos:Concept ;
     skos:prefLabel "wheat" ;
-    she:hasPHValueForLTE "5.9" ;
-    she:hasPHValueForSTE "4.5" ;
-    she:hasPHValueForSTEAndLTE "5.3" .
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STE ;
+        she:hasValue "4.5"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:LTE ;
+        she:hasValue "5.9"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STELTE ;
+        she:hasValue "5.3"
+    ] .
 
+she:Maize a skos:Concept ;
+    skos:prefLabel "maize" ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STE ;
+        she:hasValue "4.6"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:LTE ;
+        she:hasValue "5.1"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STELTE ;
+        she:hasValue "4.8"
+    ] .
+
+she:Rice a skos:Concept ;
+    skos:prefLabel "rice" ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STE ;
+        she:hasValue "4.7"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:LTE ;
+        she:hasValue "5.0"
+    ] ;
+    she:hasPHAt95PercentYield [
+        she:hasCondition she:STELTE ;
+        she:hasValue "4.7"
+    ] .

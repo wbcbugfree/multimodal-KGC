@@ -1,175 +1,135 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:GreenhouseGas a skos:Concept ;
-    skos:prefLabel "greenhouse gas" .
+she:SoilMonitoringParameters a skos:Concept ;
+    skos:prefLabel "parameters for soil monitoring at different sampling intensity levels" ;
+    skos:narrower she:SoilErosion,
+                  she:SoilCompaction .
 
-she:ParametersForSoilMonitoring a skos:Concept ;
-    skos:narrower she:SoilCompaction,
-        she:SoilErosion ;
-    skos:prefLabel "parameters for soil monitoring" .
+she:SoilErosion a skos:Concept ;
+    skos:prefLabel "soil erosion" ;
+    skos:note "see also table 7.4" ;
+    she:hasLevelIMethod she:SoilErosionModelling ;
+    she:hasLevelIIMethod she:MappingVisibleSoilErosionFeatures,
+                          she:LandUseDetails ;
+    she:hasLevelIIIMethod she:SoilErosionMonitoring .
 
-she:AirCapacity a skos:Concept ;
-    skos:prefLabel "air capacity" ;
-    she:uses she:PedotransferFunction .
-
-she:BasicSoilParametersForPTFs a skos:Concept ;
-    skos:prefLabel "all basic soil parameters for ptfs" ;
-    she:measurementMethod she:Measured .
-
-she:CaCO3 a skos:Concept ;
-    skos:prefLabel "caco3" ;
-    she:estimationMethod she:Estimated .
-
-she:CatchmentScale a skos:Concept ;
-    skos:prefLabel "catchment scale" .
-
-she:CoarseFragments a skos:Concept ;
-    skos:prefLabel "coarse fragments" ;
-    she:estimationMethod she:Estimated .
-
-she:DetailsOnLandUse a skos:Concept ;
-    skos:prefLabel "details on land use" ;
-    she:includes she:GroundCover .
-
-she:GeomorphologicalData a skos:Concept ;
-    skos:prefLabel "geomorphological data" .
-
-she:GreatSamplingDepth a skos:Concept ;
-    skos:prefLabel "great sampling depth" .
-
-she:GroundCover a skos:Concept ;
-    skos:prefLabel "ground cover" .
-
-she:HigherIntensityMeasurement a skos:Concept ;
-    skos:prefLabel "higher intensity measurement" ;
-    she:basedOn she:LevelII ;
-    she:hasCharacteristic she:GreatSamplingDepth,
-        she:MoreSubsamples .
-
-she:LandCoverLandUse a skos:Concept ;
-    skos:prefLabel "land cover/land use" .
-
-she:LevelII a skos:Concept ;
-    skos:prefLabel "level ii" .
+she:SoilErosionModelling a skos:Concept ;
+    skos:prefLabel "modelling" ;
+    skos:note "using data on land cover/land use, geomorphological data, national soil data, rainfall" .
 
 she:MappingVisibleSoilErosionFeatures a skos:Concept ;
     skos:prefLabel "mapping visible soil erosion features" .
 
-she:Modelling a skos:Concept ;
-    skos:prefLabel "modelling" ;
-    she:usesDataOn she:GeomorphologicalData,
-        she:LandCoverLandUse,
-        she:NationalSoilData,
-        she:Rainfall .
+she:LandUseDetails a skos:Concept ;
+    skos:prefLabel "details on land use" ;
+    skos:note "e.g. ground cover" .
 
-she:MonitoringSoilErosion a skos:Concept ;
-    skos:narrower she:CatchmentScale,
-        she:PlotScale,
-        she:SedimentDepositionInPondsLakesOrReservoirs ;
-    skos:prefLabel "monitoring (measurements) of soil erosion" ;
-    she:measures she:SedimentLoads .
-
-she:MoreSubsamples a skos:Concept ;
-    skos:prefLabel "more subsamples" .
-
-she:MorphologicalFeatures a skos:Concept ;
-    skos:prefLabel "morphological features" .
-
-she:NationalSoilData a skos:Concept ;
-    skos:prefLabel "national soil data" .
-
-she:PenetrationResistance a skos:Concept ;
-    skos:prefLabel "penetration resistance" ;
-    she:uses she:PedotransferFunction .
-
-she:PlantAvailableWaterCapacity a skos:Concept ;
-    skos:prefLabel "plant available water capacity" ;
-    she:uses she:PedotransferFunction .
+she:SoilErosionMonitoring a skos:Concept ;
+    skos:prefLabel "monitoring (measurements) of soil erosion (sediment loads)" ;
+    skos:narrower she:PlotScale,
+                  she:CatchmentScale,
+                  she:SedimentDeposition .
 
 she:PlotScale a skos:Concept ;
     skos:prefLabel "plot scale" .
 
-she:PrecompressionStress a skos:Concept ;
-    skos:prefLabel "precompression stress" ;
-    she:uses she:PedotransferFunction .
+she:CatchmentScale a skos:Concept ;
+    skos:prefLabel "catchment scale" .
 
-she:Rainfall a skos:Concept ;
-    skos:prefLabel "rainfall" .
-
-she:Rooting a skos:Concept ;
-    skos:prefLabel "rooting" ;
-    she:estimationMethod she:Estimated .
-
-she:SaturatedHydraulicConductivity a skos:Concept ;
-    skos:prefLabel "saturated hydraulic conductivity" ;
-    she:uses she:PedotransferFunction .
-
-she:SedimentDepositionInPondsLakesOrReservoirs a skos:Concept ;
+she:SedimentDeposition a skos:Concept ;
     skos:prefLabel "sediment deposition in ponds, lakes or reservoirs" .
 
-she:SedimentLoads a skos:Concept ;
-    skos:prefLabel "sediment loads" .
-
-she:Sensors a skos:Concept ;
-    skos:prefLabel "sensors" ;
-    she:usedAt she:RepresentativeSubplots .
-
 she:SoilCompaction a skos:Concept ;
-    skos:narrower she:AirCapacity,
-        she:BasicSoilParametersForPTFs,
-        she:CaCO3,
-        she:CoarseFragments,
-        she:HigherIntensityMeasurement,
-        she:MorphologicalFeatures,
-        she:PenetrationResistance,
-        she:PlantAvailableWaterCapacity,
-        she:PrecompressionStress,
-        she:Rooting,
-        she:SaturatedHydraulicConductivity,
-        she:Sensors,
-        she:SoilOrganicMatter,
-        she:SoilRigidityRatio,
-        she:SoilTexture,
-        she:StressDependentMeasurements,
-        she:Tensiometer ;
-    skos:prefLabel "soil compaction" .
+    skos:prefLabel "soil compaction" ;
+    skos:note "see also table 8.3" ;
+    she:hasLevelIMethod she:PrecompressionStress,
+                          she:SoilRigidityRatio,
+                          she:PenetrationResistance,
+                          she:MorphologicalFeatures,
+                          she:SoilOrganicMatter,
+                          she:SaturatedHydraulicConductivity,
+                          she:AirCapacity,
+                          she:PlantAvailableWaterCapacity,
+                          she:SoilTexture,
+                          she:CoarseFragments,
+                          she:CaCO3,
+                          she:Rooting ;
+    she:hasLevelIIMethod she:BasicSoilParametersMeasurement ;
+    she:hasLevelIIIMethod she:IntensiveCompactionMonitoring .
 
-she:SoilErosion a skos:Concept ;
-    skos:narrower she:DetailsOnLandUse,
-        she:MappingVisibleSoilErosionFeatures,
-        she:Modelling,
-        she:MonitoringSoilErosion ;
-    skos:prefLabel "soil erosion" .
-
-she:SoilOrganicMatter a skos:Concept ;
-    skos:prefLabel "soil organic matter" ;
-    she:measurementMethod she:Measured .
+she:PrecompressionStress a skos:Concept ;
+    skos:prefLabel "precompression stress" ;
+    she:hasMethod she:PedotransferFunction .
 
 she:SoilRigidityRatio a skos:Concept ;
     skos:prefLabel "soil rigidity ratio" ;
-    she:uses she:PedotransferFunction .
+    she:hasMethod she:PedotransferFunction .
+
+she:PenetrationResistance a skos:Concept ;
+    skos:prefLabel "penetration resistance" ;
+    she:hasMethod she:PedotransferFunction .
+
+she:MorphologicalFeatures a skos:Concept ;
+    skos:prefLabel "morphological features" .
+
+she:SoilOrganicMatter a skos:Concept ;
+    skos:prefLabel "soil organic matter" ;
+    she:hasMethod "measured" .
+
+she:SaturatedHydraulicConductivity a skos:Concept ;
+    skos:prefLabel "saturated hydraulic conductivity" ;
+    she:hasMethod she:PedotransferFunction .
+
+she:AirCapacity a skos:Concept ;
+    skos:prefLabel "air capacity" ;
+    she:hasMethod she:PedotransferFunction .
+
+she:PlantAvailableWaterCapacity a skos:Concept ;
+    skos:prefLabel "plant available water capacity" ;
+    she:hasMethod she:PedotransferFunction .
 
 she:SoilTexture a skos:Concept ;
     skos:prefLabel "soil texture" ;
-    she:estimationMethod she:Estimated .
+    she:hasMethod "estimated" .
+
+she:CoarseFragments a skos:Concept ;
+    skos:prefLabel "coarse fragments" ;
+    she:hasMethod "estimated" .
+
+she:CaCO3 a skos:Concept ;
+    skos:prefLabel "caco3" ;
+    she:hasSymbol "CaCO3" ;
+    she:hasMethod "estimated" .
+
+she:Rooting a skos:Concept ;
+    skos:prefLabel "rooting" ;
+    she:hasMethod "estimated" .
+
+she:BasicSoilParametersMeasurement a skos:Concept ;
+    skos:prefLabel "basic soil parameters measurement" ;
+    skos:note "all basic soil parameters for PTFs are measured" .
+
+she:IntensiveCompactionMonitoring a skos:Concept ;
+    skos:prefLabel "intensive compaction monitoring" ;
+    skos:narrower she:TensiometerAndSensors,
+                  she:StressDependentMeasurements,
+                  she:HighDepthSampling .
+
+she:TensiometerAndSensors a skos:Concept ;
+    skos:prefLabel "tensiometer, sensors at representative subplots" .
 
 she:StressDependentMeasurements a skos:Concept ;
     skos:prefLabel "stress-dependent measurements" .
 
-she:Tensiometer a skos:Concept ;
-    skos:prefLabel "tensiometer" ;
-    she:usedAt she:RepresentativeSubplots .
-
-she:Measured a skos:Concept ;
-    skos:prefLabel "measured" .
-
-she:RepresentativeSubplots a skos:Concept ;
-    skos:prefLabel "representative subplots" .
-
-she:Estimated a skos:Concept ;
-    skos:prefLabel "estimated" .
+she:HighDepthSampling a skos:Concept ;
+    skos:prefLabel "high depth sampling" ;
+    skos:note "as for level II, but with great sampling depth and more subsamples" .
 
 she:PedotransferFunction a skos:Concept ;
-    skos:prefLabel "pedotransfer function" .
+    skos:prefLabel "pedotransfer function" ;
+    she:hasAbbreviation "PTF" .
 
+she:GreenhouseGas a skos:Concept ;
+    skos:prefLabel "greenhouse gas" ;
+    she:hasAbbreviation "GHG" .

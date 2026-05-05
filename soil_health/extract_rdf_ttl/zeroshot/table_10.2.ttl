@@ -1,197 +1,221 @@
 @prefix she: <https://soilwise-he.github.io/soil-health#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-she:BaseSaturation a skos:Concept ;
-    skos:prefLabel "base saturation" .
+she:ParametersForSoilMonitoring a skos:Concept ;
+    skos:prefLabel "parameters for soil monitoring at different sampling intensity levels" ;
+    skos:narrower she:MonitoringLevel,
+                  she:SoilThreat .
+
+she:MonitoringLevel a skos:Concept ;
+    skos:prefLabel "monitoring level" ;
+    skos:narrower she:LevelI,
+                  she:LevelII,
+                  she:LevelIII .
 
 she:LevelI a skos:Concept ;
     skos:prefLabel "level i" .
 
 she:LevelII a skos:Concept ;
-    skos:prefLabel "level ii" .
+    skos:prefLabel "level ii" ;
+    skos:note "includes parameters from level i" .
 
 she:LevelIII a skos:Concept ;
-    skos:prefLabel "level iii" .
-
-she:MonitoringLevel a skos:Concept ;
-    skos:narrower she:SoilAcidification,
-        she:SoilBiodiversityLoss,
-        she:SoilNutrientLoss,
-        she:SoilOrganicCarbonLoss,
-        she:SoilPollution,
-        she:SoilThreat ;
-    skos:prefLabel "monitoring level" .
-
-she:AsForLevelIAndAlso a skos:Concept ;
-    skos:prefLabel "as for level i, and also" .
-
-she:AsForLevelII a skos:Concept ;
-    skos:prefLabel "as for level ii" .
-
-she:AsForLevelsIAndIIAndAlso a skos:Concept ;
-    skos:prefLabel "as for levels i and ii, and also" .
-
-she:AvailableK a skos:Concept ;
-    skos:prefLabel "available k" .
-
-she:BalancingInputsOutputsEGModellingToEstimateValidateAccumulation a skos:Concept ;
-    skos:prefLabel "balancing (inputs-outputs, e.g. modelling) to estimate/ validate accumulation" .
-
-she:BioavailabilityOfNutrientsAndPollutants a skos:Concept ;
-    skos:prefLabel "bioavailability of nutrients and pollutants" .
-
-she:BulkDensityDerivedWithPTF a skos:Concept ;
-    skos:prefLabel "bulk density (derived with ptf)" .
-
-she:CNRatio a skos:Concept ;
-    skos:prefLabel "c:n ratio" .
-
-she:CNRatioBaseSaturation a skos:Concept ;
-    skos:prefLabel "c:n ratio, base saturation" .
-
-she:CationExchangeCapacity a skos:Concept ;
-    skos:prefLabel "cation exchange capacity" .
-
-she:EarthwormsAndCollembola a skos:Concept ;
-    skos:prefLabel "earthworms and collembola" .
-
-she:GHGEmissions a skos:Concept ;
-    skos:prefLabel "ghg emissions" .
-
-she:ManagementTypes a skos:Concept ;
-    skos:prefLabel "management types" .
-
-she:MinorNutrients a skos:Concept ;
-    skos:prefLabel "minor nutrients" .
-
-she:NaturalBackgroundAtLeastAtASubsetOfSamplingPoints a skos:Concept ;
-    skos:prefLabel "natural background (at least at a subset of sampling points)" .
-
-she:OrganicCompoundsSuchAsPersistentOrganicPollutants a skos:Concept ;
-    skos:prefLabel "organic compounds, such as persistent organic pollutants" .
-
-she:PHCationExchangeCapacityBaseSaturation a skos:Concept ;
-    skos:prefLabel "ph, cation exchange capacity, base saturation" .
-
-she:PHClayContentSOC a skos:Concept ;
-    skos:prefLabel "ph, clay content, soc" .
-
-she:ParametersDescribingComplexBiologicalFunctionsEGRespirationNAndCMineralisationMicrobialBiomass a skos:Concept ;
-    skos:prefLabel "parameters describing complex biological functions (e.g. respiration, n and c mineralisation, microbial biomass)" .
-
-she:ParametersTargetingFunctionalDiversityAndDNABasedGeneticDiversity a skos:Concept ;
-    skos:prefLabel "parameters targeting functional diversity and dna-based genetic diversity" .
-
-she:PhysicalParametersMeasured a skos:Concept ;
-    skos:prefLabel "physical parameters (measured)" .
-
-she:RefinedLocalSOCMonitoring a skos:Concept ;
-    skos:prefLabel "refined local soc monitoring" .
-
-she:SOCAndMineralCarbon a skos:Concept ;
-    skos:prefLabel "soc and mineral carbon" .
-
-she:SOCCyclingAtEcosystemLevelInputOutput a skos:Concept ;
-    skos:prefLabel "soc cycling at ecosystem level (input/output)" .
-
-she:SOCFractions a skos:Concept ;
-    skos:prefLabel "soc fractions" .
-
-she:SiteSpecificRiskAssessmentToolsToPredictActualAndFutureEffectsOfSpecificRisksSuchAsFoodQuality a skos:Concept ;
-    skos:prefLabel "site-specific risk assessment tools to predict actual and future effects (of specific risks such as food quality)" .
-
-she:SoilAcidification a skos:Concept ;
-    skos:prefLabel "soil acidification" ;
-    she:hasParameterAtLevelI she:AgriculturalSoils,
-        she:NonAgriculturalSoils ;
-    she:hasParameterAtLevelII she:AsForSoilNutrientLoss ;
-    she:hasParameterAtLevelIII she:AsForSoilNutrientLoss .
-
-she:SoilBiodiversityLoss a skos:Concept ;
-    skos:prefLabel "soil biodiversity loss" ;
-    she:hasParameterAtLevelI she:EarthwormsAndCollembola ;
-    she:hasParameterAtLevelII she:ParametersTargetingFunctionalDiversityAndDNABasedGeneticDiversity ;
-    she:hasParameterAtLevelIII she:ParametersDescribingComplexBiologicalFunctionsEGRespirationNAndCMineralisationMicrobialBiomass .
-
-she:SoilNutrientLoss a skos:Concept ;
-    skos:prefLabel "soil nutrient loss" ;
-    she:hasParameterAtLevelI she:AgriculturalSoils,
-        she:NonAgriculturalSoils ;
-    she:hasParameterAtLevelII she:AgriculturalSoils,
-        she:NonAgriculturalSoils ;
-    she:hasParameterAtLevelIII she:AgriculturalSoils,
-        she:NonAgriculturalSoils .
-
-she:SoilOrganicCarbonLoss a skos:Concept ;
-    skos:prefLabel "soil organic carbon loss" ;
-    she:hasParameterAtLevelI she:BulkDensityDerivedWithPTF,
-        she:CNRatio,
-        she:SOCAndMineralCarbon,
-        she:TextureClassStoneContent,
-        she:TotalOrganicNitrogen ;
-    she:hasParameterAtLevelII she:BioavailabilityOfNutrientsAndPollutants,
-        she:GHGEmissions,
-        she:PhysicalParametersMeasured,
-        she:SOCFractions ;
-    she:hasParameterAtLevelIII she:ManagementTypes,
-        she:RefinedLocalSOCMonitoring,
-        she:SOCCyclingAtEcosystemLevelInputOutput .
-
-she:SoilPollution a skos:Concept ;
-    skos:prefLabel "soil pollution" ;
-    she:hasParameterAtLevelI she:NaturalBackgroundAtLeastAtASubsetOfSamplingPoints,
-        she:OrganicCompoundsSuchAsPersistentOrganicPollutants,
-        she:TotalElementConcentrationsAquaRegiaExtractableFractionOfHeavyMetals ;
-    she:hasParameterAtLevelII she:BalancingInputsOutputsEGModellingToEstimateValidateAccumulation,
-        she:SpecificSoilTestingEGReactiveOrAvailableFractionsPlasticsAntimicrobials ;
-    she:hasParameterAtLevelIII she:SiteSpecificRiskAssessmentToolsToPredictActualAndFutureEffectsOfSpecificRisksSuchAsFoodQuality,
-        she:VerySpecificContaminationProblemsEGRadionuclidesMilitaryContaminationLargeChemicalFacilities .
-
-she:SoilSolutionConcentrations a skos:Concept ;
-    skos:prefLabel "soil solution concentrations" .
+    skos:prefLabel "level iii" ;
+    skos:note "includes parameters from level i and level ii" .
 
 she:SoilThreat a skos:Concept ;
     skos:prefLabel "soil threat" ;
-    she:hasParameterAtLevelII she:AsForLevelIAndAlso ;
-    she:hasParameterAtLevelIII she:AsForLevelsIAndIIAndAlso .
+    skos:narrower she:SoilOrganicCarbonLoss,
+                  she:SoilNutrientLoss,
+                  she:SoilAcidification,
+                  she:SoilPollution,
+                  she:SoilBiodiversityLoss .
 
-she:SpecificSoilTestingEGReactiveOrAvailableFractionsPlasticsAntimicrobials a skos:Concept ;
-    skos:prefLabel "specific soil testing, e.g. reactive or available fractions, plastics, antimicrobials" .
+she:SoilOrganicCarbonLoss a skos:Concept ;
+    skos:prefLabel "soil organic carbon loss" ;
+    she:hasParameterAtLevelI she:SocAndMineralCarbon,
+                              she:TotalOrganicNitrogen,
+                              she:CNRatio,
+                              she:BulkDensity,
+                              she:TextureClass,
+                              she:StoneContent ;
+    she:hasParameterAtLevelII she:SocFractions,
+                               she:BioavailabilityOfNutrientsAndPollutants,
+                               she:GhgEmissions,
+                               she:PhysicalParametersMeasured ;
+    she:hasParameterAtLevelIII she:RefinedLocalSocMonitoring,
+                                she:ManagementTypes,
+                                she:SocCyclingAtEcosystemLevel .
 
-she:TextureClassStoneContent a skos:Concept ;
-    skos:prefLabel "texture class, stone content" .
-
-she:TotalElementConcentrationsAquaRegiaExtractableFractionOfHeavyMetals a skos:Concept ;
-    skos:prefLabel "total element concentrations (aqua regia extractable fraction of heavy metals)" .
-
-she:TotalNMineralN a skos:Concept ;
-    skos:prefLabel "total n, mineral n" .
+she:SocAndMineralCarbon a skos:Concept ;
+    skos:prefLabel "soc and mineral carbon" ;
+    she:hasAbbreviation "SOC" .
 
 she:TotalOrganicNitrogen a skos:Concept ;
     skos:prefLabel "total (organic) nitrogen" .
 
-she:TotalPAvailablePPoxAlFeox a skos:Concept ;
-    skos:prefLabel "total p, available p: pox/al+feox" .
+she:CNRatio a skos:Concept ;
+    skos:prefLabel "c:n ratio" .
 
-she:VerySpecificContaminationProblemsEGRadionuclidesMilitaryContaminationLargeChemicalFacilities a skos:Concept ;
-    skos:prefLabel "very specific contamination problems, e.g. radionuclides, military contamination, large chemical facilities" .
+she:BulkDensity a skos:Concept ;
+    skos:prefLabel "bulk density" ;
+    skos:note "derived with PTF" .
 
-she:AsForSoilNutrientLoss a skos:Concept ;
-    skos:prefLabel "as for soil nutrient loss" .
+she:TextureClass a skos:Concept ;
+    skos:prefLabel "texture class" .
+
+she:StoneContent a skos:Concept ;
+    skos:prefLabel "stone content" .
+
+she:SocFractions a skos:Concept ;
+    skos:prefLabel "soc fractions" .
+
+she:BioavailabilityOfNutrientsAndPollutants a skos:Concept ;
+    skos:prefLabel "bioavailability of nutrients and pollutants" .
+
+she:GhgEmissions a skos:Concept ;
+    skos:prefLabel "ghg emissions" ;
+    she:hasAbbreviation "GHG" .
+
+she:PhysicalParametersMeasured a skos:Concept ;
+    skos:prefLabel "physical parameters (measured)" .
+
+she:RefinedLocalSocMonitoring a skos:Concept ;
+    skos:prefLabel "refined local soc monitoring" .
+
+she:ManagementTypes a skos:Concept ;
+    skos:prefLabel "management types" .
+
+she:SocCyclingAtEcosystemLevel a skos:Concept ;
+    skos:prefLabel "soc cycling at ecosystem level" ;
+    skos:note "input/output" .
+
+she:SoilNutrientLoss a skos:Concept ;
+    skos:prefLabel "soil nutrient loss" ;
+    she:hasParameterAtLevelI she:TotalNitrogen,
+                              she:MineralNitrogen,
+                              she:TotalPhosphorus,
+                              she:AvailablePhosphorus,
+                              she:AvailablePotassium,
+                              she:CNRatio,
+                              she:BaseSaturation ;
+    she:hasParameterAtLevelII she:CationExchangeCapacity,
+                               she:BaseSaturation,
+                               she:SoilSolutionConcentrations ;
+    she:hasParameterAtLevelIII she:MinorNutrients .
+
+she:TotalNitrogen a skos:Concept ;
+    skos:prefLabel "total n" ;
+    she:hasSymbol "Total N" ;
+    she:relevantTo she:AgriculturalSoils .
+
+she:MineralNitrogen a skos:Concept ;
+    skos:prefLabel "mineral n" ;
+    she:hasSymbol "mineral N" ;
+    she:relevantTo she:AgriculturalSoils .
+
+she:TotalPhosphorus a skos:Concept ;
+    skos:prefLabel "total p" ;
+    she:hasSymbol "Total P" ;
+    she:relevantTo she:AgriculturalSoils .
+
+she:AvailablePhosphorus a skos:Concept ;
+    skos:prefLabel "available p" ;
+    she:hasSymbol "available P" ;
+    skos:note "Pox/Al+Feox" ;
+    she:relevantTo she:AgriculturalSoils .
+
+she:AvailablePotassium a skos:Concept ;
+    skos:prefLabel "available k" ;
+    she:hasSymbol "Available K" ;
+    she:relevantTo she:AgriculturalSoils .
+
+she:BaseSaturation a skos:Concept ;
+    skos:prefLabel "base saturation" .
+
+she:CationExchangeCapacity a skos:Concept ;
+    skos:prefLabel "cation exchange capacity" ;
+    she:hasAbbreviation "CEC" .
+
+she:SoilSolutionConcentrations a skos:Concept ;
+    skos:prefLabel "soil solution concentrations" ;
+    she:relevantTo she:NonAgriculturalSoils .
+
+she:MinorNutrients a skos:Concept ;
+    skos:prefLabel "minor nutrients" .
+
+she:SoilAcidification a skos:Concept ;
+    skos:prefLabel "soil acidification" ;
+    she:hasParameterAtLevelI she:PH,
+                              she:ClayContent,
+                              she:SocAndMineralCarbon,
+                              she:CationExchangeCapacity,
+                              she:BaseSaturation ;
+    she:hasParameterAtLevelII she:SoilNutrientLossParameters ;
+    she:hasParameterAtLevelIII she:SoilNutrientLossParameters .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" .
+
+she:ClayContent a skos:Concept ;
+    skos:prefLabel "clay content" .
+
+she:SoilPollution a skos:Concept ;
+    skos:prefLabel "soil pollution" ;
+    she:hasParameterAtLevelI she:TotalElementConcentrations,
+                              she:NaturalBackground,
+                              she:OrganicCompounds ;
+    she:hasParameterAtLevelII she:SpecificSoilTesting,
+                               she:BalancingInputsOutputs ;
+    she:hasParameterAtLevelIII she:VerySpecificContaminationProblems,
+                                she:SiteSpecificRiskAssessmentTools .
+
+she:TotalElementConcentrations a skos:Concept ;
+    skos:prefLabel "total element concentrations" ;
+    skos:note "aqua regia extractable fraction of heavy metals" .
+
+she:NaturalBackground a skos:Concept ;
+    skos:prefLabel "natural background" ;
+    skos:note "at least at a subset of sampling points" .
+
+she:OrganicCompounds a skos:Concept ;
+    skos:prefLabel "organic compounds" ;
+    skos:note "such as persistent organic pollutants" .
+
+she:SpecificSoilTesting a skos:Concept ;
+    skos:prefLabel "specific soil testing" ;
+    skos:note "e.g. reactive or available fractions, plastics, antimicrobials" .
+
+she:BalancingInputsOutputs a skos:Concept ;
+    skos:prefLabel "balancing (inputs-outputs)" ;
+    skos:note "e.g. modelling to estimate/validate accumulation" .
+
+she:VerySpecificContaminationProblems a skos:Concept ;
+    skos:prefLabel "very specific contamination problems" ;
+    skos:note "e.g. radionuclides, military contamination, large chemical facilities" .
+
+she:SiteSpecificRiskAssessmentTools a skos:Concept ;
+    skos:prefLabel "site-specific risk assessment tools" ;
+    skos:note "to predict actual and future effects" .
+
+she:SoilBiodiversityLoss a skos:Concept ;
+    skos:prefLabel "soil biodiversity loss" ;
+    she:hasParameterAtLevelI she:EarthwormsAndCollembola ;
+    she:hasParameterAtLevelII she:FunctionalDiversityParameters ;
+    she:hasParameterAtLevelIII she:ComplexBiologicalFunctionsParameters .
+
+she:EarthwormsAndCollembola a skos:Concept ;
+    skos:prefLabel "earthworms and collembola" .
+
+she:FunctionalDiversityParameters a skos:Concept ;
+    skos:prefLabel "parameters targeting functional diversity and dna-based genetic diversity" .
+
+she:ComplexBiologicalFunctionsParameters a skos:Concept ;
+    skos:prefLabel "parameters describing complex biological functions" ;
+    skos:note "e.g. respiration, n and c mineralisation, microbial biomass" .
 
 she:AgriculturalSoils a skos:Concept ;
-    skos:narrower she:AvailableK,
-        she:CationExchangeCapacity,
-        she:MinorNutrients,
-        she:PHClayContentSOC,
-        she:TotalNMineralN,
-        she:TotalPAvailablePPoxAlFeox ;
-    skos:prefLabel "agricultural soils:" .
+    skos:prefLabel "agricultural soils" .
 
 she:NonAgriculturalSoils a skos:Concept ;
-    skos:narrower she:AsForLevelII,
-        she:CNRatioBaseSaturation,
-        she:PHCationExchangeCapacityBaseSaturation,
-        she:SoilSolutionConcentrations ;
-    skos:prefLabel "non-agricultural soils:" .
-
+    skos:prefLabel "non-agricultural soils" .

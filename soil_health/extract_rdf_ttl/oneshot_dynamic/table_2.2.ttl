@@ -1,0 +1,54 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SomFractionsPoolsInSoils a skos:Concept ;
+    skos:prefLabel "som fractions/pools in soils" ;
+    skos:narrower she:MicrobialBiomassC,
+                  she:ParticulateOrganicMatter,
+                  she:MineralAssociatedOrganicMatter,
+                  she:InertOrganicMatter .
+
+she:MicrobialBiomassC a skos:Concept ;
+    skos:prefLabel "microbial biomass c" ;
+    skos:note "bacteria, fungi" ;
+    she:hasApproximateShare "1-5%" ;
+    she:hasCharacteristic she:Labile,
+                           she:Active .
+
+she:ParticulateOrganicMatter a skos:Concept ;
+    skos:prefLabel "particulate organic matter" ;
+    she:hasAbbreviation "POM" ;
+    skos:definition "It can be further subdivided into freshly added plant and animal residues, usually coarse POM with a low degree of decomposition (e.g. >250µm), and partially decomposed residues, frequently finer sized" ;
+    she:hasApproximateShare "5-25%" ;
+    she:hasCharacteristic she:Labile,
+                           she:Active .
+
+she:MineralAssociatedOrganicMatter a skos:Concept ;
+    skos:prefLabel "mineral-associated organic matter" ;
+    she:hasAbbreviation "MAOM" ;
+    skos:definition "largely consisting of microbial necromass and other adsorbed organic soil constituents" ;
+    she:hasApproximateShare "50-75%" ;
+    she:hasCharacteristic she:Stable ;
+    skos:note "activity level depends on degree of organo-mineral complexation" .
+
+she:InertOrganicMatter a skos:Concept ;
+    skos:prefLabel "inert organic matter" ;
+    skos:altLabel "black carbon" ;
+    she:hasApproximateShare "5-20% or more" ;
+    she:hasCharacteristic she:Constant,
+                           she:Passive .
+
+she:Labile a skos:Concept ;
+    skos:prefLabel "labile" .
+
+she:Active a skos:Concept ;
+    skos:prefLabel "active" .
+
+she:Stable a skos:Concept ;
+    skos:prefLabel "stable" .
+
+she:Constant a skos:Concept ;
+    skos:prefLabel "constant" .
+
+she:Passive a skos:Concept ;
+    skos:prefLabel "passive" .

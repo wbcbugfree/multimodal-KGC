@@ -1,0 +1,115 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:OverviewOfSoilThreatIndicators a skos:Concept ;
+    skos:prefLabel "overview of soil threat indicators investigated in this report" ;
+    skos:narrower she:Acidification,
+                  she:NutrientLoss,
+                  she:SoilOrganicCarbonLoss .
+
+she:SoilOrganicCarbonLoss a skos:Concept ;
+    skos:prefLabel "soil organic carbon loss" ;
+    she:hasAbbreviation "SOC" ;
+    skos:narrower she:FallingBelowOptimalSOCLevel .
+
+she:NutrientLoss a skos:Concept ;
+    skos:prefLabel "nutrient loss" ;
+    skos:narrower she:ExceedanceOfCriticalLevelsOfMineralNitrogen,
+                  she:FallingBelowOfOptimalPhosphorus,
+                  she:NLimitationBasedOnExceedanceOfCNRatio,
+                  she:PLimitationBasedOnExceedanceOfNPRatio .
+
+she:Acidification a skos:Concept ;
+    skos:prefLabel "acidification" ;
+    skos:narrower she:ExceedanceOfCriticalInorganicAlLevels,
+                  she:ExceedanceOfCriticalPHLevels .
+
+she:FallingBelowOptimalSOCLevel a skos:Concept ;
+    skos:prefLabel "falling below optimal soc level" ;
+    she:appliesTo she:Cropland ;
+    she:hasThreshold "Light soils: <1.2% SOC",
+                     "Medium soils: 1.2-1.9% SOC",
+                     "Heavy soils: >1.9% SOC" ;
+    skos:note "SOC: clay ratio (Johannes et al., 2017): optimum SOC content as 10% of the clay content/vulnerability limit" .
+
+she:ExceedanceOfCriticalLevelsOfMineralNitrogen a skos:Concept ;
+    skos:prefLabel "exceedance of critical levels of mineral nitrogen" ;
+    she:appliesTo she:Agriculture ;
+    she:hasThreshold "NH3 in air: 1-3mg NH3/m3",
+                     "NO3 in groundwater: 50mg NO3/l",
+                     "N in surface water: 1.0-2.5mg N/l" ;
+    skos:note "Mineral N: sum of available NH4 and NO3" .
+
+she:NLimitationBasedOnExceedanceOfCNRatio a skos:Concept ;
+    skos:prefLabel "n limitation based on exceedance of c:n ratio" ;
+    she:appliesTo she:ForestLand ;
+    she:hasThreshold "C:N ratio 20-25" ;
+    skos:note "Forest floor organic layer" .
+
+she:FallingBelowOfOptimalPhosphorus a skos:Concept ;
+    skos:prefLabel "falling below of optimal phosphorus" ;
+    she:investigatedAs [
+        she:appliesTo she:ForestLand ;
+        she:hasThreshold "Leakage from forests: 1mg N/l"
+    ], [
+        she:appliesTo she:Agriculture ;
+        she:hasThreshold "P concentration: 25-35mg/kg (optimal P fertility class)" ;
+        skos:note "Extractable P concentration < optimum (value range refers to Mehlich 3-ICP; also available P-Bray P1 and Olsen P)"
+    ] .
+
+she:PLimitationBasedOnExceedanceOfNPRatio a skos:Concept ;
+    skos:prefLabel "p limitation based on exceedance of n:p ratio" ;
+    she:investigatedAs [
+        she:appliesTo she:Agriculture
+    ], [
+        she:appliesTo she:ForestLand ;
+        she:hasThreshold "N:P ratio >18 (coniferous forests)",
+                         "N:P ratio >25 (deciduous forests)" ;
+        skos:note "Forest floor organic layer"
+    ] .
+
+she:ExceedanceOfCriticalPHLevels a skos:Concept ;
+    skos:prefLabel "exceedance of critical ph levels" ;
+    she:appliesTo she:Agriculture ;
+    she:hasThreshold "1. pH<4.5-4.7 (critical)",
+                     "2. pH<5.0-5.5 (avoid)" ;
+    skos:note "1. Risk of Al toxicity",
+              "2. Limited availability of Ca, Mg, K and P" .
+
+she:ExceedanceOfCriticalInorganicAlLevels a skos:Concept ;
+    skos:prefLabel "exceedance of critical inorganic al levels" ;
+    she:appliesTo she:ForestLand ;
+    she:hasThreshold "Base cation (Bc):Al ratio = 1 (0.5-2.0)" ;
+    skos:note "Base cations are Ca2+, Mg2+ and K+" .
+
+she:Cropland a skos:Concept ;
+    skos:prefLabel "cropland" .
+
+she:Agriculture a skos:Concept ;
+    skos:prefLabel "agriculture" .
+
+she:ForestLand a skos:Concept ;
+    skos:prefLabel "forest land" .
+
+she:Nitrogen a skos:Concept ;
+    skos:prefLabel "nitrogen" ;
+    she:hasSymbol "N" .
+
+she:Phosphorus a skos:Concept ;
+    skos:prefLabel "phosphorus" ;
+    she:hasSymbol "P" .
+
+she:Aluminium a skos:Concept ;
+    skos:prefLabel "aluminium" ;
+    she:hasSymbol "Al" .
+
+she:Carbon a skos:Concept ;
+    skos:prefLabel "carbon" ;
+    she:hasSymbol "C" .
+
+she:BaseCation a skos:Concept ;
+    skos:prefLabel "base cation" ;
+    she:hasAbbreviation "Bc" .
+
+she:PH a skos:Concept ;
+    skos:prefLabel "ph" .

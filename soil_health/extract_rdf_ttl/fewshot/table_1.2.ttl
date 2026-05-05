@@ -2,39 +2,45 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 she:ImportantSoilFunctions a skos:Concept ;
-    skos:narrower she:CarbonStorage,
-        she:HabitatForBiologicalActivity,
-        she:NutrientCycling,
-        she:Production,
-        she:WaterStorageAndQuality ;
-    skos:prefLabel "important soil functions" .
-
-she:CarbonStorage a skos:Concept ;
-    skos:definition "capacity to store and stabilise soc" ;
-    skos:prefLabel "carbon storage" .
-
-she:HabitatForBiologicalActivity a skos:Concept ;
-    skos:definition "provision of a species (gene) pool that can buffer ecosystem functions against species extinction (assumption: loss of soil function is more likely with low species diversity in each functional group)" ;
-    skos:prefLabel "habitat for biological activity" .
-
-she:NutrientBufferingCapacity a skos:Concept ;
-    skos:definition "the capacity to store mobile nutrients within the root zone to avoid losses by leaching and gaseous emissions" ;
-    skos:prefLabel "nutrient buffering capacity" .
-
-she:NutrientCycling a skos:Concept ;
-    skos:narrower she:NutrientBufferingCapacity,
-        she:NutrientMobilisationCapacity ;
-    skos:prefLabel "nutrient cycling" .
-
-she:NutrientMobilisationCapacity a skos:Concept ;
-    skos:definition "capacity to provide nutrients from mineral and organic soil resources in available form" ;
-    skos:prefLabel "nutrient mobilisation capacity" .
+    skos:prefLabel "important soil functions" ;
+    skos:narrower she:Production,
+                  she:WaterStorageAndQuality,
+                  she:CarbonStorage,
+                  she:NutrientCycling,
+                  she:HabitatForBiologicalActivity .
 
 she:Production a skos:Concept ;
-    skos:definition "capacity to produce biomass" ;
-    skos:prefLabel "production" .
+    skos:prefLabel "production" ;
+    skos:definition "Capacity to produce biomass" ;
+    skos:broader she:ImportantSoilFunctions .
 
 she:WaterStorageAndQuality a skos:Concept ;
-    skos:definition "capacity to store precipitation water and filter for soil pollutants" ;
-    skos:prefLabel "water storage and quality" .
+    skos:prefLabel "water storage and quality" ;
+    skos:definition "Capacity to store precipitation water and filter for soil pollutants" ;
+    skos:broader she:ImportantSoilFunctions .
 
+she:CarbonStorage a skos:Concept ;
+    skos:prefLabel "carbon storage" ;
+    skos:definition "Capacity to store and stabilise SOC" ;
+    skos:broader she:ImportantSoilFunctions .
+
+she:NutrientCycling a skos:Concept ;
+    skos:prefLabel "nutrient cycling" ;
+    skos:broader she:ImportantSoilFunctions ;
+    skos:narrower she:NutrientMobilisationCapacity,
+                  she:NutrientBufferingCapacity .
+
+she:NutrientMobilisationCapacity a skos:Concept ;
+    skos:prefLabel "nutrient mobilisation capacity" ;
+    skos:definition "Capacity to provide nutrients from mineral and organic soil resources in available form" ;
+    skos:broader she:NutrientCycling .
+
+she:NutrientBufferingCapacity a skos:Concept ;
+    skos:prefLabel "nutrient buffering capacity" ;
+    skos:definition "The capacity to store mobile nutrients within the root zone to avoid losses by leaching and gaseous emissions" ;
+    skos:broader she:NutrientCycling .
+
+she:HabitatForBiologicalActivity a skos:Concept ;
+    skos:prefLabel "habitat for biological activity" ;
+    skos:definition "Provision of a species (gene) pool that can buffer ecosystem functions against species extinction (assumption: loss of soil function is more likely with low species diversity in each functional group)" ;
+    skos:broader she:ImportantSoilFunctions .

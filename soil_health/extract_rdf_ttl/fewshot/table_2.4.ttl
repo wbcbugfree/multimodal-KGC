@@ -1,0 +1,87 @@
+@prefix she: <https://soilwise-he.github.io/soil-health#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+she:SoilOrganicCarbonTargetValues a skos:Concept ;
+    skos:prefLabel "soil organic carbon target values" ;
+    she:hasAbbreviation "SOC" ;
+    skos:note "Mean SOC target values (% soil mass) for mineral cropland soils based on extensive national soil data sets." ;
+    she:hasUnit "% soil mass" ;
+    she:isInfluencedBy she:SoilTextureClass, 
+                       she:ManagementIntensity, 
+                       she:ClimaticWaterBalanceDuringSummer .
+
+she:SoilTextureClass a skos:Concept ;
+    skos:prefLabel "soil texture class" ;
+    skos:narrower she:Sand, 
+                  she:Silt, 
+                  she:LoamAndClay .
+
+she:Sand a skos:Concept ;
+    skos:prefLabel "sand" ;
+    skos:narrower she:MaxBoth, 
+                  she:OrganicAndMineral, 
+                  she:Organic, 
+                  she:Mineral, 
+                  she:Null .
+
+she:Silt a skos:Concept ;
+    skos:prefLabel "silt" ;
+    skos:narrower she:MaxBoth, 
+                  she:OrganicAndMineral, 
+                  she:Organic, 
+                  she:Mineral, 
+                  she:Null .
+
+she:LoamAndClay a skos:Concept ;
+    skos:prefLabel "loam and clay" ;
+    skos:narrower she:MaxBoth, 
+                  she:OrganicAndMineral, 
+                  she:Organic, 
+                  she:Mineral, 
+                  she:Null .
+
+she:ManagementIntensity a skos:Concept ;
+    skos:prefLabel "management intensity (fertiliser)" ;
+    skos:narrower she:MaxBoth, 
+                  she:OrganicAndMineral, 
+                  she:Organic, 
+                  she:Mineral, 
+                  she:Null .
+
+she:MaxBoth a skos:Concept ;
+    skos:prefLabel "max. both" ;
+    skos:note "Maximal application of organic and mineral fertiliser." .
+
+she:OrganicAndMineral a skos:Concept ;
+    skos:prefLabel "organic and mineral" .
+
+she:Organic a skos:Concept ;
+    skos:prefLabel "organic" .
+
+she:Mineral a skos:Concept ;
+    skos:prefLabel "mineral" .
+
+she:Null a skos:Concept ;
+    skos:prefLabel "null" ;
+    skos:note "no fertiliser applied" .
+
+she:ClimaticWaterBalanceDuringSummer a skos:Concept ;
+    skos:prefLabel "climatic water balance during summer" ;
+    she:hasUnit "mm" ;
+    skos:note "Negative water balance: potential evapotranspiration more than precipitation during summer. Positive values indicate climate-induced surplus in the water budget from April to September." ;
+    skos:narrower she:LessThanMinus100, 
+                  she:Minus100To0, 
+                  she:MoreThan0 .
+
+she:LessThanMinus100 a skos:Concept ;
+    skos:prefLabel "less than -100" .
+
+she:Minus100To0 a skos:Concept ;
+    skos:prefLabel "-100 to 0" .
+
+she:MoreThan0 a skos:Concept ;
+    skos:prefLabel "more than 0" .
+
+she:MineralCroplandSoils a skos:Concept ;
+    skos:prefLabel "mineral cropland soils" ;
+    skos:related she:SoilOrganicCarbonTargetValues .
