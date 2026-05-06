@@ -348,7 +348,7 @@ Few-shot prompting provides all curated examples for the dataset. VisText uses o
 
 All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on either labelled dataset. A generated output is considered eligible for evaluation only if it can be parsed as RDF/Turtle.
 
-\section{Evaluation on Labelled Datasets}\label{sec:evaluation}
+\section{Evaluation Results}\label{sec:evaluation}
 
 \subsection{Traditional Graph Metrics for Labelled Datasets}\label{subsec:traditional_graph_metrics}
 
@@ -506,7 +506,7 @@ Few-shot & 0.8390 & 0.8597 & 0.8493 & 0.8600 & 0.0799 & 0.9682 & 0.9749 & 0.9847
 
 \subsubsection{LLM-as-a-Judge Validation}
 
-Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the Diagram2Graph LLM-as-a-judge validation results. The validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. Direct scoring compares judge scores with traditional metric scores on this sampled set. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B. In direct scoring, Spearman's rank correlations were moderate: 0.4975 between the overall judge score and triple-match F1, 0.4842 between the mean criterion score and triple-match F1, 0.5319 between the overall judge score and inverse normalized GED, and 0.5223 between the mean criterion score and inverse normalized GED.
+Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the Diagram2Graph LLM-as-a-judge validation results. The validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. Direct scoring compares judge scores with traditional metric scores on this sampled set. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B.
 
 \begin{table}[ht]
 \centering
