@@ -506,20 +506,23 @@ Few-shot & 0.8390 & 0.8597 & 0.8493 & 0.8600 & 0.0799 & 0.9682 & 0.9749 & 0.9847
 
 \subsubsection{LLM-as-a-Judge Validation}
 
-Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the Diagram2Graph LLM-as-a-judge validation results. The validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. Direct scoring compares judge scores with traditional metric scores on this sampled set. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B.
+Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the LLM-as-a-judge validation results on the two labelled datasets. For Diagram2Graph, the validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. For VisText, the same selection procedure identified dynamic one-shot and static one-shot as the strategy pair for validation, resulting in 268 chart images. Direct scoring compares judge scores with traditional metric scores on the selected samples. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B.
 
 \begin{table}[ht]
 \centering
 \small
-\begin{tabular}{lcccc}
+\begin{tabular}{llcccc}
 \toprule
-\textbf{Strategy} & \textbf{Overall} & \textbf{Criteria} & \textbf{F1} & \textbf{nGED} \\
+\textbf{Dataset} & \textbf{Strategy} & \textbf{Overall} & \textbf{Criteria} & \textbf{F1} & \textbf{nGED} \\
 \midrule
-Zero-shot & \textbf{4.8158} & \textbf{4.8854} & \textbf{0.8509} & \textbf{0.0776} \\
-Few-shot & 3.6901 & 3.9234 & 0.7718 & 0.1393 \\
+Diagram2Graph & Zero-shot & \textbf{4.8158} & \textbf{4.8854} & \textbf{0.8509} & \textbf{0.0776} \\
+Diagram2Graph & Few-shot & 3.6901 & 3.9234 & 0.7718 & 0.1393 \\
+\addlinespace
+VisText & Dynamic one-shot & \textbf{3.7836} & \textbf{4.0216} & \textbf{0.7126} & \textbf{0.0957} \\
+VisText & Static one-shot & 3.7799 & 4.0060 & 0.6973 & 0.1059 \\
 \bottomrule
 \end{tabular}
-\caption{Direct LLM-as-a-judge validation on the selected Diagram2Graph diagrams. Overall denotes the holistic judge score; Criteria denotes the mean criterion score; F1 denotes triple-match F1; nGED denotes normalized GED.}
+\caption{Direct LLM-as-a-judge validation on selected labelled-dataset samples. Overall denotes the holistic judge score; Criteria denotes the mean criterion score; F1 denotes triple-match F1; nGED denotes normalized GED.}
 \label{tab:judge_direct_validation}
 \end{table}
 
@@ -531,11 +534,14 @@ Few-shot & 3.6901 & 3.9234 & 0.7718 & 0.1393 \\
 \textbf{Dataset} & \textbf{Compared strategies} & \textbf{Agreement} & \textbf{N} \\
 \midrule
 Diagram2Graph & Few-shot vs zero-shot & 0.4737 & 57 \\
+VisText & Dynamic one-shot vs static one-shot & 0.4963 & 268 \\
 \bottomrule
 \end{tabular}
 \caption{Pairwise LLM-as-a-judge validation against metric-derived preferences.}
 \label{tab:judge_pairwise_validation}
 \end{table}
+
+The Diagram2Graph direct validation provides the clearer positive case for judge validation: direct scores assign substantially higher quality to zero-shot outputs, matching the traditional metrics, although pairwise agreement remains modest at 0.4737 on the selected difficult diagrams. In contrast, the VisText judge scores and pairwise preferences show weak alignment with the content-only graph metrics. The selected VisText strategies are very close in aggregate metric performance, and the judge's pairwise agreement with metric-derived preferences is 0.4963, close to a balanced split. This indicates that the judge framework is more informative when the compared outputs differ visibly in graph quality, and less reliable for discriminating very small performance differences between strong prompting strategies.
 
 \section{Discussion}\label{sec:discussion}
 
@@ -615,11 +621,13 @@ The table also shows that all Gemini prompting strategies outperform the LoRA-fi
 
 \section{Application: Soil-Health Image-to-RDF Extraction}\label{sec:soil_use_case}
 
-% The Soil-Health collection is used as an application case for the validated LLM-as-a-judge framework. It contains 15 figure images and 56 table images from a domain-specific scientific context, but it does not provide a complete set of reference RDF graphs. This setting reflects the practical motivation for judge-based evaluation: many scientific corpora contain visually encoded knowledge but no gold knowledge graph annotations.
+The Soil-Health collection is used as an application case for image-to-RDF extraction on an unlabelled scientific corpus. The source material is the European Environment Agency report \textit{Soil monitoring in Europe: Indicators and thresholds for soil health assessments}, which summarizes indicators, threshold values, monitoring concepts, and assessment criteria for soil health in Europe \citep{eea2023soilmonitoring}. The report is also a central source for our previous Soil Health Knowledge Graph, which was constructed as an ontology-compliant KG with LLM support \citep{wang2025makesoilhealthy}. That first version focused mainly on textual content from the report and related sources, using a SKOS-based soil-health ontology.
 
-% The target output for Soil-Health is an RDF/Turtle graph using a soil-health namespace together with SKOS concepts. The model is asked to extract visible concepts, definitions, symbols, abbreviations, hierarchical relations, and explicitly indicated associations. For table images, the target includes row headers, column headers, grouped headers, legend labels, and semantically meaningful cell values. For figure images, the target includes boxes, headings, diagram regions, lists, arrows, captions, legends, and notes when they carry semantic content.
+The application considered here addresses a limitation of text-only KG construction. In the soil monitoring report, several important forms of knowledge are not fully expressed in the surrounding prose. Complete indicator lists, assessment thresholds, critical ranges, tabulated criteria, and diagrammatic summaries are often presented as figures or tables. If these visual artifacts are omitted during document preprocessing, the resulting KG can miss information that is directly relevant to soil-health assessment. The present application therefore evaluates whether the proposed image-to-RDF workflow can provide candidate RDF graphs that may support a future visually enriched version of the Soil Health Knowledge Graph.
 
-% Because no complete gold graph is available, Soil-Health is evaluated only after the LLM-as-a-judge framework has been validated on VisText and Diagram2Graph. The same prompting regimes are considered: zero-shot, static one-shot, dynamic one-shot, and few-shot. In this dataset, dynamic one-shot prompting first classifies the image as a figure or table and then selects the corresponding in-context example. Table~\ref{tab:soil_judge_results} reports the application results.
+The dataset contains 71 images from the report, including 15 figures and 56 tables. The target output is an RDF/Turtle graph using the same SKOS-based ontology as the Soil Health Knowledge Graph. For tables, the intended graph represents headers, grouped headers, row labels, cell values, legends, and semantically meaningful notes. For figures, it represents visible concepts, headings, diagram regions, arrows, captions, legends, and explicitly indicated associations. Since no complete gold RDF graphs are available for this collection, we apply the LLM-as-a-judge framework after validating it on the two labelled datasets. The same prompting regimes are considered as in the preceding experiments: zero-shot, static one-shot, dynamic one-shot, and few-shot. In the dynamic one-shot setting, the model first classifies the input image as a figure or table and then uses the corresponding in-context example. The figure and table images used as in-context examples are excluded from the reported application results.
+
+Table~\ref{tab:soil_judge_results} reports direct judge scores for the four prompting strategies. The scores are high across all strategies, with mean overall scores between 4.7391 and 4.8261 on the 1-to-5 scale. Static one-shot prompting obtains the highest overall score and the highest scores for relevance, factuality, informativeness, and specificity. Dynamic one-shot prompting obtains the highest coherence score. The differences among strategies are small, indicating that all prompting regimes produce outputs judged to be broadly faithful and useful for this application. Together with the labelled-dataset results, this pattern further supports the observation that, for frontier multimodal models operating with explicit schema guidance, the marginal benefit of additional prompt-engineering variants can be limited.
 
 \begin{table}[ht]
 \centering
@@ -629,13 +637,13 @@ The table also shows that all Gemini prompting strategies outperform the LoRA-fi
 \toprule
 \textbf{Strategy} & \textbf{Rel.} & \textbf{Fact.} & \textbf{Info.} & \textbf{Coh.} & \textbf{Spec.} & \textbf{Overall} \\
 \midrule
-Zero-shot & 4.9577 & 4.7746 & 4.7606 & 4.8310 & 4.8028 & 4.7887 \\
-Static one-shot & \textbf{5.0000} & \textbf{4.8873} & \textbf{4.8310} & 4.9014 & \textbf{4.8732} & \textbf{4.8310} \\
-Dynamic one-shot & 4.9859 & 4.8310 & 4.8028 & \textbf{4.9155} & 4.8169 & 4.7606 \\
-Few-shot & 4.9437 & 4.8169 & 4.7324 & 4.8592 & 4.8451 & 4.7465 \\
+Zero-shot & 4.9565 & 4.7826 & 4.7536 & 4.8551 & 4.8116 & 4.7971 \\
+Static one-shot & \textbf{5.0000} & \textbf{4.8841} & \textbf{4.8261} & 4.8986 & \textbf{4.8696} & \textbf{4.8261} \\
+Dynamic one-shot & 4.9855 & 4.8261 & 4.7971 & \textbf{4.9130} & 4.8116 & 4.7536 \\
+Few-shot & 4.9420 & 4.8116 & 4.7246 & 4.8551 & 4.8406 & 4.7391 \\
 \bottomrule
 \end{tabular}
-\caption{Soil-Health LLM-as-a-judge direct scoring results over 71 images per prompting strategy. Rel., Fact., Info., Coh., and Spec. denote relevance, factuality, informativeness, coherence, and specificity; scores use a 1-to-5 rubric.}
+\caption{Soil-Health LLM-as-a-judge direct scoring results over 69 images per prompting strategy, excluding the two in-context example images. Rel., Fact., Info., Coh., and Spec. denote relevance, factuality, informativeness, coherence, and specificity; scores use a 1-to-5 rubric.}
 \label{tab:soil_judge_results}
 \end{table}
 
@@ -649,17 +657,19 @@ To further compare the two strategies with the largest direct-score contrast, th
 \toprule
 \textbf{Judgment} & \textbf{Few-shot} & \textbf{Static one-shot} & \textbf{Tie} \\
 \midrule
-Overall winner & 35 & 34 & 2 \\
-Relevance & 31 & 33 & 7 \\
-Factuality & 23 & 27 & 21 \\
-Informativeness & 34 & 34 & 3 \\
-Coherence & 25 & 38 & 8 \\
-Specificity & 37 & 31 & 3 \\
+Overall winner & 34 & 33 & 2 \\
+Relevance & 30 & 32 & 7 \\
+Factuality & 22 & 27 & 20 \\
+Informativeness & 33 & 33 & 3 \\
+Coherence & 24 & 38 & 7 \\
+Specificity & 36 & 30 & 3 \\
 \bottomrule
 \end{tabular}
-\caption{Soil-Health pairwise LLM-as-a-judge preferences between static one-shot and few-shot prompting over 71 images. Values are counts of images for which each option was preferred.}
+\caption{Soil-Health pairwise LLM-as-a-judge preferences between static one-shot and few-shot prompting over 69 images, excluding the two in-context example images. Values are counts of images for which each option was preferred.}
 \label{tab:soil_pairwise_judge_results}
 \end{table}
+
+The pairwise results refine the direct-score interpretation. Although static one-shot receives the highest mean direct score, the image-level pairwise comparison is nearly evenly split: few-shot is preferred for 34 images, static one-shot for 33 images, and 2 images are judged as ties. Criterion-level preferences also differ by dimension. Static one-shot is preferred more often for factuality and coherence, whereas few-shot is preferred more often for specificity. This pattern indicates that prompt examples affect different aspects of the generated graphs, but that no strategy dominates uniformly on the unlabelled Soil-Health collection. It also reinforces the broader experimental finding that prompt-strategy differences are modest for the frontier multimodal model used in this study. For KG integration, these outputs should therefore be treated as high-quality candidate graphs rather than final curated triples. The practical implication is that image-to-RDF extraction can extend the text-derived Soil Health KG with visually encoded indicator and threshold information, while domain review remains necessary before publication in a production KG.
 
 \section{Conclusion}\label{sec:conclusion}
 
