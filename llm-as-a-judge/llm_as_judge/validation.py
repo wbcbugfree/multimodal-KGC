@@ -354,150 +354,48 @@ def _score(record: Mapping[str, Any], key: str) -> float | None:
     return None
 
 
-def _classify_direct_alignment(value: float | None) -> str:
-    if value is None:
-        return "inconclusive"
-    if value >= 0.7:
-        return "strong"
-    if value >= 0.4:
-        return "moderate"
-    if value >= 0.2:
-        return "weak"
-    return "poor"
-
-
-def _classify_pairwise_alignment(value: float | None) -> str:
-    if value is None:
-        return "inconclusive"
-    if value >= 0.8:
-        return "strong"
-    if value >= 0.6:
-        return "moderate"
-    if value >= 0.5:
-        return "weak"
-    return "poor"
-
-
 def summarize_direct_alignment(validation: Mapping[str, Any]) -> dict[str, Any]:
     spearman = validation.get("spearman", {})
     if not isinstance(spearman, Mapping):
         spearman = {}
     values = [float(value) for value in spearman.values() if isinstance(value, int | float)]
     mean_value = _mean(values)
-    strength = _classify_direct_alignment(mean_value)
-    if strength == "strong":
-        conclusion = "Direct-judge scores align strongly with the traditional metrics."
-    elif strength == "moderate":
-        conclusion = "Direct-judge scores align moderately with the traditional metrics."
-    elif strength == "weak":
-        conclusion = "Direct-judge scores show only weak alignment with the traditional metrics."
-    elif strength == "poor":
-        conclusion = "Direct-judge scores do not align well with the traditional metrics."
-    else:
-        conclusion = "Direct-judge alignment is inconclusive because the available statistics are insufficient."
     return {
         "mode": "direct",
         "matched_items": validation.get("matched_items"),
         "mean_spearman": mean_value,
-        "alignment_strength": strength,
-        "alignment_conclusion": conclusion,
     }
 
 
 def summarize_pairwise_alignment(validation: Mapping[str, Any]) -> dict[str, Any]:
     agreement_rate = validation.get("agreement_rate")
     agreement_value = float(agreement_rate) if isinstance(agreement_rate, int | float) else None
-    strength = _classify_pairwise_alignment(agreement_value)
-    if strength == "strong":
-        conclusion = "Pairwise judge preferences align strongly with the traditional metrics."
-    elif strength == "moderate":
-        conclusion = "Pairwise judge preferences align moderately with the traditional metrics."
-    elif strength == "weak":
-        conclusion = "Pairwise judge preferences show only weak alignment with the traditional metrics."
-    elif strength == "poor":
-        conclusion = "Pairwise judge preferences do not align well with the traditional metrics."
-    else:
-        conclusion = "Pairwise alignment is inconclusive because there are no comparable items."
     return {
         "mode": "pairwise",
         "comparable_items": validation.get("comparable_items"),
         "agreement_rate": agreement_value,
-        "alignment_strength": strength,
-        "alignment_conclusion": conclusion,
     }
 
 
 def summarize_direct_gold_preference(validation: Mapping[str, Any]) -> dict[str, Any]:
     rate = validation.get("overall_gold_not_lower_rate")
     rate_value = float(rate) if isinstance(rate, int | float) else None
-    strength = _classify_pairwise_alignment(rate_value)
-    if strength == "strong":
-        conclusion = "Direct-judge scores usually assign the ground-truth RDF graph a score at least as high as the generated RDF graph."
-    elif strength == "moderate":
-        conclusion = "Direct-judge scores moderately prefer the ground-truth RDF graph over the generated RDF graph."
-    elif strength == "weak":
-        conclusion = "Direct-judge scores show only weak preference for the ground-truth RDF graph."
-    elif strength == "poor":
-        conclusion = "Direct-judge scores do not reliably prefer the ground-truth RDF graph."
-    else:
-        conclusion = "Direct gold-vs-generated validation is inconclusive because no comparable items are available."
     return {
         "mode": "direct",
         "comparison_type": "gold_vs_generated",
         "comparable_items": validation.get("comparable_items"),
         "gold_not_lower_rate": rate_value,
-        "alignment_strength": strength,
-        "alignment_conclusion": conclusion,
     }
 
 
 def summarize_pairwise_gold_preference(validation: Mapping[str, Any]) -> dict[str, Any]:
     rate = validation.get("gold_win_or_tie_rate")
     rate_value = float(rate) if isinstance(rate, int | float) else None
-    strength = _classify_pairwise_alignment(rate_value)
-    if strength == "strong":
-        conclusion = "Pairwise judge preferences usually select the ground-truth RDF graph or mark it as tied."
-    elif strength == "moderate":
-        conclusion = "Pairwise judge preferences moderately favor the ground-truth RDF graph."
-    elif strength == "weak":
-        conclusion = "Pairwise judge preferences show only weak preference for the ground-truth RDF graph."
-    elif strength == "poor":
-        conclusion = "Pairwise judge preferences do not reliably favor the ground-truth RDF graph."
-    else:
-        conclusion = "Pairwise gold-vs-generated validation is inconclusive because no comparable items are available."
     return {
         "mode": "pairwise",
         "comparison_type": "gold_vs_generated",
         "comparable_items": validation.get("comparable_items"),
         "gold_win_or_tie_rate": rate_value,
-        "alignment_strength": strength,
-        "alignment_conclusion": conclusion,
-    }
-
-
-def summarize_overall_alignment(mode_summaries: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
-    strength_rank = {"poor": 0, "weak": 1, "moderate": 2, "strong": 3}
-    strengths = [
-        str(summary.get("alignment_strength"))
-        for summary in mode_summaries.values()
-        if isinstance(summary, Mapping) and str(summary.get("alignment_strength")) in strength_rank
-    ]
-    if not strengths:
-        return {
-            "alignment_strength": "inconclusive",
-            "alignment_conclusion": "Overall judge alignment is inconclusive because no comparable validation statistics are available.",
-        }
-
-    min_strength = min(strengths, key=lambda value: strength_rank[value])
-    if all(strength_rank[value] >= strength_rank["moderate"] for value in strengths):
-        conclusion = "The LLM judge aligns well with the traditional metrics on the selected validation setting."
-    elif any(strength_rank[value] >= strength_rank["moderate"] for value in strengths):
-        conclusion = "The LLM judge shows partial alignment with the traditional metrics, but the evidence is mixed across validation modes."
-    else:
-        conclusion = "The LLM judge does not align well with the traditional metrics on the selected validation setting."
-    return {
-        "alignment_strength": min_strength,
-        "alignment_conclusion": conclusion,
     }
 
 

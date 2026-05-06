@@ -21,12 +21,6 @@ from .datasets import (
     strategy_dirs,
 )
 from .judge_core import JudgeRunner, _include_pair
-from .openai_batch import (
-    DEFAULT_BATCH_COMPLETION_WINDOW,
-    DEFAULT_BATCH_MAX_FILE_MB,
-    OpenAIBatchJudgeRunner,
-    build_batch_jobs,
-)
 from .openai_provider import DEFAULT_OPENAI_JUDGE_MODEL, OpenAIJudgeProvider
 from .validation import (
     ContentOnlyMetrics,
@@ -38,7 +32,6 @@ from .validation import (
     summarize_direct_gold_preference,
     summarize_direct_alignment,
     summarize_pairwise_gold_preference,
-    summarize_overall_alignment,
     summarize_pairwise_alignment,
     traditional_metric_snapshot,
     validate_direct_gold_preference,
@@ -115,29 +108,6 @@ def build_parser(*, dataset: str, description: str) -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--output-dir", type=Path, default=result_path(dataset))
     parser.add_argument("--metrics-path", type=Path, default=DEFAULT_METRICS_PATHS.get(dataset))
-    parser.add_argument(
-        "--batch-action",
-        choices=["submit", "status", "collect", "cancel"],
-        default=None,
-        help="Use OpenAI Batch API instead of immediate synchronous judge calls.",
-    )
-    parser.add_argument(
-        "--batch-manifest",
-        type=Path,
-        default=None,
-        help="Path to the OpenAI Batch manifest. Defaults to <output-dir>/openai_batch_manifest.json.",
-    )
-    parser.add_argument(
-        "--batch-completion-window",
-        default=DEFAULT_BATCH_COMPLETION_WINDOW,
-        help="OpenAI Batch completion window. OpenAI currently supports 24h.",
-    )
-    parser.add_argument(
-        "--batch-max-file-mb",
-        type=float,
-        default=DEFAULT_BATCH_MAX_FILE_MB,
-        help="Maximum JSONL size per uploaded batch input file. Large jobs are split into multiple batches.",
-    )
     return parser
 
 
@@ -152,10 +122,6 @@ def _provider(args: argparse.Namespace) -> OpenAIJudgeProvider:
     if args.judge_provider == "openai":
         return OpenAIJudgeProvider(model=args.judge_model)
     raise ValueError(f"Unsupported judge provider: {args.judge_provider}")
-
-
-def _batch_manifest_path(args: argparse.Namespace) -> Path:
-    return args.batch_manifest or (args.output_dir / "openai_batch_manifest.json")
 
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -423,7 +389,6 @@ def _build_validation_report(
         if pairwise_report is not None:
             validation[pairwise_key] = compare_pairwise_to_metrics(pairwise_report, metrics)
             validation_summary["pairwise"] = summarize_pairwise_alignment(validation[pairwise_key])
-    validation_summary["overall"] = summarize_overall_alignment(validation_summary)
     validation["validation_summary"] = validation_summary
     return validation
 
@@ -439,8 +404,6 @@ def run_dataset_cli(
     args = parser.parse_args(argv)
     if args.parallel_workers <= 0:
         parser.error("--parallel-workers must be greater than 0")
-    if args.batch_max_file_mb <= 0:
-        parser.error("--batch-max-file-mb must be greater than 0")
     if args.top_margin_count <= 0:
         parser.error("--top-margin-count must be greater than 0")
     if args.top_margin_threshold is not None and args.top_margin_threshold < 0:
@@ -453,24 +416,10 @@ def run_dataset_cli(
     should_validate = validate_with_vistext_metrics or validate_with_traditional_metrics
     needs_metrics_for_ascending_sample = should_validate and args.validation_design == "gold_vs_generated" and args.sample_mode == "ascend"
     metrics_required = should_validate and (
-        (
-            args.validation_design == "strategy_margin_top_n"
-            and args.batch_action in {None, "submit", "collect"}
-        )
-        or (
-            args.validation_design == "strategy_gap"
-            and (
-                args.batch_action is None
-                or args.batch_action == "collect"
-                or (args.batch_action == "submit" and args.strategy_selection == "widest_pair")
-            )
-        )
+        args.validation_design in {"strategy_margin_top_n", "strategy_gap"}
         or needs_metrics_for_ascending_sample
     )
-    metrics_optional = should_validate and args.validation_design == "gold_vs_generated" and (
-        args.batch_action is None
-        or args.batch_action == "collect"
-    )
+    metrics_optional = should_validate and args.validation_design == "gold_vs_generated"
     if metrics_required and args.metrics_path is None:
         raise ValueError(f"No traditional metrics path is configured for dataset: {dataset}")
     if metrics_required and not args.metrics_path.exists():
@@ -528,8 +477,8 @@ def run_dataset_cli(
                 "validation_design": args.validation_design,
                 "strategy_selection": selection,
                 "validation_summary": {
-                    "alignment_strength": "skipped",
-                    "alignment_conclusion": reason,
+                    "status": "skipped",
+                    "reason": reason,
                 },
             }
             _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
@@ -561,8 +510,8 @@ def run_dataset_cli(
                 "generated_at_utc": _utc_now(),
                 "strategy_selection": selection,
                 "validation_summary": {
-                    "alignment_strength": "skipped",
-                    "alignment_conclusion": selection["reason"],
+                    "status": "skipped",
+                    "reason": selection["reason"],
                 },
             }
             _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
@@ -597,8 +546,8 @@ def run_dataset_cli(
                 "validation_design": args.validation_design,
                 "strategy_selection": selection,
                 "validation_summary": {
-                    "alignment_strength": "skipped",
-                    "alignment_conclusion": reason,
+                    "status": "skipped",
+                    "reason": reason,
                 },
             }
             _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
@@ -621,17 +570,6 @@ def run_dataset_cli(
         records.extend(gold_records)
     direct_count = len(records)
     pairwise_count = _pairwise_count(records, pairing_mode=pairing_mode)
-    batch_jobs = (
-        build_batch_jobs(
-            records,
-            modes=args.modes,
-            output_dir=args.output_dir,
-            skip_existing=args.skip_existing,
-            pairing_mode=pairing_mode,
-        )
-        if args.batch_action in {"submit"} or (args.dry_run and args.batch_action == "submit")
-        else []
-    )
 
     if args.dry_run:
         print(f"Dataset: {dataset}")
@@ -676,86 +614,9 @@ def run_dataset_cli(
             print("Pairing mode: gold_vs_generated")
             print(f"Ground-truth strategy alias: {GOLD_STRATEGY}")
         print(f"Parallel workers: {args.parallel_workers}")
-        if args.batch_action:
-            print(f"Batch action: {args.batch_action}")
-            print(f"Batch manifest: {_batch_manifest_path(args)}")
-            if args.batch_action == "submit":
-                print(f"Batch requests: {len(batch_jobs)}")
-                print(f"Batch completion window: {args.batch_completion_window}")
-                print(f"Batch max JSONL file size: {args.batch_max_file_mb} MB")
         print(f"Output directory: {args.output_dir}")
         if should_validate:
             print(f"Traditional metrics path: {args.metrics_path}")
-        return 0
-
-    if args.batch_action:
-        provider = _provider(args)
-        batch_runner = OpenAIBatchJudgeRunner(
-            provider=provider,
-            output_dir=args.output_dir,
-            manifest_path=_batch_manifest_path(args),
-            direct_prompt=JudgeRunner(provider=provider, results_root=args.output_dir).direct_prompt,
-            pairwise_prompt=JudgeRunner(provider=provider, results_root=args.output_dir).pairwise_prompt,
-            completion_window=args.batch_completion_window,
-            max_file_mb=args.batch_max_file_mb,
-        )
-        direct_report: dict[str, Any] | None = None
-        pairwise_report: dict[str, Any] | None = None
-        if args.batch_action == "submit":
-            manifest = batch_runner.submit(
-                dataset=dataset,
-                records=records,
-                modes=args.modes,
-                strategy_selection=selection,
-                validation_design=args.validation_design,
-                skip_existing=args.skip_existing,
-                pairing_mode=pairing_mode,
-                dry_run=False,
-            )
-            batch_count = len(manifest.get("batches", []))
-            print(f"Submitted {manifest.get('job_count', 0)} judge requests in {batch_count} OpenAI batch job(s).")
-            print(f"Wrote batch manifest: {_batch_manifest_path(args)}")
-            return 0
-        if args.batch_action == "status":
-            manifest = batch_runner.status()
-            for batch_entry in manifest.get("batches", []):
-                batch = batch_entry.get("batch") or {}
-                print(
-                    f"Batch {batch_entry.get('batch_index')}: "
-                    f"{batch.get('id')} status={batch.get('status')} counts={batch.get('request_counts')}"
-                )
-            print(f"Updated batch manifest: {_batch_manifest_path(args)}")
-            return 0
-        if args.batch_action == "cancel":
-            manifest = batch_runner.cancel()
-            for batch_entry in manifest.get("batches", []):
-                batch = batch_entry.get("batch") or {}
-                print(f"Batch {batch_entry.get('batch_index')}: {batch.get('id')} status={batch.get('status')}")
-            print(f"Updated batch manifest: {_batch_manifest_path(args)}")
-            return 0
-        if args.batch_action == "collect":
-            direct_report, pairwise_report, _manifest = batch_runner.collect()
-            print(f"Collected batch results from: {_batch_manifest_path(args)}")
-        else:
-            raise ValueError(f"Unsupported batch action: {args.batch_action}")
-
-        if should_validate and direct_report is None and pairwise_report is None:
-            print("No completed batch results were collected; validation summary was not updated.")
-            print(f"Wrote judge results under: {args.output_dir}")
-            return 0
-
-        if should_validate:
-            validation = _build_validation_report(
-                dataset=dataset,
-                validation_design=args.validation_design,
-                selection=selection,
-                strategies=args.strategies,
-                direct_report=direct_report,
-                pairwise_report=pairwise_report,
-                metrics=metrics,
-            )
-            _write_json(args.output_dir / f"{dataset}_llm_judge_validation.json", validation)
-        print(f"Wrote judge results under: {args.output_dir}")
         return 0
 
     runner = JudgeRunner(
