@@ -627,16 +627,38 @@ The table also shows that all Gemini prompting strategies outperform the LoRA-fi
 \setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Strategy} & \textbf{N} & \textbf{Rel.} & \textbf{Fact.} & \textbf{Info.} & \textbf{Coh.} & \textbf{Overall} \\
+\textbf{Strategy} & \textbf{Rel.} & \textbf{Fact.} & \textbf{Info.} & \textbf{Coh.} & \textbf{Spec.} & \textbf{Overall} \\
 \midrule
-Zero-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
-Static one-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
-Dynamic one-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
-Few-shot & \pending & \pending & \pending & \pending & \pending & \pending \\
+Zero-shot & 4.9577 & 4.7746 & 4.7606 & 4.8310 & 4.8028 & 4.7887 \\
+Static one-shot & \textbf{5.0000} & \textbf{4.8873} & \textbf{4.8310} & 4.9014 & \textbf{4.8732} & \textbf{4.8310} \\
+Dynamic one-shot & 4.9859 & 4.8310 & 4.8028 & \textbf{4.9155} & 4.8169 & 4.7606 \\
+Few-shot & 4.9437 & 4.8169 & 4.7324 & 4.8592 & 4.8451 & 4.7465 \\
 \bottomrule
 \end{tabular}
-\caption{Soil-Health LLM-as-a-judge direct scoring results. Rel., Fact., Info., and Coh. denote relevance, factuality, informativeness, and coherence; scores use a 1-to-5 rubric.}
+\caption{Soil-Health LLM-as-a-judge direct scoring results over 71 images per prompting strategy. Rel., Fact., Info., Coh., and Spec. denote relevance, factuality, informativeness, coherence, and specificity; scores use a 1-to-5 rubric.}
 \label{tab:soil_judge_results}
+\end{table}
+
+To further compare the two strategies with the largest direct-score contrast, the judge was also applied in pairwise mode to the static one-shot and few-shot outputs. Table~\ref{tab:soil_pairwise_judge_results} shows that the pairwise preference is nearly balanced at the overall level, although the criterion-level preferences differ across evaluation dimensions.
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Judgment} & \textbf{Few-shot} & \textbf{Static one-shot} & \textbf{Tie} \\
+\midrule
+Overall winner & 35 & 34 & 2 \\
+Relevance & 31 & 33 & 7 \\
+Factuality & 23 & 27 & 21 \\
+Informativeness & 34 & 34 & 3 \\
+Coherence & 25 & 38 & 8 \\
+Specificity & 37 & 31 & 3 \\
+\bottomrule
+\end{tabular}
+\caption{Soil-Health pairwise LLM-as-a-judge preferences between static one-shot and few-shot prompting over 71 images. Values are counts of images for which each option was preferred.}
+\label{tab:soil_pairwise_judge_results}
 \end{table}
 
 \section{Conclusion}\label{sec:conclusion}
