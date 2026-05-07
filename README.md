@@ -10,6 +10,12 @@ The project has three main components:
 
 This is a dataset-first research codebase, not a packaged Python library. Scripts are standalone entry points, generated outputs are preserved as experiment artifacts, and there is no repo-wide `pytest` or CI workflow.
 
+## Workflow Overview
+
+The figure below summarizes the repository workflow: labelled VisText and Diagram2Graph datasets support metric-based validation, Gemini 3 Flash generates RDF/Turtle directly from images under predefined schemas, the generated graphs are evaluated with graph-matching metrics when references are available, and the validated LLM-as-a-judge workflow is used for the unlabelled soil-health application.
+
+![Overview of the image-to-RDF workflow](img/overview_figure_main.svg)
+
 ## Repository Layout
 
 ```text
