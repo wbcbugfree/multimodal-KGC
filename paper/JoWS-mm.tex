@@ -132,7 +132,7 @@ Scientific communication relies extensively on visual artifacts. Charts summariz
 
 Knowledge graphs provide a principled way to address this gap by representing entities, relations, and attributes in graph-structured form \citep{hogan2021knowledgegraphs}. RDF represents such information as subject-predicate-object triples, while ontologies define the classes and relations that make these triples interpretable and reusable. In the Semantic Web setting, RDF graphs can be validated syntactically, queried, linked to external resources, and integrated across domains \citep{rdf11concepts,turtle}. Directly converting scientific visual artifacts into RDF therefore offers a route from overlooked image-based evidence to explicit, queryable, and interoperable knowledge.
 
-Existing research addresses important parts of this problem, but not the complete image-to-RDF task. Chart-understanding benchmarks and models focus on chart question answering, chart-to-text generation, or data recovery \citep{chartocr,chartqa,vistext,unichart,chartllama}. Diagram-understanding work can extract graph-like representations, but the target format is usually JSON, Mermaid, or another task-specific serialization rather than RDF \citep{diagram2graph,flowlearn}. Table-understanding systems increasingly process table images directly, but they commonly return reconstructed tables or task-specific answers rather than knowledge graphs \citep{mmtable,tabpedia}. Conversely, Semantic Web table interpretation typically assumes that tabular data are already available in textual or structured form \citep{semtab2022,semtab2024}. These lines of work motivate direct image-to-RDF construction, but they do not provide an end-to-end framework for producing RDF knowledge graphs directly from heterogeneous scientific images.
+Existing research addresses important parts of this problem, but not the complete image-to-RDF task. Chart-understanding benchmarks and models focus on chart question answering, chart-to-text generation, or data recovery \citep{chartocr,chartqa,vistext,unichart,chartllama}. Diagram-understanding work can extract graph-like representations, but the target format is usually JSON, Mermaid, or another task-specific serialization rather than RDF \citep{diagram2graph,flowlearn}. Table-understanding systems increasingly process table images directly, but they commonly return reconstructed tables or task-specific answers \citep{mmtable,tabpedia}. Conversely, Semantic Web table interpretation typically assumes that tabular data are already available in textual or structured form \citep{semtab2022,semtab2024}. These lines of work motivate direct image-to-RDF construction, but they do not provide an end-to-end framework for producing RDF knowledge graphs directly from heterogeneous scientific images.
 
 This paper studies such an end-to-end formulation. We use Gemini 3 Flash \citep{googledeepmind2025gemini3flashcard} as a large vision-language extraction engine and constrain its output to RDF/Turtle under predefined schemas. The framework is prompt-based and does not require task-specific fine-tuning. This design avoids decomposing visual interpretation, graph construction, and RDF serialization into independently optimized stages, a choice that is consistent with evidence from information extraction that pipeline architectures can propagate upstream errors, whereas joint models can reduce this dependency and improve extraction performance \citep{li2017neuraljoint}. We compare zero-shot, one-shot, few-shot, and dynamic one-shot prompting where applicable.
 
@@ -161,7 +161,7 @@ Diagram and flowchart understanding is closer to graph construction because the 
 
 Knowledge engineering includes ontology modelling, entity and relation extraction, schema mapping, graph construction, refinement, and evaluation. Recent work argues that LLMs and knowledge graphs are complementary: knowledge graphs provide explicit symbolic structure, while LLMs provide flexible language understanding, generation, and reasoning capabilities \citep{pan2024llmkgroadmap}. LLMs have therefore been studied as extractors or assistants for constructing graph fragments under predefined schemas and for supporting RDF construction or ontology mapping \citep{ghanemcruz2025kgc,mavridis2025rdfkg}. However, most such work still assumes textual or already structured inputs, including semantic table interpretation benchmarks such as SemTab \citep{semtab2022,semtab2024}. Multimodal knowledge graph research also links images and text to graph entities \citep{richpedia,multimodalkgsurvey}, but this differs from constructing RDF triples from the semantic content of an image itself.
 
-A small number of recent studies move closer to image-based knowledge graph construction. For example, ImgGraph-LLM constructs graph triples from individual images through self-supervised data generation and LLM fine-tuning \citep{chen2025pixels}. This shows that image-to-graph construction is becoming a research topic in its own right. However, existing work remains limited with respect to direct RDF/Turtle generation from scientific visualizations under explicit ontological schemas. In this paper, the image itself is the source document from which RDF triples must be extracted. The resulting graph describes the semantic content of the image rather than merely attaching image resources to existing graph entities.
+A small number of recent studies move closer to image-based knowledge graph construction. For example, ImgGraph-LLM constructs graph triples from individual images through self-supervised data generation and LLM fine-tuning \citep{chen2025pixels}. This shows that image-to-graph construction is becoming a research topic in its own right. However, existing work remains limited with respect to direct RDF/Turtle generation from scientific visualizations under explicit ontological schemas. In this paper, the image itself is the source document from which RDF triples must be extracted. The resulting graph describes the semantic content of the image rather than attaching image resources to existing graph entities.
 
 \subsection{LLM-as-a-Judge and Knowledge Graph Evaluation}
 
@@ -352,7 +352,7 @@ All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on 
 
 \subsection{Traditional Graph Metrics for Labelled Datasets}\label{subsec:traditional_graph_metrics}
 
-For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. Following recent work on LLM-based KG construction evaluation \citep{ghanemcruz2025kgc}, we report a set of complementary metrics rather than a single score because different metrics measure different properties of graph quality.
+For VisText and Diagram2Graph, predicted RDF graphs are compared with reference RDF graphs after parsing and normalization. Following recent work on LLM-based KG construction evaluation \citep{ghanemcruz2025kgc}, we report a set of complementary metrics since different metrics measure different properties of graph quality.
 
 The metric set is organized into four categories:
 
@@ -371,11 +371,25 @@ The VisText schema is designed to be semantically complete: its full RDF graph c
 
 VisText evaluation also includes an optional relative numeric tolerance for datapoint values. In each chart, one coordinate identifies the datapoint and the other coordinate gives the numeric value to be estimated from the visual mark. The tolerance is applied only to this numeric value. This is needed because the model receives only the chart image: for many charts, a visually reasonable estimate may be close to the reference value but not exactly identical. We report the tolerance sweep only for triple-match precision, recall, F1, triple-match accuracy, and normalized GED because these metrics depend on exact graph overlap. Without tolerance, a visually close estimate such as 0.38 for a reference value of 0.379 is counted as a non-match. BLEU, ROUGE, and G-BERTScore are not included in the tolerance sweep because they already measure lexical or embedding-based similarity.
 
-\subsection{LLM-as-a-Judge Validation Framework}
+\subsection{LLM-as-a-Judge}
 
-The LLM-as-a-judge framework is evaluated on the labelled datasets before being used on unlabelled data. It uses OpenAI GPT-5-mini \citep{openai2025gpt5systemcard} as the judge model, whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model family for judging reduces the risk that the evaluator systematically favours generations from its own model family \citep{spiliopoulou2025playfavorites}. Judge outputs are constrained through structured response schemas, so the evaluation produces typed scores and preferences.
+Traditional graph metrics require a reference RDF graph and therefore cannot be
+applied directly to unlabelled scientific image collections. This limitation is
+central to the Soil-Health application considered in Section~\ref{sec:soil_use_case}:
+the source images contain potentially useful knowledge, but no complete gold
+RDF graphs are available. We therefore introduce an LLM-as-a-judge framework as
+a complementary evaluation instrument for unlabelled image-to-RDF outputs.
 
-The judge is used in two complementary modes. In direct scoring, the judge receives the source image and one candidate RDF/Turtle graph. It assigns five criterion scores and one overall score on a 1-to-5 scale. In pairwise comparison, the judge receives the same source image and two candidate graphs generated by different prompting strategies. It selects the better graph for each criterion and gives an overall preference. Direct scoring supports absolute quality analysis, while pairwise comparison supports strategy ranking without requiring the judge to calibrate scores across unrelated images.
+The judge framework is adapted from KGEval, which evaluates knowledge graphs
+through criterion-based LLM assessment \citep{kgeval}. Table~\ref{tab:judge_rubric}
+summarizes the rubric used in the judge. We modify the KGEval design for the
+image-to-RDF setting by grounding every judgment in the source image and the
+candidate RDF/Turtle graph. The judge is instructed to assess whether the graph
+captures visible image content, avoids unsupported triples, follows the provided
+schema, and remains internally coherent as an RDF graph. This design is
+image-type agnostic: the same judging framework can be applied to charts,
+flowcharts, diagrams, and table images because the input consists of an image,
+schema guidance, and one or more candidate RDF graphs.
 
 \begin{table}[ht]
 \centering
@@ -395,11 +409,24 @@ Specificity & Whether triples are precise rather than vague or generic \\
 \label{tab:judge_rubric}
 \end{table}
 
-The rubric in Table~\ref{tab:judge_rubric} adapts the KGEval principle of criterion-based KG assessment to the image-to-RDF setting. The judge must consider the source image and the generated graph together: a graph can be syntactically valid but still fail due to hallucinated labels, missing diagram edges, incorrect chart values, or overly generic triples. For labelled datasets, direct judge scores are compared with traditional metric scores, and pairwise judge preferences are compared with metric-derived preferences.
+The judge is used in two complementary modes. In direct scoring, the judge
+receives the source image and one candidate RDF/Turtle graph. It assigns five
+criterion scores and one overall score on a 1-to-5 scale. In pairwise
+comparison, the judge receives the same source image and two candidate graphs
+generated by different prompting strategies. It selects the better graph for
+each criterion and gives an overall preference. Direct scoring supports
+absolute quality analysis, while pairwise comparison supports strategy ranking
+without requiring the judge to calibrate scores across unrelated images. The
+system prompts used for the two judge modes are provided in~\ref{app:judge_prompts}.
+
+We use OpenAI GPT-5-mini \citep{openai2025gpt5systemcard} as the judge model,
+whereas image-to-RDF generation uses Gemini 3 Flash. Using a different model
+family for judging reduces the risk that the evaluator systematically favours
+generations from its own model family \citep{spiliopoulou2025playfavorites}. We first validate the judge on the two labelled datasets, where direct judge scores can be compared with traditional metric scores and pairwise judge preferences can be compared with metric-derived preferences. After this validation step, the same judge framework is applied to the unlabelled Soil-Health application.
 
 \subsection{Evaluation Results}\label{sec:results}
 
-\subsubsection{VisText Labelled Evaluation}
+\subsubsection{VisText Evaluation}
 
 Table~\ref{tab:vistext_strategy_results} reports the main VisText evaluation results for all four prompting strategies. Each strategy is evaluated on the same 868 usable test-split images in both whole-graph and content-only modes, as defined in Section~\ref{subsec:vistext_eval_modes}. The reported precision, recall, F1, triple-match accuracy, and normalized GED use a 1\% numeric tolerance for datapoint values; ROUGE, BLEU, and G-BERTScore are not tolerance-adjusted. The metrics follow the definitions in Section~\ref{subsec:traditional_graph_metrics}.
 
@@ -482,9 +509,9 @@ Area & Few-shot & \textbf{0.6528} & 0.5105 & \textbf{0.5729} & \textbf{0.7195} &
 \label{tab:vistext_tolerance_results}
 \end{table*}
 
-\subsubsection{Diagram2Graph Labelled Evaluation}
+\subsubsection{Diagram2Graph Evaluation}
 
-Table~\ref{tab:diagram_results} reports the Diagram2Graph labelled evaluation for the three RDF prompting strategies. The evaluation uses 216 diagrams after excluding the three images used as in-context examples, so all strategies are compared on the same image set. Because the target graph represents diagram topology through nodes, edges, labels, source-target links, line styles, and relationship types, the full RDF graph is evaluated directly; no content-only projection or ordinal normalization is applied.
+Table~\ref{tab:diagram_results} reports the Diagram2Graph labelled evaluation for the three RDF prompting strategies. The evaluation uses 216 diagrams after excluding the three images used as in-context examples, so all strategies are compared on the same image set. Because the target graph represents diagram topology through nodes, edges, labels, source-target links, line styles, and relationship types, the full RDF graph is evaluated directly.
 
 \begin{table*}[ht]
 \centering
@@ -506,7 +533,7 @@ Few-shot & 0.8390 & 0.8597 & 0.8493 & 0.8600 & 0.0799 & 0.9682 & 0.9749 & 0.9847
 
 \subsubsection{LLM-as-a-Judge Validation}
 
-Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the LLM-as-a-judge validation results on the two labelled datasets. For Diagram2Graph, the validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. For VisText, the same selection procedure identified dynamic one-shot and static one-shot as the strategy pair for validation, resulting in 268 chart images. Direct scoring compares judge scores with traditional metric scores on the selected samples. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B.
+Tables~\ref{tab:judge_direct_validation} and \ref{tab:judge_pairwise_validation} report the LLM-as-a-judge validation results on the two labelled datasets. For Diagram2Graph, the validation used the two prompting strategies with the largest aggregate metric difference, few-shot and zero-shot, and selected the 57 diagrams for which either the triple-match F1 gap or the normalized GED gap exceeded 0.05. The 0.05 threshold was used because the judge operates with a coarse 1--5 rating scale; when two generated graphs are nearly identical under the traditional metrics, the judge is unlikely to assign a meaningful distinction between them. For VisText, the same selection procedure identified dynamic one-shot and static one-shot as the strategy pair for validation, resulting in 268 chart images. Direct scoring compares judge scores with traditional metric scores on the selected samples. Pairwise validation compares judge preferences with metric-derived preferences after anonymizing the two candidate graphs as Candidate A and Candidate B.
 
 \begin{table}[ht]
 \centering
@@ -541,35 +568,51 @@ VisText & Dynamic one-shot vs static one-shot & 0.4963 & 268 \\
 \label{tab:judge_pairwise_validation}
 \end{table}
 
-The Diagram2Graph direct validation provides the clearer positive case for judge validation: direct scores assign substantially higher quality to zero-shot outputs, matching the traditional metrics, although pairwise agreement remains modest at 0.4737 on the selected difficult diagrams. In contrast, the VisText judge scores and pairwise preferences show weak alignment with the content-only graph metrics. The selected VisText strategies are very close in aggregate metric performance, and the judge's pairwise agreement with metric-derived preferences is 0.4963, close to a balanced split. This indicates that the judge framework is more informative when the compared outputs differ visibly in graph quality, and less reliable for discriminating very small performance differences between strong prompting strategies.
-
 \section{Discussion}\label{sec:discussion}
 
 \subsection{VisText: Chart Extraction and Numeric Estimation}
 
-The VisText results show that direct chart-to-RDF generation is feasible, but that the main difficulty lies in recovering content-bearing triples rather than producing the fixed ontology pattern. Whole-graph F1 scores range from 0.7849 to 0.7938, whereas content-only F1 scores range from 0.6664 to 0.6769. This difference is expected because whole-graph evaluation includes schema-completion triples such as axis declarations and datapoint membership relations. Content-only evaluation is therefore more informative for comparing how well the model recovers chart type, textual chart elements, and datapoint values from the image.
+The VisText results show that direct chart-to-RDF generation is feasible, but that the main difficulty lies in recovering content-bearing triples instead of producing the fixed ontology pattern. Whole-graph F1 scores range from 0.7849 to 0.7938, whereas content-only F1 scores range from 0.6664 to 0.6769. This difference is expected because whole-graph evaluation includes schema-completion triples such as axis declarations and datapoint membership relations. Content-only evaluation is therefore more informative for comparing how well the model recovers chart type, textual chart elements, and datapoint values from the image.
 
-\subsubsection{Prompting Strategy Effects}
-
-Dynamic one-shot prompting gives the strongest exact graph-overlap performance on the full VisText test split. In content-only mode, it obtains the best triple precision, recall, F1, triple-match accuracy, and normalized GED among the four prompting strategies. The gain over zero-shot prompting is consistent but modest: content-only F1 increases from 0.6674 to 0.6769, and normalized GED decreases from 0.0961 to 0.0929. This suggests that chart-type-specific prompting helps align the output with the expected RDF representation, but it does not remove the main visual-estimation challenges.
+\textbf{Prompting Strategy Effects.} Dynamic one-shot prompting gives the strongest exact graph-overlap performance on the full VisText test split. In content-only mode, it obtains the best triple precision, recall, F1, triple-match accuracy, and normalized GED among the four prompting strategies. The gain over zero-shot prompting is consistent but modest: content-only F1 increases from 0.6674 to 0.6769, and normalized GED decreases from 0.0961 to 0.0929. This suggests that chart-type-specific prompting helps align the output with the expected RDF representation, but it does not remove the main visual-estimation challenges.
 
 Few-shot prompting shows a different profile. It produces the highest ROUGE-F1, BLEU-F1, and G-BERTScore-F1 in content-only mode, and the highest whole-graph precision and soft similarity scores. However, it does not achieve the best exact triple-recovery F1. This indicates that in-context examples can improve lexical and semantic resemblance to the reference graphs while still leaving exact triple recovery constrained by visual estimation, datapoint alignment, and value extraction.
 
-\subsubsection{Chart-Type Differences}
+\textbf{Chart-Type Differences.} The chart-type breakdown shows that visual form has a larger effect on performance than the choice among the tested prompting strategies. Bar charts obtain the strongest results, with the best content-only F1 reaching 0.7867 and the best normalized GED reaching 0.0624. This is consistent with their visual structure: bar charts usually present a finite set of separated marks whose category labels and values can be paired more directly.
 
-The chart-type breakdown shows that visual form has a larger effect on performance than the choice among the tested prompting strategies. Bar charts obtain the strongest results, with the best content-only F1 reaching 0.7867 and the best normalized GED reaching 0.0624. This is consistent with their visual structure: bar charts usually present a finite set of separated marks whose category labels and values can be paired more directly.
+Line and area charts are substantially more difficult. The best line-chart F1 is 0.6501, and the best area-chart F1 is 0.5729. These chart types often require the model to infer the intended datapoint sequence from the title, axes, tick marks, and plotted geometry, and further estimate values of datapoints from continuous marks. The lower area-chart scores indicate that filled regions and dense temporal sequences remain particularly challenging for direct image-to-RDF extraction.
 
-Line and area charts are substantially more difficult. The best line-chart F1 is 0.6501, and the best area-chart F1 is 0.5729. These chart types often require the model to infer the intended datapoint sequence from the title, axes, tick marks, and plotted geometry. They also require estimating values from continuous marks rather than reading values from explicit labels. The lower area-chart scores indicate that filled regions and dense temporal sequences remain particularly challenging for direct image-to-RDF extraction.
+\textbf{Numeric Tolerance and Value Estimation.} The numeric-tolerance analysis in Table~\ref{tab:vistext_tolerance_results} indicates that many visually inferred datapoint values are very close to the reference values even when they are not exact string matches. Under zero-shot prompting, 27.6\% of eligible numeric datapoint literals match exactly. Introducing only a 0.5\% relative tolerance increases the matched-literal ratio to 53.2\%, nearly doubling the exact-match result. At 1\% tolerance, 67.6\% of eligible numeric literals are matched, and at 2\% tolerance the matched-literal ratio reaches 79.0\%.
 
-\subsubsection{Numeric Tolerance and Value Estimation}
-
-The numeric-tolerance analysis in Table~\ref{tab:vistext_tolerance_results} indicates that many visually inferred datapoint values are very close to the reference values even when they are not exact string matches. Under zero-shot prompting, 27.6\% of eligible numeric datapoint literals match exactly. Introducing only a 0.5\% relative tolerance increases the matched-literal ratio to 53.2\%, nearly doubling the exact-match result. At 1\% tolerance, 67.6\% of eligible numeric literals are matched, and at 2\% tolerance the matched-literal ratio reaches 79.0\%.
-
-This result is important because the model predicts these values directly from the chart image, without access to the underlying data table. The tolerance sweep therefore suggests that many numerical errors are small visual-estimation deviations rather than failures to recover the chart content. An extended sweep to 3\%, 4\%, and 5\% further raises the matched-literal ratio to 83.9\%, 86.8\%, and 88.7\%, respectively, but the largest gain already occurs within the first 2\% tolerance interval. We therefore interpret the 0--2\% range as the most informative region for characterizing typical VLM value-estimation accuracy in this task: most recoverable numeric datapoint predictions are close to the reference values, even under a strict image-only extraction setting.
+This result is important because the model predicts these values directly from the chart image, without access to the underlying data table. The tolerance sweep therefore suggests that many numerical errors are small visual-estimation deviations. An extended sweep to 3\%, 4\%, and 5\% further raises the matched-literal ratio to 83.9\%, 86.8\%, and 88.7\%, respectively, but the largest gain already occurs within the first 2\% tolerance interval. We therefore interpret the 0--2\% range as the most informative region for characterizing typical VLM value-estimation accuracy in this task: most recoverable numeric datapoint predictions are close to the reference values, even under a strict image-only extraction setting.
 
 \subsubsection{VisText Error Patterns}
 
-% The VisText error pattern is therefore not simply a failure to follow the RDF schema. The model often produces syntactically valid graphs and preserves much of the expected structure, while errors concentrate in content-bearing literals and datapoint recovery. For bar charts, the remaining errors are more likely to involve category-value pairing, orientation, or small numeric deviations. For line and area charts, errors additionally involve the number of datapoints and the interpolation of values from plotted marks. These differences support reporting chart-type-specific scores rather than relying only on aggregate dataset-level metrics.
+The most severe VisText failures occur when the model infers an incorrect
+sampling resolution for line and area charts. Image \texttt{3975} provides a
+representative case. The chart title states that the figure shows the stock
+price of Unilever at Euronext Amsterdam from August 2019 to January 2021. In
+the zero-shot output, the model interprets this temporal range as a monthly
+series and produces one datapoint for each month, with values such as
+\texttt{"August 2019"} and \texttt{"September 2019"} as the x-values. The
+reference RDF graph, however, represents the plotted series at daily-date
+resolution, beginning with dates such as \texttt{"Jul 31, 2019"} and
+\texttt{"Aug 01, 2019"}. Consequently, the predicted graph contains 18
+datapoints, whereas the reference graph contains 369 datapoints.
+
+This mismatch explains why the metric scores for this chart are close to zero:
+the model does not merely estimate slightly inaccurate numeric values, but
+constructs the graph at the wrong temporal granularity. The example illustrates
+a limitation of image-only chart-to-RDF extraction. When the visual marks are
+dense and individual datapoints are not explicitly labelled, the model must
+infer both the number of datapoints and their values from the image and its
+semantic context. In such cases, a plausible but incorrect assumption about the
+sampling interval can dominate the evaluation outcome. This failure mode should
+therefore be interpreted primarily as an information-availability limitation:
+without access to the underlying data table or explicit datapoint labels, even a
+semantically reasonable reading of the chart can produce a graph that is
+structurally incompatible with the reference RDF.
+
 
 \subsection{Diagram2Graph: Diagram Structure Extraction}
 
@@ -579,7 +622,7 @@ The results in Table~\ref{tab:diagram_results} show that zero-shot prompting wit
 
 \subsubsection{JSON-versus-RDF Serialization Ablation}
 
-The JSON-versus-RDF ablation in Table~\ref{tab:json_rdf_ablation} tests whether requesting RDF/Turtle output causes a performance decline relative to a JSON serialization of the same diagram information. JSON and RDF/Turtle encode the same node-edge graph in this experiment, and the two serializations can be converted into each other without information loss. Their evaluation scores are therefore comparable under the same graph metrics. This ablation is necessary because, if JSON output were substantially better than RDF/Turtle output, a JSON-first pipeline followed by deterministic RDF conversion would be preferable to direct RDF/Turtle generation. The comparison uses the same 20-image subset for all rows. The JSON baseline is a Qwen2.5-VL-3B model \citep{bai2025qwen25vl} fine-tuned with LoRA \citep{hu2022lora} on 199 Diagram2Graph training examples; its reported scores are the mean of two inference runs. The Gemini rows are single-run prompting results.
+The JSON-versus-RDF ablation in Table~\ref{tab:json_rdf_ablation} tests whether requesting RDF/Turtle output causes a performance decline relative to a JSON serialization of the same diagram information. JSON and RDF/Turtle encode the same node-edge graph in this experiment, and the two serializations can be converted into each other without information loss. Their evaluation scores are therefore comparable under the same graph metrics. This ablation is necessary because, if JSON output were better than RDF/Turtle output, a JSON-first pipeline followed by deterministic RDF conversion would be preferable to direct RDF/Turtle generation. The comparison uses the same 20-image subset for all rows. The JSON baseline is a Qwen2.5-VL-3B model \citep{bai2025qwen25vl} fine-tuned with LoRA \citep{hu2022lora} on 199 Diagram2Graph training examples; its reported scores are the mean of two inference runs. The Gemini rows are single-run prompting results.
 
 \begin{table*}[ht]
 \centering
@@ -603,29 +646,86 @@ Gemini RDF few-shot & RDF/Turtle & 0.8249 & 0.8313 & 0.8281 & 0.8518 & 0.0866 & 
 \label{tab:json_rdf_ablation}
 \end{table*}
 
-The ablation results do not show a decline when the target output is RDF/Turtle. On the same subset, the RDF/Turtle prompting results do not indicate a performance penalty relative to JSON serialization. This supports the use of direct RDF/Turtle generation in the proposed image-to-KG task, rather than treating RDF as a post-processing target that must first be mediated through JSON.
+The ablation results do not show a decline when the target output is RDF/Turtle. On the same subset, the RDF/Turtle prompting results do not indicate a performance penalty relative to JSON serialization. This supports the use of direct RDF/Turtle generation in the proposed image-to-KG task. Furthermore, throughout the experiments conducted in this paper, the LLM produced only one instance of RDF/Turtle with syntax error, demonstrating that the frontier model is currently capable of robustly generating RDF.
 
-The table also shows that all Gemini prompting strategies outperform the LoRA-fine-tuned Qwen2.5-VL-3B baseline on the reported metrics. In this setting, a frontier multimodal model prompted with the target schema provides stronger structured extraction than a smaller model adapted to the task with parameter-efficient fine-tuning. This result does not rule out the value of fine-tuning, but it indicates that prompt-based frontier models can be highly competitive for diagram-to-graph extraction even without task-specific parameter updates.
+The table also shows that all Gemini prompting strategies outperform the LoRA-fine-tuned Qwen2.5-VL-3B baseline on the reported metrics. In this setting, a frontier multimodal model prompted with the target schema provides stronger structured extraction than a smaller model adapted to the task with parameter-efficient fine-tuning. This result indicates that prompt-based frontier models can be highly competitive for diagram-to-graph extraction even without task-specific parameter updates.
 
-% \subsubsection{Diagram2Graph Error Patterns}
-%
-% The expected Diagram2Graph error modes differ from those observed in VisText. Errors in this dataset are likely to affect graph topology directly, including missing nodes, incorrect edge direction, confused relation types, and source-target mismatches. Such errors can have larger semantic consequences than small numerical deviations in chart values because they alter the structure of the represented process or flow. The Diagram2Graph analysis therefore complements VisText by testing whether the same image-to-RDF framework can recover relational structure, not only attribute values.
-%
-% \subsection{Cross-Dataset Implications}
-%
-% Across the two labelled datasets, the results should be read through the interaction between visual form, ontology design, and metric choice. VisText shows that exact graph metrics can underestimate visually close numeric predictions, motivating tolerance analysis for numeric datapoint values. Diagram2Graph emphasizes topological correctness, where tolerance is not appropriate and exact graph recovery is central. The use of multiple metrics is therefore necessary: exact triple metrics and normalized GED assess graph correctness, while ROUGE, BLEU, and G-BERTScore provide softer signals about textual and semantic similarity.
-%
-% \subsection{Limitations}
-%
-% The present evaluation is limited to the defined schemas and selected prompting strategies. The VisText results indicate strong value-estimation proximity under tolerance, but exact datapoint recovery remains difficult for line and area charts. Diagram2Graph introduces a complementary structural setting, but further completed results are needed before drawing strong conclusions about prompt strategy ranking for diagrams. Finally, the LLM-as-a-judge framework is intended to support evaluation of unlabelled datasets only after validation against labelled datasets; it should not replace reference-based evaluation when gold RDF graphs are available.
+\subsection{Cross-Dataset Implications}
+
+Across the two labelled datasets, the results support the feasibility of direct
+image-to-RDF construction from heterogeneous infographics. VisText and
+Diagram2Graph differ substantially in visual form and target semantics: VisText
+requires recovering chart type, textual elements, and datapoint values from
+charts, whereas Diagram2Graph requires reconstructing node-edge topology from
+diagrams. Nevertheless, both datasets obtain strong graph-similarity results
+under direct RDF/Turtle generation. This indicates that with a clear schema, a frontier vision-language model can
+produce RDF graphs directly from visual input.
+
+A second common pattern is that prompt-engineering variants have limited
+effects compared with the information contained in the schema and the image
+itself. For both labelled datasets, zero-shot prompting with explicit schema
+guidance is already competitive. On VisText, dynamic one-shot prompting gives
+the best exact graph-overlap scores, but the gain over zero-shot prompting is
+small. On Diagram2Graph, zero-shot prompting is the best-performing strategy
+across the reported metrics, and few-shot prompting is worse than zero-shot.
+These results suggest that, for recent multimodal models such as Gemini 3
+Flash, providing a precise task definition and RDF schema is more important than
+adding more in-context examples. Additional examples can help when they clarify
+the intended schema, but they can also introduce local visual or structural
+patterns that do not generalize to the broader dataset.
+
+The main performance bottleneck is therefore the amount and clarity of information available in the image. Diagram images
+often contain explicit symbolic elements: nodes, arrows, labels, and line
+styles. By contrast, line and area charts may require the model to infer an
+unlabelled datapoint sequence and estimate numerical values from dense visual
+marks. This explains why Diagram2Graph reaches higher exact graph scores than
+VisText content-only evaluation, and why the most severe VisText errors are
+associated with incorrect assumptions about datapoint granularity. The
+cross-dataset evidence therefore points to a practical boundary for direct
+image-to-RDF extraction: the approach is most reliable when the ontology is
+explicit and the relevant visual evidence is directly observable, while
+implicit or underspecified data resolution remains difficult without additional
+source information.
+
+
+\subsection{LLM-as-a-Judge Reliability}\label{sec:judge_reliability}
+
+The labelled-dataset validation indicates that the proposed LLM-as-a-judge
+framework is useful as a coarse quality assessor, but should not be treated as a
+direct substitute for gold-standard graph metrics. Diagram2Graph provides the
+clearer positive validation case. In direct scoring, the judge assigns a higher overall score to zero-shot outputs than to few-shot outputs
+(4.8158 versus 3.6901), matching the traditional graph metrics, where zero-shot
+outputs also have higher triple-match F1 and lower normalized GED on the
+selected diagrams. This suggests that the judge can recognize substantial
+differences in diagram-to-RDF quality when the competing outputs differ
+visibly in graph completeness and structural correctness.
+
+The pairwise validation results are more limited. For Diagram2Graph, agreement
+between judge preferences and metric-derived preferences is 0.4737 on the
+selected difficult diagrams. For VisText, the corresponding agreement is
+0.4963, close to a balanced split. The VisText direct scores also differ only
+slightly between the two compared strategies, consistent with their small
+metric differences. These results indicate that the judge is less reliable for
+fine-grained ranking between strong prompting strategies whose outputs are
+close in quality. This limitation is expected for chart extraction, where many
+differences involve visually ambiguous numeric estimates or datapoint
+alignment, and where traditional metrics can penalize small literal-level
+differences that a judge may consider semantically acceptable.
+
+Accordingly, we use the judge framework for the unlabelled Soil-Health
+application as a structured quality assessment. The validation supports its use for identifying broad
+quality patterns and comparing clearly different outputs, while the labelled
+metrics remain the primary evidence whenever reference RDF graphs are
+available.
+
 
 \section{Application: Soil-Health Image-to-RDF Extraction}\label{sec:soil_use_case}
 
-The Soil-Health collection is used as an application case for image-to-RDF extraction on an unlabelled scientific corpus. The source material is the European Environment Agency report \textit{Soil monitoring in Europe: Indicators and thresholds for soil health assessments}, which summarizes indicators, threshold values, monitoring concepts, and assessment criteria for soil health in Europe \citep{eea2023soilmonitoring}. The report is also a central source for our previous Soil Health Knowledge Graph, which was constructed as an ontology-compliant KG with LLM support \citep{wang2025makesoilhealthy}. That first version focused mainly on textual content from the report and related sources, using a SKOS-based soil-health ontology.
+The Soil-Health collection is used as an application case for image-to-RDF extraction on an unlabelled scientific corpus. The source material is the European Environment Agency report \textit{Soil monitoring in Europe: Indicators and thresholds for soil health assessments}, which summarizes indicators, threshold values, monitoring concepts, and assessment criteria for soil health in Europe \citep{eea2023soilmonitoring}. The report is also a central source for our previous soil health knowledge graph, which was constructed as an ontology-compliant KG with LLM support \citep{wang2025makesoilhealthy}. That first version focused mainly on textual content from the report and related sources, using a SKOS-based soil-health ontology.
 
-The application considered here addresses a limitation of text-only KG construction. In the soil monitoring report, several important forms of knowledge are not fully expressed in the surrounding prose. Complete indicator lists, assessment thresholds, critical ranges, tabulated criteria, and diagrammatic summaries are often presented as figures or tables. If these visual artifacts are omitted during document preprocessing, the resulting KG can miss information that is directly relevant to soil-health assessment. The present application therefore evaluates whether the proposed image-to-RDF workflow can provide candidate RDF graphs that may support a future visually enriched version of the Soil Health Knowledge Graph.
+The application considered here addresses a limitation of text-only KG construction. In the soil monitoring report, several important forms of knowledge are not fully expressed in the surrounding prose. Complete indicator lists, assessment thresholds, critical ranges, tabulated criteria, and diagrammatic summaries are often presented as figures or tables. If these visual artifacts are omitted during document preprocessing, the resulting KG can miss information that is directly relevant to soil-health assessment. The present application therefore evaluates whether the proposed image-to-RDF workflow can provide candidate RDF graphs that may support a future visually enriched version of the soil health KG.
 
-The dataset contains 71 images from the report, including 15 figures and 56 tables. The target output is an RDF/Turtle graph using the same SKOS-based ontology as the Soil Health Knowledge Graph. For tables, the intended graph represents headers, grouped headers, row labels, cell values, legends, and semantically meaningful notes. For figures, it represents visible concepts, headings, diagram regions, arrows, captions, legends, and explicitly indicated associations. Since no complete gold RDF graphs are available for this collection, we apply the LLM-as-a-judge framework after validating it on the two labelled datasets. The same prompting regimes are considered as in the preceding experiments: zero-shot, static one-shot, dynamic one-shot, and few-shot. In the dynamic one-shot setting, the model first classifies the input image as a figure or table and then uses the corresponding in-context example. The figure and table images used as in-context examples are excluded from the reported application results.
+The dataset contains 71 images from the report, including 15 figures and 56 tables. The target output is an RDF/Turtle graph using the same SKOS-based ontology as the soil health KG. For tables, the intended graph represents headers, grouped headers, row labels, cell values, legends, and semantically meaningful notes. For figures, it represents visible concepts, headings, diagram regions, arrows, captions, legends, and explicitly indicated associations. Since no complete gold RDF graphs are available for this collection, we apply the LLM-as-a-judge framework after validating it on the two labelled datasets. The same prompting regimes are considered as in the preceding experiments: zero-shot, static one-shot, dynamic one-shot, and few-shot. In the dynamic one-shot setting, the model first classifies the input image as a figure or table and then uses the corresponding in-context example. The figure and table images used as in-context examples are excluded from the reported application results.
 
 Table~\ref{tab:soil_judge_results} reports direct judge scores for the four prompting strategies. The scores are high across all strategies, with mean overall scores between 4.7391 and 4.8261 on the 1-to-5 scale. Static one-shot prompting obtains the highest overall score and the highest scores for relevance, factuality, informativeness, and specificity. Dynamic one-shot prompting obtains the highest coherence score. The differences among strategies are small, indicating that all prompting regimes produce outputs judged to be broadly faithful and useful for this application. Together with the labelled-dataset results, this pattern further supports the observation that, for frontier multimodal models operating with explicit schema guidance, the marginal benefit of additional prompt-engineering variants can be limited.
 
@@ -647,29 +747,31 @@ Few-shot & 4.9420 & 4.8116 & 4.7246 & 4.8551 & 4.8406 & 4.7391 \\
 \label{tab:soil_judge_results}
 \end{table}
 
-To further compare the two strategies with the largest direct-score contrast, the judge was also applied in pairwise mode to the static one-shot and few-shot outputs. Table~\ref{tab:soil_pairwise_judge_results} shows that the pairwise preference is nearly balanced at the overall level, although the criterion-level preferences differ across evaluation dimensions.
+% To further compare the two strategies with the largest direct-score contrast, the judge was also applied in pairwise mode to the static one-shot and few-shot outputs. Table~\ref{tab:soil_pairwise_judge_results} shows that the pairwise preference is nearly balanced at the overall level, although the criterion-level preferences differ across evaluation dimensions.
 
-\begin{table}[ht]
-\centering
-\small
-\setlength{\tabcolsep}{6pt}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Judgment} & \textbf{Few-shot} & \textbf{Static one-shot} & \textbf{Tie} \\
-\midrule
-Overall winner & 34 & 33 & 2 \\
-Relevance & 30 & 32 & 7 \\
-Factuality & 22 & 27 & 20 \\
-Informativeness & 33 & 33 & 3 \\
-Coherence & 24 & 38 & 7 \\
-Specificity & 36 & 30 & 3 \\
-\bottomrule
-\end{tabular}
-\caption{Soil-Health pairwise LLM-as-a-judge preferences between static one-shot and few-shot prompting over 69 images, excluding the two in-context example images. Values are counts of images for which each option was preferred.}
-\label{tab:soil_pairwise_judge_results}
-\end{table}
+% \begin{table}[ht]
+% \centering
+% \small
+% \setlength{\tabcolsep}{6pt}
+% \begin{tabular}{lccc}
+% \toprule
+% \textbf{Judgment} & \textbf{Few-shot} & \textbf{Static one-shot} & \textbf{Tie} \\
+% \midrule
+% Overall winner & 34 & 33 & 2 \\
+% Relevance & 30 & 32 & 7 \\
+% Factuality & 22 & 27 & 20 \\
+% Informativeness & 33 & 33 & 3 \\
+% Coherence & 24 & 38 & 7 \\
+% Specificity & 36 & 30 & 3 \\
+% \bottomrule
+% \end{tabular}
+% \caption{Soil-Health pairwise LLM-as-a-judge preferences between static one-shot and few-shot prompting over 69 images, excluding the two in-context example images. Values are counts of images for which each option was preferred.}
+% \label{tab:soil_pairwise_judge_results}
+% \end{table}
 
-The pairwise results refine the direct-score interpretation. Although static one-shot receives the highest mean direct score, the image-level pairwise comparison is nearly evenly split: few-shot is preferred for 34 images, static one-shot for 33 images, and 2 images are judged as ties. Criterion-level preferences also differ by dimension. Static one-shot is preferred more often for factuality and coherence, whereas few-shot is preferred more often for specificity. This pattern indicates that prompt examples affect different aspects of the generated graphs, but that no strategy dominates uniformly on the unlabelled Soil-Health collection. It also reinforces the broader experimental finding that prompt-strategy differences are modest for the frontier multimodal model used in this study. For KG integration, these outputs should therefore be treated as high-quality candidate graphs rather than final curated triples. The practical implication is that image-to-RDF extraction can extend the text-derived Soil Health KG with visually encoded indicator and threshold information, while domain review remains necessary before publication in a production KG.
+% The pairwise results refine the direct-score interpretation. Although static one-shot receives the highest mean direct score, the image-level pairwise comparison is nearly evenly split: few-shot is preferred for 34 images, static one-shot for 33 images, and 2 images are judged as ties. Criterion-level preferences also differ by dimension. Static one-shot is preferred more often for factuality and coherence, whereas few-shot is preferred more often for specificity. This pattern indicates that prompt examples affect different aspects of the generated graphs, but that no strategy dominates uniformly on the unlabelled Soil-Health collection. It also reinforces the broader experimental finding that prompt-strategy differences are modest for the frontier multimodal model used in this study. 
+
+For KG integration, these outputs will therefore be treated as high-quality candidate graphs. The practical implication is that image-to-RDF extraction can extend the text-derived soil health KG with visually encoded indicator and threshold information, while domain review remains necessary before publication in a production KG.
 
 \section{Conclusion}\label{sec:conclusion}
 
