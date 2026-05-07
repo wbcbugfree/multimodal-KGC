@@ -117,7 +117,27 @@
              country={The Netherlands}}
 
 \begin{abstract}
-% Scientific knowledge is frequently communicated through visual artifacts such as charts, tables, and flow diagrams. Although these artifacts often contain compact empirical or procedural knowledge, they are difficult to reuse in Semantic Web applications because their content is encoded visually rather than as machine-interpretable triples. This paper studies image-to-knowledge-graph construction as a direct image-to-RDF task. We design a prompting-based framework in which a large vision-language model receives an infographic image and returns an RDF/Turtle graph. We construct two labelled image-to-RDF resources for evaluation: a VisText-derived chart-to-RDF dataset covering train, evaluation, and test splits, and a Diagram2Graph-derived diagram-to-RDF dataset obtained by expressing the original graph annotations in a lightweight RDF schema. We evaluate zero-shot, one-shot, dynamic one-shot, and few-shot prompting strategies where applicable, using both exact graph-matching metrics and softer graph-similarity metrics. For unlabelled scientific images, we introduce an LLM-as-a-judge framework adapted from KGEval and validate it on the two labelled datasets before applying it to an unlabelled domain application. The study provides datasets, methods, and an evaluation framework for assessing direct RDF extraction from scientific images under both labelled and unlabelled conditions.
+Scientific documents contain substantial knowledge in charts, diagrams,
+flowcharts, and tables, yet these visual artifacts are often omitted when
+documents are converted into machine-readable format. This paper studies
+direct image-to-knowledge-graph construction as an image-to-RDF task: a
+vision-language model receives an infographic image and produces an RDF/Turtle
+graph under a predefined schema. We construct two labelled image-to-RDF
+resources for systematic evaluation. The first derives chart-to-RDF labels from
+VisText, representing chart type, titles, axes, and datapoints. The second
+expresses Diagram2Graph annotations as RDF graphs over a lightweight node-edge
+schema. We evaluate zero-shot, one-shot, dynamic one-shot, and few-shot
+prompting strategies with Gemini 3 Flash, using exact triple overlap, graph
+edit distance, lexical similarity, and embedding-based graph similarity. The
+results show that direct RDF/Turtle generation is feasible across both chart
+and diagram inputs, and that explicit schema guidance is more important than
+additional in-context examples for the tested frontier multimodal model. For
+charts, the main limitation is image-only recovery of dense or implicit datapoint sequences. For diagrams, zero-shot prompting with a
+clear schema is sufficient to obtain strong graph-reconstruction performance.
+We also adapt KGEval into an image-grounded LLM-as-a-judge framework, validate
+it on the labelled datasets, and apply it to an unlabelled Soil-Health
+image-to-RDF use case. The accompanying open-source repository is available at
+\url{https://github.com/wbcbugfree/multimodal-KGC}.
 \end{abstract}
 
 \begin{keyword}
@@ -130,7 +150,7 @@ Image-to-knowledge-graph \sep RDF \sep Vision-language models \sep Multimodal \s
 
 Scientific communication relies extensively on visual artifacts. Charts summarize quantitative trends, tables arrange measurements and qualitative categories, and diagrams describe procedural or causal relations. However, such artifacts are often weakly represented, or entirely omitted, when scientific documents are converted into machine-readable corpora. In a typical retrieval-augmented generation workflow, for example, documents are first parsed into textual chunks or other retrievable representations before downstream question answering or analysis is performed \citep{rag_survey}. Visual elements whose meaning is encoded through marks, axes, layout, and topology can therefore be filtered out during preprocessing, even when they contain essential empirical or procedural knowledge. This omission limits both corpus construction and downstream structured knowledge acquisition from scientific literature.
 
-Knowledge graphs provide a principled way to address this gap by representing entities, relations, and attributes in graph-structured form \citep{hogan2021knowledgegraphs}. RDF represents such information as subject-predicate-object triples, while ontologies define the classes and relations that make these triples interpretable and reusable. In the Semantic Web setting, RDF graphs can be validated syntactically, queried, linked to external resources, and integrated across domains \citep{rdf11concepts,turtle}. Directly converting scientific visual artifacts into RDF therefore offers a route from overlooked image-based evidence to explicit, queryable, and interoperable knowledge.
+Knowledge graphs (KGs) provide a principled way to address this gap by representing entities, relations, and attributes in graph-structured form \citep{hogan2021knowledgegraphs}. RDF represents such information as subject-predicate-object triples, while ontologies define the classes and relations that make these triples interpretable and reusable. In the Semantic Web setting, RDF graphs can be validated syntactically, queried, linked to external resources, and integrated across domains \citep{rdf11concepts,turtle}. Directly converting scientific visual artifacts into RDF therefore offers a route from overlooked image-based evidence to explicit, queryable, and interoperable knowledge.
 
 Existing research addresses important parts of this problem, but not the complete image-to-RDF task. Chart-understanding benchmarks and models focus on chart question answering, chart-to-text generation, or data recovery \citep{chartocr,chartqa,vistext,unichart,chartllama}. Diagram-understanding work can extract graph-like representations, but the target format is usually JSON, Mermaid, or another task-specific serialization rather than RDF \citep{diagram2graph,flowlearn}. Table-understanding systems increasingly process table images directly, but they commonly return reconstructed tables or task-specific answers \citep{mmtable,tabpedia}. Conversely, Semantic Web table interpretation typically assumes that tabular data are already available in textual or structured form \citep{semtab2022,semtab2024}. These lines of work motivate direct image-to-RDF construction, but they do not provide an end-to-end framework for producing RDF knowledge graphs directly from heterogeneous scientific images.
 
@@ -138,12 +158,12 @@ This paper studies such an end-to-end formulation. We use Gemini 3 Flash \citep{
 
 The main contributions are as follows:
 \begin{itemize}
-    \item We propose an end-to-end prompting framework for constructing RDF knowledge graphs directly from scientific visual artifacts, including charts, tables, and diagrams. The framework supplies the ontology in the prompt, optionally provides image-to-RDF demonstrations, and requires parseable Turtle output.
     \item We construct two labelled image-to-RDF datasets for systematic evaluation. From VisText \citep{vistext}, we derive RDF graphs that encode chart type, title, axis titles, and data points across the full train, evaluation, and test splits, while using only the test split for LLM evaluation. From Diagram2Graph \citep{diagram2graph}, we transform diagram annotations into a compact RDF schema that preserves node-edge semantics.
+    \item We propose and evaluate end-to-end prompting strategies for constructing RDF knowledge graphs directly from scientific visual artifacts. The framework supplies the ontology in the prompt, optionally provides image-to-RDF demonstrations, requires parseable Turtle output, and supports zero-shot, one-shot, dynamic one-shot, and few-shot prompting where applicable.
     \item We develop an LLM-as-a-judge framework for evaluating image-to-RDF outputs when reference graphs are unavailable. The framework adapts the rubric-based assessment idea of KGEval \citep{kgeval}, supports direct and pairwise judging modes, and is validated on the two labelled datasets before being applied to an unlabelled soil-health image collection.
 \end{itemize}
 
-Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper characterizes the capabilities and limitations of prompt-based RDF generation, provides labelled resources for systematic evaluation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
+Taken together, these contributions establish a reproducible experimental setting for image-to-RDF extraction. The paper provides labelled resources for systematic evaluation, characterizes the capabilities and limitations of prompt-based RDF generation, and offers a validation pathway for judge-based assessment when ground truth is unavailable.
 
 The remainder of the paper is organized as follows. Section~\ref{sec:related} reviews related work on multimodal understanding, LLM-supported knowledge engineering, and LLM-as-a-judge evaluation. Section~\ref{sec:method} defines the image-to-RDF task, introduces the labelled datasets, and describes the prompting strategies. Section~\ref{sec:evaluation} presents the evaluation protocol and labelled-dataset results. Section~\ref{sec:discussion} discusses the observed performance patterns and limitations. Section~\ref{sec:soil_use_case} presents the unlabelled Soil-Health application, and Section~\ref{sec:conclusion} concludes the paper.
 
@@ -348,7 +368,7 @@ Few-shot prompting provides all curated examples for the dataset. VisText uses o
 
 All image-to-RDF experiments use Gemini 3 Flash. The model is not fine-tuned on either labelled dataset. A generated output is considered eligible for evaluation only if it can be parsed as RDF/Turtle.
 
-\section{Evaluation Results}\label{sec:evaluation}
+\section{Experiment Results}\label{sec:evaluation}
 
 \subsection{Traditional Graph Metrics for Labelled Datasets}\label{subsec:traditional_graph_metrics}
 
@@ -646,7 +666,7 @@ Gemini RDF few-shot & RDF/Turtle & 0.8249 & 0.8313 & 0.8281 & 0.8518 & 0.0866 & 
 \label{tab:json_rdf_ablation}
 \end{table*}
 
-The ablation results do not show a decline when the target output is RDF/Turtle. On the same subset, the RDF/Turtle prompting results do not indicate a performance penalty relative to JSON serialization. This supports the use of direct RDF/Turtle generation in the proposed image-to-KG task. Furthermore, throughout the experiments conducted in this paper, the LLM produced only one instance of RDF/Turtle with syntax error, demonstrating that the frontier model is currently capable of robustly generating RDF.
+The ablation results do not show a decline when the target output is RDF/Turtle. On the same subset, the RDF/Turtle prompting results do not indicate a performance penalty relative to JSON serialization. This supports the use of direct RDF/Turtle generation in the proposed image-to-RDF task. Furthermore, throughout all the experiments conducted in this paper, the LLM produced only one instance of RDF/Turtle with syntax error, demonstrating that the frontier model is currently capable of robustly generating RDF.
 
 The table also shows that all Gemini prompting strategies outperform the LoRA-fine-tuned Qwen2.5-VL-3B baseline on the reported metrics. In this setting, a frontier multimodal model prompted with the target schema provides stronger structured extraction than a smaller model adapted to the task with parameter-efficient fine-tuning. This result indicates that prompt-based frontier models can be highly competitive for diagram-to-graph extraction even without task-specific parameter updates.
 
@@ -713,9 +733,7 @@ alignment, and where traditional metrics can penalize small literal-level
 differences that a judge may consider semantically acceptable.
 
 Accordingly, we use the judge framework for the unlabelled Soil-Health
-application as a structured quality assessment. The validation supports its use for identifying broad
-quality patterns and comparing clearly different outputs, while the labelled
-metrics remain the primary evidence whenever reference RDF graphs are
+application as a structured quality assessment. The validation supports its use for identifying broad quality patterns and comparing clearly different outputs, while the labelled metrics remain the primary evidence whenever reference RDF graphs are
 available.
 
 
@@ -725,7 +743,7 @@ The Soil-Health collection is used as an application case for image-to-RDF extra
 
 The application considered here addresses a limitation of text-only KG construction. In the soil monitoring report, several important forms of knowledge are not fully expressed in the surrounding prose. Complete indicator lists, assessment thresholds, critical ranges, tabulated criteria, and diagrammatic summaries are often presented as figures or tables. If these visual artifacts are omitted during document preprocessing, the resulting KG can miss information that is directly relevant to soil-health assessment. The present application therefore evaluates whether the proposed image-to-RDF workflow can provide candidate RDF graphs that may support a future visually enriched version of the soil health KG.
 
-The dataset contains 71 images from the report, including 15 figures and 56 tables. The target output is an RDF/Turtle graph using the same SKOS-based ontology as the soil health KG. For tables, the intended graph represents headers, grouped headers, row labels, cell values, legends, and semantically meaningful notes. For figures, it represents visible concepts, headings, diagram regions, arrows, captions, legends, and explicitly indicated associations. Since no complete gold RDF graphs are available for this collection, we apply the LLM-as-a-judge framework after validating it on the two labelled datasets. The same prompting regimes are considered as in the preceding experiments: zero-shot, static one-shot, dynamic one-shot, and few-shot. In the dynamic one-shot setting, the model first classifies the input image as a figure or table and then uses the corresponding in-context example. The figure and table images used as in-context examples are excluded from the reported application results.
+The dataset contains 71 images from the report, including 15 figures and 56 tables. The target output is an RDF/Turtle graph using the same SKOS-based ontology as the soil health KG. For tables, the intended graph represents headers, grouped headers, row labels, cell values, legends, and semantically meaningful notes. For figures, it represents visible concepts, headings, diagram regions, arrows, captions, legends, and explicitly indicated associations. Since no complete gold RDF graphs are available for this collection, we apply the LLM-as-a-judge framework after validating it on the two labelled datasets. The same prompting regimes are considered as in the preceding experiments: zero-shot, static one-shot, dynamic one-shot, and few-shot. In the dynamic one-shot setting, the model first classifies the input image as a figure or table and then uses the corresponding in-context example. This classification step assigned all 71 images to the correct source category, yielding 100\% accuracy over the full Soil-Health collection. The figure and table images used as in-context examples are excluded from the reported application results.
 
 Table~\ref{tab:soil_judge_results} reports direct judge scores for the four prompting strategies. The scores are high across all strategies, with mean overall scores between 4.7391 and 4.8261 on the 1-to-5 scale. Static one-shot prompting obtains the highest overall score and the highest scores for relevance, factuality, informativeness, and specificity. Dynamic one-shot prompting obtains the highest coherence score. The differences among strategies are small, indicating that all prompting regimes produce outputs judged to be broadly faithful and useful for this application. Together with the labelled-dataset results, this pattern further supports the observation that, for frontier multimodal models operating with explicit schema guidance, the marginal benefit of additional prompt-engineering variants can be limited.
 
@@ -775,7 +793,37 @@ For KG integration, these outputs will therefore be treated as high-quality cand
 
 \section{Conclusion}\label{sec:conclusion}
 
-% This paper presents a prompt-based framework for constructing RDF knowledge graphs directly from scientific images. The approach uses Gemini 3 Flash for image-to-RDF generation and compares zero-shot, one-shot, dynamic one-shot, and few-shot prompting where applicable. It also introduces two labelled image-to-RDF resources derived from VisText and Diagram2Graph and an LLM-as-a-judge framework for unlabelled image collections. The labelled datasets support traditional graph-based evaluation, while the judge framework provides a validation-based route to evaluating unlabelled scientific image collections. The final experimental results will determine which prompting strategies are most reliable across image families and how closely judge-based assessment tracks traditional graph metrics.
+In this paper, we defined the direct image-to-RDF task, where a multimodal model receives an infographic image and returns an
+RDF/Turtle graph under a predefined schema. We made three main contributions.
+First, we constructed two labelled image-to-RDF datasets from VisText and
+Diagram2Graph. Second, we designed and evaluated end-to-end prompting strategies
+for generating RDF graphs from these labelled chart and diagram datasets. Third,
+we proposed an image-grounded LLM-as-a-judge framework, validated it on the two
+labelled datasets, and applied it to an unlabelled Soil-Health image-to-RDF use
+case.
+
+Our experiments lead to three main findings. Direct RDF/Turtle generation from
+infographic images is feasible: both labelled datasets obtain strong graph
+matching and graph similarity scores, and RDF syntax itself is not the primary
+bottleneck. Explicit schema guidance is more important than increasingly
+elaborate prompt examples for the tested frontier multimodal model. Zero-shot
+prompting with a clear schema is already competitive, while one-shot and
+few-shot examples provide only limited gains and may sometimes reduce
+generalization. The remaining difficulty is mainly visual and informational:
+diagram structure is often explicitly visible, whereas line and area charts can
+require the model to infer implicit datapoint resolution and estimate dense
+numeric sequences from the image alone.
+
+Several limitations remain. We evaluated labelled extraction on charts and
+diagrams, but broader classes of scientific figures, complex tables, maps, and
+multi-panel images require further study. We also relied on predefined schemas;
+future work should examine schema induction, ontology alignment, and
+human-in-the-loop validation for domain deployment. Finally, the LLM-as-a-judge
+framework supports coarse assessment when gold RDF graphs are unavailable, but
+it remains less reliable for fine-grained ranking between outputs of similar
+quality. Future research should combine judge-based evaluation with expert
+review and task-specific validation workflows for production knowledge graph
+construction.
 
 \section*{Acknowledgments}
 This work was supported by the EU’s Horizon Europe research and innovation programme within the SoilWise project (grant agreement ID: 101112838).
