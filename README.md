@@ -1,6 +1,6 @@
 # Multimodal-KGC
 
-Multimodal-KGC is a research repository for constructing RDF/Turtle knowledge graphs directly from infographic images. The repository focuses on scientific visual artifacts that are commonly lost during document preprocessing, including charts, flow/process diagrams, figures, and tables.
+This research repository is for constructing RDF/Turtle knowledge graphs directly from infographic images. The repository focuses on scientific visual artifacts that are commonly lost during document preprocessing, including charts, flow/process diagrams, figures, and tables.
 
 The project has three main components:
 
