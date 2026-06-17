@@ -1,4 +1,4 @@
-# Multimodal-KGC
+# Direct RDF Knowledge Graph Construction from Scientific Visualizations using VLMs
 
 This research repository is for constructing RDF/Turtle knowledge graphs directly from infographic images. The repository focuses on scientific visual artifacts that are commonly lost during document preprocessing, including charts, flow/process diagrams, figures, and tables.
 
